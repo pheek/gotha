@@ -1183,21 +1183,18 @@ public class Tournament extends UnicastRemoteObject implements TournamentInterfa
         int nbwSP1X2 = sP1.getCritValue(PlacementParameterSet.PLA_CRIT_NBW, roundNumber - 1);
         int nbwSP2X2 = sP2.getCritValue(PlacementParameterSet.PLA_CRIT_NBW, roundNumber - 1);
 
-        if (nbwSP1X2 >= nbw2Threshold || 2 * sP1.getRank() + sP1.getCritValue(PlacementParameterSet.PLA_CRIT_NBW, roundNumber - 1) >= 2 * paiPS.getPaiSeRankThreshold()) {
+        if (nbwSP1X2 >= nbw2Threshold 
+                || 2 * sP1.getRank() + sP1.getCritValue(PlacementParameterSet.PLA_CRIT_NBW, roundNumber - 1) >= 2 * paiPS.getPaiSeRankThreshold() 
+                || (sP1.smms(gps) >= gps.getGenMMBar() && paiPS.isPaiSeBarThresholdActive()) ){
             secCase++;
             pseudoMMSSP1 = maxMMS;
         }
-        if (nbwSP2X2 >= nbw2Threshold || 2 * sP2.getRank() + sP2.getCritValue(PlacementParameterSet.PLA_CRIT_NBW, roundNumber - 1) >= 2 * paiPS.getPaiSeRankThreshold()) {
+        if (nbwSP2X2 >= nbw2Threshold 
+                || 2 * sP2.getRank() + sP2.getCritValue(PlacementParameterSet.PLA_CRIT_NBW, roundNumber - 1) >= 2 * paiPS.getPaiSeRankThreshold()
+                || (sP2.smms(gps) >= gps.getGenMMBar() && paiPS.isPaiSeBarThresholdActive())) {
             secCase++;
             pseudoMMSSP2 = maxMMS;
         }
-        /*
-         * if (nbwSP1X2 >= nbw2Threshold || sP1.player.getRank() >=
-         * paiPS.getPaiSeRankThreshold()){ secCase++; pseudoMMSSP1 = maxMMS; }
-         * if (nbwSP2X2 >= nbw2Threshold || sP2.player.getRank() >=
-         * paiPS.getPaiSeRankThreshold()){ secCase++; pseudoMMSSP2 = maxMMS; }
-         */
-
 
         // Secondary Criterion 1 : Minimize handicap
         long hdCost = 0;

@@ -42,12 +42,12 @@ public class Gotha {
     
     static Locale locale = Locale.getDefault();
     static final long GOTHA_VERSION = 329L;
-    static final long GOTHA_MINOR_VERSION = 1L;
-    static final java.util.Date GOTHA_RELEASE_DATE = (new GregorianCalendar(2012, Calendar.OCTOBER, 26)).getTime();
+    static final long GOTHA_MINOR_VERSION = 3L;
+    static final java.util.Date GOTHA_RELEASE_DATE = (new GregorianCalendar(2012, Calendar.NOVEMBER, 13)).getTime();
     // Data version for serialization
     static final long GOTHA_DATA_VERSION = 201L;
-    // Should definitely stay below or equal to 32, due to internal limits in costValue() method
     
+    // Should definitely stay below or equal to 32, due to internal limits in costValue() method
     static final int MAX_NUMBER_OF_ROUNDS = 20;
     // Should definitely stay below 16000, due to internal limits in PairingParameterSet parameter values
     // Should definitely stay below 9999, due to printing issues
@@ -141,7 +141,7 @@ public class Gotha {
         str += "\nClaude Burvenich, Barkın Çelebican, Laurent Coquelet, Loïc Cuvillon,";
         str += "\nTilo Dickopp, André Engels, Bart Jacob, Marc Krauth, Roland Lezuo, Fabien Lips,";
         str += "\nDamien Martin-Guillerez, Richard Mullens, François Mizessyn, Konstantin Pelepelin,";
-        str += "\nSylvain Ravera, Wandrille Sacquépée, Rémi Vannier, Rory Wales and many others.";
+        str += "\nSylvain Ravera, Wandrille Sacquépée, Grzegorz Sobański, Rémi Vannier, Rory Wales and many others.";
         str += "\nThanks to all of them !";
 
         return str;

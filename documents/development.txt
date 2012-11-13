@@ -1,7 +1,9 @@
-OpenGothaV3.29.02
+OpenGothaV3.29.03
 *****************
-30/10/2012
+13/11/2012
+New         Swisscat system is back
 Bug Fix     SOSW-2 calculation was wrong. Fixed.
+New         A new pairing parameter : Applying secondary criteria for players above MacMahon bar
 
 OpenGothaV3.29.01
 *****************

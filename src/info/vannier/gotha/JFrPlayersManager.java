@@ -1304,7 +1304,6 @@ public class JFrPlayersManager extends javax.swing.JFrame {
 }//GEN-LAST:event_mniCancelActionPerformed
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
-        System.out.println("formWindowClosed");
         this.pupRegisteredPlayers.setVisible(false);
         
         this.ratingList = null;

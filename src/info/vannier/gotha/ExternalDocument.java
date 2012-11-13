@@ -872,6 +872,7 @@ public class ExternalDocument {
 
         paiPS.setPaiSeRankThreshold(Player.convertKDToInt(extractNodeValue(nnmPaiPS, "paiSeRankThreshold", "4D")));
         paiPS.setPaiSeNbWinsThresholdActive(Boolean.valueOf(extractNodeValue(nnmPaiPS, "paiSeNbWinsThresholdActive", "true")).booleanValue());
+        paiPS.setPaiSeBarThresholdActive(Boolean.valueOf(extractNodeValue(nnmPaiPS, "paiSeBarThresholdActive", "true")).booleanValue());
         paiPS.setPaiSeDefSecCrit(new Long(extractNodeValue(nnmPaiPS, "paiSeDefSecCrit", "100000000000")).longValue());
         paiPS.setPaiSeMinimizeHandicap(new Long(extractNodeValue(nnmPaiPS, "paiSeMinimizeHandicap", "0")).longValue());
         paiPS.setPaiSeAvoidSameGeo(new Long(extractNodeValue(nnmPaiPS, "paiSeAvoidSameGeo", "100000000000")).longValue());
@@ -2738,6 +2739,7 @@ public class ExternalDocument {
 
         emPairingParameterSet.setAttribute("paiSeRankThreshold", "" + Player.convertIntToKD(paiPS.getPaiSeRankThreshold()));
         emPairingParameterSet.setAttribute("paiSeNbWinsThresholdActive", "" + paiPS.isPaiSeNbWinsThresholdActive());
+        emPairingParameterSet.setAttribute("paiSeBarThresholdActive", "" + paiPS.isPaiSeBarThresholdActive());
         emPairingParameterSet.setAttribute("paiSeDefSecCrit", "" + paiPS.getPaiSeDefSecCrit());
         emPairingParameterSet.setAttribute("paiSeMinimizeHandicap", "" + paiPS.getPaiSeMinimizeHandicap());
         emPairingParameterSet.setAttribute("paiSeAvoidSameGeo", "" + paiPS.getPaiSeAvoidSameGeo());

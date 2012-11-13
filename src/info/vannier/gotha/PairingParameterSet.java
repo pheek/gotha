@@ -54,13 +54,14 @@ public class PairingParameterSet implements java.io.Serializable{
     private int paiMaAdditionalPlacementCritSystem1     = PlacementParameterSet.PLA_CRIT_RATING;
     private int paiMaAdditionalPlacementCritSystem2     = PlacementParameterSet.PLA_CRIT_NUL;
          
+    private boolean paiSeBarThresholdActive                  = true;        // Do not apply secondary criteria for players above bar
     private int paiSeRankThreshold                           = 0;           // Do not apply secondary criteria above 1D rank
     private boolean paiSeNbWinsThresholdActive               = true;        // Do not apply secondary criteria when nbWins >= nbRounds / 2
     private long paiSeDefSecCrit;                            // Should be PAIMA_MAX_MINIMIZE_SCORE_DIFFERENCE for MM, PAIMA_MAX_AVOID_MIXING_CATEGORIES for others
     private long paiSeMinimizeHandicap;                      // Should be paiSeDefSecCrit for SwCat, 0 for others
     private long paiSeAvoidSameGeo;                          // Should be paiSeDefSecCrit for SwCat and MM, 0 for Swiss
-    private int  paiSePreferMMSDiffRatherThanSameCountry;       // Typically = 1
-    private int  paiSePreferMMSDiffRatherThanSameClub;          // Typically = 3
+    private int  paiSePreferMMSDiffRatherThanSameCountry;    // Typically = 1
+    private int  paiSePreferMMSDiffRatherThanSameClub;       // Typically = 3
      
     public PairingParameterSet() {   
     }
@@ -276,8 +277,9 @@ public class PairingParameterSet implements java.io.Serializable{
             paiMaAdditionalPlacementCritSystem1 =   PlacementParameterSet.PLA_CRIT_RATING;
             paiMaAdditionalPlacementCritSystem2 =   PlacementParameterSet.PLA_CRIT_NUL;
         
+        paiSeBarThresholdActive                 =   true;         // Do not apply secondary criteria above bar
         paiSeRankThreshold                      =   0;           // Do not apply secondary criteria above 1D rank
-        paiSeNbWinsThresholdActive              =   false;       // Do not apply secondary criteria when nbWins >= nbRounds / 2
+        setPaiSeNbWinsThresholdActive(false);       // Do not apply secondary criteria when nbWins >= nbRounds / 2
         paiSeDefSecCrit                         =   PAIMA_MAX_MINIMIZE_SCORE_DIFFERENCE;
         paiSeMinimizeHandicap                   =   0;           // Not relevant in Mac-Mahon
         paiSeAvoidSameGeo                       =   paiMaMinimizeScoreDifference;
@@ -305,8 +307,9 @@ public class PairingParameterSet implements java.io.Serializable{
             paiMaAdditionalPlacementCritSystem1 =   PlacementParameterSet.PLA_CRIT_RATING;
             paiMaAdditionalPlacementCritSystem2 =   PlacementParameterSet.PLA_CRIT_RATING;
         
+        paiSeBarThresholdActive                 =   true;           // Not relevant
         paiSeRankThreshold                      =   -30;            // Do not apply secondary criteria above rank 
-        paiSeNbWinsThresholdActive              =   true;           // Not Relevant
+        setPaiSeNbWinsThresholdActive(true);           // Not Relevant
         paiSeDefSecCrit                         =   PAIMA_MAX_AVOID_MIXING_CATEGORIES;
         paiSeMinimizeHandicap                   =   0;     
         paiSeAvoidSameGeo                       =   0;
@@ -334,8 +337,9 @@ public class PairingParameterSet implements java.io.Serializable{
             paiMaAdditionalPlacementCritSystem1 =   PlacementParameterSet.PLA_CRIT_RATING;
             paiMaAdditionalPlacementCritSystem2 =   PlacementParameterSet.PLA_CRIT_NUL;
         
+        paiSeBarThresholdActive                 =   true;           // Not relevant
         paiSeRankThreshold                      =   0;           // Do not apply secondary criteria above 1D rank
-        paiSeNbWinsThresholdActive              =   true;        // Do not apply secondary criteria when nbWins >= nbRounds / 2
+        setPaiSeNbWinsThresholdActive(true);        // Do not apply secondary criteria when nbWins >= nbRounds / 2
         paiSeDefSecCrit                         =   PAIMA_MAX_AVOID_MIXING_CATEGORIES;
         paiSeMinimizeHandicap                   =   paiSeDefSecCrit;     
         paiSeAvoidSameGeo                       =   paiSeDefSecCrit;
@@ -349,5 +353,19 @@ public class PairingParameterSet implements java.io.Serializable{
 
     public void setPaiSeDefSecCrit(long paiSeDefSecCrit) {
         this.paiSeDefSecCrit = paiSeDefSecCrit;
+    }
+
+    /**
+     * @return the paiSeBarThresholdActive
+     */
+    public boolean isPaiSeBarThresholdActive() {
+        return paiSeBarThresholdActive;
+    }
+
+    /**
+     * @param paiSeBarThresholdActive the paiSeBarThresholdActive to set
+     */
+    public void setPaiSeBarThresholdActive(boolean paiSeBarThresholdActive) {
+        this.paiSeBarThresholdActive = paiSeBarThresholdActive;
     }
 }

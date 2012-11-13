@@ -215,6 +215,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         ckbSeMinimizeHandicap = new javax.swing.JCheckBox();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
+        ckbSeBarThresholdActive = new javax.swing.JCheckBox();
         btnHelpPairing = new javax.swing.JButton();
         pnlTPL = new javax.swing.JPanel();
         jLabel31 = new javax.swing.JLabel();
@@ -1162,7 +1163,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         pnlDUDDLG.setBounds(200, 20, 190, 90);
 
         pnlMain.add(pnlDUDD);
-        pnlDUDD.setBounds(10, 220, 400, 120);
+        pnlDUDD.setBounds(10, 240, 400, 120);
 
         pnlSeeding.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Inside a group, use a seeding system", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 10))); // NOI18N
         pnlSeeding.setLayout(null);
@@ -1290,7 +1291,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         pnlSeeding.setBounds(10, 60, 400, 160);
 
         pnlPai.add(pnlMain);
-        pnlMain.setBounds(0, 10, 420, 350);
+        pnlMain.setBounds(0, 10, 420, 380);
 
         pnlSecondary.setBorder(javax.swing.BorderFactory.createTitledBorder("Secondary criteria"));
         pnlSecondary.setLayout(null);
@@ -1298,12 +1299,12 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         jLabel21.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         jLabel21.setText("Do not apply secondary criteria :");
         pnlSecondary.add(jLabel21);
-        jLabel21.setBounds(10, 20, 270, 14);
+        jLabel21.setBounds(10, 30, 270, 14);
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
-        jLabel22.setText("- for players with a MMS equal or stronger than :");
+        jLabel22.setText("for players with a MMS equal or stronger than :");
         pnlSecondary.add(jLabel22);
-        jLabel22.setBounds(10, 40, 280, 14);
+        jLabel22.setBounds(10, 50, 280, 14);
 
         txfSeRankThreshold.setText("3D");
         txfSeRankThreshold.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1312,25 +1313,23 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
             }
         });
         pnlSecondary.add(txfSeRankThreshold);
-        txfSeRankThreshold.setBounds(290, 40, 30, 20);
+        txfSeRankThreshold.setBounds(290, 50, 30, 20);
 
         ckbSeNbWinsThresholdActive.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
-        ckbSeNbWinsThresholdActive.setText("- for players with at least nbRounds/2 wins");
-        ckbSeNbWinsThresholdActive.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
-        ckbSeNbWinsThresholdActive.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        ckbSeNbWinsThresholdActive.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        ckbSeNbWinsThresholdActive.setText("for players with at least nbRounds/2 wins");
+        ckbSeNbWinsThresholdActive.setBorder(null);
         ckbSeNbWinsThresholdActive.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 ckbSecCritFocusLost(evt);
             }
         });
         pnlSecondary.add(ckbSeNbWinsThresholdActive);
-        ckbSeNbWinsThresholdActive.setBounds(10, 60, 320, 15);
+        ckbSeNbWinsThresholdActive.setBounds(10, 70, 270, 20);
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel23.setText("Avoid intra-country pairing.");
         pnlSecondary.add(jLabel23);
-        jLabel23.setBounds(10, 90, 270, 15);
+        jLabel23.setBounds(10, 130, 270, 15);
 
         txfSeCountry.setText("1");
         txfSeCountry.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1339,12 +1338,12 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
             }
         });
         pnlSecondary.add(txfSeCountry);
-        txfSeCountry.setBounds(270, 110, 20, 20);
+        txfSeCountry.setBounds(270, 150, 20, 20);
 
         jLabel24.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel24.setText("Avoid intra-club pairing.");
         pnlSecondary.add(jLabel24);
-        jLabel24.setBounds(10, 140, 270, 15);
+        jLabel24.setBounds(10, 170, 270, 15);
 
         txfSeClub.setText("3");
         txfSeClub.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1353,7 +1352,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
             }
         });
         pnlSecondary.add(txfSeClub);
-        txfSeClub.setBounds(270, 160, 20, 20);
+        txfSeClub.setBounds(270, 190, 20, 20);
 
         ckbSeMinimizeHandicap.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         ckbSeMinimizeHandicap.setText("Minimize handicaps");
@@ -1365,22 +1364,34 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
             }
         });
         pnlSecondary.add(ckbSeMinimizeHandicap);
-        ckbSeMinimizeHandicap.setBounds(10, 190, 170, 13);
+        ckbSeMinimizeHandicap.setBounds(10, 220, 170, 13);
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel25.setText("Prefer a group gap of :");
         pnlSecondary.add(jLabel25);
-        jLabel25.setBounds(10, 160, 250, 13);
+        jLabel25.setBounds(10, 190, 250, 13);
 
         jLabel26.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel26.setText("Prefer a group gap of :");
         pnlSecondary.add(jLabel26);
-        jLabel26.setBounds(10, 110, 250, 15);
+        jLabel26.setBounds(10, 150, 250, 15);
+
+        ckbSeBarThresholdActive.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
+        ckbSeBarThresholdActive.setSelected(true);
+        ckbSeBarThresholdActive.setBorder(null);
+        ckbSeBarThresholdActive.setLabel("for players above Mac-Mahon bar");
+        ckbSeBarThresholdActive.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ckbSeBarThresholdActiveFocusLost(evt);
+            }
+        });
+        pnlSecondary.add(ckbSeBarThresholdActive);
+        ckbSeBarThresholdActive.setBounds(10, 90, 270, 20);
 
         pnlPai.add(pnlSecondary);
-        pnlSecondary.setBounds(420, 150, 340, 210);
+        pnlSecondary.setBounds(420, 150, 340, 240);
 
         btnHelpPairing.setIcon(new javax.swing.ImageIcon(getClass().getResource("/info/vannier/gotha/gothalogo16.jpg"))); // NOI18N
         btnHelpPairing.setText("help");
@@ -1662,6 +1673,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         
         boolean bSomethingHasChanged = false;
 
+        
         int oldRankThreshold = paiPS.getPaiSeRankThreshold();
         int newRankThreshold = Player.convertKDToInt(this.txfSeRankThreshold.getText());
         if (newRankThreshold != oldRankThreshold){
@@ -1669,9 +1681,15 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
             bSomethingHasChanged = true;
         }
         
+        boolean oldBarThresholdActive = paiPS.isPaiSeBarThresholdActive();
+        boolean newBarThresholdActive = this.ckbSeBarThresholdActive.isSelected();
+        if (newBarThresholdActive != oldBarThresholdActive){
+            paiPS.setPaiSeBarThresholdActive(newBarThresholdActive);
+            bSomethingHasChanged = true;            
+        }
         boolean oldNbWinsThresholdActive = paiPS.isPaiSeNbWinsThresholdActive();
         boolean newNbWinsThresholdActive = this.ckbSeNbWinsThresholdActive.isSelected();
-        if (newNbWinsThresholdActive != oldNbWinsThresholdActive){
+         if (newNbWinsThresholdActive != oldNbWinsThresholdActive){
             paiPS.setPaiSeNbWinsThresholdActive(newNbWinsThresholdActive);
             bSomethingHasChanged = true;            
         }
@@ -2575,6 +2593,10 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         // TODO add your handling code here:
     }//GEN-LAST:event_rdbSwissCatActionPerformed
 
+    private void ckbSeBarThresholdActiveFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ckbSeBarThresholdActiveFocusLost
+        secCritControlsFocusLost();
+    }//GEN-LAST:event_ckbSeBarThresholdActiveFocusLost
+
     private void updHdBase(){
         TournamentParameterSet tps;
         try {
@@ -2693,10 +2715,6 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
     }
 
     private void initPnlPai()throws RemoteException{
-        if (tournament.tournamentType() == TournamentParameterSet.TYPE_SWISSCAT)
-            this.ckbSeMinimizeHandicap.setVisible(true);
-        else 
-            this.ckbSeMinimizeHandicap.setVisible(false);
         updatePnlPai();
     }
     private void updatePnlGen()throws RemoteException{
@@ -2909,7 +2927,18 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         this.cbxTeamCrit5.getModel().setSelectedItem(TeamPlacementParameterSet.criterionLongName(displayedCriteria[4]));
         this.cbxTeamCrit6.getModel().setSelectedItem(TeamPlacementParameterSet.criterionLongName(displayedCriteria[5]));
     }
+    
     private void updatePnlPai()throws RemoteException{
+        if (tournament.tournamentType() == TournamentParameterSet.TYPE_SWISSCAT)
+            this.ckbSeMinimizeHandicap.setVisible(true);
+        else 
+            this.ckbSeMinimizeHandicap.setVisible(false);
+        
+        if (tournament.tournamentType() == TournamentParameterSet.TYPE_MACMAHON)
+            this.ckbSeBarThresholdActive.setVisible(true);
+        else 
+            this.ckbSeBarThresholdActive.setVisible(false);
+        
         PairingParameterSet paiPS = tournament.getTournamentParameterSet().getPairingParameterSet();
         
         this.ckbAvoidMixingCategories.setSelected(paiPS.getPaiMaAvoidMixingCategories() != 0);
@@ -2960,6 +2989,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         this.ckbBalanceWB.setSelected(paiPS.getPaiBaBalanceWB() != 0);
         
         this.txfSeRankThreshold.setText(Player.convertIntToKD(paiPS.getPaiSeRankThreshold()));
+        this.ckbSeBarThresholdActive.setSelected(paiPS.isPaiSeBarThresholdActive());
         this.ckbSeNbWinsThresholdActive.setSelected(paiPS.isPaiSeNbWinsThresholdActive());
         this.txfSeCountry.setText("" + paiPS.getPaiSePreferMMSDiffRatherThanSameCountry());
         this.txfSeClub.setText("" + paiPS.getPaiSePreferMMSDiffRatherThanSameClub());
@@ -3024,6 +3054,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
     private javax.swing.JCheckBox ckbMinimizeScoreDifference;
     private javax.swing.JCheckBox ckbResetParameters;
     private javax.swing.JCheckBox ckbRoundDown;
+    private javax.swing.JCheckBox ckbSeBarThresholdActive;
     private javax.swing.JCheckBox ckbSeMinimizeHandicap;
     private javax.swing.JCheckBox ckbSeNbWinsThresholdActive;
     private javax.swing.JDialog dlgChangeSystem;
