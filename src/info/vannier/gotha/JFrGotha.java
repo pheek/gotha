@@ -264,9 +264,6 @@ public class JFrGotha extends javax.swing.JFrame {
         mniExportTeamHTML = new javax.swing.JMenuItem();
         mniExportPlayersCSV = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JSeparator();
-        mniPageSetup = new javax.swing.JMenuItem();
-        mniPrint = new javax.swing.JMenuItem();
-        jSeparator3 = new javax.swing.JSeparator();
         mniExit = new javax.swing.JMenuItem();
         jSeparator4 = new javax.swing.JSeparator();
         mniBuildTestTournament = new javax.swing.JMenuItem();
@@ -967,7 +964,7 @@ public class JFrGotha extends javax.swing.JFrame {
 
         mniSave.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         mniSave.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        mniSave.setText("Save");
+        mniSave.setText("Save...");
         mniSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mniSaveActionPerformed(evt);
@@ -1103,17 +1100,6 @@ public class JFrGotha extends javax.swing.JFrame {
 
         mnuTournament.add(mnuExport);
         mnuTournament.add(jSeparator2);
-
-        mniPageSetup.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        mniPageSetup.setText("Page setup...");
-        mniPageSetup.setEnabled(false);
-        mnuTournament.add(mniPageSetup);
-
-        mniPrint.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        mniPrint.setText("Print...");
-        mniPrint.setEnabled(false);
-        mnuTournament.add(mniPrint);
-        mnuTournament.add(jSeparator3);
 
         mniExit.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         mniExit.setText("Exit");
@@ -1454,6 +1440,14 @@ public class JFrGotha extends javax.swing.JFrame {
         TournamentPrinting tpr = new TournamentPrinting(tournament);
         tpr.setRoundNumber(-1);
         tpr.setAlOrderedScoredPlayers(alOrderedScoredPlayers);
+        int gameFormat = DPParameterSet.DP_GAME_FORMAT_FULL;
+        try {
+            gameFormat = tournament.getTournamentParameterSet().getDPParameterSet().getGameFormat();
+        } catch (RemoteException ex) {
+            Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        tpr.setGameFormat(gameFormat);
         int nbCrit = 0;
         for (int iC = 0; iC < PlacementParameterSet.PLA_MAX_NUMBER_OF_CRITERIA; iC++) {
             if (this.displayedCriteria[iC] == PlacementParameterSet.PLA_CRIT_NUL) {
@@ -1730,9 +1724,10 @@ public class JFrGotha extends javax.swing.JFrame {
     private void customInitComponents() {
         int w = JFrGotha.BIG_FRAME_WIDTH;
         int h = JFrGotha.BIG_FRAME_HEIGHT;
-
+        int y = 100;
+        
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((dim.width - w) / 2, 0, w, h);
+        setBounds((dim.width - w) / 2, y, w, h);
         setIconImage(Gotha.getIconImage());
 
         tpnGotha.setBounds(0, 0, w - 6, h - 54);
@@ -2033,7 +2028,6 @@ public class JFrGotha extends javax.swing.JFrame {
     }
 
     private void updateStandingsComponents() throws RemoteException {
-        int numberOfDisplayedRounds = 8;
         if (tournament == null) {
             this.pnlIntStandings.setVisible(false);
             return;
@@ -2066,6 +2060,10 @@ public class JFrGotha extends javax.swing.JFrame {
         PlacementParameterSet displayedPPS = displayedTPS.getPlacementParameterSet();
         displayedPPS.setPlaCriteria(displayedCriteria);
 
+        int gameFormat = tps.getDPParameterSet().getGameFormat();
+        int numberOfDisplayedRounds = 8;
+        if (gameFormat == DPParameterSet.DP_GAME_FORMAT_SHORT) numberOfDisplayedRounds = 10;
+        
         lastDisplayedStandingsUpdateTime = tournament.getCurrentTournamentTime();
         ArrayList<ScoredPlayer> alOrderedScoredPlayers = new ArrayList<ScoredPlayer>();
         try {
@@ -2075,16 +2073,22 @@ public class JFrGotha extends javax.swing.JFrame {
         } catch (RemoteException ex) {
             Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String[][] hG = ScoredPlayer.halfGamesStrings(alOrderedScoredPlayers, displayedRoundNumber, displayedTPS);
+        boolean bFull = true;
+        if (gameFormat == DPParameterSet.DP_GAME_FORMAT_SHORT) bFull = false;
+        String[][] hG = ScoredPlayer.halfGamesStrings(alOrderedScoredPlayers, displayedRoundNumber, displayedTPS, bFull);
 
         tblStandings.clearSelection();
         tblStandings.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
         DefaultTableColumnModel columnModel = (DefaultTableColumnModel) tblStandings.getColumnModel();
-                               
-        columnModel.getColumn(NUM_COL).setHeaderValue("Num");
         
-        columnModel.getColumn(PL_COL).setHeaderValue("Pl.");
+        String strNumHeader = "Num";
+        if(!tps.getDPParameterSet().isDisplayNumCol()) strNumHeader = "";        
+        columnModel.getColumn(NUM_COL).setHeaderValue(strNumHeader);
+        
+        String strPlHeader = "Pl";
+        if(!tps.getDPParameterSet().isDisplayPlCol()) strPlHeader = "";        
+        columnModel.getColumn(PL_COL).setHeaderValue(strPlHeader);
         
         columnModel.getColumn(NAME_COL).setHeaderValue("Name");
         
@@ -2098,8 +2102,12 @@ public class JFrGotha extends javax.swing.JFrame {
         for (int c = 0; c < PlacementParameterSet.PLA_MAX_NUMBER_OF_CRITERIA; c++) {
             columnModel.getColumn(CRIT0_COL + c).setHeaderValue(PlacementParameterSet.criterionShortName(displayedCriteria[c]));
         }
-        columnModel.getColumn(NUM_COL).setPreferredWidth(30);
-        columnModel.getColumn(PL_COL).setPreferredWidth(30);
+        int numWidth = 30;
+        if(!tps.getDPParameterSet().isDisplayNumCol()) numWidth = 0;
+        columnModel.getColumn(NUM_COL).setPreferredWidth(numWidth);
+        int plWidth = 30;
+        if(!tps.getDPParameterSet().isDisplayPlCol()) plWidth = 0;
+        columnModel.getColumn(PL_COL).setPreferredWidth(plWidth);
         columnModel.getColumn(NAME_COL).setPreferredWidth(110);
         columnModel.getColumn(RANK_COL).setPreferredWidth(30);
         columnModel.getColumn(NBW_COL).setPreferredWidth(20);
@@ -2108,7 +2116,9 @@ public class JFrGotha extends javax.swing.JFrame {
             columnModel.getColumn(ROUND0_RESULT_COL + r).setPreferredWidth(2);
         }
         for (int r = Math.max(displayedRoundNumber - numberOfDisplayedRounds + 1, 0); r <= displayedRoundNumber; r++) {
-            columnModel.getColumn(ROUND0_RESULT_COL + r).setPreferredWidth(55);
+            int roundColWidth = 55;
+            if (gameFormat == DPParameterSet.DP_GAME_FORMAT_SHORT) roundColWidth = 35;
+            columnModel.getColumn(ROUND0_RESULT_COL + r).setPreferredWidth(roundColWidth);
         }
         for (int r = displayedRoundNumber + 1; r <= Gotha.MAX_NUMBER_OF_ROUNDS; r++) {
             columnModel.getColumn(ROUND0_RESULT_COL + r).setMinWidth(0);
@@ -2130,8 +2140,12 @@ public class JFrGotha extends javax.swing.JFrame {
         for (int iSP = 0; iSP < alOrderedScoredPlayers.size(); iSP++) {
             int iCol = 0;
             ScoredPlayer sp = alOrderedScoredPlayers.get(iSP);
-            model.setValueAt("" + (iSP + 1), iSP, iCol++);
-            model.setValueAt("" + strPlace[iSP], iSP, iCol++);
+            String strNum = "" + (iSP +1); 
+            if (!tps.getDPParameterSet().isDisplayNumCol()) strNum = "";
+            model.setValueAt(strNum, iSP, iCol++);
+            String strPl = "" + strPlace[iSP]; 
+            if (!tps.getDPParameterSet().isDisplayPlCol()) strPl = "";
+            model.setValueAt("" + strPl, iSP, iCol++);
             model.setValueAt(sp.fullName(), iSP, iCol++);
             model.setValueAt(Player.convertIntToKD(sp.getRank()), iSP, iCol++);
             model.setValueAt(sp.formatScore(PlacementParameterSet.PLA_CRIT_NBW, this.displayedRoundNumber), iSP, iCol++);
@@ -3177,11 +3191,6 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
             GothaRMIServer.addTournament(tournament);
         }
 
-//        try {
-//            tournament.setLastTournamentModificationTime(tournament.getCurrentTournamentTime());
-//        } catch (RemoteException ex) {
-//            Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
-//        }
         try {
             this.displayedRoundNumber = tournament.presumablyCurrentRoundNumber();
             this.tournamentChanged();
@@ -3438,7 +3447,6 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     private javax.swing.JLabel jLabel9;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JPopupMenu.Separator jSeparator5;
     private javax.swing.JPopupMenu.Separator jSeparator6;
@@ -3475,12 +3483,10 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     private javax.swing.JMenuItem mniNew;
     private javax.swing.JMenuItem mniOpen;
     private javax.swing.JMenuItem mniOpenGothaHelp;
-    private javax.swing.JMenuItem mniPageSetup;
     private javax.swing.JMenuItem mniPair;
     private javax.swing.JMenuItem mniPlayersManager;
     private javax.swing.JMenuItem mniPlayersQuickCheck;
     private javax.swing.JMenuItem mniPreferences;
-    private javax.swing.JMenuItem mniPrint;
     private javax.swing.JMenuItem mniRMI;
     private javax.swing.JMenuItem mniRR;
     private javax.swing.JMenuItem mniResults;

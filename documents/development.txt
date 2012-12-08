@@ -1,6 +1,10 @@
-OpenGothaV3.29.03
+OpenGothaV3.29.04
 *****************
-13/11/2012
+08/12/2012
+New         Game results frame can be displayed with a team presentation
+New         A new print : Match list with individual games 
+New         If a team pairing is attempted with a player not "FIN" or not participant, an error message is displayed
+Int issue   When a team pairing is made, previously existing games for the players of the teams for current round are first removed if any
 New         Swisscat system is back
 Bug Fix     SOSW-2 calculation was wrong. Fixed.
 New         A new pairing parameter : Applying secondary criteria for players above MacMahon bar

@@ -333,7 +333,10 @@ public class JFrTeamsPairing extends javax.swing.JFrame {
                 strUncompleteTeam = t0.getTeamName();
             }
             if (!strUncompleteTeam.equals("")) {
-                String strMessage = strUncompleteTeam + " team is uncomplete\nPairing could not be made";
+                String strMessage = strUncompleteTeam + " team is uncomplete\n"
+                        + "Or a player is not in \"FIN\" Status\n"
+                        + "Or a player does not participate\n"
+                        + "Pairing could not be made";
                 JOptionPane.showMessageDialog(this, strMessage, "Message", JOptionPane.ERROR_MESSAGE);
                 return;
             }
@@ -631,6 +634,14 @@ public class JFrTeamsPairing extends javax.swing.JFrame {
     private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintActionPerformed
         TournamentPrinting tpr = new TournamentPrinting(tournament);
         tpr.setRoundNumber(processedRoundNumber);
+        DPParameterSet dpps = null;
+        try {
+            dpps = tournament.getTournamentParameterSet().getDPParameterSet();
+        } catch (RemoteException ex) {
+            Logger.getLogger(JFrTeamsPairing.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        tpr.setDisplayIndGames(dpps.isDisplayIndGamesInMatches());
+        
         tpr.makePrinting(TournamentPrinting.TYPE_MATCHESLIST, 0, true);
 }//GEN-LAST:event_btnPrintActionPerformed
 

@@ -370,7 +370,7 @@ public class ScoredPlayer extends Player implements java.io.Serializable{
      * h being handicap, "0" ... "9"
      * @param tps Tournament parameter set. useful for placement criteria and for absent and values scores
      */
-public static String[][] halfGamesStrings(ArrayList<ScoredPlayer> alOrderedScoredPlayers, int roundNumber, TournamentParameterSet tps) {
+public static String[][] halfGamesStrings(ArrayList<ScoredPlayer> alOrderedScoredPlayers, int roundNumber, TournamentParameterSet tps, boolean bFull) {
         GeneralParameterSet gps = tps.getGeneralParameterSet();
         // Prepare hmPos for fast retrieving
         HashMap<String, Integer> hmPos = new HashMap<String, Integer>();
@@ -412,6 +412,7 @@ public static String[][] halfGamesStrings(ArrayList<ScoredPlayer> alOrderedScore
                    int result = g.getResult();
                    if (result == Game.RESULT_UNKNOWN) strTyp = "/";
                    else strTyp = (result >= Game.RESULT_BYDEF) ? "!" : "/";
+                   if (!bFull) strTyp ="";
                    int res = result;
                    if (result >= Game.RESULT_BYDEF) res = result - Game.RESULT_BYDEF;
                    if (g.getWhitePlayer().hasSameKeyString(sp)){
@@ -432,11 +433,12 @@ public static String[][] halfGamesStrings(ArrayList<ScoredPlayer> alOrderedScore
 
                    }
                    if (!g.isKnownColor()) strCol = "?";
-
+                   if (!bFull) strCol = "";
                    int oppNum = hmPos.get(opp.getKeyString());
                    strOpp = "    " + (oppNum +1);
                    strOpp = strOpp.substring(strOpp.length() - 4);  // To have 4 chars exactly
                    strHd = "" + g.getHandicap();
+                   if (!bFull) strHd = "";
                 }
                 hG[r][i] = strOpp + strRes + strTyp + strCol + strHd;
 

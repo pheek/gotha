@@ -195,7 +195,6 @@ public class JFrExperimentalTools extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTestconversıonActionPerformed
 
     private void btnForceConversionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnForceConversionActionPerformed
-        System.out.println("\nbtnForceConversionActionPerformed");
         ArrayList<Player> alPlayers = null;
         try {
             alPlayers = tournament.playersList();

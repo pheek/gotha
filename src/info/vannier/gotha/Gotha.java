@@ -42,8 +42,8 @@ public class Gotha {
     
     static Locale locale = Locale.getDefault();
     static final long GOTHA_VERSION = 329L;
-    static final long GOTHA_MINOR_VERSION = 3L;
-    static final java.util.Date GOTHA_RELEASE_DATE = (new GregorianCalendar(2012, Calendar.NOVEMBER, 13)).getTime();
+    static final long GOTHA_MINOR_VERSION = 4L;
+    static final java.util.Date GOTHA_RELEASE_DATE = (new GregorianCalendar(2012, Calendar.DECEMBER, 8)).getTime();
     // Data version for serialization
     static final long GOTHA_DATA_VERSION = 201L;
     
@@ -318,8 +318,6 @@ public class Gotha {
         TournamentInterface t = new Tournament();
 
         String strReport = ExternalDocument.importTournamentFromXMLFile(f, t, true, true, true, true); 
-//        System.out.println("strReport = " + strReport);
-        // Check if t is a correct tournament
         try {
             t.getKeyName();
         } catch (RemoteException ex) {

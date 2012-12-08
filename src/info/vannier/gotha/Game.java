@@ -87,6 +87,29 @@ package info.vannier.gotha;
         this.result      = result;
     }
 
+    public boolean isWinner(Player p){
+        boolean bWinner = false;
+        if (p.hasSameKeyString(whitePlayer)){
+            switch(this.result){
+                case Game.RESULT_BOTHWIN:
+                case Game.RESULT_BOTHWIN_BYDEF:
+                case Game.RESULT_WHITEWINS:
+                case Game.RESULT_WHITEWINS_BYDEF:
+                    bWinner = true; 
+            }
+        }
+        else if (p.hasSameKeyString(blackPlayer)){
+            switch(this.result){
+                case Game.RESULT_BOTHWIN:
+                case Game.RESULT_BOTHWIN_BYDEF:
+                case Game.RESULT_BLACKWINS:
+                case Game.RESULT_BLACKWINS_BYDEF:
+                    bWinner = true; 
+            }
+        }
+        return bWinner;
+    }
+    
     public Player getBlackPlayer()   {
         return blackPlayer;
     }
@@ -124,8 +147,12 @@ package info.vannier.gotha;
     public int getResult()   {
         return result;
     }
-
-    public String resultAsString(){
+    /**
+     * 
+     * @param wb : true the string should put White first
+     * @return 
+     */
+    public String resultAsString(boolean wb){
         String strResult = " - ";
         switch(getResult()){
                 case Game.RESULT_UNKNOWN        : strResult = " - "; break;
@@ -141,6 +168,22 @@ package info.vannier.gotha;
                 case Game.RESULT_BOTHWIN_BYDEF  : strResult = "1-1!"; break;
                 default                         : strResult = "?-?";
             }
+        if (!wb){
+        switch(getResult()){
+                case Game.RESULT_UNKNOWN        : strResult = " - "; break;
+                case Game.RESULT_WHITEWINS      : strResult = "0-1"; break;
+                case Game.RESULT_BLACKWINS      : strResult = "1-0"; break;
+                case Game.RESULT_EQUAL          : strResult = "½-½"; break;
+                case Game.RESULT_BOTHLOSE       : strResult = "0-0"; break;
+                case Game.RESULT_BOTHWIN        : strResult = "1-1"; break;
+                case Game.RESULT_WHITEWINS_BYDEF: strResult = "0-1!"; break;
+                case Game.RESULT_BLACKWINS_BYDEF: strResult = "1-0!"; break;
+                case Game.RESULT_EQUAL_BYDEF    : strResult = "½-½!"; break;
+                case Game.RESULT_BOTHLOSE_BYDEF : strResult = "0-0!"; break;
+                case Game.RESULT_BOTHWIN_BYDEF  : strResult = "1-1!"; break;
+                default                         : strResult = "?-?";
+            }            
+        }
         return strResult;
 
     }

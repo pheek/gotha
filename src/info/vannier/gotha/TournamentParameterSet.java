@@ -21,6 +21,7 @@ public class TournamentParameterSet implements java.io.Serializable{
     private HandicapParameterSet handicapParameterSet = new HandicapParameterSet();
     private PlacementParameterSet placementParameterSet = new PlacementParameterSet();
     private PairingParameterSet pairingParameterSet = new PairingParameterSet();
+    private DPParameterSet dpParameterSet = new DPParameterSet();
     
 
     /** Creates a new instance of TournamentParameterSet */
@@ -33,6 +34,7 @@ public class TournamentParameterSet implements java.io.Serializable{
         handicapParameterSet   = new HandicapParameterSet (tps.getHandicapParameterSet());
         placementParameterSet  = new PlacementParameterSet(tps.getPlacementParameterSet());
         pairingParameterSet    = new PairingParameterSet  (tps.getPairingParameterSet());
+        dpParameterSet         = new DPParameterSet       (tps.getDPParameterSet());        
     }
 
     public int tournamentType(){    
@@ -63,6 +65,7 @@ public class TournamentParameterSet implements java.io.Serializable{
         handicapParameterSet.initForMM();
         placementParameterSet.initForMM();
         pairingParameterSet.initForMM();
+        dpParameterSet.initForMM();
     }
 
     public void initForSwiss(){
@@ -70,6 +73,7 @@ public class TournamentParameterSet implements java.io.Serializable{
         handicapParameterSet.initForSwiss();
         placementParameterSet.initForSwiss();
         pairingParameterSet.initForSwiss();
+        dpParameterSet.initForSwiss();
     }
 
     public void initForSwissCat(){
@@ -77,6 +81,7 @@ public class TournamentParameterSet implements java.io.Serializable{
         handicapParameterSet.initForSwissCat();
         placementParameterSet.initForSwissCat();
         pairingParameterSet.initForSwissCat();
+        dpParameterSet.initForSwissCat();
     }
 
     public HandicapParameterSet getHandicapParameterSet() {
@@ -101,6 +106,14 @@ public class TournamentParameterSet implements java.io.Serializable{
 
     public void setPairingParameterSet(PairingParameterSet pairingParameterSet) {
         this.pairingParameterSet = pairingParameterSet;
+    }
+
+    public DPParameterSet getDPParameterSet() {
+        return dpParameterSet;
+    }
+
+    public void setDPParameterSet(DPParameterSet dpParameterSet) {
+        this.dpParameterSet = dpParameterSet;
     }
 
     public GeneralParameterSet getGeneralParameterSet() {

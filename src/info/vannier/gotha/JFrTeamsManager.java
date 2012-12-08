@@ -973,8 +973,8 @@ public class JFrTeamsManager extends javax.swing.JFrame {
             this.txfTeamSize.setText("" + oldTS);
             return;
         }
-        int nbTeams = 0;
-        int nbGames = 0;
+        int nbTeams;
+        int nbGames;
         try {
             nbTeams = tournament.teamsList().size();
             nbGames = tournament.gamesList().size();
@@ -982,27 +982,9 @@ public class JFrTeamsManager extends javax.swing.JFrame {
             Logger.getLogger(JFrTeamsManager.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-//        if (nbTeams != 0 && nbGames != 0){
-//            int response = JOptionPane.showConfirmDialog(this,
-//                    "Modifying team size will remove " + nbGames + " games"
-//                    + "\nUnpair ?",
-//                    "Message",
-//                    JOptionPane.WARNING_MESSAGE,
-//                    JOptionPane.OK_CANCEL_OPTION);
-//            if (response == JOptionPane.CANCEL_OPTION){
-//                newTS = oldTS;
-//            }
-//            else{
-//                try {
-//                    tournament.removeAllGames();
-//                } catch (RemoteException ex) {
-//                    Logger.getLogger(JFrTeamsManager.class.getName()).log(Level.SEVERE, null, ex);
-//                }
-//            }
-//        }
-
         try {
             tournament.setTeamSize(newTS);
+            tournament.cleanTeams();
         } catch (RemoteException ex) {
             Logger.getLogger(JFrTeamsManager.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -90,6 +90,7 @@ public interface TournamentInterface extends Remote{
     public void unteamTeamMember(Team team, int roundNumber, int boardNumber) throws RemoteException;
     public void unteamTeamMembers(Team team, int roundNumber) throws RemoteException;
     public void unteamAllTeams(int roundNumber) throws RemoteException;
+    public void cleanTeams() throws RemoteException;
     public void reorderTeamMembersByRating(Team team, int roundNumber) throws RemoteException;
     public void reorderTeamMembersByRating(int roundNumber) throws RemoteException;
     public void renumberTeamsByTotalRating() throws RemoteException;

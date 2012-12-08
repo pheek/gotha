@@ -6,11 +6,7 @@ package info.vannier.gotha;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.net.URLConnection;
+import java.net.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.prefs.BackingStoreException;
@@ -58,7 +54,6 @@ public class LogElements {
             String value = key.substring (pos + 1, key.length());
             String strNbOcc = logPrefs.get(key, "0");
             int nbOcc = Integer.parseInt(strNbOcc);
-//            System.out.println("name = " + name + " value = " + value + " nbOcc = " + nbOcc);
 
             String strLog = "name=" + name + "&value= " + value + "&nbocc=" + nbOcc;
             strLog = strLog.replaceAll(" ", "%20");
@@ -96,7 +91,6 @@ public class LogElements {
                 return;
                 // Logger.getLogger(LogElements.class.getName()).log(Level.SEVERE, null, ex);
             }
-//             System.out.println("strReceived = " + strReceived);
         }
 
     }

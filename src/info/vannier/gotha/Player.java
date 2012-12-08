@@ -304,9 +304,9 @@ public class Player implements java.io.Serializable{
         int fract = score % ratio;
         int ent = score /ratio;
         String strFract = "";
-        if (fract == 1 && ratio == 2) strFract = "�";
-        if (fract == 1 && ratio == 4) strFract = "�";
-        if (fract == 3 && ratio == 4) strFract = "�";
+        if (fract == 1 && ratio == 2) strFract = "½";
+        if (fract == 1 && ratio == 4) strFract = "¼";
+        if (fract == 3 && ratio == 4) strFract = "¾";
         String strEnt = "" + ent;
         if (score > 0 && score < ratio) strEnt = "";
         return strEnt + strFract;

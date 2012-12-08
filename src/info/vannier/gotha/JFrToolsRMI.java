@@ -30,7 +30,7 @@ public class JFrToolsRMI extends javax.swing.JFrame {
 
             @Override
             public void actionPerformed(ActionEvent evt) {
-                if(ckbRTUpdate.getState())updateComponents();
+                if(ckbRTUpdate.isSelected())updateComponents();
             }
         };
 
@@ -55,8 +55,8 @@ public class JFrToolsRMI extends javax.swing.JFrame {
         lblClients = new javax.swing.JLabel();
         lblClients1 = new javax.swing.JLabel();
         btnForgetNonActiveClients = new javax.swing.JButton();
-        ckbRTUpdate = new java.awt.Checkbox();
         btnQuit = new javax.swing.JButton();
+        ckbRTUpdate = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("RMI Manager");
@@ -105,11 +105,6 @@ public class JFrToolsRMI extends javax.swing.JFrame {
         getContentPane().add(btnForgetNonActiveClients);
         btnForgetNonActiveClients.setBounds(240, 230, 360, 23);
 
-        ckbRTUpdate.setLabel("Real time update");
-        ckbRTUpdate.setState(true);
-        getContentPane().add(ckbRTUpdate);
-        ckbRTUpdate.setBounds(20, 280, 200, 20);
-
         btnQuit.setText("Quit this frame");
         btnQuit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,6 +113,11 @@ public class JFrToolsRMI extends javax.swing.JFrame {
         });
         getContentPane().add(btnQuit);
         btnQuit.setBounds(20, 330, 580, 23);
+
+        ckbRTUpdate.setSelected(true);
+        ckbRTUpdate.setText("Real time update");
+        getContentPane().add(ckbRTUpdate);
+        ckbRTUpdate.setBounds(20, 290, 200, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -177,7 +177,7 @@ public class JFrToolsRMI extends javax.swing.JFrame {
     private javax.swing.JButton btnForgetNonActiveClients;
     private javax.swing.JButton btnQuit;
     private javax.swing.JButton btnUnbind;
-    private java.awt.Checkbox ckbRTUpdate;
+    private javax.swing.JCheckBox ckbRTUpdate;
     private javax.swing.JLabel lblClients;
     private javax.swing.JLabel lblClients1;
     private javax.swing.JList lstClients;

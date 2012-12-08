@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <!ELEMENT Tournament (Players?, Games?, ByePlayers?, Teams?, TournamentParameterSet?, TeamTournamentParameterSet?)>
+<!ATTLIST Tournament dataVersion CDATA "200">
 <!ELEMENT Players (Player*)>
 <!ELEMENT Games (Game*)>
 <!ELEMENT ByePlayers (ByePlayer*)>
@@ -12,6 +13,9 @@
 <!ATTLIST Player club CDATA "">
 <!ATTLIST Player egfPin CDATA "">
 <!ATTLIST Player ffgLicence CDATA "">
+<!ATTLIST Player ffgLicenceStatus CDATA "">
+<!ATTLIST Player agaId CDATA "">
+<!ATTLIST Player agaExpirationDate CDATA "">
 <!ATTLIST Player rank CDATA "30K">
 <!ATTLIST Player rating CDATA "-2950">
 <!ATTLIST Player ratingOrigin CDATA "">
@@ -37,6 +41,7 @@
 <!ATTLIST Team teamNumber CDATA #REQUIRED>
 <!ATTLIST Team teamName CDATA #REQUIRED>
 <!ELEMENT Board (#PCDATA)>
+<!ATTLIST Board roundNumber CDATA #REQUIRED>
 <!ATTLIST Board boardNumber CDATA #REQUIRED>
 <!ATTLIST Board player CDATA #REQUIRED>
 
@@ -46,10 +51,15 @@
 <!ATTLIST GeneralParameterSet shortName CDATA "defaultshortname">
 <!ATTLIST GeneralParameterSet name CDATA "defaultname">
 <!ATTLIST GeneralParameterSet location CDATA "location">
+<!ATTLIST GeneralParameterSet director CDATA "director">
 <!ATTLIST GeneralParameterSet beginDate CDATA "2009-01-01">
 <!ATTLIST GeneralParameterSet endDate CDATA "2009-01-01">
-<!ATTLIST GeneralParameterSet time CDATA "60">
-<!ATTLIST GeneralParameterSet byoYomi CDATA "true">
+<!ATTLIST GeneralParameterSet basicTime CDATA "60">
+<!ATTLIST GeneralParameterSet complementaryTimeSystem CDATA "CANBYOYOMI">
+<!ATTLIST GeneralParameterSet stdByoYomiTime CDATA "30">
+<!ATTLIST GeneralParameterSet nbMovesCanTime CDATA "15">
+<!ATTLIST GeneralParameterSet canByoYomiTime CDATA "300">
+<!ATTLIST GeneralParameterSet fischerTime CDATA "5">
 <!ATTLIST GeneralParameterSet size CDATA "19">
 <!ATTLIST GeneralParameterSet komi CDATA "7.5">
 <!ATTLIST GeneralParameterSet numberOfRounds CDATA "5">
@@ -60,6 +70,7 @@
 <!ATTLIST GeneralParameterSet genNBW2ValueBye CDATA "1">
 <!ATTLIST GeneralParameterSet genMMS2ValueAbsent CDATA "1">
 <!ATTLIST GeneralParameterSet genMMS2ValueBye CDATA "1">
+<!ATTLIST GeneralParameterSet genRoundDownNBWMMS CDATA "true">
 
 <!ELEMENT Categories (Category+)>
 <!ELEMENT Category (#PCDATA)>

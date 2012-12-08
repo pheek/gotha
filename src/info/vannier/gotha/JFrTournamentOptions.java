@@ -91,6 +91,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         ckbResetParameters = new javax.swing.JCheckBox();
         grpNewSystem = new javax.swing.ButtonGroup();
         grpHdBase = new javax.swing.ButtonGroup();
+        grpGameFormat = new javax.swing.ButtonGroup();
         btnQuit = new javax.swing.JButton();
         tpnParameters = new javax.swing.JTabbedPane();
         pnlGen = new javax.swing.JPanel();
@@ -236,6 +237,15 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         scpTeamWarning = new javax.swing.JScrollPane();
         txaTeamWarning = new javax.swing.JTextArea();
         btnHelpTeamPlacement = new javax.swing.JButton();
+        pnlDP = new javax.swing.JPanel();
+        jLabel28 = new javax.swing.JLabel();
+        rdbGameFormatFull = new javax.swing.JRadioButton();
+        rdbGameFormatShort = new javax.swing.JRadioButton();
+        jLabel38 = new javax.swing.JLabel();
+        ckbDisplayNumCol = new javax.swing.JCheckBox();
+        ckbDisplayPlCol = new javax.swing.JCheckBox();
+        jLabel39 = new javax.swing.JLabel();
+        ckbDisplayIndGames = new javax.swing.JCheckBox();
         btnPrint = new javax.swing.JButton();
 
         dlgChangeSystem.getContentPane().setLayout(null);
@@ -1380,8 +1390,8 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
 
         ckbSeBarThresholdActive.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         ckbSeBarThresholdActive.setSelected(true);
+        ckbSeBarThresholdActive.setText("for players above Mac-Mahon bar");
         ckbSeBarThresholdActive.setBorder(null);
-        ckbSeBarThresholdActive.setLabel("for players above Mac-Mahon bar");
         ckbSeBarThresholdActive.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 ckbSeBarThresholdActiveFocusLost(evt);
@@ -1532,6 +1542,72 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
 
         tpnParameters.addTab("Team placement", pnlTPL);
 
+        pnlDP.setLayout(null);
+
+        jLabel28.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel28.setText("game Format ");
+        pnlDP.add(jLabel28);
+        jLabel28.setBounds(140, 60, 260, 17);
+
+        grpGameFormat.add(rdbGameFormatFull);
+        rdbGameFormatFull.setText("Full (123+/w4)");
+        rdbGameFormatFull.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                rdbGameFormatFocusLost(evt);
+            }
+        });
+        pnlDP.add(rdbGameFormatFull);
+        rdbGameFormatFull.setBounds(410, 50, 190, 23);
+
+        grpGameFormat.add(rdbGameFormatShort);
+        rdbGameFormatShort.setText("Short (123+)");
+        rdbGameFormatShort.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                rdbGameFormatFocusLost(evt);
+            }
+        });
+        pnlDP.add(rdbGameFormatShort);
+        rdbGameFormatShort.setBounds(410, 80, 190, 23);
+
+        jLabel38.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel38.setText("columns in Standings");
+        pnlDP.add(jLabel38);
+        jLabel38.setBounds(140, 160, 260, 17);
+
+        ckbDisplayNumCol.setText("display Num column");
+        ckbDisplayNumCol.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ckbDisplayNumColFocusLost(evt);
+            }
+        });
+        pnlDP.add(ckbDisplayNumCol);
+        ckbDisplayNumCol.setBounds(410, 150, 190, 23);
+
+        ckbDisplayPlCol.setText("display Pl column");
+        ckbDisplayPlCol.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ckbDisplayPlColFocusLost(evt);
+            }
+        });
+        pnlDP.add(ckbDisplayPlCol);
+        ckbDisplayPlCol.setBounds(410, 180, 190, 23);
+
+        jLabel39.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel39.setText("Matches list (Team tournaments)");
+        pnlDP.add(jLabel39);
+        jLabel39.setBounds(140, 260, 260, 17);
+
+        ckbDisplayIndGames.setText("also display Individual games");
+        ckbDisplayIndGames.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ckbDisplayIndGamesFocusLost(evt);
+            }
+        });
+        pnlDP.add(ckbDisplayIndGames);
+        ckbDisplayIndGames.setBounds(410, 250, 190, 23);
+
+        tpnParameters.addTab("Display and Print", pnlDP);
+
         getContentPane().add(tpnParameters);
         tpnParameters.setBounds(3, 0, 790, 470);
 
@@ -1568,24 +1644,28 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         HandicapParameterSet hps = tps.getHandicapParameterSet();
         PlacementParameterSet pps = tps.getPlacementParameterSet();
         PairingParameterSet paiPS = tps.getPairingParameterSet();
+        DPParameterSet dpps = tps.getDPParameterSet();
         switch (system){
             case TournamentParameterSet.TYPE_MACMAHON :
                 gps.initForMM();
                 hps.initForMM();
                 pps.initForMM();
                 paiPS.initForMM();
+                dpps.initForMM();              
                 break;
             case TournamentParameterSet.TYPE_SWISS:
                 gps.initForSwiss();
                 hps.initForSwiss();
                 pps.initForSwiss();
                 paiPS.initForSwiss();
+                dpps.initForSwiss();
                 break;
             case TournamentParameterSet.TYPE_SWISSCAT :
                 gps.initForSwissCat();
                 hps.initForSwissCat();
                 pps.initForSwissCat();
                 paiPS.initForSwissCat();
+                dpps.initForSwissCat();
                 break;
             default :
                 gps.initForMM();
@@ -1600,11 +1680,6 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         } catch (RemoteException ex) {
             Logger.getLogger(JFrTournamentOptions.class.getName()).log(Level.SEVERE, null, ex);
         }              
-//        try {
-//            tournament.setChangeSinceLastSave(true);
-//        } catch (RemoteException ex) {
-//            Logger.getLogger(JFrTournamentOptions.class.getName()).log(Level.SEVERE, null, ex);
-//        }
         dlgChangeSystem.dispose();
     }//GEN-LAST:event_btnDlgChangeSystemOKActionPerformed
 
@@ -2597,6 +2672,107 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         secCritControlsFocusLost();
     }//GEN-LAST:event_ckbSeBarThresholdActiveFocusLost
 
+    private void rdbGameFormatFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_rdbGameFormatFocusLost
+        TournamentParameterSet tps;
+        DPParameterSet dpps;
+        try {
+            tps = tournament.getTournamentParameterSet();
+            dpps = tps.getDPParameterSet();
+        } catch (RemoteException ex) {
+            Logger.getLogger(JFrTournamentOptions.class.getName()).log(Level.SEVERE, null, ex);
+            return;
+        }   
+        
+        boolean bSomethingHasChanged = false;
+        int newGameFormat = DPParameterSet.DP_GAME_FORMAT_FULL;
+        if (this.rdbGameFormatShort.isSelected())newGameFormat = DPParameterSet.DP_GAME_FORMAT_SHORT;
+        if (newGameFormat != dpps.getGameFormat()){
+            dpps.setGameFormat(newGameFormat);
+            bSomethingHasChanged = true;
+        }
+
+        if (bSomethingHasChanged){
+            try {
+                tournament.setTournamentParameterSet(tps);
+                this.tournamentChanged();
+            } catch (RemoteException ex) {
+                Logger.getLogger(JFrTournamentOptions.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }        
+    }//GEN-LAST:event_rdbGameFormatFocusLost
+
+    private void ckbDisplayNumColFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ckbDisplayNumColFocusLost
+        TournamentParameterSet tps;
+        DPParameterSet dpps;
+        try {
+            tps = tournament.getTournamentParameterSet();
+            dpps = tps.getDPParameterSet();
+        } catch (RemoteException ex) {
+            Logger.getLogger(JFrTournamentOptions.class.getName()).log(Level.SEVERE, null, ex);
+            return;
+        }
+        boolean oldDisplayNumCol  = dpps.isDisplayNumCol();
+        boolean newDisplayNumCol = this.ckbDisplayNumCol.isSelected();
+        
+        if (newDisplayNumCol != oldDisplayNumCol){
+            dpps.setDisplayNumCol(newDisplayNumCol);
+            try {
+                tournament.setTournamentParameterSet(tps);
+                this.tournamentChanged();
+            } catch (RemoteException ex) {
+                Logger.getLogger(JFrTournamentOptions.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_ckbDisplayNumColFocusLost
+
+    private void ckbDisplayPlColFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ckbDisplayPlColFocusLost
+        TournamentParameterSet tps;
+        DPParameterSet dpps;
+        try {
+            tps = tournament.getTournamentParameterSet();
+            dpps = tps.getDPParameterSet();
+        } catch (RemoteException ex) {
+            Logger.getLogger(JFrTournamentOptions.class.getName()).log(Level.SEVERE, null, ex);
+            return;
+        }
+        boolean oldDisplayPlCol  = dpps.isDisplayPlCol();
+        boolean newDisplayPlCol = this.ckbDisplayPlCol.isSelected();
+        
+        if (newDisplayPlCol != oldDisplayPlCol){
+            dpps.setDisplayPlCol(newDisplayPlCol);
+            try {
+                tournament.setTournamentParameterSet(tps);
+                this.tournamentChanged();
+            } catch (RemoteException ex) {
+                Logger.getLogger(JFrTournamentOptions.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }   
+    }//GEN-LAST:event_ckbDisplayPlColFocusLost
+
+    private void ckbDisplayIndGamesFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ckbDisplayIndGamesFocusLost
+        TournamentParameterSet tps;
+        DPParameterSet dpps;
+        try {
+            tps = tournament.getTournamentParameterSet();
+            dpps = tps.getDPParameterSet();
+        } catch (RemoteException ex) {
+            Logger.getLogger(JFrTournamentOptions.class.getName()).log(Level.SEVERE, null, ex);
+            return;
+        }
+        boolean oldDisplayIndGames  = dpps.isDisplayIndGamesInMatches();
+        boolean newDisplayIndGames = this.ckbDisplayIndGames.isSelected();
+        
+        if (newDisplayIndGames != oldDisplayIndGames){
+            dpps.setDisplayIndGamesInMatches(newDisplayIndGames);
+            try {
+                tournament.setTournamentParameterSet(tps);
+                this.tournamentChanged();
+            } catch (RemoteException ex) {
+                Logger.getLogger(JFrTournamentOptions.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }   
+    }//GEN-LAST:event_ckbDisplayIndGamesFocusLost
+
     private void updHdBase(){
         TournamentParameterSet tps;
         try {
@@ -2633,6 +2809,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         initPnlPla();
         initPnlPai();
         initPnlTPl();
+        initPnlDP();
     }
     private void initPnlGen()throws RemoteException{
         if (Gotha.runningMode == Gotha.RUNNING_MODE_CLI) this.txfShortName.setEditable(false);
@@ -2717,6 +2894,11 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
     private void initPnlPai()throws RemoteException{
         updatePnlPai();
     }
+    
+    private void initPnlDP()throws RemoteException{
+        updatePnlDP();
+    }
+
     private void updatePnlGen()throws RemoteException{
         GeneralParameterSet gps = tournament.getTournamentParameterSet().getGeneralParameterSet();
         int tournamentType = tournament.tournamentType();
@@ -2862,9 +3044,8 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         }
         
         this.ckbRoundDown.setSelected(gps.isGenRoundDownNBWMMS());
-        
- 
     }
+    
     private void updatePnlHan()throws RemoteException{
         int tournamentType = tournament.tournamentType();
         if (tournamentType == TournamentParameterSet.TYPE_UNDEFINED){
@@ -2996,6 +3177,16 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         this.ckbSeMinimizeHandicap.setSelected(paiPS.getPaiSeMinimizeHandicap() != 0);
     }    
     
+    private void updatePnlDP()throws RemoteException{
+             DPParameterSet dpps = tournament.getTournamentParameterSet().getDPParameterSet();
+            if (dpps.getGameFormat() == DPParameterSet.DP_GAME_FORMAT_FULL) this.rdbGameFormatFull.setSelected(true);
+            else this.rdbGameFormatShort.setSelected(true);
+            this.ckbDisplayNumCol.setSelected(dpps.isDisplayNumCol());
+            this.ckbDisplayPlCol.setSelected(dpps.isDisplayPlCol());
+            this.ckbDisplayIndGames.setSelected(dpps.isDisplayIndGamesInMatches());
+    }
+
+    
     private void tournamentChanged(){
         try {
             tournament.setLastTournamentModificationTime(tournament.getCurrentTournamentTime());
@@ -3017,6 +3208,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
             updatePnlPla();
             updatePnlPai();
             updatePnlTPl();
+            updatePnlDP();
         } catch (RemoteException ex) {
             Logger.getLogger(JFrTournamentOptions.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -3051,6 +3243,9 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
     private javax.swing.JCheckBox ckbAvoidPairingSamePair;
     private javax.swing.JCheckBox ckbBalanceWB;
     private javax.swing.JCheckBox ckbDeterministic;
+    private javax.swing.JCheckBox ckbDisplayIndGames;
+    private javax.swing.JCheckBox ckbDisplayNumCol;
+    private javax.swing.JCheckBox ckbDisplayPlCol;
     private javax.swing.JCheckBox ckbMinimizeScoreDifference;
     private javax.swing.JCheckBox ckbResetParameters;
     private javax.swing.JCheckBox ckbRoundDown;
@@ -3064,6 +3259,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
     private javax.swing.ButtonGroup grpByeNBW;
     private javax.swing.ButtonGroup grpDUDDLG;
     private javax.swing.ButtonGroup grpDUDDUG;
+    private javax.swing.ButtonGroup grpGameFormat;
     private javax.swing.ButtonGroup grpHdBase;
     private javax.swing.ButtonGroup grpHdCorrection;
     private javax.swing.ButtonGroup grpNewSystem;
@@ -3090,6 +3286,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
@@ -3100,6 +3297,8 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -3115,6 +3314,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
     private javax.swing.JLabel lblSystemName;
     private javax.swing.JPanel pnlBase;
     private javax.swing.JPanel pnlCategories;
+    private javax.swing.JPanel pnlDP;
     private javax.swing.JPanel pnlDUDD;
     private javax.swing.JPanel pnlDUDDLG;
     private javax.swing.JPanel pnlDUDDUG;
@@ -3156,6 +3356,8 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
     private javax.swing.JRadioButton rdbFormerSplitAndFold;
     private javax.swing.JRadioButton rdbFormerSplitAndRandom;
     private javax.swing.JRadioButton rdbFormerSplitAndSlip;
+    private javax.swing.JRadioButton rdbGameFormatFull;
+    private javax.swing.JRadioButton rdbGameFormatShort;
     private javax.swing.JRadioButton rdbHdBaseMMS;
     private javax.swing.JRadioButton rdbHdBaseRank;
     private javax.swing.JRadioButton rdbHdCorrection0;

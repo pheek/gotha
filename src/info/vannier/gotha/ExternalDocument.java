@@ -521,7 +521,6 @@ public class ExternalDocument {
             strReport += "\n" + nbReplacedTeams + " Teams have been replaced.";
         }
 
-//        JOptionPane.showMessageDialog(this, strReport, "Message", JOptionPane.INFORMATION_MESSAGE);        
         return strReport;
     }
 
@@ -880,6 +879,25 @@ public class ExternalDocument {
         paiPS.setPaiSePreferMMSDiffRatherThanSameClub(new Integer(extractNodeValue(nnmPaiPS, "paiSePreferMMSDiffRatherThanSameClub", "3")).intValue());
 
         tps.setPairingParameterSet(paiPS);
+
+        // DPPS
+        DPParameterSet dpps = new DPParameterSet();
+        NodeList nlDPPS = doc.getElementsByTagName("DPParameterSet");
+        Node nDPPS = nlDPPS.item(0);
+        if (nDPPS != null) {
+            NamedNodeMap nnmDPPS = nDPPS.getAttributes();
+            String strGameFormat = extractNodeValue(nnmDPPS, "gameFormat", "full");
+            int gameFormat = DPParameterSet.DP_GAME_FORMAT_FULL;
+            if (strGameFormat.equals("short")) gameFormat = DPParameterSet.DP_GAME_FORMAT_SHORT;
+            dpps.setGameFormat(gameFormat);
+            String strDisplayNumCol = extractNodeValue(nnmDPPS, "displayNumCol", "true");
+            dpps.setDisplayNumCol(Boolean.valueOf(strDisplayNumCol).booleanValue());
+            String strDisplayPlCol = extractNodeValue(nnmDPPS, "displayPlCol", "true");
+            dpps.setDisplayPlCol(Boolean.valueOf(strDisplayPlCol).booleanValue());
+            String strDisplayIndGamesInMatches = extractNodeValue(nnmDPPS, "displayIndGamesInMatches", "true");
+            dpps.setDisplayIndGamesInMatches(Boolean.valueOf(strDisplayIndGamesInMatches).booleanValue());
+        }
+        tps.setDPParameterSet(dpps);
 
         return tps;
     }
@@ -1406,7 +1424,7 @@ public class ExternalDocument {
             Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        String[][] hG = ScoredPlayer.halfGamesStrings(alOrderedScoredPlayers, roundNumber, tps);
+        String[][] hG = ScoredPlayer.halfGamesStrings(alOrderedScoredPlayers, roundNumber, tps, true);
         String[] strPlace = ScoredPlayer.positionStrings(alOrderedScoredPlayers, roundNumber, tps);
         for (int iSP = 0; iSP < alOrderedScoredPlayers.size(); iSP++) {
             ScoredPlayer sP = alOrderedScoredPlayers.get(iSP);
@@ -1549,7 +1567,10 @@ public class ExternalDocument {
             Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        String[][] hG = ScoredPlayer.halfGamesStrings(alOrderedScoredPlayers, roundNumber, tps);
+        boolean bFull = true; 
+        int gameFormat = tps.getDPParameterSet().getGameFormat();
+        if (gameFormat == DPParameterSet.DP_GAME_FORMAT_SHORT) bFull = false;
+        String[][] hG = ScoredPlayer.halfGamesStrings(alOrderedScoredPlayers, roundNumber, tps, bFull);
         String[] strPlace = ScoredPlayer.positionStrings(alOrderedScoredPlayers, roundNumber, tps);
         for (int iSP = 0; iSP < alOrderedScoredPlayers.size(); iSP++) {
             ScoredPlayer sP = alOrderedScoredPlayers.get(iSP);
@@ -1902,8 +1923,6 @@ public class ExternalDocument {
 
         Writer output = null;
         try {
-//            FileOutputStream fos = new FileOutputStream(f);
-//            output = new BufferedWriter(new OutputStreamWriter(fos, DEFAULT_CHARSET));
             output = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(f), DEFAULT_CHARSET));
         } catch (IOException ex) {
             Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
@@ -1923,7 +1942,11 @@ public class ExternalDocument {
 
             output.write("<h1 align=\"center\">" + gps.getName() + "</h1>");
             output.write("<table align=\"center\" class=\"simple\">");
-            output.write("\n<th class=\"left\">&nbsp;Num&nbsp;</th>" + "<th class=\"left\">&nbsp;Pl&nbsp;</th>" + "<th class=\"middle\">&nbsp;Name&nbsp;</th>" + "<th class=\"middle\">&nbsp;Rank&nbsp;</th>" + "<th class=\"middle\">&nbsp;Co </th>" + "<th class=\"middle\">&nbsp;Club&nbsp;</th>" + "<th class=\"middle\">&nbsp;NbW&nbsp;</th>");
+            if (tps.getDPParameterSet().isDisplayNumCol())
+                output.write("\n<th class=\"left\">&nbsp;Num&nbsp;</th>");
+            if (tps.getDPParameterSet().isDisplayPlCol())
+                output.write("\n<th class=\"left\">&nbsp;Pl&nbsp;</th>");
+            output.write("\n<th class=\"middle\">&nbsp;Name&nbsp;</th>" + "<th class=\"middle\">&nbsp;Rank&nbsp;</th>" + "<th class=\"middle\">&nbsp;Co </th>" + "<th class=\"middle\">&nbsp;Club&nbsp;</th>" + "<th class=\"middle\">&nbsp;NbW&nbsp;</th>");
             for (int r = 0; r < gps.getNumberOfRounds(); r++) {
                 output.write("<th class=\"middle\">R&nbsp;" + (r + 1) + "&nbsp;</th>");
             }
@@ -1953,8 +1976,11 @@ public class ExternalDocument {
         } catch (RemoteException ex) {
             Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
         }
+        boolean bFull = true; 
+        int gameFormat = tps.getDPParameterSet().getGameFormat();
+        if (gameFormat == DPParameterSet.DP_GAME_FORMAT_SHORT) bFull = false;
 
-        String[][] hG = ScoredPlayer.halfGamesStrings(alOrderedScoredPlayers, roundNumber, tps);
+        String[][] hG = ScoredPlayer.halfGamesStrings(alOrderedScoredPlayers, roundNumber, tps, bFull);
         String[] strPlace = ScoredPlayer.positionStrings(alOrderedScoredPlayers, roundNumber, tps);
         try {
             for (int iSP = 0; iSP < alOrderedScoredPlayers.size(); iSP++) {
@@ -1966,8 +1992,10 @@ public class ExternalDocument {
                 }
                 String strAlCenter = " align=\"center\"";
 
-                output.write("<td class=" + strPar + " align=\"right\">" + (iSP + 1) + "&nbsp;</td>");
-                output.write("<td class=" + strPar + " align=\"right\">" + strPlace[iSP] + "&nbsp;</td>");
+                if (tps.getDPParameterSet().isDisplayNumCol())
+                    output.write("<td class=" + strPar + " align=\"right\">" + (iSP + 1) + "&nbsp;</td>");
+                if (tps.getDPParameterSet().isDisplayPlCol())
+                    output.write("<td class=" + strPar + " align=\"right\">" + strPlace[iSP] + "&nbsp;</td>");
                 String strNF = sP.fullName();
                 output.write("<td class=" + strPar + ">" + strNF + "</td>");
                 String strRank = Player.convertIntToKD(sP.getRank());
@@ -2747,6 +2775,27 @@ public class ExternalDocument {
         emPairingParameterSet.setAttribute("paiSePreferMMSDiffRatherThanSameClub", "" + paiPS.getPaiSePreferMMSDiffRatherThanSameClub());
 
         emTournamentParameterSet.appendChild(emPairingParameterSet);
+
+        // DPParameterSet
+        DPParameterSet dpps = tps.getDPParameterSet();
+        Element emDPParameterSet = document.createElement("DPParameterSet");
+        String strGameFormat;
+        switch (dpps.getGameFormat()) {
+            case DPParameterSet.DP_GAME_FORMAT_FULL:
+                strGameFormat = "full";
+                break;
+            case DPParameterSet.DP_GAME_FORMAT_SHORT:
+                strGameFormat = "short";
+                break;
+            default:
+                strGameFormat = "full";
+        }
+        emDPParameterSet.setAttribute("gameFormat", strGameFormat);
+        emDPParameterSet.setAttribute("displayNumCol", Boolean.valueOf(dpps.isDisplayNumCol()).toString());
+        emDPParameterSet.setAttribute("displayPlCol", Boolean.valueOf(dpps.isDisplayPlCol()).toString());
+        emDPParameterSet.setAttribute("displayIndGamesInMatches", Boolean.valueOf(dpps.isDisplayIndGamesInMatches()).toString());
+
+        emTournamentParameterSet.appendChild(emDPParameterSet);
 
         return emTournamentParameterSet;
 

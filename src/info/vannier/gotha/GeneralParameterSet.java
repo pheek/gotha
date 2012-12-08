@@ -252,7 +252,6 @@ public class GeneralParameterSet implements java.io.Serializable{
         this.numberOfCategories = numberOfCategories;
 
         if (numberOfCategories <= 0){
-            System.out.println("Internal issue. Number of categories < = 0");
             numberOfCategories = 1;
         }
 

@@ -60,10 +60,23 @@ public class Team implements java.io.Serializable{
     public Player getTeamMember(int roundNumber, int boardNumber){
         if (roundNumber >= teamMembers.length || roundNumber < 0) return null;
         if (boardNumber >= teamMembers[0].length || boardNumber < 0) return null;
-       if (boardNumber >= teamMembers.length || boardNumber < 0) return null;
+        if (boardNumber >= teamMembers.length || boardNumber < 0) return null;
         else{
             return teamMembers[roundNumber][boardNumber];
         }
+    }
+    
+    public int boardNumber(int roundNumber, Player player){
+        int bn = -1;
+        for (int ib = 0; ib <Gotha.MAX_NUMBER_OF_MEMBERS_BY_TEAM; ib++ ){
+            Player p = this.getTeamMember(roundNumber, ib);
+            if (p == null) continue;
+            if (p.hasSameKeyString(player)){
+                bn = ib;
+                break;
+            }
+        }
+        return bn;
     }
 
     /**

@@ -48,14 +48,12 @@ public class Match implements java.io.Serializable{
             if(wtp == null) continue;
             if(btp == null) continue;
             Game g = tournament.getGame(roundNumber, wtp);
-            if (g == null) return null;
+            if (g == null) continue;
 //            match.wResults[ib] = g.getWX2(wtp);
 //            match.bResults[ib] = g.getWX2(btp);
 
             match.wResults[ib] = tournament.getWX2(g, wtp);
             match.bResults[ib] = tournament.getWX2(g, btp);
-
-        
         }
         return match;
     }

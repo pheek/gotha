@@ -3,22 +3,29 @@
  */
 package info.vannier.gotha;
 
-import java.rmi.*;
-
-import java.net.*;
-import java.awt.*;
 import java.awt.PageAttributes.OriginType;
-import java.awt.event.*;
-import java.util.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.rmi.RemoteException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.*;
-import javax.swing.table.*;
+import java.util.prefs.Preferences;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.io.*;
-import java.net.URL;
-import java.util.prefs.Preferences;
+import javax.swing.JCheckBox;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.ListSelectionModel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -1254,6 +1261,9 @@ public class JFrPlayersManager extends javax.swing.JFrame {
 
         } else if (this.playerMode == JFrPlayersManager.PLAYER_MODE_MODIF) {
             try {
+                if (tournament.isPlayerImplied(p)){
+                    p.setRegisteringStatus("FIN");
+                }
                 tournament.modifyPlayer(playerInModification, p);
                 resetRatingListControls();
             } catch (RemoteException ex) {
