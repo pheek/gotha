@@ -16,10 +16,6 @@ import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author Luc Vannier
- */
 public class RatingList {
     public static final int TYPE_UNDEFINED = 0;
     public static final int TYPE_EGF = 1;
@@ -114,17 +110,17 @@ public class RatingList {
                 if (pos >= 0) {
                     strPublicationDate = strLine.substring(pos + 11, strLine.length());
                 }
-                if (strLine.length() < 45) continue;
+                if (strLine.length() < 58) continue;
                 
-                String strNF = strLine.substring(0, 25);
+                String strNF = strLine.substring(0, 38);
                 if (strNF.matches("[a-zA-Z].*")){
                     pos = strNF.indexOf(" ");
                     String strName = strNF.substring(0, pos).trim();
                     String strFirstName = strNF.substring(pos + 1, strNF.length()).trim();
-                    int rating = new Integer(strLine.substring(25, 30).trim()).intValue();
-                    String strFfgLicenceStatus = strLine.substring(31, 32); 
-                    String strFfgLicence = strLine.substring(33, 40);
-                    String strCC = strLine.substring(41, 45).trim();
+                    int rating = new Integer(strLine.substring(38, 43).trim()).intValue();
+                    String strFfgLicenceStatus = strLine.substring(44, 45); 
+                    String strFfgLicence = strLine.substring(46, 53);
+                    String strCC = strLine.substring(54, 58).trim();
                     String strCountry;
                     String strClub;
                     if (strCC.length() <= 2){

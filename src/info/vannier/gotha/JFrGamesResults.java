@@ -97,8 +97,6 @@ public class JFrGamesResults extends javax.swing.JFrame {
     private void initGamesComponents() {
 
         JFrGotha.formatColumn(tblGames, TABLE_NUMBER_COL, "Table", TABLE_NUMBER_WIDTH, JLabel.RIGHT, JLabel.RIGHT);
-//        JFrGotha.formatColumn(tblGames, WHITE_PLAYER_COL, "White", PLAYER_WIDTH, JLabel.LEFT, JLabel.CENTER);
-//        JFrGotha.formatColumn(tblGames, BLACK_PLAYER_COL, "Black", PLAYER_WIDTH, JLabel.LEFT, JLabel.CENTER);
         JFrGotha.formatColumn(tblGames, LEFT_PLAYER_COL, "", PLAYER_WIDTH, JLabel.LEFT, JLabel.CENTER);
         JFrGotha.formatColumn(tblGames, RIGHT_PLAYER_COL, "", PLAYER_WIDTH, JLabel.LEFT, JLabel.CENTER);
         JFrGotha.formatColumn(tblGames, HANDICAP_COL, "Hd", HANDICAP_WIDTH, JLabel.CENTER, JLabel.CENTER);
@@ -168,8 +166,9 @@ public class JFrGamesResults extends javax.swing.JFrame {
         Collections.sort(alCM, matchComparator);
 
         DefaultTableModel model = (DefaultTableModel) tblM.getModel();
-        model.setRowCount((teamSize + 1) * alCM.size());
-
+        int numberOfLines = (teamSize + 1) * alCM.size();
+        model.setRowCount(numberOfLines);
+        
         int ln = 0;
         for (ComparableMatch cm : alCM) {
             Match m = null;
@@ -178,7 +177,8 @@ public class JFrGamesResults extends javax.swing.JFrame {
             } catch (RemoteException ex) {
                 Logger.getLogger(JFrGamesResults.class.getName()).log(Level.SEVERE, null, ex);
             }
-
+            if (m == null) continue;
+            
             int wResult = m.getTeamScore(m.getWhiteTeam());
             int bResult = m.getTeamScore(m.getBlackTeam());
             String strWTeamResult = "" + Gotha.formatFractNumber(wResult, 1);
@@ -197,7 +197,10 @@ public class JFrGamesResults extends javax.swing.JFrame {
             for (int ib = 0; ib < teamSize; ib++) {
                 Game g = null;
                 try {
-                    g = tournament.getGame(processedRoundNumber, m.getWhiteTeam().getTeamMember(processedRoundNumber, ib));
+                    Player wPlayer = m.getWhiteTeam().getTeamMember(processedRoundNumber, ib);
+                    Player bPlayer = m.getBlackTeam().getTeamMember(processedRoundNumber, ib);                   
+                    g = tournament.getGame(processedRoundNumber, wPlayer);
+                    if (!bPlayer.hasSameKeyString(tournament.opponent(g, wPlayer))) g = null;
                 } catch (RemoteException ex) {
                     Logger.getLogger(JFrGamesResults.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -640,10 +643,9 @@ public class JFrGamesResults extends javax.swing.JFrame {
                 return true;
             }
             wP = g.getWhitePlayer();
+            if (wP == null) return true;
             m = tournament.getMatch(rn, tn);
-            if (wP == null) {
-                return true;
-            }
+            if (m == null) return true;
             bT = m.getBlackTeam();
         } catch (RemoteException ex) {
             Logger.getLogger(JFrGamesResults.class.getName()).log(Level.SEVERE, null, ex);

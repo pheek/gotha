@@ -275,11 +275,6 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         rdbSwissCat.setToolTipText("Because of possible games with a big rank difference, this system is not usually recommended");
         rdbSwissCat.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         rdbSwissCat.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        rdbSwissCat.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rdbSwissCatActionPerformed(evt);
-            }
-        });
         dlgChangeSystem.getContentPane().add(rdbSwissCat);
         rdbSwissCat.setBounds(180, 170, 170, 13);
 
@@ -689,11 +684,6 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         ckbRoundDown.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         ckbRoundDown.setSelected(true);
         ckbRoundDown.setText("Round down NBW and MMS scores");
-        ckbRoundDown.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ckbRoundDownActionPerformed(evt);
-            }
-        });
         ckbRoundDown.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 ckbRoundDownFocusLost(evt);
@@ -1545,7 +1535,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         pnlDP.setLayout(null);
 
         jLabel28.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel28.setText("game Format ");
+        jLabel28.setText("Game Format ");
         pnlDP.add(jLabel28);
         jLabel28.setBounds(140, 60, 260, 17);
 
@@ -1570,9 +1560,9 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         rdbGameFormatShort.setBounds(410, 80, 190, 23);
 
         jLabel38.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel38.setText("columns in Standings");
+        jLabel38.setText("Columns in Standings");
         pnlDP.add(jLabel38);
-        jLabel38.setBounds(140, 160, 260, 17);
+        jLabel38.setBounds(140, 150, 260, 17);
 
         ckbDisplayNumCol.setText("display Num column");
         ckbDisplayNumCol.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1595,7 +1585,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         jLabel39.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel39.setText("Matches list (Team tournaments)");
         pnlDP.add(jLabel39);
-        jLabel39.setBounds(140, 260, 260, 17);
+        jLabel39.setBounds(140, 250, 260, 17);
 
         ckbDisplayIndGames.setText("also display Individual games");
         ckbDisplayIndGames.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -2631,10 +2621,6 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         updHdCorrection();
     }//GEN-LAST:event_rdbHdCorrectionActionPerformed
 
-    private void ckbRoundDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckbRoundDownActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ckbRoundDownActionPerformed
-
     private void ckbRoundDownFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ckbRoundDownFocusLost
         TournamentParameterSet tps;
         GeneralParameterSet gps;
@@ -2663,10 +2649,6 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         }
 
     }//GEN-LAST:event_ckbRoundDownFocusLost
-
-    private void rdbSwissCatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbSwissCatActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rdbSwissCatActionPerformed
 
     private void ckbSeBarThresholdActiveFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ckbSeBarThresholdActiveFocusLost
         secCritControlsFocusLost();

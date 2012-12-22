@@ -1132,7 +1132,8 @@ public class JFrPlayersManager extends javax.swing.JFrame {
                 break;
             case RatingList.TYPE_FFG:
                 lblRatingList.setText("Searching for FFG rating list");
-                ratingList = new RatingList(RatingList.TYPE_FFG, new File(Gotha.runningDirectory, "ratinglists/ech_ffg.txt"));
+//                ratingList = new RatingList(RatingList.TYPE_FFG, new File(Gotha.runningDirectory, "ratinglists/ech_ffg.txt"));
+                ratingList = new RatingList(RatingList.TYPE_FFG, new File(Gotha.runningDirectory, "ratinglists/ech_ffg_new.txt"));
                 break;
             case RatingList.TYPE_AGA:
                 lblRatingList.setText("Searching for AGA rating list");
@@ -1390,8 +1391,8 @@ public class JFrPlayersManager extends javax.swing.JFrame {
                 strPrompt = "Download EGF Rating List from :";
                 break;
             case RatingList.TYPE_FFG:
-                strDefaultURL = "http://ffg.jeudego.org/echelle/echtxt/ech_ffg.txt";
-                fDefaultFile = new File(Gotha.runningDirectory, "ratinglists/ech_ffg.txt");
+                strDefaultURL = "http://ffg.jeudego.org/echelle/echtxt/ech_ffg_new.txt";
+                fDefaultFile = new File(Gotha.runningDirectory, "ratinglists/ech_ffg_new.txt");
                 strPrompt = "Download FFG Rating List from :";
                 break;
             case RatingList.TYPE_AGA:

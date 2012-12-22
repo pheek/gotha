@@ -1083,7 +1083,6 @@ public class JFrTeamsManager extends javax.swing.JFrame {
             Logger.getLogger(JFrTeamsManager.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.tournamentChanged();
-       // TODO add your handling code here:
     }//GEN-LAST:event_mniUnteamOneTeamAllRoundsActionPerformed
 
     private void mniUnteamAllTeamsAllRoundsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniUnteamAllTeamsAllRoundsActionPerformed
@@ -1096,7 +1095,6 @@ public class JFrTeamsManager extends javax.swing.JFrame {
             Logger.getLogger(JFrTeamsManager.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.tournamentChanged();
-        // TODO add your handling code here:
     }//GEN-LAST:event_mniUnteamAllTeamsAllRoundsActionPerformed
 
     private void mniReorderMembersOfOneTeamAllRoundsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniReorderMembersOfOneTeamAllRoundsActionPerformed

@@ -498,7 +498,7 @@ public class JFrGotha extends javax.swing.JFrame {
         pnlWelcome.setLayout(null);
 
         lblTournamentPicture.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTournamentPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/info/vannier/gotha/TournoiParis615X312.JPG"))); // NOI18N
+        lblTournamentPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/info/vannier/gotha/claira242X311.jpg"))); // NOI18N
         pnlWelcome.add(lblTournamentPicture);
         lblTournamentPicture.setBounds(77, 5, 615, 312);
 
@@ -506,7 +506,7 @@ public class JFrGotha extends javax.swing.JFrame {
         lblFlowChart.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblFlowChart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/info/vannier/gotha/flowchart.jpg"))); // NOI18N
         pnlWelcome.add(lblFlowChart);
-        lblFlowChart.setBounds(40, 320, 724, 180);
+        lblFlowChart.setBounds(20, 320, 760, 190);
 
         tpnGotha.addTab("Welcome", pnlWelcome);
 
@@ -931,7 +931,7 @@ public class JFrGotha extends javax.swing.JFrame {
         tpnGotha.addTab("Teams Standings", pnlTeamsStandings);
 
         getContentPane().add(tpnGotha);
-        tpnGotha.setBounds(-10, 10, 970, 640);
+        tpnGotha.setBounds(-10, 10, 970, 550);
 
         mnuMain.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
