@@ -22,9 +22,9 @@
 <Player agaExpirationDate="" agaId="" club="xxx" country="IL" egfPin="14825580" ffgLicence="" ffgLicenceStatus="" firstName="Ben-David" name="Reem" participating="11111111111111111111" rank="2D" rating="1653" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="" country="JP" egfPin="" ffgLicence="" ffgLicenceStatus="" firstName="Kaichi" name="Suzuki" participating="11111111111111111111" rank="6D" rating="2600" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="" country="SG" egfPin="" ffgLicence="" ffgLicenceStatus="" firstName="Jun Zhe Malcus" name="Poh" participating="11111111111111111111" rank="4D" rating="2400" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
-<Player agaExpirationDate="" agaId="" club="56Lo" country="FR" egfPin="14525643" ffgLicence="" ffgLicenceStatus="" firstName="Mathieu" name="Delli-Zotti" participating="11111111111111111111" rank="2D" rating="2144" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
-<Player agaExpirationDate="" agaId="" club="Wien" country="AT" egfPin="15437598" ffgLicence="" ffgLicenceStatus="" firstName="Schayan" name="Hamrah" participating="11111111111111111111" rank="4D" rating="2385" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="NoCb" country="UK" egfPin="12086316" ffgLicence="" ffgLicenceStatus="" firstName="Jon" name="Diamond" participating="11111111111111111111" rank="4D" rating="2291" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="" club="Wien" country="AT" egfPin="15437598" ffgLicence="" ffgLicenceStatus="" firstName="Schayan" name="Hamrah" participating="11111111111111111111" rank="4D" rating="2385" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="" club="56Lo" country="FR" egfPin="14525643" ffgLicence="" ffgLicenceStatus="" firstName="Mathieu" name="Delli-Zotti" participating="11111111111111111111" rank="2D" rating="2144" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="" country="CA" egfPin="" ffgLicence="" ffgLicenceStatus="" firstName="Irene" name="Sha" participating="11111111111111111111" rank="6D" rating="2600" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Camb" country="UK" egfPin="14337147" ffgLicence="" ffgLicenceStatus="" firstName="Andrew" name="Simons" participating="11111111111111111111" rank="3D" rating="2289" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="xxx" country="US" egfPin="15049870" ffgLicence="" ffgLicenceStatus="" firstName="Matthew" name="Burrall" participating="11111111111111111111" rank="7D" rating="2603" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
@@ -50,8 +50,8 @@
 <Player agaExpirationDate="" agaId="" club="Sing" country="SG" egfPin="15025351" ffgLicence="" ffgLicenceStatus="" firstName="Jie-Hui" name="Kwa" participating="11111111111111111111" rank="4D" rating="2316" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Roes" country="BE" egfPin="14286206" ffgLicence="" ffgLicenceStatus="" firstName="Kristof" name="Bossee" participating="11111111111111111111" rank="1D" rating="1955" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="LlN" country="BE" egfPin="13450140" ffgLicence="" ffgLicenceStatus="" firstName="Benjamin" name="Gigot" participating="11111111111111111111" rank="3D" rating="2229" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
-<Player agaExpirationDate="" agaId="" club="MGC" country="IL" egfPin="13625315" ffgLicence="" ffgLicenceStatus="" firstName="Amir" name="Fragman" participating="11111111111111111111" rank="4D" rating="2342" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Trie" country="IT" egfPin="13049520" ffgLicence="" ffgLicenceStatus="" firstName="Davide" name="Bertok" participating="11111111111111111111" rank="8K" rating="1258" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="" club="MGC" country="IL" egfPin="13625315" ffgLicence="" ffgLicenceStatus="" firstName="Amir" name="Fragman" participating="11111111111111111111" rank="4D" rating="2342" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="" country="MO" egfPin="" ffgLicence="" ffgLicenceStatus="" firstName="Ngai Lon" name="Wong" participating="11111111111111111111" rank="5D" rating="2500" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
 </Players>
 <Games>
@@ -151,22 +151,22 @@
 <Game blackPlayer="SURMAMATEUSZ" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="5" tableNumber="10" whitePlayer="YUJIN"/>
 <Game blackPlayer="SHAIRENE" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="5" tableNumber="11" whitePlayer="FRAGMANAMIR"/>
 <Game blackPlayer="REEMBEN-DAVID" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="5" tableNumber="12" whitePlayer="HUANGANDREW"/>
-<Game blackPlayer="LUYU-HUA" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="3" tableNumber="3" whitePlayer="TICHYANTONIN"/>
 <Game blackPlayer="GIGOTBENJAMIN" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="5" tableNumber="22" whitePlayer="REHMROBERT"/>
-<Game blackPlayer="CHEONGMENGHOU" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="5" tableNumber="21" whitePlayer="TOMARUXANDRA"/>
+<Game blackPlayer="LUYU-HUA" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="3" tableNumber="3" whitePlayer="TICHYANTONIN"/>
 <Game blackPlayer="TANJIA-CHENG" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="3" tableNumber="4" whitePlayer="SURMAMATEUSZ"/>
-<Game blackPlayer="BOSSEEKRISTOF" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="5" tableNumber="24" whitePlayer="KUIN-DUBIELMARIKA"/>
+<Game blackPlayer="CHEONGMENGHOU" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="5" tableNumber="21" whitePlayer="TOMARUXANDRA"/>
 <Game blackPlayer="LOSHENG-CHIEH" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="3" tableNumber="1" whitePlayer="PODPERALUKAS"/>
-<Game blackPlayer="AAIJRENE" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="5" tableNumber="23" whitePlayer="VANDENBONBRAM"/>
+<Game blackPlayer="BOSSEEKRISTOF" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="5" tableNumber="24" whitePlayer="KUIN-DUBIELMARIKA"/>
 <Game blackPlayer="DANEKVLADIMIR" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="3" tableNumber="2" whitePlayer="HSUHAO-HUNG"/>
-<Game blackPlayer="SMITHPAUL" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="5" tableNumber="18" whitePlayer="ALIBERTIEMANUELE"/>
+<Game blackPlayer="AAIJRENE" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="5" tableNumber="23" whitePlayer="VANDENBONBRAM"/>
 <Game blackPlayer="NOGUCHIKOHICHI" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="3" tableNumber="7" whitePlayer="LOUWAN-KAO"/>
-<Game blackPlayer="MARCONIANNA" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="5" tableNumber="17" whitePlayer="DIAMONDJON"/>
+<Game blackPlayer="SMITHPAUL" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="5" tableNumber="18" whitePlayer="ALIBERTIEMANUELE"/>
 <Game blackPlayer="WONGNGAILON" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="3" tableNumber="8" whitePlayer="HARAHIDETAKA"/>
-<Game blackPlayer="SUCIUIRINA" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="5" tableNumber="20" whitePlayer="WONGNGAILON"/>
+<Game blackPlayer="MARCONIANNA" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="5" tableNumber="17" whitePlayer="DIAMONDJON"/>
 <Game blackPlayer="FRAGMANAMIR" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="3" tableNumber="5" whitePlayer="ZHANGXIANG"/>
-<Game blackPlayer="POHJUNZHEMALCUS" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="3" tableNumber="6" whitePlayer="REEMBEN-DAVID"/>
+<Game blackPlayer="SUCIUIRINA" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="5" tableNumber="20" whitePlayer="WONGNGAILON"/>
 <Game blackPlayer="LOUWAN-KAO" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="5" tableNumber="19" whitePlayer="AVRAMLAURA"/>
+<Game blackPlayer="POHJUNZHEMALCUS" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="3" tableNumber="6" whitePlayer="REEMBEN-DAVID"/>
 <Game blackPlayer="SPIEGELLOTHAR" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="3" tableNumber="11" whitePlayer="SHAIRENE"/>
 <Game blackPlayer="SONGAMIRA" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="3" tableNumber="12" whitePlayer="HAMRAHSCHAYAN"/>
 <Game blackPlayer="SUZUKIKAICHI" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="3" tableNumber="9" whitePlayer="CHEONGMENGHOU"/>
@@ -930,7 +930,7 @@
 <Board boardNumber="3" player="HUANGANDREW" roundNumber="2"/>
 <Board boardNumber="1" player="YUJIN" roundNumber="3"/>
 <Board boardNumber="2" player="SHAIRENE" roundNumber="3"/>
-<Board boardNumber="3" player="HUANGANDREW" roundNumber="3"/>
+<Board boardNumber="3" player="SONGAMIRA" roundNumber="3"/>
 <Board boardNumber="1" player="YUJIN" roundNumber="4"/>
 <Board boardNumber="2" player="SHAIRENE" roundNumber="4"/>
 <Board boardNumber="3" player="HUANGANDREW" roundNumber="4"/>
@@ -1183,7 +1183,8 @@
 <PlacementCriterion name="NULL" number="6"/>
 </PlacementCriteria>
 </PlacementParameterSet>
-<PairingParameterSet paiBaAvoidDuplGame="500000000000000" paiBaBalanceWB="1000000" paiBaDeterministic="false" paiBaRandom="0" paiMaAdditionalPlacementCritSystem1="Rating" paiMaAdditionalPlacementCritSystem2="Rating" paiMaAvoidMixingCategories="0" paiMaDUDDLowerMode="MID" paiMaDUDDUpperMode="MID" paiMaDUDDWeight="100000000" paiMaLastRoundForSeedSystem1="2" paiMaMaximizeSeeding="5000000" paiMaMinimizeScoreDifference="100000000000" paiMaSeedSystem1="SPLITANDSLIP" paiSeAvoidSameGeo="0" paiSeDefSecCrit="20000000000000" paiSeMinimizeHandicap="0" paiSeNbWinsThresholdActive="true" paiSePreferMMSDiffRatherThanSameClub="0" paiSePreferMMSDiffRatherThanSameCountry="0" paiSeRankThreshold="30K" paiStandardNX1Factor="0.5"/>
+<PairingParameterSet paiBaAvoidDuplGame="500000000000000" paiBaBalanceWB="1000000" paiBaDeterministic="false" paiBaRandom="0" paiMaAdditionalPlacementCritSystem1="Rating" paiMaAdditionalPlacementCritSystem2="Rating" paiMaAvoidMixingCategories="0" paiMaDUDDLowerMode="MID" paiMaDUDDUpperMode="MID" paiMaDUDDWeight="100000000" paiMaLastRoundForSeedSystem1="2" paiMaMaximizeSeeding="5000000" paiMaMinimizeScoreDifference="100000000000" paiMaSeedSystem1="SPLITANDSLIP" paiSeAvoidSameGeo="0" paiSeBarThresholdActive="true" paiSeDefSecCrit="20000000000000" paiSeMinimizeHandicap="0" paiSeNbWinsThresholdActive="true" paiSePreferMMSDiffRatherThanSameClub="0" paiSePreferMMSDiffRatherThanSameCountry="0" paiSeRankThreshold="30K" paiStandardNX1Factor="0.5"/>
+<DPParameterSet displayIndGamesInMatches="true" displayNumCol="true" displayPlCol="true" gameFormat="full"/>
 </TournamentParameterSet>
 <TeamTournamentParameterSet>
 <TeamGeneralParameterSet teamSize="3"/>

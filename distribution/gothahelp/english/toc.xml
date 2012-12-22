@@ -29,6 +29,7 @@
             <tocitem text="Placement parameters" target="Placement parameters" />
             <tocitem text="Pairing parameters" target="Pairing parameters" />
             <tocitem text="Team Placement parameters" target="Team Placement parameters" />
+            <tocitem text="Display and Print parameters" target="Display and Print parameters" />
         </tocitem>
         <tocitem text="Games Options" target="Games Options" />
         <tocitem text="Preferences frame" target="Preferences frame" />

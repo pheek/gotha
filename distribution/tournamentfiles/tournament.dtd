@@ -45,7 +45,7 @@
 <!ATTLIST Board boardNumber CDATA #REQUIRED>
 <!ATTLIST Board player CDATA #REQUIRED>
 
-<!ELEMENT TournamentParameterSet (GeneralParameterSet?, HandicapParameterSet?, PlacementParameterSet?, PairingParameterSet?)>
+<!ELEMENT TournamentParameterSet (GeneralParameterSet?, HandicapParameterSet?, PlacementParameterSet?, PairingParameterSet?, DPParameterSet?)>
 
 <!ELEMENT GeneralParameterSet (Categories?)>
 <!ATTLIST GeneralParameterSet shortName CDATA "defaultshortname">
@@ -89,6 +89,16 @@
 <!ATTLIST PlacementCriterion number CDATA "1">
 <!ATTLIST PlacementCriterion name CDATA "MMS">
 
+<!ATTLIST HandicapParameterSet hdNoHdRankThreshold CDATA "1D">
+<!ATTLIST HandicapParameterSet hdCorrection CDATA "1">
+<!ATTLIST HandicapParameterSet hdCeiling CDATA "9">
+
+<!ELEMENT DPParameterSet (#PCDATA)>
+<!ATTLIST DPParameterSet gameFormat CDATA "full">
+<!ATTLIST DPParameterSet displayNumCol CDATA "true">
+<!ATTLIST DPParameterSet displayPlCol CDATA "true">
+<!ATTLIST DPParameterSet displayIndividualGamesInMatches CDATA "true">
+
 <!ELEMENT PairingParameterSet (#PCDATA)>
 <!ATTLIST PairingParameterSet paiStandardNX1Factor                      CDATA "0.5">
 <!ATTLIST PairingParameterSet paiBaAvoidDuplGame                        CDATA "500000000000000">
@@ -106,6 +116,7 @@
 <!ATTLIST PairingParameterSet paiMaSeedSystem2                          CDATA "SPLITANDFOLD">
 <!ATTLIST PairingParameterSet paiMaAdditionalPlacementCritSystem1       CDATA "RATING">
 <!ATTLIST PairingParameterSet paiMaAdditionalPlacementCritSystem2       CDATA "NULL">
+<!ATTLIST PairingParameterSet paiSeBarThresholdActive                   CDATA "true">
 <!ATTLIST PairingParameterSet paiSeRankThreshold                        CDATA "4D">
 <!ATTLIST PairingParameterSet paiSeNbWinsThresholdActive                CDATA "true">
 <!ATTLIST PairingParameterSet paiSeDefSecCrit                           CDATA "100000000000">
