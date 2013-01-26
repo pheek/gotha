@@ -3393,9 +3393,6 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
         DefaultTableCellRenderer dtcr = new DefaultTableCellRenderer();
         dtcr.setHorizontalAlignment( align );
         tcm.getColumn(col).setCellRenderer( dtcr );
-
-        
-
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

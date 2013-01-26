@@ -1,5 +1,10 @@
+OpenGothaV3.31
+**************
+26/01/2013
+Bug Fix     Team pairing did not work in some circumstances. Fixed
+
 OpenGothaV3.30
-*****************
+**************
 22/12/2012
 New         New Format for FFG rating list : ech_ffg_new
 New         Game results frame can be displayed with a team presentation
@@ -10,7 +15,6 @@ New         Swisscat system is back
 Bug Fix     SOSW-2 calculation was wrong. Fixed.
 New         A new pairing parameter : Applying secondary criteria for players above MacMahon bar
 New         Number of categories limit is set to 9 instead of 5
-
 
 OpenGothaV3.29
 **************

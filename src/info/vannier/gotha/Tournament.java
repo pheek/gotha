@@ -590,6 +590,7 @@ public class Tournament extends UnicastRemoteObject implements TournamentInterfa
 
     @Override
     public boolean removeGame(Game g) throws TournamentException, RemoteException {
+        if (g == null) return false;
         int r = g.getRoundNumber();
         int t = g.getTableNumber();
         Integer key = r * Gotha.MAX_NUMBER_OF_TABLES + t;

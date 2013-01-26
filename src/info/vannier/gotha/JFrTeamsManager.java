@@ -240,22 +240,21 @@ public class JFrTeamsManager extends javax.swing.JFrame {
     }
 
     private void initTeamsTable(){
-        JTable tbl = this.tblTeams;
         final int TM_TEAM_NUMBER_WIDTH = 30;
         final int TM_TEAM_NAME_WIDTH = 125;
         final int TM_BOARD_NUMBER_WIDTH = 20;
         final int TM_PL_NAME_WIDTH = 125;
-        final int TM_PL_RATING_WIDTH = 40;
         final int TM_PL_COUNTRY_WIDTH = 25;
         final int TM_PL_CLUB_WIDTH = 40;
+        final int TM_PL_RATING_WIDTH = 40;
 
         JFrGotha.formatColumn(tblTeams, TM_TEAM_NUMBER_COL, "Nr", TM_TEAM_NUMBER_WIDTH, JLabel.RIGHT, JLabel.RIGHT); 
         JFrGotha.formatColumn(tblTeams, TM_TEAM_NAME_COL, "Team name", TM_TEAM_NAME_WIDTH, JLabel.LEFT, JLabel.LEFT); 
         JFrGotha.formatColumn(tblTeams, TM_BOARD_NUMBER_COL, "Board", TM_BOARD_NUMBER_WIDTH, JLabel.RIGHT, JLabel.RIGHT); 
         JFrGotha.formatColumn(tblTeams, TM_PL_NAME_COL, "Player name", TM_PL_NAME_WIDTH, JLabel.LEFT, JLabel.LEFT); 
-        JFrGotha.formatColumn(tblTeams, TM_PL_COUNTRY_COL, "Co", TM_PL_RATING_WIDTH, JLabel.RIGHT, JLabel.RIGHT); 
-        JFrGotha.formatColumn(tblTeams, TM_PL_CLUB_COL, "Club", TM_PL_COUNTRY_WIDTH, JLabel.LEFT, JLabel.LEFT); 
-        JFrGotha.formatColumn(tblTeams, TM_PL_RATING_COL, "Rating", TM_PL_CLUB_WIDTH, JLabel.LEFT, JLabel.LEFT); 
+        JFrGotha.formatColumn(tblTeams, TM_PL_COUNTRY_COL, "Co", TM_PL_COUNTRY_WIDTH, JLabel.LEFT, JLabel.LEFT); 
+        JFrGotha.formatColumn(tblTeams, TM_PL_CLUB_COL, "Club", TM_PL_CLUB_WIDTH, JLabel.LEFT, JLabel.LEFT); 
+        JFrGotha.formatColumn(tblTeams, TM_PL_RATING_COL, "Rating", TM_PL_RATING_WIDTH, JLabel.RIGHT, JLabel.RIGHT); 
     }
 
     private void updateComponents() {
