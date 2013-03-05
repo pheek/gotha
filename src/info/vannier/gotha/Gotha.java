@@ -1,6 +1,5 @@
 /*
  * Gotha.java
- * Starting from V3.27.02, OpenGotha is hosted by GitHub 
  * 
  */
 
@@ -42,8 +41,8 @@ public class Gotha {
     
     static Locale locale = Locale.getDefault();
     static final long GOTHA_VERSION = 331L;
-    static final long GOTHA_MINOR_VERSION = 0L;
-    static final java.util.Date GOTHA_RELEASE_DATE = (new GregorianCalendar(2012, Calendar.JANUARY, 26)).getTime();
+    static final long GOTHA_MINOR_VERSION = 2L;
+    static final java.util.Date GOTHA_RELEASE_DATE = (new GregorianCalendar(2013, Calendar.MARCH, 5)).getTime();
     // Data version for serialization
     static final long GOTHA_DATA_VERSION = 201L;
     
@@ -146,7 +145,26 @@ public class Gotha {
 
         return str;
     }
+    
+    /**
+    * Eliminates forbidden characters : \ / : * ? " < > |
+    * These 9 characters are forbidden in Windows file names
+    */
+    public static String eliminateForbiddenCharacters(String str){
+        String newStr = str;
+//        newStr = newStr.replace("[/:*?<>|]", "");
+        newStr = newStr.replace("\\", "");
+        newStr = newStr.replace("/", "");
+        newStr = newStr.replace(":", "");
+        newStr = newStr.replace("*", "");
+        newStr = newStr.replace("?", "");
+        newStr = newStr.replace("\"", "");
+        newStr = newStr.replace("<", "");
+        newStr = newStr.replace(">", "");
+        newStr = newStr.replace("|", "");
 
+        return newStr;
+    }
 
      /**
      * converts a fractional Number defined by (value, coef) into a string representing value/coef

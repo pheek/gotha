@@ -1972,13 +1972,26 @@ public class Tournament extends UnicastRemoteObject implements TournamentInterfa
             }
         }
 
-        Game game = new Game(roundNumber, -1, null, null, true, 0, Game.RESULT_UNKNOWN);
-        if (pt0IsWhite) {
-            game.setWhitePlayer(pt0);
-            game.setBlackPlayer(pt1);
-        } else {
-            game.setWhitePlayer(pt1);
-            game.setBlackPlayer(pt0);
+//        Game game = new Game(roundNumber, -1, null, null, true, 0, Game.RESULT_UNKNOWN);
+        // Modif 3.31.01 for hd team tournaments
+        ArrayList<Player> alP = new ArrayList<Player>();
+        alP.add(pt0);
+        alP.add(pt1);
+        ArrayList<Game> alG = this.makeAutomaticPairing(alP, roundNumber);
+        if (alG.size() != 1){
+            System.out.println("Internal issue in teamsPair()");
+            return;
+        }
+        Game game = alG.get(0);
+        
+        if (game.getHandicap() != 0){
+            if (pt0IsWhite) {
+                game.setWhitePlayer(pt0);
+                game.setBlackPlayer(pt1);
+            } else {
+                game.setWhitePlayer(pt1);
+                game.setBlackPlayer(pt0);
+            }
         }
         Game[] tabGames = new Game[teamSize];
         tabGames[0] = game;
@@ -1987,7 +2000,18 @@ public class Tournament extends UnicastRemoteObject implements TournamentInterfa
         for (int ib = 1; ib < teamSize; ib++) {
             Player p0 = team0.getTeamMember(roundNumber, ib);
             Player p1 = team1.getTeamMember(roundNumber, ib);
-            Game g = new Game(roundNumber, -1, null, null, true, 0, Game.RESULT_UNKNOWN);
+//            Game g = new Game(roundNumber, -1, null, null, true, 0, Game.RESULT_UNKNOWN);
+        // Modif 3.31.01 for hd team tournaments
+        alP = new ArrayList<Player>();
+        alP.add(p0);
+        alP.add(p1);
+        alG = this.makeAutomaticPairing(alP, roundNumber);
+        if (alG.size() != 1){
+            System.out.println("Internal issue in teamsPair()");
+            return;
+        }
+        Game g = alG.get(0);
+        if(g.getHandicap() == 0){
             if (pt0IsWhite == (ib % 2 == 0)) {
                 g.setWhitePlayer(p0);
                 g.setBlackPlayer(p1);
@@ -1995,6 +2019,7 @@ public class Tournament extends UnicastRemoteObject implements TournamentInterfa
                 g.setWhitePlayer(p1);
                 g.setBlackPlayer(p0);
             }
+        }
             tabGames[ib] = g;
         }
 

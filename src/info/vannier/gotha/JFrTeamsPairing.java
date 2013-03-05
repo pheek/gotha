@@ -611,6 +611,32 @@ public class JFrTeamsPairing extends javax.swing.JFrame {
         Team wt = match.getWhiteTeam();
         Team bt = match.getBlackTeam();
 
+        // Check if there are hd games in this match 
+        for (int ib = 0; ib < teamSize; ib++) {
+            Player wp = wt.getTeamMember(processedRoundNumber, ib);
+            Player bp = bt.getTeamMember(processedRoundNumber, ib);
+            if (wp == null) {
+                continue;
+            }
+            if (bp == null) {
+                continue;
+            }
+            Game g = null;
+            try {
+                g = tournament.getGame(processedRoundNumber, wp);
+                } catch (RemoteException ex) {
+                    Logger.getLogger(JFrTeamsPairing.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                if (g == null) {
+                    return;
+            }
+            if (g.getHandicap() != 0){
+                JOptionPane.showMessageDialog(this, " Because of handicap games in this match, colours cannot be changed\n You can change individual games from Games .. Pair" ,
+                    "Message", JOptionPane.ERROR_MESSAGE);
+                return;
+            }    
+        }
+        
         for (int ib = 0; ib < teamSize; ib++) {
             Player wp = wt.getTeamMember(processedRoundNumber, ib);
             Player bp = bt.getTeamMember(processedRoundNumber, ib);
@@ -690,9 +716,9 @@ public class JFrTeamsPairing extends javax.swing.JFrame {
         for (int ib = 0; ib < teamSize; ib++) {
             wt = match.getWhiteTeam();
             Player player = wt.getTeamMember(processedRoundNumber, ib);
-            int oldTN = -1;
+            int oldTN;
             int newTN = newB0TN + ib;
-            Game g1 = null;
+            Game g1;
             Game g2 = null;
             try {
                 g1 = tournament.getGame(processedRoundNumber, player);
@@ -704,7 +730,6 @@ public class JFrTeamsPairing extends javax.swing.JFrame {
                         break;
                     }
                 }
-
 
                 tournament.removeGame(g1);
                 if (g2 != null) {

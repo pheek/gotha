@@ -1390,13 +1390,12 @@ public class JFrGotha extends javax.swing.JFrame {
         }
 
         File f = this.chooseAFileForExport(Gotha.exportDirectory, "tou");
+        System.out.println("f = " + f + " " + f.canWrite());
         if (f == null) {
             return;
         }
         // Keep tournamentDirectory
         Gotha.exportDirectory = f.getParentFile();
-
-//        ExternalTournamentDocument.generateH9File(tournament, f);
 
         ExternalDocument.generateTouFile(tournament, f);
 

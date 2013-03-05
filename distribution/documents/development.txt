@@ -1,3 +1,10 @@
+OpenGothaV3.31.02
+**************
+03/03/2013
+New     In Teams pairing, handicap, if any, are atomatically computed
+New     In Tournament Parameters, forbidden characters :  \ / : * ? " < > | are automatically deleted from  tournament short name
+Bug Fix Pb with EGF rating list when player's name + firstName exceeded 23 characters. The limit is now set to 37 characters
+
 OpenGothaV3.31
 **************
 26/01/2013
@@ -53,7 +60,7 @@ OpenGothaV3.25
 18/02/2012
 New         Player photo in Players Manager frame
 Bug Fix     A pairing issue in Swisscat system. Fixed.
-Bug Fix     There was some character coding issues in xml files. 
+Bug Fix     There were some character coding issues in xml files. 
             xml, html and csv files are now encoded in UTF-8.
             h9, tou and aga export files are encoded in ISO-8859-15.
 Bug Fix     The context menu in the Pair frame did not show up in very special case. Fixed

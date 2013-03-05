@@ -90,10 +90,16 @@ public class RatingList {
                 if (strLine.length() < 10) continue;
                 String strPin = strLine.substring(1, 9);
                 if (strPin.matches("[0-9]*")){
-                    String strNF = strLine.substring(11, 34);
+                    String strNF = strLine.substring(11, 48);
+//                    System.out.println("strNF = " + strNF);
+                    String strName = strNF;
+                    String strFirstName = "x";
+                    
                     pos = strNF.indexOf(" ");
-                    String strName = strNF.substring(0, pos).trim();
-                    String strFirstName = strNF.substring(pos + 1, strNF.length()).trim();
+                    
+                    if (pos > 0) strName = strNF.substring(0, pos).trim();
+                    if ((pos + 1) < strNF.length()) strFirstName = strNF.substring(pos + 1, strNF.length()).trim();
+                    
                     String strCountry = strLine.substring(49, 52).trim();
                     String strClub = strLine.substring(53, 57).trim();
                     int rating = new Integer(strLine.substring(71, 75).trim()).intValue();

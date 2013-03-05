@@ -2495,6 +2495,8 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         GeneralParameterSet gps = tps.getGeneralParameterSet();
         String oldShortName = gps.getShortName();
         String newShortName = txfShortName.getText();
+        newShortName = Gotha.eliminateForbiddenCharacters(newShortName);
+        txfShortName.setText(newShortName);
         if (newShortName.compareTo(oldShortName) == 0) return;
         gps.setShortName(newShortName);
         tps.setGeneralParameterSet(gps);

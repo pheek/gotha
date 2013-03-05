@@ -1,6 +1,5 @@
 /**
- * ExternalTournamentDocument.java 
- * UTF8 OK
+ * ExternalDocument.java 
  */
 package info.vannier.gotha;
 
@@ -25,7 +24,7 @@ import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
 /**
- * ExternalTournamentDocument enables importing Players and Games from a file
+ * ExternalTournamentDocument enables importing Players and Games and tournament parameters from a file
  * 
  * @author Luc Vannier
  */
@@ -86,7 +85,6 @@ public class ExternalDocument {
                 strNaFi = tabStrSplit[1];
                 strRemaining = tabStrSplit[2];
             } else {
-//                strNaFi = strLine.substring(posNaFi, posNaFi + nbcNaFi);
                 strNaFi = Gotha.sousChaine(strLine, posNaFi, posNaFi + nbcNaFi);
                 strRemaining = strLine.substring(posNaFi + nbcNaFi);
             }
@@ -113,7 +111,6 @@ public class ExternalDocument {
                 while (!Character.isDigit(strRemaining.charAt(0))) {
                     strRemaining = strRemaining.substring(1);
                 }
-//                strRank = strRemaining.substring(0, 3);
                 strRank = Gotha.sousChaine(strRemaining, 0, 3);
                 strRemaining = strRemaining.substring(3);
             }
@@ -128,7 +125,6 @@ public class ExternalDocument {
                 strCountry = strRemaining.substring(0, 3);
                 strRemaining = strRemaining.substring(3);
             } else if (importType.equals("tou")) {
-//                strRemaining = strRemaining.substring(8);
                 strRemaining = strRemaining.substring(Math.min(strRemaining.length(), 8));
             }
             strCountry = strCountry.trim();
@@ -143,7 +139,6 @@ public class ExternalDocument {
                 strRemaining = tabStrSplit[1];
             } else {
                 strRemaining = strRemaining.trim();
-//                strClub = strRemaining.substring(0, 4);
                 strClub = Gotha.sousChaine(strRemaining, 0, 4);
                 strRemaining = strRemaining.substring(strClub.length());
             }
@@ -193,7 +188,6 @@ public class ExternalDocument {
                 return;
             }
             alPlayers.add(p);
-            // Parse result line =================================================================================
             int currentPlayerNumber = alPlayers.size() - 1;
             parseResultLine(currentPlayerNumber, strGames, alPotentialHalfGames);
         }
@@ -210,7 +204,6 @@ public class ExternalDocument {
                 p.setParticipating(roundNumber, false);
                 alPotentialHalfGames.remove(i);
             }
-
         }
 
         // Build alGames
@@ -526,7 +519,7 @@ public class ExternalDocument {
 
     private static long importDataVersionFromXMLFile(File sourceFile) {
         Document doc = getDocumentFromXMLFile(sourceFile);
-        long dataVersion = 0L;
+        long dataVersion;
         if (doc == null) {
             return 0L;
         }
@@ -569,7 +562,6 @@ public class ExternalDocument {
             String strRating = extractNodeValue(nnm, "rating", "-900");
             int rating = new Integer(strRating).intValue();
             if (importedDataVersion < 201L) {
-//                rating = Player.MIN_RATING;
                 rating += 2050;
             }
             if (rating > Player.MAX_RATING) {
@@ -730,7 +722,7 @@ public class ExternalDocument {
         gps.setGenMMS2ValueBye(new Integer(strGenMMS2ValueBye).intValue());
         
         String strGenRoundDownNBWMMS = extractNodeValue(nnmGPS, "genRoundDownNBWMMS", "true");
-        gps.setGenRoundDownNBWMMS(new Boolean(strGenRoundDownNBWMMS).booleanValue());
+        gps.setGenRoundDownNBWMMS(Boolean.valueOf(strGenRoundDownNBWMMS).booleanValue());
 
         tps.setGeneralParameterSet(gps);
 
@@ -919,7 +911,6 @@ public class ExternalDocument {
         nlTeamList = doc.getElementsByTagName("Team");
         for (int i = 0; i < nlTeamList.getLength(); i++) {
             Node nTeam = nlTeamList.item(i);
-//            traite( nTeam, 0);
             NamedNodeMap nnmTeam = nTeam.getAttributes();
 
             String strTeamNumber = extractNodeValue(nnmTeam, "teamNumber", "1");
@@ -1021,8 +1012,6 @@ public class ExternalDocument {
         }
         tpps.setPlaCriteria(plaC);
         ttps.setTeamPlacementParameterSet(tpps);
-
-
 
         return ttps;
     }
@@ -1192,7 +1181,7 @@ public class ExternalDocument {
     }
 
     /**
-     * Gathers potential half-games to build games into a ArrayList<Game>.
+     * Gathers potential half-games to build games into an ArrayList<Game>.
      * If necessary, reaffects round numbers so that a given game has been played in one only round, 
      * and so that a given player may not have played 2 games in the same round. 
      **/
@@ -1359,11 +1348,9 @@ public class ExternalDocument {
         GeneralParameterSet gps = tps.getGeneralParameterSet();
         PlacementParameterSet pps = tps.getPlacementParameterSet();
 
-        Writer output = null;
+        Writer output;
         try {
-//            output = new BufferedWriter(new FileWriter(f));
             output = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(f), "ISO-8859-15"));
-
         } catch (IOException ex) {
             Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
             return;
@@ -1396,7 +1383,6 @@ public class ExternalDocument {
                         strByoYomi = "+b";
                     }
                     break;
-
             }
             String strT = "" + gps.getBasicTime() + strByoYomi;
             output.write("\n;time=" + strT);
@@ -1480,7 +1466,7 @@ public class ExternalDocument {
 
     public static void generateH9File(TournamentInterface tournament, File f, boolean bKeepByDefResults) {
         LogElements.incrementElement("export.egf", "");
-        TournamentParameterSet tps = null;
+        TournamentParameterSet tps;
         try {
             tps = tournament.getTournamentParameterSet();
         } catch (RemoteException ex) {
@@ -1496,9 +1482,7 @@ public class ExternalDocument {
 
         Writer output = null;
         try {
-//            output = new BufferedWriter(new FileWriter(f));
             output = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(f), "ISO-8859-15"));
-
         } catch (IOException ex) {
             Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
             return;
@@ -1511,7 +1495,6 @@ public class ExternalDocument {
             output.write("\n; PC[," + gps.getLocation() + "]");
             output.write("\n; DT[" + new SimpleDateFormat("yyyy-MM-dd").format(gps.getBeginDate())
                     + "," + new SimpleDateFormat("yyyy-MM-dd").format(gps.getEndDate()) + "]");
-//            output.write("\n; HA[h9]");
             output.write("\n; KM[" + gps.getStrKomi() + "]");
             output.write("\n; TM[" + (tournament.egfAdjustedTime() / 60) + "]");
             String strCM = "";
@@ -1665,14 +1648,12 @@ public class ExternalDocument {
         } catch (RemoteException ex) {
             Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
             return;
-
         }
         GeneralParameterSet gps = tps.getGeneralParameterSet();
         PlacementParameterSet pps = tps.getPlacementParameterSet();
 
-        Writer output = null;
+        Writer output;
         try {
-//            output = new BufferedWriter(new FileWriter(f));
             output = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(f), "ISO-8859-15"));
 
         } catch (IOException ex) {
@@ -1765,7 +1746,6 @@ public class ExternalDocument {
         }
 
         // Write game results by round
-
         ArrayList<Game> roundGames = null;
         for (int r = 0; r < gps.getNumberOfRounds(); r++) {
             try {
@@ -1833,7 +1813,7 @@ public class ExternalDocument {
     }
 
     private static int getIntAgaId(ScoredPlayer sP) {
-        int id = 0;
+        int id;
         try {
             id = Integer.parseInt(sP.getAgaId());
         } catch (Exception e) {
@@ -1845,7 +1825,7 @@ public class ExternalDocument {
 
     public static void generatePlayersCSVFile(TournamentInterface tournament, File f) {
         LogElements.incrementElement("export.csv", "");
-        Writer output = null;
+        Writer output;
         try {
             output = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(f), DEFAULT_CHARSET));
         } catch (IOException ex) {
@@ -1876,8 +1856,6 @@ public class ExternalDocument {
             Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-
-
         for (Player p : alPlayers) {
             strLine = "";
             strLine += p.getName() + ";";
@@ -1907,7 +1885,7 @@ public class ExternalDocument {
 
     public static void generateHTMLFile(TournamentInterface tournament, File f) {
         LogElements.incrementElement("export.html", "");
-        TournamentParameterSet tps = null;
+        TournamentParameterSet tps;
         try {
             tps = tournament.getTournamentParameterSet();
         } catch (RemoteException ex) {
@@ -1921,7 +1899,7 @@ public class ExternalDocument {
         int[] tC = pps.getPlaCriteria();
         int[] tabCrit = PlacementParameterSet.purgeUselessCriteria(tC);
 
-        Writer output = null;
+        Writer output;
         try {
             output = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(f), DEFAULT_CHARSET));
         } catch (IOException ex) {
@@ -2037,8 +2015,6 @@ public class ExternalDocument {
             Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-
-
         try {
             output.write("\n</body></html>");
         } catch (IOException ex) {
@@ -2054,8 +2030,8 @@ public class ExternalDocument {
 
     public static void generateTeamHTMLFile(TournamentInterface tournament, File f) {
         LogElements.incrementElement("export.teamHTML", "");
-        TeamTournamentParameterSet ttps = null;
-        TournamentParameterSet tps = null;
+        TeamTournamentParameterSet ttps;
+        TournamentParameterSet tps;
         try {
             ttps = tournament.getTeamTournamentParameterSet();
             tps = tournament.getTournamentParameterSet();
@@ -2089,7 +2065,7 @@ public class ExternalDocument {
             }
         }
 
-        Writer output = null;
+        Writer output;
         try {
             output = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(f), DEFAULT_CHARSET));
 
@@ -2189,8 +2165,8 @@ public class ExternalDocument {
         } catch (IOException ex) {
             Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
+    
     public static void generateTeamsListHTMLFile(TournamentInterface tournament, File f) throws RemoteException, IOException{
         TeamTournamentParameterSet ttps;
         TournamentParameterSet tps;
@@ -2204,8 +2180,7 @@ public class ExternalDocument {
         GeneralParameterSet gps = tps.getGeneralParameterSet();
         TeamPlacementParameterSet tpps = ttps.getTeamPlacementParameterSet();
 
- 
-        Writer output = null;
+        Writer output;
         try {
             output = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(f), DEFAULT_CHARSET));
 
@@ -2459,7 +2434,6 @@ public class ExternalDocument {
         }
 
         return emPlayers;
-
     }
 
     /**
@@ -2475,7 +2449,7 @@ public class ExternalDocument {
             String strBlackPlayer = g.getBlackPlayer().getKeyString();
             String strKnownColor = g.isKnownColor() ? "true" : "false";
             String strHandicap = Integer.valueOf(g.getHandicap()).toString();
-            String strResult = "RESULT_UNKNOWN";
+            String strResult;
             switch (g.getResult()) {
                 case Game.RESULT_WHITEWINS:
                     strResult = "RESULT_WHITEWINS";
@@ -2560,7 +2534,6 @@ public class ExternalDocument {
         } else {
             return null;
         }
-
     }
 
     /**
@@ -2609,7 +2582,7 @@ public class ExternalDocument {
         emGeneralParameterSet.setAttribute("size", gps.getStrSize());
         emGeneralParameterSet.setAttribute("komi", gps.getStrKomi());
         emGeneralParameterSet.setAttribute("basicTime", "" + gps.getBasicTime());
-        String strComplementaryTimeSystem = "";
+        String strComplementaryTimeSystem;
         switch (gps.getComplementaryTimeSystem()) {
             case GeneralParameterSet.GEN_GP_CTS_SUDDENDEATH:
                 strComplementaryTimeSystem = "SUDDENDEATH";
@@ -2698,7 +2671,7 @@ public class ExternalDocument {
         emPairingParameterSet.setAttribute("paiMaAvoidMixingCategories", "" + paiPS.getPaiMaAvoidMixingCategories());
         emPairingParameterSet.setAttribute("paiMaMinimizeScoreDifference", "" + paiPS.getPaiMaMinimizeScoreDifference());
         emPairingParameterSet.setAttribute("paiMaDUDDWeight", "" + paiPS.getPaiMaDUDDWeight());
-        String strPaiMaDUDDUpperMode = "";
+        String strPaiMaDUDDUpperMode;
         switch (paiPS.getPaiMaDUDDUpperMode()) {
             case PairingParameterSet.PAIMA_DUDD_TOP:
                 strPaiMaDUDDUpperMode = "TOP";
@@ -2713,7 +2686,7 @@ public class ExternalDocument {
                 strPaiMaDUDDUpperMode = "MID";
         }
         emPairingParameterSet.setAttribute("paiMaDUDDUpperMode", strPaiMaDUDDUpperMode);
-        String strPaiMaDUDDLowerMode = "";
+        String strPaiMaDUDDLowerMode;
         switch (paiPS.getPaiMaDUDDLowerMode()) {
             case PairingParameterSet.PAIMA_DUDD_TOP:
                 strPaiMaDUDDLowerMode = "TOP";
@@ -2730,7 +2703,7 @@ public class ExternalDocument {
         emPairingParameterSet.setAttribute("paiMaDUDDLowerMode", strPaiMaDUDDLowerMode);
         emPairingParameterSet.setAttribute("paiMaMaximizeSeeding", "" + paiPS.getPaiMaMaximizeSeeding());
         emPairingParameterSet.setAttribute("paiMaLastRoundForSeedSystem1", "" + (paiPS.getPaiMaLastRoundForSeedSystem1() + 1));
-        String strPaiMaSeedSystem1 = "";
+        String strPaiMaSeedSystem1;
         switch (paiPS.getPaiMaSeedSystem1()) {
             case PairingParameterSet.PAIMA_SEED_SPLITANDRANDOM:
                 strPaiMaSeedSystem1 = "SPLITANDRANDOM";
@@ -2745,7 +2718,7 @@ public class ExternalDocument {
                 strPaiMaSeedSystem1 = "SPLITANDFOLD";
         }
         emPairingParameterSet.setAttribute("paiMaSeedSystem1", strPaiMaSeedSystem1);
-        String strPaiMaSeedSystem2 = "";
+        String strPaiMaSeedSystem2;
         switch (paiPS.getPaiMaSeedSystem1()) {
             case PairingParameterSet.PAIMA_SEED_SPLITANDRANDOM:
                 strPaiMaSeedSystem2 = "SPLITANDRANDOM";
@@ -2798,7 +2771,6 @@ public class ExternalDocument {
         emTournamentParameterSet.appendChild(emDPParameterSet);
 
         return emTournamentParameterSet;
-
     }
 
     private static Element generateXMLTeamTournamentParameterSetElement(Document document, TeamTournamentParameterSet ttps) {

@@ -1177,6 +1177,7 @@ public class JFrGamesPair extends javax.swing.JFrame {
                 return;
             }
         }
+        
         if (alPlayersToPair.size() % 2 != 0) {
             // if no possibility to choose a bye player, Error message
             Player bP = null;
@@ -1215,9 +1216,6 @@ public class JFrGamesPair extends javax.swing.JFrame {
             }
         }
 
-//        V3.16.14 Removed
-//        Pairing pairing = new Pairing(tournament, processedRoundNumber);
-//        ArrayList<Game> alNewGames = pairing.makeAutomaticPairing(alPlayersToPair);
         ArrayList<Game> alNewGames = null;
         try {
             alNewGames = tournament.makeAutomaticPairing(alPlayersToPair, processedRoundNumber);

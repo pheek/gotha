@@ -62,6 +62,7 @@ public class JFrPreferencesOptions extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Preferences");
+        setResizable(false);
         getContentPane().setLayout(null);
 
         pnlPref.setLayout(null);
