@@ -1,7 +1,7 @@
-OpenGothaV3.31.02
+OpenGothaV3.32
 **************
-03/03/2013
-New     In Teams pairing, handicap, if any, are atomatically computed
+06/03/2013
+New     In Teams pairing, handicaps, if any, are atomatically computed
 New     In Tournament Parameters, forbidden characters :  \ / : * ? " < > | are automatically deleted from  tournament short name
 Bug Fix Pb with EGF rating list when player's name + firstName exceeded 23 characters. The limit is now set to 37 characters
 

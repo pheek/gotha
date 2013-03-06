@@ -1,4 +1,4 @@
-#Echelle au 5/03/2013
+#Echelle au 6/03/2013
 AAIJ René                               249 e -------   NL
 AAKERBLOM Charlie                       303 e -------   SE
 ABADIA Mickaël                        -1400 - 9728205 94MJ
@@ -409,7 +409,7 @@ BAERD Victor                           -700 - 0700030 75Pa
 BAGAYA Galliam                         -700 - 0521207 75Al
 BAGUENARD Xavier                      -1100 - 9331100 49AJ
 BAGUET Cyril                           -800 - 9737215 21Di
-BAHADORAN Simon                        -500 - 1100097 06Ni
+BAHADORAN Simon                        -500 - 1100097 06Pe
 BAILLEHACHE Pascal                    -1300 - 0425010 75Pa
 BAILLES Anais                         -1700 - 0700391 31To
 BAILLON Gabriel                       -2000 - 0474704 84VJ
@@ -2785,6 +2785,7 @@ DESMAZURES Isabelle                   -9999 - 9728602 75CF
 DESMET Stéphane                       -9999 - 9850501 64Ba
 DESMONDS Charlie                      -1500 - 0611204 74Cl
 DESMOULINS Ronan                      -1056 L 1200090 91SM
+DESNOT Vincent                        -9999 - 1300260 06Pe
 DESOUTTER Matthieu                    -1000 - 0700412 44MN
 DESPINASSE Raphaël                    -1800 - 0514110 69CR
 DESPINOIS Amaury                      -9999 - 0188704 67SE
@@ -4695,8 +4696,8 @@ HOROWITZ David                          300 L 0800228 92An
 HORWAT Vadim                              0 - 0683507 94EP
 HOSSENFELDER Myriam                   -1500 - 0488718 67SE
 HOSSENLOPP François                    -675 L 8842300 75Op
-HOSSENLOPP Jean                        -580 L 7915400 75Op
-HOSSENLOPP Monique                    -9999 L 0122100 75Op
+HOSSENLOPP Jean                        -600 X 7915400 75Op
+HOSSENLOPP Monique                    -9999 X 0122100 75Op
 HOSSENLOPP Paul                       -1000 - 9056000 75Op
 HOUARD Olivier                        -9999 - 0700012 76Ro
 HOUARI Kevin                           -468 L 1200269 92Le
@@ -7234,8 +7235,8 @@ NICOLAS Aurélie                       -1500 - 9828206 94MJ
 NICOLAS Christopher                   -1800 - 1100353 75LF
 NICOLAS David                          -180 L 0220802 75Pa
 NICOLAS Michelle                      -1400 - 9728204 94MJ
-NICOLAS Philippe                      -1100 - 1200237 98No
 NICOLAS Philippe                      -1100 - 1200140 13Ma
+NICOLAS Philippe                      -1100 - 1200237 98No
 NICOLAS Sébastien                     -1500 - 9828205 94MJ
 NICOLAS Stéphan                       -9999 - 1100354 75Op
 NICOLAS Thimothée                     -9999 - 9442005 76Ha
@@ -8895,7 +8896,7 @@ SÉJOURNÉ Charles                      -1600 - 0700387 92Le
 SEKIGUCHI Kiyoshi                       245 e -------   JP
 SELBY Alex                              243 e -------   UK
 SELBY Matthew                          -272 e -------   UK
-SELE-BARANCY Enzo                     -2950 L 1300174 75Op
+SELE-BARANCY Enzo                     -3000 X 1300174 75Op
 SELLAM Zebulon                         -700 - 0225502 75OB
 SELLEM Léonard                        -1500 - 9752045 31To
 SELLERON Kevin                        -1180 L 1300214 75Pa

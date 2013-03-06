@@ -5,7 +5,7 @@
 <center>
 <h1>List of WORLD Players</h1>
 <hr>
-(05 Mar 2013)
+(06 Mar 2013)
 <hr>
 </center>
 
@@ -2457,7 +2457,7 @@ NT      - number of tournaments the player participated in
  14574395  Birch David                           UK  StAn   15k   --    593     1  T061007A
  15649953  Birch George                          UK  HWyc   20k   --    100     1  T100123C
  14933237  Birch Rennie                          UK  Sand    8k   --   1268     2  T090906A
- 16474370  Biriukov Yurii                        UA  Kyiv   15k   --    579     7  T121222D
+ 16474370  Biriukov Yurii                        UA  Kyiv   15k   --    650     8  T130302I
  15262203  Birjukov Ivan                         RU  77Mo   13k   --    733     1  T080913E
  14201814  Birke Wolfgang                        DE  BN     10k   --   1073     1  T060128C
  13474340  Birkett James                         UK  Bris   10k   9k   1215     2  T041031B
@@ -2781,6 +2781,7 @@ NT      - number of tournaments the player participated in
  10250867  Bohatskyi Dmytro                      UA  Kyiv    6d   --   2519   139  T121124F
  15325706  Bohatyrenko Olena                     UA  Kyiv   20k   --    100     1  T090516F
  15349708  Bohatyrenko Yelyzaveta                UA  Kyiv   19k   --    100     9  T120428I
+ 16737864  Bohdanovych Vadym                     UA  Kyiv   11k   --    988     1  T130302I
  15201956  Bohl Lars                             DE  GOE     5k   --   1678     1  T090214B
  12425963  Bohlen Robert                         AT  Graz    6k   --   1476     2  T010609B
  12401026  Bohm Lukas                            CZ  KaVa   20k   --    100     2  T000212A
@@ -3590,7 +3591,7 @@ NT      - number of tournaments the player participated in
  15901160  Bukh Alexandr                         KZ  xxx     5k   --   1634     3  W111022A
  15986927  Bukharin Pavel                        RU  77Mo   20k   --    100     1  T110107A
  12813504  Bukina Elena                          RU  52NN    9k  10k   1020     9  T051224A
- 15874947  Bukovska Anezka                       CZ  APmG   17k   --    300    16  T130223E
+ 15874947  Bukovska Anezka                       CZ  APmG   18k   --    386    17  T130302H
  12801261  Bukovska Nada                         CZ  APra   16k   --    439    10  E040430A
  12949761  Bukowski Jakub                        PL  Ruda   20k   --    100     1  T030112 
  14025825  Bukowski Lukasz                       PL  Pozn    8k   --   1213     5  T100410K
@@ -4339,7 +4340,7 @@ NT      - number of tournaments the player participated in
  15625742  Charatsidis Vasileios                 GR  Ath     3k   --   1844     1  T091211C
  10625472  Charbonnel Jean                       FR  38Gr    5k   --   1536     8  T041002C
  14986708  Charbonnier Yann                      FR  95Va   10k   --   1112     1  G080322 
- 16586702  Charbusky Frantisek                   CZ  APmG   20k   --    100     1  T121006D
+ 16586702  Charbusky Frantisek                   CZ  APmG   20k   --    100     2  T130302H
  10850510  Chareaux Pascale                      FR  69CR   15k  14k    725     6  T991023D
  16786253  Charikov Andrej                       RU  52NN   15k   --    500     1  T121117J
  13874157  Charkiewicz Marta                     PL  Wars   17k  16k    506     1  T041127D
@@ -6734,7 +6735,7 @@ NT      - number of tournaments the player participated in
  10625945  Dryepondt Christophe                  FR  59Li    1d   --   2127    58  T060617K
  12874796  Dryha Dmytro                          UA  Kyiv   20k   --    100     3  G021122 
  16713598  Drzewicki Wojciech                    PL  Pozn   20k   --    100     1  T130126D
- 15350973  Drzystek Andrzej                      PL  Ilaw    3k   --   1817    15  T130216G
+ 15350973  Drzystek Andrzej                      PL  Ilaw    3k   --   1829    16  T130216G
  13925109  Du Harry                              UK  LSE     3k   --   1779     1  T050307A
  12337875  Du Jingyu                             DE  BS      7d   --   2761    37  T040208A
  14925680  Du Qing                               CN  Sha     7d   --   2715     6  G100220A
@@ -8135,7 +8136,7 @@ NT      - number of tournaments the player participated in
  13474978  Foz Javier                            ES  Bar    10k   --   1033     5  T051125A
  16237078  Frachisse Remy                        FR  34Mo   18k   --    351    10  T130102A
  16298964  Fraczak Jan                           PL  Wars    5k   --   1611    13  T130205A
- 14650768  Fraczak Pawel                         PL  Wars    4k   --   1636    22  T130216G
+ 14650768  Fraczak Pawel                         PL  Wars    4k   --   1643    23  T130216G
  12750012  Fraembs Sascha                        NL  Amst    1d   --   2011     7  G050506 
  13625315  Fragman Amir                          IL  MGC     4d   --   2382    32  T121004A
  13686310  Fragman Uri                           IL  RhA     7k   9k   1147    16  T091029A
@@ -8230,7 +8231,7 @@ NT      - number of tournaments the player participated in
  14237157  Freitag Tamino                        DE  HH     14k  15k    538    11  T090307B
  14962893  Freitas Peter_de                      NL  Heer    5k   8k   1256    14  G110910A
  12801591  Frejlak Jan                           PL  Wars    1d   --   2125    70  T120713B
- 12837594  Frejlak Stanislaw                     PL  Wars    4d   --   2396    89  T130122A
+ 12837594  Frejlak Stanislaw                     PL  Wars    4d   --   2396    90  T130219A
  14701016  Frejno Nicodem-Jakob                  DE  DU     12k  11k   1011     2  T090328F
  12725691  Frelikh Eduard                        RU  78SP    3d   --   2255    18  T051218A
  14201198  French Daniel                         BE  Pant    4k   --   1615    12  G121027A
@@ -12158,7 +12159,7 @@ NT      - number of tournaments the player participated in
  10225842  Jansen Jan-Willem                     NL  Ensc    4k   --   1659    68  E090803B
  12674970  Jansen Jori                           NL  Utre   10k  11k    973     5  E040430A
  15698419  Jansen Nils                           DE  B       7k   --   1308     1  T091128A
- 15862946  Jansky Dusan                          CZ  APmG   13k   --    708    30  T130223E
+ 15862946  Jansky Dusan                          CZ  APmG   14k  13k    810    31  T130302H
  15037572  Jansky Jakub                          CZ  UDec    5k   --   1620    19  T130112A
  12898061  Janssen Donald                        NL  Heer    6k   --   1504     1  T020105B
  15249663  Janssen Eva                           NL  Alme   20k   --    100     8  T121227A
@@ -12285,7 +12286,7 @@ NT      - number of tournaments the player participated in
  13537546  Jendel Henrik                         SE  Sto     2k   3k   1773     2  T040619F
  10613581  Jendrusch Norbert                     DE  M       3d   --   2216    44  T130202B
  13901789  Jendrzejewski Ingrid                  UK  Camb    9k   --   1204    24  T120310F
- 16486789  Jenicek Jan                           CZ  APmG   20k   --    100     4  T130119C
+ 16486789  Jenicek Jan                           CZ  APmG   20k   --    114     5  T130302H
  13486198  Jennewein Erik                        DE  Kai     8k   --   1298     2  T040918D
  14374613  Jenni Patric                          DE  BS     20k   --    156     1  T060311B
  13950486  Jennings Andrew                       UK  Astn   20k   --    100     1  T050123A
@@ -12687,7 +12688,7 @@ NT      - number of tournaments the player participated in
  12633863  Kac Eduard                            RU  78SP    6k   --   1542     3  T010526F
  16725423  Kachan Kostiantyn                     UA  Kost   20k   --    117     1  T121222D
  12725713  Kachanovskaja x                       UA  Riv    20k   --    100     1  T010913A
- 12662870  Kachanovskyi Artem                    UA  Rivn    7d   --   2626    98  T121124F
+ 12662870  Kachanovskyi Artem                    UA  Rivn    7d   --   2627    99  T130302I
  12649175  Kachanovskyi Mykhailo                 UA  Rivn    1d   --   2116    49  T121013F
  12698180  Kachanovskyi Volodymyr                UA  Rivn    7k   --   1371    29  T120825E
  16362621  Kachko Alexandr                       RU  77Mo    9k   --   1174     1  T111203K
@@ -12745,7 +12746,7 @@ NT      - number of tournaments the player participated in
  14933182  Kainz Thomas                          DE  ED     20k   --    184     1  T080209A
  13425071  Kaiphanlert Sarawut                   TH  xxx     4d   --   2408     1  W030927 
  13550691  Kaipiainen Eero                       FI  Hels    8k   9k   1157     4  T050205C
- 13633103  Kairo Hlib                            UA  Kyiv    2k   1k   2002    50  T121013F
+ 13633103  Kairo Hlib                            UA  Kyiv    1k   --   1993    51  T130302I
  13962047  Kaiser Miriam                         DE  Plo    15k  14k    719     9  E060807 
  15225815  Kaiser Pavel                          CZ  Olo    20k   --    100     1  T090124A
  10249514  Kaitschick Stefan                     DE  HH      5d   --   2422    75  T111124B
@@ -12997,7 +12998,7 @@ NT      - number of tournaments the player participated in
  16749854  Kardonova Ais                         RU  78SP   20k   --    100     1  T130216P
  15698793  Kardos Bernadett                      HU  BuPe   20k   --    155     3  T110115I
  14913426  Kardos Zsolt                          HU  BuPe   20k   --    100     1  T080216F
- 15974409  Karelov Anatolii                      UA  Kyiv    8k   --   1378     9  T121222D
+ 15974409  Karelov Anatolii                      UA  Kyiv    8k   7k   1412    10  T130302I
  12998810  Kares Martin                          CZ  Jav    16k  15k    687     9  T070630A
  12598718  Kares Ondrej                          CZ  Jav     8k   --   1265    22  T070630A
  13825295  Karge Reinhard                        DE  B      12k   --    825     1  T041119A
@@ -14121,8 +14122,8 @@ NT      - number of tournaments the player participated in
  13801645  Kokkonen Kalle                        FI  Kanp    4k   --   1675     3  G061014 
  13549734  Kokoszczynski Tomasz                  PL  Bydg   13k   --    834    26  T110618D
  15901754  Kokovina Natalia                      RU  66Ek   15k   --    681     1  T101204K
- 10886458  Kokozei Viktor                        UA  Kyiv    3d   --   2227    68  T121222D
- 10986536  Kokozei Volodymyr                     UA  Kyiv    4d   --   2460    74  T121222D
+ 10886458  Kokozei Viktor                        UA  Kyiv    3d   --   2230    69  T130302I
+ 10986536  Kokozei Volodymyr                     UA  Kyiv    4d   --   2460    75  T130302I
  15862132  Koks Arthur                           NL  Amst    7k   --   1390     1  G100513A
  15701576  Koksal Ahmet                          TR  Hugo   10k   --   1096     6  T120428K
  15486834  Kokturk Omer                          TR  Ist    14k  13k    842     1  G091003A
@@ -14252,7 +14253,7 @@ NT      - number of tournaments the player participated in
  13613182  Kong Xiaolong                         DE  HB      2d   --   2217     4  T051112B
  10513371  Kong Xin-Wei                          NO  Osl     2d   --   2199     2  T971025A
  13098569  Konieczek Vincent                     FR  38Gr    8k   --   1278     5  T051015G
- 14349368  Konieczny Kamil                       PL  Brwi    5k   --   1556    22  T130216G
+ 14349368  Konieczny Kamil                       PL  Brwi    5k   --   1557    22  T130216G
  15986058  Konieczny Lars                        DE  L      15k   --    550     3  T121013J
  12037146  Konig Ruben                           NL  Nijm    7k   --   1333     5  T080315J
  10498829  Konishi Tatsuo                        JP  xxx     6d   --   2583     1  E960721 
@@ -14406,7 +14407,7 @@ NT      - number of tournaments the player participated in
  12949926  Korpela Kimmo                         SE  Lin     6k   8k   1254     4  G061104 
  12362867  Korppi Tuomas                         FI  Hels    2k   --   1854     7  T060106G
  10849465  Korsak Marina                         UA  Kyiv   10k   --   1135    33  T060811A
- 12362097  Korsak Viktoriia                      UA  Kyiv    7k   --   1451    56  T120825E
+ 12362097  Korsak Viktoriia                      UA  Kyiv    6k   --   1425    57  T130302I
  12350085  Korsak Volodymyr                      UA  Kyiv    6k   7k   1354    15  T100813B
  16450720  Korsakov Sevasten                     RU  77Mo   20k   --    100     1  T120407H
  12662749  Korsakova E                           RU  77Mo   20k  19k    226     3  T010915E
@@ -14902,6 +14903,7 @@ NT      - number of tournaments the player participated in
  12898534  Krjukov Nikolaj                       RU  78SP    6k   --   1520    29  T110325B
  15262478  Krjukova Vira                         UA  Kyiv   19k   --    242     1  T081129F
  13749769  Krkelic Stevan                        YU  Beo     5k   --   1607     4  T060121H
+ 16725863  Krlisova Vendula                      CZ  APmG   20k   --    100     1  T130302H
  14837064  Kroeger Thomas                        DE  K       7k   --   1424     2  T071103B
  15750295  Kroese Erik                           DE  BN     20k  18k    302     1  T100227F
  14774452  Krog Thomas                           DK  Arn     2k   --   1889     1  T070504A
@@ -17373,7 +17375,7 @@ NT      - number of tournaments the player participated in
  16450621  Makovetskyi Anatolii                  UA  Done   16k   --    497     1  T120421L
  12525491  Makovicky Juri                        AT  Wien    7k   8k   1201     8  T070505A
  12633027  Makovicky Werner                      AT  Wien    8k   --   1200     4  T070505A
- 15801951  Makovsky Jakub                        CZ  APmG   20k   --    100     4  T120324A
+ 15801951  Makovsky Jakub                        CZ  APmG   20k   --    131     5  T130302H
  12462560  Makowski Robert                       PL  xxx    19k   --    125     1  T000325B
  10949840  Makowski Ronan                        FR  35Re   13k   --    797     1  T990116D
  13837901  Maksimczyk Marek                      PL  Lodz    4k   --   1608    40  T120414F
@@ -18153,6 +18155,7 @@ NT      - number of tournaments the player participated in
  12698026  Mayerhofer Gerfried                   AT  Kre     4k   --   1632     1  T001028D
  12450064  Mayerle Markus                        DE  Ing    20k  18k    384     1  T960203D
  10498268  Mayerle Wolfgang                      DE  Ing     4k   --   1717     2  T960504A
+ 16713862  Mayerova Sara                         CZ  APmG   20k   --    100     1  T130302H
  14637986  Mayes Steve                           UK  Camb   10k   --   1099     1  T070331A
  13062819  Mayne Russell                         UK  Leic   14k   --    789     2  T060917A
  13225014  Maynou Roger                          ES  Bar    11k  13k    785     4  T041113E
@@ -20295,7 +20298,7 @@ NT      - number of tournaments the player participated in
  16786693  Novosiadchuk Maksym                   UA  Rivn   18k   --    284     1  T130216E
  16798694  Novosiadchuk Nazar                    UA  Rivn   20k  19k    281     1  T130216E
  12850981  Novotny Jan                           CZ  Brno   17k  15k    682     7  T100903B
- 16074597  Novotny Stepan                        CZ  APmG   20k   --    188     7  T121006D
+ 16074597  Novotny Stepan                        CZ  APmG   20k   --    149     8  T130302H
  12386198  Novozhilov Alexandr                   RU  10Pt    1k   --   2022     1  T990923 
  16537048  Nowack Joshua                         DE  PB     13k   --    774     3  T130112B
  16550347  Nowag Max                             DE  HH     20k   --    100     3  E120729A
@@ -21098,6 +21101,7 @@ NT      - number of tournaments the player participated in
  14613467  Panait Costin                         RO  Cons   20k   --    100     1  T061217A
  15901270  Panait Daniela_Georgiana              RO  Brai   19k   --    151     4  T120602A
  12586915  Panait Petre                          RO  Drob   20k   --    107     2  T020717 
+ 16733860  Panakova Tereza                       CZ  APmG   20k   --    100     1  T130302H
  10625615  Panaro Max                            IT  Mila   18k   --    327     1  G970419 
  16749568  Panas Arsen                           UA  Rivn   19k   --    273     1  T130119D
  10549517  Panasenko                             UA  Kyiv    2k   --   1896     1  G961108 
@@ -22447,7 +22451,7 @@ NT      - number of tournaments the player participated in
  15686759  Popovich Alexandr                     RU  66Ek    6k   --   1562     5  T120721E
  10501150  Popovici M                            RO  xxx    18k   --    300     1  G960921 
  15033810  Popovici Radu                         RO  Tims   16k   --    543     4  T120908H
- 12598894  Popovych Kateryna                     UA  Kyiv   10k  12k    893    20  T100416A
+ 12598894  Popovych Kateryna                     UA  Kyiv   11k  12k    844    21  T130302I
  13825867  Popow Wojciech                        PL  Wroc   16k   --    425     1  T050213A
  13986049  Poppe Christopher                     DE  SU     20k   --    123     1  T050305A
  12001176  Poprat Guenter                        AT  Kla     2k   --   1858     5  T060603B
@@ -22585,7 +22589,7 @@ NT      - number of tournaments the player participated in
  13813074  Prats Marcel                          ES  StA    19k   --    100     3  T061125H
  16574734  Pratsch Daniel                        DE  HB     19k   --    295     1  T121013D
  15433594  Pratscher Josef                       AT  xxx     6k   --   1400     1  T090912E
- 15733916  Praus Jan                             CZ  APmG   15k  14k    703    20  T130223E
+ 15733916  Praus Jan                             CZ  APmG   14k   --    753    21  T130302H
  15625907  Prause Denis                          DE  LEV    16k   --    518     1  T100109D
  14301925  Prause Jan                            DE  B       2k   --   1807     2  T061125A
  14549612  Pravert Alban                         FR  69CR   17k   --    300     2  T071027G
@@ -25424,7 +25428,7 @@ NT      - number of tournaments the player participated in
  15250026  Seidel Martin                         DE  B       8k   --   1200     8  T101127D
  14898081  Seidl Bernd                           DE  AC     20k   --    100     1  T070929A
  14337895  Seidl Christoph                       AT  Graz    8k   --   1318     1  T060610G
- 16549698  Seidl Jakub                           CZ  APmG   20k   --    100     3  T130119A
+ 16549698  Seidl Jakub                           CZ  APmG   20k   --    167     4  T130302H
  16537697  Seidl Libor                           CZ  APmG   20k   --    100     1  T121006D
  15037583  Seidl Marek                           CZ  xxx    20k  19k    248     1  G080905 
  14637953  Seidl Wolfgang                        AT  xxx     3k   --   1798     2  T071026B
@@ -25527,6 +25531,7 @@ NT      - number of tournaments the player participated in
  15298261  Senkov Alexandr                       RU  54No    3k   --   1741     2  T091010I
  14525940  Senkov Alexej                         RU  78SP   10k   --   1156     2  T061021I
  14049695  Senkov Roman                          RU  54No    2d   --   2258     4  T091010I
+ 16701861  Senkyr Vojtech                        CZ  APmG   20k   --    100     1  T130302H
  13562824  Senn Dominik                          CH  Ber     8k   --   1285     1  T040131D
  14833962  Sentemova Daria                       RU  18Iz   12k  13k    775     3  T080412E
  15049320  Senturk Ercin                         TR  Esk     5k   6k   1410     7  T120714D
@@ -25749,7 +25754,7 @@ NT      - number of tournaments the player participated in
  13049069  Shepherd Martin                       UK  Lndn    4k   --   1632     4  T071124B
  10201026  Shepperson Piers                      UK  Epsm    4d   --   2301    92  T111228B
  15737612  Sher Doron                            IL  TAv     9k   --   1188     1  T100331A
- 16474634  Sheredeko Yehor                       UA  Kyiv   20k  19k    211     3  T121222D
+ 16474634  Sheredeko Yehor                       UA  Kyiv   20k  19k    211     4  T130302I
  12462769  Sheremen Hanna                        UA  Riv    16k   --    509     2  T000414A
  10237931  Sheremietiev Yurii                    UA  Kyiv    4k   5k   1574    29  T001124B
  12998106  Sheridan Simon                        UK  xxxx   17k   --    325     1  T021012A
@@ -26005,7 +26010,7 @@ NT      - number of tournaments the player participated in
  15374051  Sima Ruxandra                         RO  LocB   15k   --    588    14  T100424G
  12325104  Simachenko Hanna                      UA  Ode    16k   --    400     1  T990813 
  12950047  Simal David                           BE  Bru     5k   --   1598     6  T071027E
- 16498306  Simanek Daniel                        CZ  APmG   20k   --    100     3  T130119C
+ 16498306  Simanek Daniel                        CZ  APmG   20k   --    180     4  T130302H
  10962358  Simar Claude                          BE  Bru    11k   --   1075    13  G081025 
  10749860  Simara Jan                            CZ  KVaS    6d   --   2587   189  T130223E
  15713390  Simasek Bernard                       HR  VGo    20k   --    100     1  T100313A
@@ -26442,7 +26447,7 @@ NT      - number of tournaments the player participated in
  14513103  Sokeviciute Vesta                     LT  Mol    20k   --    100     1  T060227A
  14713193  Sokol Karol                           PL  Krak    7k   --   1354     1  T070415A
  14398516  Sokol Marcin                          PL  Krak    2k   --   1901    33  T130112F
- 16533704  Sokol Vojtech                         CZ  APmG   20k  18k    308     5  T130223E
+ 16533704  Sokol Vojtech                         CZ  APmG   18k   --    292     6  T130302H
  16098423  Sokolewicz Robert                     NL  Nijm    5k   --   1525     8  T120924A
  16433901  Sokolnicki Jan                        PL  Wroc   16k   --    528     1  T120526J
  12325412  Sokolov A                             RU  78SP   10k   --   1073     3  T040320H
@@ -27618,7 +27623,7 @@ NT      - number of tournaments the player participated in
  16725709  Szychowiak Marianna                   PL  Bydg   20k   --    100     2  T130216G
  16450082  Szychowiak Sylwester                  PL  Pozn   20k   --    100     2  T130126D
  12586497  Szychowiak Weronika                   PL  Bydg   15k   --    681    18  T060408A
- 10801835  Szychowiak Wojciech                   PL  Bydg    6k   --   1520    62  T130216G
+ 10801835  Szychowiak Wojciech                   PL  Bydg    6k   --   1521    62  T130216G
  13537942  Szyma Rafal                           PL  Pszc   20k   --    181     3  T040606B
  12401752  Szymanek Iza                          PL  Wars   20k   --    100     1  T000416B
  14725194  Szymanski Remigiusz                   PL  Kosz    6k   --   1531     1  T070415B
@@ -27888,7 +27893,7 @@ NT      - number of tournaments the player participated in
  10586785  Taranu Catalin                        RO  Bucu    5p   --   2735    66  W111209A
  16798078  Taras Sandu                           RO  CSRB   18k   --    325     1  T121117G
  13625975  Tarasenko I                           RU  78SP   20k   --    100     1  T040320H
- 13986654  Tarasenko Svitlana                    UA  Kyiv   12k   --    923    30  T121222D
+ 13986654  Tarasenko Svitlana                    UA  Kyiv   11k   --    928    31  T130302I
  16798859  Tarasevic Vladimir                    RS  KGRa   19k   --    189     1  T130302G
  14737338  Tarasevich S                          RU  77Mo    8k   --   1286     1  T070224E
  16237760  Tarasov Nikita                        RU  64oo    3k   --   1800     1  T110801A
@@ -28903,7 +28908,7 @@ NT      - number of tournaments the player participated in
  12725185  Turdean Tudor                         RO  Bist   20k   --    100     1  T010505F
  10825067  Tureckaja Elena                       RU  77Mo    6k   5k   1660     3  T980213 
  16286347  Tureckij Dmitrij                      RU  36Vo   20k   --    140     2  T111119F
- 16074047  Turek Michal                          CZ  APmG   20k   --    100     8  T120602B
+ 16074047  Turek Michal                          CZ  APmG   20k   --    185     9  T130302H
  15925107  Turgunov Rustam                       RU  77Mo    5k   --   1577    12  T121201M
  12650946  Turi Akos                             HU  BuPe   20k   --    100     1  T010422 
  15833763  Turiac Ciprian                        RO  Brai   20k   --    124     1  T100831A
@@ -30325,7 +30330,7 @@ NT      - number of tournaments the player participated in
  13562835  Wansem Tomas_van_der                  NL  Amst    1k   --   1988     4  T080601A
  13649185  Wanski Anica                          DE  B       8k   --   1326    12  T081025B
  10649298  Warburton Tony                        UK  Camb    1d   --   2018     8  T040229A
- 14749196  Warchol Tomasz                        PL  Wars    6k   --   1454    20  T110528B
+ 14749196  Warchol Tomasz                        PL  Wars    6k   --   1445    21  T130212A
  14833126  Ward Danielle                         UK  Camb   10k   9k   1221    20  T100822A
  10313017  Ward David                            UK  Camb    2d   --   2199   156  T130223B
  14386724  Ward Russell                          UK  Abrd    5k   7k   1330     9  T091212G
@@ -31278,7 +31283,7 @@ NT      - number of tournaments the player participated in
  13625084  Yermilov Roman                        UA  Don    16k   --    597     3  T040326B
  14674308  Yerokhin Kostiantyn                   UA  Kyiv   20k   --    100     2  T070414I
  12974489  Yeroshenko Dmytro                     UA  Kyiv   20k   --    100     1  G021122 
- 13649108  Yeroshkin Oleksandr                   UA  Rivn    1d   --   2080    43  T130216E
+ 13649108  Yeroshkin Oleksandr                   UA  Rivn    1d   --   2083    44  T130302I
  12786697  Yeroshkin Yurii                       UA  Rivn    2d   --   2210    10  T121222D
  12949475  Yeroshkina Liudmyla                   UA  Rivn    9k   --   1145    19  T120929B
  16386843  Yesil Eryagiz                         TR  Ist    18k   --    269     1  T120121F
@@ -31620,7 +31625,7 @@ NT      - number of tournaments the player participated in
  15425971  Zamalieva Polina                      RU  74Ch   20k   --    100     1  T090501D
  13701974  Zamarreno Daniel                      ES  Gij    20k  18k    306     1  T041030F
  16233096  Zambo Bence                           HU  Cson   14k  13k    804     1  T110514H
- 14762330  Zambrzycki Stanislaw                  PL  Wars    4k   --   1742    15  T130129A
+ 14762330  Zambrzycki Stanislaw                  PL  Wars    4k   --   1728    17  T130219A
  15674758  Zamfir Alexandru                      RO  Bucu   20k   --    100     1  T091211C
  15601740  Zamfirache Cristian                   RO  Bucu    1k   --   2003     7  T120609G
  10598918  Zamhoefer Kai                         DE  E       2k   3k   1751     3  T050115A
@@ -31914,7 +31919,7 @@ NT      - number of tournaments the player participated in
  15625247  Zhukov Vladimir                       RU  42Sa    1k   --   2025     1  T091010I
  10286826  Zhuo Cheng                            NL  Eind    2d   --   2218    49  T090418C
  15298580  Zhuo MinChong                         UK  Glas   15k   --    640     1  T081213D
- 12374461  Zhurakovskyi Bohdan                   UA  Rivn    5d   --   2565   106  T121124F
+ 12374461  Zhurakovskyi Bohdan                   UA  Rivn    5d   --   2566   107  T130302I
  12333475  Zhurakovskyi Mykhailo                 UA  Kyiv   15k  14k    767     2  T001124B
  15925613  Zhuravlev Mikhail                     UA  00oo   20k   --    100     1  T100920A
  15486086  Zhuravlova Iryna                      UA  Rivn   20k   --    100     1  T090717A
@@ -32139,7 +32144,7 @@ NT      - number of tournaments the player participated in
  16401517  Zysk Antoine                          FR  76An   20k   --    104     1  T120415A
  10949763  Zyzak Andrzej                         PL  Wodz    3d   --   2215   116  T120427A
 
-Number of players: 32114
+Number of players: 32119
 Number of DAN players:  4235
 </pre>
 </body>
