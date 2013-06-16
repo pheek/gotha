@@ -178,7 +178,7 @@ public class JFrUpdateRatings extends javax.swing.JFrame {
         getContentPane().add(btnHelp);
         btnHelp.setBounds(50, 470, 110, 30);
 
-        btnQuit.setText("Quit this frame");
+        btnQuit.setText("Close");
         btnQuit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnQuitActionPerformed(evt);

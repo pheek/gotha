@@ -4,15 +4,20 @@
 
 package info.vannier.gotha;
 
-import java.rmi.*;
-
-import java.awt.*;
-import java.awt.event.*;
-import java.util.*;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.rmi.RemoteException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.*;
-import javax.swing.table.*;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -144,7 +149,7 @@ public class JFrPlayersMMG extends javax.swing.JFrame{
         pnlInternal.add(pnlMMG0);
         pnlMMG0.setBounds(10, 10, 290, 300);
 
-        btnQuit.setText("Quit this frame");
+        btnQuit.setText("Close");
         btnQuit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnQuitActionPerformed(evt);

@@ -107,7 +107,7 @@ public class JFrToolsMemory extends javax.swing.JFrame {
         getContentPane().add(btnRunGB);
         btnRunGB.setBounds(70, 110, 240, 23);
 
-        btnQuit.setText("Quit this frame");
+        btnQuit.setText("Close");
         btnQuit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnQuitActionPerformed(evt);

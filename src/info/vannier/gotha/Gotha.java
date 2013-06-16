@@ -41,8 +41,8 @@ public class Gotha {
     
     static Locale locale = Locale.getDefault();
     static final long GOTHA_VERSION = 332L;
-    static final long GOTHA_MINOR_VERSION = 0L;
-    static final java.util.Date GOTHA_RELEASE_DATE = (new GregorianCalendar(2013, Calendar.MARCH, 6)).getTime();
+    static final long GOTHA_MINOR_VERSION = 3L;
+    static final java.util.Date GOTHA_RELEASE_DATE = (new GregorianCalendar(2013, Calendar.JUNE, 16)).getTime();
     // Data version for serialization
     static final long GOTHA_DATA_VERSION = 201L;
     
@@ -71,7 +71,7 @@ public class Gotha {
     static File tournamentDirectory;
     static File exportDirectory;
     static File exportHTMLDirectory;
-    static File exportXMLDirectory;
+//    static File exportXMLDirectory;
 
     public static String getGothaVersionNumber() {
         int mainVersion = (int) (GOTHA_VERSION / 100L);

@@ -3,10 +3,11 @@
  */
 package info.vannier.gotha;
 
-import java.rmi.*;
-import java.awt.*;
-import java.awt.event.*;
-
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.rmi.RemoteException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -112,7 +113,7 @@ public class JFrGamesOptions extends javax.swing.JFrame {
         pnlGam.add(txfKomi);
         txfKomi.setBounds(170, 80, 50, 20);
 
-        btnQuit.setText("Quit this frame");
+        btnQuit.setText("Close");
         btnQuit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnQuitActionPerformed(evt);
@@ -240,7 +241,7 @@ public class JFrGamesOptions extends javax.swing.JFrame {
         pnlTime.add(jLabel7);
         jLabel7.setBounds(80, 170, 40, 20);
 
-        lblEGFClass.setFont(new java.awt.Font("Tahoma", 0, 14));
+        lblEGFClass.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblEGFClass.setForeground(new java.awt.Color(255, 0, 51));
         lblEGFClass.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblEGFClass.setText("EGF class X");

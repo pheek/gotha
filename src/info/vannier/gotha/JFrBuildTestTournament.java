@@ -6,7 +6,7 @@ package info.vannier.gotha;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.rmi.*;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -49,7 +49,7 @@ public class JFrBuildTestTournament extends javax.swing.JFrame{
         setTitle("Build test tournament");
         getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 14));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
         jLabel1.setText("To be used for test only !");
         getContentPane().add(jLabel1);
@@ -80,7 +80,7 @@ public class JFrBuildTestTournament extends javax.swing.JFrame{
         getContentPane().add(btnBuild);
         btnBuild.setBounds(420, 70, 140, 30);
 
-        btnQuit.setText("Quit this frame");
+        btnQuit.setText("Close");
         btnQuit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnQuitActionPerformed(evt);
@@ -527,6 +527,9 @@ public class JFrBuildTestTournament extends javax.swing.JFrame{
         setBounds((dim.width - w)/2, (dim.height -h)/2, w, h);
 
         setIconImage(Gotha.getIconImage());
+//        
+//        javax.swing.JComboBox<String> cbx = new javax.swing.JComboBox<String>();
+//        cbx.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "I1", "I2", "I3" }));
     }
     private String generateName(int i){
         int i2 = 'A' + (i % 26);

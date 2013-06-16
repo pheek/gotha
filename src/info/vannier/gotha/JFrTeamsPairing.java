@@ -281,7 +281,7 @@ public class JFrTeamsPairing extends javax.swing.JFrame {
         pnlInternal.add(pnlMatches);
         pnlMatches.setBounds(390, 40, 380, 390);
 
-        btnQuit.setText("Quit this frame");
+        btnQuit.setText("Close");
         btnQuit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnQuitActionPerformed(evt);

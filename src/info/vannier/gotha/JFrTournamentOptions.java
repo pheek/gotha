@@ -331,7 +331,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         setResizable(false);
         getContentPane().setLayout(null);
 
-        btnQuit.setText("Quit this frame");
+        btnQuit.setText("Close");
         btnQuit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnQuitActionPerformed(evt);

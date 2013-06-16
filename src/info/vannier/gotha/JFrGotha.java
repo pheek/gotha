@@ -3375,7 +3375,10 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     }
     
     public static void formatHeader(JTable tbl, int col, String str, int align){
-        tbl.getColumnModel().getColumn(col).setHeaderValue(str);
+        JTableHeader th = tbl.getTableHeader();
+//        tbl.getColumnModel().getColumn(col).setHeaderValue(str);
+        th.getColumnModel().getColumn(col).setHeaderValue(str);
+        th.repaint();
         TableColumn tc = tbl.getColumnModel().getColumn(col);
         DefaultTableCellRenderer dtcr = new DefaultTableCellRenderer();  
         dtcr.setBackground(Color.LIGHT_GRAY);

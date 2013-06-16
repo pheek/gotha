@@ -4,10 +4,11 @@
 
 package info.vannier.gotha;
 
-import java.awt.*;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.rmi.registry.*;
+import java.rmi.registry.Registry;
 import java.util.ArrayList;
 
 
@@ -105,7 +106,7 @@ public class JFrToolsRMI extends javax.swing.JFrame {
         getContentPane().add(btnForgetNonActiveClients);
         btnForgetNonActiveClients.setBounds(240, 230, 360, 23);
 
-        btnQuit.setText("Quit this frame");
+        btnQuit.setText("Close");
         btnQuit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnQuitActionPerformed(evt);

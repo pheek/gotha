@@ -110,7 +110,7 @@ public class JFrPlayersQuickCheck extends javax.swing.JFrame{
         btnUpdateRatings = new javax.swing.JButton();
         btnModifyRatings = new javax.swing.JButton();
 
-        pupRegisteredPlayers.setFont(new java.awt.Font("Arial", 0, 11));
+        pupRegisteredPlayers.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
         mniSortByName.setText("Sort by name");
         mniSortByName.addActionListener(new java.awt.event.ActionListener() {
@@ -149,7 +149,7 @@ public class JFrPlayersQuickCheck extends javax.swing.JFrame{
 
         pnlInternal.setLayout(null);
 
-        btnQuit.setText("Quit this frame");
+        btnQuit.setText("Close");
         btnQuit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnQuitActionPerformed(evt);
@@ -233,19 +233,19 @@ public class JFrPlayersQuickCheck extends javax.swing.JFrame{
         pnlInternal.add(pnlPlayersList);
         pnlPlayersList.setBounds(30, 10, 360, 460);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 11));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         jLabel1.setText("Action on selected players");
         pnlInternal.add(jLabel1);
         jLabel1.setBounds(430, 180, 220, 14);
 
-        jLabel6.setFont(new java.awt.Font("Arial", 0, 24));
+        jLabel6.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("+");
         jLabel6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         pnlInternal.add(jLabel6);
         jLabel6.setBounds(430, 280, 20, 20);
 
-        jLabel10.setFont(new java.awt.Font("Arial", 0, 24));
+        jLabel10.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("-");
         jLabel10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -259,7 +259,7 @@ public class JFrPlayersQuickCheck extends javax.swing.JFrame{
         pnlInternal.add(jLabel13);
         jLabel13.setBounds(430, 200, 20, 20);
 
-        jLabel16.setFont(new java.awt.Font("Arial", 0, 18));
+        jLabel16.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText("P");
         jLabel16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);

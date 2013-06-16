@@ -565,7 +565,7 @@ public class JFrTeamsManager extends javax.swing.JFrame {
         getContentPane().add(btnHelp);
         btnHelp.setBounds(20, 480, 260, 30);
 
-        btnQuit.setText("Quit this frame");
+        btnQuit.setText("Close");
         btnQuit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnQuitActionPerformed(evt);

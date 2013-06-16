@@ -67,7 +67,7 @@ public class JFrPreferencesOptions extends javax.swing.JFrame {
 
         pnlPref.setLayout(null);
 
-        btnQuit.setText("Quit this frame");
+        btnQuit.setText("Close");
         btnQuit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnQuitActionPerformed(evt);

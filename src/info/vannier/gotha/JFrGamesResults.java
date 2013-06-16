@@ -105,7 +105,19 @@ public class JFrGamesResults extends javax.swing.JFrame {
 
     private void updateComponents() {
         this.spnRoundNumber.setValue(this.processedRoundNumber + 1);
-
+        
+        // If Team presentation, color may vary in each column
+        if (this.ckbTeamOrder.isSelected()){
+            JFrGotha.formatColumn(tblGames, LEFT_PLAYER_COL, "", PLAYER_WIDTH, JLabel.LEFT, JLabel.CENTER);
+            JFrGotha.formatColumn(tblGames, RIGHT_PLAYER_COL, "", PLAYER_WIDTH, JLabel.LEFT, JLabel.CENTER);
+        }
+        // else White = left, Black = right
+        else{
+            JFrGotha.formatColumn(tblGames, LEFT_PLAYER_COL, "White", PLAYER_WIDTH, JLabel.LEFT, JLabel.CENTER);
+            JFrGotha.formatColumn(tblGames, RIGHT_PLAYER_COL, "Black", PLAYER_WIDTH, JLabel.LEFT, JLabel.CENTER);
+        }
+        
+ 
         ArrayList<Game> alCurrentActualGames = null;
         try {
             alCurrentActualGames = tournament.gamesList(processedRoundNumber);
@@ -334,7 +346,7 @@ public class JFrGamesResults extends javax.swing.JFrame {
         pnlInternal.add(pnlGames);
         pnlGames.setBounds(168, 10, 460, 470);
 
-        btnQuit.setText("Quit this frame");
+        btnQuit.setText("Close");
         btnQuit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnQuitActionPerformed(evt);

@@ -139,18 +139,6 @@ public class JFrGamesPair extends javax.swing.JFrame {
         final int TABLE_NUMBER_WIDTH = 40;
         final int PLAYER_WIDTH = 150;
         final int HANDICAP_WIDTH = 20;
-
-//        tbl.getColumnModel().getColumn(TABLE_NUMBER_COL).setPreferredWidth(TABLE_NUMBER_WIDTH);
-//        tbl.getColumnModel().getColumn(WHITE_PLAYER_COL).setPreferredWidth(PLAYER_WIDTH);
-//        tbl.getColumnModel().getColumn(BLACK_PLAYER_COL).setPreferredWidth(PLAYER_WIDTH);
-//        tbl.getColumnModel().getColumn(HANDICAP_COL).setPreferredWidth(HANDICAP_WIDTH);
-//
-//        // Column names 
-//        TableColumnModel tcm = tbl.getColumnModel();
-//        tcm.getColumn(0).setHeaderValue("Table");
-//        tcm.getColumn(1).setHeaderValue("White");
-//        tcm.getColumn(2).setHeaderValue("Black");
-//        tcm.getColumn(3).setHeaderValue("Hd");
         
         JFrGotha.formatColumn(tbl, TABLE_NUMBER_COL, "Table", TABLE_NUMBER_WIDTH, JLabel.RIGHT, JLabel.RIGHT);
         JFrGotha.formatColumn(tbl, WHITE_PLAYER_COL, "White", PLAYER_WIDTH, JLabel.LEFT, JLabel.CENTER);
@@ -941,7 +929,7 @@ public class JFrGamesPair extends javax.swing.JFrame {
         pnlInternal.add(lblByePlayer);
         lblByePlayer.setBounds(280, 310, 110, 14);
 
-        btnQuit.setText("Quit this frame");
+        btnQuit.setText("Close");
         btnQuit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnQuitActionPerformed(evt);

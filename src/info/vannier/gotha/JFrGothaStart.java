@@ -3,14 +3,15 @@
  */
 package info.vannier.gotha;
 
-import java.awt.*;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.io.File;
 import java.net.InetAddress;
+import java.rmi.RemoteException;
+import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.*;
-import java.util.*;
-import java.rmi.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -48,7 +49,7 @@ public class JFrGothaStart extends javax.swing.JFrame {
         Gotha.tournamentDirectory = new File(Gotha.runningDirectory , "tournamentfiles");
         Gotha.exportDirectory = new File(Gotha.runningDirectory, "exportfiles");
         Gotha.exportHTMLDirectory = new File(Gotha.runningDirectory, "exportfiles/html");
-        Gotha.exportXMLDirectory = new File(Gotha.runningDirectory, "exportfiles/xml");
+//        Gotha.exportXMLDirectory = new File(Gotha.runningDirectory, "exportfiles/xml");
         initComponents();
         customInitComponents();
     }
