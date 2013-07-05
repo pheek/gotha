@@ -191,13 +191,17 @@ public class JFrGamesResults extends javax.swing.JFrame {
             }
             if (m == null) continue;
             
-            int wResult = m.getTeamScore(m.getWhiteTeam());
-            int bResult = m.getTeamScore(m.getBlackTeam());
-            String strWTeamResult = "" + Gotha.formatFractNumber(wResult, 1);
-            String strBTeamResult = "" + Gotha.formatFractNumber(bResult, 1);
-            String strTeamResult = strWTeamResult + "-" + strBTeamResult;
-            model.setValueAt(strTeamResult, ln, RESULT_COL);
-
+//            int wResult = m.getTeamScore(m.getWhiteTeam());
+//            int bResult = m.getTeamScore(m.getBlackTeam());
+//            String strWTeamResult = "" + Gotha.formatFractNumber(wResult, 1);
+//            String strBTeamResult = "" + Gotha.formatFractNumber(bResult, 1);
+//            String strTeamResult = strWTeamResult + "-" + strBTeamResult;
+//            model.setValueAt(strTeamResult, ln, RESULT_COL);
+            
+            String strWTeamNbW = Gotha.formatFractNumber(m.getWX2(m.getWhiteTeam()), 2);
+            String strBTeamNbW = Gotha.formatFractNumber(m.getWX2(m.getBlackTeam()), 2);
+            model.setValueAt(strWTeamNbW + "-" + strBTeamNbW, ln, RESULT_COL);
+ 
             model.setValueAt("" + (cm.board0TableNumber + 1) + "---", ln, JFrGamesResults.TABLE_NUMBER_COL);
             Team wt = m.getWhiteTeam();
             Team bt = m.getBlackTeam();
@@ -229,7 +233,7 @@ public class JFrGamesResults extends javax.swing.JFrame {
                 Player wP = g.getWhitePlayer();
                 Player bP = g.getBlackPlayer();
 
-                boolean wb = this.wb(processedRoundNumber, g.getTableNumber());
+                boolean wb = this.wbOrder(processedRoundNumber, g.getTableNumber());
                 Player p1 = wP;
                 Player p2 = bP;
                 String strP1Color = "(w)";
@@ -424,7 +428,11 @@ public class JFrGamesResults extends javax.swing.JFrame {
 
         int oldResult = g.getResult();
         int newResult = oldResult;
-        boolean wb = this.wb(processedRoundNumber, tn);
+        
+        boolean wb = this.wbOrder(processedRoundNumber, tn);
+        if (this.ckbTeamOrder.isSelected()) wb = this.wbOrder(processedRoundNumber, tn);
+        else wb = true;
+
         if ((c == LEFT_PLAYER_COL && wb) || (c == RIGHT_PLAYER_COL && !wb)) {
             newResult = Game.RESULT_WHITEWINS;
         } else if ((c == LEFT_PLAYER_COL && !wb) || (c == RIGHT_PLAYER_COL && wb)) {
@@ -644,7 +652,7 @@ public class JFrGamesResults extends javax.swing.JFrame {
      * @param tn table number
      * @return
      */
-    private boolean wb(int rn, int tn) {
+    private boolean wbOrder(int rn, int tn) {
         Game g = null;
         Player wP = null;
         Match m = null;

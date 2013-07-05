@@ -1,8 +1,11 @@
-OpenGothaV3.32.03
+OpenGothaV3.32.04
 *****************
-16/06/2013
+05/07/2013
 New     Replase text in buttons : "Close" instead of "Quit this frame"  
-
+Bug fix In team tournaments, clicking on a player's name might be uncorrectly processed. Fixed
+New     In Games Results, Teams presentation, the number of wins is displayed for each team
+Bug fix In Players Manager Frame, Grade was misinterpreted for double-digit kyu players. Fixed
+ 
 OpenGothaV3.32
 **************
 06/03/2013

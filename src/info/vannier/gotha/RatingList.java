@@ -91,7 +91,6 @@ public class RatingList {
                 String strPin = strLine.substring(1, 9);
                 if (strPin.matches("[0-9]*")){
                     String strNF = strLine.substring(11, 48);
-//                    System.out.println("strNF = " + strNF);
                     String strName = strNF;
                     String strFirstName = "x";
                     
@@ -103,7 +102,7 @@ public class RatingList {
                     String strCountry = strLine.substring(49, 52).trim();
                     String strClub = strLine.substring(53, 57).trim();
                     int rating = new Integer(strLine.substring(71, 75).trim()).intValue();
-                    String strGrade = strLine.substring(61,64);
+                    String strGrade = strLine.substring(60,63);
                     int grade  = Player.convertKDToInt(strGrade);
                     RatedPlayer rP = new RatedPlayer(
                             strPin, "", "", "", "", strName, strFirstName, strCountry, strClub, rating, grade, "EGF");
