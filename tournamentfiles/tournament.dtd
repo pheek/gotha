@@ -19,6 +19,7 @@
 <!ATTLIST Player rank CDATA "30K">
 <!ATTLIST Player rating CDATA "-2950">
 <!ATTLIST Player ratingOrigin CDATA "">
+<!ATTLIST Player grade CDATA "">
 <!ATTLIST Player smmsCorrection CDATA "0">
 <!ATTLIST Player participating CDATA "11111111111111111111">
 <!ATTLIST Player registeringStatus CDATA "FIN">
@@ -97,7 +98,7 @@
 <!ATTLIST DPParameterSet gameFormat CDATA "full">
 <!ATTLIST DPParameterSet displayNumCol CDATA "true">
 <!ATTLIST DPParameterSet displayPlCol CDATA "true">
-<!ATTLIST DPParameterSet displayIndividualGamesInMatches CDATA "true">
+<!ATTLIST DPParameterSet displayIndGamesInMatches CDATA "true">
 
 <!ELEMENT PairingParameterSet (#PCDATA)>
 <!ATTLIST PairingParameterSet paiStandardNX1Factor                      CDATA "0.5">

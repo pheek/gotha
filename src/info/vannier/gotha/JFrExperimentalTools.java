@@ -12,6 +12,7 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -73,6 +74,9 @@ public class JFrExperimentalTools extends javax.swing.JFrame {
         btnTestconversıon = new javax.swing.JButton();
         txfConverted = new javax.swing.JTextField();
         btnForceConversion = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        pnlImportGrades = new javax.swing.JPanel();
+        btnImportGrades = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -111,13 +115,13 @@ public class JFrExperimentalTools extends javax.swing.JFrame {
         pnlForceASCII.setBorder(javax.swing.BorderFactory.createTitledBorder("Force ASCII conversion"));
         pnlForceASCII.setLayout(null);
 
-        jLabel3.setText("This converts Latin 9  and Turkish characters into theır usual ASCII equivalent");
+        jLabel3.setText("This converts Latin 9  and Turkish characters");
         pnlForceASCII.add(jLabel3);
-        jLabel3.setBounds(30, 30, 480, 14);
+        jLabel3.setBounds(10, 30, 240, 14);
 
         txfOrıgınal.setText("IĞÜŞİÖÇ ığüşiöç ");
         pnlForceASCII.add(txfOrıgınal);
-        txfOrıgınal.setBounds(20, 70, 370, 20);
+        txfOrıgınal.setBounds(10, 80, 250, 20);
 
         btnTestconversıon.setText("Test conversıon");
         btnTestconversıon.addActionListener(new java.awt.event.ActionListener() {
@@ -126,11 +130,11 @@ public class JFrExperimentalTools extends javax.swing.JFrame {
             }
         });
         pnlForceASCII.add(btnTestconversıon);
-        btnTestconversıon.setBounds(20, 100, 370, 23);
+        btnTestconversıon.setBounds(10, 110, 250, 23);
 
         txfConverted.setBackground(new java.awt.Color(204, 255, 255));
         pnlForceASCII.add(txfConverted);
-        txfConverted.setBounds(20, 130, 370, 20);
+        txfConverted.setBounds(10, 140, 250, 20);
 
         btnForceConversion.setText("Force ASCII conversion for all players");
         btnForceConversion.addActionListener(new java.awt.event.ActionListener() {
@@ -139,10 +143,29 @@ public class JFrExperimentalTools extends javax.swing.JFrame {
             }
         });
         pnlForceASCII.add(btnForceConversion);
-        btnForceConversion.setBounds(20, 200, 370, 23);
+        btnForceConversion.setBounds(10, 210, 250, 23);
+
+        jLabel4.setText(" into theır usual ASCII equivalent");
+        pnlForceASCII.add(jLabel4);
+        jLabel4.setBounds(10, 50, 240, 14);
 
         getContentPane().add(pnlForceASCII);
-        pnlForceASCII.setBounds(30, 90, 530, 280);
+        pnlForceASCII.setBounds(20, 90, 280, 280);
+
+        pnlImportGrades.setBorder(javax.swing.BorderFactory.createTitledBorder("Import grades"));
+        pnlImportGrades.setLayout(null);
+
+        btnImportGrades.setText("Import grades from EGF Rating list");
+        btnImportGrades.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnImportGradesActionPerformed(evt);
+            }
+        });
+        pnlImportGrades.add(btnImportGrades);
+        btnImportGrades.setBounds(30, 110, 230, 23);
+
+        getContentPane().add(pnlImportGrades);
+        pnlImportGrades.setBounds(320, 90, 280, 280);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -231,6 +254,64 @@ public class JFrExperimentalTools extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnForceConversionActionPerformed
 
+    private void btnImportGradesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImportGradesActionPerformed
+        ArrayList<Player> alPlayers = null;
+        try {
+            alPlayers = tournament.playersList();
+        } catch (RemoteException ex) {
+            Logger.getLogger(JFrExperimentalTools.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        RatingList ratingList = new RatingList(RatingList.TYPE_EGF, new File(Gotha.runningDirectory, "ratinglists/egf_db.txt"));
+        ArrayList<RatedPlayer> alRP = ratingList.getALRatedPlayers();
+        
+        int nbGradesSetOrChanged = 0;
+        int nbPlayersNotFound = 0;
+        
+        
+        for (Player  p: alPlayers){
+            String strName = p.getName();
+            String strFirstName = p.getFirstName();
+            
+            boolean bFound = false;
+            for (RatedPlayer rp:alRP){
+                if(!strName.equals(rp.getName())) continue;
+                if(!strFirstName.equals(rp.getFirstName())) continue;
+                bFound = true;
+                int oldGrade = p.getGrade();
+                int newGrade = rp.getGrade();
+                p.setGrade(newGrade);
+                if (newGrade != RatedPlayer.GRADE_NOT_RELEVANT && newGrade != oldGrade){
+                    try {
+                        tournament.modifyPlayer(p, p);
+                    } catch (TournamentException ex) {
+                        Logger.getLogger(JFrExperimentalTools.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (RemoteException ex) {
+                        Logger.getLogger(JFrExperimentalTools.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    nbGradesSetOrChanged++;
+                }
+                
+                break;             
+            }
+            if (!bFound){
+//                System.out.println(strName + " " + strFirstName +" not found");
+                nbPlayersNotFound++;
+            }
+            
+        }
+        
+        tournamentChanged();
+        
+        String str ="" + nbGradesSetOrChanged + " grades have been set or changed";
+        if (nbPlayersNotFound != 0){
+            str += "\n\n" + nbPlayersNotFound + " players have not been found in the rating list";
+            JOptionPane.showMessageDialog(this, str);
+        }
+        
+ 
+    }//GEN-LAST:event_btnImportGradesActionPerformed
+
         /** This method is called from within the constructor to
      * initialize the form.
      * Unlike initComponents, customInitComponents is editable
@@ -249,13 +330,16 @@ public class JFrExperimentalTools extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnForceConversion;
+    private javax.swing.JButton btnImportGrades;
     private javax.swing.JButton btnShiftNONEGFRatings;
     private javax.swing.JButton btnShiftRatings;
     private javax.swing.JButton btnTestconversıon;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel pnlForceASCII;
+    private javax.swing.JPanel pnlImportGrades;
     private javax.swing.JTextField txfConverted;
     private javax.swing.JTextField txfOrıgınal;
     // End of variables declaration//GEN-END:variables

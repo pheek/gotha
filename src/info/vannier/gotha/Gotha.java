@@ -40,9 +40,9 @@ public class Gotha {
     //
     
     static Locale locale = Locale.getDefault();
-    static final long GOTHA_VERSION = 332L;
-    static final long GOTHA_MINOR_VERSION = 4L;
-    static final java.util.Date GOTHA_RELEASE_DATE = (new GregorianCalendar(2013, Calendar.JULY, 5)).getTime();
+    static final long GOTHA_VERSION = 333L;
+    static final long GOTHA_MINOR_VERSION = 0L;
+    static final java.util.Date GOTHA_RELEASE_DATE = (new GregorianCalendar(2013, Calendar.JULY, 9)).getTime();
     // Data version for serialization
     static final long GOTHA_DATA_VERSION = 201L;
     
@@ -138,10 +138,11 @@ public class Gotha {
         str += "\nMatthieu Walraet";
         str += "\nOther contributors are Paul Baratou, Jonathan M Bresler, Claude Brisson,";
         str += "\nClaude Burvenich, Barkın Çelebican, Laurent Coquelet, Loïc Cuvillon,";
-        str += "\nTilo Dickopp, André Engels, Bart Jacob, Marc Krauth, Roland Lezuo, Fabien Lips,";
-        str += "\nDamien Martin-Guillerez, Richard Mullens, François Mizessyn, Konstantin Pelepelin,";
-        str += "\nSylvain Ravera, Wandrille Sacquépée, Grzegorz Sobański, Rémi Vannier, Rory Wales and many others.";
-        str += "\nThanks to all of them !";
+        str += "\nTilo Dickopp, André Engels, Krzysztof Grabowski, Bart Jacob, Marc Krauth,";
+        str += "\nRoland Lezuo, Fabien Lips, Damien Martin-Guillerez, Richard Mullens, François Mizessyn,";
+        str += "\nKonstantin Pelepelin, Sylvain Ravera, Wandrille Sacquépée, Grzegorz Sobański, Rémi Vannier,";
+        str += "\nRory Wales and many others.";
+        str += "\n\nThanks to all of them !";
 
         return str;
     }

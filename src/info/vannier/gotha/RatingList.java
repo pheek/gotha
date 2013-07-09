@@ -137,7 +137,7 @@ public class RatingList {
                         strClub = strCC;
                     }
 
-                    int grade = -30;    // N/A for FFG, actually
+                    int grade = RatedPlayer.GRADE_NOT_RELEVANT;    // N/A for FFG, actually
                     RatedPlayer rP = new RatedPlayer(
                             "", strFfgLicence, strFfgLicenceStatus, "", "", strName, strFirstName, strCountry, strClub, rating, grade, "FFG");
                     alRatedPlayers.add(rP);
@@ -195,7 +195,7 @@ public class RatingList {
                     club = myStrArr[AGA_CLUB];
                 }
                 
-                int grade = -30;    // N/A for AGA, actually
+                int grade = RatedPlayer.GRADE_NOT_RELEVANT;    // N/A for AGA, actually
                 RatedPlayer rP = new RatedPlayer(
                         "", "", "", agaID, agaExpirationDate, name, firstName, country, club, rawRating, grade, "AGA");
                 alRatedPlayers.add(rP);

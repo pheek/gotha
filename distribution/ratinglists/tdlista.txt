@@ -4079,7 +4079,7 @@ Ervin, John	18210	Full		6/11/2011		WA
 Ervin, Quinton	20269	Full		11/9/2013		NY		
 Erwin, Denise	1938	Full		12/28/1983		VA		12/28/1983
 Eryu, Sam O.	6106	Full	3.63738	8/28/2005	LAGC	CA	0.43488	11/1/2006
-Eschenbach, Ted	2356	Full	1.92612	8/4/2013		AK	0.35548	8/8/2012
+Eschenbach, Ted	2356	Full	1.92612	8/4/2015		AK	0.35548	8/8/2012
 Eshleman, Kenneth	18843	Full		6/3/2012		KS		
 Eskridge, Donald	11618	Full		1/28/2010	SLGC	MO		1/28/2010
 Esmeier, Elizabeth E.	1621	Full		8/28/1982		GA		8/28/1982
@@ -4104,7 +4104,7 @@ Esworthy, Chris	5718	Full		12/28/1992		GA		12/28/1992
 Ethridge, Allen B.	5043	Full		10/28/1991		TX		10/28/1991
 Etter, John	10461	Full		3/24/2002		LA		3/24/2002
 Eubank 11, William E.	12248	Full		11/7/2004		NC		11/7/2004
-Eubanks III, John W.	4821	Full	-13.88658	6/17/2014	GOOR	AK	0.88397	8/1/2003
+Eubanks III, John W.	4821	Full	-13.88658	6/17/2015	GOOR	AK	0.88397	8/1/2003
 Eubanks, Kevin	11658	Youth		2/13/2008		FL		2/13/2008
 Eubanks, Marcus	12913	Full		8/28/2005		PA		8/28/2005
 Eudell, Arnold	261	Full	-4.04806	5/31/2014	BALT	MD	0.19244	5/25/2013
@@ -4470,7 +4470,7 @@ Fortner, Stephen	12459	Full	-15.89653	2/8/2007		WA	0.95327	3/1/2004
 Fosa, Jayme	15781	Full	6.49189	3/25/2009		MA	0.46537	9/1/2008
 Foscolos, Nick	4114	Full	-11.37508	3/28/1990	MGA	MA	0.57968	9/1/1993
 Fosner, Ronald B.	4817	Full		6/28/1992		MA		6/28/1992
-Foss, Bjorn	11800	Full	-1.90819	7/24/2013		FL	0.35415	4/13/2013
+Foss, Bjorn	11800	Full	-1.90819	7/24/2015		FL	0.35415	4/13/2013
 Foster, Brian Coburn	5935	Full	-1.81074	5/4/2003	SFGC	CA	0.44549	3/1/2000
 Foster, Dean	1731	Full		1/28/1995	CNST	PA		1/28/1995
 Foster, Ed	3818	Full		8/28/1989		MA		8/28/1989
@@ -7522,7 +7522,7 @@ Kass, Joan S.	2415	Full		3/28/1986		MA		3/28/1986
 Kass, Michael	1762	Full	5.42016	8/18/2009		CA	0.50053	9/1/2008
 Kassil, Joachim	3155	Full	-5.90000	3/28/1991	CLEV	MO		11/15/1992
 Kassover, David	4818	Full		7/28/1994		NY		7/28/1994
-Kastenholz, Daniel J.	4906	Full	-4.54660	6/26/2013	WISC	WI	0.56479	10/1/2003
+Kastenholz, Daniel J.	4906	Full	-4.54660	7/6/2014	WISC	WI	0.56479	10/1/2003
 Kasuya, Koji	1509	Full		6/28/1982	SFGC	CA		6/28/1982
 Kaszynski, Jaime	14167	Full	1.47817	1/13/2013	OLYM	WA	0.41772	5/5/2012
 Katagish, Kanjiro	6628	Full	6.79454	7/28/1994	GFY	CA	0.52956	9/1/1993
@@ -8642,7 +8642,7 @@ Landon, Herbert	9506	Full		4/24/2000	WACW	OR		4/24/2000
 Landowski, Wayne A.	4957	Full		8/28/1990		IA		8/28/1990
 Landry, Curran	13182	Youth	-33.98640	1/25/2006		CO	3.33756	2/1/2005
 Lane, Christopher	12987	Full	-10.77305	10/3/2006	TGG	NC	0.74496	10/1/2005
-Lane, Edward James	20008	Youth	-9.07544	6/20/2014	NOVA	VA	0.57525	6/22/2013
+Lane, Edward	20008	Youth	-9.07544	6/20/2014	NOVA	VA	0.57525	6/22/2013
 Lane, Richard B.	3855	Full		12/20/2016		MT		12/20/2011
 Lang, Daniel	20380	Youth	-16.57736	1/29/2014		CA	0.82911	1/12/2013
 Lang, David	17569	Full		6/21/2010	ROCK	IL		6/21/2010
@@ -8703,7 +8703,7 @@ Laskin, Irwin	441	Full		12/28/1977		NJ		12/28/1977
 Laskin, Oren	13996	Full	-6.63403	1/1/2014	SEAG	WA	0.52754	4/27/2013
 Lasky, Michael S.	1283	Full		7/28/1987		NY		7/28/1987
 Lasley, Matt	7656	Full	-4.30066	10/7/2000	NOVA	VA	0.64733	3/1/2000
-Lass, Mark E.	2373	Full	2.93582	7/16/2013		VA	0.54377	7/1/2005
+Lass, Mark E.	2373	Full	2.93582	7/16/2015		VA	0.54377	7/1/2005
 Lassahn, Jeff	10209	Full	-8.16813	11/13/2006		OR	0.40703	11/1/2005
 Lassen, Gerald	6429	Full	-9.13467	4/28/1996		WA	0.76469	9/1/1995
 Lassen-Williams, James	4096	Full		3/28/1990		RI		3/28/1990
@@ -9800,7 +9800,7 @@ Lock, Jordan	9224	Full		8/14/1999		WA		8/14/1999
 Lock, William	2147	Full		8/28/1986	SFGC	CA		8/28/1986
 Locke, Anthony	12938	Youth		9/19/2005		OH		9/19/2005
 Locker, Richard	6782	Full		11/28/1994		NY		11/28/1994
-Lockhart, Benjamin	12414	Youth	7.21638	8/19/2012	NYWS	NY	0.42827	8/5/2012
+Lockhart, Benjamin	12414	Youth	7.21638	7/6/2017	NYWS	NY	0.42827	8/5/2012
 Lockhart, Paul	12415	Full	-6.56087	11/20/2007		NY	0.53987	11/1/2007
 Lockhart, William	12412	Youth	5.52380	8/4/2013		NY	0.22862	3/2/2013
 Locklear, Robert	15086	Full		1/11/2009				1/11/2009
@@ -10010,7 +10010,7 @@ Luo, Yuan Cheng	16483	Full	-6.65179	3/31/2009	UMD	MD	0.82548	4/1/2008
 Luong, Bryant	15978	Full	-4.89055	11/17/2008	ORCO	CA	0.50212	10/1/2008
 Lupienski, Edward	9743	Full		11/2/2000		VA		11/2/2000
 Lupinacci, Bill	2050	Full		12/28/1983		DC		12/28/1983
-Lupton, Christopher	13723	Full	3.58535	5/24/2009	CNST	LA	0.33304	9/1/2007
+Lupton, Christopher	13723	Full	3.58535	7/6/2014	CNST	LA	0.33304	9/1/2007
 Lupton, Robert	4019	Full		5/28/1992		NJ		5/28/1992
 Luscher, David	13406	Full		3/29/2007		CO		3/29/2007
 Lussier, Ron	11226	Full		8/15/2004		CA		8/15/2004
@@ -10073,7 +10073,7 @@ MacDonald, David	2898	Full		8/28/1987	WSGF	WA		8/28/1987
 MacDonald, Jacob	17230	Youth		8/17/2009	OAKD	CA		8/17/2009
 MacDonald, Mitchell	17229	Youth		8/17/2009	OAKD	CA		8/17/2009
 MacDuffie, Allen	5176	Full		3/28/1992	CBA	NJ		3/28/1992
-Macemore, Daniel	19322	Full		9/23/2013		NC		
+Macemore, Daniel	19322	Full		9/23/2014		NC		
 Machado, Matthew Rafael	20194	Youth	-5.74576	10/1/2013		TX	0.67193	10/20/2012
 Machalk, Scott J.	7587	Full		1/18/2007	UPGO	MI		1/18/2007
 Machlup, Eric	3539	Full	5.15003	4/7/2009		CA	0.53466	4/1/2008
@@ -10895,6 +10895,7 @@ Miller, Paul	12465	Full	-7.95975	5/4/2014	KZOO	MI	0.54182	4/1/2009
 Miller, Ryan C.	5091	Full	-5.70703	3/13/2005		PA	0.60712	3/1/2004
 Miller, Stephen G.	3989	Full	-1.58774	2/28/1996		CA	0.61533	6/1/1995
 Miller, Steve	18043	Full		5/13/2012		MN		3/15/2011
+Miller, Steve	20713	Full		7/9/2015	BAYA	CA		
 Miller, Steven	1947	Full		12/28/1983		IL		12/28/1983
 Miller, Terry T.	522	Full	1.39055	11/30/2013		GA	0.78354	2/5/2011
 Miller, Thomas Byron	20508	Full	-9.19825	4/1/2014	GOTH	MA	0.71843	4/14/2013
@@ -11638,6 +11639,7 @@ Noon, Richard	10980	Non	-30.48311	4/24/2002		CA	1.68374	4/1/2002
 Noon, Symeon	10759	Full	-24.20143	12/31/2006		CA	1.00974	4/1/2002
 Noonan, Brian	14558	Non	-13.15069	5/31/2006			0.71493	5/1/2007
 Noonan, Matt	9906	Full	1.89458	3/17/2015	WMGC	NY	0.43193	3/6/2011
+Noor, Saqif 	20712	Youth		7/7/2015		NY		
 Nordeen, Josh	12418	Full	-9.74069	11/13/2006			0.70421	11/1/2005
 Nordenstrom, Seabrook	11080	Non	-14.71176	10/5/2008		OR	1.57016	9/1/2008
 Norder, Jeffrey	15571	Full		6/13/2008		MI		6/13/2008

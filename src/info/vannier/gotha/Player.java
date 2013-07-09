@@ -1,4 +1,3 @@
-
 /*
  * Player.java
  */
@@ -41,6 +40,11 @@ public class Player implements java.io.Serializable{
      */
     private String ratingOrigin = "";
     
+    /**
+     * grade is relevant when player is registered from EGF rating list
+     * RatedPlayer.GRADE_NOT_RELEVANT when not relevant
+     */
+    private int grade = RatedPlayer.GRADE_NOT_RELEVANT;
     
     /**
      * When computing smms, rank is taken as a basis, then framed by Mac-Mahon floor and Mac-Mahon bar.
@@ -65,7 +69,7 @@ public class Player implements java.io.Serializable{
     }
     public Player(String name, String firstName, String country, String club, String egfPin, String ffgLicence, String ffgLicenceStatus,
             String agaId, String agaExpirationDate,
-            int rank,  int rating, String ratingOrigin, int smmsCorrection, 
+            int rank,  int rating, String ratingOrigin, int grade, int smmsCorrection, 
             String registeringStatus) throws PlayerException{
         if (name.length() < 1) throw new PlayerException("Player's name should have at least 1 character");
         this.name = name;
@@ -86,6 +90,8 @@ public class Player implements java.io.Serializable{
 
         this.rating = rating;
         this.ratingOrigin = ratingOrigin;
+        
+        this.grade = grade;
 
         this.smmsCorrection = smmsCorrection;
         this.registeringStatus = registeringStatus;
@@ -112,6 +118,7 @@ public class Player implements java.io.Serializable{
         this.rank = p.getRank();
         this.rating = p.getRating();
         this.ratingOrigin = p.getRatingOrigin();
+        this.grade = p.getGrade();
         this.smmsCorrection = p.getSmmsCorrection();
         boolean[] bPart = new boolean[p.getParticipating().length];
         System.arraycopy(p.getParticipating(), 0, bPart, 0, p.getParticipating().length);
@@ -316,7 +323,10 @@ public class Player implements java.io.Serializable{
      * Converts a String rank into an int rank 
      */
     public static String convertIntToKD(int rank) {
+        if (rank == RatedPlayer.GRADE_NOT_RELEVANT) return "";
+        
         String strRank = "";
+        
         if (rank >=0) strRank  = "" + (rank +1) + "D";
         if (rank < 0) strRank  = "" + (-rank)   + "K";
         return strRank;
@@ -406,6 +416,20 @@ public class Player implements java.io.Serializable{
         this.firstName = firstName;
         this.keyString = null;
 
+    }
+
+    /**
+     * @return the grade
+     */
+    public int getGrade() {
+        return grade;
+    }
+
+    /**
+     * @param grade the grade to set
+     */
+    public void setGrade(int grade) {
+        this.grade = grade;
     }
 }
 

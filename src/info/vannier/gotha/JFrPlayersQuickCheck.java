@@ -856,7 +856,6 @@ public class JFrPlayersQuickCheck extends javax.swing.JFrame{
         } catch (RemoteException ex) {
             Logger.getLogger(JFrPlayersQuickCheck.class.getName()).log(Level.SEVERE, null, ex);
         }
-
         updateAllViews();
     }
 

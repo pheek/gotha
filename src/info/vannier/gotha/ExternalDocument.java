@@ -176,6 +176,7 @@ public class ExternalDocument {
                         Player.convertKDToInt(strRank),
                         Player.convertKDToInt(strRank) * 100,
                         "INI",
+                        RatedPlayer.GRADE_NOT_RELEVANT,
                         0,
                         "FIN");
                 boolean[] bPart = new boolean[Gotha.MAX_NUMBER_OF_ROUNDS];
@@ -289,6 +290,7 @@ public class ExternalDocument {
                         rk,
                         rt,
                         strRatingOrigin,
+                        RatedPlayer.GRADE_NOT_RELEVANT,
                         0,
                         strRg);
                 boolean[] bPart = new boolean[Gotha.MAX_NUMBER_OF_ROUNDS];
@@ -572,6 +574,9 @@ public class ExternalDocument {
             }
 
             String ratingOrigin = extractNodeValue(nnm, "ratingOrigin", "");
+            String strGrade = extractNodeValue(nnm, "grade", "");
+            int grade = Player.convertKDToInt(strGrade);
+            if (grade <= -99) grade = RatedPlayer.GRADE_NOT_RELEVANT;
             String strSmmsCorrection = extractNodeValue(nnm, "smmsCorrection", "0");
             int smmsCorrection = new Integer(strSmmsCorrection).intValue();
             String strDefaultParticipating = "";
@@ -596,7 +601,7 @@ public class ExternalDocument {
             Player p = null;
             try {
                 p = new Player(name, firstName, country, club, egfPin, ffgLicence, ffgLicenceStatus,
-                        agaId, agaExpirationDate, rank, rating, ratingOrigin, smmsCorrection, registeringStatus);
+                        agaId, agaExpirationDate, rank, rating, ratingOrigin, grade, smmsCorrection, registeringStatus);
             } catch (PlayerException ex) {
                 Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -2404,6 +2409,7 @@ public class ExternalDocument {
             String strRank = Player.convertIntToKD(p.getRank());
             String strRating = Integer.valueOf(p.getRating()).toString();
             String strRatingOrigin = p.getRatingOrigin();
+            String strGrade = Player.convertIntToKD(p.getGrade());
             String strSMMSCorrection = Integer.valueOf(p.getSmmsCorrection()).toString();
             boolean[] part = p.getParticipating();
             String strParticipating = "";
@@ -2429,6 +2435,7 @@ public class ExternalDocument {
             emPlayer.setAttribute("rank", strRank);
             emPlayer.setAttribute("rating", strRating);
             emPlayer.setAttribute("ratingOrigin", strRatingOrigin);
+            emPlayer.setAttribute("grade", strGrade);
             emPlayer.setAttribute("smmsCorrection", strSMMSCorrection);
             emPlayer.setAttribute("participating", strParticipating);
             emPlayer.setAttribute("registeringStatus", strRegisteringStatus);

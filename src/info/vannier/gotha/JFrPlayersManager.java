@@ -46,6 +46,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
     private static final int CLUB_COL = 4;
     private static final int RANK_COL = 5;
     private static final int RATING_COL = 6;
+    private static final int GRADE_COL = 7;
     /**  current Tournament */
     private TournamentInterface tournament;
     /** Rating List */
@@ -164,6 +165,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         JFrGotha.formatColumn(tblRegisteredPlayers, CLUB_COL, "Club", 40, JLabel.LEFT, JLabel.LEFT);
         JFrGotha.formatColumn(tblRegisteredPlayers, RANK_COL, "Rk", 30, JLabel.RIGHT, JLabel.RIGHT);
         JFrGotha.formatColumn(tblRegisteredPlayers, RATING_COL, "Rating",  40, JLabel.RIGHT, JLabel.RIGHT);
+        JFrGotha.formatColumn(tblRegisteredPlayers, GRADE_COL, "Grade",  25, JLabel.RIGHT, JLabel.RIGHT);
                 
         // Single selection
         tblRegisteredPlayers.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -200,6 +202,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
             model.setValueAt(p.getCountry(), line, JFrPlayersManager.COUNTRY_COL);
             model.setValueAt(p.getClub(), line, JFrPlayersManager.CLUB_COL);
             model.setValueAt(p.getRating(), line, JFrPlayersManager.RATING_COL);
+            model.setValueAt(Player.convertIntToKD(p.getGrade()), line, JFrPlayersManager.GRADE_COL);
         }
     }
 
@@ -400,6 +403,8 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         txfAgaId = new javax.swing.JTextField();
         lblPhoto = new javax.swing.JLabel();
         lblAgaExpirationDate = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        txfGrade = new javax.swing.JTextField();
         pnlPlayersList = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -476,7 +481,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         jLabel3.setText("origin");
         jLabel3.setToolTipText("from 30K to 9D");
         pnlPlayer.add(jLabel3);
-        jLabel3.setBounds(120, 390, 50, 14);
+        jLabel3.setBounds(120, 390, 40, 14);
 
         jLabel4.setText("Country");
         jLabel4.setToolTipText("Country where the player lives (2 letters)");
@@ -529,7 +534,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
 
         txfRatingOrigin.setEditable(false);
         pnlPlayer.add(txfRatingOrigin);
-        txfRatingOrigin.setBounds(170, 390, 80, 20);
+        txfRatingOrigin.setBounds(160, 390, 60, 20);
 
         txfRating.setEditable(false);
         pnlPlayer.add(txfRating);
@@ -707,7 +712,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
             }
         });
         pnlPlayer.add(btnChangeRating);
-        btnChangeRating.setBounds(260, 390, 150, 23);
+        btnChangeRating.setBounds(230, 390, 130, 23);
 
         grpSetRank.add(rdbRankFromGoR);
         rdbRankFromGoR.setSelected(true);
@@ -792,6 +797,14 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         pnlPlayer.add(lblAgaExpirationDate);
         lblAgaExpirationDate.setBounds(390, 440, 90, 20);
 
+        jLabel13.setText("Grade");
+        pnlPlayer.add(jLabel13);
+        jLabel13.setBounds(380, 390, 50, 14);
+
+        txfGrade.setEditable(false);
+        pnlPlayer.add(txfGrade);
+        txfGrade.setBounds(430, 390, 50, 20);
+
         getContentPane().add(pnlPlayer);
         pnlPlayer.setBounds(10, 0, 494, 560);
 
@@ -820,17 +833,17 @@ public class JFrPlayersManager extends javax.swing.JFrame {
 
         tblRegisteredPlayers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "R", "Name", "First name", "Co", "Club", "Rk", "Rating"
+                "R", "Name", "First name", "Co", "Club", "Rk", "Rating", "EGF Grade"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -1204,6 +1217,13 @@ public class JFrPlayersManager extends javax.swing.JFrame {
             rating = Player.ratingFromRank(rank);
         }
 
+        int grade = RatedPlayer.GRADE_NOT_RELEVANT;
+        String strGrade = txfGrade.getText();
+        if (strGrade.length() > 0){
+            grade = Player.convertKDToInt(strGrade);
+            if (grade <= -99) grade = RatedPlayer.GRADE_NOT_RELEVANT;
+        }
+        
         int smmsCorrection = 0;
         try {
             String strCorr = txfSMMSCorrection.getText();
@@ -1227,6 +1247,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
                     rank,
                     rating,
                     strOrigin,
+                    grade,
                     smmsCorrection,
                     strRegistration);
 
@@ -1442,6 +1463,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1486,6 +1508,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
     private javax.swing.JTextField txfFfgLicence;
     private javax.swing.JTextField txfFfgLicenceStatus;
     private javax.swing.JTextField txfFirstName;
+    private javax.swing.JTextField txfGrade;
     private javax.swing.JTextField txfName;
     private javax.swing.JTextField txfNbPlFin;
     private javax.swing.JTextField txfNbPlPre;
@@ -1537,6 +1560,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         int rank = Player.rankFromRating(stdRating);
         if (this.rdbRankFromGrade.isSelected()) rank = rP.getGrade();
         txfRank.setText(Player.convertIntToKD(rank));
+        txfGrade.setText(Player.convertIntToKD(rP.getGrade()));
         cbxCountry.setSelectedItem(rP.getCountry());
         txfClub.setText(rP.getClub());
         txfFfgLicence.setText(rP.getFfgLicence());
@@ -1574,6 +1598,8 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         if (strRatingOrigin.equals("FFG")) strRatingOrigin += " : " + playerInModification.getStrRawRating();
         if (strRatingOrigin.equals("AGA")) strRatingOrigin += " : " + playerInModification.getStrRawRating();
         txfRatingOrigin.setText(strRatingOrigin);
+        int grade = playerInModification.getGrade();
+        txfGrade.setText(Player.convertIntToKD(grade));
         
         int corr = playerInModification.getSmmsCorrection();
         String strCorr = "" + corr;

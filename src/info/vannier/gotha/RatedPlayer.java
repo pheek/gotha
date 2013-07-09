@@ -1,6 +1,10 @@
 package info.vannier.gotha;
 
+
+
 public class RatedPlayer {
+    public static int GRADE_NOT_RELEVANT = -999;
+    
     private String egfPin;
     private String ffgLicence;
     private String ffgLicenceStatus;
@@ -11,7 +15,7 @@ public class RatedPlayer {
     private String country;
     private String club;
     private int rawRating;
-    private int grade;
+    private int grade;  // GRADE_NOT_RELEVANT when not relevant
     private String ratingOrigin;
     
     public RatedPlayer(
