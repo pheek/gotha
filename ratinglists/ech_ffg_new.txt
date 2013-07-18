@@ -1,4 +1,4 @@
-#Echelle au 9/07/2013
+#Echelle au 18/07/2013
 AAIJ René                               249 e -------   NL
 AAKERBLOM Charlie                       318 e -------   SE
 ABADIA Mickaël                        -1400 - 9728205 94MJ
@@ -704,7 +704,7 @@ BENARD Thomas                          -200 - 0700498 95Ta
 BENASSOULI Bastien                     -600 - 0527700 78Ve
 BENAZECH Loïc                         -1382 L 1300328 37To
 BENAZIZ Fayçal                        -1622 L 1300096 38Gr
-BENCHADANE Hassan                       100 - 1100389 76Ro
+BENCHADANE Hassan                       146 L 1100389 76Ro
 BENDAOUD Loïc                          -386 L 8401700 49An
 BENDAVID Dan                          -1400 - 9923511 91Ep
 BENDAVID Lucas                         -500 - 0800397 75Al
@@ -2847,7 +2847,7 @@ DESVEAUX Vivien                         333 L 0514009 44Na
 DESVIGNES Théo                        -1400 - 0625500 75OB
 DESVOYES Bernard                      -1412 L 0900119 95Va
 DETIENNE Arnaud                        -800 - 1200094 35Re
-DETIVAUD Pierre                        -600 - 0800071 35Re
+DETIVAUD Pierre                        -530 L 0800071 76Ro
 DETOUL Marie                          -9999 L 1300101 75Pa
 DETOURNAY Thomas                       -200 - 0525006 75Pa
 DEUSS Cyrille                          -135 L 9323002 76Ro
@@ -4939,7 +4939,7 @@ JAMES Anthony                         -1500 - 9774715 84VJ
 JAMET Patrick                          -400 - 0621015 92An
 JAMIN Nicolas                         -1500 - 1000435 84Av
 JAMMES Frédéric                       -1100 - 0700053 56Va
-JAMMES Patrick                        -1800 - 0900452 76Ro
+JAMMES Patrick                        -1717 L 0900452 76Ro
 JAMMES Pierre                           -53 L 0321202 06Ni
 JANG Bi                                 658 e -------   KR
 JANIN Yves                             -300 - 0020006 00L2
@@ -5849,7 +5849,7 @@ LEDOARE Stéphane                      -1200 - 9725067 75Pa
 LEDON Yoan                            -1700 - 0800272 26Va
 LEDRU Julien                          -1500 - 0625504 75OB
 LEDUC Genevieve                       -9999 - 0513008 38Gr
-LEDUC Jean-Philippe                       0 - 8012000 11Ca
+LEDUC Jean-Philippe                      73 L 8012000 76Ro
 LEDUC Philippe                         -600 - 9712005 07Au
 LEE Antony                            -1300 - 0526808 91PO
 LEE Bryan                             -9999 - 1000182 75LF
@@ -8280,7 +8280,7 @@ REISER Stephan                         -279 e -------   CH
 REISS Thierry                         -1200 - 1100288 75Ju
 REITZ Stanislas                       -1300 - 0522124 75Op
 RELAVE Régis                           -900 - 9413007 38Gr
-REMADNA Sofiane                           0 - 0800225 76Ro
+REMADNA Sofiane                          82 L 0800225 76Ro
 REMEZY Nathalie                        -900 - 9577402 34Mo
 REMY Luc                               -100 - 8406500 33Bo
 REMY Thibault                         -1500 - 0610705 38Tr
@@ -8591,7 +8591,7 @@ ROUGIER Marc                           -500 - 9125004 31Pi
 ROUIL Hervé                            -700 - 9751005 33Bo
 ROUILLARD Romain                      -1100 - 0900064 18Bo
 ROUILLE Nicolas                       -1700 - 0426813 91Or
-ROUILLON David                        -1189 L 0421904 75Ju
+ROUILLON David                        -1200 X 0421904 75Ju
 ROUILLY Benjamin                       -900 - 0424505 45Or
 ROULAND Guillaume                     -9999 - 9151009 33Bo
 ROULLEAU Paul                          -800 - 0482005 21Di
@@ -9326,7 +9326,7 @@ TA Van_Huy                             -800 - 0427100 93Mo
 TA Van-Bao                            -9999 - 0327102 93Mo
 TABANOUS Yohan                        -1300 - 0800505 31To
 TABARAUD Jean_Gabriel                 -1500 - 0050002 00L5
-TABARY Raphael                         -500 - 0700055 76Ro
+TABARY Raphael                         -416 L 0700055 76Ro
 TABET Imad                            -1100 - 0026500 75AE
 TABOUREL Philippe                     -9999 - 0022100 75Op
 TABURET Alexis                        -9999 - 9148416 XXXX

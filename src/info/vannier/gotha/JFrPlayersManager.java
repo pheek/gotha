@@ -287,6 +287,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         txfSMMSCorrection.setText("0");
         txfRatingOrigin.setText("");
         txfRating.setText("");
+        this.txfGrade.setText("");
         cbxCountry.setSelectedItem("  ");
         txfClub.setText("");
         txfFfgLicence.setText("");

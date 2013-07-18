@@ -1,3 +1,11 @@
+OpenGothaV3.33.01
+*****************
+17/07/2013
+New     An experimental tool : Force participation for all players
+New     An experimental tool : Force case for countries and clubs
+Bug Fix In Players Manager frame, Grade TextField was not properly reset. Fixed
+New     An experimental tool : Discard rounds (to produce "first week" or "second week" tournament)
+
 OpenGothaV3.33
 **************
 09/07/2013
