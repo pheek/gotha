@@ -612,14 +612,26 @@ public class JFrGamesResults extends javax.swing.JFrame {
 
     private void updateAllViews() {
         try {
-            if (!tournament.isOpen()) {
-                dispose();
-            }
+            if (!tournament.isOpen()) dispose();
             this.lastComponentsUpdateTime = tournament.getCurrentTournamentTime();
             setTitle("Games .. Results. " + tournament.getTournamentParameterSet().getGeneralParameterSet().getShortName());
         } catch (RemoteException ex) {
             Logger.getLogger(JFrGamesResults.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        int nbRounds = Gotha.MAX_NUMBER_OF_ROUNDS;
+        try {
+            nbRounds = tournament.getTournamentParameterSet().getGeneralParameterSet().getNumberOfRounds();
+        } catch (RemoteException ex) {
+            Logger.getLogger(JFrGamesPair.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if (this.processedRoundNumber >= nbRounds) {
+            JOptionPane.showMessageDialog(this, "The number of rounds has been modified."
+                    + "\n" + "Current round will be consequently changed",
+                    "Games Results Message", JOptionPane.WARNING_MESSAGE);
+            this.processedRoundNumber = nbRounds - 1;
+        }
+        
         updateComponents();
     }
 

@@ -120,19 +120,18 @@ Quit button should be :
 tournamentChanged method should look like :
 ===========================================
 private void tournamentChanged(){
-    try {
-        if (!tournament.isOpen()){
-            dispose();
-            return;
+        try {
+            if (!tournament.isOpen()){
+                dispose();
+                return;
+            }
+            tournament.setLastTournamentModificationTime(tournament.getCurrentTournamentTime());
+        } catch (RemoteException ex) {
+            Logger.getLogger(JFrDiscardRounds.class.getName()).log(Level.SEVERE, null, ex);
         }
-        tournament.setLastTournamentModificationTime(tournament.getCurrentTournamentTime());
-    } catch (RemoteException ex) {
-        ex.printStackTrace();
-    }
+    
 
-    // update ...
-
- ...
+    updateAllViews();
 }
 
 main

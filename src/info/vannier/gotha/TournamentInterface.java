@@ -69,12 +69,14 @@ public interface TournamentInterface extends Remote{
 
     public ArrayList<Game> makeAutomaticPairing(ArrayList<Player> alPlayersToPair, int roundNumber)throws RemoteException;
 
+    public void setByePlayer(Player p, int roundNumber) throws RemoteException;
     public void chooseAByePlayer(ArrayList<Player> alPlayers, int roundNumber) throws RemoteException;
     public void assignByePlayer(Player p, int roundNumber) throws RemoteException;
     public void unassignByePlayer(int roundNumber) throws RemoteException;
     
     public void renumberTablesByBestMMS(int roundNumber, ArrayList<Game> alGamesToRenumber) throws RemoteException;
     public void setResult(Game g, int result)throws RemoteException;
+    public void setRoundNumber(Game g, int rn) throws RemoteException;
     
     public int presumablyCurrentRoundNumber() throws RemoteException;
 

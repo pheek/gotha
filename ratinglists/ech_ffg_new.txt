@@ -1,4 +1,4 @@
-#Echelle au 18/07/2013
+#Echelle au 1/08/2013
 AAIJ René                               249 e -------   NL
 AAKERBLOM Charlie                       318 e -------   SE
 ABADIA Mickaël                        -1400 - 9728205 94MJ
@@ -5510,7 +5510,7 @@ LAMBERT Didier                        -1200 - 9474701 84VJ
 LAMBERT Dominique                     -1500 - 1000379 60SO
 LAMBERT Grégory                       -1300 - 0800295 33Bo
 LAMBERT Norman                        -9999 - 0900439 75Op
-LAMBIN Baptiste                       -1964 L 1300336 51Re
+LAMBIN Baptiste                       -2000 X 1300336 51Re
 LAMBISTO Guy                          -1500 - 0422120 75Op
 LAMBOTTE Jean-Philippe                 -787 L 0226803 91Or
 LAMBRECHTS Tim                        -1300 - 0352000 31To
@@ -8313,7 +8313,7 @@ RENOU-CREN Frédéric                   -1300 - 9137007 44Na
 RENOUARD Louis                        -1200 - 9725070 75Pa
 RENOUF Pierre-Emmanuel                -1800 - 0800127 44Na
 RENOVELL Kevin                         -900 - 0611305 74Vm
-RENOVELL Kevin                         -538 L 1300335 74Al
+RENOVELL Kevin                         -600 X 1300335 74Al
 RENOVELL Sonny                        -1300 - 0611306 74Vm
 RENVOISE Jean-Claude                  -9999 - 8611100 14Ca
 REOLID Thibaut                        -2000 - 0677800 06Pe
@@ -9921,7 +9921,7 @@ VIEIRA Frédéric                        -114 L 0700220 93Mo
 VIEL Nicolas                          -9999 - 0021004 92An
 VIELCASTEL Quentin                    -9999 - 0152011 31To
 VIELFAURE Aurélien                    -9999 - 9712008 07Au
-VIELFAURE Charlotte                    -300 - 9712009 35Re
+VIELFAURE Charlotte                    -252 L 9712009 75Op
 VIELFAURE Jean-Luc                     -100 - 9615001 69LJ
 VIENNOT Simon                          -400 - 0537009 63Cl
 VIEU Olivier                           -900 - 9479304 06Ni

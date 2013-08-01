@@ -1596,9 +1596,9 @@ public class JFrGamesPair extends javax.swing.JFrame {
             Logger.getLogger(JFrGamesPair.class.getName()).log(Level.SEVERE, null, ex);
         }
         if (this.processedRoundNumber >= nbRounds) {
-            JOptionPane.showMessageDialog(this, "The number of rounds has been modified from outside"
+            JOptionPane.showMessageDialog(this, "The number of rounds has been modified."
                     + "\n" + "Current round will be consequently changed",
-                    "Message", JOptionPane.WARNING_MESSAGE);
+                    "Games Pair Message", JOptionPane.WARNING_MESSAGE);
             this.processedRoundNumber = nbRounds - 1;
         }
 

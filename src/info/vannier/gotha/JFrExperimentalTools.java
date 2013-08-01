@@ -84,11 +84,6 @@ public class JFrExperimentalTools extends javax.swing.JFrame {
         btnForceCaseClub = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        pnlDiscardGames = new javax.swing.JPanel();
-        btnDiscardR6 = new javax.swing.JButton();
-        btnDiscardR15 = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -227,38 +222,6 @@ public class JFrExperimentalTools extends javax.swing.JFrame {
 
         getContentPane().add(pnlForceCase);
         pnlForceCase.setBounds(20, 280, 660, 100);
-
-        pnlDiscardGames.setBorder(javax.swing.BorderFactory.createTitledBorder("Discard games"));
-        pnlDiscardGames.setLayout(null);
-
-        btnDiscardR6.setText("Discard rounds 6-...");
-        btnDiscardR6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDiscardR6ActionPerformed(evt);
-            }
-        });
-        pnlDiscardGames.add(btnDiscardR6);
-        btnDiscardR6.setBounds(10, 30, 230, 23);
-
-        btnDiscardR15.setText("Discard rounds 1-5");
-        btnDiscardR15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDiscardR15ActionPerformed(evt);
-            }
-        });
-        pnlDiscardGames.add(btnDiscardR15);
-        btnDiscardR15.setBounds(10, 60, 230, 23);
-
-        jLabel7.setText("Use this button to generate a \"second week\" tournament");
-        pnlDiscardGames.add(jLabel7);
-        jLabel7.setBounds(250, 60, 350, 14);
-
-        jLabel8.setText("Use this button to generate a \"first week\" tournament");
-        pnlDiscardGames.add(jLabel8);
-        jLabel8.setBounds(250, 30, 350, 14);
-
-        getContentPane().add(pnlDiscardGames);
-        pnlDiscardGames.setBounds(20, 400, 660, 100);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -485,77 +448,6 @@ public class JFrExperimentalTools extends javax.swing.JFrame {
         tournamentChanged();      
     }//GEN-LAST:event_btnForceCaseClubActionPerformed
 
-    private void btnDiscardR6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDiscardR6ActionPerformed
-        ArrayList<Game> alGames = null;
-        try {
-            alGames = tournament.gamesList();
-        } catch (RemoteException ex) {
-            Logger.getLogger(JFrExperimentalTools.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        int nbDiscardedGames = 0;
-        for (Game g : alGames){
-            int r = g.getRoundNumber();
-            if (r > 4) try {
-                tournament.removeGame(g);
-                nbDiscardedGames++;
-            } catch (TournamentException ex) {
-                Logger.getLogger(JFrExperimentalTools.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (RemoteException ex) {
-                Logger.getLogger(JFrExperimentalTools.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        tournamentChanged();
-        JOptionPane.showMessageDialog(this, "" + nbDiscardedGames + " games have been discarded");
-        
-        
-    }//GEN-LAST:event_btnDiscardR6ActionPerformed
-
-    private void btnDiscardR15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDiscardR15ActionPerformed
-        ArrayList<Game> alGames = null;
-        try {
-            alGames = tournament.gamesList();
-        } catch (RemoteException ex) {
-            Logger.getLogger(JFrExperimentalTools.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        int nbDiscardedGames = 0;
-        for (Game g : alGames){
-            int r = g.getRoundNumber();
-            if (r < 5) try {
-                tournament.removeGame(g);
-                nbDiscardedGames++;
-            } catch (TournamentException ex) {
-                Logger.getLogger(JFrExperimentalTools.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (RemoteException ex) {
-                Logger.getLogger(JFrExperimentalTools.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-         
-        // And now shift games of rounds 5-...
-        try {
-            alGames = tournament.gamesList();
-        } catch (RemoteException ex) {
-            Logger.getLogger(JFrExperimentalTools.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        for (Game g : alGames){
-            int r = g.getRoundNumber();
-            try {
-                tournament.removeGame(g);
-                g.setRoundNumber(r - 5);
-                tournament.addGame(g);
-            } catch (TournamentException ex) {
-                Logger.getLogger(JFrExperimentalTools.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (RemoteException ex) {
-                Logger.getLogger(JFrExperimentalTools.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-                
-        tournamentChanged();
-        JOptionPane.showMessageDialog(this, "" + nbDiscardedGames + " games have been discarded");
-    }//GEN-LAST:event_btnDiscardR15ActionPerformed
-
         /** This method is called from within the constructor to
      * initialize the form.
      * Unlike initComponents, customInitComponents is editable
@@ -573,8 +465,6 @@ public class JFrExperimentalTools extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnDiscardR15;
-    private javax.swing.JButton btnDiscardR6;
     private javax.swing.JButton btnForceCaseClub;
     private javax.swing.JButton btnForceCaseCountry;
     private javax.swing.JButton btnForceConversion;
@@ -589,9 +479,6 @@ public class JFrExperimentalTools extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel pnlDiscardGames;
     private javax.swing.JPanel pnlForceASCII;
     private javax.swing.JPanel pnlForceCase;
     private javax.swing.JPanel pnlForceParticipation;

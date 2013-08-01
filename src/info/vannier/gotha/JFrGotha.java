@@ -286,6 +286,8 @@ public class JFrGotha extends javax.swing.JFrame {
         jSeparator7 = new javax.swing.JPopupMenu.Separator();
         mniPreferences = new javax.swing.JMenuItem();
         mnuTools = new javax.swing.JMenu();
+        mniDiscardRounds = new javax.swing.JMenuItem();
+        jSeparator3 = new javax.swing.JPopupMenu.Separator();
         mniRMI = new javax.swing.JMenuItem();
         mniMemory = new javax.swing.JMenuItem();
         jSeparator8 = new javax.swing.JPopupMenu.Separator();
@@ -1254,6 +1256,16 @@ public class JFrGotha extends javax.swing.JFrame {
 
         mnuTools.setText("Tools");
         mnuTools.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+
+        mniDiscardRounds.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        mniDiscardRounds.setText("Discard rounds");
+        mniDiscardRounds.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniDiscardRoundsActionPerformed(evt);
+            }
+        });
+        mnuTools.add(mniDiscardRounds);
+        mnuTools.add(jSeparator3);
 
         mniRMI.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         mniRMI.setText("RMI Manager");
@@ -3089,6 +3101,20 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
 
     }//GEN-LAST:event_mniExportTeamsListHTMLActionPerformed
 
+    private void mniDiscardRoundsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniDiscardRoundsActionPerformed
+         if (tournament == null) {
+            JOptionPane.showMessageDialog(this, "No currently open tournament", "Message", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        try {
+            JFrame jfr = new JFrDiscardRounds(tournament);
+            jfr.setVisible(true);
+        } catch (RemoteException ex) {
+            Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_mniDiscardRoundsActionPerformed
+
     private File chooseAFileAndPrepareHTMLExport(){
         File f = this.chooseAFileForExport(Gotha.exportHTMLDirectory, "html");
         if (f == null) {
@@ -3446,6 +3472,7 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     private javax.swing.JLabel jLabel9;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JPopupMenu.Separator jSeparator5;
     private javax.swing.JPopupMenu.Separator jSeparator6;
@@ -3461,6 +3488,7 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     private javax.swing.JLabel lblWarningPRE;
     private javax.swing.JMenuItem mniBuildTestTournament;
     private javax.swing.JMenuItem mniClose;
+    private javax.swing.JMenuItem mniDiscardRounds;
     private javax.swing.JMenuItem mniExit;
     private javax.swing.JMenuItem mniExperimentalTools;
     private javax.swing.JMenuItem mniExportAGA;

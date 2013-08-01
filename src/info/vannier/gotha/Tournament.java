@@ -1341,6 +1341,12 @@ public class Tournament extends UnicastRemoteObject implements TournamentInterfa
     }
 
     @Override
+    public void setByePlayer(Player p, int roundNumber) throws RemoteException {
+        Player player = this.homonymPlayerOf(p);
+        byePlayers[roundNumber] = player;
+    }
+    
+    @Override
     public void chooseAByePlayer(ArrayList<Player> alPlayers, int roundNumber) throws RemoteException {
 
         // The weight allocated to each player is 1000 * number of previous byes + rank
@@ -1430,6 +1436,13 @@ public class Tournament extends UnicastRemoteObject implements TournamentInterfa
     public void setResult(Game g, int result) throws RemoteException {
         Game game = this.getGame(g.getRoundNumber(), g.getTableNumber());
         game.setResult(result);
+        this.setChangeSinceLastSave(true);
+    }
+    
+    @Override
+    public void setRoundNumber(Game g, int rn) throws RemoteException {
+        Game game = this.getGame(g.getRoundNumber(), g.getTableNumber());
+        game.setRoundNumber(rn);
         this.setChangeSinceLastSave(true);
     }
 
