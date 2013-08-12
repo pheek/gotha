@@ -1176,6 +1176,8 @@ public class Tournament extends UnicastRemoteObject implements TournamentInterfa
         } else {
             nbw2Threshold = 2 * gps.getNumberOfRounds();
         }
+        
+        int mmBar = gps.getGenMMBar() - Gotha.MIN_RANK;
 
         int pseudoMMSSP1 = sP1.getCritValue(PlacementParameterSet.PLA_CRIT_MMS, roundNumber - 1) / 2;
         int pseudoMMSSP2 = sP2.getCritValue(PlacementParameterSet.PLA_CRIT_MMS, roundNumber - 1) / 2;
@@ -1184,18 +1186,40 @@ public class Tournament extends UnicastRemoteObject implements TournamentInterfa
         int nbwSP1X2 = sP1.getCritValue(PlacementParameterSet.PLA_CRIT_NBW, roundNumber - 1);
         int nbwSP2X2 = sP2.getCritValue(PlacementParameterSet.PLA_CRIT_NBW, roundNumber - 1);
 
-        if (nbwSP1X2 >= nbw2Threshold 
-                || 2 * sP1.getRank() + sP1.getCritValue(PlacementParameterSet.PLA_CRIT_NBW, roundNumber - 1) >= 2 * paiPS.getPaiSeRankThreshold() 
-                || (sP1.smms(gps) >= gps.getGenMMBar() && paiPS.isPaiSeBarThresholdActive()) ){
+        boolean bStrongMMS = (2 * sP1.getRank() + sP1.getCritValue(PlacementParameterSet.PLA_CRIT_NBW, roundNumber - 1) >= 2 * paiPS.getPaiSeRankThreshold());
+        boolean bManyWins = nbwSP1X2 >= nbw2Threshold;
+        boolean bAboveMMBar = (sP1.smms(gps) >= mmBar && paiPS.isPaiSeBarThresholdActive());
+        if (bManyWins
+                || bStrongMMS 
+                || bAboveMMBar) {
             secCase++;
             pseudoMMSSP1 = maxMMS;
         }
-        if (nbwSP2X2 >= nbw2Threshold 
-                || 2 * sP2.getRank() + sP2.getCritValue(PlacementParameterSet.PLA_CRIT_NBW, roundNumber - 1) >= 2 * paiPS.getPaiSeRankThreshold()
-                || (sP2.smms(gps) >= gps.getGenMMBar() && paiPS.isPaiSeBarThresholdActive())) {
+
+//        if (nbwSP1X2 >= nbw2Threshold 
+//                || 2 * sP1.getRank() + sP1.getCritValue(PlacementParameterSet.PLA_CRIT_NBW, roundNumber - 1) >= 2 * paiPS.getPaiSeRankThreshold() 
+//                || (sP1.smms(gps) >= mmBar && paiPS.isPaiSeBarThresholdActive()) ){
+//            secCase++;
+//            pseudoMMSSP1 = maxMMS;
+//        }
+        
+        bStrongMMS = (2 * sP2.getRank() + sP2.getCritValue(PlacementParameterSet.PLA_CRIT_NBW, roundNumber - 1) >= 2 * paiPS.getPaiSeRankThreshold());
+        bManyWins = nbwSP2X2 >= nbw2Threshold;
+        bAboveMMBar = (sP2.smms(gps) >= mmBar && paiPS.isPaiSeBarThresholdActive());
+        if (bManyWins
+                || bStrongMMS 
+                || bAboveMMBar) {
             secCase++;
             pseudoMMSSP2 = maxMMS;
         }
+        
+        
+//        if (nbwSP2X2 >= nbw2Threshold 
+//                || 2 * sP2.getRank() + sP2.getCritValue(PlacementParameterSet.PLA_CRIT_NBW, roundNumber - 1) >= 2 * paiPS.getPaiSeRankThreshold()
+//                || (sP2.smms(gps) >= mmBar && paiPS.isPaiSeBarThresholdActive())) {
+//            secCase++;
+//            pseudoMMSSP2 = maxMMS;
+//        }
 
         // Secondary Criterion 1 : Minimize handicap
         long hdCost = 0;

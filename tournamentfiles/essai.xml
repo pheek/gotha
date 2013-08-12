@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Tournament dataVersion="201">
+<Players>
+<Player agaExpirationDate="" agaId="99999" club="AAB" country="NL" egfPin="xxxyyyzzz" ffgLicence="07235000" ffgLicenceStatus="" firstName="p_27" grade="" name="AAK" participating="11111111111111111111" rank="3K" rating="-350" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="99999" club="AAA" country="NL" egfPin="xxxyyyzzz" ffgLicence="07235000" ffgLicenceStatus="" firstName="p_29" grade="" name="AAD" participating="11111111111111111111" rank="1K" rating="-150" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="99999" club="AAA" country="NL" egfPin="xxxyyyzzz" ffgLicence="07235000" ffgLicenceStatus="" firstName="p_28" grade="" name="AAF" participating="11111111111111111111" rank="2K" rating="-250" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="99999" club="AAB" country="NL" egfPin="xxxyyyzzz" ffgLicence="07235000" ffgLicenceStatus="" firstName="p_26" grade="" name="AAO" participating="11111111111111111111" rank="4K" rating="-450" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="99999" club="AAA" country="NL" egfPin="xxxyyyzzz" ffgLicence="07235000" ffgLicenceStatus="" firstName="p_29" grade="" name="AAA" participating="11111111111111111111" rank="1K" rating="-150" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="99999" club="AAA" country="NL" egfPin="xxxyyyzzz" ffgLicence="07235000" ffgLicenceStatus="" firstName="p_28" grade="" name="AAG" participating="11111111111111111111" rank="2K" rating="-250" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="99999" club="AAB" country="NL" egfPin="xxxyyyzzz" ffgLicence="07235000" ffgLicenceStatus="" firstName="p_26" grade="" name="AAP" participating="11111111111111111111" rank="4K" rating="-450" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="99999" club="AAB" country="NL" egfPin="xxxyyyzzz" ffgLicence="07235000" ffgLicenceStatus="" firstName="p_27" grade="" name="AAJ" participating="11111111111111111111" rank="3K" rating="-350" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="99999" club="AAB" country="NL" egfPin="xxxyyyzzz" ffgLicence="07235000" ffgLicenceStatus="" firstName="p_26" grade="" name="AAN" participating="11111111111111111111" rank="4K" rating="-450" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="99999" club="AAB" country="NL" egfPin="xxxyyyzzz" ffgLicence="07235000" ffgLicenceStatus="" firstName="p_27" grade="" name="AAI" participating="11111111111111111111" rank="3K" rating="-350" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="99999" club="AAA" country="NL" egfPin="xxxyyyzzz" ffgLicence="07235000" ffgLicenceStatus="" firstName="p_28" grade="" name="AAE" participating="11111111111111111111" rank="2K" rating="-250" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="99999" club="AAB" country="NL" egfPin="xxxyyyzzz" ffgLicence="07235000" ffgLicenceStatus="" firstName="p_26" grade="" name="AAM" participating="11111111111111111111" rank="4K" rating="-450" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="99999" club="AAA" country="NL" egfPin="xxxyyyzzz" ffgLicence="07235000" ffgLicenceStatus="" firstName="p_28" grade="" name="AAH" participating="11111111111111111111" rank="2K" rating="-250" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="99999" club="AAB" country="NL" egfPin="xxxyyyzzz" ffgLicence="07235000" ffgLicenceStatus="" firstName="p_27" grade="" name="AAL" participating="11111111111111111111" rank="3K" rating="-350" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="99999" club="AAA" country="NL" egfPin="xxxyyyzzz" ffgLicence="07235000" ffgLicenceStatus="" firstName="p_29" grade="" name="AAB" participating="11111111111111111111" rank="1K" rating="-150" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="99999" club="AAA" country="NL" egfPin="xxxyyyzzz" ffgLicence="07235000" ffgLicenceStatus="" firstName="p_29" grade="" name="AAC" participating="11111111111111111111" rank="1K" rating="-150" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
+</Players>
+<Games/>
+<TournamentParameterSet>
+<GeneralParameterSet basicTime="60" beginDate="2013-08-11" canByoYomiTime="300" complementaryTimeSystem="SUDDENDEATH" director="" endDate="2013-08-11" fischerTime="10" genMMBar="4D" genMMFloor="20K" genMMS2ValueAbsent="1" genMMS2ValueBye="2" genNBW2ValueAbsent="0" genNBW2ValueBye="2" genRoundDownNBWMMS="true" komi="7.5" location="" name="Essai" nbMovesCanTime="15" numberOfCategories="1" numberOfRounds="5" shortName="essai" size="19" stdByoYomiTime="30"/>
+<HandicapParameterSet hdBasedOnMMS="true" hdCeiling="9" hdCorrection="1" hdNoHdRankThreshold="1D"/>
+<PlacementParameterSet>
+<PlacementCriteria>
+<PlacementCriterion name="MMS" number="1"/>
+<PlacementCriterion name="SOSM" number="2"/>
+<PlacementCriterion name="SOSOSM" number="3"/>
+<PlacementCriterion name="NULL" number="4"/>
+<PlacementCriterion name="NULL" number="5"/>
+<PlacementCriterion name="NULL" number="6"/>
+</PlacementCriteria>
+</PlacementParameterSet>
+<PairingParameterSet paiBaAvoidDuplGame="500000000000000" paiBaBalanceWB="1000000" paiBaDeterministic="true" paiBaRandom="0" paiMaAdditionalPlacementCritSystem1="Rating" paiMaAdditionalPlacementCritSystem2="NULL" paiMaAvoidMixingCategories="0" paiMaDUDDLowerMode="MID" paiMaDUDDUpperMode="MID" paiMaDUDDWeight="100000000" paiMaLastRoundForSeedSystem1="2" paiMaMaximizeSeeding="5000000" paiMaMinimizeScoreDifference="100000000000" paiMaSeedSystem1="SPLITANDRANDOM" paiSeAvoidSameGeo="100000000000" paiSeBarThresholdActive="true" paiSeDefSecCrit="100000000000" paiSeMinimizeHandicap="0" paiSeNbWinsThresholdActive="false" paiSePreferMMSDiffRatherThanSameClub="3" paiSePreferMMSDiffRatherThanSameCountry="1" paiSeRankThreshold="1D" paiStandardNX1Factor="0.5"/>
+<DPParameterSet displayIndGamesInMatches="true" displayNumCol="true" displayPlCol="true" gameFormat="full"/>
+</TournamentParameterSet>
+<TeamTournamentParameterSet>
+<TeamGeneralParameterSet teamSize="4"/>
+<TeamPlacementParameterSet>
+<PlacementCriteria>
+<PlacementCriterion name="NULL" number="1"/>
+<PlacementCriterion name="NULL" number="2"/>
+<PlacementCriterion name="NULL" number="3"/>
+<PlacementCriterion name="NULL" number="4"/>
+<PlacementCriterion name="NULL" number="5"/>
+<PlacementCriterion name="NULL" number="6"/>
+</PlacementCriteria>
+</TeamPlacementParameterSet>
+</TeamTournamentParameterSet>
+</Tournament>

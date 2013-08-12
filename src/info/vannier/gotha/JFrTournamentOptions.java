@@ -2962,7 +2962,6 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
             tabLblCat = new JLabel[nbCat];
             tabTxfLowerLimitOfCat = new JTextField[nbCat];
             tabLblNbPlayersOfCat = new JLabel[nbCat];
-//            pnlCategories.setSize(230, 110 + 20 * nbCat + 30);
             pnlCategories.setSize(tpgcPnlWidth, tpgcPnlHeadHeight + tpgcLblHeight * nbCat + tpgcPnlBottomHeight);
             for (int c = 0; c < nbCat; c++){
                 // Category c Labels

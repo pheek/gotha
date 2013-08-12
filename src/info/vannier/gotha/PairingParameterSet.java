@@ -279,7 +279,7 @@ public class PairingParameterSet implements java.io.Serializable{
         
         paiSeBarThresholdActive                 =   true;         // Do not apply secondary criteria above bar
         paiSeRankThreshold                      =   0;           // Do not apply secondary criteria above 1D rank
-        setPaiSeNbWinsThresholdActive(false);       // Do not apply secondary criteria when nbWins >= nbRounds / 2
+        setPaiSeNbWinsThresholdActive(false);       // paiSeNbWinsThresholdActive not relevant in MM
         paiSeDefSecCrit                         =   PAIMA_MAX_MINIMIZE_SCORE_DIFFERENCE;
         paiSeMinimizeHandicap                   =   0;           // Not relevant in Mac-Mahon
         paiSeAvoidSameGeo                       =   paiMaMinimizeScoreDifference;
