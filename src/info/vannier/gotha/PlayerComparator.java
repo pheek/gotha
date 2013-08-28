@@ -10,6 +10,7 @@ public class PlayerComparator implements Comparator<Player>, Serializable{
     public final static int RANK_ORDER = 3;
     public final static int RATING_ORDER = 4;
     public final static int AGAID_ORDER = 5;
+    public final static int SCORE_ORDER = 101; // Not used in PlayerComparator itself. Used by JFrGamesPair
     
     int playerOrderType = PlayerComparator.NO_ORDER;
     public PlayerComparator(int playerOrderType){

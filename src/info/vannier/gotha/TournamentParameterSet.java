@@ -13,7 +13,7 @@ public class TournamentParameterSet implements java.io.Serializable{
     private static final long serialVersionUID = Gotha.GOTHA_DATA_VERSION;
     
     public final static int TYPE_UNDEFINED       = 0;
-    public final static int TYPE_MACMAHON        = 1;
+    public final static int TYPE_MCMAHON        = 1;
     public final static int TYPE_SWISS           = 2;
     public final static int TYPE_SWISSCAT        = 3;
     
@@ -43,7 +43,7 @@ public class TournamentParameterSet implements java.io.Serializable{
         int[] plaCrit = pps.getPlaCriteria();
         if (plaCrit == null) return TournamentParameterSet.TYPE_UNDEFINED;
         switch(plaCrit[0]){
-            case PlacementParameterSet.PLA_CRIT_MMS : return TournamentParameterSet.TYPE_MACMAHON;
+            case PlacementParameterSet.PLA_CRIT_MMS : return TournamentParameterSet.TYPE_MCMAHON;
             case PlacementParameterSet.PLA_CRIT_NBW : return TournamentParameterSet.TYPE_SWISS;
             case PlacementParameterSet.PLA_CRIT_CAT : return TournamentParameterSet.TYPE_SWISSCAT;
             default : return TournamentParameterSet.TYPE_UNDEFINED;

@@ -13,7 +13,7 @@
     <indexitem text="Players Manager frame" target="Players Manager frame" />
     <indexitem text="Players Quick check frame" target="Players Quick check frame" />
     <indexitem text="Update ratings frame" target="Update ratings frame" />
-    <indexitem text="Mac-Mahon groups frame" target="Mac-Mahon groups frame" />
+    <indexitem text="McMahon groups frame" target="McMahon groups frame" />
     <indexitem text="Teams Manager frame" target="Teams Manager frame" />
 
     <indexitem text="Games menu" target="Games menu" />
@@ -35,6 +35,7 @@
     <indexitem text="Preferences frame" target="Preferences frame" />
 
     <indexitem text="Tools menu" target="Tools menu" />
+    <indexitem text="Discard rounds frame" target="Discard rounds frame" />
       
     <indexitem text="Appendices" target="Appendices" />
     <indexitem text="Games encoding" target="Games encoding" />

@@ -151,7 +151,7 @@ public class JFrGotha extends javax.swing.JFrame {
         grpSystem = new javax.swing.ButtonGroup();
         dlgNew = new javax.swing.JDialog();
         pnlSystem = new javax.swing.JPanel();
-        rdbMacMahon = new javax.swing.JRadioButton();
+        rdbMcMahon = new javax.swing.JRadioButton();
         rdbSwiss = new javax.swing.JRadioButton();
         rdbSwissCat = new javax.swing.JRadioButton();
         jLabel13 = new javax.swing.JLabel();
@@ -301,14 +301,14 @@ public class JFrGotha extends javax.swing.JFrame {
         pnlSystem.setBorder(javax.swing.BorderFactory.createTitledBorder("System"));
         pnlSystem.setLayout(null);
 
-        grpPS.add(rdbMacMahon);
-        rdbMacMahon.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        rdbMacMahon.setText("Mac-Mahon");
-        rdbMacMahon.setToolTipText("Players will be paired according to their rank! The winner will be the strongest");
-        rdbMacMahon.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
-        rdbMacMahon.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        pnlSystem.add(rdbMacMahon);
-        rdbMacMahon.setBounds(20, 30, 170, 13);
+        grpPS.add(rdbMcMahon);
+        rdbMcMahon.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        rdbMcMahon.setText("McMahon");
+        rdbMcMahon.setToolTipText("Players will be paired according to their rank! The winner will be the strongest");
+        rdbMcMahon.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        rdbMcMahon.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        pnlSystem.add(rdbMcMahon);
+        rdbMcMahon.setBounds(20, 30, 170, 13);
 
         grpPS.add(rdbSwiss);
         rdbSwiss.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
@@ -500,7 +500,7 @@ public class JFrGotha extends javax.swing.JFrame {
         pnlWelcome.setLayout(null);
 
         lblTournamentPicture.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTournamentPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/info/vannier/gotha/claira242X311.jpg"))); // NOI18N
+        lblTournamentPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/info/vannier/gotha/fan238X312.jpg"))); // NOI18N
         pnlWelcome.add(lblTournamentPicture);
         lblTournamentPicture.setBounds(77, 5, 615, 312);
 
@@ -1157,7 +1157,7 @@ public class JFrGotha extends javax.swing.JFrame {
         mnuPlayers.add(mniUpdateRatings);
 
         mniMMGroups.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        mniMMGroups.setText("Mac-Mahon groups");
+        mniMMGroups.setText("McMahon groups");
         mniMMGroups.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mniMMGroupsActionPerformed(evt);
@@ -1488,8 +1488,8 @@ public class JFrGotha extends javax.swing.JFrame {
             return;
         }
         try {
-            if (tournament.tournamentType() != TournamentParameterSet.TYPE_MACMAHON) {
-                JOptionPane.showMessageDialog(this, "Mac-Mahon Groups are relevant only in Mac-Mahon tournaments", "Message", JOptionPane.ERROR_MESSAGE);
+            if (tournament.tournamentType() != TournamentParameterSet.TYPE_MCMAHON) {
+                JOptionPane.showMessageDialog(this, "McMahon Groups are relevant only in McMahon tournaments", "Message", JOptionPane.ERROR_MESSAGE);
                 return;
 
             }
@@ -1538,8 +1538,8 @@ public class JFrGotha extends javax.swing.JFrame {
     }//GEN-LAST:event_mniImportTouActionPerformed
 
     private void btnDlgNewOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDlgNewOKActionPerformed
-        int system = TournamentParameterSet.TYPE_MACMAHON;
-        if (this.rdbMacMahon.isSelected()) system = TournamentParameterSet.TYPE_MACMAHON;
+        int system = TournamentParameterSet.TYPE_MCMAHON;
+        if (this.rdbMcMahon.isSelected()) system = TournamentParameterSet.TYPE_MCMAHON;
         if (this.rdbSwiss.isSelected())    system = TournamentParameterSet.TYPE_SWISS;        
         if (this.rdbSwissCat.isSelected()) system = TournamentParameterSet.TYPE_SWISSCAT;
 
@@ -1573,7 +1573,7 @@ public class JFrGotha extends javax.swing.JFrame {
                     nbRounds, 1); // numberOfCategories will be set by initForXX
 
             switch (system) {
-            case TournamentParameterSet.TYPE_MACMAHON:
+            case TournamentParameterSet.TYPE_MCMAHON:
                 tps.initForMM();
                 break;
             case TournamentParameterSet.TYPE_SWISS:
@@ -1642,7 +1642,7 @@ public class JFrGotha extends javax.swing.JFrame {
         dlgNew.setIconImage(Gotha.getIconImage());
 
 
-        this.rdbMacMahon.setSelected(true);
+        this.rdbMcMahon.setSelected(true);
         this.txfNumberOfRounds.setText("5");
         this.txfBeginDate.setText(new java.util.Date().toString());
         this.txfBeginDate.setText((new SimpleDateFormat("yyyy-MM-dd")).format(new java.util.Date()));
@@ -1792,6 +1792,7 @@ public class JFrGotha extends javax.swing.JFrame {
         } catch (RemoteException ex) {
             Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
         }
+        getRootPane().setDefaultButton(btnSearch);
     }
 
     /**
@@ -3267,7 +3268,7 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                 if (Gotha.runningMode == Gotha.RUNNING_MODE_CLI && !tournament.isOpen()) dispose();
 
                 this.lastComponentsUpdateTime = tournament.getCurrentTournamentTime();
-                if (tournament.tournamentType() == TournamentParameterSet.TYPE_MACMAHON) {
+                if (tournament.tournamentType() == TournamentParameterSet.TYPE_MCMAHON) {
                     this.mniMMGroups.setEnabled(true);
                 } else {
                     this.mniMMGroups.setEnabled(false);
@@ -3548,7 +3549,7 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     private javax.swing.JPanel pnlWelcome;
     private javax.swing.JRadioButton rdbCurrentPS;
     private javax.swing.JRadioButton rdbCurrentTeamPS;
-    private javax.swing.JRadioButton rdbMacMahon;
+    private javax.swing.JRadioButton rdbMcMahon;
     private javax.swing.JRadioButton rdbSwiss;
     private javax.swing.JRadioButton rdbSwissCat;
     private javax.swing.JRadioButton rdbTemporaryPS;

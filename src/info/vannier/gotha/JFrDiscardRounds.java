@@ -144,8 +144,8 @@ public class JFrDiscardRounds extends javax.swing.JFrame {
     }//GEN-LAST:event_btnQuitActionPerformed
 
     private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHelpActionPerformed
-        JOptionPane.showMessageDialog(this, " This help will be available shortly");
-        //Gotha.displayGothaHelp("Players Quick check frame");
+//        JOptionPane.showMessageDialog(this, " This help will be available shortly");
+        Gotha.displayGothaHelp("Discard rounds frame");
     }//GEN-LAST:event_btnHelpActionPerformed
 
     private void btnDiscardRoundsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDiscardRoundsActionPerformed

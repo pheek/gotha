@@ -97,15 +97,17 @@ public class TournamentPrinting implements Printable {
     static final int NPL_PADDING = 30;
     static final int NPL_NBCAR = NPL_RANK_BEG + NPL_RANK_LEN + NPL_PADDING; // 87
     // ML = Matches List
-    static final int ML_TN_BEG = 5; // Table Number
+    static final int ML_TN_BEG = 4; // Table Number
     static final int ML_TN_LEN = 7;
     static final int ML_WTN_BEG = ML_TN_BEG + ML_TN_LEN + 1;
     static final int ML_WTN_LEN = 20;
     static final int ML_BTN_BEG = ML_WTN_BEG + ML_WTN_LEN + 1;
     static final int ML_BTN_LEN = 20;
-    static final int ML_RES_BEG = ML_BTN_BEG + ML_BTN_LEN + 1;
+    static final int ML_HD_BEG = ML_BTN_BEG + ML_BTN_LEN + 1;
+    static final int ML_HD_LEN = 1;
+    static final int ML_RES_BEG = ML_HD_BEG + ML_HD_LEN + 1;
     static final int ML_RES_LEN = 3;
-    static final int ML_PADDING = 5;
+    static final int ML_PADDING = 4;
     static final int ML_NBCAR = ML_RES_BEG + ML_RES_LEN + ML_PADDING;
     // ST = Standings // Dynamic system (V3.29.03)
     private int stNumBeg = 0;
@@ -1015,6 +1017,10 @@ public class TournamentPrinting implements Printable {
                     x = usableX + usableWidth * TournamentPrinting.ML_BTN_BEG / TournamentPrinting.ML_NBCAR;
                     g.drawString(" " + strNF + strP2Color, x, yG);
                     g.setFont(gameFont);
+            
+                    String strHd = "" + game.getHandicap();
+                    x = usableX + usableWidth * (ML_HD_BEG + ML_HD_LEN) / ML_NBCAR;
+                    drawRightAlignedString(g, strHd, x, yG);
                     
                     // Result
                     strResult = game.resultAsString(game.getWhitePlayer().hasSameKeyString(p1));
@@ -1297,8 +1303,8 @@ public class TournamentPrinting implements Printable {
             y = usableY + (4 + ln) * lineHeight;
             int tournamentType = tournament.tournamentType();
             String strType = "Undefined system";
-            if (tournamentType == TournamentParameterSet.TYPE_MACMAHON) {
-                strType = "Mac-Mahon system";
+            if (tournamentType == TournamentParameterSet.TYPE_MCMAHON) {
+                strType = "McMahon system";
             }
             if (tournamentType == TournamentParameterSet.TYPE_SWISS) {
                 strType = "Swiss system";
@@ -1578,8 +1584,14 @@ public class TournamentPrinting implements Printable {
             String strDG = "When pairing players from different groups is necessary,";
             g.drawString(strDG, x, y);
             int x1 = usableX + usableWidth * TP_TAB1 / TP_NBCAR;
+            
             ln++;
             y = usableY + (4 + ln) * lineHeight;
+            String strCompensate = "Previous Draw up/down are compensated by Draw down/up";
+            if (!paiPS.isPaiMaCompensateDUDD()) strCompensate = "No Draw up/down compensation system is used";
+            g.drawString(strCompensate, x, y);
+            
+            ln++;
             String strUG = "The player in the upper group is chosen";
             if (paiPS.getPaiMaDUDDUpperMode() == PairingParameterSet.PAIMA_DUDD_TOP) {
                 strUG += " " + "in the top of the group";
@@ -1738,16 +1750,10 @@ public class TournamentPrinting implements Printable {
     private void printMatchesListHeaderLine(Graphics g, PageFormat pf, int pi) {
         int y = usableY + 3 * lineHeight;
         int x = usableX + usableWidth * (ML_TN_BEG + ML_TN_LEN) / ML_NBCAR;
-        drawRightAlignedString(g, "Tbles", x, y);
-        x = usableX + usableWidth * TournamentPrinting.ML_WTN_BEG / ML_NBCAR;
-        if (!this.displayIndGames)
-            g.drawString(" White (board 1)", x, y);
-        x = usableX + usableWidth * ML_BTN_BEG / ML_NBCAR;
-        if (!this.displayIndGames)
-            g.drawString(" Black (board 1)", x, y);
+        drawRightAlignedString(g, "Tables", x, y);
 
-//        x = usableX + usableWidth * (ML_HD_BEG + ML_HD_LEN)/ ML_NBCAR;
-//        drawRightAlignedString(g, "Hd", x, y);
+        x = usableX + usableWidth * (ML_HD_BEG + ML_HD_LEN)/ ML_NBCAR;
+        if (this.displayIndGames) drawRightAlignedString(g, "Hd", x, y);
         x = usableX + usableWidth * (ML_RES_BEG + ML_RES_LEN) / ML_NBCAR;
         drawRightAlignedString(g, "Res", x, y);
     }

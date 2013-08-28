@@ -23,7 +23,7 @@ public class ScoredPlayer extends Player implements java.io.Serializable{
     public final static int BYE = -1;
     public final static int PAIRED = 1;
 
-    /** generalParameterSet is a part of ScoredPlayer because mms is dependent on Mac-Mahon bars and floors */
+    /** generalParameterSet is a part of ScoredPlayer because mms is dependent on McMahon bars and floors */
     private GeneralParameterSet generalParameterSet;
 
     /** for each round, participation[r] can be : ABSENT, NOT_ASSIGNED, BYE or PAIRED */
@@ -34,7 +34,7 @@ public class ScoredPlayer extends Player implements java.io.Serializable{
 
     // First level scores
     private int[] nbwX2;       // number of wins * 2
-    private int[] mmsX2;       // macmahon score * 2
+    private int[] mmsX2;       // mcmahon score * 2
     private int[] stsX2;       // strasbourg score *2
 
     // Second level scores
@@ -304,17 +304,17 @@ public class ScoredPlayer extends Player implements java.io.Serializable{
             case PlacementParameterSet.PLA_CRIT_RANK   : return  getRank();      // Rank
             case PlacementParameterSet.PLA_CRIT_RATING : return  getRating();    // Rating
             case PlacementParameterSet.PLA_CRIT_NBW    : return  (rn >= 0) ? nbwX2[rn] : 0;                     // Number of Wins
-            case PlacementParameterSet.PLA_CRIT_MMS    : return  (rn >= 0) ? mmsX2[rn] : 2 * smms(generalParameterSet);  // Mac-Mahon score
+            case PlacementParameterSet.PLA_CRIT_MMS    : return  (rn >= 0) ? mmsX2[rn] : 2 * smms(generalParameterSet);  // McMahon score
             case PlacementParameterSet.PLA_CRIT_STS    : return  (rn >= 0) ? stsX2[rn] : 2 * smms(generalParameterSet);  // STS score 
                 
-            case PlacementParameterSet.PLA_CRIT_SOSW   : return  (rn >= 0) ? this.soswX2[rn] : 0;	// Sum of Opponents Mac-Mahon scores
+            case PlacementParameterSet.PLA_CRIT_SOSW   : return  (rn >= 0) ? this.soswX2[rn] : 0;	// Sum of Opponents McMahon scores
             case PlacementParameterSet.PLA_CRIT_SOSWM1 : return  (rn >= 0) ? this.soswM1X2[rn] : 0;
             case PlacementParameterSet.PLA_CRIT_SOSWM2 : return  (rn >= 0) ? this.soswM2X2[rn] : 0;
             case PlacementParameterSet.PLA_CRIT_SODOSW : return  (rn >= 0) ? this.getSdswX4()[rn] : 0;	// Sum of Defeated Opponents Scores
             case PlacementParameterSet.PLA_CRIT_SOSOSW : return  (rn >= 0) ? this.ssswX2[rn] : 0;	// Sum of opponents SOS
             case PlacementParameterSet.PLA_CRIT_CUSSW  : return  (rn >= 0) ? this.cuswX2[rn] : 0;	// Cuss
 
-            case PlacementParameterSet.PLA_CRIT_SOSM   : return  (rn >= 0) ? this.sosmX2[rn] : 0;	// Sum of Opponents Mac-Mahon scores
+            case PlacementParameterSet.PLA_CRIT_SOSM   : return  (rn >= 0) ? this.sosmX2[rn] : 0;	// Sum of Opponents McMahon scores
             case PlacementParameterSet.PLA_CRIT_SOSMM1 : return  (rn >= 0) ? this.sosmM1X2[rn] : 0;
             case PlacementParameterSet.PLA_CRIT_SOSMM2 : return  (rn >= 0) ? this.sosmM2X2[rn] : 0;
             case PlacementParameterSet.PLA_CRIT_SODOSM : return  (rn >= 0) ? this.getSdsmX4()[rn] : 0;	// Sum of Defeated Opponents Scores
@@ -397,10 +397,10 @@ public static String[][] halfGamesStrings(ArrayList<ScoredPlayer> alOrderedScore
                     else{
                         int res = 0;
                         if (sp.participation[r] == ScoredPlayer.ABSENT)
-                            if (tps.tournamentType() == TournamentParameterSet.TYPE_MACMAHON) res = gps.getGenMMS2ValueAbsent();
+                            if (tps.tournamentType() == TournamentParameterSet.TYPE_MCMAHON) res = gps.getGenMMS2ValueAbsent();
                             else res = gps.getGenNBW2ValueAbsent();
                         else if (sp.participation[r] == ScoredPlayer.BYE)
-                            if (tps.tournamentType() == TournamentParameterSet.TYPE_MACMAHON) res = gps.getGenMMS2ValueBye();
+                            if (tps.tournamentType() == TournamentParameterSet.TYPE_MCMAHON) res = gps.getGenMMS2ValueBye();
                             else res = gps.getGenNBW2ValueBye();
                         if (res == 2) strRes = "+";
                         else if (res == 1) strRes = "=";

@@ -55,7 +55,7 @@ public class JFrBuildTestTournament extends javax.swing.JFrame{
         getContentPane().add(jLabel1);
         jLabel1.setBounds(20, 20, 340, 20);
 
-        cbxSystem.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mac-Mahon", "Swiss", "SwissCat" }));
+        cbxSystem.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "McMahon", "Swiss", "SwissCat" }));
         getContentPane().add(cbxSystem);
         cbxSystem.setBounds(20, 70, 120, 20);
 
@@ -163,7 +163,7 @@ public class JFrBuildTestTournament extends javax.swing.JFrame{
     private void btnBuildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuildActionPerformed
         int system = TournamentParameterSet.TYPE_SWISS;
         String strSystem = (String)this.cbxSystem.getSelectedItem();
-        if (strSystem.compareTo("Mac-Mahon") == 0) system = TournamentParameterSet.TYPE_MACMAHON;
+        if (strSystem.compareTo("McMahon") == 0) system = TournamentParameterSet.TYPE_MCMAHON;
         if (strSystem.compareTo("Swiss") == 0) system = TournamentParameterSet.TYPE_SWISS;
         if (strSystem.compareTo("SwissCat") == 0) system = TournamentParameterSet.TYPE_SWISSCAT;
         
@@ -171,7 +171,7 @@ public class JFrBuildTestTournament extends javax.swing.JFrame{
         tps.initBase();
 
         switch (system) {
-            case TournamentParameterSet.TYPE_MACMAHON:
+            case TournamentParameterSet.TYPE_MCMAHON:
                 tps.initForMM();
                 break;
             case TournamentParameterSet.TYPE_SWISS:

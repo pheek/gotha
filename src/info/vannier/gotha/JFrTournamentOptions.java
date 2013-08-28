@@ -79,7 +79,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         grpSeedingFormer = new javax.swing.ButtonGroup();
         grpSeedingLatter = new javax.swing.ButtonGroup();
         dlgChangeSystem = new javax.swing.JDialog();
-        rdbMacMahon = new javax.swing.JRadioButton();
+        rdbMcMahon = new javax.swing.JRadioButton();
         rdbSwiss = new javax.swing.JRadioButton();
         rdbSwissCat = new javax.swing.JRadioButton();
         lblNewSystem = new javax.swing.JLabel();
@@ -116,7 +116,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         jLabel37 = new javax.swing.JLabel();
         txfDirector = new javax.swing.JTextField();
         lblSystemName = new javax.swing.JLabel();
-        pnlMacMahon = new javax.swing.JPanel();
+        pnlMcMahon = new javax.swing.JPanel();
         lblMMBar = new javax.swing.JLabel();
         txfMMBar = new javax.swing.JTextField();
         lblMMFloor = new javax.swing.JLabel();
@@ -192,6 +192,9 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         rdbDUDDLGTop = new javax.swing.JRadioButton();
         rdbDUDDLGMid = new javax.swing.JRadioButton();
         rdbDUDDLGBot = new javax.swing.JRadioButton();
+        ckbCompensate = new javax.swing.JCheckBox();
+        ckbAvoid2DUDD = new javax.swing.JCheckBox();
+        jLabel40 = new javax.swing.JLabel();
         pnlSeeding = new javax.swing.JPanel();
         txfLastRoundForSeedSystem1 = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
@@ -250,15 +253,15 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
 
         dlgChangeSystem.getContentPane().setLayout(null);
 
-        grpNewSystem.add(rdbMacMahon);
-        rdbMacMahon.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        rdbMacMahon.setSelected(true);
-        rdbMacMahon.setText("Mac-Mahon");
-        rdbMacMahon.setToolTipText("Players will be paired according to their rank! The winner will be the strongest");
-        rdbMacMahon.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
-        rdbMacMahon.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        dlgChangeSystem.getContentPane().add(rdbMacMahon);
-        rdbMacMahon.setBounds(180, 110, 170, 13);
+        grpNewSystem.add(rdbMcMahon);
+        rdbMcMahon.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        rdbMcMahon.setSelected(true);
+        rdbMcMahon.setText("McMahon");
+        rdbMcMahon.setToolTipText("Players will be paired according to their rank! The winner will be the strongest");
+        rdbMcMahon.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        rdbMcMahon.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        dlgChangeSystem.getContentPane().add(rdbMcMahon);
+        rdbMcMahon.setBounds(180, 110, 170, 13);
 
         grpNewSystem.add(rdbSwiss);
         rdbSwiss.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
@@ -482,12 +485,12 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         pnlGen.add(lblSystemName);
         lblSystemName.setBounds(300, 20, 280, 20);
 
-        pnlMacMahon.setBorder(javax.swing.BorderFactory.createTitledBorder("Mac-Mahon"));
-        pnlMacMahon.setLayout(null);
+        pnlMcMahon.setBorder(javax.swing.BorderFactory.createTitledBorder("McMahon"));
+        pnlMcMahon.setLayout(null);
 
         lblMMBar.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        lblMMBar.setText("Mac-Mahon Bar");
-        pnlMacMahon.add(lblMMBar);
+        lblMMBar.setText("McMahon Bar");
+        pnlMcMahon.add(lblMMBar);
         lblMMBar.setBounds(10, 20, 140, 13);
 
         txfMMBar.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -495,12 +498,12 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
                 txfMMBarFocusLost(evt);
             }
         });
-        pnlMacMahon.add(txfMMBar);
+        pnlMcMahon.add(txfMMBar);
         txfMMBar.setBounds(150, 20, 30, 20);
 
         lblMMFloor.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        lblMMFloor.setText("Mac-Mahon Floor");
-        pnlMacMahon.add(lblMMFloor);
+        lblMMFloor.setText("McMahon Floor");
+        pnlMcMahon.add(lblMMFloor);
         lblMMFloor.setBounds(10, 50, 140, 13);
 
         txfMMFloor.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -508,11 +511,11 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
                 txfMMFloorFocusLost(evt);
             }
         });
-        pnlMacMahon.add(txfMMFloor);
+        pnlMcMahon.add(txfMMFloor);
         txfMMFloor.setBounds(150, 50, 30, 20);
 
-        pnlGen.add(pnlMacMahon);
-        pnlMacMahon.setBounds(300, 90, 250, 90);
+        pnlGen.add(pnlMcMahon);
+        pnlMcMahon.setBounds(300, 90, 250, 90);
 
         pnlSpecialResults.setBorder(javax.swing.BorderFactory.createTitledBorder("Special Results"));
         pnlSpecialResults.setLayout(null);
@@ -813,7 +816,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
 
         grpHdBase.add(rdbHdBaseMMS);
         rdbHdBaseMMS.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        rdbHdBaseMMS.setText("Mac-Mahon score");
+        rdbHdBaseMMS.setText("McMahon score");
         rdbHdBaseMMS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rdbHdBaseMMSActionPerformed(evt);
@@ -1067,7 +1070,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         pnlMain.add(ckbMinimizeScoreDifference);
         ckbMinimizeScoreDifference.setBounds(10, 40, 290, 13);
 
-        pnlDUDD.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "When pairing players from different groups is necessary, choose :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 10))); // NOI18N
+        pnlDUDD.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "When pairing players from different groups is necessary :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 10))); // NOI18N
         pnlDUDD.setLayout(null);
 
         pnlDUDDUG.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "the player in the upper group", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 10))); // NOI18N
@@ -1114,7 +1117,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         rdbDUDDUGBot.setBounds(10, 60, 170, 13);
 
         pnlDUDD.add(pnlDUDDUG);
-        pnlDUDDUG.setBounds(10, 20, 190, 90);
+        pnlDUDDUG.setBounds(10, 90, 190, 90);
 
         pnlDUDDLG.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "the player in the lower group", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 10))); // NOI18N
         pnlDUDDLG.setLayout(null);
@@ -1160,10 +1163,33 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         rdbDUDDLGBot.setBounds(10, 60, 170, 13);
 
         pnlDUDD.add(pnlDUDDLG);
-        pnlDUDDLG.setBounds(200, 20, 190, 90);
+        pnlDUDDLG.setBounds(200, 90, 190, 90);
+
+        ckbCompensate.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        ckbCompensate.setSelected(true);
+        ckbCompensate.setText("Compensate a previous Draw up/down by a Draw down/up");
+        ckbCompensate.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ckbCompensateFocusLost(evt);
+            }
+        });
+        pnlDUDD.add(ckbCompensate);
+        ckbCompensate.setBounds(10, 40, 350, 21);
+
+        ckbAvoid2DUDD.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        ckbAvoid2DUDD.setSelected(true);
+        ckbAvoid2DUDD.setText("Avoid drawing up/down a player twice in the same sense");
+        ckbAvoid2DUDD.setEnabled(false);
+        pnlDUDD.add(ckbAvoid2DUDD);
+        ckbAvoid2DUDD.setBounds(10, 20, 350, 21);
+
+        jLabel40.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jLabel40.setText("Then, preferably choose :");
+        pnlDUDD.add(jLabel40);
+        jLabel40.setBounds(20, 70, 340, 13);
 
         pnlMain.add(pnlDUDD);
-        pnlDUDD.setBounds(10, 240, 400, 120);
+        pnlDUDD.setBounds(10, 230, 400, 180);
 
         pnlSeeding.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Inside a group, use a seeding system", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 10))); // NOI18N
         pnlSeeding.setLayout(null);
@@ -1291,7 +1317,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         pnlSeeding.setBounds(10, 60, 400, 160);
 
         pnlPai.add(pnlMain);
-        pnlMain.setBounds(0, 10, 420, 380);
+        pnlMain.setBounds(0, 10, 420, 430);
 
         pnlSecondary.setBorder(javax.swing.BorderFactory.createTitledBorder("Secondary criteria"));
         pnlSecondary.setLayout(null);
@@ -1380,7 +1406,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
 
         ckbSeBarThresholdActive.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         ckbSeBarThresholdActive.setSelected(true);
-        ckbSeBarThresholdActive.setText("for players above Mac-Mahon bar");
+        ckbSeBarThresholdActive.setText("for players above McMahon bar");
         ckbSeBarThresholdActive.setBorder(null);
         ckbSeBarThresholdActive.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -1618,8 +1644,8 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
     }//GEN-LAST:event_btnDlgChangeSystemCancelActionPerformed
 
     private void btnDlgChangeSystemOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDlgChangeSystemOKActionPerformed
-        int system = TournamentParameterSet.TYPE_MACMAHON;
-        if (this.rdbMacMahon.isSelected()) system = TournamentParameterSet.TYPE_MACMAHON;
+        int system = TournamentParameterSet.TYPE_MCMAHON;
+        if (this.rdbMcMahon.isSelected()) system = TournamentParameterSet.TYPE_MCMAHON;
         if (this.rdbSwiss.isSelected()) system = TournamentParameterSet.TYPE_SWISS;
         if (this.rdbSwissCat.isSelected()) system = TournamentParameterSet.TYPE_SWISSCAT;
         
@@ -1636,7 +1662,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         PairingParameterSet paiPS = tps.getPairingParameterSet();
         DPParameterSet dpps = tps.getDPParameterSet();
         switch (system){
-            case TournamentParameterSet.TYPE_MACMAHON :
+            case TournamentParameterSet.TYPE_MCMAHON :
                 gps.initForMM();
                 hps.initForMM();
                 pps.initForMM();
@@ -1684,7 +1710,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         this.ckbResetParameters.setSelected(false);
 
         this.lblNewSystem.setEnabled(true);
-        this.rdbMacMahon.setEnabled(true);
+        this.rdbMcMahon.setEnabled(true);
         this.rdbSwiss.setEnabled(true);
         this.rdbSwissCat.setEnabled(true);
         this.lblRecommended.setEnabled(true);
@@ -1695,7 +1721,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         } catch (RemoteException ex) {
             Logger.getLogger(JFrTournamentOptions.class.getName()).log(Level.SEVERE, null, ex);
         }
-        if (tournamentType == TournamentParameterSet.TYPE_MACMAHON) rdbMacMahon.setSelected(true);
+        if (tournamentType == TournamentParameterSet.TYPE_MCMAHON) rdbMcMahon.setSelected(true);
         if (tournamentType == TournamentParameterSet.TYPE_SWISS) rdbSwiss.setSelected(true);
         if (tournamentType == TournamentParameterSet.TYPE_SWISSCAT) rdbSwissCat.setSelected(true);
          
@@ -2536,7 +2562,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         boolean bResetSelected = this.ckbResetParameters.isSelected();
 
         this.lblNewSystem.setEnabled(!bResetSelected);
-        this.rdbMacMahon.setEnabled(!bResetSelected);
+        this.rdbMcMahon.setEnabled(!bResetSelected);
         this.rdbSwiss.setEnabled(!bResetSelected);
         this.rdbSwissCat.setEnabled(!bResetSelected);
         this.lblRecommended.setEnabled(!bResetSelected);
@@ -2548,7 +2574,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
             } catch (RemoteException ex) {
                 Logger.getLogger(JFrTournamentOptions.class.getName()).log(Level.SEVERE, null, ex);
             }
-            if (tournamentType == TournamentParameterSet.TYPE_MACMAHON) rdbMacMahon.setSelected(true);
+            if (tournamentType == TournamentParameterSet.TYPE_MCMAHON) rdbMcMahon.setSelected(true);
             if (tournamentType == TournamentParameterSet.TYPE_SWISS) rdbSwiss.setSelected(true);
             if (tournamentType == TournamentParameterSet.TYPE_SWISSCAT) rdbSwissCat.setSelected(true);
         }
@@ -2757,6 +2783,35 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         }   
     }//GEN-LAST:event_ckbDisplayIndGamesFocusLost
 
+    private void ckbCompensateFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ckbCompensateFocusLost
+        TournamentParameterSet tps;
+        PairingParameterSet paiPS;
+        try {
+            tps = tournament.getTournamentParameterSet();
+            paiPS = tps.getPairingParameterSet();
+        } catch (RemoteException ex) {
+            Logger.getLogger(JFrTournamentOptions.class.getName()).log(Level.SEVERE, null, ex);
+            return;
+        }        
+        
+        boolean bSomethingHasChanged = false;
+        boolean oldCompensateDUDD = paiPS.isPaiMaCompensateDUDD();
+        boolean newCompensateDUDD = this.ckbCompensate.isSelected();
+        if (newCompensateDUDD != oldCompensateDUDD){
+            paiPS.setPaiMaCompensateDUDD(newCompensateDUDD);
+            bSomethingHasChanged = true;
+        }
+        if (bSomethingHasChanged){
+            try {
+                tournament.setTournamentParameterSet(tps);
+            this.tournamentChanged();
+            } catch (RemoteException ex) {
+                Logger.getLogger(JFrTournamentOptions.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }    
+
+    }//GEN-LAST:event_ckbCompensateFocusLost
+
     private void updHdBase(){
         TournamentParameterSet tps;
         try {
@@ -2890,28 +2945,28 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
             this.pnlIdentification.setVisible(true);
             this.lblSystemName.setVisible(false);
             this.pnlCategories.setVisible(false); 
-            this.pnlMacMahon.setVisible(false);
+            this.pnlMcMahon.setVisible(false);
         }
-        if (tournamentType == TournamentParameterSet.TYPE_MACMAHON){
+        if (tournamentType == TournamentParameterSet.TYPE_MCMAHON){
             this.pnlIdentification.setVisible(true);
             this.lblSystemName.setVisible(true);
-            this.lblSystemName.setText("Mac-Mahon system");
+            this.lblSystemName.setText("McMahon system");
             this.pnlCategories.setVisible(false);                      
-            this.pnlMacMahon.setVisible(true);
+            this.pnlMcMahon.setVisible(true);
         }        
         if (tournamentType == TournamentParameterSet.TYPE_SWISS){
             this.pnlIdentification.setVisible(true);
             this.lblSystemName.setVisible(true);
             this.lblSystemName.setText("Swiss system");
             this.pnlCategories.setVisible(false);
-            this.pnlMacMahon.setVisible(false);
+            this.pnlMcMahon.setVisible(false);
         }
         if (tournamentType == TournamentParameterSet.TYPE_SWISSCAT){
             this.pnlIdentification.setVisible(true);
             this.lblSystemName.setVisible(true);
             this.lblSystemName.setText("SwissCat system");
             this.pnlCategories.setVisible(true);                      
-            this.pnlMacMahon.setVisible(false);
+            this.pnlMcMahon.setVisible(false);
         }
         
         // Identification Panel
@@ -2998,8 +3053,8 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
                 tabLblNbPlayersOfCat[c].updateUI();
             }          
         }
-        // Mac-Mahon Panel
-        if (this.pnlMacMahon.isVisible()){
+        // McMahon Panel
+        if (this.pnlMcMahon.isVisible()){
             this.txfMMBar.setText(Player.convertIntToKD(gps.getGenMMBar()));
             this.txfMMFloor.setText(Player.convertIntToKD(gps.getGenMMFloor()));
         }
@@ -3035,7 +3090,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
             this.lblHandicap.setText("No Handicap");
             this.pnlHandicap.setVisible(true);
         }
-        if (tournamentType == TournamentParameterSet.TYPE_MACMAHON){
+        if (tournamentType == TournamentParameterSet.TYPE_MCMAHON){
             this.lblHandicap.setText("");
             this.pnlHandicap.setVisible(true);
         }        
@@ -3073,7 +3128,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         this.cbxCrit3.getModel().setSelectedItem(PlacementParameterSet.criterionLongName(displayedCriteria[2]));
         this.cbxCrit4.getModel().setSelectedItem(PlacementParameterSet.criterionLongName(displayedCriteria[3]));   
         
-        // update of MacMahon bar and floor JTextField
+        // update of McMahon bar and floor JTextField
         int bar = gps.getGenMMBar();
         int floor = gps.getGenMMFloor();
         this.txfMMBar.setText("" + Player.convertIntToKD(bar));
@@ -3098,7 +3153,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         else 
             this.ckbSeMinimizeHandicap.setVisible(false);
         
-        if (tournament.tournamentType() == TournamentParameterSet.TYPE_MACMAHON)
+        if (tournament.tournamentType() == TournamentParameterSet.TYPE_MCMAHON)
             this.ckbSeBarThresholdActive.setVisible(true);
         else 
             this.ckbSeBarThresholdActive.setVisible(false);
@@ -3124,6 +3179,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         if (paiPS.getPaiMaSeedSystem2() == PairingParameterSet.PAIMA_SEED_SPLITANDSLIP)
             this.rdbLatterSplitAndSlip.setSelected(true);
         
+        this.ckbCompensate.setSelected(paiPS.isPaiMaCompensateDUDD());
         if (paiPS.getPaiMaDUDDUpperMode() == PairingParameterSet.PAIMA_DUDD_TOP)
             this.rdbDUDDUGTop.setSelected(true);
         if (paiPS.getPaiMaDUDDUpperMode() == PairingParameterSet.PAIMA_DUDD_MID)
@@ -3222,9 +3278,11 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
     private javax.swing.JComboBox cbxTeamCrit5;
     private javax.swing.JComboBox cbxTeamCrit6;
     private javax.swing.JCheckBox ckbAddSortOnRating;
+    private javax.swing.JCheckBox ckbAvoid2DUDD;
     private javax.swing.JCheckBox ckbAvoidMixingCategories;
     private javax.swing.JCheckBox ckbAvoidPairingSamePair;
     private javax.swing.JCheckBox ckbBalanceWB;
+    private javax.swing.JCheckBox ckbCompensate;
     private javax.swing.JCheckBox ckbDeterministic;
     private javax.swing.JCheckBox ckbDisplayIndGames;
     private javax.swing.JCheckBox ckbDisplayNumCol;
@@ -3283,6 +3341,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -3308,8 +3367,8 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
     private javax.swing.JPanel pnlHandicap;
     private javax.swing.JPanel pnlIdentification;
     private javax.swing.JPanel pnlLatter;
-    private javax.swing.JPanel pnlMacMahon;
     private javax.swing.JPanel pnlMain;
+    private javax.swing.JPanel pnlMcMahon;
     private javax.swing.JPanel pnlPai;
     private javax.swing.JPanel pnlPla;
     private javax.swing.JPanel pnlSecondary;
@@ -3351,7 +3410,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
     private javax.swing.JRadioButton rdbLatterSplitAndFold;
     private javax.swing.JRadioButton rdbLatterSplitAndRandom;
     private javax.swing.JRadioButton rdbLatterSplitAndSlip;
-    private javax.swing.JRadioButton rdbMacMahon;
+    private javax.swing.JRadioButton rdbMcMahon;
     private javax.swing.JRadioButton rdbNoRandom;
     private javax.swing.JRadioButton rdbSwiss;
     private javax.swing.JRadioButton rdbSwissCat;

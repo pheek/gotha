@@ -1,12 +1,21 @@
-OpenGothaV3.33.03
+OpenGothaV3.34
 *****************
-12/08/2013
+28/08/2013
+New     In Games .. Pair Frame, no selection in Games table = all games selected
+New     In Games .. Pair Frame, players may be sorted by score(default), rank or name
+New     In Games .. Pair Frame, a "search for player" utility
+New     The Draw up/down compensation system is now optional
+New     When a tournament has n rounds, participations of a player in (virtual) rounds n+1, n+2, ...
+        are set to value of participation in round n
+New     An new tool to discard selected rounds. Useful, for example, to split a main tournament 
+        into two week-tournaments.
+New     When pairing two teams already paired in a previous roud, a warning message is displayed
+New     In the Matches list, Handicaps are printed 
 New     An experimental tool : Force participation for all players
 New     An experimental tool : Force case for countries and clubs
 Bug Fix In Players Manager frame, Grade TextField was not properly reset. Fixed
-New     An new tool to discard selected rounds. Useful, for example, to split a main tournament 
-        into two week-tournaments.
 Bug Fix Geographical criteria were not properly managed. Fixed
+Bug Fix In Teams pairing with handicap games, board 1 colors might be wrong. Fixed 
 
 OpenGothaV3.33
 **************
@@ -16,6 +25,7 @@ Bug fix In team tournaments, clicking on a player's name might be uncorrectly pr
 New     In Games Results, Teams presentation, the number of wins is displayed for each team
 Bug fix In Players Manager Frame, Grade was misinterpreted for double-digit kyu players. Fixed
 New     In Players Manager Frame, Grade is displayed (relevant with EGF rating list)
+Detail  "Mac-Mahon" changed to "McMahon" when referring to the tournament system
 
 OpenGothaV3.32
 **************

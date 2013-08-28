@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE Tournament SYSTEM "tournament.dtd">
 <Tournament dataVersion="201">
 <Players>
 <Player club="Lill" country="fr" firstName="Jean" name="Rey" participating="11111111110000000000" rank="2D" rating="2013" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>

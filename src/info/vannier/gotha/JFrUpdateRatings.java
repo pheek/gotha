@@ -530,7 +530,7 @@ public class JFrUpdateRatings extends javax.swing.JFrame {
         try {
             if (!tournament.isOpen()) dispose();
             this.lastComponentsUpdateTime = tournament.getCurrentTournamentTime();
-            setTitle("Update ratings");
+            setTitle("Update ratings. " + tournament.getTournamentParameterSet().getGeneralParameterSet().getShortName());
         } catch (RemoteException ex) {
             Logger.getLogger(JFrPlayersManager.class.getName()).log(Level.SEVERE, null, ex);
         }

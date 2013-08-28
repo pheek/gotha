@@ -1100,33 +1100,40 @@ public class Tournament extends UnicastRemoteObject implements TournamentInterfa
                 scenario++;
             }
 
-            if (scenario != 0) {
-                long duddWeight = paiPS.getPaiMaDUDDWeight() / 3;
+            
+            // Modifs V3.33.04
+            long duddWeight = paiPS.getPaiMaDUDDWeight() / 4;
 
-                ScoredPlayer upperSP = (sP1.groupNumber < sP2.groupNumber) ? sP1 : sP2;
-                ScoredPlayer lowerSP = (sP1.groupNumber < sP2.groupNumber) ? sP2 : sP1;
-                if (paiPS.getPaiMaDUDDUpperMode() == PairingParameterSet.PAIMA_DUDD_TOP) {
-                    duddCost += duddWeight / 2 * (upperSP.groupSize - 1 - upperSP.innerPlacement) / upperSP.groupSize;
-                } else if (paiPS.getPaiMaDUDDUpperMode() == PairingParameterSet.PAIMA_DUDD_MID) {
-                    duddCost += duddWeight / 2 * (upperSP.groupSize - 1 - Math.abs(2 * upperSP.innerPlacement - upperSP.groupSize + 1)) / upperSP.groupSize;
-                } else if (paiPS.getPaiMaDUDDUpperMode() == PairingParameterSet.PAIMA_DUDD_BOT) {
-                    duddCost += duddWeight / 2 * (upperSP.innerPlacement) / upperSP.groupSize;
-                }
-                if (paiPS.getPaiMaDUDDLowerMode() == PairingParameterSet.PAIMA_DUDD_TOP) {
-                    duddCost += duddWeight / 2 * (lowerSP.groupSize - 1 - lowerSP.innerPlacement) / lowerSP.groupSize;
-                } else if (paiPS.getPaiMaDUDDLowerMode() == PairingParameterSet.PAIMA_DUDD_MID) {
-                    duddCost += duddWeight / 2 * (lowerSP.groupSize - 1 - Math.abs(2 * lowerSP.innerPlacement - lowerSP.groupSize + 1)) / lowerSP.groupSize;
-                } else if (paiPS.getPaiMaDUDDLowerMode() == PairingParameterSet.PAIMA_DUDD_BOT) {
-                    duddCost += duddWeight / 2 * (lowerSP.innerPlacement) / lowerSP.groupSize;
-                }
-
-                if (scenario == 2) {
-                    duddCost += duddWeight;
-                }
-                if (scenario == 3) {
-                    duddCost += 2 * duddWeight;
-                }
+            ScoredPlayer upperSP = (sP1.groupNumber < sP2.groupNumber) ? sP1 : sP2;
+            ScoredPlayer lowerSP = (sP1.groupNumber < sP2.groupNumber) ? sP2 : sP1;
+            if (paiPS.getPaiMaDUDDUpperMode() == PairingParameterSet.PAIMA_DUDD_TOP) {
+                duddCost += duddWeight / 2 * (upperSP.groupSize - 1 - upperSP.innerPlacement) / upperSP.groupSize;
+            } else if (paiPS.getPaiMaDUDDUpperMode() == PairingParameterSet.PAIMA_DUDD_MID) {
+                duddCost += duddWeight / 2 * (upperSP.groupSize - 1 - Math.abs(2 * upperSP.innerPlacement - upperSP.groupSize + 1)) / upperSP.groupSize;
+            } else if (paiPS.getPaiMaDUDDUpperMode() == PairingParameterSet.PAIMA_DUDD_BOT) {
+                duddCost += duddWeight / 2 * (upperSP.innerPlacement) / upperSP.groupSize;
             }
+            if (paiPS.getPaiMaDUDDLowerMode() == PairingParameterSet.PAIMA_DUDD_TOP) {
+                duddCost += duddWeight / 2 * (lowerSP.groupSize - 1 - lowerSP.innerPlacement) / lowerSP.groupSize;
+            } else if (paiPS.getPaiMaDUDDLowerMode() == PairingParameterSet.PAIMA_DUDD_MID) {
+                duddCost += duddWeight / 2 * (lowerSP.groupSize - 1 - Math.abs(2 * lowerSP.innerPlacement - lowerSP.groupSize + 1)) / lowerSP.groupSize;
+            } else if (paiPS.getPaiMaDUDDLowerMode() == PairingParameterSet.PAIMA_DUDD_BOT) {
+                duddCost += duddWeight / 2 * (lowerSP.innerPlacement) / lowerSP.groupSize;
+            }
+
+            if (scenario == 0) {
+//                duddCost = duddCost;
+            }
+            if (scenario == 1 || (scenario >= 1 && !paiPS.isPaiMaCompensateDUDD())){
+                duddCost += duddWeight;
+            }
+            else if (scenario == 2) {
+                duddCost += 2 * duddWeight;
+            }
+            else if (scenario == 3) {
+                duddCost += 3 * duddWeight;
+            }
+            
         }
         // But, if players come from different categories, decrease duddCost(added in 3.11)
         int catGap = Math.abs(sP1.category(gps) - sP2.category(gps));
@@ -1230,7 +1237,7 @@ public class Tournament extends UnicastRemoteObject implements TournamentInterfa
         } catch (RemoteException ex) {
             Logger.getLogger(Tournament.class.getName()).log(Level.SEVERE, null, ex);
         }
-        if (tType == TournamentParameterSet.TYPE_MACMAHON) {
+        if (tType == TournamentParameterSet.TYPE_MCMAHON) {
             secRange = scoRange;
         } else {
             secRange = (gps.getGenMMBar() - gps.getGenMMFloor() + PlacementParameterSet.PLA_SMMS_CORR_MAX - PlacementParameterSet.PLA_SMMS_CORR_MIN) + roundNumber;
@@ -2021,7 +2028,8 @@ public class Tournament extends UnicastRemoteObject implements TournamentInterfa
         }
         Game game = alG.get(0);
         
-        if (game.getHandicap() != 0){
+//        if (game.getHandicap() != 0){
+        if (game.getHandicap() == 0){
             if (pt0IsWhite) {
                 game.setWhitePlayer(pt0);
                 game.setBlackPlayer(pt1);

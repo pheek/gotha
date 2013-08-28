@@ -28,7 +28,7 @@
             <Property name="useNullLayout" type="boolean" value="true"/>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JRadioButton" name="rdbMacMahon">
+            <Component class="javax.swing.JRadioButton" name="rdbMcMahon">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="grpPS"/>
@@ -36,7 +36,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="10" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Mac-Mahon"/>
+                <Property name="text" type="java.lang.String" value="McMahon"/>
                 <Property name="toolTipText" type="java.lang.String" value="Players will be paired according to their rank! The winner will be the strongest"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
@@ -752,7 +752,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="11" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Mac-Mahon groups"/>
+                <Property name="text" type="java.lang.String" value="McMahon groups"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mniMMGroupsActionPerformed"/>
@@ -1038,7 +1038,7 @@
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/info/vannier/gotha/claira242X311.jpg"/>
+                  <Image iconType="3" name="/info/vannier/gotha/fan238X312.jpg"/>
                 </Property>
               </Properties>
               <Constraints>

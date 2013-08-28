@@ -5,6 +5,7 @@ package info.vannier.gotha;
 
 import java.awt.Dimension;
 import java.awt.Point;
+import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,6 +21,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -38,6 +40,8 @@ public class JFrGamesPair extends javax.swing.JFrame {
     private static final int WHITE_PLAYER_COL = 1;
     private static final int BLACK_PLAYER_COL = 2;
     private static final int HANDICAP_COL = 3;
+    
+    private int playersSortType = PlayerComparator.SCORE_ORDER;
     private int gamesSortType = GameComparator.TABLE_NUMBER_ORDER;
     /**  current Tournament */
     private TournamentInterface tournament = null;
@@ -84,6 +88,8 @@ public class JFrGamesPair extends javax.swing.JFrame {
         setBounds((dim.width - w) / 2, (dim.height - h) / 2, w, h);
 
         setIconImage(Gotha.getIconImage());
+        
+        getRootPane().setDefaultButton(btnSearch);
         initPlayersComponents();
         initPreviousGamesComponents();
         initGamesComponents();
@@ -207,9 +213,13 @@ public class JFrGamesPair extends javax.swing.JFrame {
         }
         ArrayList<Player> alPairablePlayers = new ArrayList<Player>(hmPairablePlayers.values());
 
-        PlayerComparator playerComparator = new PlayerComparator(PlayerComparator.RANK_ORDER);
-        Collections.sort(alPairablePlayers, playerComparator);
-
+        if (playersSortType == PlayerComparator.SCORE_ORDER){
+            alPairablePlayers = this.scoreSortedPlayers(alPairablePlayers);
+        }
+        else{
+            PlayerComparator playerComparator = new PlayerComparator(playersSortType);
+            Collections.sort(alPairablePlayers, playerComparator);
+        }
         this.txfNbPairablePlayers.setText("" + alPairablePlayers.size());
 
         this.txfNbNotPairablePlayers.setText("" + alNotPairablePlayers.size());
@@ -243,6 +253,32 @@ public class JFrGamesPair extends javax.swing.JFrame {
 
         // update previous games and visibility issues
         setVisibilityOfPairablePlayersAndPreviousGamesPanels();
+    }
+    /**
+     * From a non sorted alP array, returns a score sorted array
+     * Sorting is made according to tournament ppas and processedRoundNumber
+     * @param alP
+     * @return 
+     */
+    private ArrayList<Player> scoreSortedPlayers(ArrayList<Player> alP){
+        ArrayList<Player> alSSP = new ArrayList<Player>();
+        PlacementParameterSet pps;
+        ArrayList<ScoredPlayer> alSP = null;
+        try {
+            pps = tournament.getTournamentParameterSet().getPlacementParameterSet();
+            alSP = tournament.orderedScoredPlayersList(processedRoundNumber - 1, pps);
+        } catch (RemoteException ex) {
+            Logger.getLogger(JFrGamesPair.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        for(ScoredPlayer sp : alSP){
+            for(Player p : alP){
+                if (p.hasSameKeyString(sp)){
+                    alSSP.add(p);
+                }
+            }
+        }
+        
+        return alSSP;
     }
 
     private void updatePnlPreviousGames() {
@@ -457,13 +493,18 @@ public class JFrGamesPair extends javax.swing.JFrame {
 
     /**
      * Produces a list of selected games in tblGames
-     * If no game is selected, returns an empty list  
+     * If no game is selected, returns all the games  
      */
     private ArrayList<Game> selectedGamesList() {
         ArrayList<Game> alSelectedGames = new ArrayList<Game>();
         
+        boolean bNoGameSelected = false;
+        if (this.tblGames.getSelectedRowCount() == 0) {
+            bNoGameSelected = true;
+            // gather selected players into alPlayersToPair
+        }
         for (int iRow = 0; iRow < tblGames.getModel().getRowCount(); iRow++) {
-            if (tblGames.isRowSelected(iRow)) {
+            if (tblGames.isRowSelected(iRow)|| bNoGameSelected ) {
                 String s = (String) tblGames.getModel().getValueAt(iRow, TABLE_NUMBER_COL);
                 int tableNumber = Integer.parseInt(s) - 1;
                 Game g = null;
@@ -511,6 +552,12 @@ public class JFrGamesPair extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         ckbUnbalancedWB = new javax.swing.JCheckBox();
         txfUnbalancedWB = new javax.swing.JTextField();
+        pupPairablePlayers = new javax.swing.JPopupMenu();
+        mniSortByName = new javax.swing.JMenuItem();
+        mniSortByRank = new javax.swing.JMenuItem();
+        mniSortByScore = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        mniCancel1 = new javax.swing.JMenuItem();
         pnlInternal = new javax.swing.JPanel();
         btnPair = new javax.swing.JButton();
         btnUnpair = new javax.swing.JButton();
@@ -545,6 +592,9 @@ public class JFrGamesPair extends javax.swing.JFrame {
         btnQuit = new javax.swing.JButton();
         spnRoundNumber = new javax.swing.JSpinner();
         btnHelp = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        txfSearchPlayer = new javax.swing.JTextField();
+        btnSearch = new javax.swing.JButton();
 
         mniRenumberTables.setText("Renumber all tables by MMS");
         mniRenumberTables.addActionListener(new java.awt.event.ActionListener() {
@@ -676,6 +726,41 @@ public class JFrGamesPair extends javax.swing.JFrame {
         dlgPairingReport.getContentPane().add(txfUnbalancedWB);
         txfUnbalancedWB.setBounds(282, 240, 20, 20);
 
+        pupPairablePlayers.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+
+        mniSortByName.setText("Sort by name");
+        mniSortByName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniSortByNameActionPerformed(evt);
+            }
+        });
+        pupPairablePlayers.add(mniSortByName);
+
+        mniSortByRank.setText("Sort by rank");
+        mniSortByRank.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniSortByRankActionPerformed(evt);
+            }
+        });
+        pupPairablePlayers.add(mniSortByRank);
+
+        mniSortByScore.setText("Sort by score");
+        mniSortByScore.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniSortByScoreActionPerformed(evt);
+            }
+        });
+        pupPairablePlayers.add(mniSortByScore);
+        pupPairablePlayers.add(jSeparator1);
+
+        mniCancel1.setText("Cancel");
+        mniCancel1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniCancel1ActionPerformed(evt);
+            }
+        });
+        pupPairablePlayers.add(mniCancel1);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Games .. Pair");
         setResizable(false);
@@ -695,7 +780,7 @@ public class JFrGamesPair extends javax.swing.JFrame {
             }
         });
         pnlInternal.add(btnPair);
-        btnPair.setBounds(280, 100, 110, 30);
+        btnPair.setBounds(280, 100, 120, 30);
 
         btnUnpair.setText("<<<");
         btnUnpair.addActionListener(new java.awt.event.ActionListener() {
@@ -704,7 +789,7 @@ public class JFrGamesPair extends javax.swing.JFrame {
             }
         });
         pnlInternal.add(btnUnpair);
-        btnUnpair.setBounds(280, 170, 110, 30);
+        btnUnpair.setBounds(280, 160, 120, 30);
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Pair");
@@ -714,7 +799,7 @@ public class JFrGamesPair extends javax.swing.JFrame {
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Unpair");
         pnlInternal.add(jLabel7);
-        jLabel7.setBounds(280, 150, 110, 14);
+        jLabel7.setBounds(280, 140, 110, 14);
 
         jLabel9.setText("Round");
         pnlInternal.add(jLabel9);
@@ -913,7 +998,7 @@ public class JFrGamesPair extends javax.swing.JFrame {
         btnReport.setBounds(10, 340, 360, 23);
 
         pnlInternal.add(pnlGames);
-        pnlGames.setBounds(390, 40, 380, 420);
+        pnlGames.setBounds(400, 40, 380, 420);
 
         btnByePlayer.setText(">>>");
         btnByePlayer.addActionListener(new java.awt.event.ActionListener() {
@@ -922,7 +1007,7 @@ public class JFrGamesPair extends javax.swing.JFrame {
             }
         });
         pnlInternal.add(btnByePlayer);
-        btnByePlayer.setBounds(280, 330, 110, 30);
+        btnByePlayer.setBounds(280, 330, 120, 30);
 
         lblByePlayer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblByePlayer.setText("Bye player");
@@ -936,7 +1021,7 @@ public class JFrGamesPair extends javax.swing.JFrame {
             }
         });
         pnlInternal.add(btnQuit);
-        btnQuit.setBounds(400, 480, 360, 30);
+        btnQuit.setBounds(410, 480, 360, 30);
 
         spnRoundNumber.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -954,17 +1039,36 @@ public class JFrGamesPair extends javax.swing.JFrame {
             }
         });
         pnlInternal.add(btnHelp);
-        btnHelp.setBounds(280, 480, 110, 30);
+        btnHelp.setBounds(280, 480, 120, 30);
+
+        jLabel5.setText("Search for a player");
+        pnlInternal.add(jLabel5);
+        jLabel5.setBounds(290, 220, 110, 14);
+        pnlInternal.add(txfSearchPlayer);
+        txfSearchPlayer.setBounds(290, 240, 110, 20);
+
+        btnSearch.setText("Search/Next");
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchActionPerformed(evt);
+            }
+        });
+        pnlInternal.add(btnSearch);
+        btnSearch.setBounds(290, 260, 110, 23);
 
         getContentPane().add(pnlInternal);
-        pnlInternal.setBounds(0, 0, 770, 520);
+        pnlInternal.setBounds(0, 0, 780, 520);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void tblPairablePlayersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblPairablePlayersMouseClicked
         setVisibilityOfPairablePlayersAndPreviousGamesPanels();
-
+        // Right click
+        if (evt.getModifiers() != InputEvent.BUTTON3_MASK) return;
+        Point p = evt.getLocationOnScreen();
+        this.pupPairablePlayers.setLocation(p);
+        pupPairablePlayers.setVisible(true); 
     }//GEN-LAST:event_tblPairablePlayersMouseClicked
 
     private void setVisibilityOfPairablePlayersAndPreviousGamesPanels() {
@@ -1114,7 +1218,7 @@ public class JFrGamesPair extends javax.swing.JFrame {
     }//GEN-LAST:event_tblGamesMouseClicked
 
     private void btnUnpairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUnpairActionPerformed
-        boolean bRemoveAllGames = false;
+//        boolean bRemoveAllGames = false;
         ArrayList<Game> alGamesToRemove = selectedGamesList();
 
         int nbGamesToRemove = alGamesToRemove.size();
@@ -1243,8 +1347,8 @@ public class JFrGamesPair extends javax.swing.JFrame {
 
             int bAnswer = JOptionPane.showConfirmDialog(this, wP.fullName() + " " + "and"
                     + " " + bP.fullName()
-                    + " " + "have been already paired in round" + (r + 1)
-                    + "\n" + "Do you want to keep this pairing nevertheless?",
+                    + " " + "have been already paired in round " + (r + 1)
+                    + "\n" + "Do you want to keep this pairing nevertheless ?",
                     "Message", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
             if (bAnswer == JOptionPane.NO_OPTION) {
                 return;
@@ -1358,7 +1462,8 @@ public class JFrGamesPair extends javax.swing.JFrame {
 
     private void mniCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniCancelActionPerformed
         this.pupGames.setVisible(false);
-        this.tblGames.removeRowSelectionInterval(0, tblGames.getRowCount() - 1);
+        int index2 = tblGames.getRowCount() - 1;
+        if (index2 >= 0) this.tblGames.removeRowSelectionInterval(0, tblGames.getRowCount() - 1);
 }//GEN-LAST:event_mniCancelActionPerformed
 
     private void mniShiftTablesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniShiftTablesActionPerformed
@@ -1508,6 +1613,74 @@ public class JFrGamesPair extends javax.swing.JFrame {
         this.pupGames.setVisible(false);
     }//GEN-LAST:event_tblGamesFocusLost
 
+    private void mniSortByRankActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniSortByRankActionPerformed
+        playersSortType = PlayerComparator.RANK_ORDER;
+        pupPairablePlayers.setVisible(false);   
+        this.updateComponents();// TODO update only PairablePlayers panel
+
+    }//GEN-LAST:event_mniSortByRankActionPerformed
+
+    private void mniCancel1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniCancel1ActionPerformed
+        this.pupPairablePlayers.setVisible(false);
+        this.tblPairablePlayers.removeRowSelectionInterval(0, tblPairablePlayers.getRowCount() - 1);
+    }//GEN-LAST:event_mniCancel1ActionPerformed
+
+    private void mniSortByNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniSortByNameActionPerformed
+        playersSortType = PlayerComparator.NAME_ORDER;
+        pupPairablePlayers.setVisible(false);
+        this.updateComponents();// TODO update only PairablePlayers panel
+    }//GEN-LAST:event_mniSortByNameActionPerformed
+
+    private void mniSortByScoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniSortByScoreActionPerformed
+        playersSortType = PlayerComparator.SCORE_ORDER;
+        pupPairablePlayers.setVisible(false);
+        this.updateComponents();// TODO update only PairablePlayers panel
+    }//GEN-LAST:event_mniSortByScoreActionPerformed
+
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        String strSearchPlayer = this.txfSearchPlayer.getText().toLowerCase();
+        if (strSearchPlayer.length() == 0) {
+            tblGames.clearSelection();
+            return;
+        }
+        TableModel model = tblGames.getModel();
+        int rowNumber = -1;
+        int startRow = tblGames.getSelectedRow() + 1;
+        int nbRows = model.getRowCount();
+        for (int iR = 0; iR < nbRows; iR++) {
+            int row = (startRow + iR) % nbRows;
+            String str = (String) model.getValueAt(row, WHITE_PLAYER_COL);
+            str = str.toLowerCase();
+            if (str.indexOf(strSearchPlayer) >= 0) {
+                rowNumber = row;
+                break;
+            }
+            str = (String) model.getValueAt(row, BLACK_PLAYER_COL);
+            str = str.toLowerCase();
+            if (str.indexOf(strSearchPlayer) >= 0) {
+                rowNumber = row;
+                break;
+            }
+        }
+
+        tblGames.clearSelection();
+        if (rowNumber == -1) {
+            JOptionPane.showMessageDialog(this,
+                "No player with the specified name is paired in round " + (this.processedRoundNumber + 1),
+                "Message", JOptionPane.ERROR_MESSAGE);
+        } else {
+            tblGames.setRowSelectionAllowed(true);
+            tblGames.clearSelection();
+            tblGames.addRowSelectionInterval(rowNumber, rowNumber);
+
+            Rectangle rect = tblGames.getCellRect(rowNumber, 0, true);
+            tblGames.scrollRectToVisible(rect);
+        }
+
+        tblGames.repaint();
+    }//GEN-LAST:event_btnSearchActionPerformed
+
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnByePlayer;
     private javax.swing.JButton btnDlgPairingReportQuit;
@@ -1517,6 +1690,7 @@ public class JFrGamesPair extends javax.swing.JFrame {
     private javax.swing.JButton btnPrint;
     private javax.swing.JButton btnQuit;
     private javax.swing.JButton btnReport;
+    private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnUnpair;
     private javax.swing.JCheckBox ckbHandicapGreaterThan;
     private javax.swing.JCheckBox ckbIntraClub;
@@ -1530,26 +1704,33 @@ public class JFrGamesPair extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator5;
     private javax.swing.JLabel lblByePlayer;
     private javax.swing.JLabel lblPreviousGames;
     private javax.swing.JMenuItem mniCancel;
+    private javax.swing.JMenuItem mniCancel1;
     private javax.swing.JMenuItem mniChangeTableNumber;
     private javax.swing.JMenuItem mniExchangeColors;
     private javax.swing.JMenuItem mniModifyHandicap;
     private javax.swing.JMenuItem mniRenumberTables;
     private javax.swing.JMenuItem mniShiftTables;
+    private javax.swing.JMenuItem mniSortByName;
+    private javax.swing.JMenuItem mniSortByRank;
+    private javax.swing.JMenuItem mniSortByScore;
     private javax.swing.JPanel pnlGames;
     private javax.swing.JPanel pnlInternal;
     private javax.swing.JPanel pnlNotPairablePlayers;
     private javax.swing.JPanel pnlPlayers;
     private javax.swing.JPanel pnlPreviousGames;
     private javax.swing.JPopupMenu pupGames;
+    private javax.swing.JPopupMenu pupPairablePlayers;
     private javax.swing.JScrollPane scpGames;
     private javax.swing.JScrollPane scpNotPairablePlayers;
     private javax.swing.JScrollPane scpPairablePlayers;
@@ -1567,6 +1748,7 @@ public class JFrGamesPair extends javax.swing.JFrame {
     private javax.swing.JTextField txfNbGames;
     private javax.swing.JTextField txfNbNotPairablePlayers;
     private javax.swing.JTextField txfNbPairablePlayers;
+    private javax.swing.JTextField txfSearchPlayer;
     private javax.swing.JTextField txfUnbalancedWB;
     // End of variables declaration//GEN-END:variables
 

@@ -47,7 +47,7 @@ public class Player implements java.io.Serializable{
     private int grade = RatedPlayer.GRADE_NOT_RELEVANT;
     
     /**
-     * When computing smms, rank is taken as a basis, then framed by Mac-Mahon floor and Mac-Mahon bar.
+     * When computing smms, rank is taken as a basis, then framed by McMahon floor and McMahon bar.
      * Then smms is added smsCorrection, which may be 0, 1 or 2, 1 0 for Bar Group, 1 for Super Group and 2 for Supersuper Group
      * smmsCorrection may also be negative;
      */

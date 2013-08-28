@@ -672,7 +672,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
 
         txfSMMSCorrection.setEditable(false);
         txfSMMSCorrection.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txfSMMSCorrection.setToolTipText("smms correction (relevant for Mac-Mahon super-groups)");
+        txfSMMSCorrection.setToolTipText("smms correction (relevant for McMahon super-groups)");
         pnlPlayer.add(txfSMMSCorrection);
         txfSMMSCorrection.setBounds(120, 360, 20, 21);
 
@@ -1253,9 +1253,25 @@ public class JFrPlayersManager extends javax.swing.JFrame {
                     strRegistration);
 
             boolean[] bPart = new boolean[Gotha.MAX_NUMBER_OF_ROUNDS];
-            for (int i = 0; i < Gotha.MAX_NUMBER_OF_ROUNDS; i++) {
+//            for (int i = 0; i < Gotha.MAX_NUMBER_OF_ROUNDS; i++) {
+//                bPart[i] = tabCkbParticipation[i].isSelected();
+//            }
+            
+            int nbRounds = 0;
+            try {
+                nbRounds = tournament.getTournamentParameterSet().getGeneralParameterSet().getNumberOfRounds();
+            } catch (RemoteException ex) {
+                Logger.getLogger(JFrPlayersManager.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            for (int i = 0; i < nbRounds; i++) {
                 bPart[i] = tabCkbParticipation[i].isSelected();
             }
+           for (int i = nbRounds; i < Gotha.MAX_NUMBER_OF_ROUNDS; i++) {
+                bPart[i] = tabCkbParticipation[nbRounds - 1].isSelected();
+            }
+            
+
+            
             p.setParticipating(bPart);
         } catch (PlayerException pe) {
             JOptionPane.showMessageDialog(this, pe.getMessage(), "Message", JOptionPane.ERROR_MESSAGE);

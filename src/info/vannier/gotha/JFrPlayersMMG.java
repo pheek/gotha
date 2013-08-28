@@ -111,7 +111,7 @@ public class JFrPlayersMMG extends javax.swing.JFrame{
         btnHelp = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Mac-Mahon Groups");
+        setTitle("McMahon Groups");
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -317,7 +317,7 @@ public class JFrPlayersMMG extends javax.swing.JFrame{
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jPanel1.setLayout(null);
 
-        jLabel1.setText("Mac-Mahon bar");
+        jLabel1.setText("McMahon bar");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(230, 20, 110, 14);
 
@@ -578,7 +578,7 @@ public class JFrPlayersMMG extends javax.swing.JFrame{
         } catch (RemoteException ex) {
             Logger.getLogger(JFrPlayersMMG.class.getName()).log(Level.SEVERE, null, ex);
         }
-        if(tps.tournamentType() != TournamentParameterSet.TYPE_MACMAHON){
+        if(tps.tournamentType() != TournamentParameterSet.TYPE_MCMAHON){
             dispose();
             return;
         }
@@ -688,7 +688,7 @@ public class JFrPlayersMMG extends javax.swing.JFrame{
     }//GEN-LAST:event_btnQuitActionPerformed
 
     private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHelpActionPerformed
-        Gotha.displayGothaHelp("Mac-Mahon groups frame");
+        Gotha.displayGothaHelp("McMahon groups frame");
 }//GEN-LAST:event_btnHelpActionPerformed
     
  
@@ -743,7 +743,7 @@ public class JFrPlayersMMG extends javax.swing.JFrame{
         try {
             if (!tournament.isOpen()) dispose();
             this.lastComponentsUpdateTime = tournament.getCurrentTournamentTime();
-            setTitle("Mac-Mahon Groups. " + tournament.getTournamentParameterSet().getGeneralParameterSet().getShortName());
+            setTitle("McMahon Groups. " + tournament.getTournamentParameterSet().getGeneralParameterSet().getShortName());
         } catch (RemoteException ex) {
             Logger.getLogger(JFrPlayersMMG.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -12,7 +12,7 @@ public class PlacementParameterSet implements java.io.Serializable{
     final static int PLA_CRIT_RATING = 12;      // Rating
 
     final static int PLA_CRIT_NBW    = 100;	// Number of Wins
-    final static int PLA_CRIT_MMS    = 200;	// Mac-Mahon score
+    final static int PLA_CRIT_MMS    = 200;	// McMahon score
     final static int PLA_CRIT_STS    = 300;     // Strasbourg score
     
     final static int PLA_CRIT_SOSW   = 110;	// Sum of Opponents NbW
@@ -22,10 +22,10 @@ public class PlacementParameterSet implements java.io.Serializable{
     final static int PLA_CRIT_SOSOSW = 130;	// Sum of opponents SOS 
     final static int PLA_CRIT_CUSSW  = 150;	// Cumulative Sum of Scores (Number of Wins) 
 
-    final static int PLA_CRIT_SOSM   = 210;	// Sum of Opponents Mac-Mahon scores
+    final static int PLA_CRIT_SOSM   = 210;	// Sum of Opponents McMahon scores
     final static int PLA_CRIT_SOSMM1 = 211;	// Sum of (n-1)Opponents MMS
     final static int PLA_CRIT_SOSMM2 = 212;	// Sum of (n-2)Opponents MMS
-    final static int PLA_CRIT_SODOSM = 220;	// Sum of Defeated opponents Mac-Mahon scores
+    final static int PLA_CRIT_SODOSM = 220;	// Sum of Defeated opponents McMahon scores
     final static int PLA_CRIT_SOSOSM = 230;	// Sum of opponents SOS 
     final static int PLA_CRIT_CUSSM  = 250;	// Cumulative Sum of Scores (Number of Wins) 
 
@@ -41,7 +41,7 @@ public class PlacementParameterSet implements java.io.Serializable{
         new PlacementCriterion(PLA_CRIT_NUL, "NULL", "NULL", "No tie break", 1),
         new PlacementCriterion(PLA_CRIT_CAT, "CAT", "CAT", "Category", -1),
         new PlacementCriterion(PLA_CRIT_NBW, "NBW", "NBW", "Number of Wins", 2),
-        new PlacementCriterion(PLA_CRIT_MMS, "MMS", "MMS", "Mac-Mahon Score", 2),
+        new PlacementCriterion(PLA_CRIT_MMS, "MMS", "MMS", "McMahon Score", 2),
         new PlacementCriterion(PLA_CRIT_STS, "STS", "STS", "Strasbourg Score", 2),
         new PlacementCriterion(PLA_CRIT_RANK, "Rank", "Rank", "Rank from 30K to 9D", 1),
         new PlacementCriterion(PLA_CRIT_RATING, "Rating", "Rating", "Rating from -900 to +2949", 1),
@@ -134,7 +134,7 @@ public class PlacementParameterSet implements java.io.Serializable{
             strMes += "\nOnly one Direct Confrontation criteria (DC or SDC) should appear";
             bOK = false;
         }
-        // 2nd coherence test : Criteria should not mix elements from Mac-Mahon group with elements from Swiss group
+        // 2nd coherence test : Criteria should not mix elements from McMahon group with elements from Swiss group
         int nbSWCriteria = 0;
         int nbMMCriteria = 0;
         for (int i = 0; i < crit.length; i++){
@@ -165,7 +165,7 @@ public class PlacementParameterSet implements java.io.Serializable{
             } 
         }
         if (nbSWCriteria > 0 && nbMMCriteria > 0){
-            strMes += "\nMac-Mahon and Swiss Criteria mixed";
+            strMes += "\nMcMahon and Swiss Criteria mixed";
             bOK = false;
         }
 
@@ -186,7 +186,7 @@ public class PlacementParameterSet implements java.io.Serializable{
             if (crit[i] == PlacementParameterSet.PLA_CRIT_SOSTS) bSTS= true;
         }
         if (bSTS){
-            strMes += "\nSTS and SOSTS scores only make sense in a Mac-Mahon tournament"
+            strMes += "\nSTS and SOSTS scores only make sense in a McMahon tournament"
                     + " with a single elimination bracket for players of the top group (see Help).";
             bOK = false;
         }

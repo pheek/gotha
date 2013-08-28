@@ -13,7 +13,7 @@
         <tocitem text="Players Manager frame" target="Players Manager frame" />
         <tocitem text="Players Quick check frame" target="Players Quick check frame" />
         <tocitem text="Update ratings frame" target="Update ratings frame" />
-        <tocitem text="Mac-Mahon groups frame" target="Mac-Mahon groups frame" />
+        <tocitem text="McMahon groups frame" target="McMahon groups frame" />
         <tocitem text="Teams Manager frame" target="Teams Manager frame" />
     </tocitem>
     <tocitem text="Games menu" target="Games menu">
@@ -34,7 +34,9 @@
         <tocitem text="Games Options" target="Games Options" />
         <tocitem text="Preferences frame" target="Preferences frame" />
     </tocitem>
-    <tocitem text="Tools menu" target="Tools menu" />
+    <tocitem text="Tools menu" target="Tools menu">
+        <tocitem text="Discard rounds frame" target="Discard rounds frame" />
+    </tocitem>    
     <tocitem text="Appendices" target ="Appendices">
         <tocitem text="Games encoding" target="Games encoding" />
         <tocitem text="Pairing algorithm" target="Pairing algorithm" />

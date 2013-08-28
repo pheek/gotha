@@ -39,13 +39,14 @@ public class PairingParameterSet implements java.io.Serializable{
     static final int  PAIMA_SEED_SPLITANDFOLD     = 2;
     static final int  PAIMA_SEED_SPLITANDSLIP     = 3;
 
-    private long paiMaAvoidMixingCategories             =     PAIMA_MAX_AVOID_MIXING_CATEGORIES;
+    private long paiMaAvoidMixingCategories             = PAIMA_MAX_AVOID_MIXING_CATEGORIES;
 
-    private long paiMaMinimizeScoreDifference           =      PAIMA_MAX_MINIMIZE_SCORE_DIFFERENCE;
+    private long paiMaMinimizeScoreDifference           = PAIMA_MAX_MINIMIZE_SCORE_DIFFERENCE;
 
-    private long paiMaDUDDWeight                        =          PAIMA_MAX_DUDD_WEIGHT;
-    private int paiMaDUDDUpperMode          = PAIMA_DUDD_MID;
-    private int paiMaDUDDLowerMode          = PAIMA_DUDD_MID;
+    private long paiMaDUDDWeight                        = PAIMA_MAX_DUDD_WEIGHT;
+    private boolean paiMaCompensateDUDD                 = true;
+    private int paiMaDUDDUpperMode                      = PAIMA_DUDD_MID;
+    private int paiMaDUDDLowerMode                      = PAIMA_DUDD_MID;
     
     private long paiMaMaximizeSeeding                   =         PAIMA_MAX_MAXIMIZE_SEEDING;      // 5 *10^6
     private int paiMaLastRoundForSeedSystem1            = 1;
@@ -262,11 +263,12 @@ public class PairingParameterSet implements java.io.Serializable{
         paiBaDeterministic                      =   true;
         paiBaBalanceWB                          =   PAIBA_MAX_BALANCEWB;
     
-        paiMaAvoidMixingCategories              =   0;         // Not relevant in Mac-Mahon
+        paiMaAvoidMixingCategories              =   0;         // Not relevant in McMahon
 
         paiMaMinimizeScoreDifference            =   PAIMA_MAX_MINIMIZE_SCORE_DIFFERENCE;
 
         paiMaDUDDWeight                         =   PAIMA_MAX_DUDD_WEIGHT;
+            paiMaCompensateDUDD                 =   true;    
             paiMaDUDDUpperMode                  =   PAIMA_DUDD_MID;
             paiMaDUDDLowerMode                  =   PAIMA_DUDD_MID;
     
@@ -281,7 +283,7 @@ public class PairingParameterSet implements java.io.Serializable{
         paiSeRankThreshold                      =   0;           // Do not apply secondary criteria above 1D rank
         setPaiSeNbWinsThresholdActive(false);       // paiSeNbWinsThresholdActive not relevant in MM
         paiSeDefSecCrit                         =   PAIMA_MAX_MINIMIZE_SCORE_DIFFERENCE;
-        paiSeMinimizeHandicap                   =   0;           // Not relevant in Mac-Mahon
+        paiSeMinimizeHandicap                   =   0;           // Not relevant in McMahon
         paiSeAvoidSameGeo                       =   paiMaMinimizeScoreDifference;
         paiSePreferMMSDiffRatherThanSameCountry =   1;
         paiSePreferMMSDiffRatherThanSameClub    =   3;
@@ -297,6 +299,7 @@ public class PairingParameterSet implements java.io.Serializable{
         paiMaMinimizeScoreDifference            =   PAIMA_MAX_MINIMIZE_SCORE_DIFFERENCE;
 
         paiMaDUDDWeight                         =   PAIMA_MAX_DUDD_WEIGHT;
+            paiMaCompensateDUDD                 =   true;
             paiMaDUDDUpperMode                  =   PAIMA_DUDD_MID;
             paiMaDUDDLowerMode                  =   PAIMA_DUDD_MID;
     
@@ -327,9 +330,10 @@ public class PairingParameterSet implements java.io.Serializable{
         paiMaMinimizeScoreDifference            =   PAIMA_MAX_MINIMIZE_SCORE_DIFFERENCE;
 
         paiMaDUDDWeight                         =   PAIMA_MAX_DUDD_WEIGHT;
+            paiMaCompensateDUDD                 =   true;    
             paiMaDUDDUpperMode                  =   PAIMA_DUDD_MID;
             paiMaDUDDLowerMode                  =   PAIMA_DUDD_MID;
-    
+            
         paiMaMaximizeSeeding                    =   PAIMA_MAX_MAXIMIZE_SEEDING;      // 10^5
             paiMaLastRoundForSeedSystem1        =   1;
             paiMaSeedSystem1                    =   PAIMA_SEED_SPLITANDRANDOM;                              
@@ -367,5 +371,19 @@ public class PairingParameterSet implements java.io.Serializable{
      */
     public void setPaiSeBarThresholdActive(boolean paiSeBarThresholdActive) {
         this.paiSeBarThresholdActive = paiSeBarThresholdActive;
+    }
+
+    /**
+     * @return the paiMaCompensateDUDD
+     */
+    public boolean isPaiMaCompensateDUDD() {
+        return paiMaCompensateDUDD;
+    }
+
+    /**
+     * @param paiMaCompensateDUDD the paiMaCompensateDUDD to set
+     */
+    public void setPaiMaCompensateDUDD(boolean paiMaCompensateDUDD) {
+        this.paiMaCompensateDUDD = paiMaCompensateDUDD;
     }
 }

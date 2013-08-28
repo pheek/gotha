@@ -12,6 +12,7 @@
 			<file title="Appendices.html"/>
 			<file title="Compatibility issues.html"/>
 			<file title="Create a new tournament.html"/>
+			<file title="Discard rounds frame.html"/>
 			<file title="Display and Print parameters.html"/>
 			<file title="Export facilities.html"/>
 			<file title="Games encoding.html"/>
@@ -25,7 +26,7 @@
 			<file title="helpset.hs"/>
 			<file title="Import facilities.html"/>
 			<file title="index.xml"/>
-			<file title="Mac-Mahon groups frame.html"/>
+			<file title="McMahon groups frame.html"/>
 			<file title="map.xml"/>
 			<file title="Options menu.html"/>
 			<file title="Pairing algorithm.html"/>

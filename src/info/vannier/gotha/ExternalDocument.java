@@ -789,7 +789,8 @@ public class ExternalDocument {
         paiPS.setPaiMaAvoidMixingCategories(new Long(extractNodeValue(nnmPaiPS, "paiMaAvoidMixingCategories", "20000000000000")).longValue());
         paiPS.setPaiMaMinimizeScoreDifference(new Long(extractNodeValue(nnmPaiPS, "paiMaMinimizeScoreDifference", "100000000000")).longValue());
         paiPS.setPaiMaDUDDWeight(new Long(extractNodeValue(nnmPaiPS, "paiMaDUDDWeight", "100000000")).longValue());
-
+        paiPS.setPaiMaCompensateDUDD(Boolean.valueOf(extractNodeValue(nnmPaiPS, "paiMaCompensateDUDD", "true")).booleanValue());
+        
         String strDUDDU = extractNodeValue(nnmPaiPS, "paiMaDUDDUpperMode", "MID");
         int duddu = PairingParameterSet.PAIMA_DUDD_MID;
         if (strDUDDU.equals("TOP")) {
@@ -2681,6 +2682,7 @@ public class ExternalDocument {
         emPairingParameterSet.setAttribute("paiMaAvoidMixingCategories", "" + paiPS.getPaiMaAvoidMixingCategories());
         emPairingParameterSet.setAttribute("paiMaMinimizeScoreDifference", "" + paiPS.getPaiMaMinimizeScoreDifference());
         emPairingParameterSet.setAttribute("paiMaDUDDWeight", "" + paiPS.getPaiMaDUDDWeight());
+        emPairingParameterSet.setAttribute("paiMaCompensateDUDD", "" + paiPS.isPaiMaCompensateDUDD());
         String strPaiMaDUDDUpperMode;
         switch (paiPS.getPaiMaDUDDUpperMode()) {
             case PairingParameterSet.PAIMA_DUDD_TOP:

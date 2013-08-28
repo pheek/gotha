@@ -90,6 +90,8 @@ public class JFrGamesResults extends javax.swing.JFrame {
 
         initGamesComponents();
         this.updateAllViews();
+        
+        getRootPane().setDefaultButton(btnSearch);
     }
 
     /**

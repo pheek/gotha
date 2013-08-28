@@ -13,7 +13,7 @@
 	<mapID target="Players Manager frame" url="Players Manager frame.html"/>
 	<mapID target="Players Quick check frame" url="Players Quick check frame.html"/>
 	<mapID target="Update ratings frame" url="Update ratings frame.html"/>
-	<mapID target="Mac-Mahon groups frame" url="Mac-Mahon groups frame.html"/>
+	<mapID target="McMahon groups frame" url="McMahon groups frame.html"/>
 	<mapID target="Teams Manager frame" url="Teams Manager frame.html"/>
 	<mapID target="Games menu" url="Games menu.html"/>
 	<mapID target="Games Pair frame" url="Games Pair frame.html"/>
@@ -31,9 +31,10 @@
 	<mapID target="Games Options" url="Games Options.html"/>
 	<mapID target="Preferences frame" url="Preferences frame.html"/>
 	<mapID target="Tools menu" url="Tools menu.html"/>
+        <mapID target="Discard rounds frame" url="Discard rounds frame.html"/>
 	<mapID target="Players Manager frame" url="Players Manager frame.html"/>
 	<mapID target="Players Quick check frame" url="Players Quick check frame.html"/>
-	<mapID target="Mac-Mahon groups frame" url="Mac-Mahon groups frame.html"/>
+	<mapID target="McMahon groups frame" url="McMahon groups frame.html"/>
 	<mapID target="Appendices" url="Appendices.html"/>
 	<mapID target="Games encoding" url="Games encoding.html"/>
 	<mapID target="Pairing algorithm" url="Pairing algorithm.html"/>

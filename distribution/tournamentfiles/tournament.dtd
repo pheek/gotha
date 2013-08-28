@@ -109,6 +109,7 @@
 <!ATTLIST PairingParameterSet paiMaAvoidMixingCategories                CDATA "20000000000000">
 <!ATTLIST PairingParameterSet paiMaMinimizeScoreDifference              CDATA "100000000000">
 <!ATTLIST PairingParameterSet paiMaDUDDWeight                           CDATA "100000000">
+<!ATTLIST PairingParameterSet paiMaCompensateDUDD                       CDATA "true"> 
 <!ATTLIST PairingParameterSet paiMaDUDDUpperMode                        CDATA "MID"> <!-- "TOP", "MID" or "BOT" -->
 <!ATTLIST PairingParameterSet paiMaDUDDLowerMode                        CDATA "MID">
 <!ATTLIST PairingParameterSet paiMaMaximizeSeeding                      CDATA "5000000">

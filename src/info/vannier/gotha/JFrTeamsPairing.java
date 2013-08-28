@@ -233,7 +233,7 @@ public class JFrTeamsPairing extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "Tables", "White (board 1)", "Black (board 1)"
+                "Tables", "", ""
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -338,6 +338,35 @@ public class JFrTeamsPairing extends javax.swing.JFrame {
                         + "Or a player does not participate\n"
                         + "Pairing could not be made";
                 JOptionPane.showMessageDialog(this, strMessage, "Message", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            // These teams, have they been paired in a previous round ?
+            ArrayList<Match> alOldMatches = tournament.matchesListUpTo(processedRoundNumber - 1);
+            Match questionableMatch = null;
+            for (Match oldMatch : alOldMatches) {
+                Team wT = oldMatch.getWhiteTeam();
+                Team bT = oldMatch.getBlackTeam();
+                if (wT.getTeamName().equals(t0.getTeamName()) && bT.getTeamName().equals(t1.getTeamName())){
+                    questionableMatch = oldMatch;
+                    break;
+                }
+                if (wT.getTeamName().equals(t1.getTeamName()) && bT.getTeamName().equals(t0.getTeamName())){
+                    questionableMatch = oldMatch;
+                    break;
+                }
+            }
+
+            if (questionableMatch != null) {
+                Team wT = questionableMatch.getWhiteTeam();
+                Team bT = questionableMatch.getBlackTeam();
+                int r = questionableMatch.getRoundNumber();
+
+                int bAnswer = JOptionPane.showConfirmDialog(this, wT.getTeamName() + " " + "and"
+                            + " " + bT.getTeamName()
+                            + " " + "have been already paired in round " + (r + 1)
+                            + "\n" + "Do you want to keep this pairing nevertheless ?",
+                        "Message", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+                if (bAnswer == JOptionPane.NO_OPTION) return;
                 return;
             }
             tournament.pairTeams(alTeamsToPair.get(0), alTeamsToPair.get(1), this.processedRoundNumber);
@@ -827,8 +856,8 @@ public class JFrTeamsPairing extends javax.swing.JFrame {
         // Column names
         TableColumnModel tcm = tbl.getColumnModel();
         tcm.getColumn(MATCH_TABLE_NUMBER_COL).setHeaderValue("Tables");
-        tcm.getColumn(MATCH_WHITE_TEAM_COL).setHeaderValue("White (board 1)");
-        tcm.getColumn(MATCH_BLACK_TEAM_COL).setHeaderValue("Black (board 1)");
+        tcm.getColumn(MATCH_WHITE_TEAM_COL).setHeaderValue("");
+        tcm.getColumn(MATCH_BLACK_TEAM_COL).setHeaderValue("");
     }
 
     private void tournamentChanged() {
