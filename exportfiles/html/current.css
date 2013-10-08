@@ -120,6 +120,10 @@ background-color:#EAF3FF;
 table.simple td.pair {
 background-color:white;
 }
+table.simple td.participation {
+font-family: Courier;
+font-size : 14px;
+}
 table.groupe {
 padding:0;
 border-spacing:0;

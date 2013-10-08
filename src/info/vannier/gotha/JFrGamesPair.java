@@ -1083,26 +1083,7 @@ public class JFrGamesPair extends javax.swing.JFrame {
     }
     
     private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintActionPerformed
-        TournamentPrinting tpr = new TournamentPrinting(tournament);
-        tpr.setRoundNumber(processedRoundNumber);
-        tpr.makePrinting(TournamentPrinting.TYPE_GAMESLIST, 0, true);
-
-        // If some players have not been paired, should we print them ?
-        int nbNPP = 0;
-        try {
-            nbNPP = tournament.alNotFINRegisteredPlayers().size()
-                + tournament.alNotParticipantPlayers(processedRoundNumber).size()
-                + tournament.alNotPairedPlayers(processedRoundNumber).size();
-            if (tournament.getByePlayer(processedRoundNumber) != null) nbNPP++; 
-        } catch (RemoteException ex) {
-            Logger.getLogger(JFrGamesPair.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                
-        if (nbNPP > 0){
-            int answer = JOptionPane.showConfirmDialog(this, "Do you want to print not playing players ?", "Message", JOptionPane.YES_NO_OPTION);
-            if (answer == JOptionPane.YES_OPTION) tpr.makePrinting(TournamentPrinting.TYPE_NOTPLAYINGLIST, PlayerComparator.NAME_ORDER, false);
-        }
-
+        TournamentPrinting.printGamesList(tournament, processedRoundNumber);
     }//GEN-LAST:event_btnPrintActionPerformed
 
     private void mniModifyHandicapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniModifyHandicapActionPerformed
@@ -1616,7 +1597,7 @@ public class JFrGamesPair extends javax.swing.JFrame {
     private void mniSortByRankActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniSortByRankActionPerformed
         playersSortType = PlayerComparator.RANK_ORDER;
         pupPairablePlayers.setVisible(false);   
-        this.updateComponents();// TODO update only PairablePlayers panel
+        this.updateComponents();
 
     }//GEN-LAST:event_mniSortByRankActionPerformed
 
@@ -1628,13 +1609,13 @@ public class JFrGamesPair extends javax.swing.JFrame {
     private void mniSortByNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniSortByNameActionPerformed
         playersSortType = PlayerComparator.NAME_ORDER;
         pupPairablePlayers.setVisible(false);
-        this.updateComponents();// TODO update only PairablePlayers panel
+        this.updateComponents();
     }//GEN-LAST:event_mniSortByNameActionPerformed
 
     private void mniSortByScoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniSortByScoreActionPerformed
         playersSortType = PlayerComparator.SCORE_ORDER;
         pupPairablePlayers.setVisible(false);
-        this.updateComponents();// TODO update only PairablePlayers panel
+        this.updateComponents();
     }//GEN-LAST:event_mniSortByScoreActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed

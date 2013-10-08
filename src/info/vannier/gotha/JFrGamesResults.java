@@ -512,15 +512,8 @@ public class JFrGamesResults extends javax.swing.JFrame {
     }//GEN-LAST:event_tblGamesMousePressed
 
     private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintActionPerformed
-        TournamentPrinting tpr = new TournamentPrinting(tournament);
-        tpr.setRoundNumber(processedRoundNumber);
-        if (!this.ckbTeamOrder.isSelected()){
-             tpr.makePrinting(TournamentPrinting.TYPE_GAMESLIST, 0, true);
-        }
-        else{
-            tpr.setDisplayIndGames(true);
-            tpr.makePrinting(TournamentPrinting.TYPE_MATCHESLIST, 0, true);
-        }        
+        if (!this.ckbTeamOrder.isSelected()) TournamentPrinting.printGamesList(tournament, processedRoundNumber);
+        else TournamentPrinting.printMatchesList(tournament, processedRoundNumber);
 
     }//GEN-LAST:event_btnPrintActionPerformed
 

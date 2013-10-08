@@ -141,7 +141,53 @@ public class Player implements java.io.Serializable{
     public String fullUnblankedName(){
         return name.replaceAll(" ", "_") + " " + firstName.replaceAll(" ", "_");
     }
+/** Concatenates name and firtName
+     * Shortens if necessary
+     * @param p
+     * @return 
+     */
+    public String shortenedFullName(){
+        String strName = getName();
+        String strFirstName = getFirstName();
+        if (strName.length() > 18) strName = strName.substring(0, 18);
 
+        String strNF = strName + " " + strFirstName;
+        if (strNF.length() > 22)  strNF = strNF.substring(0, 22);
+        return strNF;
+    }
+    
+    public String augmentedPlayerName(DPParameterSet dpps){
+        String strNF = shortenedFullName();
+            
+        String strRk = Player.convertIntToKD(this.getRank());
+        String strCo = Gotha.leftString(this.getCountry(), 2);
+        String strCl = Gotha.leftString(this.getClub(), 4);
+
+        boolean bRk = dpps.isShowPlayerRank();
+        boolean bCo = dpps.isShowPlayerCountry();
+        boolean bCl = dpps.isShowPlayerClub();
+        
+        if (!bRk && !bCo && !bCl) return strNF;
+        String strPl = strNF + "(";
+        boolean bFirst = true;
+        if (bRk){
+            strPl += strRk;
+            bFirst = false;
+        }
+        if (bCo){
+            if (!bFirst) strPl += ",";
+            strPl += strCo;
+            bFirst = false;
+        }
+        if (bCl){
+            if (!bFirst) strPl += ",";
+            strPl += strCl;
+        }
+        strPl += ")";
+        
+        return strPl;
+    }
+    
     public int getRank() {
         return rank;
     }

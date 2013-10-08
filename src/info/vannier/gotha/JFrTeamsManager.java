@@ -1047,9 +1047,7 @@ public class JFrTeamsManager extends javax.swing.JFrame {
     }//GEN-LAST:event_tblTeamsFocusLost
 
     private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintActionPerformed
-        TournamentPrinting tpr = new TournamentPrinting(tournament);
-        tpr.setRoundNumber(-1);
-        tpr.makePrinting(TournamentPrinting.TYPE_TEAMSLIST, this.teamsSortType, true);
+        TournamentPrinting.printTeamsList(tournament);
 }//GEN-LAST:event_btnPrintActionPerformed
 
     private void spnRoundNumberStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spnRoundNumberStateChanged

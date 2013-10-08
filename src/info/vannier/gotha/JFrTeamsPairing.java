@@ -687,17 +687,7 @@ public class JFrTeamsPairing extends javax.swing.JFrame {
     }//GEN-LAST:event_tblMatchesFocusLost
 
     private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintActionPerformed
-        TournamentPrinting tpr = new TournamentPrinting(tournament);
-        tpr.setRoundNumber(processedRoundNumber);
-        DPParameterSet dpps = null;
-        try {
-            dpps = tournament.getTournamentParameterSet().getDPParameterSet();
-        } catch (RemoteException ex) {
-            Logger.getLogger(JFrTeamsPairing.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        tpr.setDisplayIndGames(dpps.isDisplayIndGamesInMatches());
-        
-        tpr.makePrinting(TournamentPrinting.TYPE_MATCHESLIST, 0, true);
+        TournamentPrinting.printMatchesList(tournament, processedRoundNumber);
 }//GEN-LAST:event_btnPrintActionPerformed
 
     private void mniChangeTableNumbersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniChangeTableNumbersActionPerformed

@@ -8,7 +8,7 @@
 	<mapID target="Tournament menu" url="Tournament menu.html"/>
 	<mapID target="Create a new tournament" url="Create a new tournament.html"/>
 	<mapID target="Import facilities" url="Import facilities.html"/>
-	<mapID target="Export facilities" url="Export facilities.html"/>
+	<mapID target="Print and Export Shop" url="Print and Export Shop.html"/>
 	<mapID target="Players menu" url="Players menu.html"/>
 	<mapID target="Players Manager frame" url="Players Manager frame.html"/>
 	<mapID target="Players Quick check frame" url="Players Quick check frame.html"/>
@@ -27,7 +27,6 @@
 	<mapID target="Placement parameters" url="Placement parameters.html"/>
 	<mapID target="Pairing parameters" url="Pairing parameters.html"/>
 	<mapID target="Team Placement parameters" url="Team Placement parameters.html"/>
-	<mapID target="Display and Print parameters" url="Display and Print parameters.html"/>
 	<mapID target="Games Options" url="Games Options.html"/>
 	<mapID target="Preferences frame" url="Preferences frame.html"/>
 	<mapID target="Tools menu" url="Tools menu.html"/>

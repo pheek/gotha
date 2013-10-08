@@ -102,7 +102,6 @@ customInitComponents() should begin by :
     private void customInitComponents()throws RemoteException{
         int w = ...;
         int h = ...;
-        setSize(w, h);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         setBounds((dim.width - w)/2, (dim.height -h)/2, w, h);
 
@@ -111,7 +110,7 @@ customInitComponents() should begin by :
         updateAllViews();
     }
 
-Quit button should be :
+Close button should be :
 =======================
     private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {                                        
         dispose();
@@ -151,3 +150,45 @@ To export the helpset to PDF, use a tool like Helen2.22, define the cover page a
 The current set is defined by Preferences gothaprefs help
 	With Windows, gothaprefs are in Registry, HKEY_CURRENT_USER/Software/JavaSoft/Prefs/info/vannier/opengotha 
 
+TournamentPrinting
+******************
+
+Everything is processed in TournamentPrinting
+
+Example with Print Players List :
+=================================
+
+2 static methods:
+public static void printPlayersList(TournamentInterface tournament) 
+public static void printPlayersList(TournamentInterface tournament, int playersSortType)
+
+3 TournamentPrinting constructors
+
+1 method : makePrinting(int printType, int printSubType, boolean askForPrinter)
+1 metod to prepare printing : preparePrintPlayersList
+1 callback method : print 
+1 method to print a page :printAPageOfPlayersList 
+
+To print a Players List, call one of the two  printPlayersList methods
+    3 methods call the two arguments method : JFrPlayersManager, JFrPlayersQuickCheck, JFrUpdateRatings
+    1 method calls the one argument method
+
+The printPlayersList methods create a TournamentPrinting object and calls makePrinting
+makePrinting 
+    calls preparePrintPlayersList which prepares an ArrayList of ordered players
+    starts the PrinterJob
+
+print is a callback methos. Two parts :
+- A preparation of the layOut (only run at first page)
+- Calls printAPageOfPlayersList() to make actual printing
+ 
+All print facilities
+======================
+printPlayersList
+printTeamsList
+printTournametParameters
+printGamesList
+printNotPlayingPlayersList
+printStandings
+printMatchesList
+printTeamsStandings

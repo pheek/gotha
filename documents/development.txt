@@ -1,3 +1,10 @@
+OpenGothaV3.35
+*****************
+08/10/2013
+Detail  Thinking time is now, by default Stanadard Byo-Yomi system
+New     Print & Export facilities are now grouped in a "Print & Export shop" frame
+        New export facilities including Games list in html
+
 OpenGothaV3.34
 *****************
 28/08/2013
@@ -9,7 +16,7 @@ New     When a tournament has n rounds, participations of a player in (virtual) 
         are set to value of participation in round n
 New     An new tool to discard selected rounds. Useful, for example, to split a main tournament 
         into two week-tournaments.
-New     When pairing two teams already paired in a previous roud, a warning message is displayed
+New     When pairing two teams already paired in a previous round, a warning message is displayed
 New     In the Matches list, Handicaps are printed 
 New     An experimental tool : Force participation for all players
 New     An experimental tool : Force case for countries and clubs
@@ -143,14 +150,14 @@ OpenGothaV3.20
 Improvement Doc is now also available in French.
 
 OpenGothaV3.19
-*****************
+**************
 17/06/2010
 Bug Fix     On some systems, rating lists with non-ASCII characters were not correctly read. Fixed
 Improvement When necessary, OpenGotha tries its best to find a proper directory with a tournamentfifes directory.
             Useful with Linux.
 
 OpenGothaV3.18
-*****************
+**************
 15/03/2010
 Bug Fix     FFG Licence numbers were not in exported tou file. Fixed
 Bug Fix     Exceptions happened in XML Export function. Fixed
@@ -244,7 +251,7 @@ Improvement Non-playing players are no longer included in standings tab. Same fo
 Bug Fix     Change handicap ceiling did not work properly in Options .. Tournament. Fixed
 
 OpenGothaV3.09
-*****************
+**************
 10/09/2008
 New         Auxiliary informations management
 New         It is now possible to print standings without category placement criterion, even in a "Swiss with categories" tournament
@@ -253,7 +260,7 @@ Improvement The "Do you want to save current tournament" dialog box shows up onl
 Improvement Add buttons in JFrPlayersQuickCheck
 
 OpenGothaV3.08
-*****************
+**************
 04/05/2008
 New         German version
 New         Case of players names are automatically set to "Name Firstname" form
@@ -265,7 +272,7 @@ SPR Fix     The secondary criterion threshold is now applied to current Mac-Maho
             Permeability isues between different ranks are thus solved.
 
 OpenGothaV3.07
-*****************
+**************
 05/01/2008
 New         Multilingual : English, French and Spanish
 New         It is no longer possible to pair "PRE" players.

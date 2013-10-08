@@ -132,7 +132,8 @@ public class GeneralParameterSet implements java.io.Serializable{
         this.numberOfCategories = numberOfCategories;
         
         this.basicTime = GeneralParameterSet.GEN_GP_BASICTIME_DEF;
-        this.complementaryTimeSystem = GeneralParameterSet.GEN_GP_CTS_SUDDENDEATH;
+//        this.complementaryTimeSystem = GeneralParameterSet.GEN_GP_CTS_SUDDENDEATH;
+        this.complementaryTimeSystem = GeneralParameterSet.GEN_GP_CTS_STDBYOYOMI;
         this.stdByoYomiTime = GeneralParameterSet.GEN_GP_CTS_STDBYOYOMITIME_DEF;
         this.nbMovesCanTime = GeneralParameterSet.GEN_GP_CTS_NBMOVESCANTIME_DEF;
         this.canByoYomiTime = GeneralParameterSet.GEN_GP_CTS_CANBYOYOMITIME_DEF;

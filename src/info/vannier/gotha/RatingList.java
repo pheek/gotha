@@ -217,8 +217,6 @@ public class RatingList {
          
     }
 
-    
-    // Todo ? Manage a hash table ?
     public RatedPlayer getRatedPlayer(Player p){
         String egfPin = p.getEgfPin();
         

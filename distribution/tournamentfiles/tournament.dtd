@@ -95,9 +95,21 @@
 <!ATTLIST HandicapParameterSet hdCeiling CDATA "9">
 
 <!ELEMENT DPParameterSet (#PCDATA)>
+<!ATTLIST DPParameterSet playerSortType CDATA "name">
 <!ATTLIST DPParameterSet gameFormat CDATA "full">
+
+<!ATTLIST DPParameterSet showPlayerRank CDATA "true">
+<!ATTLIST DPParameterSet showPlayerCountry CDATA "false">
+<!ATTLIST DPParameterSet showPlayerClub CDATA "true">
+
+<!ATTLIST DPParameterSet showByePlayer CDATA "true">
+<!ATTLIST DPParameterSet showNotPairedPlayers CDATA "true">
+<!ATTLIST DPParameterSet showNotParticipatingPlayers CDATA "false">
 <!ATTLIST DPParameterSet displayNumCol CDATA "true">
 <!ATTLIST DPParameterSet displayPlCol CDATA "true">
+<!ATTLIST DPParameterSet displayCoCol CDATA "true">
+<!ATTLIST DPParameterSet displayClCol CDATA "true">
+
 <!ATTLIST DPParameterSet displayIndGamesInMatches CDATA "true">
 
 <!ELEMENT PairingParameterSet (#PCDATA)>

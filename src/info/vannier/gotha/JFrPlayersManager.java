@@ -1041,9 +1041,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
     }//GEN-LAST:event_btnQuitActionPerformed
 
     private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintActionPerformed
-        TournamentPrinting tpr = new TournamentPrinting(tournament);
-        tpr.setRoundNumber(-1);
-        tpr.makePrinting(TournamentPrinting.TYPE_PLAYERSLIST, this.playersSortType, true);
+        TournamentPrinting.printPlayersList(tournament, playersSortType);
     }//GEN-LAST:event_btnPrintActionPerformed
 
     private void txfPlayerNameChoiceKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txfPlayerNameChoiceKeyPressed
