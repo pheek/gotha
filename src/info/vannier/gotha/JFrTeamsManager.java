@@ -1195,7 +1195,7 @@ public class JFrTeamsManager extends javax.swing.JFrame {
         try {
             if (!tournament.isOpen()) dispose();
             this.lastComponentsUpdateTime = tournament.getCurrentTournamentTime();
-            setTitle("Teams Manager. " + tournament.getTournamentParameterSet().getGeneralParameterSet().getShortName());
+            setTitle("Teams Manager. " + tournament.getFullName());
         } catch (RemoteException ex) {
             Logger.getLogger(JFrTeamsManager.class.getName()).log(Level.SEVERE, null, ex);
         }

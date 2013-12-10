@@ -3,10 +3,6 @@
  */
 package info.vannier.gotha;
 
-import static info.vannier.gotha.JFrGamesResults.RESULT_COL;
-import static info.vannier.gotha.TournamentPrinting.ML_WTN_LEN;
-import java.awt.Color;
-import java.awt.Font;
 import java.io.*;
 import java.nio.channels.FileChannel;
 import java.rmi.RemoteException;
@@ -1620,7 +1616,7 @@ public class ExternalDocument {
             strLine += " " + strCountry;
 
             String strClub = sP.getClub().trim();
-            if (strClub.length() < 2) {
+            if (strClub.length() < 1) {
                 strClub = "xxxx";
             }
             strClub = "    " + strClub;
@@ -1921,13 +1917,13 @@ public class ExternalDocument {
     }
     
     public static void generatePlayersListHTMLFile(TournamentInterface tournament){
-        String keyName = "TournamentShortName";
+        String shortName = "TournamentShortName";
         try {
-            keyName = tournament.getKeyName();
+            shortName = tournament.getShortName();
         } catch (RemoteException ex) {
             Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String defaultFileName = keyName + "_PlayersList";
+        String defaultFileName = shortName + "_PlayersList";
         File f = chooseAFileForSaving(Gotha.exportHTMLDirectory, defaultFileName, "html");
         
         System.out.println("" + f.toString());
@@ -1939,13 +1935,13 @@ public class ExternalDocument {
     }    
             
     public static void generateTeamsListHTMLFile(TournamentInterface tournament){
-        String keyName = "TournamentShortName";
+        String shortName = "TournamentShortName";
         try {
-            keyName = tournament.getKeyName();
+            shortName = tournament.getShortName();
         } catch (RemoteException ex) {
             Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String defaultFileName = keyName + "_TeamsList";
+        String defaultFileName = shortName + "_TeamsList";
         File f = chooseAFileForSaving(Gotha.exportHTMLDirectory, defaultFileName, "html");
         
         System.out.println("" + f.toString());
@@ -1957,13 +1953,13 @@ public class ExternalDocument {
     } 
     
     public static void generateGamesListHTMLFile(TournamentInterface tournament, int round){
-        String keyName = "TournamentShortName";
+        String shortName = "TournamentShortName";
         try {
-            keyName = tournament.getKeyName();
+            shortName = tournament.getShortName();
         } catch (RemoteException ex) {
             Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String defaultFileName = keyName + "_GamesListR" + (round + 1);
+        String defaultFileName = shortName + "_GamesListR" + (round + 1);
         File f = chooseAFileForSaving(Gotha.exportHTMLDirectory, defaultFileName, "html");
         
         System.out.println("" + f.toString());
@@ -1977,13 +1973,13 @@ public class ExternalDocument {
     
         public static void generateStandingsHTMLFile(TournamentInterface tournament, int round){
         // Choose a File
-        String keyName = "TournamentShortName";
+        String shortName = "TournamentShortName";
         try {
-            keyName = tournament.getKeyName();
+            shortName = tournament.getShortName();
         } catch (RemoteException ex) {
             Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String defaultFileName = keyName + "_StandingsR" + (round + 1);
+        String defaultFileName = shortName + "_StandingsR" + (round + 1);
         File f = chooseAFileForSaving(Gotha.exportHTMLDirectory, defaultFileName, "html");
         
         // Manage css       
@@ -1995,13 +1991,13 @@ public class ExternalDocument {
     
     public static void generateMatchesListHTMLFile(TournamentInterface tournament, int round){
         // Choose a File
-        String keyName = "TournamentShortName";
+        String shortName = "TournamentShortName";
         try {
-            keyName = tournament.getKeyName();
+            shortName = tournament.getShortName();
         } catch (RemoteException ex) {
             Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String defaultFileName = keyName + "_MatchesListR" + (round + 1);
+        String defaultFileName = shortName + "_MatchesListR" + (round + 1);
         File f = chooseAFileForSaving(Gotha.exportHTMLDirectory, defaultFileName, "html");
         
         System.out.println("" + f.toString());
@@ -2014,13 +2010,13 @@ public class ExternalDocument {
         
     public static void generateTeamsStandingsHTMLFile(TournamentInterface tournament, int round){
         // Choose a File
-        String keyName = "TournamentShortName";
+        String shortName = "TournamentShortName";
         try {
-            keyName = tournament.getKeyName();
+            shortName = tournament.getShortName();
         } catch (RemoteException ex) {
             Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String defaultFileName = keyName + "_TeamsStandingsR" + (round + 1);
+        String defaultFileName = shortName + "_TeamsStandingsR" + (round + 1);
         File f = chooseAFileForSaving(Gotha.exportHTMLDirectory, defaultFileName, "html");
         
         System.out.println("" + f.toString());
@@ -2416,12 +2412,14 @@ public class ExternalDocument {
                 output.write("\n<th class=\"left\">&nbsp;Num&nbsp;</th>");
             if (tps.getDPParameterSet().isDisplayPlCol())
                 output.write("\n<th class=\"left\">&nbsp;Pl&nbsp;</th>");
-            output.write("\n<th class=\"left\">&nbsp;Name&nbsp;</th>" + 
-                    "<th class=\"middle\">&nbsp;Rank&nbsp;</th>" + 
-                    "<th class=\"middle\">&nbsp;Co&nbsp;</th>" + 
-                    "<th class=\"middle\">&nbsp;Club&nbsp;</th>" + 
-                    "<th class=\"middle\">&nbsp;NbW&nbsp;</th>");
-//            for (int r = 0; r < gps.getNumberOfRounds(); r++) {
+            output.write("\n<th class=\"left\">&nbsp;Name&nbsp;</th>");
+            output.write("<th class=\"middle\">&nbsp;Rank&nbsp;</th>");
+            if (tps.getDPParameterSet().isDisplayCoCol())
+                output.write("<th class=\"middle\">&nbsp;Co&nbsp;</th>");
+            if (tps.getDPParameterSet().isDisplayClCol())
+                output.write("<th class=\"middle\">&nbsp;Club&nbsp;</th>"); 
+            output.write("<th class=\"middle\">&nbsp;NbW&nbsp;</th>");
+
             for (int r = 0; r < roundNumber + 1; r++) {
                 output.write("<th class=\"middle\">R&nbsp;" + (r + 1) + "&nbsp;</th>");
             }
@@ -2475,10 +2473,17 @@ public class ExternalDocument {
                 output.write("<td class=" + strPar + ">" + strNF + "</td>");
                 String strRank = Player.convertIntToKD(sP.getRank());
                 output.write("<td class=" + strPar + strAlCenter + ">" + strRank + "</td>");
-                String strCountry = sP.getCountry();
-                output.write("<td class=" + strPar + strAlCenter + ">" + strCountry + "</td>");
-                String strClub = sP.getClub();
-                output.write("<td class=" + strPar + strAlCenter + ">" + strClub + "</td>");
+                
+                if (tps.getDPParameterSet().isDisplayCoCol()){
+                    String strCountry = sP.getCountry();
+                    output.write("<td class=" + strPar + strAlCenter + ">" + strCountry + "</td>");
+                }
+                
+                if (tps.getDPParameterSet().isDisplayClCol()){
+                    String strClub = sP.getClub();
+                    output.write("<td class=" + strPar + strAlCenter + ">" + strClub + "</td>");
+                }
+                
                 output.write("<td class=" + strPar + strAlCenter + ">" + sP.formatScore(PlacementParameterSet.PLA_CRIT_NBW, roundNumber) + "</td>");
 
                 for (int r = 0; r <= roundNumber; r++) {
@@ -3454,13 +3459,13 @@ public class ExternalDocument {
 
         fileChoice.setFileSelectionMode(JFileChooser.FILES_ONLY);
         fileChoice.setDialogType(JFileChooser.SAVE_DIALOG);
-        String keyName = "TournamentShortName";
+        String shortName = "TournamentShortName";
         try {
-            keyName = tournament.getKeyName();
+            shortName = tournament.getShortName();
         } catch (RemoteException ex) {
             Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
         }
-        fileChoice.setSelectedFile(new File(path, keyName + "." + extension));
+        fileChoice.setSelectedFile(new File(path, shortName + "." + extension));
 
         MyFileFilter mff = new MyFileFilter(new String[]{extension}, "*." + extension);
         fileChoice.addChoosableFileFilter(mff);

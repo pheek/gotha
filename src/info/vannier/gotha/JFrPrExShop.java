@@ -893,7 +893,7 @@ public class JFrPrExShop extends javax.swing.JFrame {
         try {
             if (!tournament.isOpen()) dispose();
             this.lastComponentsUpdateTime = tournament.getCurrentTournamentTime();
-            setTitle("Print & Export Shop. " + tournament.getTournamentParameterSet().getGeneralParameterSet().getShortName());
+            setTitle("Print & Export Shop. " + tournament.getFullName());
         } catch (RemoteException ex) {
             Logger.getLogger(JFrGamesPair.class.getName()).log(Level.SEVERE, null, ex);
         }

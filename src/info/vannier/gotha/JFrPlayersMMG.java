@@ -743,7 +743,7 @@ public class JFrPlayersMMG extends javax.swing.JFrame{
         try {
             if (!tournament.isOpen()) dispose();
             this.lastComponentsUpdateTime = tournament.getCurrentTournamentTime();
-            setTitle("McMahon Groups. " + tournament.getTournamentParameterSet().getGeneralParameterSet().getShortName());
+            setTitle("McMahon Groups. " + tournament.getFullName());
         } catch (RemoteException ex) {
             Logger.getLogger(JFrPlayersMMG.class.getName()).log(Level.SEVERE, null, ex);
         }

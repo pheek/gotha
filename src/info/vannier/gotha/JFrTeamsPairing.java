@@ -865,7 +865,7 @@ public class JFrTeamsPairing extends javax.swing.JFrame {
         try {
             if (!tournament.isOpen()) dispose();
             this.lastComponentsUpdateTime = tournament.getCurrentTournamentTime();
-            setTitle("Games .. Teams pairing. " + tournament.getTournamentParameterSet().getGeneralParameterSet().getShortName());
+            setTitle("Games .. Teams pairing. " + tournament.getFullName());
             nbRounds = tournament.getTournamentParameterSet().getGeneralParameterSet().getNumberOfRounds();
             if (this.processedRoundNumber >= nbRounds) {
                 JOptionPane.showMessageDialog(this, "The number of rounds has been modified from outside"

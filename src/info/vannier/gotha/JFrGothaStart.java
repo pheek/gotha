@@ -31,7 +31,6 @@ public class JFrGothaStart extends javax.swing.JFrame {
 
         File rootDir = new File(System.getProperty("user.dir"));
         File dir = findADirectoryContaining(rootDir, "tournamentfiles");
-//        JOptionPane.showMessageDialog(this, "dir = " + dir.toString());
 
         if (dir == null) {
             String str = JOptionPane.showInputDialog(this, "Please enter the OpenGotha directory path" +
@@ -44,9 +43,8 @@ public class JFrGothaStart extends javax.swing.JFrame {
         }
 
         Gotha.runningDirectory = dir;
-
         
-        Gotha.tournamentDirectory = new File(Gotha.runningDirectory , "tournamentfiles");
+//        Gotha.tournamentDirectory = new File(Gotha.runningDirectory , "tournamentfiles");
         Gotha.exportDirectory = new File(Gotha.runningDirectory, "exportfiles");
         Gotha.exportHTMLDirectory = new File(Gotha.runningDirectory, "exportfiles/html");
 //        Gotha.exportXMLDirectory = new File(Gotha.runningDirectory, "exportfiles/xml");
@@ -134,7 +132,6 @@ public class JFrGothaStart extends javax.swing.JFrame {
         setBounds((dim.width - w) / 2, (dim.height - h) / 2, w, h);
 
         setIconImage(Gotha.getIconImage());
-//        setTitle(Gotha.getGothaVersionnedName());
         setTitle("OpenGotha");
     }
 

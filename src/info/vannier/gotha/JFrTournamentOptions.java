@@ -376,7 +376,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         pnlIdentification.add(jLabel1);
         jLabel1.setBounds(10, 40, 100, 13);
 
-        txfShortName.setToolTipText("Default file name and RMI Name. Do not change it if clients are connected ");
+        txfShortName.setToolTipText("default file mame and RMI name. Do not change it if clients are connected ");
         txfShortName.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 txfShortNameFocusLost(evt);
@@ -3058,7 +3058,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         try {
             if (!tournament.isOpen()) dispose();
             this.lastComponentsUpdateTime = tournament.getCurrentTournamentTime();
-            setTitle("Tournament parameters. " + tournament.getTournamentParameterSet().getGeneralParameterSet().getShortName());           
+            setTitle("Tournament parameters. " + tournament.getFullName());           
             updatePnlGen();
             updatePnlHan();
             updatePnlPla();

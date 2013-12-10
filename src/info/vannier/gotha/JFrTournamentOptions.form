@@ -367,7 +367,7 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="txfShortName">
                   <Properties>
-                    <Property name="toolTipText" type="java.lang.String" value="Default file name and RMI Name. Do not change it if clients are connected "/>
+                    <Property name="toolTipText" type="java.lang.String" value="default file mame and RMI name. Do not change it if clients are connected "/>
                   </Properties>
                   <Events>
                     <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txfShortNameFocusLost"/>

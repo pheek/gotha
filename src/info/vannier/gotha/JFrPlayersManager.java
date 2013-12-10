@@ -1762,7 +1762,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         try {
             if (!tournament.isOpen()) dispose();
             this.lastComponentsUpdateTime = tournament.getCurrentTournamentTime();
-            setTitle("Players Manager. " + tournament.getTournamentParameterSet().getGeneralParameterSet().getShortName());
+            setTitle("Players Manager. " + tournament.getFullName());
             updatePnlRegisteredPlayers(tournament.playersList());
             setPnlParticipationVisibility();
         } catch (RemoteException ex) {

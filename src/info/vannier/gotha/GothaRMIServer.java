@@ -77,12 +77,12 @@ public class GothaRMIServer {
         }
         String tKN = "";
         try {
-            tKN = tournament.getKeyName();
+            tKN = tournament.getShortName();
             if (getTournament(tKN) != null) {
                 System.out.println("A tournament with same name already exists in Registry");
                 return false;
             }
-            reg.rebind(tournament.getKeyName(), tournament);
+            reg.rebind(tournament.getShortName(), tournament);
             return true;
         } catch (RemoteException ex) {
             Logger.getLogger(GothaRMIServer.class.getName()).log(Level.SEVERE, null, ex);

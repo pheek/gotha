@@ -175,7 +175,7 @@ public class PlacementParameterSet implements java.io.Serializable{
             if (crit[i] == PlacementParameterSet.PLA_CRIT_SODOSM) bSODOSM= true;
         }
         if (bSODOSM){
-            strMes += "\nSODOSM is not recommanded";
+            strMes += "\nSODOSM is not recommended";
             bOK = false;
         }
         

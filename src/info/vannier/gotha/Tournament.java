@@ -43,6 +43,12 @@ public class Tournament extends UnicastRemoteObject implements TournamentInterfa
      * classes to decide of their suicide
      */
     private transient boolean bOpen = true;
+
+     /**
+     * set to true when the tournament has already been saved at least once
+     */
+    private transient boolean hasBeenSavedOnce = false;
+
     /**
      * defines whether modifications have been made since last save
      */
@@ -220,16 +226,23 @@ public class Tournament extends UnicastRemoteObject implements TournamentInterfa
     }
 
     /**
-     * The key name for a tournament is an identifier This identifier is used -
+     * @throws java.rmi.RemoteException
+     */
+    @Override
+    public String getFullName() throws RemoteException {
+        return this.getTournamentParameterSet().getGeneralParameterSet().getName();
+    }
+    
+    /**
+     * The short name for a tournament is an identifier This identifier is used -
      * - As the default name for save function 
      * - As the name in the Registry for RMI access 
-     * Practically it is the short name of the tournament
      *
      * @return
      * @throws java.rmi.RemoteException
      */
     @Override
-    public String getKeyName() throws RemoteException {
+    public String getShortName() throws RemoteException {
         return this.getTournamentParameterSet().getGeneralParameterSet().getShortName();
     }
 
@@ -252,6 +265,17 @@ public class Tournament extends UnicastRemoteObject implements TournamentInterfa
     public void close() throws RemoteException {
         bOpen = false;
     }
+    
+    @Override
+    public boolean isHasBeenSavedOnce() throws RemoteException{
+        return hasBeenSavedOnce;
+    }
+
+    @Override
+    public void setHasBeenSavedOnce(boolean hasBeenSavedOnce) throws RemoteException {
+        this.hasBeenSavedOnce = hasBeenSavedOnce;
+    }
+
 
     @Override
     public void adjustCategoryLimits() throws RemoteException {
@@ -1275,16 +1299,16 @@ public class Tournament extends UnicastRemoteObject implements TournamentInterfa
         if (sP1.getClub().compareTo(sP2.getClub()) == 0) {
             malusGeo = Math.max(malusGeo, malusClub);
         }
-        long geoCost = (long) (geoMaxCost * (1.0 - malusGeo));
-
+        long geoNominalCost = (long) (geoMaxCost * (1.0 - malusGeo));
+        long geoCost = geoNominalCost;
         if (secCase == 0) {
-//            geoCost = geoCost;
+            geoCost = geoNominalCost;
         }
         if (secCase == 2) {
             geoCost = geoMaxCost;
         }
         if (secCase == 1) {
-            geoCost = geoMinCost;
+            geoCost = (geoMaxCost + geoNominalCost) /2;
         }
         cost += geoCost;
 
@@ -2941,12 +2965,12 @@ public class Tournament extends UnicastRemoteObject implements TournamentInterfa
 
     @Override
     public String addGothaRMIClient(String strClient) throws RemoteException {
-        return GothaRMIServer.addClient(strClient, this.getKeyName());
+        return GothaRMIServer.addClient(strClient, this.getShortName());
     }
 
     @Override
     public boolean clockIn(String strClient) throws RemoteException {
-        if (GothaRMIServer.getTournament(this.getKeyName()) == null) {
+        if (GothaRMIServer.getTournament(this.getShortName()) == null) {
             return false;
         }
         GothaRMIServer.clockIn(strClient);
@@ -3017,4 +3041,5 @@ public class Tournament extends UnicastRemoteObject implements TournamentInterfa
 
         return at;
     }
+
 }

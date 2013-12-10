@@ -861,7 +861,7 @@ public class JFrPlayersQuickCheck extends javax.swing.JFrame{
         try {
             if (!tournament.isOpen()) dispose();
             this.lastComponentsUpdateTime = tournament.getCurrentTournamentTime();
-            setTitle("Players Quick check. " + tournament.getTournamentParameterSet().getGeneralParameterSet().getShortName());        } catch (RemoteException ex) {
+            setTitle("Players Quick check. " + tournament.getFullName());        } catch (RemoteException ex) {
             Logger.getLogger(JFrPlayersQuickCheck.class.getName()).log(Level.SEVERE, null, ex);
         }
         

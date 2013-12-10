@@ -336,7 +336,8 @@ public class JFrDiscardRounds extends javax.swing.JFrame {
         try {
             if (!tournament.isOpen()) dispose();
             this.lastComponentsUpdateTime = tournament.getCurrentTournamentTime();
-            setTitle("Discard rounds. " + tournament.getTournamentParameterSet().getGeneralParameterSet().getShortName());        } catch (RemoteException ex) {
+            setTitle("Discard rounds. " + tournament.getFullName());        
+        } catch (RemoteException ex) {
             Logger.getLogger(JFrPlayersQuickCheck.class.getName()).log(Level.SEVERE, null, ex);
         }
         int nbRounds = Gotha.MAX_NUMBER_OF_ROUNDS;

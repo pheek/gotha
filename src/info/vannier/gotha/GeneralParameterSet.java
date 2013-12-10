@@ -20,11 +20,10 @@ public class GeneralParameterSet implements java.io.Serializable{
     final static int GEN_MM_BAR_MAX     =  8;   // 9D
 
     
-    /**  For instance : paris2009
-         shortName is the default file name*/
+    /**  For instance : paris2009 */
     private String shortName = "Undefined";
     /**  For instance : Toyota Tour Paris Tournament 2009 */
-    private String name = "Undefined";
+    private String fullName = "Undefined";
     private String location = "";
     private String director = "";
     private java.util.Date beginDate = new java.util.Date ();
@@ -87,7 +86,7 @@ public class GeneralParameterSet implements java.io.Serializable{
     }
     public GeneralParameterSet(GeneralParameterSet gps) {
         this.shortName = gps.getShortName();
-        this.name = gps.getName();
+        this.fullName = gps.getName();
         this.location = gps.getLocation();
         this.beginDate = gps.getBeginDate();
         this.endDate = gps.getEndDate();
@@ -124,7 +123,7 @@ public class GeneralParameterSet implements java.io.Serializable{
     public void initBase(String shortName, String name, String location,
             java.util.Date beginDate, java.util.Date endDate, int numberOfRounds,  int numberOfCategories) {
         this.shortName = shortName;
-        this.name = name;
+        this.fullName = name;
         this.location = location;
         this.beginDate = (Date)beginDate.clone();
         this.endDate = (Date)endDate.clone();
@@ -198,11 +197,11 @@ public class GeneralParameterSet implements java.io.Serializable{
     }
 
     public String getName() {
-        return name;
+        return fullName;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.fullName = name;
     }
 
     public String getLocation() {

@@ -1747,7 +1747,7 @@ public class JFrGamesPair extends javax.swing.JFrame {
         try {
             if (!tournament.isOpen()) dispose();
             this.lastComponentsUpdateTime = tournament.getCurrentTournamentTime();
-            setTitle("Games .. Pair. " + tournament.getTournamentParameterSet().getGeneralParameterSet().getShortName());
+            setTitle("Games .. Pair. " + tournament.getFullName());
         } catch (RemoteException ex) {
             Logger.getLogger(JFrGamesPair.class.getName()).log(Level.SEVERE, null, ex);
         }

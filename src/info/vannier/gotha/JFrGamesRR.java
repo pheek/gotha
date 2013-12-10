@@ -544,7 +544,7 @@ private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
         try {
             if (!tournament.isOpen()) dispose();
             this.lastComponentsUpdateTime = tournament.getCurrentTournamentTime();
-            setTitle("Games .. Round-robin. " + tournament.getTournamentParameterSet().getGeneralParameterSet().getShortName());
+            setTitle("Games .. Round-robin. " + tournament.getFullName());
         } catch (RemoteException ex) {
             Logger.getLogger(JFrGamesRR.class.getName()).log(Level.SEVERE, null, ex);
         }

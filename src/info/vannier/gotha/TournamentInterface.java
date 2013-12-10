@@ -21,11 +21,15 @@ public interface TournamentInterface extends Remote{
 
     public ArrayList<Player> getPlayersWhoDidNotShowUp(int roundNumber) throws RemoteException;
 
-    public String getKeyName() throws RemoteException;
+    public String getFullName() throws RemoteException;
+    public String getShortName() throws RemoteException;
 
     public int tournamentType() throws RemoteException;
     public boolean isOpen() throws RemoteException;
     public void close() throws RemoteException;
+    public boolean isHasBeenSavedOnce() throws RemoteException;
+    public void setHasBeenSavedOnce(boolean hasBeenSavedOnce) throws RemoteException;
+
     public void adjustCategoryLimits() throws RemoteException;
     
     public boolean addPlayer(Player p)  throws TournamentException, RemoteException;

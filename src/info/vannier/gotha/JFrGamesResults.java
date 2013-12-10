@@ -609,7 +609,7 @@ public class JFrGamesResults extends javax.swing.JFrame {
         try {
             if (!tournament.isOpen()) dispose();
             this.lastComponentsUpdateTime = tournament.getCurrentTournamentTime();
-            setTitle("Games .. Results. " + tournament.getTournamentParameterSet().getGeneralParameterSet().getShortName());
+            setTitle("Games .. Results. " + tournament.getFullName());
         } catch (RemoteException ex) {
             Logger.getLogger(JFrGamesResults.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -473,7 +473,7 @@ public class JFrGamesOptions extends javax.swing.JFrame {
         try {
             if (!tournament.isOpen()) dispose();
             this.lastComponentsUpdateTime = tournament.getCurrentTournamentTime();
-            setTitle("Games Parameters. " + tournament.getTournamentParameterSet().getGeneralParameterSet().getShortName());
+            setTitle("Games Parameters. " + tournament.getFullName());
             updatePnlGam();
         } catch (RemoteException ex) {
             Logger.getLogger(JFrGamesOptions.class.getName()).log(Level.SEVERE, null, ex);
