@@ -40,8 +40,8 @@ public class Gotha {
     
     static Locale locale = Locale.getDefault();
     static final long GOTHA_VERSION = 335L;
-    static final long GOTHA_MINOR_VERSION = 1L;
-    static final java.util.Date GOTHA_RELEASE_DATE = (new GregorianCalendar(2013, Calendar.DECEMBER, 10)).getTime();
+    static final long GOTHA_MINOR_VERSION = 2L;
+    static final java.util.Date GOTHA_RELEASE_DATE = (new GregorianCalendar(2013, Calendar.DECEMBER, 13)).getTime();
     // Data version for serialization
     static final long GOTHA_DATA_VERSION = 201L;
     
@@ -68,7 +68,7 @@ public class Gotha {
     static String strPreferences = "info/vannier/opengotha";
     static File runningDirectory;
     // obsolete in V3.35.01
-    //    static File tournamentDirectory; // obsolete in V3.35.00
+    //    static File tournamentDirectory; // obsolete in V3.35.01
     static File exportDirectory;
     static File exportHTMLDirectory;
 //    static File exportXMLDirectory;
