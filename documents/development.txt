@@ -1,12 +1,29 @@
-OpenGothaV3.35
+OpenGothaV3.35.03
 *****************
+18/12/2013
+New     Zero value for MMS may be set between 30K and 1D (it was previously set as 30K).
+
+OpenGothaV3.35.02
+*****************
+14/12/2013
+Bug Fix A problem occured with loading rating list under Linux. Fixed.
+
+OpenGothaV3.35.01
+*****************
+10/12/2013
+Bug Fix Pairing 2 players with one above and one below Secondary criteria aplying thresholds 
+        was nearly impossible. Fixed
+New     New saving facilities
+
+OpenGothaV3.35
+**************
 08/10/2013
-Detail  Thinking time is now, by default Stanadard Byo-Yomi system
+Detail  Thinking time is now, by default, Standard Byo-Yomi system
 New     Print & Export facilities are now grouped in a "Print & Export shop" frame
         New export facilities including Games list in html
 
 OpenGothaV3.34
-*****************
+**************
 28/08/2013
 New     In Games .. Pair Frame, no selection in Games table = all games selected
 New     In Games .. Pair Frame, players may be sorted by score(default), rank or name
