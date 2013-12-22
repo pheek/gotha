@@ -245,6 +245,10 @@ public class Tournament extends UnicastRemoteObject implements TournamentInterfa
     public String getShortName() throws RemoteException {
         return this.getTournamentParameterSet().getGeneralParameterSet().getShortName();
     }
+    @Override
+    public void setShortName(String shortName) throws RemoteException {
+        this.getTournamentParameterSet().getGeneralParameterSet().setShortName(shortName);
+    }
 
     @Override
     public int tournamentType() throws RemoteException {

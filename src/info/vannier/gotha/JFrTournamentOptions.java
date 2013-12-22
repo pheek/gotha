@@ -121,6 +121,8 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         txfMMBar = new javax.swing.JTextField();
         lblMMFloor = new javax.swing.JLabel();
         txfMMFloor = new javax.swing.JTextField();
+        lblMMZero = new javax.swing.JLabel();
+        txfMMZero = new javax.swing.JTextField();
         pnlSpecialResults = new javax.swing.JPanel();
         rdbAbsentNBW0 = new javax.swing.JRadioButton();
         rdbAbsentNBW1 = new javax.swing.JRadioButton();
@@ -505,8 +507,21 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         pnlMcMahon.add(txfMMFloor);
         txfMMFloor.setBounds(150, 50, 30, 20);
 
+        lblMMZero.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        lblMMZero.setText("McMahon Zero");
+        pnlMcMahon.add(lblMMZero);
+        lblMMZero.setBounds(10, 110, 140, 13);
+
+        txfMMZero.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txfMMZeroFocusLost(evt);
+            }
+        });
+        pnlMcMahon.add(txfMMZero);
+        txfMMZero.setBounds(150, 110, 30, 20);
+
         pnlGen.add(pnlMcMahon);
-        pnlMcMahon.setBounds(300, 90, 250, 90);
+        pnlMcMahon.setBounds(300, 90, 250, 150);
 
         pnlSpecialResults.setBorder(javax.swing.BorderFactory.createTitledBorder("Special Results"));
         pnlSpecialResults.setLayout(null);
@@ -1964,7 +1979,8 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
             return;
         }   
         int oldGenMMFloor = gps.getGenMMFloor();
-        int newGenMMFloor = Player.convertKDToInt(this.txfMMFloor.getText());
+        int newGenMMFloor = Player.convertKDToInt(this.txfMMFloor.getText());        
+        txfMMFloor.setText("" + Player.convertIntToKD(newGenMMFloor)); 
         if (newGenMMFloor > GeneralParameterSet.GEN_MM_FLOOR_MAX 
                 || newGenMMFloor < GeneralParameterSet.GEN_MM_FLOOR_MIN
                 || newGenMMFloor > gps.getGenMMBar()){
@@ -1995,6 +2011,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         }   
         int oldGenMMBar = gps.getGenMMBar();
         int newGenMMBar = Player.convertKDToInt(this.txfMMBar.getText());
+        txfMMBar.setText("" + Player.convertIntToKD(newGenMMBar));  
         if ((newGenMMBar > GeneralParameterSet.GEN_MM_BAR_MAX) 
             || (newGenMMBar < GeneralParameterSet.GEN_MM_BAR_MIN)
             || (newGenMMBar < gps.getGenMMFloor())){
@@ -2461,10 +2478,12 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         tps.setGeneralParameterSet(gps);
         try {
             tournament.setTournamentParameterSet(tps);
+            tournament.setHasBeenSavedOnce(false);
             this.tournamentChanged();
         } catch (RemoteException ex) {
             Logger.getLogger(JFrTournamentOptions.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }//GEN-LAST:event_txfShortNameFocusLost
 
     private void rdbHdBaseMMSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbHdBaseMMSActionPerformed
@@ -2643,6 +2662,36 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         }    
 
     }//GEN-LAST:event_ckbCompensateFocusLost
+
+    private void txfMMZeroFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txfMMZeroFocusLost
+        TournamentParameterSet tps;
+        GeneralParameterSet gps;
+        try {
+            tps = tournament.getTournamentParameterSet();
+            gps = tps.getGeneralParameterSet();
+        } catch (RemoteException ex) {
+            Logger.getLogger(JFrTournamentOptions.class.getName()).log(Level.SEVERE, null, ex);
+            return;
+        }   
+        int oldGenMMZero = gps.getGenMMZero();
+        int newGenMMZero = Player.convertKDToInt(this.txfMMZero.getText());        
+        txfMMZero.setText("" + Player.convertIntToKD(newGenMMZero)); 
+        if (newGenMMZero > GeneralParameterSet.GEN_MM_ZERO_MAX 
+                || newGenMMZero < GeneralParameterSet.GEN_MM_ZERO_MIN){
+            // Error. Keep old value
+            txfMMZero.setText("" + Player.convertIntToKD(oldGenMMZero));  
+            return;
+        } 
+        if (newGenMMZero != oldGenMMZero){
+            gps.setGenMMZero(newGenMMZero);
+            try {
+                tournament.setTournamentParameterSet(tps);
+                this.tournamentChanged();
+            } catch (RemoteException ex) {
+                Logger.getLogger(JFrTournamentOptions.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_txfMMZeroFocusLost
 
     private void updHdBase(){
         TournamentParameterSet tps;
@@ -2885,6 +2934,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         if (this.pnlMcMahon.isVisible()){
             this.txfMMBar.setText(Player.convertIntToKD(gps.getGenMMBar()));
             this.txfMMFloor.setText(Player.convertIntToKD(gps.getGenMMFloor()));
+            this.txfMMZero.setText(Player.convertIntToKD(gps.getGenMMZero()));
         }
         
         // Special results panel
@@ -2959,8 +3009,10 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         // update of McMahon bar and floor JTextField
         int bar = gps.getGenMMBar();
         int floor = gps.getGenMMFloor();
+        int zero = gps.getGenMMZero();
         this.txfMMBar.setText("" + Player.convertIntToKD(bar));
         this.txfMMFloor.setText("" + Player.convertIntToKD(floor));
+        this.txfMMZero.setText("" + Player.convertIntToKD(zero));
     }
     
     private void updatePnlTPl()throws RemoteException{
@@ -3161,6 +3213,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
     private javax.swing.JLabel lblHandicap;
     private javax.swing.JLabel lblMMBar;
     private javax.swing.JLabel lblMMFloor;
+    private javax.swing.JLabel lblMMZero;
     private javax.swing.JLabel lblNewSystem;
     private javax.swing.JLabel lblRecommended;
     private javax.swing.JLabel lblSystemName;
@@ -3237,6 +3290,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
     private javax.swing.JTextField txfLocation;
     private javax.swing.JTextField txfMMBar;
     private javax.swing.JTextField txfMMFloor;
+    private javax.swing.JTextField txfMMZero;
     private javax.swing.JTextField txfName;
     private javax.swing.JTextField txfNoHdRankThreshold;
     private javax.swing.JTextField txfNumberOfCategories;

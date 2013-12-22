@@ -6,6 +6,7 @@
     <tocitem text="Starting OpenGotha" target="Starting OpenGotha" />
     <tocitem text="Tournament menu" target="Tournament menu">
         <tocitem text="Create a new tournament" target="Create a new tournament" />
+        <tocitem text="Save facilities" target="Save facilities" />
         <tocitem text="Import facilities" target="Import facilities" />
         <tocitem text="Print and Export Shop" target="Print and Export Shop" />
     </tocitem>

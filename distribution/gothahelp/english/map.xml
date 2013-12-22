@@ -7,6 +7,7 @@
 	<mapID target="Starting OpenGotha" url="Starting OpenGotha.html"/>
 	<mapID target="Tournament menu" url="Tournament menu.html"/>
 	<mapID target="Create a new tournament" url="Create a new tournament.html"/>
+	<mapID target="Save facilities" url="Save facilities.html"/>
 	<mapID target="Import facilities" url="Import facilities.html"/>
 	<mapID target="Print and Export Shop" url="Print and Export Shop.html"/>
 	<mapID target="Players menu" url="Players menu.html"/>

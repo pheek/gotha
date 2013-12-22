@@ -1,4 +1,0 @@
-gotha
-=====
-
-Go Tournaments Management

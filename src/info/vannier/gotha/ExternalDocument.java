@@ -339,7 +339,7 @@ public class ExternalDocument {
         if (bPlayers) {
             ArrayList<Player> alPlayers = ExternalDocument.importPlayersFromXMLFile(sourceFile);
             if (alPlayers == null || alPlayers.isEmpty()) {
-                System.out.println("No player could be imported");
+                System.out.println("No player has been imported");
             }
             if (alPlayers != null) {
                 for (Player p : alPlayers) {
@@ -715,6 +715,8 @@ public class ExternalDocument {
         gps.setGenMMFloor(Player.convertKDToInt(strGenMMFloor));
         String strGenMMBar = extractNodeValue(nnmGPS, "genMMBar", "4D");
         gps.setGenMMBar(Player.convertKDToInt(strGenMMBar));
+        String strGenMMZero = extractNodeValue(nnmGPS, "genMMZero", "30K");
+        gps.setGenMMZero(Player.convertKDToInt(strGenMMZero));
 
         String strGenNBW2ValueAbsent = extractNodeValue(nnmGPS, "genNBW2ValueAbsent", "0");
         gps.setGenNBW2ValueAbsent(new Integer(strGenNBW2ValueAbsent).intValue());
@@ -3239,6 +3241,8 @@ public class ExternalDocument {
         emGeneralParameterSet.setAttribute("numberOfCategories", "" + gps.getNumberOfCategories());
         emGeneralParameterSet.setAttribute("genMMFloor", Player.convertIntToKD(gps.getGenMMFloor()));
         emGeneralParameterSet.setAttribute("genMMBar", Player.convertIntToKD(gps.getGenMMBar()));
+        emGeneralParameterSet.setAttribute("genMMZero", Player.convertIntToKD(gps.getGenMMZero()));
+        
         emGeneralParameterSet.setAttribute("genNBW2ValueAbsent", "" + gps.getGenNBW2ValueAbsent());
         emGeneralParameterSet.setAttribute("genNBW2ValueBye", "" + gps.getGenNBW2ValueBye());
         emGeneralParameterSet.setAttribute("genMMS2ValueAbsent", "" + gps.getGenMMS2ValueAbsent());

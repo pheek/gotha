@@ -1,19 +1,11 @@
-OpenGothaV3.35.03
-*****************
-18/12/2013
+OpenGothaV3.36
+**************
+22/12/2013
 New     Zero value for MMS may be set between 30K and 1D (it was previously set as 30K).
-
-OpenGothaV3.35.02
-*****************
-14/12/2013
+New     New saving facilities
 Bug Fix A problem occured with loading rating list under Linux. Fixed.
-
-OpenGothaV3.35.01
-*****************
-10/12/2013
 Bug Fix Pairing 2 players with one above and one below Secondary criteria aplying thresholds 
         was nearly impossible. Fixed
-New     New saving facilities
 
 OpenGothaV3.35
 **************

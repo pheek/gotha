@@ -119,16 +119,15 @@ Close button should be :
 tournamentChanged method should look like :
 ===========================================
 private void tournamentChanged(){
-        try {
-            if (!tournament.isOpen()){
-                dispose();
-                return;
-            }
-            tournament.setLastTournamentModificationTime(tournament.getCurrentTournamentTime());
-        } catch (RemoteException ex) {
-            Logger.getLogger(JFrDiscardRounds.class.getName()).log(Level.SEVERE, null, ex);
+    try {
+        if (!tournament.isOpen()){
+            dispose();
+            return;
         }
-    
+        tournament.setLastTournamentModificationTime(tournament.getCurrentTournamentTime());
+    } catch (RemoteException ex) {
+        Logger.getLogger(JFrDiscardRounds.class.getName()).log(Level.SEVERE, null, ex);
+    }
 
     updateAllViews();
 }
@@ -192,3 +191,21 @@ printNotPlayingPlayersList
 printStandings
 printMatchesList
 printTeamsStandings
+
+Save Tournament issues
+**********************
+JFrGotha : 
+    private void saveTournament(File f) : calls the following one 
+    private void saveTournament(TournamentInterface t, File f) : called only by the previous one
+        makes the job and sets booleans : 
+        t.setChangeSinceLastSaveAsFalse();
+        t.setHasBeenSavedOnce(true);
+
+saveTournament(File f) is called from :
+    saveAs()
+    mniSaveActionPerformed
+
+saveAs is called from :
+    saveCurrentTournamentIfNecessary
+    mniSaveActionPerformed
+    mniSaveAsActionPerformed

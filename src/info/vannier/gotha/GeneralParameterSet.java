@@ -18,8 +18,9 @@ public class GeneralParameterSet implements java.io.Serializable{
     final static int GEN_MM_FLOOR_MAX   =  0;   // 1D
     final static int GEN_MM_BAR_MIN     = -10;  // 10K
     final static int GEN_MM_BAR_MAX     =  8;   // 9D
-
-    
+    final static int GEN_MM_ZERO_MIN     = -30;  // 30K
+    final static int GEN_MM_ZERO_MAX     =  0;   // 1D
+  
     /**  For instance : paris2009 */
     private String shortName = "Undefined";
     /**  For instance : Toyota Tour Paris Tournament 2009 */
@@ -73,6 +74,7 @@ public class GeneralParameterSet implements java.io.Serializable{
     private int[] lowerCategoryLimits; // limits are defined in rank units (between +8 and -30)
     private int genMMFloor;
     private int genMMBar;
+    private int genMMZero;  // Defines the rank as zero in MMS computations
 
     private int genNBW2ValueAbsent    = 0;  // 2 * Number of NBW points for a player absent of a round
     private int genNBW2ValueBye = 2;        // 2 * Number of NBW points for a player not paired in a round (uneven)
@@ -113,6 +115,7 @@ public class GeneralParameterSet implements java.io.Serializable{
         }
         this.genMMFloor = gps.getGenMMFloor();
         this.genMMBar = gps.getGenMMBar();
+        this.genMMZero = gps.getGenMMZero();
         this.genNBW2ValueAbsent = gps.getGenNBW2ValueAbsent();
         this.genNBW2ValueBye = gps.getGenNBW2ValueBye();
         this.genMMS2ValueAbsent = gps.getGenMMS2ValueAbsent();
@@ -142,9 +145,9 @@ public class GeneralParameterSet implements java.io.Serializable{
 
     public void initForMM(){
         setNumberOfCategories(1);
-        genMMFloor            = -20;      // 20K
-        genMMBar              = 3;        // 4D    
-        
+        genMMFloor              = -20;      // 20K
+        genMMBar                = 3;        // 4D    
+        genMMZero               = -30;      //30K
         genNBW2ValueAbsent      = 0;        
         genNBW2ValueBye         = 2;       
 
@@ -156,8 +159,9 @@ public class GeneralParameterSet implements java.io.Serializable{
     
     public void initForSwiss(){
         setNumberOfCategories(1);
-        genMMFloor            = -30;    // Not relevant
-        genMMBar              = 8;      // Not relevant
+        genMMFloor              = -30;    // Not relevant
+        genMMBar                = 8;      // Not relevant
+        genMMZero               = -30;    // Not relevant
 
         genNBW2ValueAbsent      = 0;    // 2 * Number of NBW points for a player absent of a round
         genNBW2ValueBye         = 2;    // 2 * Number of NBW points for a player not paired in a round (uneven)
@@ -170,11 +174,12 @@ public class GeneralParameterSet implements java.io.Serializable{
     
     public void initForSwissCat(){
         setNumberOfCategories(3);
-        lowerCategoryLimits[0] = 0;
-        lowerCategoryLimits[1] = -5;
-        genMMFloor            = -30;    // Relevant only for pseudo MMS in sec criteria pairing
-        genMMBar              = 8;  // Relevant only for pseudo MMS in sec criteria pairing
-                
+        lowerCategoryLimits[0]  = 0;
+        lowerCategoryLimits[1]  = -5;
+        genMMFloor              = -30;    // Relevant only for pseudo MMS in sec criteria pairing
+        genMMBar                = 8;    // Relevant only for pseudo MMS in sec criteria pairing
+        genMMZero               = -30;  // Not relevant
+        
         genNBW2ValueAbsent      = 0;    // 2 * Number of NBW points for a player absent of a round
         genNBW2ValueBye         = 2;    // 2 * Number of NBW points for a player not paired in a round (uneven)
 
@@ -310,6 +315,14 @@ public class GeneralParameterSet implements java.io.Serializable{
 
     public void setGenMMFloor(int genMMFloor) {
         this.genMMFloor = genMMFloor;
+    }
+    
+    public int getGenMMZero() {
+        return genMMZero;
+    }
+
+    public void setGenMMZero(int genMMZero) {
+        this.genMMZero = genMMZero;
     }
 
     public int getGenNBW2ValueAbsent() {

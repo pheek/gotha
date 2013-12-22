@@ -315,12 +315,20 @@ public class Player implements java.io.Serializable{
     }
     
     public int smms(GeneralParameterSet gps){
-        int smms = getRank() + 30;
+//        int smms = getRank() + 30;
+//        int floor = gps.getGenMMFloor();
+//        int bar = gps.getGenMMBar();
+//        
+//        if (smms < floor + 30) smms = floor + 30;
+//        if (smms > bar + 30) smms = bar + 30;
+        
+        int zero = gps.getGenMMZero();
+        int smms = getRank() - zero;
         int floor = gps.getGenMMFloor();
         int bar = gps.getGenMMBar();
         
-        if (smms < floor + 30) smms = floor + 30;
-        if (smms > bar + 30) smms = bar + 30;
+        if (smms < floor - zero) smms = floor - zero;
+        if (smms > bar - zero) smms = bar - zero;
         
         smms += smmsCorrection;
         

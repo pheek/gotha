@@ -43,11 +43,8 @@ public class JFrGothaStart extends javax.swing.JFrame {
         }
 
         Gotha.runningDirectory = dir;
-        
-//        Gotha.tournamentDirectory = new File(Gotha.runningDirectory , "tournamentfiles");
         Gotha.exportDirectory = new File(Gotha.runningDirectory, "exportfiles");
         Gotha.exportHTMLDirectory = new File(Gotha.runningDirectory, "exportfiles/html");
-//        Gotha.exportXMLDirectory = new File(Gotha.runningDirectory, "exportfiles/xml");
         initComponents();
         customInitComponents();
     }
@@ -230,8 +227,9 @@ public class JFrGothaStart extends javax.swing.JFrame {
             for (int i = 0; i < lst.length; i++){
                 if (!lst[i].isDirectory()) continue;
                 if (lst[i].isHidden()) continue;
-                if (findADirectoryContaining(lst[i], strFile)!= null){
-                    return lst[i];
+                File f = findADirectoryContaining(lst[i], strFile);
+                if (f!= null){
+                    return f;
                 }
             }
             return null;

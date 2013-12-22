@@ -39,9 +39,9 @@ public class Gotha {
     static final int DEFAULT_ROUND_NUMBER = 0; 
     
     static Locale locale = Locale.getDefault();
-    static final long GOTHA_VERSION = 335L;
-    static final long GOTHA_MINOR_VERSION = 2L;
-    static final java.util.Date GOTHA_RELEASE_DATE = (new GregorianCalendar(2013, Calendar.DECEMBER, 13)).getTime();
+    static final long GOTHA_VERSION = 336L;
+    static final long GOTHA_MINOR_VERSION = 0L;
+    static final java.util.Date GOTHA_RELEASE_DATE = (new GregorianCalendar(2013, Calendar.DECEMBER, 22)).getTime();
     // Data version for serialization
     static final long GOTHA_DATA_VERSION = 201L;
     

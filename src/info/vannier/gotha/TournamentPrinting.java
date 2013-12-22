@@ -82,7 +82,7 @@ public class TournamentPrinting implements Printable {
     static final int GL_WNF_BEG = GL_TN_BEG + GL_TN_LEN + 1;
     static final int GL_WNF_LEN = 33;       // 22 + 1 + 2 + 3 + 1 + 4
     static final int GL_BNF_BEG = GL_WNF_BEG + GL_WNF_LEN + 1;
-    static final int GL_BNF_LEN = 32;
+    static final int GL_BNF_LEN = 33;
     static final int GL_HD_BEG = GL_BNF_BEG + GL_BNF_LEN + 1;
     static final int GL_HD_LEN = 1;
     static final int GL_RES_BEG = GL_HD_BEG + GL_HD_LEN + 1;
@@ -109,7 +109,7 @@ public class TournamentPrinting implements Printable {
     static final int ML_HD_LEN = 1;
     static final int ML_RES_BEG = ML_HD_BEG + ML_HD_LEN + 1;
     static final int ML_RES_LEN = 3;
-    static final int ML_PADDING = 1;
+    static final int ML_PADDING = 2;
     static final int ML_NBCAR = ML_RES_BEG + ML_RES_LEN + ML_PADDING;
     // ST = Standings // Dynamic system (V3.29.03)
     private int stNumBeg = 0;
@@ -151,6 +151,7 @@ public class TournamentPrinting implements Printable {
     static final int TP_TAB3 = 18;
     static final int TP_TAB4 = 24;
     static final int TP_NBCAR = 80;
+    
     static final int WH_RATIO = 50;          // Width/Height ratio (%)
     static final int LINEFILLING_RATIO = 90; // Line filling ratio (%)
     static final int LHFS_RATIO = 140;       // Line Height/Font Size ratio (%)
@@ -1148,7 +1149,6 @@ public class TournamentPrinting implements Printable {
             int numberOfRoundsPrinted = roundNumber + 1;
             for (int r = 0; r < numberOfRoundsPrinted; r++) {
                 x = usableX + usableWidth * (this.stRound0Beg + (r + 1) * (this.stRoundLen + ST_PADDING)) / numberOfCharactersInALine;
-                String strRound = "R" + (r + 1);
                 TournamentPrinting.drawRightAlignedString(g, this.halfGamesStrings[r][playerNumber], x, y);
             }
 
@@ -1170,18 +1170,7 @@ public class TournamentPrinting implements Printable {
         return PAGE_EXISTS;
     }
     
-    private int printAPageOfMatchesList(Graphics g, PageFormat pf, int pi) throws RemoteException {
-//        BufferedImage imgW = null;
-//        BufferedImage imgB = null;
-//        try {
-//            imgW = ImageIO.read(new File("whitestone.png"));
-//            imgB = ImageIO.read(new File("blackstone.png"));
-//        } catch (IOException e) {
-//        }
-//        
-//        g.drawImage(imgW, 100, 800, null);
-//        g.drawImage(imgB, 150, 800, null);
-        
+    private int printAPageOfMatchesList(Graphics g, PageFormat pf, int pi) throws RemoteException {      
         DPParameterSet dpps = tps.getDPParameterSet();
         TeamTournamentParameterSet ttps = null;
         try {
@@ -1265,9 +1254,6 @@ public class TournamentPrinting implements Printable {
             String strWTeamNbW = Gotha.formatFractNumber(match.getWX2(match.getWhiteTeam()), 2);
             String strBTeamNbW = Gotha.formatFractNumber(match.getWX2(match.getBlackTeam()), 2);
             String strTeamResult = strWTeamNbW + "-" + strBTeamNbW;
-//            String strWResult = "" + Gotha.formatFractNumber(wResult, 1);
-//            String strBResult = "" + Gotha.formatFractNumber(bResult, 1);
-//            String strResult = strWResult + "-" + strBResult;
             x = usableX + usableWidth * (ML_RES_BEG + ML_RES_LEN) / ML_NBCAR;
             drawRightAlignedString(g, strTeamResult, x, y);
 
@@ -1291,32 +1277,33 @@ public class TournamentPrinting implements Printable {
                     }
                     Game game = tournament.getGame(roundNumber, p1);
                     strTN = "" + (game.getTableNumber() + 1);
-                    x = usableX + usableWidth * ML_WTN_BEG / ML_NBCAR;                    
+//                    x = usableX + usableWidth * ML_WTN_BEG / ML_NBCAR;                    
+                    x = usableX + usableWidth * (ML_TN_BEG + ML_TN_LEN) / ML_NBCAR;                    
                     drawRightAlignedString(g, strTN, x, yG);
                     
                     String strP1Color = "";
                     String strP2Color = "";
                     if (game.isKnownColor()){
                         if (game.getWhitePlayer().hasSameKeyString(p1)){
-                            strP1Color = " (w)";
-                            strP2Color = " (b)";
+                            strP1Color = "(w)";
+                            strP2Color = "(b)";
                         }
                         else{
-                            strP2Color = " (w)";
-                            strP1Color = " (b)";
+                            strP2Color = "(w)";
+                            strP1Color = "(b)";
                         }
                     }
                     
                     String strNF = p1.augmentedPlayerName(dpps);                                
                     if (!game.isWinner(p1)) g.setFont(new Font("Default", Font.PLAIN, gameFontSize));
                     x = usableX + usableWidth * TournamentPrinting.ML_WTN_BEG / TournamentPrinting.ML_NBCAR;
-                    g.drawString(" " + strNF + strP1Color, x, yG);
+                    g.drawString(strNF + strP1Color, x, yG);
                     g.setFont(gameFont);
 
                     strNF = p2.augmentedPlayerName(dpps);                  
                     if (!game.isWinner(p2)) g.setFont(new Font("Default", Font.PLAIN, gameFontSize));
                     x = usableX + usableWidth * TournamentPrinting.ML_BTN_BEG / TournamentPrinting.ML_NBCAR;
-                    g.drawString(" " + strNF + strP2Color, x, yG);
+                    g.drawString(strNF + strP2Color, x, yG);
                     g.setFont(gameFont);
             
                     String strHd = "" + game.getHandicap();

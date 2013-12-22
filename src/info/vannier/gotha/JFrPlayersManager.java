@@ -1144,7 +1144,6 @@ public class JFrPlayersManager extends javax.swing.JFrame {
                 break;
             case RatingList.TYPE_FFG:
                 lblRatingList.setText("Searching for FFG rating list");
-//                ratingList = new RatingList(RatingList.TYPE_FFG, new File(Gotha.runningDirectory, "ratinglists/ech_ffg.txt"));
                 ratingList = new RatingList(RatingList.TYPE_FFG, new File(Gotha.runningDirectory, "ratinglists/ech_ffg_new.txt"));
                 break;
             case RatingList.TYPE_AGA:
@@ -1251,9 +1250,6 @@ public class JFrPlayersManager extends javax.swing.JFrame {
                     strRegistration);
 
             boolean[] bPart = new boolean[Gotha.MAX_NUMBER_OF_ROUNDS];
-//            for (int i = 0; i < Gotha.MAX_NUMBER_OF_ROUNDS; i++) {
-//                bPart[i] = tabCkbParticipation[i].isSelected();
-//            }
             
             int nbRounds = 0;
             try {
@@ -1267,10 +1263,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
            for (int i = nbRounds; i < Gotha.MAX_NUMBER_OF_ROUNDS; i++) {
                 bPart[i] = tabCkbParticipation[nbRounds - 1].isSelected();
             }
-            
-
-            
-            p.setParticipating(bPart);
+        p.setParticipating(bPart);
         } catch (PlayerException pe) {
             JOptionPane.showMessageDialog(this, pe.getMessage(), "Message", JOptionPane.ERROR_MESSAGE);
             return;
@@ -1416,9 +1409,9 @@ public class JFrPlayersManager extends javax.swing.JFrame {
 
         LogElements.incrementElement("players.manager.updateratinglist", "" + rlType);
         
-        String strDefaultURL = "";
-        File fDefaultFile = null;
-        String strPrompt = "";
+        String strDefaultURL;
+        File fDefaultFile;
+        String strPrompt;
         
         switch(rlType){
             case RatingList.TYPE_EGF:

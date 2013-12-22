@@ -23,6 +23,7 @@ public interface TournamentInterface extends Remote{
 
     public String getFullName() throws RemoteException;
     public String getShortName() throws RemoteException;
+    public void setShortName(String shortName) throws RemoteException;
 
     public int tournamentType() throws RemoteException;
     public boolean isOpen() throws RemoteException;
