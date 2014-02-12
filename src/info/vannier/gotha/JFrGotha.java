@@ -4,11 +4,14 @@
  */
 package info.vannier.gotha;
 
+import com.google.zxing.WriterException;
+import info.vannier.qr.QR;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
-import java.nio.channels.FileChannel;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.rmi.RemoteException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -181,11 +184,14 @@ public class JFrGotha extends javax.swing.JFrame {
         pnlWelcome = new javax.swing.JPanel();
         lblTournamentPicture = new javax.swing.JLabel();
         lblFlowChart = new javax.swing.JLabel();
+        lblQR1 = new javax.swing.JLabel();
         pnlControlPanel = new javax.swing.JPanel();
         pnlIntControlPanel = new javax.swing.JPanel();
         scpControlPanel = new javax.swing.JScrollPane();
         tblControlPanel = new javax.swing.JTable();
         lblWarningPRE = new javax.swing.JLabel();
+        lblQR = new javax.swing.JLabel();
+        btnOG = new javax.swing.JButton();
         pnlStandings = new javax.swing.JPanel();
         pnlIntStandings = new javax.swing.JPanel();
         lblStandingsAfter = new javax.swing.JLabel();
@@ -490,7 +496,7 @@ public class JFrGotha extends javax.swing.JFrame {
         pnlWelcome.setLayout(null);
 
         lblTournamentPicture.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTournamentPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/info/vannier/gotha/fan238X312.jpg"))); // NOI18N
+        lblTournamentPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/info/vannier/gotha/smartphone565X312.png"))); // NOI18N
         pnlWelcome.add(lblTournamentPicture);
         lblTournamentPicture.setBounds(77, 5, 615, 312);
 
@@ -499,6 +505,8 @@ public class JFrGotha extends javax.swing.JFrame {
         lblFlowChart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/info/vannier/gotha/flowchart.jpg"))); // NOI18N
         pnlWelcome.add(lblFlowChart);
         lblFlowChart.setBounds(20, 320, 760, 190);
+        pnlWelcome.add(lblQR1);
+        lblQR1.setBounds(690, 220, 90, 90);
 
         tpnGotha.addTab("Welcome", pnlWelcome);
 
@@ -542,7 +550,21 @@ public class JFrGotha extends javax.swing.JFrame {
 
         lblWarningPRE.setForeground(new java.awt.Color(255, 0, 0));
         pnlIntControlPanel.add(lblWarningPRE);
-        lblWarningPRE.setBounds(10, 270, 510, 0);
+        lblWarningPRE.setBounds(10, 250, 510, 20);
+
+        lblQR.setText("QR Code");
+        pnlIntControlPanel.add(lblQR);
+        lblQR.setBounds(310, 270, 90, 90);
+
+        btnOG.setForeground(new java.awt.Color(0, 0, 192));
+        btnOG.setText("http://opengotha.org/tournaments");
+        btnOG.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOGActionPerformed(evt);
+            }
+        });
+        pnlIntControlPanel.add(btnOG);
+        btnOG.setBounds(270, 380, 280, 23);
 
         pnlControlPanel.add(pnlIntControlPanel);
         pnlIntControlPanel.setBounds(0, 0, 790, 470);
@@ -1577,11 +1599,20 @@ public class JFrGotha extends javax.swing.JFrame {
         int wFC = lblFlowChart.getWidth();
         int yFlowCart = lblTournamentPicture.getY() + lblTournamentPicture.getHeight() + 10;
         lblFlowChart.setLocation((w - wFC) / 2, yFlowCart);
+        int wQR1 = lblQR1.getWidth();
+        int hQR1 = lblQR1.getHeight();
+        int xQR1 = lblFlowChart.getX() + lblFlowChart.getWidth() - wQR1;
+        int yQR1 = lblFlowChart.getY() - hQR1;
+        lblQR1.setLocation(xQR1, yQR1);
 
         this.pnlIntControlPanel.setBounds(0, 0, w - 10, h - 30);
         int wCP = scpControlPanel.getWidth();
         this.scpControlPanel.setLocation((w - wCP) / 2, 100);
-
+        int wQR = this.lblQR.getWidth();
+        this.lblQR.setLocation((w - wQR) / 2, 300);
+        int wOG = this.btnOG.getWidth();
+        this.btnOG.setLocation((w - wOG) / 2, 395);
+        
         this.pnlIntTeamsPanel.setBounds(0, 0, w - 10, h - 30);
         int wTeamsP = scpTeamsPanel.getWidth();
         this.scpTeamsPanel.setLocation((w - wTeamsP) / 2, 10);
@@ -1622,6 +1653,13 @@ public class JFrGotha extends javax.swing.JFrame {
             Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
         }
         getRootPane().setDefaultButton(btnSearch);
+        
+        if (tournament == null){
+            this.tpnGotha.setSelectedComponent(this.pnlWelcome);
+        }
+        else{
+            this.tpnGotha.setSelectedComponent(this.pnlControlPanel);
+        }
     }
 
     /**
@@ -2214,6 +2252,18 @@ public class JFrGotha extends javax.swing.JFrame {
         }
         return alSP;
     }
+    private void updateWelcomePanel() throws RemoteException {
+        Image img = null;
+            try {
+                String strURL = "opengotha.info/tournaments/";
+                img = QR.qrImage(strURL);
+            } catch (WriterException ex) {
+                Logger.getLogger(JFrPrExShop.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            this.lblQR1.setIcon(new ImageIcon(img));
+            this.lblQR1.setVisible(true);
+
+    }
 
     private void updateControlPanel() throws RemoteException {
         if (tournament == null) {
@@ -2299,6 +2349,31 @@ public class JFrGotha extends javax.swing.JFrame {
         if (nbPreliminary > 1) {
             lblWarningPRE.setText("Warning!" + nbPreliminary
                     + "players have a Preliminary registering status");
+        }
+        
+        // Aceess to opengotha.info
+        DPParameterSet dpps = tps.getDPParameterSet();
+        GeneralParameterSet gps = tps.getGeneralParameterSet();
+        boolean bExportWS = dpps.isExportToWebSite();
+        boolean bUseSpecificSite = dpps.isUseSpecificSite();
+        if (bExportWS && !bUseSpecificSite) {
+            String dirName = new SimpleDateFormat("yyyyMMdd").format(gps.getBeginDate()) + tournament.getShortName() + "/";
+            String strURL = "opengotha.info/tournaments/" + dirName;
+            Image img = null;
+            try {
+                img = QR.qrImage(strURL);
+            } catch (WriterException ex) {
+                Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            this.lblQR.setIcon(new ImageIcon(img));
+            this.lblQR.setVisible(true);
+            this.btnOG.setVisible(true);
+            
+        }
+        else{
+            this.lblQR.setVisible(false);
+            this.btnOG.setVisible(false);
         }
     }
 
@@ -3030,6 +3105,24 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
      
     }//GEN-LAST:event_mniSaveACopyActionPerformed
 
+    private void btnOGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOGActionPerformed
+        String strURL = "http://opengotha.info";
+        URL url = null;
+        try {
+            url = new URL(strURL);
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(JFrPrExShop.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
+        if (desktop != null && desktop.isSupported(Desktop.Action.BROWSE)) {
+            try {
+                desktop.browse(url.toURI());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_btnOGActionPerformed
+
 
     private File chooseAFile(File path, String extension) {
         JFileChooser fileChoice = new JFileChooser(path);
@@ -3176,6 +3269,14 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
             Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+        if (this.tpnGotha.getSelectedComponent() == pnlWelcome) {
+            try {
+                this.updateWelcomePanel();
+            } catch (RemoteException ex) {
+                Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
         if (this.tpnGotha.getSelectedComponent() == pnlStandings) {
             try {
                 this.updateDisplayCriteria();
@@ -3311,6 +3412,7 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     private javax.swing.JButton btnDlgNewCancel;
     private javax.swing.JButton btnDlgNewOK;
     private javax.swing.JButton btnHelp;
+    private javax.swing.JButton btnOG;
     private javax.swing.JButton btnPrintStandings;
     private javax.swing.JButton btnPrintTeamsStandings;
     private javax.swing.JButton btnSearch;
@@ -3361,6 +3463,8 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     private javax.swing.JPopupMenu.Separator jSeparator7;
     private javax.swing.JPopupMenu.Separator jSeparator8;
     private javax.swing.JLabel lblFlowChart;
+    private javax.swing.JLabel lblQR;
+    private javax.swing.JLabel lblQR1;
     private javax.swing.JLabel lblRecommended;
     private javax.swing.JLabel lblStandingsAfter;
     private javax.swing.JLabel lblTeamUpdateTime;
