@@ -4,16 +4,28 @@
  */
 package info.vannier.gotha;
 
+import com.google.zxing.WriterException;
+import info.vannier.qr.QR;
+import it.sauronsoftware.ftp4j.FTPClient;
 import java.awt.Component;
+import java.awt.Desktop;
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.rmi.RemoteException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.prefs.Preferences;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,29 +33,29 @@ import javax.swing.JOptionPane;
  * @author Luc
  */
 public class JFrPrExShop extends javax.swing.JFrame {
+
     private static final long REFRESH_DELAY = 2000;
     private long lastComponentsUpdateTime = 0;
-
-    private TournamentInterface tournament;   
+    private TournamentInterface tournament;
     int processedRoundNumber = 0;
-    
+
     /**
      * Creates new form JFrPrExShop
      */
-    public JFrPrExShop(TournamentInterface tournament) throws RemoteException{
-        this.tournament = tournament;       
+    public JFrPrExShop(TournamentInterface tournament) throws RemoteException {
+        this.tournament = tournament;
         processedRoundNumber = tournament.presumablyCurrentRoundNumber();
         initComponents();
         customInitComponents();
         setupRefreshTimer();
     }
-    
-    private void setupRefreshTimer(){
-        ActionListener taskPerformer = new ActionListener(){
+
+    private void setupRefreshTimer() {
+        ActionListener taskPerformer = new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent evt){
+            public void actionPerformed(ActionEvent evt) {
                 try {
-                    
+
                     if (tournament.getLastTournamentModificationTime() > lastComponentsUpdateTime) {
                         updateAllViews();
                     }
@@ -54,7 +66,7 @@ public class JFrPrExShop extends javax.swing.JFrame {
         };
         new javax.swing.Timer((int) REFRESH_DELAY, taskPerformer).start();
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -67,33 +79,54 @@ public class JFrPrExShop extends javax.swing.JFrame {
         grpGameFormat = new javax.swing.ButtonGroup();
         jLabel4 = new javax.swing.JLabel();
         grpSortType = new javax.swing.ButtonGroup();
+        grpRemote = new javax.swing.ButtonGroup();
+        dlgFTPSite = new javax.swing.JDialog();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        txfHost = new javax.swing.JTextField();
+        txfLogin = new javax.swing.JTextField();
+        pwfPassword = new javax.swing.JPasswordField();
+        btnDlgFTPSiteOK = new javax.swing.JButton();
+        ckbKeepIDs = new javax.swing.JCheckBox();
+        jLabel9 = new javax.swing.JLabel();
         btnClose = new javax.swing.JButton();
         tpnPrEx = new javax.swing.JTabbedPane();
         pnlPar = new javax.swing.JPanel();
-        jLabel28 = new javax.swing.JLabel();
-        rdbGameFormatFull = new javax.swing.JRadioButton();
-        rdbGameFormatShort = new javax.swing.JRadioButton();
-        jLabel38 = new javax.swing.JLabel();
-        ckbDisplayNumCol = new javax.swing.JCheckBox();
-        ckbDisplayPlCol = new javax.swing.JCheckBox();
-        jLabel39 = new javax.swing.JLabel();
-        ckbDisplayIndGames = new javax.swing.JCheckBox();
-        ckbDisplayCoCol = new javax.swing.JCheckBox();
-        ckbDisplayClCol = new javax.swing.JCheckBox();
+        pnlPL = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        rdbSorBytName = new javax.swing.JRadioButton();
+        rdbSortByRank = new javax.swing.JRadioButton();
+        pnlGL = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        ckbShowPlayerRank = new javax.swing.JCheckBox();
+        ckbShowPlayerCountry = new javax.swing.JCheckBox();
+        ckbShowPlayerClub = new javax.swing.JCheckBox();
+        pnlNPP = new javax.swing.JPanel();
         ckbShowNotPairedPlayers = new javax.swing.JCheckBox();
         ckbShowNotParticipatingPlayers = new javax.swing.JCheckBox();
         ckbShowByePlayer = new javax.swing.JCheckBox();
-        jLabel3 = new javax.swing.JLabel();
-        ckbShowPlayerCountry = new javax.swing.JCheckBox();
-        ckbShowPlayerClub = new javax.swing.JCheckBox();
-        ckbShowPlayerRank = new javax.swing.JCheckBox();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        rdbSorBytName = new javax.swing.JRadioButton();
-        rdbSortByRank = new javax.swing.JRadioButton();
-        jLabel30 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
+        pnlSt = new javax.swing.JPanel();
+        rdbGameFormatFull = new javax.swing.JRadioButton();
+        rdbGameFormatShort = new javax.swing.JRadioButton();
+        ckbDisplayNumCol = new javax.swing.JCheckBox();
+        ckbDisplayPlCol = new javax.swing.JCheckBox();
+        ckbDisplayCoCol = new javax.swing.JCheckBox();
+        ckbDisplayClCol = new javax.swing.JCheckBox();
+        jLabel5 = new javax.swing.JLabel();
+        pnlML = new javax.swing.JPanel();
+        ckbDisplayIndGames = new javax.swing.JCheckBox();
+        pnlExport = new javax.swing.JPanel();
+        ckbExportToLocalFile = new javax.swing.JCheckBox();
+        ckbExportToWebSite = new javax.swing.JCheckBox();
+        rdbSpecificSite = new javax.swing.JRadioButton();
+        rdbOGSite = new javax.swing.JRadioButton();
+        lblLocalExport = new javax.swing.JLabel();
+        lblRemoteExport = new javax.swing.JLabel();
+        btnTestFTP = new javax.swing.JButton();
+        lblQR = new javax.swing.JLabel();
+        btnOG = new javax.swing.JButton();
         pnlPub = new javax.swing.JPanel();
         btnPrintPL = new javax.swing.JButton();
         btnExportRLFFG = new javax.swing.JButton();
@@ -120,6 +153,44 @@ public class JFrPrExShop extends javax.swing.JFrame {
 
         jLabel4.setText("jLabel4");
 
+        dlgFTPSite.setModal(true);
+        dlgFTPSite.getContentPane().setLayout(null);
+
+        jLabel6.setText("Host");
+        dlgFTPSite.getContentPane().add(jLabel6);
+        jLabel6.setBounds(110, 40, 90, 14);
+
+        jLabel7.setText("Login");
+        dlgFTPSite.getContentPane().add(jLabel7);
+        jLabel7.setBounds(110, 90, 90, 14);
+
+        jLabel8.setText("Password");
+        dlgFTPSite.getContentPane().add(jLabel8);
+        jLabel8.setBounds(110, 130, 90, 14);
+        dlgFTPSite.getContentPane().add(txfHost);
+        txfHost.setBounds(230, 40, 140, 20);
+        dlgFTPSite.getContentPane().add(txfLogin);
+        txfLogin.setBounds(230, 80, 140, 20);
+
+        pwfPassword.setText("jPasswordField1");
+        dlgFTPSite.getContentPane().add(pwfPassword);
+        pwfPassword.setBounds(230, 130, 140, 20);
+
+        btnDlgFTPSiteOK.setText("OK");
+        btnDlgFTPSiteOK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDlgFTPSiteOKActionPerformed(evt);
+            }
+        });
+        dlgFTPSite.getContentPane().add(btnDlgFTPSiteOK);
+        btnDlgFTPSiteOK.setBounds(100, 220, 270, 23);
+
+        ckbKeepIDs.setText("keep identifiers");
+        dlgFTPSite.getContentPane().add(ckbKeepIDs);
+        ckbKeepIDs.setBounds(110, 170, 190, 23);
+
+        jLabel9.setText("jLabel9");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(null);
@@ -135,200 +206,290 @@ public class JFrPrExShop extends javax.swing.JFrame {
 
         pnlPar.setLayout(null);
 
-        jLabel28.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel28.setText("Players List ");
-        pnlPar.add(jLabel28);
-        jLabel28.setBounds(140, 20, 130, 17);
+        pnlPL.setBorder(javax.swing.BorderFactory.createTitledBorder("Players list"));
+        pnlPL.setLayout(null);
 
-        grpGameFormat.add(rdbGameFormatFull);
-        rdbGameFormatFull.setText("Full (123+/w4)");
-        rdbGameFormatFull.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                allRDBFocusLost(evt);
-            }
-        });
-        pnlPar.add(rdbGameFormatFull);
-        rdbGameFormatFull.setBounds(410, 350, 190, 23);
-
-        grpGameFormat.add(rdbGameFormatShort);
-        rdbGameFormatShort.setText("Short (123+)");
-        rdbGameFormatShort.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                allRDBFocusLost(evt);
-            }
-        });
-        pnlPar.add(rdbGameFormatShort);
-        rdbGameFormatShort.setBounds(410, 370, 190, 23);
-
-        jLabel38.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel38.setText("Standings");
-        pnlPar.add(jLabel38);
-        jLabel38.setBounds(140, 270, 130, 17);
-
-        ckbDisplayNumCol.setSelected(true);
-        ckbDisplayNumCol.setText("display Num column");
-        ckbDisplayNumCol.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                allCKBFocusLost(evt);
-            }
-        });
-        pnlPar.add(ckbDisplayNumCol);
-        ckbDisplayNumCol.setBounds(410, 260, 190, 23);
-
-        ckbDisplayPlCol.setSelected(true);
-        ckbDisplayPlCol.setText("display Pl column");
-        ckbDisplayPlCol.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                allCKBFocusLost(evt);
-            }
-        });
-        pnlPar.add(ckbDisplayPlCol);
-        ckbDisplayPlCol.setBounds(410, 280, 190, 23);
-
-        jLabel39.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel39.setText("Matches list (Team tournaments)");
-        pnlPar.add(jLabel39);
-        jLabel39.setBounds(140, 410, 260, 17);
-
-        ckbDisplayIndGames.setSelected(true);
-        ckbDisplayIndGames.setText("also display Individual games");
-        ckbDisplayIndGames.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                allCKBFocusLost(evt);
-            }
-        });
-        pnlPar.add(ckbDisplayIndGames);
-        ckbDisplayIndGames.setBounds(410, 410, 190, 23);
-
-        ckbDisplayCoCol.setText("display Country column");
-        ckbDisplayCoCol.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                allCKBFocusLost(evt);
-            }
-        });
-        pnlPar.add(ckbDisplayCoCol);
-        ckbDisplayCoCol.setBounds(410, 300, 190, 23);
-
-        ckbDisplayClCol.setText("display Club column");
-        ckbDisplayClCol.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                allCKBFocusLost(evt);
-            }
-        });
-        pnlPar.add(ckbDisplayClCol);
-        ckbDisplayClCol.setBounds(410, 320, 190, 23);
-
-        jLabel1.setText("Sort type");
-        pnlPar.add(jLabel1);
-        jLabel1.setBounds(280, 20, 130, 14);
-
-        ckbShowNotPairedPlayers.setSelected(true);
-        ckbShowNotPairedPlayers.setText("Show not paired players if any");
-        ckbShowNotPairedPlayers.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                allCKBFocusLost(evt);
-            }
-        });
-        pnlPar.add(ckbShowNotPairedPlayers);
-        ckbShowNotPairedPlayers.setBounds(410, 180, 290, 20);
-
-        ckbShowNotParticipatingPlayers.setText("Show not participating players if any");
-        ckbShowNotParticipatingPlayers.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                allCKBFocusLost(evt);
-            }
-        });
-        pnlPar.add(ckbShowNotParticipatingPlayers);
-        ckbShowNotParticipatingPlayers.setBounds(410, 200, 290, 20);
-
-        ckbShowByePlayer.setSelected(true);
-        ckbShowByePlayer.setText("Show Bye player if any");
-        ckbShowByePlayer.setEnabled(false);
-        ckbShowByePlayer.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                allCKBFocusLost(evt);
-            }
-        });
-        pnlPar.add(ckbShowByePlayer);
-        ckbShowByePlayer.setBounds(410, 160, 290, 20);
-
-        jLabel3.setText("For each player, show");
-        pnlPar.add(jLabel3);
-        jLabel3.setBounds(280, 80, 130, 14);
-
-        ckbShowPlayerCountry.setText("Country");
-        ckbShowPlayerCountry.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                allCKBFocusLost(evt);
-            }
-        });
-        pnlPar.add(ckbShowPlayerCountry);
-        ckbShowPlayerCountry.setBounds(410, 100, 190, 23);
-
-        ckbShowPlayerClub.setSelected(true);
-        ckbShowPlayerClub.setText("Club");
-        ckbShowPlayerClub.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                allCKBFocusLost(evt);
-            }
-        });
-        pnlPar.add(ckbShowPlayerClub);
-        ckbShowPlayerClub.setBounds(410, 120, 190, 23);
-
-        ckbShowPlayerRank.setSelected(true);
-        ckbShowPlayerRank.setText("Rank");
-        ckbShowPlayerRank.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                allCKBFocusLost(evt);
-            }
-        });
-        pnlPar.add(ckbShowPlayerRank);
-        ckbShowPlayerRank.setBounds(410, 80, 190, 23);
-
-        jLabel29.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel29.setText("Games List ");
-        pnlPar.add(jLabel29);
-        jLabel29.setBounds(140, 80, 130, 17);
-
-        jLabel5.setText("Game format");
-        pnlPar.add(jLabel5);
-        jLabel5.setBounds(280, 360, 130, 14);
+        jLabel1.setText("Sort players by");
+        pnlPL.add(jLabel1);
+        jLabel1.setBounds(20, 20, 100, 20);
 
         grpSortType.add(rdbSorBytName);
         rdbSorBytName.setText("Name");
-        rdbSorBytName.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                allRDBFocusLost(evt);
+        rdbSorBytName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                allRDBActionPerformed(evt);
             }
         });
-        pnlPar.add(rdbSorBytName);
-        rdbSorBytName.setBounds(410, 10, 190, 23);
+        pnlPL.add(rdbSorBytName);
+        rdbSorBytName.setBounds(130, 10, 70, 23);
 
         grpSortType.add(rdbSortByRank);
         rdbSortByRank.setText("Rank");
-        rdbSortByRank.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                allRDBFocusLost(evt);
+        rdbSortByRank.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                allRDBActionPerformed(evt);
             }
         });
-        pnlPar.add(rdbSortByRank);
-        rdbSortByRank.setBounds(410, 30, 190, 23);
+        pnlPL.add(rdbSortByRank);
+        rdbSortByRank.setBounds(130, 30, 70, 23);
 
-        jLabel30.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel30.setText("Not playing players List ");
-        pnlPar.add(jLabel30);
-        jLabel30.setBounds(140, 170, 250, 17);
+        pnlPar.add(pnlPL);
+        pnlPL.setBounds(10, 5, 250, 60);
 
+        pnlGL.setBorder(javax.swing.BorderFactory.createTitledBorder("Games list"));
+        pnlGL.setLayout(null);
+
+        jLabel3.setText("For each player, show");
+        pnlGL.add(jLabel3);
+        jLabel3.setBounds(10, 20, 130, 14);
+
+        ckbShowPlayerRank.setSelected(true);
+        ckbShowPlayerRank.setText("Rank");
+        ckbShowPlayerRank.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                allCKBActionPerformed(evt);
+            }
+        });
+        pnlGL.add(ckbShowPlayerRank);
+        ckbShowPlayerRank.setBounds(10, 40, 180, 23);
+
+        ckbShowPlayerCountry.setText("Country");
+        ckbShowPlayerCountry.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                allCKBActionPerformed(evt);
+            }
+        });
+        pnlGL.add(ckbShowPlayerCountry);
+        ckbShowPlayerCountry.setBounds(10, 60, 180, 23);
+
+        ckbShowPlayerClub.setSelected(true);
+        ckbShowPlayerClub.setText("Club");
+        ckbShowPlayerClub.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                allCKBActionPerformed(evt);
+            }
+        });
+        pnlGL.add(ckbShowPlayerClub);
+        ckbShowPlayerClub.setBounds(10, 80, 180, 23);
+
+        pnlPar.add(pnlGL);
+        pnlGL.setBounds(270, 5, 200, 110);
+
+        pnlNPP.setBorder(javax.swing.BorderFactory.createTitledBorder("Not playing players list"));
+        pnlNPP.setLayout(null);
+
+        ckbShowNotPairedPlayers.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        ckbShowNotPairedPlayers.setSelected(true);
+        ckbShowNotPairedPlayers.setText("Show not paired players if any");
+        ckbShowNotPairedPlayers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                allCKBActionPerformed(evt);
+            }
+        });
+        pnlNPP.add(ckbShowNotPairedPlayers);
+        ckbShowNotPairedPlayers.setBounds(10, 40, 230, 20);
+
+        ckbShowNotParticipatingPlayers.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        ckbShowNotParticipatingPlayers.setText("Show not participating players if any");
+        ckbShowNotParticipatingPlayers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                allCKBActionPerformed(evt);
+            }
+        });
+        pnlNPP.add(ckbShowNotParticipatingPlayers);
+        ckbShowNotParticipatingPlayers.setBounds(10, 60, 230, 20);
+
+        ckbShowByePlayer.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        ckbShowByePlayer.setSelected(true);
+        ckbShowByePlayer.setText("Show Bye player if any");
+        ckbShowByePlayer.setEnabled(false);
+        ckbShowByePlayer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                allCKBActionPerformed(evt);
+            }
+        });
+        pnlNPP.add(ckbShowByePlayer);
+        ckbShowByePlayer.setBounds(10, 20, 230, 20);
+
+        jCheckBox1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jCheckBox1.setSelected(true);
         jCheckBox1.setText("Show not Finally registered players if any");
         jCheckBox1.setEnabled(false);
-        pnlPar.add(jCheckBox1);
-        jCheckBox1.setBounds(410, 220, 290, 23);
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                allCKBActionPerformed(evt);
+            }
+        });
+        pnlNPP.add(jCheckBox1);
+        jCheckBox1.setBounds(10, 80, 230, 20);
+
+        pnlPar.add(pnlNPP);
+        pnlNPP.setBounds(10, 70, 250, 100);
+
+        pnlSt.setBorder(javax.swing.BorderFactory.createTitledBorder("Standings"));
+        pnlSt.setLayout(null);
+
+        grpGameFormat.add(rdbGameFormatFull);
+        rdbGameFormatFull.setText("Full (123+/w4)");
+        rdbGameFormatFull.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                allRDBActionPerformed(evt);
+            }
+        });
+        pnlSt.add(rdbGameFormatFull);
+        rdbGameFormatFull.setBounds(110, 110, 180, 23);
+
+        grpGameFormat.add(rdbGameFormatShort);
+        rdbGameFormatShort.setText("Short (123+)");
+        rdbGameFormatShort.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                allRDBActionPerformed(evt);
+            }
+        });
+        pnlSt.add(rdbGameFormatShort);
+        rdbGameFormatShort.setBounds(110, 130, 180, 23);
+
+        ckbDisplayNumCol.setSelected(true);
+        ckbDisplayNumCol.setText("display Num column");
+        ckbDisplayNumCol.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                allCKBActionPerformed(evt);
+            }
+        });
+        pnlSt.add(ckbDisplayNumCol);
+        ckbDisplayNumCol.setBounds(110, 10, 180, 23);
+
+        ckbDisplayPlCol.setSelected(true);
+        ckbDisplayPlCol.setText("display Pl column");
+        ckbDisplayPlCol.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                allCKBActionPerformed(evt);
+            }
+        });
+        pnlSt.add(ckbDisplayPlCol);
+        ckbDisplayPlCol.setBounds(110, 30, 180, 23);
+
+        ckbDisplayCoCol.setText("display Country column");
+        ckbDisplayCoCol.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                allCKBActionPerformed(evt);
+            }
+        });
+        pnlSt.add(ckbDisplayCoCol);
+        ckbDisplayCoCol.setBounds(110, 50, 180, 23);
+
+        ckbDisplayClCol.setText("display Club column");
+        ckbDisplayClCol.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                allCKBActionPerformed(evt);
+            }
+        });
+        pnlSt.add(ckbDisplayClCol);
+        ckbDisplayClCol.setBounds(110, 70, 180, 23);
+
+        jLabel5.setText("Game format");
+        pnlSt.add(jLabel5);
+        jLabel5.setBounds(20, 120, 70, 14);
+
+        pnlPar.add(pnlSt);
+        pnlSt.setBounds(480, 5, 300, 165);
+
+        pnlML.setBorder(javax.swing.BorderFactory.createTitledBorder("Matches list (Team tournaments)"));
+        pnlML.setLayout(null);
+
+        ckbDisplayIndGames.setSelected(true);
+        ckbDisplayIndGames.setText("also display Individual games");
+        ckbDisplayIndGames.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                allCKBActionPerformed(evt);
+            }
+        });
+        pnlML.add(ckbDisplayIndGames);
+        ckbDisplayIndGames.setBounds(10, 20, 180, 23);
+
+        pnlPar.add(pnlML);
+        pnlML.setBounds(270, 120, 200, 50);
+
+        pnlExport.setBorder(javax.swing.BorderFactory.createTitledBorder("HTML Exports"));
+        pnlExport.setLayout(null);
+
+        ckbExportToLocalFile.setSelected(true);
+        ckbExportToLocalFile.setText("Export to a local file");
+        ckbExportToLocalFile.setEnabled(false);
+        pnlExport.add(ckbExportToLocalFile);
+        ckbExportToLocalFile.setBounds(20, 20, 240, 23);
+
+        ckbExportToWebSite.setSelected(true);
+        ckbExportToWebSite.setText("Export to a Web Site");
+        ckbExportToWebSite.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                allCKBActionPerformed(evt);
+            }
+        });
+        pnlExport.add(ckbExportToWebSite);
+        ckbExportToWebSite.setBounds(20, 60, 240, 23);
+
+        grpRemote.add(rdbSpecificSite);
+        rdbSpecificSite.setText("Use a specific site");
+        rdbSpecificSite.setEnabled(false);
+        rdbSpecificSite.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                allRDBActionPerformed(evt);
+            }
+        });
+        pnlExport.add(rdbSpecificSite);
+        rdbSpecificSite.setBounds(80, 80, 210, 23);
+
+        grpRemote.add(rdbOGSite);
+        rdbOGSite.setSelected(true);
+        rdbOGSite.setText("Use opengotha site");
+        rdbOGSite.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                allRDBActionPerformed(evt);
+            }
+        });
+        pnlExport.add(rdbOGSite);
+        rdbOGSite.setBounds(80, 100, 210, 23);
+
+        lblLocalExport.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        lblLocalExport.setText("HTML local exports will be stored on :");
+        pnlExport.add(lblLocalExport);
+        lblLocalExport.setBounds(50, 40, 650, 20);
+
+        lblRemoteExport.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        lblRemoteExport.setText("HTML remote exports will be sent to :");
+        pnlExport.add(lblRemoteExport);
+        lblRemoteExport.setBounds(50, 130, 680, 14);
+
+        btnTestFTP.setText("Test FTP");
+        btnTestFTP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTestFTPActionPerformed(evt);
+            }
+        });
+        pnlExport.add(btnTestFTP);
+        btnTestFTP.setBounds(300, 70, 90, 50);
+        pnlExport.add(lblQR);
+        lblQR.setBounds(300, 160, 90, 90);
+
+        btnOG.setForeground(new java.awt.Color(0, 0, 192));
+        btnOG.setText("http://opengotha.org/tournaments");
+        btnOG.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOGActionPerformed(evt);
+            }
+        });
+        pnlExport.add(btnOG);
+        btnOG.setBounds(200, 250, 290, 23);
+
+        pnlPar.add(pnlExport);
+        pnlExport.setBounds(10, 175, 770, 280);
 
         tpnPrEx.addTab("Parameters", pnlPar);
 
         pnlPub.setLayout(null);
 
+        btnPrintPL.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btnPrintPL.setText("Print players list");
         btnPrintPL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -336,7 +497,7 @@ public class JFrPrExShop extends javax.swing.JFrame {
             }
         });
         pnlPub.add(btnPrintPL);
-        btnPrintPL.setBounds(10, 80, 230, 23);
+        btnPrintPL.setBounds(10, 80, 230, 21);
 
         btnExportRLFFG.setForeground(new java.awt.Color(255, 0, 0));
         btnExportRLFFG.setText("Export results for FFG rating list");
@@ -348,6 +509,7 @@ public class JFrPrExShop extends javax.swing.JFrame {
         pnlPub.add(btnExportRLFFG);
         btnExportRLFFG.setBounds(540, 180, 230, 50);
 
+        btnExportGL.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btnExportGL.setForeground(new java.awt.Color(0, 0, 255));
         btnExportGL.setText("Export(html) games of round 1");
         btnExportGL.addActionListener(new java.awt.event.ActionListener() {
@@ -356,8 +518,9 @@ public class JFrPrExShop extends javax.swing.JFrame {
             }
         });
         pnlPub.add(btnExportGL);
-        btnExportGL.setBounds(260, 110, 260, 23);
+        btnExportGL.setBounds(260, 110, 260, 21);
 
+        btnPrintGL.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btnPrintGL.setText("Print games of round 1");
         btnPrintGL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -365,8 +528,9 @@ public class JFrPrExShop extends javax.swing.JFrame {
             }
         });
         pnlPub.add(btnPrintGL);
-        btnPrintGL.setBounds(260, 80, 260, 23);
+        btnPrintGL.setBounds(260, 80, 260, 21);
 
+        btnPrintStandings.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btnPrintStandings.setText("Print standings after round 1");
         btnPrintStandings.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -374,8 +538,9 @@ public class JFrPrExShop extends javax.swing.JFrame {
             }
         });
         pnlPub.add(btnPrintStandings);
-        btnPrintStandings.setBounds(260, 190, 260, 23);
+        btnPrintStandings.setBounds(260, 190, 260, 21);
 
+        btnExportStandings.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btnExportStandings.setForeground(new java.awt.Color(0, 0, 255));
         btnExportStandings.setText("Export(html) standings after round 1");
         btnExportStandings.setOpaque(false);
@@ -385,8 +550,9 @@ public class JFrPrExShop extends javax.swing.JFrame {
             }
         });
         pnlPub.add(btnExportStandings);
-        btnExportStandings.setBounds(260, 220, 260, 23);
+        btnExportStandings.setBounds(260, 220, 260, 21);
 
+        btnPrintTP.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btnPrintTP.setText("Print Tournament parameters");
         btnPrintTP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -394,8 +560,9 @@ public class JFrPrExShop extends javax.swing.JFrame {
             }
         });
         pnlPub.add(btnPrintTP);
-        btnPrintTP.setBounds(10, 190, 230, 23);
+        btnPrintTP.setBounds(10, 190, 230, 21);
 
+        btnExportPL.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btnExportPL.setForeground(new java.awt.Color(0, 0, 255));
         btnExportPL.setText("Export(html) players list");
         btnExportPL.addActionListener(new java.awt.event.ActionListener() {
@@ -404,7 +571,7 @@ public class JFrPrExShop extends javax.swing.JFrame {
             }
         });
         pnlPub.add(btnExportPL);
-        btnExportPL.setBounds(10, 110, 230, 23);
+        btnExportPL.setBounds(10, 110, 230, 21);
 
         btnExportRLAGA.setForeground(new java.awt.Color(255, 0, 0));
         btnExportRLAGA.setText("Export results for AGA rating list");
@@ -438,6 +605,7 @@ public class JFrPrExShop extends javax.swing.JFrame {
         pnlPub.add(spnRoundNumber);
         spnRoundNumber.setBounds(390, 20, 40, 30);
 
+        btnPrintNPP.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btnPrintNPP.setText("Print not playing players of Round 1");
         btnPrintNPP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -445,7 +613,7 @@ public class JFrPrExShop extends javax.swing.JFrame {
             }
         });
         pnlPub.add(btnPrintNPP);
-        btnPrintNPP.setBounds(260, 140, 260, 23);
+        btnPrintNPP.setBounds(260, 140, 260, 21);
 
         btnExportPlayersCSV.setForeground(new java.awt.Color(0, 128, 0));
         btnExportPlayersCSV.setText("Export players in csv format");
@@ -460,6 +628,7 @@ public class JFrPrExShop extends javax.swing.JFrame {
         pnlTeams.setBorder(javax.swing.BorderFactory.createTitledBorder("Teams"));
         pnlTeams.setLayout(null);
 
+        btnExportTL.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btnExportTL.setForeground(new java.awt.Color(0, 0, 255));
         btnExportTL.setText("Export(html) teams list");
         btnExportTL.addActionListener(new java.awt.event.ActionListener() {
@@ -468,8 +637,9 @@ public class JFrPrExShop extends javax.swing.JFrame {
             }
         });
         pnlTeams.add(btnExportTL);
-        btnExportTL.setBounds(10, 60, 230, 23);
+        btnExportTL.setBounds(10, 60, 230, 21);
 
+        btnPrintTL.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btnPrintTL.setText("Print teams list");
         btnPrintTL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -477,8 +647,9 @@ public class JFrPrExShop extends javax.swing.JFrame {
             }
         });
         pnlTeams.add(btnPrintTL);
-        btnPrintTL.setBounds(10, 30, 230, 23);
+        btnPrintTL.setBounds(10, 30, 230, 21);
 
+        btnPrintML.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btnPrintML.setText("Print Matches list of round 1");
         btnPrintML.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -486,8 +657,9 @@ public class JFrPrExShop extends javax.swing.JFrame {
             }
         });
         pnlTeams.add(btnPrintML);
-        btnPrintML.setBounds(260, 30, 260, 23);
+        btnPrintML.setBounds(260, 30, 260, 21);
 
+        btnPrintTS.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btnPrintTS.setText("Print Teams Standings after round 1");
         btnPrintTS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -495,8 +667,9 @@ public class JFrPrExShop extends javax.swing.JFrame {
             }
         });
         pnlTeams.add(btnPrintTS);
-        btnPrintTS.setBounds(260, 110, 260, 23);
+        btnPrintTS.setBounds(260, 110, 260, 21);
 
+        btnExportTS.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btnExportTS.setForeground(new java.awt.Color(0, 0, 255));
         btnExportTS.setText("Export(html) Teams St. after round 1");
         btnExportTS.addActionListener(new java.awt.event.ActionListener() {
@@ -505,8 +678,9 @@ public class JFrPrExShop extends javax.swing.JFrame {
             }
         });
         pnlTeams.add(btnExportTS);
-        btnExportTS.setBounds(260, 140, 260, 23);
+        btnExportTS.setBounds(260, 140, 260, 21);
 
+        btnExportML.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btnExportML.setForeground(new java.awt.Color(0, 0, 240));
         btnExportML.setText("Export(html) Matches list of round 1");
         btnExportML.addActionListener(new java.awt.event.ActionListener() {
@@ -515,7 +689,7 @@ public class JFrPrExShop extends javax.swing.JFrame {
             }
         });
         pnlTeams.add(btnExportML);
-        btnExportML.setBounds(260, 60, 260, 23);
+        btnExportML.setBounds(260, 60, 260, 21);
 
         pnlPub.add(pnlTeams);
         pnlTeams.setBounds(0, 260, 530, 180);
@@ -523,7 +697,7 @@ public class JFrPrExShop extends javax.swing.JFrame {
         tpnPrEx.addTab("Publish", pnlPub);
 
         getContentPane().add(tpnPrEx);
-        tpnPrEx.setBounds(3, 0, 790, 480);
+        tpnPrEx.setBounds(3, 0, 790, 490);
 
         btnHelp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/info/vannier/gotha/gothalogo16.jpg"))); // NOI18N
         btnHelp.setText("help");
@@ -538,17 +712,24 @@ public class JFrPrExShop extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void customInitComponents()throws RemoteException{
+    private void customInitComponents() throws RemoteException {
         int w = JFrGotha.MEDIUM_FRAME_WIDTH;
         int h = JFrGotha.MEDIUM_FRAME_HEIGHT;
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((dim.width - w)/2, (dim.height -h)/2, w, h);
+        setBounds((dim.width - w) / 2, (dim.height - h) / 2, w, h);
         setIconImage(Gotha.getIconImage());
+
+//        this.tpnPrEx.setBounds(0, 0, w - 6, h - 84);
+        this.tpnPrEx.setBounds(0, 0, w - 6, h - 74);
         
-        this.tpnPrEx.setBounds(0, 0, w - 6, h - 84);
-       
         this.tpnPrEx.setSelectedComponent(pnlPub);
-        
+
+        int wFTP = JFrGotha.SMALL_FRAME_WIDTH;
+        int hFTP = JFrGotha.SMALL_FRAME_HEIGHT;
+        Dimension dimFTP = Toolkit.getDefaultToolkit().getScreenSize();
+        dlgFTPSite.setBounds((dimFTP.width - wFTP) / 2, (dimFTP.height - hFTP) / 2, wFTP, hFTP);
+        dlgFTPSite.setTitle("FTP Site");
+        dlgFTPSite.setIconImage(Gotha.getIconImage());
         updateAllViews();
     }
 
@@ -560,135 +741,6 @@ public class JFrPrExShop extends javax.swing.JFrame {
         int demandedRN = (Integer) (spnRoundNumber.getValue()) - 1;
         this.demandedDisplayedRoundNumberHasChanged(demandedRN);
     }//GEN-LAST:event_spnRoundNumberStateChanged
-
-    private void allCKBFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_allCKBFocusLost
-        TournamentParameterSet tps;
-        DPParameterSet dpps;
-        try {
-            tps = tournament.getTournamentParameterSet();
-            dpps = tps.getDPParameterSet();
-        } catch (RemoteException ex) {
-            Logger.getLogger(JFrTournamentOptions.class.getName()).log(Level.SEVERE, null, ex);
-            return;
-        }
-        boolean oldValue;
-        boolean newValue;
-
-        boolean somethingHasChanged = false;
-        
-        oldValue = dpps.isShowPlayerRank();
-        newValue = this.ckbShowPlayerRank.isSelected();
-        if (newValue != oldValue){
-            dpps.setShowPlayerRank(newValue);
-            somethingHasChanged = true;
-        }
-        oldValue = dpps.isShowPlayerCountry();
-        newValue = this.ckbShowPlayerCountry.isSelected();
-        if (newValue != oldValue){
-            dpps.setShowPlayerCountry(newValue);
-            somethingHasChanged = true;
-        }
-        oldValue = dpps.isShowPlayerClub();
-        newValue = this.ckbShowPlayerClub.isSelected();
-        if (newValue != oldValue){
-            dpps.setShowPlayerClub(newValue);
-            somethingHasChanged = true;
-        }
-        oldValue = dpps.isShowByePlayer();
-        newValue = this.ckbShowByePlayer.isSelected();
-        if (newValue != oldValue){
-            dpps.setShowByePlayer(newValue);
-            somethingHasChanged = true;
-        }
-        oldValue = dpps.isShowNotPairedPlayers();
-        newValue = this.ckbShowNotPairedPlayers.isSelected();
-        if (newValue != oldValue){
-            dpps.setShowNotPairedPlayers(newValue);
-            somethingHasChanged = true;
-        }
-        oldValue = dpps.isShowNotParticipatingPlayers();
-        newValue = this.ckbShowNotParticipatingPlayers.isSelected();
-        if (newValue != oldValue){
-            dpps.setShowNotParticipatingPlayers(newValue);
-            somethingHasChanged = true;
-        }
-        oldValue = dpps.isDisplayNumCol();
-        newValue = this.ckbDisplayNumCol.isSelected();
-        if (newValue != oldValue){
-            dpps.setDisplayNumCol(newValue);
-            somethingHasChanged = true;
-        }
-        oldValue = dpps.isDisplayPlCol();
-        newValue = this.ckbDisplayPlCol.isSelected();
-        if (newValue != oldValue){
-            dpps.setDisplayPlCol(newValue);
-            somethingHasChanged = true;
-        }
-        oldValue = dpps.isDisplayCoCol();
-        newValue = this.ckbDisplayCoCol.isSelected();
-        if (newValue != oldValue){
-            dpps.setDisplayCoCol(newValue);
-            somethingHasChanged = true;
-        }
-        oldValue = dpps.isDisplayClCol();
-        newValue = this.ckbDisplayClCol.isSelected();
-        if (newValue != oldValue){
-            dpps.setDisplayClCol(newValue);
-            somethingHasChanged = true;
-        }
-        oldValue = dpps.isDisplayIndGamesInMatches();
-        newValue = this.ckbDisplayIndGames.isSelected();
-        if (newValue != oldValue){
-            dpps.setDisplayIndGamesInMatches(newValue);
-            somethingHasChanged = true;
-        }
-       
-        if (somethingHasChanged){
-            try {
-                tournament.setTournamentParameterSet(tps);
-                this.tournamentChanged();
-            } catch (RemoteException ex) {
-                Logger.getLogger(JFrTournamentOptions.class.getName()).log(Level.SEVERE, null, ex);
-            }        
-        }
-    }//GEN-LAST:event_allCKBFocusLost
-
-    private void allRDBFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_allRDBFocusLost
-        TournamentParameterSet tps;
-        DPParameterSet dpps;
-        try {
-            tps = tournament.getTournamentParameterSet();
-            dpps = tps.getDPParameterSet();
-        } catch (RemoteException ex) {
-            Logger.getLogger(JFrTournamentOptions.class.getName()).log(Level.SEVERE, null, ex);
-            return;
-        }
-
-        boolean somethingHasChanged = false;
-        int newPlayerSortType = PlayerComparator.NAME_ORDER;
-        if (this.rdbSortByRank.isSelected()) newPlayerSortType = PlayerComparator.RANK_ORDER;
-        if (newPlayerSortType != dpps.getPlayerSortType()){
-            dpps.setPlayerSortType(newPlayerSortType);
-            somethingHasChanged = true;
-        }
-        
-        
-        int newGameFormat = DPParameterSet.DP_GAME_FORMAT_FULL;
-        if (this.rdbGameFormatShort.isSelected())newGameFormat = DPParameterSet.DP_GAME_FORMAT_SHORT;
-        if (newGameFormat != dpps.getGameFormat()){
-            dpps.setGameFormat(newGameFormat);
-            somethingHasChanged = true;
-        }
-
-        if (somethingHasChanged){
-            try {
-                tournament.setTournamentParameterSet(tps);
-                this.tournamentChanged();
-            } catch (RemoteException ex) {
-                Logger.getLogger(JFrTournamentOptions.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }//GEN-LAST:event_allRDBFocusLost
 
     private void btnPrintPLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintPLActionPerformed
         TournamentPrinting.printPlayersList(tournament);
@@ -707,7 +759,7 @@ public class JFrPrExShop extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPrintGLActionPerformed
 
     private void btnPrintNPPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintNPPActionPerformed
-         TournamentPrinting.printNotPlayingPlayersList(tournament, processedRoundNumber);
+        TournamentPrinting.printNotPlayingPlayersList(tournament, processedRoundNumber);
     }//GEN-LAST:event_btnPrintNPPActionPerformed
 
     private void btnPrintTSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintTSActionPerformed
@@ -780,40 +832,40 @@ public class JFrPrExShop extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExportRLFFGActionPerformed
 
     private void btnExportRLAGAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportRLAGAActionPerformed
-    if (tournament == null) {
-        JOptionPane.showMessageDialog(this, "No currently open tournament", "Message", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
-    // If some players have no aga id, should OpenGotha generate dummy Ids ?
-    ArrayList<Player> alP = null;
-    try {
-        alP = tournament.playersList();
-    } catch (RemoteException ex) {
-        Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
-    }
-    int nbPWithoutId = 0;
-    for (Player p : alP) {
-        if (p.getAgaId().equals("")) {
-            nbPWithoutId++;
-        }
-    }
-    if (nbPWithoutId > 0) {
-        String strPrompt = "" + nbPWithoutId + " players have no AGA Id."
-                + "\nOpenGotha will generate dummy AGA Ids in the \"99xxx\" range.";
-        int response = JOptionPane.showConfirmDialog(this, strPrompt, "Message", JOptionPane.OK_CANCEL_OPTION);
-
-        if (response == JOptionPane.CANCEL_OPTION) {
+        if (tournament == null) {
+            JOptionPane.showMessageDialog(this, "No currently open tournament", "Message", JOptionPane.ERROR_MESSAGE);
             return;
         }
-    }
-    File f = ExternalDocument.chooseAFileForExport(tournament, Gotha.exportDirectory, "txt");
-    if (f == null) {
-        return;
-    }
-    // Keep tournamentDirectory
-    Gotha.exportDirectory = f.getParentFile();
+        // If some players have no aga id, should OpenGotha generate dummy Ids ?
+        ArrayList<Player> alP = null;
+        try {
+            alP = tournament.playersList();
+        } catch (RemoteException ex) {
+            Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        int nbPWithoutId = 0;
+        for (Player p : alP) {
+            if (p.getAgaId().equals("")) {
+                nbPWithoutId++;
+            }
+        }
+        if (nbPWithoutId > 0) {
+            String strPrompt = "" + nbPWithoutId + " players have no AGA Id."
+                    + "\nOpenGotha will generate dummy AGA Ids in the \"99xxx\" range.";
+            int response = JOptionPane.showConfirmDialog(this, strPrompt, "Message", JOptionPane.OK_CANCEL_OPTION);
 
-    ExternalDocument.generateAGAResultsFile(tournament, f);       
+            if (response == JOptionPane.CANCEL_OPTION) {
+                return;
+            }
+        }
+        File f = ExternalDocument.chooseAFileForExport(tournament, Gotha.exportDirectory, "txt");
+        if (f == null) {
+            return;
+        }
+        // Keep tournamentDirectory
+        Gotha.exportDirectory = f.getParentFile();
+
+        ExternalDocument.generateAGAResultsFile(tournament, f);
     }//GEN-LAST:event_btnExportRLAGAActionPerformed
 
     private void btnExportPlayersCSVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportPlayersCSVActionPerformed
@@ -833,33 +885,397 @@ public class JFrPrExShop extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExportPlayersCSVActionPerformed
 
     private void btnExportPLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportPLActionPerformed
-        ExternalDocument.generatePlayersListHTMLFile(tournament);
+        File f = ExternalDocument.generatePlayersListHTMLFile(tournament);
+        String strLocalReport = "";
+        if (f != null) {
+            strLocalReport = "Players list" + " has been generated and stored into " + f.getPath();
+        }
+
+        String strRemoteReport = this.sendByFTP(f);
+
+        String strReport = strLocalReport + "\n\n" + strRemoteReport;
+        if (strReport.length() == 0) {
+            strReport = "No file has been exported";
+        }
+        JOptionPane.showMessageDialog(this, strReport);
     }//GEN-LAST:event_btnExportPLActionPerformed
 
+    /**
+     * conditionnally sends f to a site via FTP returns a string report
+     *
+     */
+    private String sendByFTP(File f) {
+        DPParameterSet dpps = null;
+        GeneralParameterSet gps = null;
+        String shortName = "defaultTournament";
+        try {
+            gps = tournament.getTournamentParameterSet().getGeneralParameterSet();
+            dpps = tournament.getTournamentParameterSet().getDPParameterSet();
+            shortName = tournament.getTournamentParameterSet().getGeneralParameterSet().getShortName();
+        } catch (RemoteException ex) {
+            Logger.getLogger(JFrPrExShop.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        if (!dpps.isExportToWebSite()) {
+            return "";
+        }
+
+        String strHost;
+        String strLogin;
+        String strPassword;
+        if (dpps.isUseSpecificSite()) {
+            Preferences prefsRoot = Preferences.userRoot();
+            Preferences gothaPrefs = prefsRoot.node(Gotha.strPreferences);
+
+            strHost = gothaPrefs.get("ftpHost", "");
+            strLogin = gothaPrefs.get("ftpLogin", "");
+            strPassword = gothaPrefs.get("ftpPassword", "");
+            this.txfHost.setText(strHost);
+            this.txfLogin.setText(strLogin);
+            this.pwfPassword.setText(strPassword);
+
+            this.ckbKeepIDs.setSelected(strHost.length() > 0);
+
+            this.dlgFTPSite.setVisible(true);    // Dialogue de récup des id FTP
+            strHost = this.txfHost.getText();
+            strLogin = this.txfLogin.getText();
+            strPassword = new String(this.pwfPassword.getPassword());
+
+            if (this.ckbKeepIDs.isSelected()) {
+                gothaPrefs.put("ftpHost", strHost);
+                gothaPrefs.put("ftpLogin", strLogin);
+                gothaPrefs.put("ftpPassword", strPassword);
+            } else {
+                gothaPrefs.put("ftpHost", "");
+                gothaPrefs.put("ftpLogin", "");
+                gothaPrefs.put("ftpPassword", "");
+            }
+
+        } else {
+            strHost = "s206369267.onlinehome.fr";
+            strLogin = "u45348341-ogt";
+            strPassword = "hmeannnk";
+        }
+
+        FTPClient client = new FTPClient();
+        try {
+            client.connect(strHost);
+            client.login(strLogin, strPassword);
+        } catch (Exception ex) {
+            return "FTP connection has failed";
+        }
+
+        String dirName = new SimpleDateFormat("yyyyMMdd").format(gps.getBeginDate()) + shortName;
+        try {
+            client.createDirectory(dirName);
+        } catch (Exception ex) {
+            // System.out.println("Création de répertoire a échoué");
+        }
+        try {
+            client.changeDirectory(dirName);
+            client.upload(f);
+        } catch (Exception ex) {
+            return "FTP upload has not been possible";
+        }
+        try {
+            File cssFile = new java.io.File(f.getParent(), "current.css");
+            client.upload(cssFile);
+            File idxFile = new java.io.File(f.getParent(), "index.php");
+            client.upload(idxFile);
+            client.upload(new java.io.File(f.getParent(), "whitestone.png"));
+            client.upload(new java.io.File(f.getParent(), "blackstone.png"));
+        } catch (Exception ex) {
+            //System.out.println("Exception" + ex.toString());
+        }
+        try {
+            client.disconnect(true);
+        } catch (Exception ex) {
+            Logger.getLogger(JFrPrExShop.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        String strURL = "" + f.getName() + " has been successfully uploaded to opengotha.info/tournaments/" + dirName + "/" + f.getName();
+        return strURL;
+
+    }
+
     private void btnExportStandingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportStandingsActionPerformed
-        ExternalDocument.generateStandingsHTMLFile(tournament, this.processedRoundNumber);
+        File f = ExternalDocument.generateStandingsHTMLFile(tournament, this.processedRoundNumber);
+
+        String strLocalReport = "";
+        if (f != null) {
+            strLocalReport = "Standings lst after Round " + (this.processedRoundNumber + 1)
+                    + " has been generated and stored into " + f.getPath();
+        }
+
+        String strRemoteReport = this.sendByFTP(f);
+
+        String strReport = strLocalReport + "\n\n" + strRemoteReport;
+        if (strReport.length() == 0) {
+            strReport = "No file has been exported";
+        }
+        JOptionPane.showMessageDialog(this, strReport);
+
     }//GEN-LAST:event_btnExportStandingsActionPerformed
 
     private void btnExportTLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportTLActionPerformed
-        ExternalDocument.generateTeamsListHTMLFile(tournament);
+        File f = ExternalDocument.generateTeamsListHTMLFile(tournament);
+
+        String strLocalReport = "";
+        if (f != null) {
+            strLocalReport = "Teams list "
+                    + " has been generated and stored into " + f.getPath();
+        }
+
+        String strRemoteReport = this.sendByFTP(f);
+
+        String strReport = strLocalReport + "\n\n" + strRemoteReport;
+        if (strReport.length() == 0) {
+            strReport = "No file has been exported";
+        }
+        JOptionPane.showMessageDialog(this, strReport);
     }//GEN-LAST:event_btnExportTLActionPerformed
 
     private void btnExportGLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportGLActionPerformed
-        ExternalDocument.generateGamesListHTMLFile(tournament, this.processedRoundNumber);
+        File f = ExternalDocument.generateGamesListHTMLFile(tournament, this.processedRoundNumber);
+
+//        File f = ExternalDocument.generatePlayersListHTMLFile(tournament);
+        String strLocalReport = "";
+        if (f != null) {
+            strLocalReport = "Games list of Round " + (this.processedRoundNumber + 1)
+                    + " has been generated and stored into " + f.getPath();
+        }
+
+        String strRemoteReport = this.sendByFTP(f);
+
+        String strReport = strLocalReport + "\n\n" + strRemoteReport;
+        if (strReport.length() == 0) {
+            strReport = "No file has been exported";
+        }
+        JOptionPane.showMessageDialog(this, strReport);
     }//GEN-LAST:event_btnExportGLActionPerformed
 
     private void btnExportTSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportTSActionPerformed
-        ExternalDocument.generateTeamsStandingsHTMLFile(tournament, this.processedRoundNumber);
+        File f = ExternalDocument.generateTeamsStandingsHTMLFile(tournament, this.processedRoundNumber);
+
+        String strLocalReport = "";
+        if (f != null) {
+            strLocalReport = "Team standings list of Round " + (this.processedRoundNumber + 1)
+                    + " has been generated and stored into " + f.getPath();
+        }
+
+        String strRemoteReport = this.sendByFTP(f);
+
+        String strReport = strLocalReport + "\n\n" + strRemoteReport;
+        if (strReport.length() == 0) {
+            strReport = "No file has been exported";
+        }
+        JOptionPane.showMessageDialog(this, strReport);
     }//GEN-LAST:event_btnExportTSActionPerformed
 
     private void btnExportMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportMLActionPerformed
-        ExternalDocument.generateMatchesListHTMLFile(tournament, this.processedRoundNumber);
+        File f = ExternalDocument.generateMatchesListHTMLFile(tournament, this.processedRoundNumber);
+
+        String strLocalReport = "";
+        if (f != null) {
+            strLocalReport = "Matches list of Round " + (this.processedRoundNumber + 1)
+                    + " has been generated and stored into " + f.getPath();
+        }
+
+        String strRemoteReport = this.sendByFTP(f);
+
+        String strReport = strLocalReport + "\n\n" + strRemoteReport;
+        if (strReport.length() == 0) {
+            strReport = "No file has been exported";
+        }
+        JOptionPane.showMessageDialog(this, strReport);
     }//GEN-LAST:event_btnExportMLActionPerformed
 
     private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHelpActionPerformed
         Gotha.displayGothaHelp("Print and Export Shop");
     }//GEN-LAST:event_btnHelpActionPerformed
-    
+
+    private void allCKBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allCKBActionPerformed
+        TournamentParameterSet tps;
+        DPParameterSet dpps;
+        try {
+            tps = tournament.getTournamentParameterSet();
+            dpps = tps.getDPParameterSet();
+        } catch (RemoteException ex) {
+            Logger.getLogger(JFrTournamentOptions.class.getName()).log(Level.SEVERE, null, ex);
+            return;
+        }
+        boolean oldValue;
+        boolean newValue;
+
+        boolean somethingHasChanged = false;
+
+        oldValue = dpps.isShowPlayerRank();
+        newValue = this.ckbShowPlayerRank.isSelected();
+        if (newValue != oldValue) {
+            dpps.setShowPlayerRank(newValue);
+            somethingHasChanged = true;
+        }
+        oldValue = dpps.isShowPlayerCountry();
+        newValue = this.ckbShowPlayerCountry.isSelected();
+        if (newValue != oldValue) {
+            dpps.setShowPlayerCountry(newValue);
+            somethingHasChanged = true;
+        }
+        oldValue = dpps.isShowPlayerClub();
+        newValue = this.ckbShowPlayerClub.isSelected();
+        if (newValue != oldValue) {
+            dpps.setShowPlayerClub(newValue);
+            somethingHasChanged = true;
+        }
+        oldValue = dpps.isShowByePlayer();
+        newValue = this.ckbShowByePlayer.isSelected();
+        if (newValue != oldValue) {
+            dpps.setShowByePlayer(newValue);
+            somethingHasChanged = true;
+        }
+        oldValue = dpps.isShowNotPairedPlayers();
+        newValue = this.ckbShowNotPairedPlayers.isSelected();
+        if (newValue != oldValue) {
+            dpps.setShowNotPairedPlayers(newValue);
+            somethingHasChanged = true;
+        }
+        oldValue = dpps.isShowNotParticipatingPlayers();
+        newValue = this.ckbShowNotParticipatingPlayers.isSelected();
+        if (newValue != oldValue) {
+            dpps.setShowNotParticipatingPlayers(newValue);
+            somethingHasChanged = true;
+        }
+        oldValue = dpps.isDisplayNumCol();
+        newValue = this.ckbDisplayNumCol.isSelected();
+        if (newValue != oldValue) {
+            dpps.setDisplayNumCol(newValue);
+            somethingHasChanged = true;
+        }
+        oldValue = dpps.isDisplayPlCol();
+        newValue = this.ckbDisplayPlCol.isSelected();
+        if (newValue != oldValue) {
+            dpps.setDisplayPlCol(newValue);
+            somethingHasChanged = true;
+        }
+        oldValue = dpps.isDisplayCoCol();
+        newValue = this.ckbDisplayCoCol.isSelected();
+        if (newValue != oldValue) {
+            dpps.setDisplayCoCol(newValue);
+            somethingHasChanged = true;
+        }
+        oldValue = dpps.isDisplayClCol();
+        newValue = this.ckbDisplayClCol.isSelected();
+        if (newValue != oldValue) {
+            dpps.setDisplayClCol(newValue);
+            somethingHasChanged = true;
+        }
+        oldValue = dpps.isDisplayIndGamesInMatches();
+        newValue = this.ckbDisplayIndGames.isSelected();
+        if (newValue != oldValue) {
+            dpps.setDisplayIndGamesInMatches(newValue);
+            somethingHasChanged = true;
+        }
+        oldValue = dpps.isExportToLocalFile();
+        newValue = this.ckbExportToLocalFile.isSelected();
+        if (newValue != oldValue) {
+            dpps.setExportToLocalFile(newValue);
+            somethingHasChanged = true;
+        }
+        oldValue = dpps.isExportToWebSite();
+        newValue = this.ckbExportToWebSite.isSelected();
+        if (newValue != oldValue) {
+            dpps.setExportToWebSite(newValue);
+            somethingHasChanged = true;
+        }
+
+        if (somethingHasChanged) {
+            try {
+                tournament.setTournamentParameterSet(tps);
+                this.tournamentChanged();
+            } catch (RemoteException ex) {
+                Logger.getLogger(JFrTournamentOptions.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_allCKBActionPerformed
+
+    private void allRDBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allRDBActionPerformed
+        TournamentParameterSet tps;
+        DPParameterSet dpps;
+        try {
+            tps = tournament.getTournamentParameterSet();
+            dpps = tps.getDPParameterSet();
+        } catch (RemoteException ex) {
+            Logger.getLogger(JFrTournamentOptions.class.getName()).log(Level.SEVERE, null, ex);
+            return;
+        }
+
+        boolean somethingHasChanged = false;
+        int newPlayerSortType = PlayerComparator.NAME_ORDER;
+        if (this.rdbSortByRank.isSelected()) {
+            newPlayerSortType = PlayerComparator.RANK_ORDER;
+        }
+        if (newPlayerSortType != dpps.getPlayerSortType()) {
+            dpps.setPlayerSortType(newPlayerSortType);
+            somethingHasChanged = true;
+        }
+
+
+        int newGameFormat = DPParameterSet.DP_GAME_FORMAT_FULL;
+        if (this.rdbGameFormatShort.isSelected()) {
+            newGameFormat = DPParameterSet.DP_GAME_FORMAT_SHORT;
+        }
+        if (newGameFormat != dpps.getGameFormat()) {
+            dpps.setGameFormat(newGameFormat);
+            somethingHasChanged = true;
+        }
+
+        boolean newUseSpecificSite = this.rdbSpecificSite.isSelected();
+        if (newUseSpecificSite != dpps.isUseSpecificSite()) {
+            dpps.setUseSpecificSite(newUseSpecificSite);
+            somethingHasChanged = true;
+        }
+
+        if (somethingHasChanged) {
+            try {
+                tournament.setTournamentParameterSet(tps);
+                this.tournamentChanged();
+            } catch (RemoteException ex) {
+                Logger.getLogger(JFrTournamentOptions.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_allRDBActionPerformed
+
+    private void btnDlgFTPSiteOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDlgFTPSiteOKActionPerformed
+
+        this.dlgFTPSite.dispose();
+    }//GEN-LAST:event_btnDlgFTPSiteOKActionPerformed
+
+    private void btnTestFTPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTestFTPActionPerformed
+        File f = new File(Gotha.exportHTMLDirectory, "testfile.html");
+        String strReport = this.sendByFTP(f);
+
+        JOptionPane.showMessageDialog(this, strReport);
+
+    }//GEN-LAST:event_btnTestFTPActionPerformed
+
+    private void btnOGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOGActionPerformed
+        String strURL = "http://opengotha.info";
+        URL url = null;
+        try {
+            url = new URL(strURL);
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(JFrPrExShop.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
+        if (desktop != null && desktop.isSupported(Desktop.Action.BROWSE)) {
+            try {
+                desktop.browse(url.toURI());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_btnOGActionPerformed
+
     private void demandedDisplayedRoundNumberHasChanged(int demandedRN) {
         int numberOfRounds = 0;
         try {
@@ -879,7 +1295,7 @@ public class JFrPrExShop extends javax.swing.JFrame {
         updateAllViews();
     }
 
-    private void tournamentChanged(){
+    private void tournamentChanged() {
         try {
             tournament.setLastTournamentModificationTime(tournament.getCurrentTournamentTime());
         } catch (RemoteException ex) {
@@ -888,10 +1304,11 @@ public class JFrPrExShop extends javax.swing.JFrame {
         updateAllViews();
     }
 
-    
-    private void updateAllViews(){      
+    private void updateAllViews() {
         try {
-            if (!tournament.isOpen()) dispose();
+            if (!tournament.isOpen()) {
+                dispose();
+            }
             this.lastComponentsUpdateTime = tournament.getCurrentTournamentTime();
             setTitle("Print & Export Shop. " + tournament.getFullName());
         } catch (RemoteException ex) {
@@ -914,14 +1331,14 @@ public class JFrPrExShop extends javax.swing.JFrame {
 
         updateComponents();
 
-            try {
+        try {
             this.lastComponentsUpdateTime = tournament.getCurrentTournamentTime();
         } catch (RemoteException ex) {
             Logger.getLogger(JFrPrExShop.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
-    
+
     private void updateComponents() {
         try {
             updatePnlPub();
@@ -930,10 +1347,10 @@ public class JFrPrExShop extends javax.swing.JFrame {
             Logger.getLogger(JFrPrExShop.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    private void updatePnlPub()throws RemoteException{
+
+    private void updatePnlPub() throws RemoteException {
         this.spnRoundNumber.setValue(this.processedRoundNumber + 1);
-        
+
         String strRound = " round " + (processedRoundNumber + 1);
         this.btnPrintGL.setText("Print games of" + strRound);
         this.btnPrintNPP.setText("Print not playing players of" + strRound);
@@ -944,22 +1361,31 @@ public class JFrPrExShop extends javax.swing.JFrame {
         this.btnExportML.setText("Export(html) matches list of" + strRound);
         this.btnPrintTS.setText("Print team standings after" + strRound);
         this.btnExportTS.setText("Export(html) team st. after" + strRound);
-        
+
         int nbTeams = tournament.teamsList().size();
         boolean bT = false;
-        if (nbTeams > 0) bT = true;
+        if (nbTeams > 0) {
+            bT = true;
+        }
         Component[] tabComp = this.pnlTeams.getComponents();
-        for(Component comp : tabComp){
+        for (Component comp : tabComp) {
             comp.setEnabled(bT);
         }
-    } 
-    
-    private void updatePnlPar()throws RemoteException{
+    }
+
+    private void updatePnlPar() throws RemoteException {
         DPParameterSet dpps = tournament.getTournamentParameterSet().getDPParameterSet();
-        if (dpps.getPlayerSortType() == PlayerComparator.NAME_ORDER) this.rdbSorBytName.setSelected(true);
-        else this.rdbSortByRank.setSelected(true);
-        if (dpps.getGameFormat() == DPParameterSet.DP_GAME_FORMAT_FULL) this.rdbGameFormatFull.setSelected(true);
-        else this.rdbGameFormatShort.setSelected(true);
+        GeneralParameterSet gps = tournament.getTournamentParameterSet().getGeneralParameterSet();
+        if (dpps.getPlayerSortType() == PlayerComparator.NAME_ORDER) {
+            this.rdbSorBytName.setSelected(true);
+        } else {
+            this.rdbSortByRank.setSelected(true);
+        }
+        if (dpps.getGameFormat() == DPParameterSet.DP_GAME_FORMAT_FULL) {
+            this.rdbGameFormatFull.setSelected(true);
+        } else {
+            this.rdbGameFormatShort.setSelected(true);
+        }
 
         this.ckbShowPlayerRank.setSelected(dpps.isShowPlayerRank());
         this.ckbShowPlayerCountry.setSelected(dpps.isShowPlayerCountry());
@@ -974,12 +1400,54 @@ public class JFrPrExShop extends javax.swing.JFrame {
         this.ckbShowNotParticipatingPlayers.setSelected(dpps.isShowNotParticipatingPlayers());
 
         this.ckbDisplayIndGames.setSelected(dpps.isDisplayIndGamesInMatches());
-        
+
+        this.ckbExportToLocalFile.setSelected(dpps.isExportToLocalFile());
+        if (dpps.isExportToLocalFile()) {
+            String strDir = "" + Gotha.exportHTMLDirectory;
+            this.lblLocalExport.setVisible(true);
+            this.lblLocalExport.setText("HTML local exports will be stored into " + strDir);
+        } else {
+            this.lblLocalExport.setVisible(false);
+        }
+
+        this.ckbExportToWebSite.setSelected(dpps.isExportToWebSite());
+        this.rdbSpecificSite.setSelected(dpps.isUseSpecificSite());
+        this.lblQR.setVisible(false);
+
+        boolean bExportWS = dpps.isExportToWebSite();
+        this.rdbOGSite.setEnabled(bExportWS);
+        this.btnTestFTP.setEnabled(bExportWS);
+        this.lblRemoteExport.setVisible(bExportWS);
+
+        if (bExportWS) {
+            //this.rdbSpecificSite.setEnabled(bExportWS);
+
+            this.rdbSpecificSite.setSelected(dpps.isUseSpecificSite());
+            String strRemote = "HTML remote exports will be uploaded to ";
+            String dirName = new SimpleDateFormat("yyyyMMdd").format(gps.getBeginDate()) + tournament.getShortName() + "/";
+
+
+            if (dpps.isUseSpecificSite()) {
+                strRemote += "the specified site /" + dirName;
+            } else {
+               String strURL = "opengotha.info/tournaments/" + dirName;
+                strRemote += strURL;
+                Image img = null;
+                try {
+                    img = QR.qrImage(strURL);
+                } catch (WriterException ex) {
+                    Logger.getLogger(JFrPrExShop.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                this.lblQR.setIcon(new ImageIcon(img));
+                this.lblQR.setVisible(true);
+            }
+            this.lblRemoteExport.setText(strRemote);
+        }
+
     }
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnClose;
+    private javax.swing.JButton btnDlgFTPSiteOK;
     private javax.swing.JButton btnExportGL;
     private javax.swing.JButton btnExportML;
     private javax.swing.JButton btnExportPL;
@@ -991,6 +1459,7 @@ public class JFrPrExShop extends javax.swing.JFrame {
     private javax.swing.JButton btnExportTL;
     private javax.swing.JButton btnExportTS;
     private javax.swing.JButton btnHelp;
+    private javax.swing.JButton btnOG;
     private javax.swing.JButton btnPrintGL;
     private javax.swing.JButton btnPrintML;
     private javax.swing.JButton btnPrintNPP;
@@ -999,38 +1468,57 @@ public class JFrPrExShop extends javax.swing.JFrame {
     private javax.swing.JButton btnPrintTL;
     private javax.swing.JButton btnPrintTP;
     private javax.swing.JButton btnPrintTS;
+    private javax.swing.JButton btnTestFTP;
     private javax.swing.JCheckBox ckbDisplayClCol;
     private javax.swing.JCheckBox ckbDisplayCoCol;
     private javax.swing.JCheckBox ckbDisplayIndGames;
     private javax.swing.JCheckBox ckbDisplayNumCol;
     private javax.swing.JCheckBox ckbDisplayPlCol;
+    private javax.swing.JCheckBox ckbExportToLocalFile;
+    private javax.swing.JCheckBox ckbExportToWebSite;
+    private javax.swing.JCheckBox ckbKeepIDs;
     private javax.swing.JCheckBox ckbShowByePlayer;
     private javax.swing.JCheckBox ckbShowNotPairedPlayers;
     private javax.swing.JCheckBox ckbShowNotParticipatingPlayers;
     private javax.swing.JCheckBox ckbShowPlayerClub;
     private javax.swing.JCheckBox ckbShowPlayerCountry;
     private javax.swing.JCheckBox ckbShowPlayerRank;
+    private javax.swing.JDialog dlgFTPSite;
     private javax.swing.ButtonGroup grpGameFormat;
+    private javax.swing.ButtonGroup grpRemote;
     private javax.swing.ButtonGroup grpSortType;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel lblLocalExport;
+    private javax.swing.JLabel lblQR;
+    private javax.swing.JLabel lblRemoteExport;
+    private javax.swing.JPanel pnlExport;
+    private javax.swing.JPanel pnlGL;
+    private javax.swing.JPanel pnlML;
+    private javax.swing.JPanel pnlNPP;
+    private javax.swing.JPanel pnlPL;
     private javax.swing.JPanel pnlPar;
     private javax.swing.JPanel pnlPub;
+    private javax.swing.JPanel pnlSt;
     private javax.swing.JPanel pnlTeams;
+    private javax.swing.JPasswordField pwfPassword;
     private javax.swing.JRadioButton rdbGameFormatFull;
     private javax.swing.JRadioButton rdbGameFormatShort;
+    private javax.swing.JRadioButton rdbOGSite;
     private javax.swing.JRadioButton rdbSorBytName;
     private javax.swing.JRadioButton rdbSortByRank;
+    private javax.swing.JRadioButton rdbSpecificSite;
     private javax.swing.JSpinner spnRoundNumber;
     private javax.swing.JTabbedPane tpnPrEx;
+    private javax.swing.JTextField txfHost;
+    private javax.swing.JTextField txfLogin;
     // End of variables declaration//GEN-END:variables
 }

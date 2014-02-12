@@ -113,6 +113,10 @@
 
 <!ATTLIST DPParameterSet displayIndGamesInMatches CDATA "true">
 
+<!ATTLIST DPParameterSet exportToLocalFile CDATA "true">
+<!ATTLIST DPParameterSet exportToWebSite CDATA "false">
+<!ATTLIST DPParameterSet useSpecificSite CDATA "false">
+
 <!ELEMENT PairingParameterSet (#PCDATA)>
 <!ATTLIST PairingParameterSet paiStandardNX1Factor                      CDATA "0.5">
 <!ATTLIST PairingParameterSet paiBaAvoidDuplGame                        CDATA "500000000000000">

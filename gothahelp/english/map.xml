@@ -31,7 +31,7 @@
 	<mapID target="Games Options" url="Games Options.html"/>
 	<mapID target="Preferences frame" url="Preferences frame.html"/>
 	<mapID target="Tools menu" url="Tools menu.html"/>
-        <mapID target="Discard rounds frame" url="Discard rounds frame.html"/>
+	<mapID target="Discard rounds frame" url="Discard rounds frame.html"/>
 	<mapID target="Players Manager frame" url="Players Manager frame.html"/>
 	<mapID target="Players Quick check frame" url="Players Quick check frame.html"/>
 	<mapID target="McMahon groups frame" url="McMahon groups frame.html"/>
@@ -44,4 +44,5 @@
 	<mapID target="Teams Pairing frame" url="Teams Pairing frame.html"/>
 	<mapID target="Update ratings frame" url="Update ratings frame.html"/>
 	<mapID target="Vbar-separated format" url="vbarseparatedformat.html"/>
+	<mapID target="Save facilities1" url="Save facilities.html"/>
 </map>

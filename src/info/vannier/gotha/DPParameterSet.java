@@ -28,6 +28,10 @@ public class DPParameterSet implements java.io.Serializable{
 
     private boolean displayIndGamesInMatches  = true;   // Display Individual Games (and not only Team matches)
     
+    private boolean exportToLocalFile = true;
+    private boolean exportToWebSite   = false;
+    private boolean useSpecificSite = false;
+
     public DPParameterSet() {             
     }
      
@@ -55,23 +59,27 @@ public class DPParameterSet implements java.io.Serializable{
     
     public void initForMM(){
         this.gameFormat = DPParameterSet.DP_GAME_FORMAT_FULL;
-        this.displayNumCol = true;
-        this.displayPlCol = true;
-        this.displayIndGamesInMatches = true;
+        commonInit();
     }
     
     public void initForSwiss(){
         this.gameFormat = DPParameterSet.DP_GAME_FORMAT_SHORT;
-        this.displayNumCol = true;
-        this.displayPlCol = true;
-        this.displayIndGamesInMatches = true;
+        commonInit();
     }
     
     public void initForSwissCat(){
         this.gameFormat = DPParameterSet.DP_GAME_FORMAT_FULL;
+        commonInit();
+    }
+    
+    public void commonInit(){
         this.displayNumCol = true;
         this.displayPlCol = true;
         this.displayIndGamesInMatches = true;
+        
+        this.exportToLocalFile = true;
+        this.exportToWebSite = false;
+        this.useSpecificSite = false;
     }
 
     /**
@@ -254,6 +262,48 @@ public class DPParameterSet implements java.io.Serializable{
      */
     public void setPlayerSortType(int playerSortType) {
         this.playerSortType = playerSortType;
+    }
+
+    /**
+     * @return the exportToLocalFile
+     */
+    public boolean isExportToLocalFile() {
+        return exportToLocalFile;
+    }
+
+    /**
+     * @param exportToLocalFile the exportToLocalFile to set
+     */
+    public void setExportToLocalFile(boolean exportToLocalFile) {
+        this.exportToLocalFile = exportToLocalFile;
+    }
+
+    /**
+     * @return the exportToWebSite
+     */
+    public boolean isExportToWebSite() {
+        return exportToWebSite;
+    }
+
+    /**
+     * @param exportToWebSite the exportToWebSite to set
+     */
+    public void setExportToWebSite(boolean exportToWebSite) {
+        this.exportToWebSite = exportToWebSite;
+    }
+
+    /**
+     * @return the useSpecificSite
+     */
+    public boolean isUseSpecificSite() {
+        return useSpecificSite;
+    }
+
+    /**
+     * @param useSpecificSite the useSpecificSite to set
+     */
+    public void setUseSpecificSite(boolean useSpecificSite) {
+        this.useSpecificSite = useSpecificSite;
     }
 
 }

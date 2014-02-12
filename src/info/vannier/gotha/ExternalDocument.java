@@ -924,6 +924,14 @@ public class ExternalDocument {
             
             String strDisplayIndGamesInMatches = extractNodeValue(nnmDPPS, "displayIndGamesInMatches", "true");
             dpps.setDisplayIndGamesInMatches(Boolean.valueOf(strDisplayIndGamesInMatches).booleanValue());
+            
+            String strExportToLocalFile   = extractNodeValue(nnmDPPS, "exportToLocalFile", "true");
+            dpps.setExportToLocalFile(Boolean.valueOf(strExportToLocalFile).booleanValue());
+            String strExportToWebSite     = extractNodeValue(nnmDPPS, "exportToWebSite", "false");
+            dpps.setExportToWebSite(Boolean.valueOf(strExportToWebSite).booleanValue());
+            String strUseSpecificSite = extractNodeValue(nnmDPPS, "useSpecificSite", "false");
+            dpps.setUseSpecificSite(Boolean.valueOf(strUseSpecificSite).booleanValue());
+
         }
         tps.setDPParameterSet(dpps);
 
@@ -1918,7 +1926,7 @@ public class ExternalDocument {
         }
     }
     
-    public static void generatePlayersListHTMLFile(TournamentInterface tournament){
+    public static File generatePlayersListHTMLFile(TournamentInterface tournament){
         String shortName = "TournamentShortName";
         try {
             shortName = tournament.getShortName();
@@ -1926,17 +1934,18 @@ public class ExternalDocument {
             Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
         }
         String defaultFileName = shortName + "_PlayersList";
-        File f = chooseAFileForSaving(Gotha.exportHTMLDirectory, defaultFileName, "html");
-        
+
+        File f = new File(Gotha.exportHTMLDirectory, defaultFileName + ".html");
         System.out.println("" + f.toString());
+//        Gotha.exportHTMLDirectory = f.getParentFile();
         // Manage css       
-        Gotha.exportHTMLDirectory = f.getParentFile();
         createCSSFile(f);
         
         generatePlayersListHTMLFileContents(tournament, f);
+        return f;
     }    
             
-    public static void generateTeamsListHTMLFile(TournamentInterface tournament){
+    public static File generateTeamsListHTMLFile(TournamentInterface tournament){
         String shortName = "TournamentShortName";
         try {
             shortName = tournament.getShortName();
@@ -1944,7 +1953,7 @@ public class ExternalDocument {
             Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
         }
         String defaultFileName = shortName + "_TeamsList";
-        File f = chooseAFileForSaving(Gotha.exportHTMLDirectory, defaultFileName, "html");
+        File f = new File(Gotha.exportHTMLDirectory, defaultFileName + ".html");
         
         System.out.println("" + f.toString());
         // Manage css       
@@ -1952,9 +1961,10 @@ public class ExternalDocument {
         createCSSFile(f);
         
         generateTeamsListHTMLFileContents(tournament, f);
+        return f;
     } 
     
-    public static void generateGamesListHTMLFile(TournamentInterface tournament, int round){
+    public static File generateGamesListHTMLFile(TournamentInterface tournament, int round){
         String shortName = "TournamentShortName";
         try {
             shortName = tournament.getShortName();
@@ -1962,19 +1972,20 @@ public class ExternalDocument {
             Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
         }
         String defaultFileName = shortName + "_GamesListR" + (round + 1);
-        File f = chooseAFileForSaving(Gotha.exportHTMLDirectory, defaultFileName, "html");
+
+        File f = new File(Gotha.exportHTMLDirectory, defaultFileName + ".html");
         
         System.out.println("" + f.toString());
         // Manage css       
-        Gotha.exportHTMLDirectory = f.getParentFile();
+//        Gotha.exportHTMLDirectory = f.getParentFile();
         createCSSFile(f);
         
         generateGamesListHTMLFileContents(tournament, round, f);
+        return f;
     }    
 
     
-        public static void generateStandingsHTMLFile(TournamentInterface tournament, int round){
-        // Choose a File
+        public static File generateStandingsHTMLFile(TournamentInterface tournament, int round){
         String shortName = "TournamentShortName";
         try {
             shortName = tournament.getShortName();
@@ -1982,16 +1993,17 @@ public class ExternalDocument {
             Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
         }
         String defaultFileName = shortName + "_StandingsR" + (round + 1);
-        File f = chooseAFileForSaving(Gotha.exportHTMLDirectory, defaultFileName, "html");
-        
+        File f = new File(Gotha.exportHTMLDirectory, defaultFileName + ".html");
+         
         // Manage css       
         Gotha.exportHTMLDirectory = f.getParentFile();
         createCSSFile(f);
         
         generateStandingsHTMLFileContents(tournament, round, f);
+        return f;
     }        
     
-    public static void generateMatchesListHTMLFile(TournamentInterface tournament, int round){
+    public static File generateMatchesListHTMLFile(TournamentInterface tournament, int round){
         // Choose a File
         String shortName = "TournamentShortName";
         try {
@@ -2000,7 +2012,7 @@ public class ExternalDocument {
             Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
         }
         String defaultFileName = shortName + "_MatchesListR" + (round + 1);
-        File f = chooseAFileForSaving(Gotha.exportHTMLDirectory, defaultFileName, "html");
+        File f = new File(Gotha.exportHTMLDirectory, defaultFileName + ".html");
         
         System.out.println("" + f.toString());
         // Manage css       
@@ -2008,10 +2020,10 @@ public class ExternalDocument {
         createCSSFile(f);
         
         generateMatchesListHTMLFileContents(tournament, round, f);
+        return f;
     }
         
-    public static void generateTeamsStandingsHTMLFile(TournamentInterface tournament, int round){
-        // Choose a File
+    public static File generateTeamsStandingsHTMLFile(TournamentInterface tournament, int round){
         String shortName = "TournamentShortName";
         try {
             shortName = tournament.getShortName();
@@ -2019,7 +2031,7 @@ public class ExternalDocument {
             Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
         }
         String defaultFileName = shortName + "_TeamsStandingsR" + (round + 1);
-        File f = chooseAFileForSaving(Gotha.exportHTMLDirectory, defaultFileName, "html");
+        File f = new File(Gotha.exportHTMLDirectory, defaultFileName + ".html");
         
         System.out.println("" + f.toString());
         // Manage css       
@@ -2027,23 +2039,8 @@ public class ExternalDocument {
         createCSSFile(f);
         
         generateTeamsStandingsHTMLFileContents(tournament, round, f);
-    }
-    
-    private static File chooseAFileForSaving(File path, String fn, String extension) {
-        JFileChooser fileChoice = new JFileChooser(path);
-        fileChoice.setFileSelectionMode(JFileChooser.FILES_ONLY);
-        fileChoice.setSelectedFile(new File(path, fn + "." + extension));
-        fileChoice.setFileSelectionMode(JFileChooser.FILES_ONLY);
-        fileChoice.setDialogType(JFileChooser.SAVE_DIALOG);
-
-        MyFileFilter mff = new MyFileFilter(new String[]{extension}, "*." + extension);
-        fileChoice.addChoosableFileFilter(mff);
-        int result = fileChoice.showSaveDialog(null);
-        if (result == JFileChooser.CANCEL_OPTION) {
-            return null;
-        } else {
-            return fileChoice.getSelectedFile();
-        }
+        
+        return f;
     }
     
     private static void createCSSFile(File f){
@@ -3425,6 +3422,10 @@ public class ExternalDocument {
         emDPParameterSet.setAttribute("displayClCol", Boolean.valueOf(dpps.isDisplayClCol()).toString());
         emDPParameterSet.setAttribute("displayIndGamesInMatches", Boolean.valueOf(dpps.isDisplayIndGamesInMatches()).toString());
 
+        emDPParameterSet.setAttribute("exportToLocalFile", Boolean.valueOf(dpps.isExportToLocalFile()).toString());
+        emDPParameterSet.setAttribute("exportToWebSite", Boolean.valueOf(dpps.isExportToWebSite()).toString());
+        emDPParameterSet.setAttribute("useSpecificSite", Boolean.valueOf(dpps.isUseSpecificSite()).toString());
+        
         emTournamentParameterSet.appendChild(emDPParameterSet);
 
         return emTournamentParameterSet;
