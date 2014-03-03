@@ -1,6 +1,6 @@
-OpenGothaV3.36.03
+OpenGothaV3.36.04
 *****************
-18/02/2014
+03/03/2014
 New     FTP Upload of HTML files
 New     Professional ranks are managed
 New     A "HA[hx]" field included into .h9 export files

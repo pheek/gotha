@@ -8,7 +8,6 @@
         <tocitem text="Create a new tournament" target="Create a new tournament" />
         <tocitem text="Save facilities" target="Save facilities" />
         <tocitem text="Import facilities" target="Import facilities" />
-        <tocitem text="Print and Export Shop" target="Print and Export Shop" />
     </tocitem>
     <tocitem text="Players menu" target="Players menu">
         <tocitem text="Players Manager frame" target="Players Manager frame" />
@@ -23,6 +22,13 @@
         <tocitem text="Games Round-robin frame" target="Games Round-robin frame" />
         <tocitem text="Teams Pairing frame" target="Teams Pairing frame" />
     </tocitem>
+    
+    <tocitem text="Publish menu" target="Publish menu">    
+            <tocitem text="Contents" target="Contents tab" />
+            <tocitem text="Parameters" target="Parameters tab" />
+            <tocitem text="Publish" target="Publish tab" />
+    </tocitem>
+
     <tocitem text="Options menu" target="Options menu">
         <tocitem text="Tournament Options" target="Tournament Options">
             <tocitem text="General parameters" target="General parameters" />

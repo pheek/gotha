@@ -46,7 +46,7 @@
 <!ATTLIST Board boardNumber CDATA #REQUIRED>
 <!ATTLIST Board player CDATA #REQUIRED>
 
-<!ELEMENT TournamentParameterSet (GeneralParameterSet?, HandicapParameterSet?, PlacementParameterSet?, PairingParameterSet?, DPParameterSet?)>
+<!ELEMENT TournamentParameterSet (GeneralParameterSet?, HandicapParameterSet?, PlacementParameterSet?, PairingParameterSet?, DPParameterSet?, PublishParameterSet?)>
 
 <!ELEMENT GeneralParameterSet (Categories?)>
 <!ATTLIST GeneralParameterSet shortName CDATA "defaultshortname">
@@ -106,6 +106,8 @@
 <!ATTLIST DPParameterSet showByePlayer CDATA "true">
 <!ATTLIST DPParameterSet showNotPairedPlayers CDATA "true">
 <!ATTLIST DPParameterSet showNotParticipatingPlayers CDATA "false">
+<!ATTLIST DPParameterSet showNotFinallyRegisteredPlayers CDATA "false">
+
 <!ATTLIST DPParameterSet displayNumCol CDATA "true">
 <!ATTLIST DPParameterSet displayPlCol CDATA "true">
 <!ATTLIST DPParameterSet displayCoCol CDATA "true">
@@ -113,9 +115,11 @@
 
 <!ATTLIST DPParameterSet displayIndGamesInMatches CDATA "true">
 
-<!ATTLIST DPParameterSet exportToLocalFile CDATA "true">
-<!ATTLIST DPParameterSet exportToWebSite CDATA "false">
-<!ATTLIST DPParameterSet useSpecificSite CDATA "false">
+<!ELEMENT PublishParameterSet (#PCDATA)>
+<!ATTLIST PublishParameterSet print CDATA "true">
+<!ATTLIST PublishParameterSet exportToLocalFile CDATA "true">
+<!ATTLIST PublishParameterSet exportToOGSite CDATA "false">
+<!ATTLIST PublishParameterSet exportToUDSite CDATA "false">
 
 <!ELEMENT PairingParameterSet (#PCDATA)>
 <!ATTLIST PairingParameterSet paiStandardNX1Factor                      CDATA "0.5">

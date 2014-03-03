@@ -2875,7 +2875,8 @@
 </PlacementCriteria>
 </PlacementParameterSet>
 <PairingParameterSet paiBaAvoidDuplGame="500000000000000" paiBaBalanceWB="1000000" paiBaDeterministic="true" paiBaRandom="0" paiMaAdditionalPlacementCritSystem1="Rating" paiMaAdditionalPlacementCritSystem2="NULL" paiMaAvoidMixingCategories="0" paiMaCompensateDUDD="true" paiMaDUDDLowerMode="TOP" paiMaDUDDUpperMode="TOP" paiMaDUDDWeight="100000000" paiMaLastRoundForSeedSystem1="2" paiMaMaximizeSeeding="5000000" paiMaMinimizeScoreDifference="100000000000" paiMaSeedSystem1="SPLITANDSLIP" paiSeAvoidSameGeo="100000000000" paiSeBarThresholdActive="false" paiSeDefSecCrit="100000000000" paiSeMinimizeHandicap="0" paiSeNbWinsThresholdActive="false" paiSePreferMMSDiffRatherThanSameClub="3" paiSePreferMMSDiffRatherThanSameCountry="2" paiSeRankThreshold="4D" paiStandardNX1Factor="0.5"/>
-<DPParameterSet displayClCol="false" displayCoCol="true" displayIndGamesInMatches="true" displayNumCol="true" displayPlCol="true" gameFormat="full" playerSortType="name" showByePlayer="true" showNotPairedPlayers="true" showNotParticipatingPlayers="true" showPlayerClub="true" showPlayerCountry="false" showPlayerRank="true"/>
+<DPParameterSet displayClCol="true" displayCoCol="true" displayIndGamesInMatches="true" displayNumCol="true" displayPlCol="true" gameFormat="full" playerSortType="name" showByePlayer="true" showNotFinallyRegisteredPlayers="true" showNotPairedPlayers="true" showNotParticipatingPlayers="false" showPlayerClub="true" showPlayerCountry="false" showPlayerRank="true"/>
+<PublishParameterSet exportToLocalFile="true" exportToOGSite="false" exportToUDSite="false" print="true"/>
 </TournamentParameterSet>
 <TeamTournamentParameterSet>
 <TeamGeneralParameterSet teamSize="4"/>
