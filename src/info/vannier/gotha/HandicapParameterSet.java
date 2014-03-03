@@ -24,7 +24,7 @@ public class HandicapParameterSet implements java.io.Serializable{
     
     /**
      * Handicap will be decreased by hdCorrection
-     * Possible values are 0, 1, 2 or 3
+     * Possible values are 0, 1, 2 or 3. Or -1
      */
     private int hdCorrection = 1;
     

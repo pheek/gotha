@@ -10,8 +10,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.rmi.RemoteException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -184,14 +182,14 @@ public class JFrGotha extends javax.swing.JFrame {
         pnlWelcome = new javax.swing.JPanel();
         lblTournamentPicture = new javax.swing.JLabel();
         lblFlowChart = new javax.swing.JLabel();
-        lblQR1 = new javax.swing.JLabel();
+        pnlQRW = new javax.swing.JPanel();
         pnlControlPanel = new javax.swing.JPanel();
         pnlIntControlPanel = new javax.swing.JPanel();
         scpControlPanel = new javax.swing.JScrollPane();
         tblControlPanel = new javax.swing.JTable();
         lblWarningPRE = new javax.swing.JLabel();
-        lblQR = new javax.swing.JLabel();
-        btnOG = new javax.swing.JButton();
+        pnlQRCP = new javax.swing.JPanel();
+        lblOGCP = new javax.swing.JLabel();
         pnlStandings = new javax.swing.JPanel();
         pnlIntStandings = new javax.swing.JPanel();
         lblStandingsAfter = new javax.swing.JLabel();
@@ -257,7 +255,6 @@ public class JFrGotha extends javax.swing.JFrame {
         mniImportWallist = new javax.swing.JMenuItem();
         mniImportVBS = new javax.swing.JMenuItem();
         mniImportXML = new javax.swing.JMenuItem();
-        mniPrExShop = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JSeparator();
         mniExit = new javax.swing.JMenuItem();
         jSeparator4 = new javax.swing.JSeparator();
@@ -275,6 +272,8 @@ public class JFrGotha extends javax.swing.JFrame {
         mniRR = new javax.swing.JMenuItem();
         jSeparator6 = new javax.swing.JPopupMenu.Separator();
         mniTeamsPairing = new javax.swing.JMenuItem();
+        mnuPublish = new javax.swing.JMenu();
+        mniPublish = new javax.swing.JMenuItem();
         mnuOptions = new javax.swing.JMenu();
         mniTournamentOptions = new javax.swing.JMenuItem();
         mniGamesOptions = new javax.swing.JMenuItem();
@@ -505,8 +504,11 @@ public class JFrGotha extends javax.swing.JFrame {
         lblFlowChart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/info/vannier/gotha/flowchart.jpg"))); // NOI18N
         pnlWelcome.add(lblFlowChart);
         lblFlowChart.setBounds(20, 320, 760, 190);
-        pnlWelcome.add(lblQR1);
-        lblQR1.setBounds(690, 220, 90, 90);
+
+        pnlQRW.setPreferredSize(new java.awt.Dimension(90, 90));
+        pnlQRW.setLayout(null);
+        pnlWelcome.add(pnlQRW);
+        pnlQRW.setBounds(680, 210, 100, 100);
 
         tpnGotha.addTab("Welcome", pnlWelcome);
 
@@ -552,19 +554,16 @@ public class JFrGotha extends javax.swing.JFrame {
         pnlIntControlPanel.add(lblWarningPRE);
         lblWarningPRE.setBounds(10, 250, 510, 20);
 
-        lblQR.setText("QR Code");
-        pnlIntControlPanel.add(lblQR);
-        lblQR.setBounds(310, 270, 90, 90);
+        pnlQRCP.setLayout(null);
+        pnlIntControlPanel.add(pnlQRCP);
+        pnlQRCP.setBounds(650, 150, 100, 100);
 
-        btnOG.setForeground(new java.awt.Color(0, 0, 192));
-        btnOG.setText("http://opengotha.org/tournaments");
-        btnOG.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOGActionPerformed(evt);
-            }
-        });
-        pnlIntControlPanel.add(btnOG);
-        btnOG.setBounds(270, 380, 280, 23);
+        lblOGCP.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
+        lblOGCP.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblOGCP.setText("http://opengotha.info/tournaments/...");
+        lblOGCP.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlIntControlPanel.add(lblOGCP);
+        lblOGCP.setBounds(190, 400, 360, 20);
 
         pnlControlPanel.add(pnlIntControlPanel);
         pnlIntControlPanel.setBounds(0, 0, 790, 470);
@@ -945,7 +944,7 @@ public class JFrGotha extends javax.swing.JFrame {
         tpnGotha.addTab("Teams Standings", pnlTeamsStandings);
 
         getContentPane().add(tpnGotha);
-        tpnGotha.setBounds(-10, 10, 970, 550);
+        tpnGotha.setBounds(10, 10, 970, 550);
 
         mnuMain.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
@@ -1064,15 +1063,6 @@ public class JFrGotha extends javax.swing.JFrame {
         mnuImport.add(mniImportXML);
 
         mnuTournament.add(mnuImport);
-
-        mniPrExShop.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        mniPrExShop.setText("Print & Export Shop");
-        mniPrExShop.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mniPrExShopActionPerformed(evt);
-            }
-        });
-        mnuTournament.add(mniPrExShop);
         mnuTournament.add(jSeparator2);
 
         mniExit.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
@@ -1192,6 +1182,20 @@ public class JFrGotha extends javax.swing.JFrame {
         mnuGames.add(mniTeamsPairing);
 
         mnuMain.add(mnuGames);
+
+        mnuPublish.setText("Publish");
+        mnuPublish.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+
+        mniPublish.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        mniPublish.setText("Publish ...");
+        mniPublish.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniPublishActionPerformed(evt);
+            }
+        });
+        mnuPublish.add(mniPublish);
+
+        mnuMain.add(mnuPublish);
 
         mnuOptions.setText("Options");
         mnuOptions.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
@@ -1599,19 +1603,22 @@ public class JFrGotha extends javax.swing.JFrame {
         int wFC = lblFlowChart.getWidth();
         int yFlowCart = lblTournamentPicture.getY() + lblTournamentPicture.getHeight() + 10;
         lblFlowChart.setLocation((w - wFC) / 2, yFlowCart);
-        int wQR1 = lblQR1.getWidth();
-        int hQR1 = lblQR1.getHeight();
-        int xQR1 = lblFlowChart.getX() + lblFlowChart.getWidth() - wQR1;
-        int yQR1 = lblFlowChart.getY() - hQR1;
-        lblQR1.setLocation(xQR1, yQR1);
+        
+        int wPNLQRW = this.pnlQRW.getWidth();
+        int hPNLQRW = this.pnlQRW.getHeight();
+        int xPNLQRW = lblFlowChart.getX() + lblFlowChart.getWidth() - wPNLQRW;
+        int yPNLQRW = lblFlowChart.getY() - hPNLQRW;
 
+        this.pnlQRW.setLocation(xPNLQRW, yPNLQRW);
+        
         this.pnlIntControlPanel.setBounds(0, 0, w - 10, h - 30);
         int wCP = scpControlPanel.getWidth();
         this.scpControlPanel.setLocation((w - wCP) / 2, 100);
-        int wQR = this.lblQR.getWidth();
-        this.lblQR.setLocation((w - wQR) / 2, 300);
-        int wOG = this.btnOG.getWidth();
-        this.btnOG.setLocation((w - wOG) / 2, 395);
+
+        int wQR = this.pnlQRCP.getWidth();
+        this.pnlQRCP.setLocation((w - wQR) / 2, 300);
+        int wOG = this.lblOGCP.getWidth();
+        this.lblOGCP.setLocation((w - wOG) / 2, 395);
         
         this.pnlIntTeamsPanel.setBounds(0, 0, w - 10, h - 30);
         int wTeamsP = scpTeamsPanel.getWidth();
@@ -2252,19 +2259,15 @@ public class JFrGotha extends javax.swing.JFrame {
         }
         return alSP;
     }
-    private void updateWelcomePanel() throws RemoteException {
-        Image img = null;
-            try {
-                String strURL = "opengotha.info/tournaments/";
-                img = QR.qrImage(strURL);
-            } catch (WriterException ex) {
-                Logger.getLogger(JFrPrExShop.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            this.lblQR1.setIcon(new ImageIcon(img));
-            this.lblQR1.setVisible(true);
-
+    
+    private void updateWelcomePanel() throws RemoteException {        
+        try {
+            QR.createQRJButton("http://opengotha.info/", this.pnlQRW);          
+        } catch (WriterException ex) {
+            Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-
+ 
     private void updateControlPanel() throws RemoteException {
         if (tournament == null) {
             this.pnlIntControlPanel.setVisible(false);
@@ -2352,28 +2355,27 @@ public class JFrGotha extends javax.swing.JFrame {
         }
         
         // Aceess to opengotha.info
-        DPParameterSet dpps = tps.getDPParameterSet();
+        PublishParameterSet pubPS = tps.getPublishParameterSet();
         GeneralParameterSet gps = tps.getGeneralParameterSet();
-        boolean bExportWS = dpps.isExportToWebSite();
-        boolean bUseSpecificSite = dpps.isUseSpecificSite();
-        if (bExportWS && !bUseSpecificSite) {
+        boolean bExportOG = pubPS.isExportToOGSite();
+        if (bExportOG) {
             String dirName = new SimpleDateFormat("yyyyMMdd").format(gps.getBeginDate()) + tournament.getShortName() + "/";
-            String strURL = "opengotha.info/tournaments/" + dirName;
-            Image img = null;
+            String strURL = "http://opengotha.info/tournaments/" + dirName;
             try {
-                img = QR.qrImage(strURL);
+                QR.createQRJButton(strURL, this.pnlQRCP);
             } catch (WriterException ex) {
                 Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
             }
             
-            this.lblQR.setIcon(new ImageIcon(img));
-            this.lblQR.setVisible(true);
-            this.btnOG.setVisible(true);
+            this.pnlQRCP.setVisible(true);
+            
+            this.lblOGCP.setText(strURL);
+            this.lblOGCP.setVisible(true);
             
         }
         else{
-            this.lblQR.setVisible(false);
-            this.btnOG.setVisible(false);
+            this.pnlQRCP.setVisible(false);
+            this.lblOGCP.setVisible(false);
         }
     }
 
@@ -3048,20 +3050,6 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
 
     }//GEN-LAST:event_mniDiscardRoundsActionPerformed
 
-    private void mniPrExShopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniPrExShopActionPerformed
-        if (tournament == null) {
-            JOptionPane.showMessageDialog(this, "No currently open tournament", "Message", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        try {
-            JFrame jfr = new JFrPrExShop(tournament);
-            jfr.setVisible(true);
-        } catch (RemoteException ex) {
-            Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }//GEN-LAST:event_mniPrExShopActionPerformed
-
     private void mniSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniSaveActionPerformed
         boolean bHBSO = false;
         try {
@@ -3105,23 +3093,18 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
      
     }//GEN-LAST:event_mniSaveACopyActionPerformed
 
-    private void btnOGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOGActionPerformed
-        String strURL = "http://opengotha.info";
-        URL url = null;
+    private void mniPublishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniPublishActionPerformed
+        if (tournament == null) {
+            JOptionPane.showMessageDialog(this, "No currently open tournament", "Message", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         try {
-            url = new URL(strURL);
-        } catch (MalformedURLException ex) {
-            Logger.getLogger(JFrPrExShop.class.getName()).log(Level.SEVERE, null, ex);
+            JFrame jfr = new JFrPublish(tournament);
+            jfr.setVisible(true);
+        } catch (RemoteException ex) {
+            Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
         }
-        Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
-        if (desktop != null && desktop.isSupported(Desktop.Action.BROWSE)) {
-            try {
-                desktop.browse(url.toURI());
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }//GEN-LAST:event_btnOGActionPerformed
+    }//GEN-LAST:event_mniPublishActionPerformed
 
 
     private File chooseAFile(File path, String extension) {
@@ -3412,7 +3395,6 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     private javax.swing.JButton btnDlgNewCancel;
     private javax.swing.JButton btnDlgNewOK;
     private javax.swing.JButton btnHelp;
-    private javax.swing.JButton btnOG;
     private javax.swing.JButton btnPrintStandings;
     private javax.swing.JButton btnPrintTeamsStandings;
     private javax.swing.JButton btnSearch;
@@ -3463,8 +3445,7 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     private javax.swing.JPopupMenu.Separator jSeparator7;
     private javax.swing.JPopupMenu.Separator jSeparator8;
     private javax.swing.JLabel lblFlowChart;
-    private javax.swing.JLabel lblQR;
-    private javax.swing.JLabel lblQR1;
+    private javax.swing.JLabel lblOGCP;
     private javax.swing.JLabel lblRecommended;
     private javax.swing.JLabel lblStandingsAfter;
     private javax.swing.JLabel lblTeamUpdateTime;
@@ -3492,8 +3473,8 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     private javax.swing.JMenuItem mniPair;
     private javax.swing.JMenuItem mniPlayersManager;
     private javax.swing.JMenuItem mniPlayersQuickCheck;
-    private javax.swing.JMenuItem mniPrExShop;
     private javax.swing.JMenuItem mniPreferences;
+    private javax.swing.JMenuItem mniPublish;
     private javax.swing.JMenuItem mniRMI;
     private javax.swing.JMenuItem mniRR;
     private javax.swing.JMenuItem mniResults;
@@ -3511,6 +3492,7 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     private javax.swing.JMenu mnuOpenRecent;
     private javax.swing.JMenu mnuOptions;
     private javax.swing.JMenu mnuPlayers;
+    private javax.swing.JMenu mnuPublish;
     private javax.swing.JMenu mnuTools;
     private javax.swing.JMenu mnuTournament;
     private javax.swing.JPanel pnlControlPanel;
@@ -3521,6 +3503,8 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     private javax.swing.JPanel pnlIntTeamsStandings;
     private javax.swing.JPanel pnlObjectsToImport;
     private javax.swing.JPanel pnlPS;
+    private javax.swing.JPanel pnlQRCP;
+    private javax.swing.JPanel pnlQRW;
     private javax.swing.JPanel pnlStandings;
     private javax.swing.JPanel pnlSystem;
     private javax.swing.JPanel pnlTeamPS;

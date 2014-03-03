@@ -175,10 +175,10 @@ public class ExternalDocument {
                         "", // FFG Licence Status
                         "", // AGA Id
                         "", // AGA Expiration Date
-                        Player.convertKDToInt(strRank),
-                        Player.convertKDToInt(strRank) * 100,
+                        Player.convertKDPToInt(strRank),
+                        Player.convertKDPToInt(strRank) * 100,
                         "INI",
-                        RatedPlayer.GRADE_NOT_RELEVANT,
+                        "",
                         0,
                         "FIN");
                 boolean[] bPart = new boolean[Gotha.MAX_NUMBER_OF_ROUNDS];
@@ -259,7 +259,7 @@ public class ExternalDocument {
                 strCo = "";
             }
 
-            int rk = Player.convertKDToInt(strRk);
+            int rk = Player.convertKDPToInt(strRk);
 
             int rt = 0;
             String strRatingOrigin = "MAN";
@@ -292,7 +292,7 @@ public class ExternalDocument {
                         rk,
                         rt,
                         strRatingOrigin,
-                        RatedPlayer.GRADE_NOT_RELEVANT,
+                        "",
                         0,
                         strRg);
                 boolean[] bPart = new boolean[Gotha.MAX_NUMBER_OF_ROUNDS];
@@ -562,7 +562,7 @@ public class ExternalDocument {
             String agaId = extractNodeValue(nnm, "agaId", "");
             String agaExpirationDate = extractNodeValue(nnm, "agaExpirationDate", "");
             String strRank = extractNodeValue(nnm, "rank", "30K");
-            int rank = Player.convertKDToInt(strRank);
+            int rank = Player.convertKDPToInt(strRank);
             String strRating = extractNodeValue(nnm, "rating", "-900");
             int rating = new Integer(strRating).intValue();
             if (importedDataVersion < 201L) {
@@ -577,8 +577,6 @@ public class ExternalDocument {
 
             String ratingOrigin = extractNodeValue(nnm, "ratingOrigin", "");
             String strGrade = extractNodeValue(nnm, "grade", "");
-            int grade = Player.convertKDToInt(strGrade);
-            if (grade <= -99) grade = RatedPlayer.GRADE_NOT_RELEVANT;
             String strSmmsCorrection = extractNodeValue(nnm, "smmsCorrection", "0");
             int smmsCorrection = new Integer(strSmmsCorrection).intValue();
             String strDefaultParticipating = "";
@@ -603,7 +601,7 @@ public class ExternalDocument {
             Player p = null;
             try {
                 p = new Player(name, firstName, country, club, egfPin, ffgLicence, ffgLicenceStatus,
-                        agaId, agaExpirationDate, rank, rating, ratingOrigin, grade, smmsCorrection, registeringStatus);
+                        agaId, agaExpirationDate, rank, rating, ratingOrigin, strGrade, smmsCorrection, registeringStatus);
             } catch (PlayerException ex) {
                 Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -707,16 +705,16 @@ public class ExternalDocument {
             String strNumber = extractNodeValue(nnm, "number", "1");
             String strLowerLimit = extractNodeValue(nnm, "lowerLimit", "30K");
             int numCat = new Integer(strNumber).intValue() - 1;
-            lowerLimits[numCat] = Player.convertKDToInt(strLowerLimit);
+            lowerLimits[numCat] = Player.convertKDPToInt(strLowerLimit);
         }
         gps.setLowerCategoryLimits(lowerLimits);
 
         String strGenMMFloor = extractNodeValue(nnmGPS, "genMMFloor", "20K");
-        gps.setGenMMFloor(Player.convertKDToInt(strGenMMFloor));
+        gps.setGenMMFloor(Player.convertKDPToInt(strGenMMFloor));
         String strGenMMBar = extractNodeValue(nnmGPS, "genMMBar", "4D");
-        gps.setGenMMBar(Player.convertKDToInt(strGenMMBar));
+        gps.setGenMMBar(Player.convertKDPToInt(strGenMMBar));
         String strGenMMZero = extractNodeValue(nnmGPS, "genMMZero", "30K");
-        gps.setGenMMZero(Player.convertKDToInt(strGenMMZero));
+        gps.setGenMMZero(Player.convertKDPToInt(strGenMMZero));
 
         String strGenNBW2ValueAbsent = extractNodeValue(nnmGPS, "genNBW2ValueAbsent", "0");
         gps.setGenNBW2ValueAbsent(new Integer(strGenNBW2ValueAbsent).intValue());
@@ -744,7 +742,7 @@ public class ExternalDocument {
         String strHdBasedOnMMS = extractNodeValue(nnmHPS, "hdBasedOnMMS", "true");
         hps.setHdBasedOnMMS(Boolean.valueOf(strHdBasedOnMMS).booleanValue());
         String strHdNoHdRankThreshold = extractNodeValue(nnmHPS, "hdNoHdRankThreshold", "1D");
-        hps.setHdNoHdRankThreshold(Player.convertKDToInt(strHdNoHdRankThreshold));
+        hps.setHdNoHdRankThreshold(Player.convertKDPToInt(strHdNoHdRankThreshold));
         String strHdCorrection = extractNodeValue(nnmHPS, "hdCorrection", "1");
         hps.setHdCorrection(new Integer(strHdCorrection).intValue());
         String strHdCeiling = extractNodeValue(nnmHPS, "hdCeiling", "9");
@@ -871,7 +869,7 @@ public class ExternalDocument {
         }
         paiPS.setPaiMaAdditionalPlacementCritSystem2(aCrit2);
 
-        paiPS.setPaiSeRankThreshold(Player.convertKDToInt(extractNodeValue(nnmPaiPS, "paiSeRankThreshold", "4D")));
+        paiPS.setPaiSeRankThreshold(Player.convertKDPToInt(extractNodeValue(nnmPaiPS, "paiSeRankThreshold", "4D")));
         paiPS.setPaiSeNbWinsThresholdActive(Boolean.valueOf(extractNodeValue(nnmPaiPS, "paiSeNbWinsThresholdActive", "true")).booleanValue());
         paiPS.setPaiSeBarThresholdActive(Boolean.valueOf(extractNodeValue(nnmPaiPS, "paiSeBarThresholdActive", "true")).booleanValue());
         paiPS.setPaiSeDefSecCrit(new Long(extractNodeValue(nnmPaiPS, "paiSeDefSecCrit", "100000000000")).longValue());
@@ -912,6 +910,8 @@ public class ExternalDocument {
             dpps.setShowNotPairedPlayers(Boolean.valueOf(strShowNotPairedPlayers).booleanValue());
             String strShowNotParticipatingPlayers = extractNodeValue(nnmDPPS, "showNotParticipatingPlayers", "true");
             dpps.setShowNotParticipatingPlayers(Boolean.valueOf(strShowNotParticipatingPlayers).booleanValue());
+            String strShowNotFinallyRegisteredPlayers = extractNodeValue(nnmDPPS, "showNotFinallyRegisteredPlayers", "true");
+            dpps.setShowNotFinallyRegisteredPlayers(Boolean.valueOf(strShowNotFinallyRegisteredPlayers).booleanValue());
 
             String strDisplayNumCol = extractNodeValue(nnmDPPS, "displayNumCol", "true");
             dpps.setDisplayNumCol(Boolean.valueOf(strDisplayNumCol).booleanValue());
@@ -923,17 +923,27 @@ public class ExternalDocument {
             dpps.setDisplayClCol(Boolean.valueOf(strDisplayClCol).booleanValue());
             
             String strDisplayIndGamesInMatches = extractNodeValue(nnmDPPS, "displayIndGamesInMatches", "true");
-            dpps.setDisplayIndGamesInMatches(Boolean.valueOf(strDisplayIndGamesInMatches).booleanValue());
-            
-            String strExportToLocalFile   = extractNodeValue(nnmDPPS, "exportToLocalFile", "true");
-            dpps.setExportToLocalFile(Boolean.valueOf(strExportToLocalFile).booleanValue());
-            String strExportToWebSite     = extractNodeValue(nnmDPPS, "exportToWebSite", "false");
-            dpps.setExportToWebSite(Boolean.valueOf(strExportToWebSite).booleanValue());
-            String strUseSpecificSite = extractNodeValue(nnmDPPS, "useSpecificSite", "false");
-            dpps.setUseSpecificSite(Boolean.valueOf(strUseSpecificSite).booleanValue());
-
+            dpps.setDisplayIndGamesInMatches(Boolean.valueOf(strDisplayIndGamesInMatches).booleanValue());          
         }
         tps.setDPParameterSet(dpps);
+
+        // PubPS
+        PublishParameterSet pubPS = new PublishParameterSet();
+        NodeList nlPubPS = doc.getElementsByTagName("PublishParameterSet");
+        Node nPubPS = nlPubPS.item(0);
+        if (nPubPS != null) {
+            NamedNodeMap nnmPubPS = nPubPS.getAttributes();
+            
+            String strPrint = extractNodeValue(nnmPubPS, "print", "true");
+            pubPS.setPrint(Boolean.valueOf(strPrint).booleanValue());
+            String strExportToLocalFile = extractNodeValue(nnmPubPS, "exportToLocalFile", "true");
+            pubPS.setExportToLocalFile(Boolean.valueOf(strExportToLocalFile).booleanValue());
+            String strExportToOGSite = extractNodeValue(nnmPubPS, "exportToOGSite", "false");
+            pubPS.setExportToOGSite(Boolean.valueOf(strExportToOGSite).booleanValue());
+            String strExportToUDSite = extractNodeValue(nnmPubPS, "exportToUDSite", "false");
+            pubPS.setExportToUDSite(Boolean.valueOf(strExportToUDSite).booleanValue());               
+        }
+        tps.setPublishParameterSet(pubPS);
 
         return tps;
     }
@@ -1519,6 +1529,7 @@ public class ExternalDocument {
         }
         GeneralParameterSet gps = tps.getGeneralParameterSet();
         PlacementParameterSet pps = tps.getPlacementParameterSet();
+        HandicapParameterSet hps = tps.getHandicapParameterSet();
 
         // Prepare tabCrit from pps
         int[] tC = pps.getPlaCriteria();
@@ -1539,6 +1550,12 @@ public class ExternalDocument {
             output.write("\n; PC[," + gps.getLocation() + "]");
             output.write("\n; DT[" + new SimpleDateFormat("yyyy-MM-dd").format(gps.getBeginDate())
                     + "," + new SimpleDateFormat("yyyy-MM-dd").format(gps.getEndDate()) + "]");
+            // HA
+            String strHA = "";
+            int hc = hps.getHdCorrection();
+            if (hc > 0) strHA = "\n; HA[h" + hc + "]";
+            output.write(strHA);
+            //
             output.write("\n; KM[" + gps.getStrKomi() + "]");
             output.write("\n; TM[" + (tournament.egfAdjustedTime() / 60) + "]");
             String strCM = "";
@@ -3027,7 +3044,7 @@ public class ExternalDocument {
             String strRank = Player.convertIntToKD(p.getRank());
             String strRating = Integer.valueOf(p.getRating()).toString();
             String strRatingOrigin = p.getRatingOrigin();
-            String strGrade = Player.convertIntToKD(p.getGrade());
+            String strGrade = p.getStrGrade();
             String strSMMSCorrection = Integer.valueOf(p.getSmmsCorrection()).toString();
             boolean[] part = p.getParticipating();
             String strParticipating = "";
@@ -3416,18 +3433,27 @@ public class ExternalDocument {
         emDPParameterSet.setAttribute("showByePlayer", Boolean.valueOf(dpps.isShowByePlayer()).toString());
         emDPParameterSet.setAttribute("showNotPairedPlayers", Boolean.valueOf(dpps.isShowNotPairedPlayers()).toString());
         emDPParameterSet.setAttribute("showNotParticipatingPlayers", Boolean.valueOf(dpps.isShowNotParticipatingPlayers()).toString());
+        emDPParameterSet.setAttribute("showNotFinallyRegisteredPlayers", Boolean.valueOf(dpps.isShowNotFinallyRegisteredPlayers()).toString());
+        
         emDPParameterSet.setAttribute("displayNumCol", Boolean.valueOf(dpps.isDisplayNumCol()).toString());
         emDPParameterSet.setAttribute("displayPlCol", Boolean.valueOf(dpps.isDisplayPlCol()).toString());
         emDPParameterSet.setAttribute("displayCoCol", Boolean.valueOf(dpps.isDisplayCoCol()).toString());
         emDPParameterSet.setAttribute("displayClCol", Boolean.valueOf(dpps.isDisplayClCol()).toString());
         emDPParameterSet.setAttribute("displayIndGamesInMatches", Boolean.valueOf(dpps.isDisplayIndGamesInMatches()).toString());
-
-        emDPParameterSet.setAttribute("exportToLocalFile", Boolean.valueOf(dpps.isExportToLocalFile()).toString());
-        emDPParameterSet.setAttribute("exportToWebSite", Boolean.valueOf(dpps.isExportToWebSite()).toString());
-        emDPParameterSet.setAttribute("useSpecificSite", Boolean.valueOf(dpps.isUseSpecificSite()).toString());
         
         emTournamentParameterSet.appendChild(emDPParameterSet);
 
+        // PublishParameterSet
+        PublishParameterSet pubPS = tps.getPublishParameterSet();
+        Element emPublishParameterSet = document.createElement("PublishParameterSet");
+        
+        emPublishParameterSet.setAttribute("print", Boolean.valueOf(pubPS.isPrint()).toString());
+        emPublishParameterSet.setAttribute("exportToLocalFile", Boolean.valueOf(pubPS.isExportToLocalFile()).toString());
+        emPublishParameterSet.setAttribute("exportToOGSite", Boolean.valueOf(pubPS.isExportToOGSite()).toString());
+        emPublishParameterSet.setAttribute("exportToUDSite", Boolean.valueOf(pubPS.isExportToUDSite()).toString());
+        
+        emTournamentParameterSet.appendChild(emPublishParameterSet);
+       
         return emTournamentParameterSet;
     }
 

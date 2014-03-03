@@ -10,9 +10,21 @@ import com.google.zxing.common.ByteMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 import java.awt.Color;
+import java.awt.Desktop;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.Hashtable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JPanel;
 
 /**
  *
@@ -58,4 +70,39 @@ public class QR {
         }
         return image;
     }
+    
+    public static void createQRJButton(final String qrText, JPanel pnl)throws WriterException{     
+        JButton btn = new JButton();
+        pnl.removeAll();
+        btn.setBounds(0, 0, 90, 90);
+        pnl.add(btn);
+        BufferedImage img = QR.qrImage(qrText); 
+        btn.setIcon(new ImageIcon(img));
+        
+        btn.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Coucou" + qrText);
+        
+                URL url = null;
+                try {
+                    url = new URL(qrText);
+                } catch (MalformedURLException ex) {
+                    Logger.getLogger(QR.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
+                if (desktop != null && desktop.isSupported(Desktop.Action.BROWSE)) {
+                    try {
+                        desktop.browse(url.toURI());
+                    }
+                    catch (URISyntaxException ex) {
+                        Logger.getLogger(QR.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (IOException ex) {
+                        Logger.getLogger(QR.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }
+        });   
+    }  
 }

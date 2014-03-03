@@ -21,7 +21,13 @@
 	<mapID target="Games Results frame" url="Games Results frame.html"/>
 	<mapID target="Games Round-robin frame" url="Games Round-robin frame.html"/>
 	<mapID target="Teams Pairing frame" url="Teams Pairing frame.html"/>
-	<mapID target="Options menu" url="Options menu.html"/>
+	
+        <mapID target="Publish menu" url="Publish menu.html"/>
+        <mapID target="Contents tab" url="Contents tab.html"/>
+        <mapID target="Parameters tab" url="Parameters tab.html"/>
+        <mapID target="Publish tab" url="Publish tab.html"/>
+               
+        <mapID target="Options menu" url="Options menu.html"/>
 	<mapID target="Tournament Options" url="Tournament Options.html"/>
 	<mapID target="General parameters" url="General parameters.html"/>
 	<mapID target="Handicap parameters" url="Handicap parameters.html"/>

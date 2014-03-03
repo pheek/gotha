@@ -24,18 +24,6 @@ import javax.swing.JOptionPane;
  * @author LV
  */
 public class TournamentPrinting implements Printable {
-
-    static final int TYPE_DEFAULT = 0;
-    static final int TYPE_PLAYERSLIST = 1;
-    static final int TYPE_TEAMSLIST = 2;
-    static final int TYPE_GAMESLIST = 11;
-    static final int TYPE_NOTPLAYINGLIST = 12;
-    static final int TYPE_MATCHESLIST = 13;
-    static final int TYPE_STANDINGS = 21;
-    static final int TYPE_TEAMSSTANDINGS = 22;
-    static final int TYPE_TOURNAMENT_PARAMETERS = 101;
-    static final int SUBTYPE_DEFAULT = 0;
-    static final int SUBTYPE_ST_CAT = 1;    // Standings by cat
     // PL = Players List
     static final int PL_NUMBER_BEG = 0;
     static final int PL_NUMBER_LEN = 4;
@@ -242,32 +230,32 @@ public class TournamentPrinting implements Printable {
         TournamentPrinting tpr = new TournamentPrinting(tournament);
         
         tpr.setRoundNumber(-1);
-        tpr.makePrinting(TournamentPrinting.TYPE_PLAYERSLIST, playersSortType, true);        
+        tpr.makePrinting(TournamentPublishing.TYPE_PLAYERSLIST, playersSortType, true);        
     }
     public static void printTeamsList(TournamentInterface tournament){
         TournamentPrinting tpr = new TournamentPrinting(tournament);
         
         tpr.setRoundNumber(-1);
-        tpr.makePrinting(TournamentPrinting.TYPE_TEAMSLIST, TournamentPrinting.SUBTYPE_DEFAULT, true);        
+        tpr.makePrinting(TournamentPublishing.TYPE_TEAMSLIST, TournamentPublishing.SUBTYPE_DEFAULT, true);        
     }
     public static void printTournamentParameters(TournamentInterface tournament){
         TournamentPrinting tpr = new TournamentPrinting(tournament);
         
         tpr.setRoundNumber(-1);
-        tpr.makePrinting(TournamentPrinting.TYPE_TOURNAMENT_PARAMETERS, TournamentPrinting.SUBTYPE_DEFAULT, true);
+        tpr.makePrinting(TournamentPublishing.TYPE_TOURNAMENT_PARAMETERS, TournamentPublishing.SUBTYPE_DEFAULT, true);
     }
     public static void printGamesList(TournamentInterface tournament, int roundNumber){
         TournamentPrinting tpr = new TournamentPrinting(tournament);
         
         tpr.setRoundNumber(roundNumber);
-        tpr.makePrinting(TournamentPrinting.TYPE_GAMESLIST, TournamentPrinting.SUBTYPE_DEFAULT, true);   
+        tpr.makePrinting(TournamentPublishing.TYPE_GAMESLIST, TournamentPublishing.SUBTYPE_DEFAULT, true);   
     }
     
     public static void printNotPlayingPlayersList(TournamentInterface tournament, int roundNumber){
         TournamentPrinting tpr = new TournamentPrinting(tournament);
         
         tpr.setRoundNumber(roundNumber);
-        tpr.makePrinting(TournamentPrinting.TYPE_NOTPLAYINGLIST, PlayerComparator.NAME_ORDER, true);   
+        tpr.makePrinting(TournamentPublishing.TYPE_NOTPLAYINGLIST, PlayerComparator.NAME_ORDER, true);   
     }
     
     public static void printStandings(TournamentInterface tournament, int roundNumber){
@@ -283,14 +271,14 @@ public class TournamentPrinting implements Printable {
         TournamentPrinting tpr = new TournamentPrinting(tournament, tps);
         
         tpr.setRoundNumber(roundNumber);
-        tpr.makePrinting(TournamentPrinting.TYPE_STANDINGS, TournamentPrinting.SUBTYPE_DEFAULT, true);   
+        tpr.makePrinting(TournamentPublishing.TYPE_STANDINGS, TournamentPublishing.SUBTYPE_DEFAULT, true);   
     }
     
     public static void printMatchesList(TournamentInterface tournament, int roundNumber){
         TournamentPrinting tpr = new TournamentPrinting(tournament);
         
         tpr.setRoundNumber(roundNumber);
-        tpr.makePrinting(TournamentPrinting.TYPE_MATCHESLIST, TournamentPrinting.SUBTYPE_DEFAULT, true);   
+        tpr.makePrinting(TournamentPublishing.TYPE_MATCHESLIST, TournamentPublishing.SUBTYPE_DEFAULT, true);   
     }
     public static void printTeamsStandings(TournamentInterface tournament, int roundNumber){
         TournamentParameterSet tps = null;
@@ -308,7 +296,7 @@ public class TournamentPrinting implements Printable {
         TournamentPrinting tpr = new TournamentPrinting(tournament, tps, ttps);
         
         tpr.setRoundNumber(roundNumber);
-        tpr.makePrinting(TournamentPrinting.TYPE_TEAMSSTANDINGS, TournamentPrinting.SUBTYPE_DEFAULT, true);   
+        tpr.makePrinting(TournamentPublishing.TYPE_TEAMSSTANDINGS, TournamentPublishing.SUBTYPE_DEFAULT, true);   
     }
         
     /**
@@ -325,28 +313,28 @@ public class TournamentPrinting implements Printable {
         this.printType = printType;
         this.printSubType = printSubType;
         switch (printType) {
-            case TournamentPrinting.TYPE_PLAYERSLIST:
+            case TournamentPublishing.TYPE_PLAYERSLIST:
                 preparePrintPlayersList();
                 break;
-            case TournamentPrinting.TYPE_TEAMSLIST:
+            case TournamentPublishing.TYPE_TEAMSLIST:
                 preparePrintTeamsList();
                 break;
-            case TournamentPrinting.TYPE_TOURNAMENT_PARAMETERS:
+            case TournamentPublishing.TYPE_TOURNAMENT_PARAMETERS:
                 this.preparePrintTournamentParameters();
                 break;
-            case TournamentPrinting.TYPE_GAMESLIST:
+            case TournamentPublishing.TYPE_GAMESLIST:
                 this.preparePrintGamesList();
                 break;
-            case TournamentPrinting.TYPE_NOTPLAYINGLIST:
+            case TournamentPublishing.TYPE_NOTPLAYINGLIST:
                 this.preparePrintNPPList();
                 break;
-            case TournamentPrinting.TYPE_STANDINGS:
+            case TournamentPublishing.TYPE_STANDINGS:
                 this.preparePrintStandings();
                 break;
-            case TournamentPrinting.TYPE_MATCHESLIST:
+            case TournamentPublishing.TYPE_MATCHESLIST:
                 this.preparePrintMatchesList();
                 break;
-            case TournamentPrinting.TYPE_TEAMSSTANDINGS:
+            case TournamentPublishing.TYPE_TEAMSSTANDINGS:
                 this.preparePrintTeamsStandings();
                 break;
         }
@@ -439,9 +427,9 @@ public class TournamentPrinting implements Printable {
         // Do we print by category ?
         GeneralParameterSet gps = tps.getGeneralParameterSet();
         if (pps.getPlaCriteria()[0] == PlacementParameterSet.PLA_CRIT_CAT && gps.getNumberOfCategories() > 1) {
-            this.printSubType = TournamentPrinting.SUBTYPE_ST_CAT;
+            this.printSubType = TournamentPublishing.SUBTYPE_ST_CAT;
         } else {
-             this.printSubType = TournamentPrinting.SUBTYPE_DEFAULT;
+             this.printSubType = TournamentPublishing.SUBTYPE_DEFAULT;
         }                                                 
  
         try {
@@ -495,11 +483,11 @@ public class TournamentPrinting implements Printable {
             usableHeight = (int) pf.getImageableHeight() - 2;
 
             switch (printType) {
-                case TYPE_DEFAULT:
+                case TournamentPublishing.TYPE_DEFAULT:
                     fontSize = 12;
                     lineHeight = fontSize * LHFS_RATIO;
                     break;
-                case TYPE_PLAYERSLIST:
+                case TournamentPublishing.TYPE_PLAYERSLIST:
                     int nbCarRef = PL_NBCAR;
                     fontSize = usableWidth / nbCarRef * 100 / WH_RATIO * LINEFILLING_RATIO / 100;
                     lineHeight = fontSize * LHFS_RATIO / 100;
@@ -511,7 +499,7 @@ public class TournamentPrinting implements Printable {
                         Logger.getLogger(TournamentPrinting.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     break;
-                case TYPE_TEAMSLIST:
+                case TournamentPublishing.TYPE_TEAMSLIST:
                     nbCarRef = TL_NBCAR;
                     fontSize = usableWidth / nbCarRef * 100 / WH_RATIO * LINEFILLING_RATIO / 100;
                     lineHeight = fontSize * LHFS_RATIO / 100; {
@@ -526,14 +514,14 @@ public class TournamentPrinting implements Printable {
                     numberOfPages = (numberOfBodyLines + numberOfBodyLinesInAPage - 1) / numberOfBodyLinesInAPage;
                     }
                     break;
-                case TYPE_TOURNAMENT_PARAMETERS:
+                case TournamentPublishing.TYPE_TOURNAMENT_PARAMETERS:
                     nbCarRef = TP_NBCAR;
                     fontSize = usableWidth / nbCarRef * 100 / WH_RATIO * LINEFILLING_RATIO / 100;
                     lineHeight = fontSize * LHFS_RATIO / 100;
                     numberOfBodyLinesInAPage = (usableHeight / lineHeight) - 5;
                     numberOfPages = 2;
                     break;
-                case TYPE_GAMESLIST:
+                case TournamentPublishing.TYPE_GAMESLIST:
                     nbCarRef = GL_NBCAR;
                     fontSize = usableWidth / nbCarRef * 100 / WH_RATIO * LINEFILLING_RATIO / 100;
                     lineHeight = fontSize * LHFS_RATIO / 100;
@@ -546,7 +534,7 @@ public class TournamentPrinting implements Printable {
                         Logger.getLogger(TournamentPrinting.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     break;
-                case TYPE_NOTPLAYINGLIST:
+                case TournamentPublishing.TYPE_NOTPLAYINGLIST:
                     nbCarRef = NPL_NBCAR;
                     fontSize = usableWidth / nbCarRef * 100 / WH_RATIO * LINEFILLING_RATIO / 100;
                     lineHeight = fontSize * LHFS_RATIO / 100; {
@@ -555,7 +543,7 @@ public class TournamentPrinting implements Printable {
                     numberOfPages = (numberOfBodyLines + numberOfBodyLinesInAPage - 1) / numberOfBodyLinesInAPage;
                     }
                     break;
-                case TYPE_STANDINGS:
+                case TournamentPublishing.TYPE_STANDINGS:
                     int numberOfRoundsPrinted = roundNumber + 1;
                     int numberOfCriteriaPrinted = criteria.length;
                     stNumBeg = 0;
@@ -596,7 +584,7 @@ public class TournamentPrinting implements Printable {
 
                     int numberOfBodyLines = this.alOrderedScoredPlayers.size();
                     numberOfPages = (numberOfBodyLines + numberOfBodyLinesInAPage - 1) / numberOfBodyLinesInAPage;
-                    if (this.printSubType == TournamentPrinting.SUBTYPE_ST_CAT) {
+                    if (this.printSubType == TournamentPublishing.SUBTYPE_ST_CAT) {
                         numberOfPages = 0;
                         for (int numCat = 0; numCat < gps.getNumberOfCategories(); numCat++) {
                             int nbPl = 0;
@@ -610,7 +598,7 @@ public class TournamentPrinting implements Printable {
                     }
                     break;
 
-                case TYPE_MATCHESLIST:
+                case TournamentPublishing.TYPE_MATCHESLIST:
                     nbCarRef = ML_NBCAR;
                     fontSize = usableWidth / nbCarRef * 100 / WH_RATIO * LINEFILLING_RATIO / 100;
                     lineHeight = fontSize * LHFS_RATIO / 100;
@@ -627,7 +615,7 @@ public class TournamentPrinting implements Printable {
                         Logger.getLogger(TournamentPrinting.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     break;
-                case TYPE_TEAMSSTANDINGS:
+                case TournamentPublishing.TYPE_TEAMSSTANDINGS:
                     numberOfRoundsPrinted = roundNumber + 1;
                     numberOfCriteriaPrinted = criteria.length;
                     this.numberOfCharactersInALine = TST_NBFXCAR + numberOfRoundsPrinted * TST_ROUND_LEN +
@@ -646,23 +634,23 @@ public class TournamentPrinting implements Printable {
 
         try {
             switch (printType) {
-                case TYPE_DEFAULT:
+                case TournamentPublishing.TYPE_DEFAULT:
                     return printADefaultPage(g, pf, pi);
-                case TYPE_PLAYERSLIST:
+                case TournamentPublishing.TYPE_PLAYERSLIST:
                     return printAPageOfPlayersList(g, pf, pi);
-                case TYPE_TEAMSLIST:
+                case TournamentPublishing.TYPE_TEAMSLIST:
                     return printAPageOfTeamsList(g, pf, pi);
-                case TYPE_TOURNAMENT_PARAMETERS:
+                case TournamentPublishing.TYPE_TOURNAMENT_PARAMETERS:
                     return printAPageOfTournamentParameters(g, pf, pi);
-                case TYPE_GAMESLIST:
+                case TournamentPublishing.TYPE_GAMESLIST:
                     return printAPageOfGamesList(g, pf, pi);
-                case TYPE_NOTPLAYINGLIST:
+                case TournamentPublishing.TYPE_NOTPLAYINGLIST:
                     return printAPageOfNotPlayingPlayersList(g, pf, pi);
-                case TYPE_STANDINGS:
+                case TournamentPublishing.TYPE_STANDINGS:
                     return printAPageOfStandings(g, pf, pi);
-                case TYPE_MATCHESLIST:
+                case TournamentPublishing.TYPE_MATCHESLIST:
                     return printAPageOfMatchesList(g, pf, pi);
-                case TYPE_TEAMSSTANDINGS:
+                case TournamentPublishing.TYPE_TEAMSSTANDINGS:
                     return printAPageOfTeamsStandings(g, pf, pi);
             }
         } catch (RemoteException ex) {
@@ -1060,7 +1048,7 @@ public class TournamentPrinting implements Printable {
             Logger.getLogger(TournamentPrinting.class.getName()).log(Level.SEVERE, null, ex);
         }
         // If the first criterion is not CAT, then, do as if everybody was in category 1
-        if (this.printSubType != TournamentPrinting.SUBTYPE_ST_CAT) {
+        if (this.printSubType != TournamentPublishing.SUBTYPE_ST_CAT) {
             nbPlayersOfCurCat = tournament.numberOfPlayers();
         }
 
@@ -1099,7 +1087,7 @@ public class TournamentPrinting implements Printable {
             }
             ScoredPlayer sp = alOrderedScoredPlayers.get(playerNumber);
 
-            if (this.printSubType == TournamentPrinting.SUBTYPE_ST_CAT && sp.category(gps) != curCat) {
+            if (this.printSubType == TournamentPublishing.SUBTYPE_ST_CAT && sp.category(gps) != curCat) {
                 break;
             }
 

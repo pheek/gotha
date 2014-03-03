@@ -103,9 +103,8 @@ public class RatingList {
                     String strClub = strLine.substring(53, 57).trim();
                     int rating = new Integer(strLine.substring(71, 75).trim()).intValue();
                     String strGrade = strLine.substring(60,63);
-                    int grade  = Player.convertKDToInt(strGrade);
                     RatedPlayer rP = new RatedPlayer(
-                            strPin, "", "", "", "", strName, strFirstName, strCountry, strClub, rating, grade, "EGF");
+                            strPin, "", "", "", "", strName, strFirstName, strCountry, strClub, rating, strGrade, "EGF");
                     alRatedPlayers.add(rP);
                 }
             }
@@ -137,9 +136,8 @@ public class RatingList {
                         strClub = strCC;
                     }
 
-                    int grade = RatedPlayer.GRADE_NOT_RELEVANT;    // N/A for FFG, actually
-                    RatedPlayer rP = new RatedPlayer(
-                            "", strFfgLicence, strFfgLicenceStatus, "", "", strName, strFirstName, strCountry, strClub, rating, grade, "FFG");
+                     RatedPlayer rP = new RatedPlayer(
+                            "", strFfgLicence, strFfgLicenceStatus, "", "", strName, strFirstName, strCountry, strClub, rating, "", "FFG");
                     alRatedPlayers.add(rP);
                 }
             }
@@ -195,9 +193,8 @@ public class RatingList {
                     club = myStrArr[AGA_CLUB];
                 }
                 
-                int grade = RatedPlayer.GRADE_NOT_RELEVANT;    // N/A for AGA, actually
                 RatedPlayer rP = new RatedPlayer(
-                        "", "", "", agaID, agaExpirationDate, name, firstName, country, club, rawRating, grade, "AGA");
+                        "", "", "", agaID, agaExpirationDate, name, firstName, country, club, rawRating, "", "AGA");
                 alRatedPlayers.add(rP);
             }
         } 

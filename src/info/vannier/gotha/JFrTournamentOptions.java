@@ -1714,7 +1714,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
 
         
         int oldRankThreshold = paiPS.getPaiSeRankThreshold();
-        int newRankThreshold = Player.convertKDToInt(this.txfSeRankThreshold.getText());
+        int newRankThreshold = Player.convertKDPToInt(this.txfSeRankThreshold.getText());
         if (newRankThreshold != oldRankThreshold){
             paiPS.setPaiSeRankThreshold(newRankThreshold);
             bSomethingHasChanged = true;
@@ -1979,7 +1979,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
             return;
         }   
         int oldGenMMFloor = gps.getGenMMFloor();
-        int newGenMMFloor = Player.convertKDToInt(this.txfMMFloor.getText());        
+        int newGenMMFloor = Player.convertKDPToInt(this.txfMMFloor.getText());        
         txfMMFloor.setText("" + Player.convertIntToKD(newGenMMFloor)); 
         if (newGenMMFloor > GeneralParameterSet.GEN_MM_FLOOR_MAX 
                 || newGenMMFloor < GeneralParameterSet.GEN_MM_FLOOR_MIN
@@ -2010,7 +2010,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
             return;
         }   
         int oldGenMMBar = gps.getGenMMBar();
-        int newGenMMBar = Player.convertKDToInt(this.txfMMBar.getText());
+        int newGenMMBar = Player.convertKDPToInt(this.txfMMBar.getText());
         txfMMBar.setText("" + Player.convertIntToKD(newGenMMBar));  
         if ((newGenMMBar > GeneralParameterSet.GEN_MM_BAR_MAX) 
             || (newGenMMBar < GeneralParameterSet.GEN_MM_BAR_MIN)
@@ -2159,7 +2159,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         }
         HandicapParameterSet hps = tps.getHandicapParameterSet();
         int oldNoHdRankThreshold = hps.getHdNoHdRankThreshold();
-        int newNoHdRankThreshold = Player.convertKDToInt(txfNoHdRankThreshold.getText());
+        int newNoHdRankThreshold = Player.convertKDPToInt(txfNoHdRankThreshold.getText());
         if (newNoHdRankThreshold < Gotha.MIN_RANK) {   
             try {
                 this.updatePnlHan();
@@ -2360,7 +2360,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         
         for (int c = 0; c < this.tabTxfLowerLimitOfCat.length; c++){
             if (evt.getSource() == tabTxfLowerLimitOfCat[c]){
-                int newLowerLimit = Player.convertKDToInt(tabTxfLowerLimitOfCat[c].getText());
+                int newLowerLimit = Player.convertKDPToInt(tabTxfLowerLimitOfCat[c].getText());
                 int oldLowerLimit = gps.getLowerCategoryLimits()[c];
                 if (newLowerLimit < -30) {
                     try {
@@ -2674,7 +2674,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
             return;
         }   
         int oldGenMMZero = gps.getGenMMZero();
-        int newGenMMZero = Player.convertKDToInt(this.txfMMZero.getText());        
+        int newGenMMZero = Player.convertKDPToInt(this.txfMMZero.getText());        
         txfMMZero.setText("" + Player.convertIntToKD(newGenMMZero)); 
         if (newGenMMZero > GeneralParameterSet.GEN_MM_ZERO_MAX 
                 || newGenMMZero < GeneralParameterSet.GEN_MM_ZERO_MIN){

@@ -39,12 +39,12 @@ public class Player implements java.io.Serializable{
      * "INI" for rating computed from rank
      */
     private String ratingOrigin = "";
-    
+        
     /**
-     * grade is relevant when player is registered from EGF rating list
-     * RatedPlayer.GRADE_NOT_RELEVANT when not relevant
+     * strGrade is relevant when player is registered from EGF rating list
+     * "" when not relevant
      */
-    private int grade = RatedPlayer.GRADE_NOT_RELEVANT;
+    private String strGrade = "";
     
     /**
      * When computing smms, rank is taken as a basis, then framed by McMahon floor and McMahon bar.
@@ -67,9 +67,10 @@ public class Player implements java.io.Serializable{
     public Player(Player p) {      
         deepCopy(p);
     }
+     
     public Player(String name, String firstName, String country, String club, String egfPin, String ffgLicence, String ffgLicenceStatus,
             String agaId, String agaExpirationDate,
-            int rank,  int rating, String ratingOrigin, int grade, int smmsCorrection, 
+            int rank,  int rating, String ratingOrigin, String strGrade, int smmsCorrection, 
             String registeringStatus) throws PlayerException{
         if (name.length() < 1) throw new PlayerException("Player's name should have at least 1 character");
         this.name = name;
@@ -91,16 +92,15 @@ public class Player implements java.io.Serializable{
         this.rating = rating;
         this.ratingOrigin = ratingOrigin;
         
-        this.grade = grade;
-
+        this.strGrade = strGrade;
         this.smmsCorrection = smmsCorrection;
         this.registeringStatus = registeringStatus;
       
         for(int i = 0; i < Gotha.MAX_NUMBER_OF_ROUNDS; i++) {
             participating[i] = true;
         }
-          
     }
+        
     /** 
      * Copies p into this
      **/
@@ -118,7 +118,7 @@ public class Player implements java.io.Serializable{
         this.rank = p.getRank();
         this.rating = p.getRating();
         this.ratingOrigin = p.getRatingOrigin();
-        this.grade = p.getGrade();
+        this.strGrade = p.getStrGrade();
         this.smmsCorrection = p.getSmmsCorrection();
         boolean[] bPart = new boolean[p.getParticipating().length];
         System.arraycopy(p.getParticipating(), 0, bPart, 0, p.getParticipating().length);
@@ -338,15 +338,21 @@ public class Player implements java.io.Serializable{
     /**
      * Converts a String rank into an int rank 
      */
-    public static int convertKDToInt(String strKD) {
-        String strDraft = strKD.trim();
+    public static int convertKDPToInt(String strKDP) {
+        String strDraft = strKDP.trim();
         if (strDraft.length() < 1) strDraft = " ";
         char lastChar = strDraft.charAt(strDraft.length() - 1);
         int rank = -99;
         try{
-            if (lastChar == 'k' || lastChar == 'K') rank = - new Integer(strDraft.substring(0, strDraft.length() -1)).intValue();
-            else if(lastChar == 'd' || lastChar == 'D') rank = new Integer(strDraft.substring(0, strDraft.length() -1)).intValue() - 1;
-            else rank = - new Integer(strDraft.substring(0, strDraft.length())).intValue();
+            int numPart = new Integer(strDraft.substring(0, strDraft.length() -1)).intValue();
+            if (lastChar == 'k' || lastChar == 'K') rank = - numPart;
+            else if(lastChar == 'd' || lastChar == 'D') rank = numPart - 1;
+            else if(lastChar == 'p' || lastChar == 'P'){
+                if (numPart <= 3) rank = 6;
+                else if (numPart <= 6) rank = 7;
+                else rank = 8;
+            }
+            else rank = - numPart;
             if (rank < -30) rank = -30;
             if (rank > 8) rank = 8;
         }
@@ -374,11 +380,9 @@ public class Player implements java.io.Serializable{
     }
     
     /**
-     * Converts a String rank into an int rank 
+     * Converts an int rank into a String rank 
      */
     public static String convertIntToKD(int rank) {
-        if (rank == RatedPlayer.GRADE_NOT_RELEVANT) return "";
-        
         String strRank = "";
         
         if (rank >=0) strRank  = "" + (rank +1) + "D";
@@ -473,18 +477,17 @@ public class Player implements java.io.Serializable{
     }
 
     /**
-     * @return the grade
+     * @return the strGrade
      */
-    public int getGrade() {
-        return grade;
+    public String getStrGrade() {
+        return strGrade;
     }
 
     /**
-     * @param grade the grade to set
+     * @param strGrade the strGrade to set
      */
-    public void setGrade(int grade) {
-        this.grade = grade;
+    public void setStrGrade(String strGrade) {
+        this.strGrade = strGrade;
     }
 }
-
 

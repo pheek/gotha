@@ -1,2 +1,2 @@
 Main-Class: info.vannier.gotha/JFrGothaStart
-Class-Path: lib/jhall.jar
+Class-Path: lib/jhall.jar lib/ftp4j-1.7.2.jar lib/zxing-j2se-1.7.jar lib/zxing.jar

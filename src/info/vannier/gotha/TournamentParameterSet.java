@@ -13,7 +13,7 @@ public class TournamentParameterSet implements java.io.Serializable{
     private static final long serialVersionUID = Gotha.GOTHA_DATA_VERSION;
     
     public final static int TYPE_UNDEFINED       = 0;
-    public final static int TYPE_MCMAHON        = 1;
+    public final static int TYPE_MCMAHON         = 1;
     public final static int TYPE_SWISS           = 2;
     public final static int TYPE_SWISSCAT        = 3;
     
@@ -22,6 +22,7 @@ public class TournamentParameterSet implements java.io.Serializable{
     private PlacementParameterSet placementParameterSet = new PlacementParameterSet();
     private PairingParameterSet pairingParameterSet = new PairingParameterSet();
     private DPParameterSet dpParameterSet = new DPParameterSet();
+    private PublishParameterSet publishParameterSet = new PublishParameterSet();
     
 
     /** Creates a new instance of TournamentParameterSet */
@@ -34,7 +35,8 @@ public class TournamentParameterSet implements java.io.Serializable{
         handicapParameterSet   = new HandicapParameterSet (tps.getHandicapParameterSet());
         placementParameterSet  = new PlacementParameterSet(tps.getPlacementParameterSet());
         pairingParameterSet    = new PairingParameterSet  (tps.getPairingParameterSet());
-        dpParameterSet         = new DPParameterSet       (tps.getDPParameterSet());        
+        dpParameterSet         = new DPParameterSet       (tps.getDPParameterSet()); 
+        publishParameterSet    = new PublishParameterSet(tps.getPublishParameterSet());
     }
 
     public int tournamentType(){    
@@ -66,6 +68,7 @@ public class TournamentParameterSet implements java.io.Serializable{
         placementParameterSet.initForMM();
         pairingParameterSet.initForMM();
         dpParameterSet.initForMM();
+        publishParameterSet.initForMM();
     }
 
     public void initForSwiss(){
@@ -74,6 +77,8 @@ public class TournamentParameterSet implements java.io.Serializable{
         placementParameterSet.initForSwiss();
         pairingParameterSet.initForSwiss();
         dpParameterSet.initForSwiss();
+        publishParameterSet.initForSwiss();
+
     }
 
     public void initForSwissCat(){
@@ -82,6 +87,7 @@ public class TournamentParameterSet implements java.io.Serializable{
         placementParameterSet.initForSwissCat();
         pairingParameterSet.initForSwissCat();
         dpParameterSet.initForSwissCat();
+        publishParameterSet.initForSwissCat();
     }
 
     public HandicapParameterSet getHandicapParameterSet() {
@@ -114,6 +120,14 @@ public class TournamentParameterSet implements java.io.Serializable{
 
     public void setDPParameterSet(DPParameterSet dpParameterSet) {
         this.dpParameterSet = dpParameterSet;
+    }
+
+    public PublishParameterSet getPublishParameterSet() {
+        return publishParameterSet;
+    }
+
+    public void setPublishParameterSet(PublishParameterSet publishParameterSet) {
+        this.publishParameterSet = publishParameterSet;
     }
 
     public GeneralParameterSet getGeneralParameterSet() {

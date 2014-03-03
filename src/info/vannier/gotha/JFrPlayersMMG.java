@@ -369,7 +369,7 @@ public class JFrPlayersMMG extends javax.swing.JFrame{
             return;
         }   
         int oldGenMMBar = gps.getGenMMBar();
-        int newGenMMBar = Player.convertKDToInt(this.txfMMBar.getText());
+        int newGenMMBar = Player.convertKDPToInt(this.txfMMBar.getText());
         if ((newGenMMBar > GeneralParameterSet.GEN_MM_BAR_MAX) 
             || (newGenMMBar < GeneralParameterSet.GEN_MM_BAR_MIN)
             || (newGenMMBar < gps.getGenMMFloor())){

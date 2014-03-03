@@ -8,6 +8,8 @@
  */
 package info.vannier.gotha;
 
+import static info.vannier.gotha.TournamentPublishing.publish;
+import static info.vannier.gotha.TournamentPublishing.sendByFTPToOGSite;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -86,6 +88,10 @@ public class JFrExperimentalTools extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         pnlStrangeGames = new javax.swing.JPanel();
         btnStrangeColor = new javax.swing.JButton();
+        pnlExport = new javax.swing.JPanel();
+        btnExportAllExportableFiles = new javax.swing.JButton();
+        btnDeleteAllExportedFiles = new javax.swing.JButton();
+        lblNbEF = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -240,6 +246,34 @@ public class JFrExperimentalTools extends javax.swing.JFrame {
         getContentPane().add(pnlStrangeGames);
         pnlStrangeGames.setBounds(20, 800, 660, 180);
 
+        pnlExport.setBorder(javax.swing.BorderFactory.createTitledBorder("Export"));
+        pnlExport.setLayout(null);
+
+        btnExportAllExportableFiles.setText("Export all exportable html files (local and remote files)");
+        btnExportAllExportableFiles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExportAllExportableFilesActionPerformed(evt);
+            }
+        });
+        pnlExport.add(btnExportAllExportableFiles);
+        btnExportAllExportableFiles.setBounds(20, 20, 380, 23);
+
+        btnDeleteAllExportedFiles.setText("Delete all exported html files (remote files only)");
+        btnDeleteAllExportedFiles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteAllExportedFilesActionPerformed(evt);
+            }
+        });
+        pnlExport.add(btnDeleteAllExportedFiles);
+        btnDeleteAllExportedFiles.setBounds(20, 50, 380, 23);
+
+        lblNbEF.setText("0 files exported");
+        pnlExport.add(lblNbEF);
+        lblNbEF.setBounds(450, 30, 130, 14);
+
+        getContentPane().add(pnlExport);
+        pnlExport.setBounds(20, 400, 660, 90);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -351,10 +385,10 @@ public class JFrExperimentalTools extends javax.swing.JFrame {
                 if(!strName.equals(rp.getName())) continue;
                 if(!strFirstName.equals(rp.getFirstName())) continue;
                 bFound = true;
-                int oldGrade = p.getGrade();
-                int newGrade = rp.getGrade();
-                p.setGrade(newGrade);
-                if (newGrade != RatedPlayer.GRADE_NOT_RELEVANT && newGrade != oldGrade){
+                String oldStrGrade = p.getStrGrade();
+                String newStrGrade = rp.getStrGrade();
+                p.setStrGrade(newStrGrade);
+                if (!newStrGrade.equals("") && !newStrGrade.equals(oldStrGrade)){
                     try {
                         tournament.modifyPlayer(p, p);
                     } catch (TournamentException ex) {
@@ -364,6 +398,7 @@ public class JFrExperimentalTools extends javax.swing.JFrame {
                     }
                     nbGradesSetOrChanged++;
                 }
+
                 
                 break;             
             }
@@ -488,6 +523,62 @@ public class JFrExperimentalTools extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnStrangeColorActionPerformed
 
+    private void btnExportAllExportableFilesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportAllExportableFilesActionPerformed
+        TournamentParameterSet tps = null;
+        try {
+            tps = tournament.getTournamentParameterSet();
+        } catch (RemoteException ex) {
+            Logger.getLogger(TournamentPublishing.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        int nbEF = 0; this.lblNbEF.setVisible(true); this.updateLBLEF(nbEF);
+        File f;
+        f = TournamentPublishing.exportToLocalFile(tournament, tps, -1, TournamentPublishing.TYPE_PLAYERSLIST, TournamentPublishing.SUBTYPE_DEFAULT);
+        TournamentPublishing.sendByFTPToOGSite(tournament, f);
+        nbEF++; this.updateLBLEF(nbEF);
+        int nbRounds = tps.getGeneralParameterSet().getNumberOfRounds();
+                
+        for(int r = 0; r < nbRounds; r++){   
+            f = TournamentPublishing.exportToLocalFile(tournament, tps, r, TournamentPublishing.TYPE_GAMESLIST, TournamentPublishing.SUBTYPE_DEFAULT);
+            TournamentPublishing.sendByFTPToOGSite(tournament, f);
+            nbEF++; this.updateLBLEF(nbEF);
+            f = TournamentPublishing.exportToLocalFile(tournament, tps, r, TournamentPublishing.TYPE_STANDINGS, TournamentPublishing.SUBTYPE_DEFAULT);
+            TournamentPublishing.sendByFTPToOGSite(tournament, f);
+            nbEF++; this.updateLBLEF(nbEF);
+        }
+        
+        boolean bTeams = true;
+        try {
+            if (tournament.teamsList().isEmpty()) bTeams = false;
+        } catch (RemoteException ex) {
+            Logger.getLogger(JFrExperimentalTools.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if (bTeams){
+            f = TournamentPublishing.exportToLocalFile(tournament, tps, -1, TournamentPublishing.TYPE_TEAMSLIST, TournamentPublishing.SUBTYPE_DEFAULT);
+            TournamentPublishing.sendByFTPToOGSite(tournament, f);
+            nbEF++; this.updateLBLEF(nbEF);
+            for(int r = 0; r < nbRounds; r++){   
+                f = TournamentPublishing.exportToLocalFile(tournament, tps, r, TournamentPublishing.TYPE_MATCHESLIST, TournamentPublishing.SUBTYPE_DEFAULT);
+                TournamentPublishing.sendByFTPToOGSite(tournament, f);
+                nbEF++; this.updateLBLEF(nbEF);
+                f = TournamentPublishing.exportToLocalFile(tournament, tps, r, TournamentPublishing.TYPE_TEAMSSTANDINGS, TournamentPublishing.SUBTYPE_DEFAULT);
+                TournamentPublishing.sendByFTPToOGSite(tournament, f);
+                nbEF++; this.updateLBLEF(nbEF);
+            }
+        }
+        JOptionPane.showMessageDialog(this, "" + nbEF + " files have been exported");
+        this.lblNbEF.setVisible(false);
+    }//GEN-LAST:event_btnExportAllExportableFilesActionPerformed
+
+    private void btnDeleteAllExportedFilesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteAllExportedFilesActionPerformed
+        String str = TournamentPublishing.deleteOGHTMLFiles(tournament);
+        JOptionPane.showMessageDialog(this, str);
+    }//GEN-LAST:event_btnDeleteAllExportedFilesActionPerformed
+    
+    private void updateLBLEF(int nbEF){
+        javax.swing.JLabel lbl = this.lblNbEF;
+        lbl.setText( nbEF + " files exported");
+        lbl.paintImmediately(0, 0, lbl.getWidth(), lbl.getHeight());
+    }
         /** This method is called from within the constructor to
      * initialize the form.
      * Unlike initComponents, customInitComponents is editable
@@ -505,6 +596,8 @@ public class JFrExperimentalTools extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDeleteAllExportedFiles;
+    private javax.swing.JButton btnExportAllExportableFiles;
     private javax.swing.JButton btnForceCaseClub;
     private javax.swing.JButton btnForceCaseCountry;
     private javax.swing.JButton btnForceConversion;
@@ -520,6 +613,8 @@ public class JFrExperimentalTools extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel lblNbEF;
+    private javax.swing.JPanel pnlExport;
     private javax.swing.JPanel pnlForceASCII;
     private javax.swing.JPanel pnlForceCase;
     private javax.swing.JPanel pnlForceParticipation;

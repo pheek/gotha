@@ -3,8 +3,6 @@ package info.vannier.gotha;
 
 
 public class RatedPlayer {
-    public static int GRADE_NOT_RELEVANT = -999;
-    
     private String egfPin;
     private String ffgLicence;
     private String ffgLicenceStatus;
@@ -15,9 +13,10 @@ public class RatedPlayer {
     private String country;
     private String club;
     private int rawRating;
-    private int grade;  // GRADE_NOT_RELEVANT when not relevant
+    private String strGrade;  
     private String ratingOrigin;
     
+
     public RatedPlayer(
             String egfPin,
             String ffgLicence,
@@ -29,7 +28,7 @@ public class RatedPlayer {
             String country,
             String club,
             int rawRating,
-            int grade,
+            String strGrade,
             String ratingOrigin){
          this.egfPin = egfPin;
          this.ffgLicence = ffgLicence; 
@@ -41,7 +40,7 @@ public class RatedPlayer {
          this.country = country;
          this.club = club;
          this.rawRating = rawRating;
-         this.grade = grade;
+         this.strGrade = strGrade;
          this.ratingOrigin = ratingOrigin;
     }
       
@@ -103,10 +102,6 @@ public class RatedPlayer {
         return "" + strRR;
     }
     
-    public int getGrade() {
-        return grade;
-    }
-
     public int getStdRating() {
         int stdRating = rawRating;
         if (ratingOrigin.compareTo("FFG") == 0) stdRating = rawRating + 2050;
@@ -180,4 +175,10 @@ public class RatedPlayer {
         return d[n][m];
     }
 
+    /**
+     * @return the strGrade
+     */
+    public String getStrGrade() {
+        return strGrade;
+    }
 }

@@ -1,7 +1,7 @@
 package info.vannier.gotha;
 
 /**
- * Display and ParameterSet
+ * Display and Print ParameterSet
  * @author Luc
  */
 public class DPParameterSet implements java.io.Serializable{
@@ -17,9 +17,11 @@ public class DPParameterSet implements java.io.Serializable{
     private boolean showPlayerCountry            = false;
     private boolean showPlayerClub               = true;
 
-    private boolean showByePlayer                = true;
-    private boolean showNotPairedPlayers         = true;
-    private boolean showNotParticipatingPlayers  = false;
+    private boolean showByePlayer                   = true;
+    private boolean showNotPairedPlayers            = true;
+    private boolean showNotParticipatingPlayers     = false;
+    private boolean showNotFinallyRegisteredPlayers = true;
+    
 
     private boolean displayNumCol = true;
     private boolean displayPlCol  = true;
@@ -28,10 +30,6 @@ public class DPParameterSet implements java.io.Serializable{
 
     private boolean displayIndGamesInMatches  = true;   // Display Individual Games (and not only Team matches)
     
-    private boolean exportToLocalFile = true;
-    private boolean exportToWebSite   = false;
-    private boolean useSpecificSite = false;
-
     public DPParameterSet() {             
     }
      
@@ -47,7 +45,7 @@ public class DPParameterSet implements java.io.Serializable{
         this.showByePlayer = dpps.showByePlayer;
         this.showNotPairedPlayers = dpps.showNotPairedPlayers;
         this.showNotParticipatingPlayers = dpps.showNotParticipatingPlayers;
-        
+        this.showNotFinallyRegisteredPlayers = dpps.showNotFinallyRegisteredPlayers;
                 
         this.displayNumCol = dpps.displayNumCol;
         this.displayPlCol = dpps.displayPlCol;
@@ -76,10 +74,6 @@ public class DPParameterSet implements java.io.Serializable{
         this.displayNumCol = true;
         this.displayPlCol = true;
         this.displayIndGamesInMatches = true;
-        
-        this.exportToLocalFile = true;
-        this.exportToWebSite = false;
-        this.useSpecificSite = false;
     }
 
     /**
@@ -265,45 +259,17 @@ public class DPParameterSet implements java.io.Serializable{
     }
 
     /**
-     * @return the exportToLocalFile
+     * @return the showNotFinallyRegisteredPlayers
      */
-    public boolean isExportToLocalFile() {
-        return exportToLocalFile;
+    public boolean isShowNotFinallyRegisteredPlayers() {
+        return showNotFinallyRegisteredPlayers;
     }
 
     /**
-     * @param exportToLocalFile the exportToLocalFile to set
+     * @param showNotFinallyRegisteredPlayers the showNotFinallyRegisteredPlayers to set
      */
-    public void setExportToLocalFile(boolean exportToLocalFile) {
-        this.exportToLocalFile = exportToLocalFile;
-    }
-
-    /**
-     * @return the exportToWebSite
-     */
-    public boolean isExportToWebSite() {
-        return exportToWebSite;
-    }
-
-    /**
-     * @param exportToWebSite the exportToWebSite to set
-     */
-    public void setExportToWebSite(boolean exportToWebSite) {
-        this.exportToWebSite = exportToWebSite;
-    }
-
-    /**
-     * @return the useSpecificSite
-     */
-    public boolean isUseSpecificSite() {
-        return useSpecificSite;
-    }
-
-    /**
-     * @param useSpecificSite the useSpecificSite to set
-     */
-    public void setUseSpecificSite(boolean useSpecificSite) {
-        this.useSpecificSite = useSpecificSite;
+    public void setShowNotFinallyRegisteredPlayers(boolean showNotFinallyRegisteredPlayers) {
+        this.showNotFinallyRegisteredPlayers = showNotFinallyRegisteredPlayers;
     }
 
 }

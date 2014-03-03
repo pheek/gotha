@@ -202,7 +202,8 @@ public class JFrPlayersManager extends javax.swing.JFrame {
             model.setValueAt(p.getCountry(), line, JFrPlayersManager.COUNTRY_COL);
             model.setValueAt(p.getClub(), line, JFrPlayersManager.CLUB_COL);
             model.setValueAt(p.getRating(), line, JFrPlayersManager.RATING_COL);
-            model.setValueAt(Player.convertIntToKD(p.getGrade()), line, JFrPlayersManager.GRADE_COL);
+//            model.setValueAt(Player.convertIntToKD(p.getGrade()), line, JFrPlayersManager.GRADE_COL);
+            model.setValueAt(p.getStrGrade(), line, JFrPlayersManager.GRADE_COL);
         }
     }
 
@@ -1204,7 +1205,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         }
 
         int rating = Player.MIN_RATING;
-        int rank = Player.convertKDToInt(txfRank.getText());
+        int rank = Player.convertKDPToInt(txfRank.getText());
 
         String strOrigin ="";
         try{
@@ -1213,13 +1214,6 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         }catch(Exception e){
             strOrigin = "INI";
             rating = Player.ratingFromRank(rank);
-        }
-
-        int grade = RatedPlayer.GRADE_NOT_RELEVANT;
-        String strGrade = txfGrade.getText();
-        if (strGrade.length() > 0){
-            grade = Player.convertKDToInt(strGrade);
-            if (grade <= -99) grade = RatedPlayer.GRADE_NOT_RELEVANT;
         }
         
         int smmsCorrection = 0;
@@ -1245,7 +1239,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
                     rank,
                     rating,
                     strOrigin,
-                    grade,
+                    this.txfGrade.getText(),
                     smmsCorrection,
                     strRegistration);
 
@@ -1371,7 +1365,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
 
     private void txfRankFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txfRankFocusLost
         String strRank = this.txfRank.getText();
-        int rank = Player.convertKDToInt(strRank);
+        int rank = Player.convertKDPToInt(strRank);
         this.txfRank.setText(Player.convertIntToKD(rank));
         
         // update rating from rank
@@ -1566,9 +1560,11 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         txfRatingOrigin.setText(strRatingOrigin);
         this.txfSMMSCorrection.setText("" + 0);
         int rank = Player.rankFromRating(stdRating);
-        if (this.rdbRankFromGrade.isSelected()) rank = rP.getGrade();
+//        if (this.rdbRankFromGrade.isSelected()) rank = rP.getGrade();
+        if (this.rdbRankFromGrade.isSelected()) rank = Player.convertKDPToInt(rP.getStrGrade());
         txfRank.setText(Player.convertIntToKD(rank));
-        txfGrade.setText(Player.convertIntToKD(rP.getGrade()));
+//        txfGrade.setText(Player.convertIntToKD(rP.getGrade()));
+        txfGrade.setText(rP.getStrGrade());
         cbxCountry.setSelectedItem(rP.getCountry());
         txfClub.setText(rP.getClub());
         txfFfgLicence.setText(rP.getFfgLicence());
@@ -1606,8 +1602,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         if (strRatingOrigin.equals("FFG")) strRatingOrigin += " : " + playerInModification.getStrRawRating();
         if (strRatingOrigin.equals("AGA")) strRatingOrigin += " : " + playerInModification.getStrRawRating();
         txfRatingOrigin.setText(strRatingOrigin);
-        int grade = playerInModification.getGrade();
-        txfGrade.setText(Player.convertIntToKD(grade));
+        txfGrade.setText(playerInModification.getStrGrade());
         
         int corr = playerInModification.getSmmsCorrection();
         String strCorr = "" + corr;
