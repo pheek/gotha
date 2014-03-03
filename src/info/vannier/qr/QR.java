@@ -24,6 +24,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -82,8 +83,6 @@ public class QR {
         btn.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Coucou" + qrText);
-        
                 URL url = null;
                 try {
                     url = new URL(qrText);
@@ -91,8 +90,13 @@ public class QR {
                     Logger.getLogger(QR.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
-                Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
-                if (desktop != null && desktop.isSupported(Desktop.Action.BROWSE)) {
+                boolean browserOK = Desktop.isDesktopSupported();
+                Desktop desktop = null;
+                if (browserOK) desktop = Desktop.getDesktop();
+                if (desktop == null) browserOK = false;
+                else if (!desktop.isSupported(Desktop.Action.BROWSE)) browserOK = false;
+                
+                if (browserOK){
                     try {
                         desktop.browse(url.toURI());
                     }
@@ -101,6 +105,9 @@ public class QR {
                     } catch (IOException ex) {
                         Logger.getLogger(QR.class.getName()).log(Level.SEVERE, null, ex);
                     }
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, " In your browser, open : " + qrText);
                 }
             }
         });   

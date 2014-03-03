@@ -403,8 +403,7 @@ public class JFrExperimentalTools extends javax.swing.JFrame {
                 break;             
             }
             if (!bFound){
-//                System.out.println(strName + " " + strFirstName +" not found");
-                nbPlayersNotFound++;
+               nbPlayersNotFound++;
             }
             
         }

@@ -662,7 +662,6 @@ public class JFrPublish extends javax.swing.JFrame {
         }
 
         File f = ExternalDocument.chooseAFileForExport(tournament, Gotha.exportDirectory, "tou");
-        System.out.println("f = " + f + " " + f.canWrite());
         if (f == null) {
             return;
         }
@@ -765,7 +764,6 @@ public class JFrPublish extends javax.swing.JFrame {
 
     private void btnTestFTPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTestFTPActionPerformed
         File f = new File(Gotha.exportHTMLDirectory, "testfile.html");
-        System.out.println("" + f.toString());
 
         String strReport = TournamentPublishing.sendByFTPToOGSite(tournament, f);
         JOptionPane.showMessageDialog(this, strReport);

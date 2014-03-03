@@ -70,7 +70,6 @@ public class ScoredPlayer extends Player implements java.io.Serializable{
 
     private boolean isValidRoundNumber(int rn){
         if (rn < 0 || rn > participation.length){
-            System.out.println("rn = " + rn + ". Incorrect value.");
             return false;
         }
         else return true;

@@ -2,6 +2,7 @@
  * Gotha.java
  * 
  */
+//TODO Transfer all OpenGotha to opengotha.info
 
 package info.vannier.gotha;
 
@@ -34,8 +35,8 @@ import javax.swing.JProgressBar;
 public class Gotha {
 
     static Locale locale = Locale.getDefault();
-    static final long GOTHA_VERSION = 336L;
-    static final long GOTHA_MINOR_VERSION = 4L;
+    static final long GOTHA_VERSION = 337L;
+    static final long GOTHA_MINOR_VERSION = 0L;
     static final java.util.Date GOTHA_RELEASE_DATE = (new GregorianCalendar(2014, Calendar.MARCH, 3)).getTime();
     // Data version for serialization
     static final long GOTHA_DATA_VERSION = 201L;
@@ -301,8 +302,6 @@ public class Gotha {
         strMS = strMS.substring(strMS.length() - 3);
         String strMicroS = "000" + nMicroS;
         strMicroS = strMicroS.substring(strMicroS.length() - 3);
-        
-        System.out.println("topCn = " + strSEC + "." + strMS + " " + strMicroS + " " + str);
     }
 
     public static boolean isDateExpired(String strDate){

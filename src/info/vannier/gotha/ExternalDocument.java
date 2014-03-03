@@ -1953,8 +1953,6 @@ public class ExternalDocument {
         String defaultFileName = shortName + "_PlayersList";
 
         File f = new File(Gotha.exportHTMLDirectory, defaultFileName + ".html");
-        System.out.println("" + f.toString());
-//        Gotha.exportHTMLDirectory = f.getParentFile();
         // Manage css       
         createCSSFile(f);
         
@@ -1972,7 +1970,6 @@ public class ExternalDocument {
         String defaultFileName = shortName + "_TeamsList";
         File f = new File(Gotha.exportHTMLDirectory, defaultFileName + ".html");
         
-        System.out.println("" + f.toString());
         // Manage css       
         Gotha.exportHTMLDirectory = f.getParentFile();
         createCSSFile(f);
@@ -1992,9 +1989,7 @@ public class ExternalDocument {
 
         File f = new File(Gotha.exportHTMLDirectory, defaultFileName + ".html");
         
-        System.out.println("" + f.toString());
         // Manage css       
-//        Gotha.exportHTMLDirectory = f.getParentFile();
         createCSSFile(f);
         
         generateGamesListHTMLFileContents(tournament, round, f);
@@ -2031,7 +2026,6 @@ public class ExternalDocument {
         String defaultFileName = shortName + "_MatchesListR" + (round + 1);
         File f = new File(Gotha.exportHTMLDirectory, defaultFileName + ".html");
         
-        System.out.println("" + f.toString());
         // Manage css       
         Gotha.exportHTMLDirectory = f.getParentFile();
         createCSSFile(f);
@@ -2050,7 +2044,6 @@ public class ExternalDocument {
         String defaultFileName = shortName + "_TeamsStandingsR" + (round + 1);
         File f = new File(Gotha.exportHTMLDirectory, defaultFileName + ".html");
         
-        System.out.println("" + f.toString());
         // Manage css       
         Gotha.exportHTMLDirectory = f.getParentFile();
         createCSSFile(f);

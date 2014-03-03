@@ -178,7 +178,6 @@ public class TournamentPublishing {
     }
 
     public static String deleteOGHTMLFiles(TournamentInterface tournament) {
-        System.out.println("deleteOGSiteDirectory");
         GeneralParameterSet gps = null;
         String shortName = "defaultTournament";
         try {
@@ -210,7 +209,6 @@ public class TournamentPublishing {
             files = client.listNames();
             for (int i = 0; i < files.length; i++){
                 String fn = files[i];
-                System.out.println(fn);
                 if (fn.endsWith(".html")){
                     client.deleteFile(fn);
                     nbDF++;

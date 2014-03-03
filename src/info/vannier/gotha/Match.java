@@ -30,7 +30,6 @@ public class Match implements java.io.Serializable{
     }
 
     public static Match buildMatch(int roundNumber, Team team1, Team team2, TournamentInterface tournament)throws RemoteException{
-//        System.out.println("roundNumber = " + roundNumber + " team1 = " + team1.getTeamName()+ " team2 = " + team2.getTeamName());
         if (team1 == null) return null;
         if (team2 == null) return null;
         
@@ -47,7 +46,6 @@ public class Match implements java.io.Serializable{
             match.blackTeam = team1;
         }
         for(int ib = 0; ib < Gotha.MAX_NUMBER_OF_MEMBERS_BY_TEAM; ib++){
-//            System.out.println("ib = " + ib);
             Player wtp = match.whiteTeam.getTeamMember(roundNumber, ib);
             Player btp = match.blackTeam.getTeamMember(roundNumber, ib);
             if(wtp == null) continue;
