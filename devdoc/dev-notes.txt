@@ -145,7 +145,7 @@ GothaHelp
 *********
 GothaHelp contents are stored in html files.
 hepset.hs, map.xml, toc.xml and index.xml define the map, table of contents and index
-To export the helpset to PDF, use a tool like Helen2.22, define the cover page and it is done
+To export the helpset to PDF, use a tool like Helen2.22, Add Document/Folder, define the cover page and it is done
 The current set is defined by Preferences gothaprefs help
 	With Windows, gothaprefs are in Registry, HKEY_CURRENT_USER/Software/JavaSoft/Prefs/info/vannier/opengotha 
 

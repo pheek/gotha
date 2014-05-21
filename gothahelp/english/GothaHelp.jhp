@@ -11,6 +11,7 @@
 			<directory title="images"/>
 			<file title="Appendices.html"/>
 			<file title="Compatibility issues.html"/>
+			<file title="Contents tab.html"/>
 			<file title="Create a new tournament.html"/>
 			<file title="Discard rounds frame.html"/>
 			<file title="Games encoding.html"/>
@@ -30,12 +31,14 @@
 			<file title="Pairing algorithm.html"/>
 			<file title="Pairing evaluation function.html"/>
 			<file title="Pairing parameters.html"/>
+			<file title="Parameters tab.html"/>
 			<file title="Placement parameters.html"/>
 			<file title="Players Manager frame.html"/>
 			<file title="Players menu.html"/>
 			<file title="Players Quick check frame.html"/>
 			<file title="Preferences frame.html"/>
-			<file title="Print and Export Shop.html"/>
+			<file title="Publish menu.html"/>
+			<file title="Publish tab.html"/>
 			<file title="Save facilities.html"/>
 			<file title="Starting OpenGotha.html"/>
 			<file title="Team Placement parameters.html"/>

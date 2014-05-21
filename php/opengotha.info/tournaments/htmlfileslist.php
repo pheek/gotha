@@ -9,7 +9,8 @@
     $newLine = "\r\n";
     $dirName = $_GET['tournament'];
     echo '<h1 align="center">' . $dirName . '</h1>';
-    $dir = opendir('./' . $dirName); 
+    
+    $dir = @opendir('./' . $dirName); 
 
     function displayFiles($strType){
         
@@ -35,11 +36,6 @@
             $nbFL++;
         }
                    
-//        echo $newLine . "strType = " . $strType . " nbFL = " . $nbFL;
-//        if ($nbFL > 0){
-//            natsort($files);
-//            sort($files); 
-//        }
         for ($n = 0; $n < $nbFL - 1; $n++){
             for ($i = 0;  $i < $nbFL - 1; $i++){
                 $file1 = $files[$i];
@@ -95,16 +91,25 @@
         <th class="middle">Last modified</th>
 
 <?php
-    displayFiles("PlayersList");
-    displayFiles("TeamsList");
-    displayFiles("GamesList");
-    displayFiles("MatchesList");
-    displayFiles("Standings");
-    displayFiles("TeamsStandings");
+    if ($dir == FALSE){
+        echo '</table>';
+        echo '<h1 align="center">The tournament does not exist</h1>';
+     }
+    else{
+        displayFiles("PlayersList");
+        displayFiles("TeamsList");
+        displayFiles("GamesList");
+        displayFiles("MatchesList");
+        displayFiles("Standings");
+        displayFiles("TeamsStandings");
     
-    echo '</table>';
-
-    closedir($dir);
+        echo '</table>';
+        
+        closedir($dir);
+    }
+      
+    echo $newLine . '<br><br><br><h1 align="center">Go to <a href = "http://opengotha.info">OpenGotha site main page</a></h1>';
+    
 ?>
 </body>
 </html>

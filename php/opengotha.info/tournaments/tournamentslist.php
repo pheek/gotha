@@ -35,6 +35,8 @@ while($file = readdir($dir)) {
     }
 }
 echo '</table>';
+    
+echo $newLine . '<br><br><br><h1 align="center">Go to <a href = "http://opengotha.info">OpenGotha site main page</a></h1>';
 
 if ($nbTournaments == 0) echo '<br><p align=center> No tournament</p>';
 closedir($dir);

@@ -122,6 +122,19 @@ public class TournamentPublishing {
                 
         return f;
     }
+    
+    public static FTPClient connectToFTPOGSite() throws Exception{ 
+        String strHost = "s206369267.onlinehome.fr";
+        String strLogin = "u45348341-ogt";
+        String strPassword = "hmeannnk";
+        
+        FTPClient client = new FTPClient();
+        client.connect(strHost);
+        client.login(strLogin, strPassword);
+        
+        return client;
+    }
+
 
      public static String sendByFTPToOGSite(TournamentInterface tournament, File f) {
         GeneralParameterSet gps = null;
@@ -132,19 +145,15 @@ public class TournamentPublishing {
         } catch (RemoteException ex) {
             Logger.getLogger(JFrPublish.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        String strHost = "s206369267.onlinehome.fr";
-        String strLogin = "u45348341-ogt";
-        String strPassword = "hmeannnk";
         
-        FTPClient client = new FTPClient();
+        FTPClient client = null;
         try {
-            client.connect(strHost);
-            client.login(strLogin, strPassword);
+            client = connectToFTPOGSite();
         } catch (Exception ex) {
-            return "Error - FTP connection has failed";
+            Logger.getLogger(TournamentPublishing.class.getName()).log(Level.SEVERE, null, ex);
+             return "Error - FTP connection has failed";
         }
-
+        
         String dirName = new SimpleDateFormat("yyyyMMdd").format(gps.getBeginDate()) + shortName;
         try {
             client.createDirectory(dirName);
@@ -186,22 +195,28 @@ public class TournamentPublishing {
         } catch (RemoteException ex) {
             Logger.getLogger(JFrPublish.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        String strHost = "s206369267.onlinehome.fr";
-        String strLogin = "u45348341-ogt";
-        String strPassword = "hmeannnk";
-        
-        FTPClient client = new FTPClient();
+                
+        FTPClient client = null;
         try {
-            client.connect(strHost);
-            client.login(strLogin, strPassword);
+            client = connectToFTPOGSite();
+            
         } catch (Exception ex) {
-            System.out.println("Error - FTP connection has failed");
-            return "Error - FTP connection has failed";
+            Logger.getLogger(TournamentPublishing.class.getName()).log(Level.SEVERE, null, ex);
+             return "Error - FTP connection has failed";
         }
 
         String dirName = new SimpleDateFormat("yyyyMMdd").format(gps.getBeginDate()) + shortName;
-        
+//        try {
+//            client.deleteDirectory(dirName);
+//        } catch (IllegalStateException ex) {
+//            Logger.getLogger(TournamentPublishing.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (IOException ex) {
+//            Logger.getLogger(TournamentPublishing.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (FTPIllegalReplyException ex) {
+//            Logger.getLogger(TournamentPublishing.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (FTPException ex) {
+//            Logger.getLogger(TournamentPublishing.class.getName()).log(Level.SEVERE, null, ex);
+//        }
         String[] files = null;
         int nbDF = 0;
         try {
@@ -214,7 +229,6 @@ public class TournamentPublishing {
                     nbDF++;
                 }
             }
-
         } catch (IllegalStateException ex) {
             Logger.getLogger(TournamentPublishing.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
