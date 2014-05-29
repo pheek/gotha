@@ -99,7 +99,7 @@
 <!ATTLIST DPParameterSet playerSortType CDATA "name">
 <!ATTLIST DPParameterSet gameFormat CDATA "full">
 
-<!ATTLIST DPParameterSet showPlayerRank CDATA "true">
+<!ATTLIST DPParameterSet showPlayerGrade CDATA "true">
 <!ATTLIST DPParameterSet showPlayerCountry CDATA "false">
 <!ATTLIST DPParameterSet showPlayerClub CDATA "true">
 

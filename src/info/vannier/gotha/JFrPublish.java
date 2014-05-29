@@ -83,9 +83,10 @@ public class JFrPublish extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         rdbSortByName = new javax.swing.JRadioButton();
         rdbSortByRank = new javax.swing.JRadioButton();
+        rdbSortByGrade = new javax.swing.JRadioButton();
         pnlGL = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        ckbShowPlayerRank = new javax.swing.JCheckBox();
+        ckbShowPlayerGrade = new javax.swing.JCheckBox();
         ckbShowPlayerCountry = new javax.swing.JCheckBox();
         ckbShowPlayerClub = new javax.swing.JCheckBox();
         pnlNPP = new javax.swing.JPanel();
@@ -192,6 +193,7 @@ public class JFrPublish extends javax.swing.JFrame {
         pnlPL.add(jLabel1);
         jLabel1.setBounds(20, 20, 100, 20);
 
+        grpSortType.add(rdbSortByName);
         rdbSortByName.setText("Name");
         rdbSortByName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -202,13 +204,24 @@ public class JFrPublish extends javax.swing.JFrame {
         rdbSortByName.setBounds(130, 10, 70, 23);
 
         rdbSortByRank.setText("Rank");
+        rdbSortByRank.setEnabled(false);
         rdbSortByRank.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 allSortRDBActionPerformed(evt);
             }
         });
         pnlPL.add(rdbSortByRank);
-        rdbSortByRank.setBounds(130, 30, 70, 23);
+        rdbSortByRank.setBounds(210, 30, 70, 23);
+
+        grpSortType.add(rdbSortByGrade);
+        rdbSortByGrade.setText("Grade");
+        rdbSortByGrade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                allSortRDBActionPerformed(evt);
+            }
+        });
+        pnlPL.add(rdbSortByGrade);
+        rdbSortByGrade.setBounds(130, 30, 70, 23);
 
         pnlContents.add(pnlPL);
         pnlPL.setBounds(10, 20, 300, 70);
@@ -220,15 +233,15 @@ public class JFrPublish extends javax.swing.JFrame {
         pnlGL.add(jLabel3);
         jLabel3.setBounds(10, 20, 150, 14);
 
-        ckbShowPlayerRank.setSelected(true);
-        ckbShowPlayerRank.setText("Rank");
-        ckbShowPlayerRank.addActionListener(new java.awt.event.ActionListener() {
+        ckbShowPlayerGrade.setSelected(true);
+        ckbShowPlayerGrade.setText("Grade");
+        ckbShowPlayerGrade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 allContentsCKBActionPerformed(evt);
             }
         });
-        pnlGL.add(ckbShowPlayerRank);
-        ckbShowPlayerRank.setBounds(40, 40, 180, 20);
+        pnlGL.add(ckbShowPlayerGrade);
+        ckbShowPlayerGrade.setBounds(40, 40, 180, 20);
 
         ckbShowPlayerCountry.setText("Country");
         ckbShowPlayerCountry.addActionListener(new java.awt.event.ActionListener() {
@@ -302,6 +315,7 @@ public class JFrPublish extends javax.swing.JFrame {
         pnlSt.setBorder(javax.swing.BorderFactory.createTitledBorder("Standings"));
         pnlSt.setLayout(null);
 
+        grpGameFormat.add(rdbGameFormatFull);
         rdbGameFormatFull.setText("Full (123+/w4)");
         rdbGameFormatFull.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -311,6 +325,7 @@ public class JFrPublish extends javax.swing.JFrame {
         pnlSt.add(rdbGameFormatFull);
         rdbGameFormatFull.setBounds(450, 30, 180, 23);
 
+        grpGameFormat.add(rdbGameFormatShort);
         rdbGameFormatShort.setText("Short (123+)");
         rdbGameFormatShort.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -623,6 +638,7 @@ public class JFrPublish extends javax.swing.JFrame {
         
         this.tpnPublish.setSelectedComponent(pnlPub);
 
+        this.rdbSortByRank.setVisible(false);
         int wFTP = JFrGotha.SMALL_FRAME_WIDTH;
         int hFTP = JFrGotha.SMALL_FRAME_HEIGHT;
         Dimension dimFTP = Toolkit.getDefaultToolkit().getScreenSize();
@@ -785,6 +801,9 @@ public class JFrPublish extends javax.swing.JFrame {
         if (this.rdbSortByRank.isSelected()) {
             newPlayerSortType = PlayerComparator.RANK_ORDER;
         }
+        if (this.rdbSortByGrade.isSelected()) {
+            newPlayerSortType = PlayerComparator.GRADE_ORDER;
+        }
         if (newPlayerSortType != dpps.getPlayerSortType()) {
             dpps.setPlayerSortType(newPlayerSortType);
             somethingHasChanged = true;
@@ -846,10 +865,10 @@ public class JFrPublish extends javax.swing.JFrame {
 
         boolean somethingHasChanged = false;
 
-        oldValue = dpps.isShowPlayerRank();
-        newValue = this.ckbShowPlayerRank.isSelected();
+        oldValue = dpps.isShowPlayerGrade();
+        newValue = this.ckbShowPlayerGrade.isSelected();
         if (newValue != oldValue) {
-            dpps.setShowPlayerRank(newValue);
+            dpps.setShowPlayerGrade(newValue);
             somethingHasChanged = true;
         }
         oldValue = dpps.isShowPlayerCountry();
@@ -1114,7 +1133,7 @@ public class JFrPublish extends javax.swing.JFrame {
         if (dpps.getPlayerSortType() == PlayerComparator.NAME_ORDER) {
             this.rdbSortByName.setSelected(true);
         } else {
-            this.rdbSortByRank.setSelected(true);
+            this.rdbSortByGrade.setSelected(true);
         }
         if (dpps.getGameFormat() == DPParameterSet.DP_GAME_FORMAT_FULL) {
             this.rdbGameFormatFull.setSelected(true);
@@ -1122,7 +1141,7 @@ public class JFrPublish extends javax.swing.JFrame {
             this.rdbGameFormatShort.setSelected(true);
         }
 
-        this.ckbShowPlayerRank.setSelected(dpps.isShowPlayerRank());
+        this.ckbShowPlayerGrade.setSelected(dpps.isShowPlayerGrade());
         this.ckbShowPlayerCountry.setSelected(dpps.isShowPlayerCountry());
         this.ckbShowPlayerClub.setSelected(dpps.isShowPlayerClub());
 
@@ -1202,7 +1221,7 @@ public class JFrPublish extends javax.swing.JFrame {
     private javax.swing.JCheckBox ckbShowNotParticipatingPlayers;
     private javax.swing.JCheckBox ckbShowPlayerClub;
     private javax.swing.JCheckBox ckbShowPlayerCountry;
-    private javax.swing.JCheckBox ckbShowPlayerRank;
+    private javax.swing.JCheckBox ckbShowPlayerGrade;
     private javax.swing.JDialog dlgFTPSite;
     private javax.swing.ButtonGroup grpGameFormat;
     private javax.swing.ButtonGroup grpRemote;
@@ -1231,6 +1250,7 @@ public class JFrPublish extends javax.swing.JFrame {
     private javax.swing.JPasswordField pwfPassword;
     private javax.swing.JRadioButton rdbGameFormatFull;
     private javax.swing.JRadioButton rdbGameFormatShort;
+    private javax.swing.JRadioButton rdbSortByGrade;
     private javax.swing.JRadioButton rdbSortByName;
     private javax.swing.JRadioButton rdbSortByRank;
     private javax.swing.JSpinner spnRoundNumber;

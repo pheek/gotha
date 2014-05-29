@@ -2,21 +2,21 @@
 <Tournament dataVersion="201">
 <Players>
 <Player agaExpirationDate="" agaId="" club="TAv" country="IL" egfPin="14637810" ffgLicence="" ffgLicenceStatus="" firstName="Ali" grade="6D" name="Jabarin" participating="11111111111111111111" rank="6D" rating="2572" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
-<Player agaExpirationDate="" agaId="" club="B" country="DE" egfPin="10249261" ffgLicence="" ffgLicenceStatus="" firstName="Daniela" grade="4D" name="Trinks" participating="11111111111111111111" rank="4D" rating="2229" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Big" country="SE" egfPin="15313947" ffgLicence="" ffgLicenceStatus="" firstName="Kim" grade="1D" name="Johansson" participating="11111111111111111111" rank="1D" rating="1951" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="" club="B" country="DE" egfPin="10249261" ffgLicence="" ffgLicenceStatus="" firstName="Daniela" grade="4D" name="Trinks" participating="11111111111111111111" rank="4D" rating="2229" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="StG" country="CH" egfPin="16474304" ffgLicence="" ffgLicenceStatus="" firstName="Hendrik" grade="8K" name="Rommeswinkel" participating="11111111111111111111" rank="3K" rating="1352" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="13Ma" country="FR" egfPin="15462271" ffgLicence="" ffgLicenceStatus="" firstName="Cesar" grade="2D" name="Lextrait" participating="11111111111111111111" rank="3D" rating="2107" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
-<Player agaExpirationDate="" agaId="" club="77Mo" country="RU" egfPin="15662537" ffgLicence="" ffgLicenceStatus="" firstName="Kirill" grade="1K" name="Akinfeev" participating="11111111111111111111" rank="1K" rating="1950" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="94Ca" country="FR" egfPin="14913206" ffgLicence="" ffgLicenceStatus="" firstName="Benjamin" grade="3D" name="Blanchard" participating="11111111111111111111" rank="3D" rating="2212" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="" club="77Mo" country="RU" egfPin="15662537" ffgLicence="" ffgLicenceStatus="" firstName="Kirill" grade="1K" name="Akinfeev" participating="11111111111111111111" rank="1K" rating="1950" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="APWS" country="CZ" egfPin="15049023" ffgLicence="" ffgLicenceStatus="" firstName="Josefa" grade="12K" name="Kubitova" participating="11111111111111111111" rank="10K" rating="1051" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="77Mo" country="RU" egfPin="15713247" ffgLicence="" ffgLicenceStatus="" firstName="Marina" grade="3K" name="Popova" participating="11111111111111111111" rank="3K" rating="1752" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
-<Player agaExpirationDate="" agaId="" club="75Al" country="FR" egfPin="16301461" ffgLicence="" ffgLicenceStatus="" firstName="Vincent" grade="11K" name="Gillet" participating="11111111111111111111" rank="9K" rating="1227" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Oslo" country="NO" egfPin="12901207" ffgLicence="" ffgLicenceStatus="" firstName="Erik_Nilsen" grade="1K" name="Haga" participating="11111111111111111111" rank="1K" rating="1955" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="" club="75Al" country="FR" egfPin="16301461" ffgLicence="" ffgLicenceStatus="" firstName="Vincent" grade="11K" name="Gillet" participating="11111111111111111111" rank="9K" rating="1227" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="BuPe" country="HU" egfPin="14925416" ffgLicence="" ffgLicenceStatus="" firstName="Robert" grade="3K" name="Csizmadia" participating="11111111111111111111" rank="3K" rating="1810" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Kaun" country="LT" egfPin="15801753" ffgLicence="" ffgLicenceStatus="" firstName="Mykolas" grade="1K" name="Mikuciunas" participating="11111111111111111111" rank="1K" rating="1736" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Bmhm" country="UK" egfPin="15925569" ffgLicence="" ffgLicenceStatus="" firstName="Fassal" grade="5K" name="Mahmood" participating="11111111111111111111" rank="7K" rating="1538" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="APWS" country="CZ" egfPin="15486372" ffgLicence="" ffgLicenceStatus="" firstName="Mikulas" grade="12K" name="Kubita" participating="11111111111111111111" rank="13K" rating="748" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
-<Player agaExpirationDate="" agaId="" club="xxxx" country="CN" egfPin="" ffgLicence="" ffgLicenceStatus="" firstName="Mingrui" grade="" name="Chen" participating="11111111111111111111" rank="3D" rating="2300" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="" club="xxxx" country="CN" egfPin="" ffgLicence="" ffgLicenceStatus="" firstName="Mingrui" grade="3D" name="Chen" participating="11111111111111111111" rank="3D" rating="2300" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Ist" country="TR" egfPin="15862561" ffgLicence="" ffgLicenceStatus="" firstName="Semih" grade="1D" name="Cokceken" participating="11111111111111111111" rank="1D" rating="2053" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Szfv" country="HU" egfPin="14213925" ffgLicence="" ffgLicenceStatus="" firstName="Laszlo" grade="7K" name="Boviz" participating="11111111111111111111" rank="7K" rating="1350" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Leid" country="NL" egfPin="13825658" ffgLicence="" ffgLicenceStatus="" firstName="Vincent_van_der" grade="1K" name="Goes" participating="11111111111111111111" rank="1K" rating="1988" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
@@ -25,11 +25,11 @@
 <Player agaExpirationDate="" agaId="" club="Dzim" country="PL" egfPin="13833039" ffgLicence="" ffgLicenceStatus="" firstName="Bartosz" grade="7K" name="Surma" participating="11111111111111111111" rank="4K" rating="1663" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Brno" country="CZ" egfPin="10750476" ffgLicence="" ffgLicenceStatus="" firstName="Bronislav" grade="2D" name="Snidal" participating="11111111111111111111" rank="3D" rating="2256" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Viln" country="LT" egfPin="12733567" ffgLicence="" ffgLicenceStatus="" firstName="Gytis" grade="1D" name="Vasiliauskas" participating="11111111111111111111" rank="1D" rating="1845" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
-<Player agaExpirationDate="" agaId="" club="xxxx" country="CN" egfPin="" ffgLicence="" ffgLicenceStatus="" firstName="Yuewen" grade="" name="He" participating="11111111111111111111" rank="3D" rating="2300" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
-<Player agaExpirationDate="" agaId="" club="Gost" country="PL" egfPin="16049682" ffgLicence="" ffgLicenceStatus="" firstName="Piotr" grade="5K" name="Rzepnikowski" participating="11111111111111111111" rank="5K" rating="1642" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="" club="xxxx" country="CN" egfPin="" ffgLicence="" ffgLicenceStatus="" firstName="Yuewen" grade="3D" name="He" participating="11111111111111111111" rank="3D" rating="2300" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Kaun" country="LT" egfPin="15862759" ffgLicence="" ffgLicenceStatus="" firstName="Ernestas" grade="1D" name="Romeika" participating="11111111111111111111" rank="1D" rating="1949" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
-<Player agaExpirationDate="" agaId="" club="Galw" country="IE" egfPin="14386163" ffgLicence="" ffgLicenceStatus="" firstName="Xiaochuan" grade="3D" name="You" participating="11111111111111111111" rank="4D" rating="2331" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="" club="Gost" country="PL" egfPin="16049682" ffgLicence="" ffgLicenceStatus="" firstName="Piotr" grade="5K" name="Rzepnikowski" participating="11111111111111111111" rank="5K" rating="1642" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Viln" country="LT" egfPin="12886896" ffgLicence="" ffgLicenceStatus="" firstName="Gabrielius" grade="8K" name="Petrauskas" participating="11111111111111111111" rank="8K" rating="1070" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="" club="Galw" country="IE" egfPin="14386163" ffgLicence="" ffgLicenceStatus="" firstName="Xiaochuan" grade="3D" name="You" participating="11111111111111111111" rank="4D" rating="2331" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="HB" country="DE" egfPin="16413628" ffgLicence="" ffgLicenceStatus="" firstName="Christoph" grade="8K" name="Hertzberg" participating="11111111111111111111" rank="8K" rating="1285" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Brno" country="CZ" egfPin="10886524" ffgLicence="" ffgLicenceStatus="" firstName="Ondrej" grade="5D" name="Kruml" participating="11111111111111111111" rank="5D" rating="2497" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Cule" country="NL" egfPin="15662405" ffgLicence="" ffgLicenceStatus="" firstName="Niels" grade="2K" name="Runge" participating="11111111111111111111" rank="2K" rating="1757" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
@@ -43,8 +43,8 @@
 <Player agaExpirationDate="" agaId="" club="77Mo" country="RU" egfPin="14825910" ffgLicence="" ffgLicenceStatus="" firstName="Alexej" grade="1K" name="Kholomkin" participating="11111111111111111111" rank="1K" rating="1987" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="FR" country="DE" egfPin="13037596" ffgLicence="" ffgLicenceStatus="" firstName="Martin" grade="1K" name="Ruzicka" participating="11111111111111111111" rank="1D" rating="2085" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Viln" country="LT" egfPin="12749528" ffgLicence="" ffgLicenceStatus="" firstName="Albertas" grade="1D" name="Petrauskas" participating="11111111111111111111" rank="1D" rating="2012" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
-<Player agaExpirationDate="" agaId="" club="Tart" country="EE" egfPin="15398680" ffgLicence="" ffgLicenceStatus="" firstName="Mikhail" grade="4K" name="Novik" participating="11111111111111111111" rank="4K" rating="1590" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Wars" country="PL" egfPin="14362876" ffgLicence="" ffgLicenceStatus="" firstName="Leszek_Jr" grade="2K" name="Soldan" participating="11111111111111111111" rank="1K" rating="1954" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="" club="Tart" country="EE" egfPin="15398680" ffgLicence="" ffgLicenceStatus="" firstName="Mikhail" grade="4K" name="Novik" participating="11111111111111111111" rank="4K" rating="1590" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="75Al" country="FR" egfPin="12649824" ffgLicence="" ffgLicenceStatus="" firstName="Martin" grade="1K" name="Digard" participating="11111111111111111111" rank="1D" rating="1903" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="L" country="DE" egfPin="13474230" ffgLicence="" ffgLicenceStatus="" firstName="Andreas" grade="3K" name="Ebert" participating="11111111111111111111" rank="3K" rating="1706" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Krak" country="PL" egfPin="14398516" ffgLicence="" ffgLicenceStatus="" firstName="Marcin" grade="1K" name="Sokol" participating="11111111111111111111" rank="1K" rating="1971" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
@@ -59,7 +59,7 @@
 <Player agaExpirationDate="" agaId="" club="Wroc" country="PL" egfPin="14713413" ffgLicence="" ffgLicenceStatus="" firstName="Marcin" grade="2D" name="Majka" participating="11111111111111111111" rank="2D" rating="2163" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Zur" country="CH" egfPin="10513492" ffgLicence="" ffgLicenceStatus="" firstName="Lorenz" grade="1D" name="Trippel" participating="11111111111111111111" rank="1D" rating="2051" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="69Ly" country="FR" egfPin="14533596" ffgLicence="" ffgLicenceStatus="" firstName="Frederic" grade="3K" name="Panico" participating="11111111111111111111" rank="4K" rating="1638" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
-<Player agaExpirationDate="" agaId="" club="" country="US" egfPin="" ffgLicence="" ffgLicenceStatus="" firstName="Norman" grade="" name="Tsai" participating="11111111111111111111" rank="7D" rating="2700" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="" club="" country="US" egfPin="" ffgLicence="" ffgLicenceStatus="" firstName="Norman" grade="7D" name="Tsai" participating="11111111111111111111" rank="7D" rating="2700" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Szfv" country="HU" egfPin="14225926" ffgLicence="" ffgLicenceStatus="" firstName="Dominik" grade="3D" name="Boviz" participating="11111111111111111111" rank="3D" rating="2309" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="44Na" country="FR" egfPin="14962706" ffgLicence="" ffgLicenceStatus="" firstName="Tanguy" grade="5D" name="le_Calve" participating="11111111111111111111" rank="5D" rating="2472" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="77Mo" country="RU" egfPin="15750735" ffgLicence="" ffgLicenceStatus="" firstName="Agzam" grade="1D" name="Ismail-Akhunov" participating="11111111111111111111" rank="1D" rating="2036" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
@@ -69,16 +69,16 @@
 <Player agaExpirationDate="" agaId="" club="Krak" country="PL" egfPin="10837827" ffgLicence="" ffgLicenceStatus="" firstName="Koichiro" grade="4D" name="Habu" participating="11111111111111111111" rank="4D" rating="2395" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="APra" country="CZ" egfPin="16513156" ffgLicence="" ffgLicenceStatus="" firstName="Josef" grade="10K" name="Moudrik" participating="11111111111111111111" rank="10K" rating="1103" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Igo" country="TR" egfPin="15401815" ffgLicence="" ffgLicenceStatus="" firstName="Ugur" grade="2D" name="Yildiz" participating="11111111111111111111" rank="2D" rating="2224" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
-<Player agaExpirationDate="" agaId="" club="xxxx" country="CN" egfPin="" ffgLicence="" ffgLicenceStatus="" firstName="Xing" grade="" name="Chen" participating="11111111111111111111" rank="6D" rating="2600" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="" club="xxxx" country="CN" egfPin="" ffgLicence="" ffgLicenceStatus="" firstName="Xing" grade="6D" name="Chen" participating="11111111111111111111" rank="6D" rating="2600" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Big" country="SE" egfPin="14874024" ffgLicence="" ffgLicenceStatus="" firstName="Joakim" grade="7K" name="Lindholm" participating="11111111111111111111" rank="5K" rating="1265" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Brno" country="CZ" egfPin="14733180" ffgLicence="" ffgLicenceStatus="" firstName="Jiri" grade="6K" name="Tobias" participating="11111111111111111111" rank="6K" rating="1495" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
-<Player agaExpirationDate="" agaId="" club="" country="CN" egfPin="" ffgLicence="" ffgLicenceStatus="" firstName="Heping" grade="" name="Lin" participating="11111111111111111111" rank="4D" rating="2400" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="" club="" country="CN" egfPin="" ffgLicence="" ffgLicenceStatus="" firstName="Heping" grade="4D" name="Lin" participating="11111111111111111111" rank="4D" rating="2400" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="BuPe" country="HU" egfPin="12698928" ffgLicence="" ffgLicenceStatus="" firstName="Gyorgy" grade="4D" name="Csizmadia" participating="11111111111111111111" rank="4D" rating="2307" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="K" country="DE" egfPin="15462315" ffgLicence="" ffgLicenceStatus="" firstName="Fabrice" grade="9K" name="Chamot" participating="11111111111111111111" rank="7K" rating="1400" ratingOrigin="MAN" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="APWS" country="CZ" egfPin="16462072" ffgLicence="" ffgLicenceStatus="" firstName="Michal" grade="3K" name="Timko" participating="11111111111111111111" rank="2K" rating="1867" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Rivn" country="UA" egfPin="14786475" ffgLicence="" ffgLicenceStatus="" firstName="Khrystyna" grade="9K" name="Kolos" participating="11111111111111111111" rank="10K" rating="1136" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
-<Player agaExpirationDate="" agaId="" club="" country="CN" egfPin="" ffgLicence="" ffgLicenceStatus="" firstName="Yibin" grade="" name="Chen" participating="11111111111111111111" rank="5D" rating="2500" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
-<Player agaExpirationDate="" agaId="" club="xxxx" country="CN" egfPin="" ffgLicence="" ffgLicenceStatus="" firstName="Changmin" grade="" name="Yu" participating="11111111111111111111" rank="5D" rating="2500" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="" club="" country="CN" egfPin="" ffgLicence="" ffgLicenceStatus="" firstName="Yibin" grade="5D" name="Chen" participating="11111111111111111111" rank="5D" rating="2500" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="" club="xxxx" country="CN" egfPin="" ffgLicence="" ffgLicenceStatus="" firstName="Changmin" grade="5D" name="Yu" participating="11111111111111111111" rank="5D" rating="2500" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Wars" country="PL" egfPin="16513706" ffgLicence="" ffgLicenceStatus="" firstName="Karolina" grade="17K" name="Slusarczyk" participating="11111111111111111111" rank="17K" rating="460" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="BN" country="DE" egfPin="15786287" ffgLicence="" ffgLicenceStatus="" firstName="Jonas" grade="4D" name="Welticke" participating="11111111111111111111" rank="5D" rating="2363" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Wars" country="PL" egfPin="12837594" ffgLicence="" ffgLicenceStatus="" firstName="Stanislaw" grade="4D" name="Frejlak" participating="11111111111111111111" rank="4D" rating="2386" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
@@ -89,23 +89,23 @@
 <Player agaExpirationDate="" agaId="" club="Stoc" country="SE" egfPin="13625051" ffgLicence="" ffgLicenceStatus="" firstName="Marc" grade="1K" name="Stoehr" participating="11111111111111111111" rank="1K" rating="1921" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="NamB" country="ES" egfPin="16474106" ffgLicence="" ffgLicenceStatus="" firstName="Juan" grade="6K" name="Sampedro" participating="11111111111111111111" rank="5K" rating="1567" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Haya" country="FI" egfPin="12937540" ffgLicence="" ffgLicenceStatus="" firstName="Antti" grade="2D" name="Soukka" participating="11111111111111111111" rank="2D" rating="2086" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
-<Player agaExpirationDate="" agaId="" club="" country="PL" egfPin="" ffgLicence="" ffgLicenceStatus="" firstName="3" grade="" name="Ghost" participating="11111111111111111111" rank="30K" rating="-900" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="" club="" country="PL" egfPin="" ffgLicence="" ffgLicenceStatus="" firstName="3" grade="30K" name="Ghost" participating="11111111111111111111" rank="30K" rating="-900" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Madr" country="ES" egfPin="14937824" ffgLicence="" ffgLicenceStatus="" firstName="Javier" grade="13K" name="Zazo" participating="11111111111111111111" rank="13K" rating="825" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="NamB" country="ES" egfPin="15633673" ffgLicence="" ffgLicenceStatus="" firstName="Oscar" grade="3K" name="Vazquez" participating="11111111111111111111" rank="2K" rating="1882" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
-<Player agaExpirationDate="" agaId="" club="" country="PL" egfPin="" ffgLicence="" ffgLicenceStatus="" firstName="2" grade="" name="Ghost" participating="11111111111111111111" rank="30K" rating="-900" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
-<Player agaExpirationDate="" agaId="" club="" country="PL" egfPin="" ffgLicence="" ffgLicenceStatus="" firstName="1" grade="" name="Ghost" participating="00011011111111111111" rank="30K" rating="-900" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="" club="" country="PL" egfPin="" ffgLicence="" ffgLicenceStatus="" firstName="2" grade="30K" name="Ghost" participating="11111111111111111111" rank="30K" rating="-900" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="" club="" country="PL" egfPin="" ffgLicence="" ffgLicenceStatus="" firstName="1" grade="30K" name="Ghost" participating="00011011111111111111" rank="30K" rating="-900" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Viln" country="LT" egfPin="15033458" ffgLicence="" ffgLicenceStatus="" firstName="Nadezda" grade="5K" name="Savcenko-Vasiliauskiene" participating="11111111111111111111" rank="5K" rating="1267" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Oslo" country="NO" egfPin="13750814" ffgLicence="" ffgLicenceStatus="" firstName="Michael" grade="2K" name="Plikk" participating="11111111111111111111" rank="2K" rating="1801" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Viln" country="LT" egfPin="12749561" ffgLicence="" ffgLicenceStatus="" firstName="Simonas" grade="6K" name="Petrauskas" participating="11111111111111111111" rank="6K" rating="1371" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Arnh" country="NL" egfPin="13574836" ffgLicence="" ffgLicenceStatus="" firstName="Ivo" grade="2D" name="Schuurink" participating="11111111111111111111" rank="2D" rating="2136" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Viln" country="LT" egfPin="14513763" ffgLicence="" ffgLicenceStatus="" firstName="Simonas" grade="1D" name="Satkus" participating="11111111111111111111" rank="1D" rating="1972" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Gliw" country="PL" egfPin="13533047" ffgLicence="" ffgLicenceStatus="" firstName="Ewa" grade="1D" name="Mos" participating="11111111111111111111" rank="1D" rating="2061" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
-<Player agaExpirationDate="" agaId="" club="xxxx" country="PL" egfPin="" ffgLicence="" ffgLicenceStatus="" firstName="Antoni" grade="" name="Hanke" participating="11111111111111111111" rank="13K" rating="800" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="Madr" country="ES" egfPin="14974817" ffgLicence="" ffgLicenceStatus="" firstName="Melanie" grade="8K" name="Fernandez-Pradier" participating="11111111111111111111" rank="8K" rating="1172" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
-<Player agaExpirationDate="" agaId="" club="" country="CN" egfPin="" ffgLicence="" ffgLicenceStatus="" firstName="Zhijie" grade="" name="Liang" participating="11111111111111111111" rank="3D" rating="2300" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="" club="xxxx" country="PL" egfPin="" ffgLicence="" ffgLicenceStatus="" firstName="Antoni" grade="13K" name="Hanke" participating="11111111111111111111" rank="13K" rating="800" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="MEE" country="DE" egfPin="14837075" ffgLicence="" ffgLicenceStatus="" firstName="Niels" grade="1D" name="Schomberg" participating="11111111111111111111" rank="1D" rating="2079" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
-<Player agaExpirationDate="" agaId="" club="BuPe" country="HU" egfPin="16237463" ffgLicence="" ffgLicenceStatus="" firstName="Miklos" grade="12K" name="Csizmadia" participating="11111111111111111111" rank="11K" rating="1035" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="" club="" country="CN" egfPin="" ffgLicence="" ffgLicenceStatus="" firstName="Zhijie" grade="3D" name="Liang" participating="11111111111111111111" rank="3D" rating="2300" ratingOrigin="INI" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="75Al" country="FR" egfPin="16533528" ffgLicence="" ffgLicenceStatus="" firstName="Aurore" grade="16K" name="Perrot" participating="11111111111111111111" rank="15K" rating="574" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
+<Player agaExpirationDate="" agaId="" club="BuPe" country="HU" egfPin="16237463" ffgLicence="" ffgLicenceStatus="" firstName="Miklos" grade="12K" name="Csizmadia" participating="11111111111111111111" rank="11K" rating="1035" ratingOrigin="EGF" registeringStatus="FIN" smmsCorrection="0"/>
 </Players>
 <Games>
 <Game blackPlayer="TOBIASJIRI" handicap="2" knownColor="true" result="RESULT_WHITEWINS" roundNumber="1" tableNumber="26" whitePlayer="VAZQUEZOSCAR"/>
@@ -162,47 +162,47 @@
 <Game blackPlayer="OSTENDAVID" handicap="5" knownColor="true" result="RESULT_WHITEWINS" roundNumber="3" tableNumber="25" whitePlayer="SURMAMATEUSZ"/>
 <Game blackPlayer="DREAN-GUENAIZIABENJAMIN" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="3" tableNumber="28" whitePlayer="KRUMLONDREJ"/>
 <Game blackPlayer="KOLOSKHRYSTYNA" handicap="9" knownColor="true" result="RESULT_WHITEWINS" roundNumber="3" tableNumber="27" whitePlayer="MAJKAMARCIN"/>
-<Game blackPlayer="TIMKOMICHAL" handicap="5" knownColor="true" result="RESULT_WHITEWINS" roundNumber="3" tableNumber="37" whitePlayer="CHENXING"/>
 <Game blackPlayer="PRAZSYLVAIN" handicap="4" knownColor="true" result="RESULT_WHITEWINS" roundNumber="5" tableNumber="199" whitePlayer="WELTICKEJONAS"/>
-<Game blackPlayer="KUBITOVAJOSEFA" handicap="9" knownColor="true" result="RESULT_WHITEWINS" roundNumber="3" tableNumber="38" whitePlayer="YUCHANGMIN"/>
+<Game blackPlayer="TIMKOMICHAL" handicap="5" knownColor="true" result="RESULT_WHITEWINS" roundNumber="3" tableNumber="37" whitePlayer="CHENXING"/>
 <Game blackPlayer="PILLONTHIBAULT" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="5" tableNumber="200" whitePlayer="SCHOMBERGNIELS"/>
+<Game blackPlayer="KUBITOVAJOSEFA" handicap="9" knownColor="true" result="RESULT_WHITEWINS" roundNumber="3" tableNumber="38" whitePlayer="YUCHANGMIN"/>
 <Game blackPlayer="KUBITAMIKULAS" handicap="9" knownColor="true" result="RESULT_WHITEWINS" roundNumber="3" tableNumber="39" whitePlayer="TRINKSDANIELA"/>
 <Game blackPlayer="RUNGENIELS" handicap="1" knownColor="true" result="RESULT_WHITEWINS" roundNumber="3" tableNumber="40" whitePlayer="SCHUURINKIVO"/>
-<Game blackPlayer="SMOLOVICHPETR" handicap="4" knownColor="true" result="RESULT_BLACKWINS" roundNumber="3" tableNumber="33" whitePlayer="CHENMINGRUI"/>
 <Game blackPlayer="CSIZMADIAROBERT" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="5" tableNumber="195" whitePlayer="EBERTANDREAS"/>
-<Game blackPlayer="BOVIZDOMINIK" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="3" tableNumber="34" whitePlayer="BLANCHARDBENJAMIN"/>
+<Game blackPlayer="SMOLOVICHPETR" handicap="4" knownColor="true" result="RESULT_BLACKWINS" roundNumber="3" tableNumber="33" whitePlayer="CHENMINGRUI"/>
 <Game blackPlayer="KOLOSKHRYSTYNA" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="5" tableNumber="196" whitePlayer="CSIZMADIAMIKLOS"/>
-<Game blackPlayer="VAZQUEZOSCAR" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="3" tableNumber="35" whitePlayer="GOESVINCENT_VAN_DER"/>
+<Game blackPlayer="BOVIZDOMINIK" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="3" tableNumber="34" whitePlayer="BLANCHARDBENJAMIN"/>
 <Game blackPlayer="HANKEANTONI" handicap="5" knownColor="true" result="RESULT_BLACKWINS" roundNumber="5" tableNumber="193" whitePlayer="PETRAUSKASSIMONAS"/>
-<Game blackPlayer="BOVIZLASZLO" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="3" tableNumber="36" whitePlayer="SAMPEDROJUAN"/>
+<Game blackPlayer="VAZQUEZOSCAR" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="3" tableNumber="35" whitePlayer="GOESVINCENT_VAN_DER"/>
 <Game blackPlayer="OSTENDAVID" handicap="3" knownColor="true" result="RESULT_BLACKWINS" roundNumber="5" tableNumber="194" whitePlayer="CSIZMADIAGYORGY"/>
-<Game blackPlayer="LIANGZHIJIE" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="3" tableNumber="45" whitePlayer="LEMASSONROMAN"/>
+<Game blackPlayer="BOVIZLASZLO" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="3" tableNumber="36" whitePlayer="SAMPEDROJUAN"/>
 <Game blackPlayer="KUBITAMIKULAS" handicap="6" knownColor="true" result="RESULT_BLACKWINS" roundNumber="5" tableNumber="207" whitePlayer="LINDHOLMJOAKIM"/>
+<Game blackPlayer="LIANGZHIJIE" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="3" tableNumber="45" whitePlayer="LEMASSONROMAN"/>
 <Game blackPlayer="HABUKOICHIRO" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="3" tableNumber="46" whitePlayer="SOUKKAANTTI"/>
-<Game blackPlayer="HAGASVERRE" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="3" tableNumber="47" whitePlayer="MOSEWA"/>
 <Game blackPlayer="TIMKOMICHAL" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="5" tableNumber="205" whitePlayer="JOHANSSONKIM"/>
-<Game blackPlayer="RZEPNIKOWSKIPIOTR" handicap="2" knownColor="true" result="RESULT_WHITEWINS" roundNumber="3" tableNumber="48" whitePlayer="HAGAERIK_NILSEN"/>
+<Game blackPlayer="HAGASVERRE" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="3" tableNumber="47" whitePlayer="MOSEWA"/>
 <Game blackPlayer="KUBITOVAJOSEFA" handicap="6" knownColor="true" result="RESULT_BLACKWINS" roundNumber="5" tableNumber="206" whitePlayer="PLIKKMICHAEL"/>
-<Game blackPlayer="VENNINKDAVID" handicap="1" knownColor="true" result="RESULT_BLACKWINS" roundNumber="3" tableNumber="41" whitePlayer="TRIPPELLORENZ"/>
+<Game blackPlayer="RZEPNIKOWSKIPIOTR" handicap="2" knownColor="true" result="RESULT_WHITEWINS" roundNumber="3" tableNumber="48" whitePlayer="HAGAERIK_NILSEN"/>
 <Game blackPlayer="FERNANDEZ-PRADIERMELANIE" handicap="6" knownColor="true" result="RESULT_WHITEWINS" roundNumber="5" tableNumber="203" whitePlayer="COKCEKENSEMIH"/>
-<Game blackPlayer="ROMMESWINKELHENDRIK" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="3" tableNumber="42" whitePlayer="FINKELNBERGTHOMAS"/>
+<Game blackPlayer="VENNINKDAVID" handicap="1" knownColor="true" result="RESULT_BLACKWINS" roundNumber="3" tableNumber="41" whitePlayer="TRIPPELLORENZ"/>
 <Game blackPlayer="ZAZOJAVIER" handicap="9" knownColor="true" result="RESULT_WHITEWINS" roundNumber="5" tableNumber="204" whitePlayer="TANERGECOZAN"/>
-<Game blackPlayer="CHENYIBIN" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="3" tableNumber="43" whitePlayer="LE_CALVETANGUY"/>
+<Game blackPlayer="ROMMESWINKELHENDRIK" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="3" tableNumber="42" whitePlayer="FINKELNBERGTHOMAS"/>
 <Game blackPlayer="JORDANDANIEL" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="5" tableNumber="201" whitePlayer="PANICOFREDERIC"/>
-<Game blackPlayer="KARADABANDENIS" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="3" tableNumber="44" whitePlayer="YOUXIAOCHUAN"/>
+<Game blackPlayer="CHENYIBIN" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="3" tableNumber="43" whitePlayer="LE_CALVETANGUY"/>
 <Game blackPlayer="MAHMOODFASSAL" handicap="6" knownColor="true" result="RESULT_WHITEWINS" roundNumber="5" tableNumber="202" whitePlayer="YILDIZUGUR"/>
-<Game blackPlayer="TSAINORMAN" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="2" tableNumber="46" whitePlayer="CHENXING"/>
+<Game blackPlayer="KARADABANDENIS" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="3" tableNumber="44" whitePlayer="YOUXIAOCHUAN"/>
 <Game blackPlayer="SAVCENKO-VASILIAUSKIENENADEZDA" handicap="2" knownColor="true" result="RESULT_WHITEWINS" roundNumber="5" tableNumber="190" whitePlayer="MIKUCIUNASMYKOLAS"/>
-<Game blackPlayer="ROMMESWINKELHENDRIK" handicap="3" knownColor="true" result="RESULT_WHITEWINS" roundNumber="2" tableNumber="45" whitePlayer="LEXTRAITCESAR"/>
+<Game blackPlayer="TSAINORMAN" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="2" tableNumber="46" whitePlayer="CHENXING"/>
 <Game blackPlayer="ROMEIKAERNESTAS" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="5" tableNumber="189" whitePlayer="VASILIAUSKASGYTIS"/>
-<Game blackPlayer="STOEHRMARC" handicap="2" knownColor="true" result="RESULT_WHITEWINS" roundNumber="2" tableNumber="48" whitePlayer="TRINKSDANIELA"/>
+<Game blackPlayer="ROMMESWINKELHENDRIK" handicap="3" knownColor="true" result="RESULT_WHITEWINS" roundNumber="2" tableNumber="45" whitePlayer="LEXTRAITCESAR"/>
 <Game blackPlayer="SURMABARTOSZ" handicap="2" knownColor="true" result="RESULT_BLACKWINS" roundNumber="5" tableNumber="192" whitePlayer="PETRAUSKASALBERTAS"/>
-<Game blackPlayer="YUCHANGMIN" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="2" tableNumber="47" whitePlayer="JABARINALI"/>
+<Game blackPlayer="STOEHRMARC" handicap="2" knownColor="true" result="RESULT_WHITEWINS" roundNumber="2" tableNumber="48" whitePlayer="TRINKSDANIELA"/>
 <Game blackPlayer="SOLDANLESZEK_JR" handicap="1" knownColor="true" result="RESULT_BLACKWINS" roundNumber="5" tableNumber="191" whitePlayer="PETRAUSKASANDRIUS"/>
+<Game blackPlayer="YUCHANGMIN" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="2" tableNumber="47" whitePlayer="JABARINALI"/>
 <Game blackPlayer="SAMPEDROJUAN" handicap="2" knownColor="true" result="RESULT_BLACKWINS" roundNumber="2" tableNumber="42" whitePlayer="HAGAERIK_NILSEN"/>
 <Game blackPlayer="VAZQUEZOSCAR" handicap="1" knownColor="true" result="RESULT_BLACKWINS" roundNumber="2" tableNumber="41" whitePlayer="HAGASVERRE"/>
-<Game blackPlayer="TRIPPELLORENZ" handicap="1" knownColor="true" result="RESULT_WHITEWINS" roundNumber="2" tableNumber="44" whitePlayer="PAGAPIERRE"/>
 <Game blackPlayer="VASILIAUSKASRYTIS" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="5" tableNumber="188" whitePlayer="ZALESKASVLADAS"/>
+<Game blackPlayer="TRIPPELLORENZ" handicap="1" knownColor="true" result="RESULT_WHITEWINS" roundNumber="2" tableNumber="44" whitePlayer="PAGAPIERRE"/>
 <Game blackPlayer="SCHUURINKIVO" handicap="1" knownColor="true" result="RESULT_WHITEWINS" roundNumber="2" tableNumber="43" whitePlayer="DREAN-GUENAIZIABENJAMIN"/>
 <Game blackPlayer="JOHANSSONKIM" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="1" tableNumber="188" whitePlayer="OSTENDAVID"/>
 <Game blackPlayer="SCHUURINKIVO" handicap="1" knownColor="true" result="RESULT_WHITEWINS" roundNumber="1" tableNumber="191" whitePlayer="WELTICKEJONAS"/>
@@ -301,8 +301,8 @@
 <Game blackPlayer="AKINFEEVKIRILL" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="4" tableNumber="41" whitePlayer="ROMEIKAERNESTAS"/>
 <Game blackPlayer="LEXTRAITCESAR" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="6" tableNumber="48" whitePlayer="MAJKAMARCIN"/>
 <Game blackPlayer="PETRAUSKASALBERTAS" handicap="1" knownColor="true" result="RESULT_BLACKWINS" roundNumber="4" tableNumber="44" whitePlayer="KARADABANDENIS"/>
-<Game blackPlayer="LE_CALVETANGUY" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="4" tableNumber="43" whitePlayer="PETRAUSKASANDRIUS"/>
 <Game blackPlayer="FREJLAKSTANISLAW" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="6" tableNumber="47" whitePlayer="PAGAPIERRE"/>
+<Game blackPlayer="LE_CALVETANGUY" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="4" tableNumber="43" whitePlayer="PETRAUSKASANDRIUS"/>
 <Game blackPlayer="BOVIZDOMINIK" handicap="0" knownColor="true" result="RESULT_BLACKWINS" roundNumber="4" tableNumber="37" whitePlayer="CSIZMADIAGYORGY"/>
 <Game blackPlayer="CSIZMADIAROBERT" handicap="0" knownColor="true" result="RESULT_WHITEWINS" roundNumber="4" tableNumber="38" whitePlayer="GOESVINCENT_VAN_DER"/>
 <Game blackPlayer="CSIZMADIAMIKLOS" handicap="2" knownColor="true" result="RESULT_BLACKWINS" roundNumber="4" tableNumber="39" whitePlayer="BOVIZLASZLO"/>
@@ -613,67 +613,67 @@
 <Board boardNumber="2" player="CHAMOTFABRICE" roundNumber="20"/>
 <Board boardNumber="3" player="HERTZBERGCHRISTOPH" roundNumber="20"/>
 </Team>
-<Team teamName="Vasiliauskas" teamNumber="5">
-<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="1"/>
-<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="1"/>
-<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="1"/>
-<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="2"/>
-<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="2"/>
-<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="2"/>
-<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="3"/>
-<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="3"/>
-<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="3"/>
-<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="4"/>
-<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="4"/>
-<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="4"/>
-<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="5"/>
-<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="5"/>
-<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="5"/>
-<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="6"/>
-<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="6"/>
-<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="6"/>
-<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="7"/>
-<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="7"/>
-<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="7"/>
-<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="8"/>
-<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="8"/>
-<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="8"/>
-<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="9"/>
-<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="9"/>
-<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="9"/>
-<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="10"/>
-<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="10"/>
-<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="10"/>
-<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="11"/>
-<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="11"/>
-<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="11"/>
-<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="12"/>
-<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="12"/>
-<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="12"/>
-<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="13"/>
-<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="13"/>
-<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="13"/>
-<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="14"/>
-<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="14"/>
-<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="14"/>
-<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="15"/>
-<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="15"/>
-<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="15"/>
-<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="16"/>
-<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="16"/>
-<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="16"/>
-<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="17"/>
-<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="17"/>
-<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="17"/>
-<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="18"/>
-<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="18"/>
-<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="18"/>
-<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="19"/>
-<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="19"/>
-<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="19"/>
-<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="20"/>
-<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="20"/>
-<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="20"/>
+<Team teamName="Sol Sur Hanke" teamNumber="20">
+<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="1"/>
+<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="1"/>
+<Board boardNumber="3" player="HANKEANTONI" roundNumber="1"/>
+<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="2"/>
+<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="2"/>
+<Board boardNumber="3" player="HANKEANTONI" roundNumber="2"/>
+<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="3"/>
+<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="3"/>
+<Board boardNumber="3" player="HANKEANTONI" roundNumber="3"/>
+<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="4"/>
+<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="4"/>
+<Board boardNumber="3" player="HANKEANTONI" roundNumber="4"/>
+<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="5"/>
+<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="5"/>
+<Board boardNumber="3" player="HANKEANTONI" roundNumber="5"/>
+<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="6"/>
+<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="6"/>
+<Board boardNumber="3" player="HANKEANTONI" roundNumber="6"/>
+<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="7"/>
+<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="7"/>
+<Board boardNumber="3" player="HANKEANTONI" roundNumber="7"/>
+<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="8"/>
+<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="8"/>
+<Board boardNumber="3" player="HANKEANTONI" roundNumber="8"/>
+<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="9"/>
+<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="9"/>
+<Board boardNumber="3" player="HANKEANTONI" roundNumber="9"/>
+<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="10"/>
+<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="10"/>
+<Board boardNumber="3" player="HANKEANTONI" roundNumber="10"/>
+<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="11"/>
+<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="11"/>
+<Board boardNumber="3" player="HANKEANTONI" roundNumber="11"/>
+<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="12"/>
+<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="12"/>
+<Board boardNumber="3" player="HANKEANTONI" roundNumber="12"/>
+<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="13"/>
+<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="13"/>
+<Board boardNumber="3" player="HANKEANTONI" roundNumber="13"/>
+<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="14"/>
+<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="14"/>
+<Board boardNumber="3" player="HANKEANTONI" roundNumber="14"/>
+<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="15"/>
+<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="15"/>
+<Board boardNumber="3" player="HANKEANTONI" roundNumber="15"/>
+<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="16"/>
+<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="16"/>
+<Board boardNumber="3" player="HANKEANTONI" roundNumber="16"/>
+<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="17"/>
+<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="17"/>
+<Board boardNumber="3" player="HANKEANTONI" roundNumber="17"/>
+<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="18"/>
+<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="18"/>
+<Board boardNumber="3" player="HANKEANTONI" roundNumber="18"/>
+<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="19"/>
+<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="19"/>
+<Board boardNumber="3" player="HANKEANTONI" roundNumber="19"/>
+<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="20"/>
+<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="20"/>
+<Board boardNumber="3" player="HANKEANTONI" roundNumber="20"/>
 </Team>
 <Team teamName="Yunguseng1" teamNumber="27">
 <Board boardNumber="1" player="SCHUURINKIVO" roundNumber="1"/>
@@ -737,67 +737,67 @@
 <Board boardNumber="2" player="TRIPPELLORENZ" roundNumber="20"/>
 <Board boardNumber="3" player="ROMMESWINKELHENDRIK" roundNumber="20"/>
 </Team>
-<Team teamName="Sol Sur Hanke" teamNumber="20">
-<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="1"/>
-<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="1"/>
-<Board boardNumber="3" player="HANKEANTONI" roundNumber="1"/>
-<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="2"/>
-<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="2"/>
-<Board boardNumber="3" player="HANKEANTONI" roundNumber="2"/>
-<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="3"/>
-<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="3"/>
-<Board boardNumber="3" player="HANKEANTONI" roundNumber="3"/>
-<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="4"/>
-<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="4"/>
-<Board boardNumber="3" player="HANKEANTONI" roundNumber="4"/>
-<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="5"/>
-<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="5"/>
-<Board boardNumber="3" player="HANKEANTONI" roundNumber="5"/>
-<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="6"/>
-<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="6"/>
-<Board boardNumber="3" player="HANKEANTONI" roundNumber="6"/>
-<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="7"/>
-<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="7"/>
-<Board boardNumber="3" player="HANKEANTONI" roundNumber="7"/>
-<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="8"/>
-<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="8"/>
-<Board boardNumber="3" player="HANKEANTONI" roundNumber="8"/>
-<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="9"/>
-<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="9"/>
-<Board boardNumber="3" player="HANKEANTONI" roundNumber="9"/>
-<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="10"/>
-<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="10"/>
-<Board boardNumber="3" player="HANKEANTONI" roundNumber="10"/>
-<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="11"/>
-<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="11"/>
-<Board boardNumber="3" player="HANKEANTONI" roundNumber="11"/>
-<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="12"/>
-<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="12"/>
-<Board boardNumber="3" player="HANKEANTONI" roundNumber="12"/>
-<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="13"/>
-<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="13"/>
-<Board boardNumber="3" player="HANKEANTONI" roundNumber="13"/>
-<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="14"/>
-<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="14"/>
-<Board boardNumber="3" player="HANKEANTONI" roundNumber="14"/>
-<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="15"/>
-<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="15"/>
-<Board boardNumber="3" player="HANKEANTONI" roundNumber="15"/>
-<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="16"/>
-<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="16"/>
-<Board boardNumber="3" player="HANKEANTONI" roundNumber="16"/>
-<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="17"/>
-<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="17"/>
-<Board boardNumber="3" player="HANKEANTONI" roundNumber="17"/>
-<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="18"/>
-<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="18"/>
-<Board boardNumber="3" player="HANKEANTONI" roundNumber="18"/>
-<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="19"/>
-<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="19"/>
-<Board boardNumber="3" player="HANKEANTONI" roundNumber="19"/>
-<Board boardNumber="1" player="SOLDANLESZEK_JR" roundNumber="20"/>
-<Board boardNumber="2" player="SURMABARTOSZ" roundNumber="20"/>
-<Board boardNumber="3" player="HANKEANTONI" roundNumber="20"/>
+<Team teamName="Vasiliauskas" teamNumber="5">
+<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="1"/>
+<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="1"/>
+<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="1"/>
+<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="2"/>
+<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="2"/>
+<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="2"/>
+<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="3"/>
+<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="3"/>
+<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="3"/>
+<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="4"/>
+<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="4"/>
+<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="4"/>
+<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="5"/>
+<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="5"/>
+<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="5"/>
+<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="6"/>
+<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="6"/>
+<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="6"/>
+<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="7"/>
+<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="7"/>
+<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="7"/>
+<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="8"/>
+<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="8"/>
+<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="8"/>
+<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="9"/>
+<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="9"/>
+<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="9"/>
+<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="10"/>
+<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="10"/>
+<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="10"/>
+<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="11"/>
+<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="11"/>
+<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="11"/>
+<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="12"/>
+<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="12"/>
+<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="12"/>
+<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="13"/>
+<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="13"/>
+<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="13"/>
+<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="14"/>
+<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="14"/>
+<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="14"/>
+<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="15"/>
+<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="15"/>
+<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="15"/>
+<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="16"/>
+<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="16"/>
+<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="16"/>
+<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="17"/>
+<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="17"/>
+<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="17"/>
+<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="18"/>
+<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="18"/>
+<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="18"/>
+<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="19"/>
+<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="19"/>
+<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="19"/>
+<Board boardNumber="1" player="VASILIAUSKASRYTIS" roundNumber="20"/>
+<Board boardNumber="2" player="VASILIAUSKASGYTIS" roundNumber="20"/>
+<Board boardNumber="3" player="SAVCENKO-VASILIAUSKIENENADEZDA" roundNumber="20"/>
 </Team>
 <Team teamName="Yunguseng2" teamNumber="9">
 <Board boardNumber="1" player="PRAZSYLVAIN" roundNumber="1"/>
@@ -1047,68 +1047,6 @@
 <Board boardNumber="2" player="GILLETVINCENT" roundNumber="20"/>
 <Board boardNumber="3" player="PERROTAURORE" roundNumber="20"/>
 </Team>
-<Team teamName="Trabi" teamNumber="16">
-<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="1"/>
-<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="1"/>
-<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="1"/>
-<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="2"/>
-<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="2"/>
-<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="2"/>
-<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="3"/>
-<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="3"/>
-<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="3"/>
-<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="4"/>
-<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="4"/>
-<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="4"/>
-<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="5"/>
-<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="5"/>
-<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="5"/>
-<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="6"/>
-<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="6"/>
-<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="6"/>
-<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="7"/>
-<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="7"/>
-<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="7"/>
-<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="8"/>
-<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="8"/>
-<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="8"/>
-<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="9"/>
-<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="9"/>
-<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="9"/>
-<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="10"/>
-<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="10"/>
-<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="10"/>
-<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="11"/>
-<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="11"/>
-<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="11"/>
-<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="12"/>
-<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="12"/>
-<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="12"/>
-<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="13"/>
-<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="13"/>
-<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="13"/>
-<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="14"/>
-<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="14"/>
-<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="14"/>
-<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="15"/>
-<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="15"/>
-<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="15"/>
-<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="16"/>
-<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="16"/>
-<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="16"/>
-<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="17"/>
-<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="17"/>
-<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="17"/>
-<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="18"/>
-<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="18"/>
-<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="18"/>
-<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="19"/>
-<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="19"/>
-<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="19"/>
-<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="20"/>
-<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="20"/>
-<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="20"/>
-</Team>
 <Team teamName="Mah Fer Zaz" teamNumber="23">
 <Board boardNumber="1" player="MAHMOODFASSAL" roundNumber="1"/>
 <Board boardNumber="2" player="FERNANDEZ-PRADIERMELANIE" roundNumber="1"/>
@@ -1170,6 +1108,68 @@
 <Board boardNumber="1" player="MAHMOODFASSAL" roundNumber="20"/>
 <Board boardNumber="2" player="FERNANDEZ-PRADIERMELANIE" roundNumber="20"/>
 <Board boardNumber="3" player="ZAZOJAVIER" roundNumber="20"/>
+</Team>
+<Team teamName="Trabi" teamNumber="16">
+<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="1"/>
+<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="1"/>
+<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="1"/>
+<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="2"/>
+<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="2"/>
+<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="2"/>
+<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="3"/>
+<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="3"/>
+<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="3"/>
+<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="4"/>
+<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="4"/>
+<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="4"/>
+<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="5"/>
+<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="5"/>
+<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="5"/>
+<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="6"/>
+<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="6"/>
+<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="6"/>
+<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="7"/>
+<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="7"/>
+<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="7"/>
+<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="8"/>
+<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="8"/>
+<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="8"/>
+<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="9"/>
+<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="9"/>
+<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="9"/>
+<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="10"/>
+<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="10"/>
+<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="10"/>
+<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="11"/>
+<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="11"/>
+<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="11"/>
+<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="12"/>
+<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="12"/>
+<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="12"/>
+<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="13"/>
+<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="13"/>
+<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="13"/>
+<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="14"/>
+<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="14"/>
+<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="14"/>
+<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="15"/>
+<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="15"/>
+<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="15"/>
+<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="16"/>
+<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="16"/>
+<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="16"/>
+<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="17"/>
+<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="17"/>
+<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="17"/>
+<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="18"/>
+<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="18"/>
+<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="18"/>
+<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="19"/>
+<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="19"/>
+<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="19"/>
+<Board boardNumber="1" player="BOVIZDOMINIK" roundNumber="20"/>
+<Board boardNumber="2" player="GOESVINCENT_VAN_DER" roundNumber="20"/>
+<Board boardNumber="3" player="BOVIZLASZLO" roundNumber="20"/>
 </Team>
 <Team teamName="XYZ" teamNumber="13">
 <Board boardNumber="1" player="CHENYIBIN" roundNumber="1"/>
@@ -2225,68 +2225,6 @@
 <Board boardNumber="2" player="PLIKKMICHAEL" roundNumber="20"/>
 <Board boardNumber="3" player="LINDHOLMJOAKIM" roundNumber="20"/>
 </Team>
-<Team teamName="Get strong" teamNumber="6">
-<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="1"/>
-<Board boardNumber="2" player="POPOVAMARINA" roundNumber="1"/>
-<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="1"/>
-<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="2"/>
-<Board boardNumber="2" player="POPOVAMARINA" roundNumber="2"/>
-<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="2"/>
-<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="3"/>
-<Board boardNumber="2" player="POPOVAMARINA" roundNumber="3"/>
-<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="3"/>
-<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="4"/>
-<Board boardNumber="2" player="POPOVAMARINA" roundNumber="4"/>
-<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="4"/>
-<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="5"/>
-<Board boardNumber="2" player="POPOVAMARINA" roundNumber="5"/>
-<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="5"/>
-<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="6"/>
-<Board boardNumber="2" player="POPOVAMARINA" roundNumber="6"/>
-<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="6"/>
-<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="7"/>
-<Board boardNumber="2" player="POPOVAMARINA" roundNumber="7"/>
-<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="7"/>
-<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="8"/>
-<Board boardNumber="2" player="POPOVAMARINA" roundNumber="8"/>
-<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="8"/>
-<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="9"/>
-<Board boardNumber="2" player="POPOVAMARINA" roundNumber="9"/>
-<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="9"/>
-<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="10"/>
-<Board boardNumber="2" player="POPOVAMARINA" roundNumber="10"/>
-<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="10"/>
-<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="11"/>
-<Board boardNumber="2" player="POPOVAMARINA" roundNumber="11"/>
-<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="11"/>
-<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="12"/>
-<Board boardNumber="2" player="POPOVAMARINA" roundNumber="12"/>
-<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="12"/>
-<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="13"/>
-<Board boardNumber="2" player="POPOVAMARINA" roundNumber="13"/>
-<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="13"/>
-<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="14"/>
-<Board boardNumber="2" player="POPOVAMARINA" roundNumber="14"/>
-<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="14"/>
-<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="15"/>
-<Board boardNumber="2" player="POPOVAMARINA" roundNumber="15"/>
-<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="15"/>
-<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="16"/>
-<Board boardNumber="2" player="POPOVAMARINA" roundNumber="16"/>
-<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="16"/>
-<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="17"/>
-<Board boardNumber="2" player="POPOVAMARINA" roundNumber="17"/>
-<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="17"/>
-<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="18"/>
-<Board boardNumber="2" player="POPOVAMARINA" roundNumber="18"/>
-<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="18"/>
-<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="19"/>
-<Board boardNumber="2" player="POPOVAMARINA" roundNumber="19"/>
-<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="19"/>
-<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="20"/>
-<Board boardNumber="2" player="POPOVAMARINA" roundNumber="20"/>
-<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="20"/>
-</Team>
 <Team teamName="In Progress" teamNumber="33">
 <Board boardNumber="1" player="TSAINORMAN" roundNumber="1"/>
 <Board boardNumber="2" player="JABARINALI" roundNumber="1"/>
@@ -2348,6 +2286,68 @@
 <Board boardNumber="1" player="TSAINORMAN" roundNumber="20"/>
 <Board boardNumber="2" player="JABARINALI" roundNumber="20"/>
 <Board boardNumber="3" player="STOEHRMARC" roundNumber="20"/>
+</Team>
+<Team teamName="Get strong" teamNumber="6">
+<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="1"/>
+<Board boardNumber="2" player="POPOVAMARINA" roundNumber="1"/>
+<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="1"/>
+<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="2"/>
+<Board boardNumber="2" player="POPOVAMARINA" roundNumber="2"/>
+<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="2"/>
+<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="3"/>
+<Board boardNumber="2" player="POPOVAMARINA" roundNumber="3"/>
+<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="3"/>
+<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="4"/>
+<Board boardNumber="2" player="POPOVAMARINA" roundNumber="4"/>
+<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="4"/>
+<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="5"/>
+<Board boardNumber="2" player="POPOVAMARINA" roundNumber="5"/>
+<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="5"/>
+<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="6"/>
+<Board boardNumber="2" player="POPOVAMARINA" roundNumber="6"/>
+<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="6"/>
+<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="7"/>
+<Board boardNumber="2" player="POPOVAMARINA" roundNumber="7"/>
+<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="7"/>
+<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="8"/>
+<Board boardNumber="2" player="POPOVAMARINA" roundNumber="8"/>
+<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="8"/>
+<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="9"/>
+<Board boardNumber="2" player="POPOVAMARINA" roundNumber="9"/>
+<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="9"/>
+<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="10"/>
+<Board boardNumber="2" player="POPOVAMARINA" roundNumber="10"/>
+<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="10"/>
+<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="11"/>
+<Board boardNumber="2" player="POPOVAMARINA" roundNumber="11"/>
+<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="11"/>
+<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="12"/>
+<Board boardNumber="2" player="POPOVAMARINA" roundNumber="12"/>
+<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="12"/>
+<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="13"/>
+<Board boardNumber="2" player="POPOVAMARINA" roundNumber="13"/>
+<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="13"/>
+<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="14"/>
+<Board boardNumber="2" player="POPOVAMARINA" roundNumber="14"/>
+<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="14"/>
+<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="15"/>
+<Board boardNumber="2" player="POPOVAMARINA" roundNumber="15"/>
+<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="15"/>
+<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="16"/>
+<Board boardNumber="2" player="POPOVAMARINA" roundNumber="16"/>
+<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="16"/>
+<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="17"/>
+<Board boardNumber="2" player="POPOVAMARINA" roundNumber="17"/>
+<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="17"/>
+<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="18"/>
+<Board boardNumber="2" player="POPOVAMARINA" roundNumber="18"/>
+<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="18"/>
+<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="19"/>
+<Board boardNumber="2" player="POPOVAMARINA" roundNumber="19"/>
+<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="19"/>
+<Board boardNumber="1" player="ISMAIL-AKHUNOVAGZAM" roundNumber="20"/>
+<Board boardNumber="2" player="POPOVAMARINA" roundNumber="20"/>
+<Board boardNumber="3" player="NOVIKMIKHAIL" roundNumber="20"/>
 </Team>
 <Team teamName="Zombie" teamNumber="31">
 <Board boardNumber="1" player="LE_CALVETANGUY" roundNumber="1"/>
@@ -2411,68 +2411,6 @@
 <Board boardNumber="2" player="KARADABANDENIS" roundNumber="20"/>
 <Board boardNumber="3" player="LEMASSONROMAN" roundNumber="20"/>
 </Team>
-<Team teamName="Damezumari" teamNumber="15">
-<Board boardNumber="1" player="YILDIZUGUR" roundNumber="1"/>
-<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="1"/>
-<Board boardNumber="3" player="TANERGECOZAN" roundNumber="1"/>
-<Board boardNumber="1" player="YILDIZUGUR" roundNumber="2"/>
-<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="2"/>
-<Board boardNumber="3" player="TANERGECOZAN" roundNumber="2"/>
-<Board boardNumber="1" player="YILDIZUGUR" roundNumber="3"/>
-<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="3"/>
-<Board boardNumber="3" player="TANERGECOZAN" roundNumber="3"/>
-<Board boardNumber="1" player="YILDIZUGUR" roundNumber="4"/>
-<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="4"/>
-<Board boardNumber="3" player="TANERGECOZAN" roundNumber="4"/>
-<Board boardNumber="1" player="YILDIZUGUR" roundNumber="5"/>
-<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="5"/>
-<Board boardNumber="3" player="TANERGECOZAN" roundNumber="5"/>
-<Board boardNumber="1" player="YILDIZUGUR" roundNumber="6"/>
-<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="6"/>
-<Board boardNumber="3" player="TANERGECOZAN" roundNumber="6"/>
-<Board boardNumber="1" player="YILDIZUGUR" roundNumber="7"/>
-<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="7"/>
-<Board boardNumber="3" player="TANERGECOZAN" roundNumber="7"/>
-<Board boardNumber="1" player="YILDIZUGUR" roundNumber="8"/>
-<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="8"/>
-<Board boardNumber="3" player="TANERGECOZAN" roundNumber="8"/>
-<Board boardNumber="1" player="YILDIZUGUR" roundNumber="9"/>
-<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="9"/>
-<Board boardNumber="3" player="TANERGECOZAN" roundNumber="9"/>
-<Board boardNumber="1" player="YILDIZUGUR" roundNumber="10"/>
-<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="10"/>
-<Board boardNumber="3" player="TANERGECOZAN" roundNumber="10"/>
-<Board boardNumber="1" player="YILDIZUGUR" roundNumber="11"/>
-<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="11"/>
-<Board boardNumber="3" player="TANERGECOZAN" roundNumber="11"/>
-<Board boardNumber="1" player="YILDIZUGUR" roundNumber="12"/>
-<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="12"/>
-<Board boardNumber="3" player="TANERGECOZAN" roundNumber="12"/>
-<Board boardNumber="1" player="YILDIZUGUR" roundNumber="13"/>
-<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="13"/>
-<Board boardNumber="3" player="TANERGECOZAN" roundNumber="13"/>
-<Board boardNumber="1" player="YILDIZUGUR" roundNumber="14"/>
-<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="14"/>
-<Board boardNumber="3" player="TANERGECOZAN" roundNumber="14"/>
-<Board boardNumber="1" player="YILDIZUGUR" roundNumber="15"/>
-<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="15"/>
-<Board boardNumber="3" player="TANERGECOZAN" roundNumber="15"/>
-<Board boardNumber="1" player="YILDIZUGUR" roundNumber="16"/>
-<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="16"/>
-<Board boardNumber="3" player="TANERGECOZAN" roundNumber="16"/>
-<Board boardNumber="1" player="YILDIZUGUR" roundNumber="17"/>
-<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="17"/>
-<Board boardNumber="3" player="TANERGECOZAN" roundNumber="17"/>
-<Board boardNumber="1" player="YILDIZUGUR" roundNumber="18"/>
-<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="18"/>
-<Board boardNumber="3" player="TANERGECOZAN" roundNumber="18"/>
-<Board boardNumber="1" player="YILDIZUGUR" roundNumber="19"/>
-<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="19"/>
-<Board boardNumber="3" player="TANERGECOZAN" roundNumber="19"/>
-<Board boardNumber="1" player="YILDIZUGUR" roundNumber="20"/>
-<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="20"/>
-<Board boardNumber="3" player="TANERGECOZAN" roundNumber="20"/>
-</Team>
 <Team teamName="Bogoss" teamNumber="24">
 <Board boardNumber="1" player="DREAN-GUENAIZIABENJAMIN" roundNumber="1"/>
 <Board boardNumber="2" player="PAGAPIERRE" roundNumber="1"/>
@@ -2535,9 +2473,71 @@
 <Board boardNumber="2" player="PAGAPIERRE" roundNumber="20"/>
 <Board boardNumber="3" player="LEXTRAITCESAR" roundNumber="20"/>
 </Team>
+<Team teamName="Damezumari" teamNumber="15">
+<Board boardNumber="1" player="YILDIZUGUR" roundNumber="1"/>
+<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="1"/>
+<Board boardNumber="3" player="TANERGECOZAN" roundNumber="1"/>
+<Board boardNumber="1" player="YILDIZUGUR" roundNumber="2"/>
+<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="2"/>
+<Board boardNumber="3" player="TANERGECOZAN" roundNumber="2"/>
+<Board boardNumber="1" player="YILDIZUGUR" roundNumber="3"/>
+<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="3"/>
+<Board boardNumber="3" player="TANERGECOZAN" roundNumber="3"/>
+<Board boardNumber="1" player="YILDIZUGUR" roundNumber="4"/>
+<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="4"/>
+<Board boardNumber="3" player="TANERGECOZAN" roundNumber="4"/>
+<Board boardNumber="1" player="YILDIZUGUR" roundNumber="5"/>
+<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="5"/>
+<Board boardNumber="3" player="TANERGECOZAN" roundNumber="5"/>
+<Board boardNumber="1" player="YILDIZUGUR" roundNumber="6"/>
+<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="6"/>
+<Board boardNumber="3" player="TANERGECOZAN" roundNumber="6"/>
+<Board boardNumber="1" player="YILDIZUGUR" roundNumber="7"/>
+<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="7"/>
+<Board boardNumber="3" player="TANERGECOZAN" roundNumber="7"/>
+<Board boardNumber="1" player="YILDIZUGUR" roundNumber="8"/>
+<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="8"/>
+<Board boardNumber="3" player="TANERGECOZAN" roundNumber="8"/>
+<Board boardNumber="1" player="YILDIZUGUR" roundNumber="9"/>
+<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="9"/>
+<Board boardNumber="3" player="TANERGECOZAN" roundNumber="9"/>
+<Board boardNumber="1" player="YILDIZUGUR" roundNumber="10"/>
+<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="10"/>
+<Board boardNumber="3" player="TANERGECOZAN" roundNumber="10"/>
+<Board boardNumber="1" player="YILDIZUGUR" roundNumber="11"/>
+<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="11"/>
+<Board boardNumber="3" player="TANERGECOZAN" roundNumber="11"/>
+<Board boardNumber="1" player="YILDIZUGUR" roundNumber="12"/>
+<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="12"/>
+<Board boardNumber="3" player="TANERGECOZAN" roundNumber="12"/>
+<Board boardNumber="1" player="YILDIZUGUR" roundNumber="13"/>
+<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="13"/>
+<Board boardNumber="3" player="TANERGECOZAN" roundNumber="13"/>
+<Board boardNumber="1" player="YILDIZUGUR" roundNumber="14"/>
+<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="14"/>
+<Board boardNumber="3" player="TANERGECOZAN" roundNumber="14"/>
+<Board boardNumber="1" player="YILDIZUGUR" roundNumber="15"/>
+<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="15"/>
+<Board boardNumber="3" player="TANERGECOZAN" roundNumber="15"/>
+<Board boardNumber="1" player="YILDIZUGUR" roundNumber="16"/>
+<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="16"/>
+<Board boardNumber="3" player="TANERGECOZAN" roundNumber="16"/>
+<Board boardNumber="1" player="YILDIZUGUR" roundNumber="17"/>
+<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="17"/>
+<Board boardNumber="3" player="TANERGECOZAN" roundNumber="17"/>
+<Board boardNumber="1" player="YILDIZUGUR" roundNumber="18"/>
+<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="18"/>
+<Board boardNumber="3" player="TANERGECOZAN" roundNumber="18"/>
+<Board boardNumber="1" player="YILDIZUGUR" roundNumber="19"/>
+<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="19"/>
+<Board boardNumber="3" player="TANERGECOZAN" roundNumber="19"/>
+<Board boardNumber="1" player="YILDIZUGUR" roundNumber="20"/>
+<Board boardNumber="2" player="COKCEKENSEMIH" roundNumber="20"/>
+<Board boardNumber="3" player="TANERGECOZAN" roundNumber="20"/>
+</Team>
 </Teams>
 <TournamentParameterSet>
-<GeneralParameterSet basicTime="20" beginDate="2013-07-31" canByoYomiTime="300" complementaryTimeSystem="STDBYOYOMI" director="Krzysztof Bozek" endDate="2013-07-31" fischerTime="10" genMMBar="4D" genMMFloor="20K" genMMS2ValueAbsent="1" genMMS2ValueBye="2" genNBW2ValueAbsent="0" genNBW2ValueBye="2" genRoundDownNBWMMS="true" komi="6.5" location="Olsztyn" name="TeamEGC2013" nbMovesCanTime="15" numberOfCategories="1" numberOfRounds="6" shortName="TeamEGC2013" size="19" stdByoYomiTime="20"/>
+<GeneralParameterSet basicTime="20" beginDate="2013-07-31" canByoYomiTime="300" complementaryTimeSystem="STDBYOYOMI" director="Krzysztof Bozek" endDate="2013-07-31" fischerTime="10" genMMBar="4D" genMMFloor="20K" genMMS2ValueAbsent="1" genMMS2ValueBye="2" genMMZero="30K" genNBW2ValueAbsent="0" genNBW2ValueBye="2" genRoundDownNBWMMS="true" komi="6.5" location="Olsztyn" name="TeamEGC2013" nbMovesCanTime="15" numberOfCategories="1" numberOfRounds="6" shortName="ull" size="19" stdByoYomiTime="20"/>
 <HandicapParameterSet hdBasedOnMMS="false" hdCeiling="9" hdCorrection="2" hdNoHdRankThreshold="8D"/>
 <PlacementParameterSet>
 <PlacementCriteria>
@@ -2550,7 +2550,8 @@
 </PlacementCriteria>
 </PlacementParameterSet>
 <PairingParameterSet paiBaAvoidDuplGame="500000000000000" paiBaBalanceWB="1000000" paiBaDeterministic="true" paiBaRandom="0" paiMaAdditionalPlacementCritSystem1="Rating" paiMaAdditionalPlacementCritSystem2="NULL" paiMaAvoidMixingCategories="0" paiMaCompensateDUDD="true" paiMaDUDDLowerMode="MID" paiMaDUDDUpperMode="MID" paiMaDUDDWeight="100000000" paiMaLastRoundForSeedSystem1="2" paiMaMaximizeSeeding="5000000" paiMaMinimizeScoreDifference="100000000000" paiMaSeedSystem1="SPLITANDRANDOM" paiSeAvoidSameGeo="100000000000" paiSeBarThresholdActive="true" paiSeDefSecCrit="100000000000" paiSeMinimizeHandicap="0" paiSeNbWinsThresholdActive="false" paiSePreferMMSDiffRatherThanSameClub="3" paiSePreferMMSDiffRatherThanSameCountry="1" paiSeRankThreshold="1D" paiStandardNX1Factor="0.5"/>
-<DPParameterSet displayClCol="false" displayCoCol="true" displayIndGamesInMatches="true" displayNumCol="true" displayPlCol="true" gameFormat="full" playerSortType="name" showByePlayer="true" showNotPairedPlayers="true" showNotParticipatingPlayers="true" showPlayerClub="true" showPlayerCountry="false" showPlayerRank="true"/>
+<DPParameterSet displayClCol="false" displayCoCol="true" displayIndGamesInMatches="true" displayNumCol="true" displayPlCol="true" gameFormat="full" playerSortType="name" showByePlayer="true" showNotFinallyRegisteredPlayers="true" showNotPairedPlayers="true" showNotParticipatingPlayers="true" showPlayerClub="true" showPlayerCountry="false" showPlayerGrade="true"/>
+<PublishParameterSet exportToLocalFile="true" exportToOGSite="false" exportToUDSite="false" print="true"/>
 </TournamentParameterSet>
 <TeamTournamentParameterSet>
 <TeamGeneralParameterSet teamSize="3"/>

@@ -197,6 +197,9 @@
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="rdbSortByName">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grpSortType"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Name"/>
                   </Properties>
                   <Events>
@@ -211,6 +214,23 @@
                 <Component class="javax.swing.JRadioButton" name="rdbSortByRank">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Rank"/>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="allSortRDBActionPerformed"/>
+                  </Events>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="210" y="30" width="70" height="-1"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="rdbSortByGrade">
+                  <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grpSortType"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Grade"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="allSortRDBActionPerformed"/>
@@ -251,10 +271,10 @@
                     </Constraint>
                   </Constraints>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="ckbShowPlayerRank">
+                <Component class="javax.swing.JCheckBox" name="ckbShowPlayerGrade">
                   <Properties>
                     <Property name="selected" type="boolean" value="true"/>
-                    <Property name="text" type="java.lang.String" value="Rank"/>
+                    <Property name="text" type="java.lang.String" value="Grade"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="allContentsCKBActionPerformed"/>
@@ -391,6 +411,9 @@
               <SubComponents>
                 <Component class="javax.swing.JRadioButton" name="rdbGameFormatFull">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grpGameFormat"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Full (123+/w4)"/>
                   </Properties>
                   <Events>
@@ -404,6 +427,9 @@
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="rdbGameFormatShort">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="grpGameFormat"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Short (123+)"/>
                   </Properties>
                   <Events>

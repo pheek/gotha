@@ -38,8 +38,10 @@ public class JFrGotha extends javax.swing.JFrame {
     private static final int NUM_COL = 0;
     private static final int PL_COL = 1;
     private static final int NAME_COL = 2;
-    private static final int RANK_COL = 3;
-    private static final int COUNTRY_COL = RANK_COL + 1;
+//    private static final int RANK_COL = 3;
+    private static final int GRADE_COL = 3;
+//    private static final int COUNTRY_COL = RANK_COL + 1;
+    private static final int COUNTRY_COL = GRADE_COL + 1;
     private static final int CLUB_COL = COUNTRY_COL + 1;
     private static final int NBW_COL = CLUB_COL + 1;
     private static final int ROUND0_RESULT_COL = NBW_COL + 1;
@@ -1707,10 +1709,13 @@ public class JFrGotha extends javax.swing.JFrame {
         // avoid double
         alS.remove(strRecentTournamentFileName);
         alS.add(0, strRecentTournamentFileName);
+        // avoid null
+        alS.remove("null");
 
         Preferences prefsRoot = Preferences.userRoot();
         Preferences gothaPrefs = prefsRoot.node(Gotha.strPreferences);
         int nbRT = Math.min(alS.size(), MAX_NUMBER_OF_RECENT_TOURNAMENTS);
+        removeAllRecentTournament();
         for (int numRT = 0; numRT < nbRT; numRT++) {
             String strK = "recentTournament" + numRT;
             String strRT = alS.get(numRT);
@@ -1982,7 +1987,8 @@ public class JFrGotha extends javax.swing.JFrame {
         columnModel.getColumn(PL_COL).setHeaderValue(strPlHeader);
         
         columnModel.getColumn(NAME_COL).setHeaderValue("Name");
-        columnModel.getColumn(RANK_COL).setHeaderValue("Rk");
+//        columnModel.getColumn(RANK_COL).setHeaderValue("Rk");
+       columnModel.getColumn(GRADE_COL).setHeaderValue("Gr");
         String strCoHeader = "Co";
         if (!tps.getDPParameterSet().isDisplayCoCol()) {
             strCoHeader = "";
@@ -2025,7 +2031,8 @@ public class JFrGotha extends javax.swing.JFrame {
         columnModel.getColumn(CLUB_COL).setPreferredWidth(clWidth);
 
         columnModel.getColumn(NAME_COL).setPreferredWidth(110);
-        columnModel.getColumn(RANK_COL).setPreferredWidth(30);
+//        columnModel.getColumn(RANK_COL).setPreferredWidth(30);
+          columnModel.getColumn(GRADE_COL).setPreferredWidth(30);
         columnModel.getColumn(NBW_COL).setPreferredWidth(20);
         for (int r = 0; r <= displayedRoundNumber - numberOfDisplayedRounds; r++) {
             columnModel.getColumn(ROUND0_RESULT_COL + r).setMinWidth(2);
@@ -2072,7 +2079,8 @@ public class JFrGotha extends javax.swing.JFrame {
   
             model.setValueAt(sp.fullName(), iSP, iCol++);
                         
-            model.setValueAt(Player.convertIntToKD(sp.getRank()), iSP, iCol++);
+//            model.setValueAt(Player.convertIntToKD(sp.getRank()), iSP, iCol++);
+            model.setValueAt(sp.getStrGrade(), iSP, iCol++);
 
             String strCo = sp.getCountry();
             if (!tps.getDPParameterSet().isDisplayCoCol()) {
@@ -3051,6 +3059,10 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     }//GEN-LAST:event_mniDiscardRoundsActionPerformed
 
     private void mniSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniSaveActionPerformed
+        if (tournament == null) {
+            JOptionPane.showMessageDialog(this, "No currently open tournament", "Message", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         boolean bHBSO = false;
         try {
             bHBSO = tournament.isHasBeenSavedOnce();
@@ -3062,7 +3074,21 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
         ArrayList<String> alRT = this.getRecentTournamentsList();
         rtFN = alRT.get(0);
         
-        if (bHBSO && rtFN.length() > 0)  this.saveTournament(new File(rtFN));
+        String strSN ="";
+        try {
+        strSN = tournament.getShortName();
+        } catch (RemoteException ex) {
+            Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        boolean bCoherenceSNRT = false;
+        int lastSlash = rtFN.lastIndexOf("/");
+        int lastBackSlash = rtFN.lastIndexOf("\\");
+        int lastSep = Math.max(lastSlash, lastBackSlash);
+        String strRTFileName = rtFN.substring(lastSep + 1);
+        
+        if (strRTFileName.equals(strSN + ".xml")) bCoherenceSNRT = true;
+        
+        if (bHBSO && bCoherenceSNRT && rtFN.length() > 0)  this.saveTournament(new File(rtFN));
         else{
             File f = saveAs();
             this.addRecentTournament("" + f);

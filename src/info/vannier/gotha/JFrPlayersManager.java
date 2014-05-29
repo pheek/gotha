@@ -103,7 +103,8 @@ public class JFrPlayersManager extends javax.swing.JFrame {
             tabCkbParticipation[i].setText("" + (i + 1));
             tabCkbParticipation[i].setFont(new Font("Default", Font.PLAIN, 9));
             pnlParticipation.add(tabCkbParticipation[i]);
-            tabCkbParticipation[i].setBounds((i % 5) * 42 + 4, (i / 5) * 25 + 20, 40, 15);
+//            tabCkbParticipation[i].setBounds((i % 5) * 42 + 4, (i / 5) * 25 + 20, 40, 15);
+            tabCkbParticipation[i].setBounds((i % 5) * 42 + 4, (i / 5) * 20 + 20, 40, 15);
         }
                
         getRootPane().setDefaultButton(btnRegister);
@@ -251,12 +252,13 @@ public class JFrPlayersManager extends javax.swing.JFrame {
             this.rdbRankFromGrade.setVisible(true);
         }
         if (ratingList.getRatingListType() == RatingList.TYPE_FFG) {
-            this.rdbRankFromGoR.setEnabled(true);
+//            this.rdbRankFromGoR.setEnabled(true);
+            this.rdbRankFromGoR.setSelected(true);
         }
         if (ratingList.getRatingListType() == RatingList.TYPE_AGA) {
-            this.rdbRankFromGoR.setEnabled(true);
+//            this.rdbRankFromGoR.setEnabled(true);
+            this.rdbRankFromGoR.setSelected(true);
         }
-        
         
         if (ratingList.getRatingListType() == RatingList.TYPE_UNDEFINED) {           
             cbxRatingList.setEnabled(false);
@@ -284,7 +286,8 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         this.playerMode = JFrPlayersManager.PLAYER_MODE_NEW;
         txfName.setText("");
         txfFirstName.setText("");
-        txfRank.setText("30K");
+//        txfRank.setText("30K");
+        txfRank.setText("");
         txfSMMSCorrection.setText("0");
         txfRatingOrigin.setText("");
         txfRating.setText("");
@@ -324,7 +327,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         } catch (RemoteException ex) {
             Logger.getLogger(JFrPlayersManager.class.getName()).log(Level.SEVERE, null, ex);
         }
-        pnlParticipation.setSize(new Dimension(220, 30 + (gps.getNumberOfRounds() + 4) / 5 * 25));
+        pnlParticipation.setSize(new Dimension(220, 30 + (gps.getNumberOfRounds() + 4) / 5 * 20));
 
         for (int i = 0; i < Gotha.MAX_NUMBER_OF_ROUNDS; i++) {
             if (i < gps.getNumberOfRounds()) {
@@ -349,6 +352,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         grpRegistration = new javax.swing.ButtonGroup();
         pupRegisteredPlayers = new javax.swing.JPopupMenu();
         mniSortByName = new javax.swing.JMenuItem();
+        mniSortByGrade = new javax.swing.JMenuItem();
         mniSortByRank = new javax.swing.JMenuItem();
         mniRemovePlayer = new javax.swing.JMenuItem();
         mniModifyPlayer = new javax.swing.JMenuItem();
@@ -428,6 +432,14 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         });
         pupRegisteredPlayers.add(mniSortByName);
 
+        mniSortByGrade.setText("Sort by grade");
+        mniSortByGrade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniSortByGradeActionPerformed(evt);
+            }
+        });
+        pupRegisteredPlayers.add(mniSortByGrade);
+
         mniSortByRank.setText("Sort by rank");
         mniSortByRank.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -477,13 +489,12 @@ public class JFrPlayersManager extends javax.swing.JFrame {
 
         jLabel2.setText("First name");
         pnlPlayer.add(jLabel2);
-        jLabel2.setBounds(10, 280, 70, 14);
+        jLabel2.setBounds(10, 280, 60, 14);
 
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel3.setText("origin");
+        jLabel3.setText("Origin");
         jLabel3.setToolTipText("from 30K to 9D");
         pnlPlayer.add(jLabel3);
-        jLabel3.setBounds(120, 390, 40, 14);
+        jLabel3.setBounds(120, 370, 40, 14);
 
         jLabel4.setText("Country");
         jLabel4.setToolTipText("Country where the player lives (2 letters)");
@@ -497,11 +508,11 @@ public class JFrPlayersManager extends javax.swing.JFrame {
 
         jLabel6.setText("FFG Lic");
         pnlPlayer.add(jLabel6);
-        jLabel6.setBounds(170, 420, 60, 15);
+        jLabel6.setBounds(170, 435, 60, 15);
 
         jLabel7.setText("EGF PIN");
         pnlPlayer.add(jLabel7);
-        jLabel7.setBounds(10, 420, 60, 14);
+        jLabel7.setBounds(10, 435, 60, 14);
 
         txfName.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -509,7 +520,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
             }
         });
         pnlPlayer.add(txfName);
-        txfName.setBounds(80, 250, 160, 20);
+        txfName.setBounds(70, 250, 100, 20);
 
         txfFirstName.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -517,7 +528,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
             }
         });
         pnlPlayer.add(txfFirstName);
-        txfFirstName.setBounds(80, 280, 80, 20);
+        txfFirstName.setBounds(70, 280, 100, 20);
 
         txfRank.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txfRank.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -526,32 +537,35 @@ public class JFrPlayersManager extends javax.swing.JFrame {
             }
         });
         pnlPlayer.add(txfRank);
-        txfRank.setBounds(80, 360, 40, 20);
+        txfRank.setBounds(170, 405, 40, 20);
         pnlPlayer.add(txfClub);
-        txfClub.setBounds(80, 330, 50, 20);
+        txfClub.setBounds(70, 330, 50, 20);
         pnlPlayer.add(txfFfgLicence);
-        txfFfgLicence.setBounds(230, 420, 55, 20);
+        txfFfgLicence.setBounds(230, 435, 55, 20);
         pnlPlayer.add(txfEgfPin);
-        txfEgfPin.setBounds(70, 420, 90, 20);
+        txfEgfPin.setBounds(70, 435, 90, 20);
 
         txfRatingOrigin.setEditable(false);
+        txfRatingOrigin.setFocusable(false);
         pnlPlayer.add(txfRatingOrigin);
-        txfRatingOrigin.setBounds(160, 390, 60, 20);
+        txfRatingOrigin.setBounds(170, 370, 70, 20);
 
         txfRating.setEditable(false);
+        txfRating.setFocusable(false);
         pnlPlayer.add(txfRating);
-        txfRating.setBounds(80, 390, 40, 20);
+        txfRating.setBounds(70, 370, 40, 20);
 
         txfFfgLicenceStatus.setEditable(false);
         txfFfgLicenceStatus.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txfFfgLicenceStatus.setFocusable(false);
         pnlPlayer.add(txfFfgLicenceStatus);
-        txfFfgLicenceStatus.setBounds(290, 420, 15, 20);
+        txfFfgLicenceStatus.setBounds(290, 435, 15, 20);
 
         pnlParticipation.setBorder(javax.swing.BorderFactory.createTitledBorder("Participation"));
         pnlParticipation.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         pnlParticipation.setLayout(null);
         pnlPlayer.add(pnlParticipation);
-        pnlParticipation.setBounds(260, 240, 220, 140);
+        pnlParticipation.setBounds(260, 240, 200, 120);
 
         btnReset.setText("Reset");
         btnReset.setToolTipText("Reset form");
@@ -580,17 +594,17 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         rdbPreliminary.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         rdbPreliminary.setText("Preliminary");
         pnlRegistration.add(rdbPreliminary);
-        rdbPreliminary.setBounds(10, 16, 90, 21);
+        rdbPreliminary.setBounds(10, 14, 90, 21);
 
         grpRegistration.add(rdbFinal);
         rdbFinal.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         rdbFinal.setSelected(true);
         rdbFinal.setText("Final");
         pnlRegistration.add(rdbFinal);
-        rdbFinal.setBounds(110, 16, 90, 21);
+        rdbFinal.setBounds(110, 14, 90, 21);
 
         pnlPlayer.add(pnlRegistration);
-        pnlRegistration.setBounds(10, 460, 240, 45);
+        pnlRegistration.setBounds(10, 465, 240, 40);
 
         lblRatingList.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         lblRatingList.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -600,20 +614,18 @@ public class JFrPlayersManager extends javax.swing.JFrame {
 
         jLabel1.setText("Name");
         pnlPlayer.add(jLabel1);
-        jLabel1.setBounds(10, 250, 70, 14);
+        jLabel1.setBounds(10, 250, 60, 14);
 
         lblFfgLicenceStatus.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         lblFfgLicenceStatus.setForeground(new java.awt.Color(255, 0, 102));
         lblFfgLicenceStatus.setText("statut licence");
         pnlPlayer.add(lblFfgLicenceStatus);
-        lblFfgLicenceStatus.setBounds(230, 440, 90, 20);
+        lblFfgLicenceStatus.setBounds(230, 455, 90, 12);
 
         grpAlgo.add(rdbFirstCharacters);
         rdbFirstCharacters.setSelected(true);
         rdbFirstCharacters.setText("Compare first characters");
-        rdbFirstCharacters.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         rdbFirstCharacters.setEnabled(false);
-        rdbFirstCharacters.setMargin(new java.awt.Insets(0, 0, 0, 0));
         rdbFirstCharacters.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rdbFirstCharactersActionPerformed(evt);
@@ -624,9 +636,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
 
         grpAlgo.add(rdbLevenshtein);
         rdbLevenshtein.setText("Use Levenshtein algorithm");
-        rdbLevenshtein.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         rdbLevenshtein.setEnabled(false);
-        rdbLevenshtein.setMargin(new java.awt.Insets(0, 0, 0, 0));
         rdbLevenshtein.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rdbLevenshteinActionPerformed(evt);
@@ -674,8 +684,9 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         txfSMMSCorrection.setEditable(false);
         txfSMMSCorrection.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txfSMMSCorrection.setToolTipText("smms correction (relevant for McMahon super-groups)");
+        txfSMMSCorrection.setFocusable(false);
         pnlPlayer.add(txfSMMSCorrection);
-        txfSMMSCorrection.setBounds(120, 360, 20, 21);
+        txfSMMSCorrection.setBounds(220, 405, 20, 21);
 
         ckbWelcomeSheet.setText("Print Welcome sheet");
         ckbWelcomeSheet.setToolTipText("Welcome sheet can be edited in welcomesheet/welcomesheet.html");
@@ -691,7 +702,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         cbxCountry.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cbxCountry.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " " }));
         pnlPlayer.add(cbxCountry);
-        cbxCountry.setBounds(80, 310, 50, 21);
+        cbxCountry.setBounds(70, 310, 50, 21);
 
         pgbRatingList.setStringPainted(true);
         pnlPlayer.add(pgbRatingList);
@@ -700,21 +711,22 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         jLabel10.setText("Rank");
         jLabel10.setToolTipText("from 30K to 9D");
         pnlPlayer.add(jLabel10);
-        jLabel10.setBounds(10, 360, 70, 14);
+        jLabel10.setBounds(120, 410, 50, 14);
 
         jLabel11.setText("Rating");
         jLabel11.setToolTipText("from 30K to 9D");
         pnlPlayer.add(jLabel11);
-        jLabel11.setBounds(10, 390, 70, 14);
+        jLabel11.setBounds(10, 370, 60, 14);
 
         btnChangeRating.setText("Change rating");
+        btnChangeRating.setFocusable(false);
         btnChangeRating.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnChangeRatingActionPerformed(evt);
             }
         });
         pnlPlayer.add(btnChangeRating);
-        btnChangeRating.setBounds(230, 390, 130, 23);
+        btnChangeRating.setBounds(260, 370, 130, 23);
 
         grpSetRank.add(rdbRankFromGoR);
         rdbRankFromGoR.setSelected(true);
@@ -725,7 +737,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
             }
         });
         pnlPlayer.add(rdbRankFromGoR);
-        rdbRankFromGoR.setBounds(20, 190, 220, 20);
+        rdbRankFromGoR.setBounds(20, 185, 220, 20);
 
         grpSetRank.add(rdbRankFromGrade);
         rdbRankFromGrade.setText("set Rank from Grade");
@@ -735,7 +747,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
             }
         });
         pnlPlayer.add(rdbRankFromGrade);
-        rdbRankFromGrade.setBounds(20, 210, 220, 20);
+        rdbRankFromGrade.setBounds(20, 205, 220, 20);
 
         ckbRatingList.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         ckbRatingList.setText("Use a rating list");
@@ -789,11 +801,11 @@ public class JFrPlayersManager extends javax.swing.JFrame {
 
         jLabel12.setText("AGA ID");
         pnlPlayer.add(jLabel12);
-        jLabel12.setBounds(330, 420, 60, 14);
+        jLabel12.setBounds(330, 435, 60, 14);
         pnlPlayer.add(txfAgaId);
-        txfAgaId.setBounds(390, 420, 90, 20);
+        txfAgaId.setBounds(390, 435, 90, 20);
         pnlPlayer.add(lblPhoto);
-        lblPhoto.setBounds(160, 270, 80, 115);
+        lblPhoto.setBounds(170, 250, 80, 115);
 
         lblAgaExpirationDate.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         pnlPlayer.add(lblAgaExpirationDate);
@@ -801,11 +813,15 @@ public class JFrPlayersManager extends javax.swing.JFrame {
 
         jLabel13.setText("Grade");
         pnlPlayer.add(jLabel13);
-        jLabel13.setBounds(380, 390, 50, 14);
+        jLabel13.setBounds(10, 405, 60, 14);
 
-        txfGrade.setEditable(false);
+        txfGrade.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txfGradeFocusLost(evt);
+            }
+        });
         pnlPlayer.add(txfGrade);
-        txfGrade.setBounds(430, 390, 50, 20);
+        txfGrade.setBounds(70, 405, 40, 20);
 
         getContentPane().add(pnlPlayer);
         pnlPlayer.setBounds(10, 0, 494, 560);
@@ -1364,16 +1380,18 @@ public class JFrPlayersManager extends javax.swing.JFrame {
     }//GEN-LAST:event_btnChangeRatingActionPerformed
 
     private void txfRankFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txfRankFocusLost
-        String strRank = this.txfRank.getText();
-        int rank = Player.convertKDPToInt(strRank);
-        this.txfRank.setText(Player.convertIntToKD(rank));
+//        String strRank = this.txfRank.getText();
+//        int rank = Player.convertKDPToInt(strRank);
+//        this.txfRank.setText(Player.convertIntToKD(rank));
+//        
+//        // update rating from rank
+//        if (this.txfRating.getText().equals("")){
+//            int rating = rank * 100 + 2100;
+//            this.txfRating.setText("" + rating);
+//            this.txfRatingOrigin.setText("INI");
+//        }
         
-        // update rating from rank
-        if (this.txfRating.getText().equals("")){
-            int rating = rank * 100 + 2100;
-            this.txfRating.setText("" + rating);
-            this.txfRatingOrigin.setText("INI");
-        }
+        this.manageRankGradeAndRatingValues();
     }//GEN-LAST:event_txfRankFocusLost
 
     private void rdbRankFromGradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbRankFromGradeActionPerformed
@@ -1442,7 +1460,40 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         useRatingList(rlType);        
 
     }//GEN-LAST:event_btnUpdateRatingListActionPerformed
+
+    private void txfGradeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txfGradeFocusLost
+        this.txfGrade.setText(txfGrade.getText().toUpperCase());
+        manageRankGradeAndRatingValues();
+    }//GEN-LAST:event_txfGradeFocusLost
+
+    private void mniSortByGradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniSortByGradeActionPerformed
+        playersSortType = PlayerComparator.GRADE_ORDER;
+        pupRegisteredPlayers.setVisible(false);
+        try {
+            updatePnlRegisteredPlayers(tournament.playersList());
+        } catch (RemoteException ex) {
+            Logger.getLogger(JFrPlayersManager.class.getName()).log(Level.SEVERE, null, ex);
+        }        
+    }//GEN-LAST:event_mniSortByGradeActionPerformed
     
+    private void manageRankGradeAndRatingValues(){
+        if (txfRank.getText().equals("") && !txfGrade.getText().equals("")){
+            int r = Player.convertKDPToInt(txfGrade.getText());
+            txfRank.setText(Player.convertIntToKD(r));
+        }
+        if (txfGrade.getText().equals("") && !txfRank.getText().equals("")){
+            txfGrade.setText(txfRank.getText());
+        }
+        
+        String strRank = this.txfRank.getText();
+        if (strRank.equals("")) return;
+        int rank = Player.convertKDPToInt(strRank);
+        if (this.txfRating.getText().equals("")){
+            int rating = rank * 100 + 2100;
+            this.txfRating.setText("" + rating);
+            this.txfRatingOrigin.setText("INI");
+        }
+    }
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1483,6 +1534,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
     private javax.swing.JMenuItem mniCancel;
     private javax.swing.JMenuItem mniModifyPlayer;
     private javax.swing.JMenuItem mniRemovePlayer;
+    private javax.swing.JMenuItem mniSortByGrade;
     private javax.swing.JMenuItem mniSortByName;
     private javax.swing.JMenuItem mniSortByRank;
     private javax.swing.JProgressBar pgbRatingList;
@@ -1560,11 +1612,10 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         txfRatingOrigin.setText(strRatingOrigin);
         this.txfSMMSCorrection.setText("" + 0);
         int rank = Player.rankFromRating(stdRating);
-//        if (this.rdbRankFromGrade.isSelected()) rank = rP.getGrade();
         if (this.rdbRankFromGrade.isSelected()) rank = Player.convertKDPToInt(rP.getStrGrade());
         txfRank.setText(Player.convertIntToKD(rank));
-//        txfGrade.setText(Player.convertIntToKD(rP.getGrade()));
         txfGrade.setText(rP.getStrGrade());
+        
         cbxCountry.setSelectedItem(rP.getCountry());
         txfClub.setText(rP.getClub());
         txfFfgLicence.setText(rP.getFfgLicence());

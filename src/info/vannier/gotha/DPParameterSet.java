@@ -13,7 +13,8 @@ public class DPParameterSet implements java.io.Serializable{
     public final static int DP_GAME_FORMAT_FULL = 2;
     private int gameFormat = DP_GAME_FORMAT_FULL;
         
-    private boolean showPlayerRank               = true;
+    private boolean showPlayerGrade               = true;
+//    private boolean showPlayerRank               = true;
     private boolean showPlayerCountry            = false;
     private boolean showPlayerClub               = true;
 
@@ -38,7 +39,7 @@ public class DPParameterSet implements java.io.Serializable{
         
         this.gameFormat = dpps.gameFormat;
         
-        this.showPlayerRank = dpps.showPlayerRank;
+//        this.showPlayerRank = dpps.showPlayerRank;
         this.showPlayerCountry = dpps.showPlayerCountry;
         this.showPlayerClub = dpps.showPlayerClub;
         
@@ -203,17 +204,17 @@ public class DPParameterSet implements java.io.Serializable{
     }
 
     /**
-     * @return the showPlayerRank
+     * @return the showPlayerGrade
      */
-    public boolean isShowPlayerRank() {
-        return showPlayerRank;
+    public boolean isShowPlayerGrade() {
+        return showPlayerGrade;
     }
 
     /**
-     * @param showPlayerRank the showPlayerRank to set
+     * @param showPlayerGrade the showPlayerGrade to set
      */
-    public void setShowPlayerRank(boolean showPlayerRank) {
-        this.showPlayerRank = showPlayerRank;
+    public void setShowPlayerGrade(boolean showPlayerGrade) {
+        this.showPlayerGrade = showPlayerGrade;
     }
 
     /**

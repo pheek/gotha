@@ -8,8 +8,6 @@
  */
 package info.vannier.gotha;
 
-import static info.vannier.gotha.TournamentPublishing.publish;
-import static info.vannier.gotha.TournamentPublishing.sendByFTPToOGSite;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -258,7 +256,7 @@ public class JFrExperimentalTools extends javax.swing.JFrame {
         pnlExport.add(btnExportAllExportableFiles);
         btnExportAllExportableFiles.setBounds(20, 20, 380, 23);
 
-        btnDeleteAllExportedFiles.setText("Delete all exported html files (remote files only)");
+        btnDeleteAllExportedFiles.setText("Delete all exported files (remote files only)");
         btnDeleteAllExportedFiles.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteAllExportedFilesActionPerformed(evt);

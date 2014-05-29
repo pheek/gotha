@@ -6,11 +6,12 @@ import java.util.Comparator;
 public class PlayerComparator implements Comparator<Player>, Serializable{
     public final static int NO_ORDER = 0;
     public final static int NUMBER_ORDER = 1;
-    public final static int NAME_ORDER = 2;
-    public final static int RANK_ORDER = 3;
-    public final static int RATING_ORDER = 4;
-    public final static int AGAID_ORDER = 5;
-    public final static int SCORE_ORDER = 101; // Not used in PlayerComparator itself. Used by JFrGamesPair
+    public final static int NAME_ORDER   = 2;
+    public final static int RANK_ORDER   = 3;
+    public final static int GRADE_ORDER  = 4;
+    public final static int RATING_ORDER = 5;
+    public final static int AGAID_ORDER  = 11;
+    public final static int SCORE_ORDER  = 101; // Not used in PlayerComparator itself. Used by JFrGamesPair
     
     int playerOrderType = PlayerComparator.NO_ORDER;
     public PlayerComparator(int playerOrderType){
@@ -27,6 +28,30 @@ public class PlayerComparator implements Comparator<Player>, Serializable{
             case RANK_ORDER :
                 if (p1.getRank() < p2.getRank()) return 1;
                 if (p1.getRank() > p2.getRank()) return -1;
+                c = p1.getName().toLowerCase().compareTo(p2.getName().toLowerCase());
+                if (c != 0) return c;
+                else return p1.getFirstName().toLowerCase().compareTo(p2.getFirstName().toLowerCase());
+            case GRADE_ORDER :
+                int range1 = 0; // -30 to -1 for kyu, 0 to 8 for dan, 100 to 108  for pro
+                String str1 = p1.getStrGrade();
+                String grp1 = str1.substring(str1.length() - 1, str1.length());
+                grp1 = grp1.toLowerCase();
+                int n1 = new Integer(str1.substring(0, str1.length() - 1)).intValue();
+                if (grp1.equals("p")) range1 = 100 + n1 - 1;
+                if (grp1.equals("d")) range1 = n1 - 1;
+                if (grp1.equals("k")) range1 = -n1;
+
+                int range2 = 0; // -30 to -1 for kyu, 0 to 8 for dan, 100 to 108  for pro
+                String str2 = p2.getStrGrade();
+                String grp2 = str2.substring(str2.length() - 1, str2.length());
+                grp2 = grp2.toLowerCase();
+                int n2 = new Integer(str2.substring(0, str2.length() - 1)).intValue();
+                if (grp2.equals("p")) range2 = 100 + n2 - 1;
+                if (grp2.equals("d")) range2 = n2 - 1;
+                if (grp2.equals("k")) range2 = -n2;
+                    
+                if (range1 < range2) return 1;
+                if (range1 > range2) return -1;
                 c = p1.getName().toLowerCase().compareTo(p2.getName().toLowerCase());
                 if (c != 0) return c;
                 else return p1.getFirstName().toLowerCase().compareTo(p2.getFirstName().toLowerCase());

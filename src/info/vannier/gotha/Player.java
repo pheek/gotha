@@ -87,14 +87,21 @@ public class Player implements java.io.Serializable{
         this.ffgLicenceStatus = ffgLicenceStatus;  
         this.agaId = agaId;
         this.agaExpirationDate = agaExpirationDate;
+        // If rank is out of limits, set it according to strGrade, if exists
+        if(rank < Gotha.MIN_RANK || rank > Gotha.MAX_RANK) rank = Player.convertKDPToInt(strGrade);
         this.rank = rank;
-
+ 
         this.rating = rating;
         this.ratingOrigin = ratingOrigin;
         
-        this.strGrade = strGrade;
+        if (strGrade.equals("")) strGrade = Player.convertIntToKD(rank);
+        strGrade = strGrade.toUpperCase();
+        this.strGrade = strGrade;        
+
         this.smmsCorrection = smmsCorrection;
         this.registeringStatus = registeringStatus;
+        
+
       
         for(int i = 0; i < Gotha.MAX_NUMBER_OF_ROUNDS; i++) {
             participating[i] = true;
@@ -159,19 +166,21 @@ public class Player implements java.io.Serializable{
     public String augmentedPlayerName(DPParameterSet dpps){
         String strNF = shortenedFullName();
             
-        String strRk = Player.convertIntToKD(this.getRank());
+//        String strRk = Player.convertIntToKD(this.getRank());
+        String strGr = this.getStrGrade();
         String strCo = Gotha.leftString(this.getCountry(), 2);
         String strCl = Gotha.leftString(this.getClub(), 4);
 
-        boolean bRk = dpps.isShowPlayerRank();
+//        boolean bRk = dpps.isShowPlayerRank();
+        boolean bGr = dpps.isShowPlayerGrade();
         boolean bCo = dpps.isShowPlayerCountry();
         boolean bCl = dpps.isShowPlayerClub();
         
-        if (!bRk && !bCo && !bCl) return strNF;
+        if (!bGr && !bCo && !bCl) return strNF;
         String strPl = strNF + "(";
         boolean bFirst = true;
-        if (bRk){
-            strPl += strRk;
+        if (bGr){
+            strPl += strGr;
             bFirst = false;
         }
         if (bCo){

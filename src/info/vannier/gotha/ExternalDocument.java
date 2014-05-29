@@ -890,6 +890,7 @@ public class ExternalDocument {
             String strPlayerSortType = extractNodeValue(nnmDPPS, "playerSortType", "name");
             int playerSortType = PlayerComparator.NAME_ORDER;
             if (strPlayerSortType.equals("rank")) playerSortType = PlayerComparator.RANK_ORDER;
+            if (strPlayerSortType.equals("grade")) playerSortType = PlayerComparator.GRADE_ORDER;
             dpps.setPlayerSortType(playerSortType);
             
             String strGameFormat = extractNodeValue(nnmDPPS, "gameFormat", "full");
@@ -897,8 +898,8 @@ public class ExternalDocument {
             if (strGameFormat.equals("short")) gameFormat = DPParameterSet.DP_GAME_FORMAT_SHORT;
             dpps.setGameFormat(gameFormat);
 
-            String strShowPlayerRank = extractNodeValue(nnmDPPS, "showPlayerRank", "true");
-            dpps.setShowPlayerRank(Boolean.valueOf(strShowPlayerRank).booleanValue());
+            String strShowPlayerGrade = extractNodeValue(nnmDPPS, "showPlayerGrade", "true");
+            dpps.setShowPlayerGrade(Boolean.valueOf(strShowPlayerGrade).booleanValue());
             String strShowPlayerCountry = extractNodeValue(nnmDPPS, "showPlayerCountry", "false");
             dpps.setShowPlayerCountry(Boolean.valueOf(strShowPlayerCountry).booleanValue());
             String strShowPlayerClub = extractNodeValue(nnmDPPS, "showPlayerClub", "true");
@@ -2107,7 +2108,8 @@ public class ExternalDocument {
             output.write("\n<th class=\"left\">Name</th>");
             output.write("\n<th class=\"left\">Co</th>");
             output.write("\n<th class=\"left\">Club</th>");
-            output.write("\n<th class=\"right\">Rk</th>");
+//            output.write("\n<th class=\"right\">Rk</th>");
+            output.write("\n<th class=\"right\">Gr</th>");
             output.write("\n<th class=\"right\">Rt</th>");
             output.write("\n<th class=\"right\">MM</th>");
             output.write("\n<th class=\"middle\">Participation</th>");
@@ -2151,8 +2153,10 @@ public class ExternalDocument {
                 output.write("<td class=" + strPar + " align=\"left\">" + strNF + "</td>");
                 output.write("<td class=" + strPar + " align=\"center\">" + p.getCountry() + "</td>");
                 output.write("<td class=" + strPar + " align=\"center\">" + p.getClub() + "</td>");
-                String strRk = Player.convertIntToKD(p.getRank());
-                output.write("<td class=" + strPar + " align=\"center\">" + strRk + "</td>");
+                //String strRk = Player.convertIntToKD(p.getRank());
+                String strGr = p.getStrGrade();
+//                output.write("<td class=" + strPar + " align=\"center\">" + strRk + "</td>");
+                output.write("<td class=" + strPar + " align=\"center\">" + strGr + "</td>");
                 String strMM = "" + p.smms(tournament.getTournamentParameterSet().getGeneralParameterSet());
                 output.write("<td class=" + strPar + " align=\"center\">" + strMM + "</td>");
                 String strRt = "" + p.getRating();
@@ -2422,7 +2426,8 @@ public class ExternalDocument {
             if (tps.getDPParameterSet().isDisplayPlCol())
                 output.write("\n<th class=\"left\">&nbsp;Pl&nbsp;</th>");
             output.write("\n<th class=\"left\">&nbsp;Name&nbsp;</th>");
-            output.write("<th class=\"middle\">&nbsp;Rank&nbsp;</th>");
+//            output.write("<th class=\"middle\">&nbsp;Rank&nbsp;</th>");
+            output.write("<th class=\"middle\">&nbsp;Grade&nbsp;</th>");
             if (tps.getDPParameterSet().isDisplayCoCol())
                 output.write("<th class=\"middle\">&nbsp;Co&nbsp;</th>");
             if (tps.getDPParameterSet().isDisplayClCol())
@@ -2480,8 +2485,9 @@ public class ExternalDocument {
                     output.write("<td class=" + strPar + " align=\"right\">" + strPlace[iSP] + "&nbsp;</td>");
                 String strNF = sP.fullName();
                 output.write("<td class=" + strPar + ">" + strNF + "</td>");
-                String strRank = Player.convertIntToKD(sP.getRank());
-                output.write("<td class=" + strPar + strAlCenter + ">" + strRank + "</td>");
+//                String strRank = Player.convertIntToKD(sP.getRank());
+                String strGrade = sP.getStrGrade();
+                output.write("<td class=" + strPar + strAlCenter + ">" + strGrade + "</td>");
                 
                 if (tps.getDPParameterSet().isDisplayCoCol()){
                     String strCountry = sP.getCountry();
@@ -3401,6 +3407,9 @@ public class ExternalDocument {
             case PlayerComparator.RANK_ORDER:
                 strPlayerSortType = "rank";
                 break;
+            case PlayerComparator.GRADE_ORDER:
+                strPlayerSortType = "grade";
+                break;
             default:
                 strPlayerSortType = "name";
         }
@@ -3419,7 +3428,7 @@ public class ExternalDocument {
         }
         emDPParameterSet.setAttribute("gameFormat", strGameFormat);
         
-        emDPParameterSet.setAttribute("showPlayerRank", Boolean.valueOf(dpps.isShowPlayerRank()).toString());
+        emDPParameterSet.setAttribute("showPlayerGrade", Boolean.valueOf(dpps.isShowPlayerGrade()).toString());
         emDPParameterSet.setAttribute("showPlayerCountry", Boolean.valueOf(dpps.isShowPlayerCountry()).toString());
         emDPParameterSet.setAttribute("showPlayerClub", Boolean.valueOf(dpps.isShowPlayerClub()).toString());
         

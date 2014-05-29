@@ -7,6 +7,7 @@ import it.sauronsoftware.ftp4j.FTPException;
 import it.sauronsoftware.ftp4j.FTPIllegalReplyException;
 import it.sauronsoftware.ftp4j.FTPListParseException;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.rmi.RemoteException;
 import java.text.SimpleDateFormat;
@@ -163,14 +164,25 @@ public class TournamentPublishing {
         try {
             client.changeDirectory(dirName);
             client.upload(f);
-        } catch (Exception ex) {
-            return "Error - FTP upload has not been possible";
+        } catch (IllegalStateException ex) {
+            Logger.getLogger(TournamentPublishing.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(TournamentPublishing.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (FTPIllegalReplyException ex) {
+            Logger.getLogger(TournamentPublishing.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (FTPException ex) {
+            Logger.getLogger(TournamentPublishing.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (FTPDataTransferException ex) {
+            Logger.getLogger(TournamentPublishing.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (FTPAbortedException ex) {
+            Logger.getLogger(TournamentPublishing.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
         try {
             File cssFile = new java.io.File(f.getParent(), "current.css");
             client.upload(cssFile);
-            File idxFile = new java.io.File(f.getParent(), "index.php");
-            client.upload(idxFile);
+//            File idxFile = new java.io.File(f.getParent(), "index.php");
+//            client.upload(idxFile);
             client.upload(new java.io.File(f.getParent(), "whitestone.png"));
             client.upload(new java.io.File(f.getParent(), "blackstone.png"));
         } catch (Exception ex) {
@@ -206,19 +218,11 @@ public class TournamentPublishing {
         }
 
         String dirName = new SimpleDateFormat("yyyyMMdd").format(gps.getBeginDate()) + shortName;
-//        try {
-//            client.deleteDirectory(dirName);
-//        } catch (IllegalStateException ex) {
-//            Logger.getLogger(TournamentPublishing.class.getName()).log(Level.SEVERE, null, ex);
-//        } catch (IOException ex) {
-//            Logger.getLogger(TournamentPublishing.class.getName()).log(Level.SEVERE, null, ex);
-//        } catch (FTPIllegalReplyException ex) {
-//            Logger.getLogger(TournamentPublishing.class.getName()).log(Level.SEVERE, null, ex);
-//        } catch (FTPException ex) {
-//            Logger.getLogger(TournamentPublishing.class.getName()).log(Level.SEVERE, null, ex);
-//        }
+
         String[] files = null;
-        int nbDF = 0;
+        int nbDeletedHTMLFiles = 0;
+        int nbDeletedFiles = 0;
+        int nbDeletedDir = 0;
         try {
             client.changeDirectory(dirName);
             files = client.listNames();
@@ -226,9 +230,15 @@ public class TournamentPublishing {
                 String fn = files[i];
                 if (fn.endsWith(".html")){
                     client.deleteFile(fn);
-                    nbDF++;
+                    nbDeletedFiles++;
+                    nbDeletedHTMLFiles++;
+                }
+                if (fn.endsWith(".css") || fn.endsWith(".png")){
+                    client.deleteFile(fn);
+                    nbDeletedFiles++;
                 }
             }
+            
         } catch (IllegalStateException ex) {
             Logger.getLogger(TournamentPublishing.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -244,14 +254,29 @@ public class TournamentPublishing {
         } catch (FTPListParseException ex) {
             Logger.getLogger(TournamentPublishing.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+        
+        try {
+            client.changeDirectoryUp();
+            client.deleteDirectory(dirName);
+            nbDeletedDir++;
+        } catch (IllegalStateException ex) {
+            Logger.getLogger(TournamentPublishing.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(TournamentPublishing.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (FTPIllegalReplyException ex) {
+            Logger.getLogger(TournamentPublishing.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (FTPException ex) {
+            Logger.getLogger(TournamentPublishing.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         try {
             client.disconnect(true);
         } catch (Exception ex) {
             Logger.getLogger(JFrPublish.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } 
 
-        return "" + nbDF + " files have been deleted";
+        return "" + nbDeletedFiles + " files have been deleted, including " + nbDeletedHTMLFiles + " html files." +
+                "\n" + nbDeletedDir + " directory has  been deleted.";
     }
-
 }
