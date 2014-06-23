@@ -589,6 +589,7 @@ public class JFrExperimentalTools extends javax.swing.JFrame {
         setIconImage(Gotha.getIconImage());
  
         updateComponents();
+        this.lblNbEF.setVisible(false);
     }
 
 

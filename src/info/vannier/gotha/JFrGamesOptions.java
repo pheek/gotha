@@ -39,7 +39,7 @@ public class JFrGamesOptions extends javax.swing.JFrame {
     }
 
     public JFrGamesOptions(TournamentInterface tournament) throws RemoteException {
-        LogElements.incrementElement("options.games", "");
+//        LogElements.incrementElement("options.games", "");
         this.tournament = tournament;
 
         initComponents();

@@ -51,7 +51,7 @@ public class JFrGamesResults extends javax.swing.JFrame {
      * Creates new form JFrPlayerManager
      */
     public JFrGamesResults(TournamentInterface tournament) throws RemoteException {
-        LogElements.incrementElement("games.results", "");
+//        LogElements.incrementElement("games.results", "");
         this.tournament = tournament;
 
         processedRoundNumber = tournament.presumablyCurrentRoundNumber();

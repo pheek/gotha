@@ -2,12 +2,6 @@
  * Gotha.java
  * 
  */
-//TODO Transfer all OpenGotha to opengotha.info
-//TODO Experimental tools : Delete all files on opengotha should also delete directory
-//TODO In opengotha.info, in Round col, delete cell content
-//TODO Experimental tools : Get "0 files exported" invisible
-//TODO : Insert a gthlog for opengotha.info uploads
-
 
 package info.vannier.gotha;
 
@@ -41,8 +35,8 @@ public class Gotha {
 
     static Locale locale = Locale.getDefault();
     static final long GOTHA_VERSION = 337L;
-    static final long GOTHA_MINOR_VERSION = 2L;
-    static final java.util.Date GOTHA_RELEASE_DATE = (new GregorianCalendar(2014, Calendar.MAY, 29)).getTime();
+    static final long GOTHA_MINOR_VERSION = 3L;
+    static final java.util.Date GOTHA_RELEASE_DATE = (new GregorianCalendar(2014, Calendar.JUNE, 23)).getTime();
     // Data version for serialization
     static final long GOTHA_DATA_VERSION = 201L;
     

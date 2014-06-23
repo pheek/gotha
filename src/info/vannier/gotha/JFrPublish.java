@@ -129,6 +129,7 @@ public class JFrPublish extends javax.swing.JFrame {
         btnPublishTL = new javax.swing.JButton();
         btnPublishML = new javax.swing.JButton();
         btnPublishTS = new javax.swing.JButton();
+        btnPrintRS = new javax.swing.JButton();
         btnHelp = new javax.swing.JButton();
 
         jLabel4.setText("jLabel4");
@@ -500,6 +501,7 @@ public class JFrPublish extends javax.swing.JFrame {
         btnPublishPL.setBounds(10, 80, 230, 40);
 
         btnPrintTP.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        btnPrintTP.setForeground(new java.awt.Color(0, 0, 255));
         btnPrintTP.setText("Print Tournament parameters");
         btnPrintTP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -507,7 +509,7 @@ public class JFrPublish extends javax.swing.JFrame {
             }
         });
         pnlPub.add(btnPrintTP);
-        btnPrintTP.setBounds(10, 130, 230, 21);
+        btnPrintTP.setBounds(10, 130, 230, 25);
 
         btnPublishGL.setText("Publish games of round 1 ");
         btnPublishGL.addActionListener(new java.awt.event.ActionListener() {
@@ -519,6 +521,7 @@ public class JFrPublish extends javax.swing.JFrame {
         btnPublishGL.setBounds(260, 80, 260, 40);
 
         btnPrintNPP.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        btnPrintNPP.setForeground(new java.awt.Color(0, 0, 255));
         btnPrintNPP.setText("Print not playing players of Round 1");
         btnPrintNPP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -526,7 +529,7 @@ public class JFrPublish extends javax.swing.JFrame {
             }
         });
         pnlPub.add(btnPrintNPP);
-        btnPrintNPP.setBounds(260, 130, 260, 21);
+        btnPrintNPP.setBounds(260, 170, 260, 25);
 
         btnPublishSt.setText("Publish standings after round 1");
         btnPublishSt.addActionListener(new java.awt.event.ActionListener() {
@@ -535,7 +538,7 @@ public class JFrPublish extends javax.swing.JFrame {
             }
         });
         pnlPub.add(btnPublishSt);
-        btnPublishSt.setBounds(260, 190, 260, 40);
+        btnPublishSt.setBounds(260, 220, 260, 40);
 
         btnExportRLEGF.setForeground(new java.awt.Color(255, 0, 0));
         btnExportRLEGF.setText("Export results for EGF rating list");
@@ -609,6 +612,17 @@ public class JFrPublish extends javax.swing.JFrame {
 
         pnlPub.add(pnlTeams);
         pnlTeams.setBounds(0, 260, 530, 180);
+
+        btnPrintRS.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        btnPrintRS.setForeground(new java.awt.Color(0, 0, 255));
+        btnPrintRS.setText("Print result sheets of Round 1");
+        btnPrintRS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrintRSActionPerformed(evt);
+            }
+        });
+        pnlPub.add(btnPrintRS);
+        btnPrintRS.setBounds(260, 130, 260, 25);
 
         tpnPublish.addTab("Publish", pnlPub);
 
@@ -1007,7 +1021,6 @@ public class JFrPublish extends javax.swing.JFrame {
     private void btnPublishGLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPublishGLActionPerformed
         TournamentPublishing.publish(tournament, processedRoundNumber, 
                 TournamentPublishing.TYPE_GAMESLIST, TournamentPublishing.SUBTYPE_DEFAULT);        
-
     }//GEN-LAST:event_btnPublishGLActionPerformed
 
     private void btnPublishStActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPublishStActionPerformed
@@ -1033,6 +1046,10 @@ public class JFrPublish extends javax.swing.JFrame {
        TournamentPublishing.publish(tournament, processedRoundNumber, 
                 TournamentPublishing.TYPE_TEAMSSTANDINGS, TournamentPublishing.SUBTYPE_DEFAULT);
     }//GEN-LAST:event_btnPublishTSActionPerformed
+
+    private void btnPrintRSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintRSActionPerformed
+        TournamentPrinting.printResultSheets(tournament, processedRoundNumber);
+    }//GEN-LAST:event_btnPrintRSActionPerformed
 
     private void demandedDisplayedRoundNumberHasChanged(int demandedRN) {
         int numberOfRounds = 0;
@@ -1112,6 +1129,7 @@ public class JFrPublish extends javax.swing.JFrame {
 
         String strRound = " round " + (processedRoundNumber + 1);
         this.btnPublishGL.setText("Publish games of" + strRound);
+        this.btnPrintRS.setText("Print result sheets of" + strRound);
         this.btnPrintNPP.setText("Print not playing players of" + strRound);
         this.btnPublishSt.setText("Publish standings after" + strRound);
         this.btnPublishML.setText("Publish matches list of" + strRound);
@@ -1197,6 +1215,7 @@ public class JFrPublish extends javax.swing.JFrame {
     private javax.swing.JButton btnExportRLFFG;
     private javax.swing.JButton btnHelp;
     private javax.swing.JButton btnPrintNPP;
+    private javax.swing.JButton btnPrintRS;
     private javax.swing.JButton btnPrintTP;
     private javax.swing.JButton btnPublishGL;
     private javax.swing.JButton btnPublishML;

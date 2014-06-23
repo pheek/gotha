@@ -56,7 +56,7 @@ public class JFrTeamsManager extends javax.swing.JFrame {
 
     /** Creates new form JFrTeamsManager */
     public JFrTeamsManager(TournamentInterface tournament) throws RemoteException{
-        LogElements.incrementElement("players.tm", "");
+//        LogElements.incrementElement("players.tm", "");
         this.tournament = tournament;
         processedRoundNumber = tournament.presumablyCurrentRoundNumber();
  

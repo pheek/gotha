@@ -36,7 +36,7 @@ public class JFrPlayersMMG extends javax.swing.JFrame{
     private TournamentInterface tournament;
     /** Creates new form JFrPlayersMMG */
     public JFrPlayersMMG() {
-        LogElements.incrementElement("players.mmg", "");
+//        LogElements.incrementElement("players.mmg", "");
         initComponents();
         setupRefreshTimer();
     }

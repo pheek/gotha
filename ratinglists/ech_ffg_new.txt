@@ -6355,7 +6355,7 @@ LOISEAU Frédéric                      -1000 - 0529305 95Ta
 LOISEAU Hugo                           -505 L 0900114 69Ly
 LOISEAU Jonathan                      -1500 - 0614123 69CR
 LOISEAU Vincent                       -2050 L 1400055 86Po
-LOISI Robert                          -1200 - 9827503 95Va
+LOISI Robert                          -1200 C 9827503 95Va
 LONG Bastien                          -2000 - 0474712 84VJ
 LONG Henri-Marc                        -300 - 9325013 75Pa
 LONGARETTI Jérémy                     -1200 - 0900242 38GJ

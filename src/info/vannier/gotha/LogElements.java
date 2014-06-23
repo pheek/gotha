@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package info.vannier.gotha;
 
 import java.io.BufferedInputStream;
@@ -89,8 +86,7 @@ public class LogElements {
             } catch (IOException ex) {
                 System.out.println("sendLogElements : IOException");
                 return;
-                // Logger.getLogger(LogElements.class.getName()).log(Level.SEVERE, null, ex);
-            }
+             }
         }
 
     }
@@ -156,43 +152,5 @@ class LogElement{
 
 }
 
-// LogElements (open list)
-// 1/ with value = ""
-
-//tournament.import.h9              Vu
-//tournament.import.tou             Vu
-//tournament.import.wallist         Vu
-//tournament.import.vbs             Vu
-//tournament.export.egf             Vu
-//tournament.export.ffg             Vu
-//tournament.export.html            Vu
-//tournament.export.teamhtml        Vu  
-//tournament.export.csv             Vu
-//tournament.build                  Vu
-//players.manager
-//players.manager.egfratinglist
-//players.manager.ffgratinglist
-//players.manager.levenshtein
-//players.manager.register
-//players.manager.welcomesheet
-//players.qc
-//players.ur
-//players.mmg
-//players.tm
-//games.pair                        Vu
-//games.results
-//games.roundrobin
-//games.teamspairing
-//options.tournament
-//options.games
-//help.og
-//help.about
-
-// 2/ with an actual value
-//gotha.os strOS                    Vu
-//gotha.jre strJRE                  Vu
-//gotha.version                     Vu
-//gotha.runningmode runningMode     Vu  
-//tournament.open fileName 
 
 

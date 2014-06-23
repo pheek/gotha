@@ -51,7 +51,7 @@ public class JFrUpdateRatings extends javax.swing.JFrame {
 
     /** Creates new form JFrUpdateRatings */
     public JFrUpdateRatings(TournamentInterface tournament) throws RemoteException{
-        LogElements.incrementElement("players.ur", "");
+//        LogElements.incrementElement("players.ur", "");
         this.tournament = tournament;
         initComponents();
         customInitComponents();

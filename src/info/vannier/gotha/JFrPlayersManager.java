@@ -56,7 +56,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
      * Creates new form JFrPlayersManager
      */
     public JFrPlayersManager(TournamentInterface tournament) throws RemoteException {
-        LogElements.incrementElement("players.manager", "");
+//        LogElements.incrementElement("players.manager", "");
         this.tournament = tournament;
 
         initComponents();
@@ -726,7 +726,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
             }
         });
         pnlPlayer.add(btnChangeRating);
-        btnChangeRating.setBounds(260, 370, 130, 23);
+        btnChangeRating.setBounds(260, 370, 170, 23);
 
         grpSetRank.add(rdbRankFromGoR);
         rdbRankFromGoR.setSelected(true);
@@ -1135,7 +1135,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
     }//GEN-LAST:event_txfPlayerNameChoiceTextValueChanged
 
     private void rdbLevenshteinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbLevenshteinActionPerformed
-        LogElements.incrementElement("players.manager.levenshtein", "");
+//        LogElements.incrementElement("players.manager.levenshtein", "");
         this.resetControlsForLevenshteinSearching();
 
     }//GEN-LAST:event_rdbLevenshteinActionPerformed
@@ -1209,7 +1209,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
     }//GEN-LAST:event_btnResetActionPerformed
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
-        LogElements.incrementElement("players.manager.register", "");
+//        LogElements.incrementElement("players.manager.register", "");
         txfFirstName.setText(normalizeCase(txfFirstName.getText()));
         txfName.setText(normalizeCase(txfName.getText()));
 
@@ -1320,7 +1320,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         }
         // Print Welcome sheet
         if (this.ckbWelcomeSheet.isSelected()) {
-            LogElements.incrementElement("players.manager.welcomesheet", "");
+//            LogElements.incrementElement("players.manager.welcomesheet", "");
             instanciateWelcomeSheet(new File(Gotha.runningDirectory, "welcomesheet/welcomesheet.html"), 
                     new File(Gotha.runningDirectory, "welcomesheet/actualwelcomesheet.html"), p);
             try {
@@ -1419,7 +1419,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         if (this.rdbFFG.isSelected()) rlType = RatingList.TYPE_FFG;
         if (this.rdbAGA.isSelected()) rlType = RatingList.TYPE_AGA;
 
-        LogElements.incrementElement("players.manager.updateratinglist", "" + rlType);
+//        LogElements.incrementElement("players.manager.updateratinglist", "" + rlType);
         
         String strDefaultURL;
         File fDefaultFile;
@@ -1620,10 +1620,22 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         txfClub.setText(rP.getClub());
         txfFfgLicence.setText(rP.getFfgLicence());
         txfFfgLicenceStatus.setText(rP.getFfgLicenceStatus());
+//        if (rP.getFfgLicenceStatus().compareTo("-") == 0) {
+//            lblFfgLicenceStatus.setText("Non licencié");
+//        } else {
+//            lblFfgLicenceStatus.setText("");
+//        }
         if (rP.getFfgLicenceStatus().compareTo("-") == 0) {
             lblFfgLicenceStatus.setText("Non licencié");
-        } else {
+            lblFfgLicenceStatus.setForeground(Color.RED);
+        }
+        else if (rP.getFfgLicenceStatus().compareTo("C") == 0){
+            lblFfgLicenceStatus.setText("Licence loisir"); 
+            lblFfgLicenceStatus.setForeground(Color.BLUE);
+        }
+        else {
             lblFfgLicenceStatus.setText("");
+            lblFfgLicenceStatus.setForeground(Color.BLACK);
         }
 
         String strEGFPin = rP.getEgfPin(); 
@@ -1668,8 +1680,15 @@ public class JFrPlayersManager extends javax.swing.JFrame {
 
         if (playerInModification.getFfgLicenceStatus().compareTo("-") == 0) {
             lblFfgLicenceStatus.setText("Non licencié");
-        } else {
+            lblFfgLicenceStatus.setForeground(Color.RED);
+        }
+        else if (playerInModification.getFfgLicenceStatus().compareTo("C") == 0){
+            lblFfgLicenceStatus.setText("Licence loisir"); 
+            lblFfgLicenceStatus.setForeground(Color.BLUE);
+        }
+        else {
             lblFfgLicenceStatus.setText("");
+            lblFfgLicenceStatus.setForeground(Color.BLACK);
         }
         
         String strEGFPin = playerInModification.getEgfPin(); 

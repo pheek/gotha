@@ -20,7 +20,7 @@ public class JFrBuildTestTournament extends javax.swing.JFrame{
     
     /** Creates new form JFrBuildTestTournament */
     public JFrBuildTestTournament(TournamentInterface tournament) throws RemoteException{
-        LogElements.incrementElement("export.build", "");
+//        LogElements.incrementElement("export.build", "");
         this.tournament = tournament;
                 
         initComponents();

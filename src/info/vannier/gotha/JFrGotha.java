@@ -2545,7 +2545,7 @@ public class JFrGotha extends javax.swing.JFrame {
     }
 
     private void mniHelpAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniHelpAboutActionPerformed
-        LogElements.incrementElement("help.about", "");
+//        LogElements.incrementElement("help.about", "");
         javax.swing.JTextArea txa = new javax.swing.JTextArea(Gotha.getCopyLeftText() + Gotha.getThanksToText());
         txa.setFont(new Font("Tahoma", Font.PLAIN, 11));
         JOptionPane.showMessageDialog(this, txa, "OpenGotha",
@@ -2694,7 +2694,7 @@ private void mniRMIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
 }//GEN-LAST:event_mniRMIActionPerformed
 
 private void mniOpenGothaHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniOpenGothaHelpActionPerformed
-    LogElements.incrementElement("help.og", "");
+//    LogElements.incrementElement("help.og", "");
 
     Gotha.displayGothaHelp("Starting OpenGotha");
 }//GEN-LAST:event_mniOpenGothaHelpActionPerformed
@@ -3147,7 +3147,7 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     }
 
     private void openTournament(File f) throws Exception {
-        LogElements.incrementElement("tournament.open", f.getName());
+//        LogElements.incrementElement("tournament.open", f.getName());
         if (!saveCurrentTournamentIfNecessary()) {
             return;
         }

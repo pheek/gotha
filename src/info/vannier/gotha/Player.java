@@ -432,6 +432,20 @@ public class Player implements java.io.Serializable{
         return buf.toString();
     }
     
+    /**
+     * builds an Id String : EGF if exists, else FFG if exists, else AGA if exists, else ""
+     * @return 
+     */
+    public String getAnIdString(){
+        String egfP = this.getEgfPin();
+        String ffgL = this.getFfgLicence();
+        String agaI  = this.getAgaId();
+        if (egfP != null && egfP.length() > 0) return "EGF Pin : " + egfP;
+        else if (ffgL != null && ffgL.length() > 0) return "FFG Licence : " + ffgL;
+        else if (agaI != null && agaI.length() > 0) return "AGA Id : " + agaI;
+        return "";
+    }
+    
     public String getFfgLicence() {
         return ffgLicence;
     }

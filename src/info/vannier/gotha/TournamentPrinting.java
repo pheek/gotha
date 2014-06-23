@@ -3,10 +3,12 @@
  */
 package info.vannier.gotha;
 
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.print.*;
 import static java.awt.print.Printable.NO_SUCH_PAGE;
 import static java.awt.print.Printable.PAGE_EXISTS;
@@ -79,6 +81,28 @@ public class TournamentPrinting implements Printable {
     static final int GL_RES_LEN = 3;
     static final int GL_PADDING = 2;
     static final int GL_NBCAR = GL_RES_BEG + GL_RES_LEN + GL_PADDING;
+    // RS = Result sheets
+    static final int RS_RSBYPAGE = 2; // Actual number of result sheets by page   
+//    static final int RS_RS_HEIGHT = 200; // Result sheet height. virtual units. Calibrated for a page of 800 virtual units
+    static final int RS_LINE_HEIGHT = 20; // Line height    
+    static final int RS_TITLE1 = 10;
+    static final int RS_TITLE2 = RS_TITLE1 + RS_LINE_HEIGHT / 2;
+    static final int RS_TABLE = RS_TITLE2 + RS_LINE_HEIGHT * 3 / 2;
+    static final int RS_COLOR = RS_TABLE + RS_LINE_HEIGHT * 3 / 2;
+    static final int RS_PLAYERNAME = RS_COLOR + RS_LINE_HEIGHT;
+    static final int RS_ID = RS_PLAYERNAME + RS_LINE_HEIGHT;
+    static final int RS_SIGN = RS_ID + RS_LINE_HEIGHT;
+    static final int RS_RS_HEIGHT = RS_SIGN + RS_LINE_HEIGHT * 3;
+    static final int RS_PAGE_VIRTUAL_HEIGHT = RS_RSBYPAGE * RS_RS_HEIGHT;
+    
+    static final int RS_PAGE_VIRTUAL_WIDTH = 600;
+    static final int RS_COL1 = 20;
+    static final int RS_COL2 = 265;
+    static final int RS_COL3 = 335;
+    static final int RS_COL4 = 580;
+    
+    static final int RS_LEFTMARGIN = 10;
+    
     // Not playing list
     static final int NPL_REASON_BEG = 0;
     static final int NPL_REASON_LEN = 20;
@@ -257,6 +281,13 @@ public class TournamentPrinting implements Printable {
         tpr.makePrinting(TournamentPublishing.TYPE_GAMESLIST, TournamentPublishing.SUBTYPE_DEFAULT, true);   
     }
     
+    public static void printResultSheets(TournamentInterface tournament, int roundNumber){
+        TournamentPrinting tpr = new TournamentPrinting(tournament);
+        
+        tpr.setRoundNumber(roundNumber);
+        tpr.makePrinting(TournamentPublishing.TYPE_RESULTSHEETS, TournamentPublishing.SUBTYPE_DEFAULT, true);   
+    }
+    
     public static void printNotPlayingPlayersList(TournamentInterface tournament, int roundNumber){
         TournamentPrinting tpr = new TournamentPrinting(tournament);
         
@@ -304,7 +335,7 @@ public class TournamentPrinting implements Printable {
         tpr.setRoundNumber(roundNumber);
         tpr.makePrinting(TournamentPublishing.TYPE_TEAMSSTANDINGS, TournamentPublishing.SUBTYPE_DEFAULT, true);   
     }
-        
+    
     /**
      * makePrinting 
      * 1) prepares the objects to be printed (if objects have to be prepared, sorted for example)
@@ -330,6 +361,9 @@ public class TournamentPrinting implements Printable {
                 break;
             case TournamentPublishing.TYPE_GAMESLIST:
                 this.preparePrintGamesList();
+                break;
+            case TournamentPublishing.TYPE_RESULTSHEETS:
+                this.preparePrintResultSheets();
                 break;
             case TournamentPublishing.TYPE_NOTPLAYINGLIST:
                 this.preparePrintNPPList();
@@ -379,6 +413,11 @@ public class TournamentPrinting implements Printable {
     
     private void preparePrintGamesList(){
     }
+    
+    private void preparePrintResultSheets(){
+    }
+    
+    
     
     private void preparePrintNPPList(){
         DPParameterSet dpps = tps.getDPParameterSet();
@@ -540,6 +579,19 @@ public class TournamentPrinting implements Printable {
                         Logger.getLogger(TournamentPrinting.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     break;
+                case TournamentPublishing.TYPE_RESULTSHEETS:
+                    nbCarRef = 85;
+                    fontSize = usableWidth / nbCarRef * 100 / WH_RATIO * LINEFILLING_RATIO / 100;
+
+                    usableX = (int) pf.getImageableX();
+                    usableY = (int) pf.getImageableY();
+                    usableWidth = (int) pf.getImageableWidth();
+                    usableHeight = (int) pf.getImageableHeight();
+                    System.out.println("usableX = " + usableX);
+                    System.out.println("usableY = " + usableY);
+                    System.out.println("usableWidth = " + usableWidth);
+                    System.out.println("usableHeight = " + usableHeight);
+                    break;
                 case TournamentPublishing.TYPE_NOTPLAYINGLIST:
                     nbCarRef = NPL_NBCAR;
                     fontSize = usableWidth / nbCarRef * 100 / WH_RATIO * LINEFILLING_RATIO / 100;
@@ -652,6 +704,8 @@ public class TournamentPrinting implements Printable {
                     return printAPageOfTournamentParameters(g, pf, pi);
                 case TournamentPublishing.TYPE_GAMESLIST:
                     return printAPageOfGamesList(g, pf, pi);
+                case TournamentPublishing.TYPE_RESULTSHEETS:
+                    return printAPageOfResultSheets(g, pf, pi);
                 case TournamentPublishing.TYPE_NOTPLAYINGLIST:
                     return printAPageOfNotPlayingPlayersList(g, pf, pi);
                 case TournamentPublishing.TYPE_STANDINGS:
@@ -958,7 +1012,153 @@ public class TournamentPrinting implements Printable {
         }
         return PAGE_EXISTS;
     }
+    
+    private int printAPageOfResultSheets(Graphics g, PageFormat pf, int pi) throws RemoteException {
+        Font font = new Font("Default", Font.BOLD, fontSize);
+        g.setFont(font);
+        Font bigFont = new Font("Default", Font.BOLD, fontSize * 3 / 2);
+       
+        int actRatioX1000 = usableWidth * 1000 /TournamentPrinting.RS_PAGE_VIRTUAL_WIDTH ;
+        int x1 = TournamentPrinting.RS_COL1 * actRatioX1000 /1000;
+        int x2 = TournamentPrinting.RS_COL2 * actRatioX1000 /1000;
+        int x3 = TournamentPrinting.RS_COL3 * actRatioX1000 /1000;
+        int x4 = TournamentPrinting.RS_COL4 * actRatioX1000 /1000;
+        int actRatioY1000 = usableHeight * 1000 /TournamentPrinting.RS_PAGE_VIRTUAL_HEIGHT ;
+        
+        ArrayList<Game> alGamesToPrint = new ArrayList<Game>(tournament.gamesList(roundNumber));
 
+        int gamesSortType = GameComparator.TABLE_NUMBER_ORDER;
+        GameComparator gameComparator = new GameComparator(gamesSortType);
+        Collections.sort(alGamesToPrint, gameComparator);
+        
+        DPParameterSet dpps = tps.getDPParameterSet();
+
+        int irs;
+        for(irs = 0; irs < TournamentPrinting.RS_RSBYPAGE; irs++){ 
+            int abstractRSNumber = irs + pi * TournamentPrinting.RS_RSBYPAGE;
+            int gameNumber = abstractRSNumber;
+            if (gameNumber >= alGamesToPrint.size()) {
+                break;
+            }
+            Game game = alGamesToPrint.get(gameNumber);
+
+            int yBase = irs * TournamentPrinting.RS_RS_HEIGHT * actRatioY1000 /1000;
+            
+            Graphics2D g2 = (Graphics2D) g;
+            g2.setStroke(new BasicStroke(2));
+            
+            
+            // Cut up Line
+            g.drawLine(0, yBase, usableWidth, yBase);
+            
+            g.setFont(bigFont);
+
+            // Title
+            String strTN = "";
+            try {
+                strTN = tournament.getTournamentParameterSet().getGeneralParameterSet().getName();
+            } catch (RemoteException ex) {
+                Logger.getLogger(TournamentPrinting.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            int y = yBase + TournamentPrinting.RS_TITLE1 * actRatioY1000 / 1000;
+            int yT = y + TournamentPrinting.RS_LINE_HEIGHT * actRatioY1000 / 1000 * 2 / 3;
+            TournamentPrinting.drawCenterAlignedString(g, strTN , x1, x4, yT);
+            
+            y = yBase + TournamentPrinting.RS_TITLE2 * actRatioY1000 / 1000;
+            yT = y + TournamentPrinting.RS_LINE_HEIGHT * actRatioY1000 / 1000 * 2 / 3;
+            TournamentPrinting.drawCenterAlignedString(g, "Result sheet", x1, x4, yT);
+            
+            // Table
+            int y1 = yBase + TournamentPrinting.RS_TABLE * actRatioY1000 / 1000;
+            int y2 = y1 + TournamentPrinting.RS_LINE_HEIGHT * actRatioY1000 / 1000;
+            g.drawLine(x1, y1, x1, y2);
+            g.drawLine(x2, y1, x2, y2);
+            g.drawLine(x3, y1, x3, y2);
+            g.drawLine(x4, y1, x4, y2);
+            g.drawLine(x1, y1, x4, y1);          
+            g.drawLine(x1, y2, x4, y2);   
+            yT = y1 + TournamentPrinting.RS_LINE_HEIGHT * actRatioY1000 / 1000 * 2 / 3;
+            int xT = x1 + TournamentPrinting.RS_LEFTMARGIN * actRatioX1000 /1000;
+            g.drawString("Table : " + (game.getTableNumber() +1), xT, yT);
+            TournamentPrinting.drawCenterAlignedString(g, "Hd = " + game.getHandicap(), x2, x3, yT);
+            xT = x3 + TournamentPrinting.RS_LEFTMARGIN * actRatioX1000 /1000;
+            g.drawString("Round : " + (game.getRoundNumber() +1), xT, yT);
+            
+            // Body
+            y1 = yBase + TournamentPrinting.RS_COLOR * actRatioY1000 / 1000;
+            y2 = yBase + (TournamentPrinting.RS_SIGN + TournamentPrinting.RS_LINE_HEIGHT) * actRatioY1000 / 1000;
+            g.drawLine(x1, y1, x1, y2); //
+            g.drawLine(x2, y1, x2, y2);
+            g.drawLine(x3, y1, x3, y2);
+            g.drawLine(x4, y1, x4, y2);
+            
+            g.drawLine(x1, y1, x4, y1); 
+            yT = y1 + TournamentPrinting.RS_LINE_HEIGHT * actRatioY1000 / 1000 * 2 / 3;           
+            TournamentPrinting.drawCenterAlignedString(g, "White", x1, x2, yT);
+            TournamentPrinting.drawCenterAlignedString(g, "Black", x3, x4, yT);
+            TournamentPrinting.drawCenterAlignedString(g, "Result", x2, x3, yT);
+            
+            g.setFont(font);
+
+            y1 = yBase + TournamentPrinting.RS_PLAYERNAME * actRatioY1000 / 1000;
+            g.drawLine(x1, y1, x4, y1);
+            yT = y1 + TournamentPrinting.RS_LINE_HEIGHT * actRatioY1000 / 1000 * 2 / 3; 
+      
+            Player wP = game.getWhitePlayer();;
+            String strWP = wP.augmentedPlayerName(dpps);
+            TournamentPrinting.drawCenterAlignedString(g, strWP, x1, x2, yT);
+            Player bP = game.getBlackPlayer();;
+            String strBP = bP.augmentedPlayerName(dpps);
+            TournamentPrinting.drawCenterAlignedString(g, strBP, x3, x4, yT);
+
+            g.setFont(bigFont);
+            TournamentPrinting.drawCenterAlignedString(g, "O  1 - 0", x2, x3, yT);
+            g.setFont(font);
+            
+            y1 = yBase + TournamentPrinting.RS_ID * actRatioY1000 / 1000;
+            g.drawLine(x1, y1, x2, y1);
+            g.drawLine(x3, y1, x4, y1);
+            yT = y1 + TournamentPrinting.RS_LINE_HEIGHT * actRatioY1000 / 1000 * 2 / 3; 
+            String strId = wP.getAnIdString();
+            TournamentPrinting.drawCenterAlignedString(g, strId, x1, x2, yT);
+            strId = bP.getAnIdString();
+            TournamentPrinting.drawCenterAlignedString(g, strId, x3, x4, yT);
+            
+            g.setFont(bigFont);
+            TournamentPrinting.drawCenterAlignedString(g, "O  0 - 1", x2, x3, yT);
+            g.setFont(font);
+            
+            y1 = yBase + TournamentPrinting.RS_SIGN * actRatioY1000 / 1000;
+            g.drawLine(x1, y1, x2, y1);
+            g.drawLine(x3, y1, x4, y1);
+            yT = y1 + TournamentPrinting.RS_LINE_HEIGHT * actRatioY1000 / 1000 * 2 / 3; 
+            xT = x1 + TournamentPrinting.RS_LEFTMARGIN * actRatioY1000 / 1000;
+            g.drawString("Signature :", xT, yT);
+            xT = x3 + TournamentPrinting.RS_LEFTMARGIN * actRatioY1000 / 1000;
+            g.drawString("Signature :", xT, yT);
+
+            g.setFont(bigFont);
+            TournamentPrinting.drawCenterAlignedString(g, "O ½ - ½", x2, x3, yT);
+            g.setFont(font);
+            
+            y2 = y1 + TournamentPrinting.RS_LINE_HEIGHT * actRatioY1000 /1000; 
+            g.drawLine(x1, y2, x4, y2); 
+            
+            // Cut up Line
+            int yBottom = yBase + TournamentPrinting.RS_RS_HEIGHT * actRatioY1000 /1000;
+            g.drawLine(0, yBottom , usableWidth, yBottom);
+
+        }
+                
+
+        if (irs == 0) {
+            return NO_SUCH_PAGE;
+        }
+ 
+        return PAGE_EXISTS;
+    }
+    
+   
     private int printAPageOfNotPlayingPlayersList(Graphics g, PageFormat pf, int pi) throws RemoteException {
         Font font = new Font("Default", Font.BOLD, fontSize);
         g.setFont(font);
@@ -2106,6 +2306,14 @@ public class TournamentPrinting implements Printable {
         int xLeft = x - w;
         g.drawString(str, xLeft, y);
 
+    }
+    
+    private static void drawCenterAlignedString(Graphics g, String str, int xL, int xR, int y) {
+        FontMetrics fm = g.getFontMetrics();
+        char[] tc = str.toCharArray();
+        int w = fm.charsWidth(tc, 0, str.length());
+        int xLeft = xL + (xR - xL - w) / 2;
+        g.drawString(str, xLeft, y);
     }
 
     public int getRoundNumber() {

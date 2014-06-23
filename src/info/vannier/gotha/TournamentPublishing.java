@@ -7,7 +7,6 @@ import it.sauronsoftware.ftp4j.FTPException;
 import it.sauronsoftware.ftp4j.FTPIllegalReplyException;
 import it.sauronsoftware.ftp4j.FTPListParseException;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.rmi.RemoteException;
 import java.text.SimpleDateFormat;
@@ -23,12 +22,13 @@ public class TournamentPublishing {
     public static final int TYPE_PLAYERSLIST = 1;
     public static final int TYPE_TEAMSLIST = 2;
     public static final int TYPE_GAMESLIST = 11;
-    public static final int TYPE_NOTPLAYINGLIST = 12;
-    public static final int TYPE_MATCHESLIST = 13;
+    public static final int TYPE_RESULTSHEETS = 12;
+    public static final int TYPE_NOTPLAYINGLIST = 13;
+    public static final int TYPE_MATCHESLIST = 14;
     public static final int TYPE_STANDINGS = 21;
     public static final int TYPE_TEAMSSTANDINGS = 22;
     public static final int TYPE_TOURNAMENT_PARAMETERS = 101;
-     
+    
     public static final int SUBTYPE_DEFAULT = 0;
     public static final int SUBTYPE_ST_CAT = 1; // Standings by cat
 
@@ -77,6 +77,9 @@ public class TournamentPublishing {
             case TournamentPublishing.TYPE_GAMESLIST:
                 TournamentPrinting.printGamesList(tournament, roundNumber);
                 break;
+            case TournamentPublishing.TYPE_RESULTSHEETS:
+                TournamentPrinting.printResultSheets(tournament, roundNumber);
+                break;
             case TournamentPublishing.TYPE_NOTPLAYINGLIST:
                 TournamentPrinting.printNotPlayingPlayersList(tournament, roundNumber);
                 break;
@@ -106,6 +109,9 @@ public class TournamentPublishing {
                 break;
             case TournamentPublishing.TYPE_GAMESLIST:
                 f = ExternalDocument.generateGamesListHTMLFile(tournament, roundNumber);
+                break;
+             case TournamentPublishing.TYPE_RESULTSHEETS:
+                //
                 break;
             case TournamentPublishing.TYPE_NOTPLAYINGLIST:
                 // 

@@ -40,13 +40,13 @@ public class ExternalDocument {
 
     public static void importPlayersAndGamesFromPlainFile(File f, String importType, ArrayList<Player> alPlayers, ArrayList<Game> alGames) {
         if (importType.equals("h9")) {
-            LogElements.incrementElement("tournament.import.h9", "");
+//            LogElements.incrementElement("tournament.import.h9", "");
         }
         if (importType.equals("tou")) {
-            LogElements.incrementElement("tournament.import.tou", "");
+//            LogElements.incrementElement("tournament.import.tou", "");
         }
         if (importType.equals("wallist")) {
-            LogElements.incrementElement("tournament.import.wallist", "");
+//            LogElements.incrementElement("tournament.import.wallist", "");
         }
 
         // Def values are ok for for FFG99 aka TOU files
@@ -214,7 +214,7 @@ public class ExternalDocument {
     }
 
     public static void importPlayersFromVBSFile(File f, ArrayList<Player> alPlayers) {
-        LogElements.incrementElement("tournament.import.vbs", "");
+//        LogElements.incrementElement("tournament.import.vbs", "");
 
         ArrayList<String> alLines = new ArrayList<String>();
         try {
@@ -1393,7 +1393,7 @@ public class ExternalDocument {
     }
 
     public static void generateTouFile(TournamentInterface tournament, File f) {
-        LogElements.incrementElement("export.ffg", "");
+//        LogElements.incrementElement("export.ffg", "");
         TournamentParameterSet tps = null;
         try {
             tps = tournament.getTournamentParameterSet();
@@ -1520,7 +1520,7 @@ public class ExternalDocument {
     }
 
     public static void generateH9File(TournamentInterface tournament, File f, boolean bKeepByDefResults) {
-        LogElements.incrementElement("export.egf", "");
+//        LogElements.incrementElement("export.egf", "");
         TournamentParameterSet tps;
         try {
             tps = tournament.getTournamentParameterSet();
@@ -1703,7 +1703,7 @@ public class ExternalDocument {
 
     // This method added by Bart and adapted by Luc (Jan 2012)
     public static void generateAGAResultsFile(TournamentInterface tournament, File f) {
-        LogElements.incrementElement("export.aga", "");
+//        LogElements.incrementElement("export.aga", "");
         TournamentParameterSet tps = null;
         try {
             tps = tournament.getTournamentParameterSet();
@@ -1885,7 +1885,7 @@ public class ExternalDocument {
     }
 
     public static void generatePlayersCSVFile(TournamentInterface tournament, File f) {
-        LogElements.incrementElement("export.csv", "");
+//        LogElements.incrementElement("export.csv", "");
         Writer output;
         try {
             output = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(f), DEFAULT_CHARSET));
