@@ -1,8 +1,10 @@
-OpenGothaV3.37.02
+OpenGothaV3.37.04
 *****************
-29/05/2014
-New     In "Experamentary tools", delete remote files also deletes directories
+24/06/2014
+New     In "Experimental tools", delete remote files also deletes directories
 New     Grade is now preferred to rank in most displays, printings and expports
+New     Result sheets
+New     FFG "Licence loisir" is highlighted in "Players Manager" frame.
 
 OpenGothaV3.37
 **************

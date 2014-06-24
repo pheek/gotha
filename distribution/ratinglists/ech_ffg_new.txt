@@ -1,4 +1,4 @@
-#Echelle au 29/05/2014
+#Echelle au 24/06/2014
 AAIJ René                               249 e -------   NL
 AAKERBLOM Charlie                       339 e -------   SE
 ABADIA Mickaël                        -1400 - 9728205 94MJ
@@ -114,7 +114,7 @@ ALLAIN Séraphine                      -1987 L 1400219 44NE
 ALLAIRE Michel                         -400 - 8412000 92An
 ALLAIRE Romain                        -1500 - 0700090 78Ve
 ALLARD Clément                        -1300 - 0800434 31To
-ALLARD Jean                             139 L 9725098 13Ma
+ALLARD Jean                             148 L 9725098 13Ma
 ALLDAY Baron                            -15 e -------   UK
 ALLEAUME Clovis                       -1500 - 1000400 38Gr
 ALLEGRE Claire                        -9999 - 9774713 84VJ
@@ -235,7 +235,7 @@ ARCHAMBAULT Nicolas                   -1500 - 0900054 91Or
 ARCHORLIAN Clémence                   -1800 - 0800308 84Va
 ARDON Judith                          -9999 - 9877004 13Mr
 ARDOUIN Michel                        -1600 - 0237500 37To
-ARENILLAS Jean_Renaud                 -1105 L 1300294 17Ro
+ARENILLAS Jean_Renaud                 -1078 L 1300294 17Ro
 ARGENCE Patrice                       -1700 - 1300109 66Pe
 ARISDAKESSIAN Cédric                   -300 - 1200117 38Gr
 ARIZA Frédéric                         -500 - 9622501 75Pa
@@ -316,7 +316,7 @@ AUBURTIN Thomas                       -1600 - 0326804 91Or
 AUCOIN Philippe                       -1400 - 9721502 75Ju
 AUDE Albert                            -600 - 0950000 98No
 AUDEBERT Stéphane                      -700 - 9131004 49An
-AUDER Benjamin                         -753 L 0800491 91Or
+AUDER Benjamin                         -720 L 0800491 91Or
 AUDIGER Monique                       -9999 - 0337500 37To
 AUDIGER Paul                          -9999 - 1400206 85Ol
 AUDIN Maurice                         -9999 - 0900108 94EP
@@ -508,7 +508,7 @@ BARBIERI Gérard                       -1200 - 9425025 91Or
 BARBIEUX Thomas                       -1600 - 0693015 59Li
 BARBRAUD Marie                        -9999 - 0050000 00L5
 BARBRAUD Stanislas                    -9999 - 0050001 00L5
-BARCELO Patrice                        -485 L 0677401 34Mo
+BARCELO Patrice                        -484 L 0677401 34Mo
 BARDALES Guillaume                    -1500 - 0491002 80Am
 BARDEL Stephan                         -961 L 0511002 74An
 BARDIN Camille                        -1600 - 0643000 76Ro
@@ -570,7 +570,7 @@ BASSERAS Luce                         -1500 - 9651007 33Bo
 BASSET Pascal                         -1200 - 0029300 95Ta
 BASSET Romain                         -1100 - 0700374 74Vm
 BASSIEN Matthieu                      -9999 - 0120109 91EJ
-BASSO Gillian                          -921 L 1400149 90Be
+BASSO Gillian                          -880 L 1400149 90Be
 BASSO Joëlle                          -1352 L 0460504 63Cl
 BASSOU Sylvain                        -1100 - 0800517 75OB
 BASTARD Lionel                        -1400 - 0413009 38Gr
@@ -731,7 +731,7 @@ BENCHADANE Hassan                       100 - 1100389 76Ro
 BENDAOUD Loïc                          -400 L 8401700 49An
 BENDAVID Dan                          -1400 - 9923511 91Ep
 BENDAVID Lucas                         -500 - 0800397 75Al
-BENDEKS Léo-Paul                       -776 L 1300151 69Ly
+BENDEKS Léo-Paul                       -741 L 1300151 69Ly
 BENEDETTI Henri                        -800 - 9779402 06Ni
 BENEDETTI Joseph                       -500 - 0425513 59Li
 BENESTEAU Sylvain                      -600 - 0900365 75Al
@@ -773,6 +773,7 @@ BERCHE Thomas                         -9999 - 0228200 94MJ
 BERCHEL Orane                         -9999 - 0023502 91Ep
 BERCHERON Martin                      -1500 - 0428202 94MJ
 BERCHET Adrien                         -600 - 0700310 69Ly
+BERENCHTEIN Boris                     -9999 L 1400319 29Co
 BERENGUER Nils                         -700 - 1100281 38Gr
 BERGDOLL Marc                         -9999 - 9988726 67SE
 BERGER Thibault                       -1500 - 0529300 75Pa
@@ -822,7 +823,7 @@ BERNOT Julien                         -1500 - 0328201 94MJ
 BEROSE Kerian                         -9999 - 1000286 75LF
 BEROUD Thierry                        -1300 - 0800166 59Li
 BERRANGER Jean-Alexis                 -1400 - 9413101 38HP
-BERREBY Monique                         -37 L 8312100 13Ma
+BERREBY Monique                          13 L 8312100 13Ma
 BERROCAL Sarah                        -9999 - 9996004 60Be
 BERROU Jean-Marc                       -900 - 0537000 44Na
 BERROU Laurent                         -900 - 0537001 44Na
@@ -875,7 +876,7 @@ BES Cyril                              -900 - 0900231 14Ca
 BESANCON Thomas                       -1600 - 0625034 75Pa
 BESNARD Sophie                        -1600 - 0537507 37To
 BESNIER Adrien                        -2000 - 0622300 75Bu
-BESNIER Juliette                      -1984 L 1100184 84Va
+BESNIER Juliette                      -1839 L 1100184 84Va
 BESNOU Anaïs                          -2500 - 1250008 27An
 BESSALA Stéphane                      -9999 - 0900079 75Op
 BESSARD Harmony                       -9999 L 1400213 69Ly
@@ -950,14 +951,14 @@ BILLET Jonathan                       -1600 - 0593005 59Li
 BILLEY Vincent                        -1200 - 0643022 59Li
 BILLOET Clement                        -200 - 1000065 94Ca
 BILLOIR Guillaume                     -1100 - 0900366 75Pa
-BILLOIRE Clement                       -192 L 0526811 91Or
+BILLOIRE Clement                       -175 L 0526811 91Or
 BILLON Jean-Michel                     -300 - 9127701 75Pa
 BILLON Jordane                        -2000 - 1100212 26Va
 BILLON Léo                            -2225 L 1400035 38EB
 BILLON Max                            -1962 L 1400034 38EB
 BILLOUDET Gwenaël                     -1400 - 0614104 97Re
 BILLOUDET Julien                      -1200 - 0900377 38Gr
-BILLOUET Simon                          349 L 9651009 38Gr
+BILLOUET Simon                          350 L 9651009 38Gr
 BILLY Hervé                            -800 - 9760001 37To
 BILLY Karl                            -9999 - 0220000 00L2
 BILODEAU Florent                       -500 - 0525506 69Ly
@@ -1007,7 +1008,7 @@ BLANC Michel                          -1300 - ------- XXXX
 BLANC Patrick                         -1715 L 1200118 38Gr
 BLANC Philippe                         -600 - 8934100 35Re
 BLANC Romain                          -9999 - 9774798 84VJ
-BLANCHARD Benjamin                      270 L 0800178 75Al
+BLANCHARD Benjamin                      274 L 0800178 75Al
 BLANCHARD Elliot                      -1600 - 1300189 44NE
 BLANCHARD Fabrice                     -1800 - 0534008 29Br
 BLANCHARD Jean-Luc                    -1400 - 9928603 75CF
@@ -1071,7 +1072,7 @@ BOAS Olivier                             57 e -------   BE
 BOBB Véronique                        -9999 - 9188775 67SE
 BOBOT Axel                            -1600 - 0900078 75Op
 BOBOUL Thierry                        -9999 - 9361002 63Cl
-BOCLE Milena                            100 - 0621001 75Al
+BOCLE Milena                            167 L 0621001 92An
 BOCLE Vassili                         -1600 - 0621002 92An
 BOCQUET Jean-François                  -300 - 9333003 92An
 BOCQUET Nathalie                      -1400 - 9831001 92An
@@ -1112,7 +1113,7 @@ BOISSIERES Nicolas                     -400 - 0621200 13Ma
 BOISSIEU Nicolas                      -9999 - 1100251 06Ni
 BOISSINOT Aline                       -1400 - 0900433 44NE
 BOISTEAU Maximilien                   -9999 - 9920504 95AJ
-BOITTIN Cédric                         -848 L 1400150 90Be
+BOITTIN Cédric                         -779 L 1400150 90Be
 BOIVIN Pauline                        -1400 - 0614308 69LJ
 BOIZOT Adrien                         -1300 - 0573000 84Av
 BOIZOT Pierre                         -1300 - 9171003 84Av
@@ -1155,8 +1156,9 @@ BONNASSIEUX Jérôme                    -9999 - 9619002 69TJ
 BONNE Sébastien                       -9999 - 0521202 75Al
 BONNEAU Charles                       -9999 - 9970125 84AJ
 BONNEAU Diane                         -9999 - 0900437 38GJ
-BONNEAU Jerome                        -1526 L 1300145 91SM
-BONNEAU Johan                          -394 L 0438001 92Bo
+BONNEAU Guillaume                     -9999 L 1450000 28Cr
+BONNEAU Jerome                        -1469 L 1300145 91SM
+BONNEAU Johan                          -398 L 0438001 92Bo
 BONNEAU Véronique                     -1500 - 9313002 38Gr
 BONNEFOI Elodie                       -9999 - 9374707 84VJ
 BONNEFOND Richard                     -1000 - 9613003 29Co
@@ -1168,7 +1170,7 @@ BONNEFOY Vincent                      -1100 - 0660511 63Ce
 BONNES Gérard                         -9999 - 9877802 06Pe
 BONNET Armand                         -9999 - 0388742 67SE
 BONNET Remi                            -100 - 1000332 94Ca
-BONNET Stephan                           -7 L 0077400 13Ma
+BONNET Stephan                            6 L 0077400 13Ma
 BONNETAIN Michel                      -9999 - 1000302 81Al
 BONNETON Daniel                       -9999 - 9852009 31To
 BONNEVAL Florent                       -700 - 0338000 86Po
@@ -1216,7 +1218,7 @@ BOSSEE Kristof                           26 e -------   BE
 BOSSEKOTA Kerrien                     -9999 - 1100304 31To
 BOSSUT Patrick                        -1080 L 0700287 63Ce
 BOST Dominique                        -1500 - 0321601 92Bo
-BOTTELIN Lucas                        -1549 L 1000160 34Mo
+BOTTELIN Lucas                        -1550 L 1000160 34Mo
 BOTTRAND Jean-Christophe               -692 L 1400135 63Ce
 BOUABID Rayane                        -2000 - 0900162 38Ec
 BOUAFES Mehdi                         -1500 - 0660501 63Ce
@@ -1236,7 +1238,7 @@ BOUCHE Pierre-Alain                   -1300 - 1100066 31To
 BOUCHE-MARTIN Laia                    -2169 L 1400275 38EB
 BOUCHER Hughes                        -9999 - 9842002 76Ha
 BOUCHERAT Pacôme                      -1794 L 1300099 26Va
-BOUCHERIE Arnaud                         83 L 0530200 37To
+BOUCHERIE Arnaud                         84 L 0530200 37To
 BOUCHET Christine                     -1500 - 9937504 37To
 BOUCHET Cyril                         -9999 L 1100121 94Ca
 BOUCHET David                         -1600 - 0900208 64Ba
@@ -1354,7 +1356,7 @@ BOUTOILLE Axel                        -9999 - 0454000 40Mo
 BOUTOILLE François                    -1400 - 0154000 40Mo
 BOUTOILLE Matthieu                    -1600 - 0254000 40Mo
 BOUTON Amandine                       -2000 - 1300211 09Pa
-BOUTON Lionel                          -687 L 0421600 92Bo
+BOUTON Lionel                          -707 L 0421600 92Bo
 BOUTON Malika                         -1500 - 9752002 31To
 BOUTONNET Pierre                      -1100 - 9913005 38Gr
 BOUTRY Jean-Baptiste                  -1300 - 0614105 69CR
@@ -1402,14 +1404,14 @@ BRAGER Arnaud                         -1300 - 0671204 48Is
 BRAHIC Ludovic                        -1500 - 9623560 91Ep
 BRAHIM-ACHOUR Augustin                -2950 L 1400105 93Mo
 BRAÏDA Vivien                          -580 L 0627501 94Ca
-BRAILLARD Philippe                    -1388 L 9423601 21Di
+BRAILLARD Philippe                    -1518 L 9423601 21Di
 BRAILLON Chloé                        -1150 L 1400122 95Va
 BRAKA Lauris                          -2000 - 0420005 75Bu
 BRAKHAHM Tobias                       -1500 - 0488706 67SE
 BRANCHARD Antoine                       175 L 0800416 69Ly
 BRANCHEREAU Joseph                     -900 - 9223517 75Pa
-BRANCHUT Alix                         -2950 L 1400308 37To
-BRANCHUT William                       -831 L 0800310 37To
+BRANCHUT Alix                         -2326 L 1400308 37To
+BRANCHUT William                       -786 L 0800310 37To
 BRANCQUART Eloïse                      -900 - 0700282 06Pe
 BRANDILY Cédric                       -1298 L 1300048 92An
 BRANDNER Manon                        -9999 - 0288702 67SE
@@ -1464,7 +1466,7 @@ BRISARD Vincent                       -9999 - 9148424 XXXX
 BRISBART Franck                       -1400 - 0800337 38Gr
 BRISCOE Wuge                            533 e -------   UK
 BRISON Claude                         -1500 - 9724703 95Mo
-BRISSON Claude                         -394 L 0322103 13Ma
+BRISSON Claude                         -354 L 0322103 13Ma
 BRIZE Frédéric                        -1500 - 0625005 75Pa
 BRO-JOERGENSEN Ulrik                    338 e -------   DK
 BROATCH Olivia                        -9999 - 0327703 78Ve
@@ -1534,14 +1536,14 @@ BRUNOUD Alexandre                     -9999 - 1300155 38GJ
 BRUYERE Philippe                      -1500 - 9778501 30Ni
 BRUYÈRE Yann                          -9999 - 1000369 72Ma
 BRUZAUT Olivier                        -800 - 0800283 67SE
-BUARD Mathieu                         -1005 L 1200056 42Se
+BUARD Mathieu                         -1018 L 1200056 42Se
 BUCAILLE Olivier                      -1800 - 1200018 63Ce
 BUCHARD Aurore                        -1800 - 0690601 59Va
 BUCHY Vincent                         -1100 - 0522103 75Pa
 BUDAHN Michael                          375 e -------   DE
 BUDIG Stefan                            335 e -------   DE
 BUDRONI Gilles                        -9999 L 1400242 13Ma
-BUFFARD Emmanuel                         28 L 9283701 21Di
+BUFFARD Emmanuel                         35 L 9283701 21Di
 BUFFARD Loïc                           -300 - 0352006 31To
 BUFFENOIR Christophe                  -2000 - 1000269 31To
 BUIS Catherine                        -1500 - 1200199 26Va
@@ -1625,7 +1627,7 @@ CAHAGNE Vincent                       -9999 - 9737202 35Re
 CAHN Martin                            -900 - 0627103 67SE
 CAHOUR Thierry                        -1300 - 0632000 29Ba
 CAHU Jean-Marc                         -500 - 8717200 14Ca
-CAI Gangfeng                            137 L 0237501 37To
+CAI Gangfeng                            149 L 0237501 37To
 CAI Katerina                          -1100 - 0213006 38Gr
 CAILL Benjamin                        -1900 - 0611205 74Cl
 CAILLAUD Nicolas                      -9999 - 1000403 44NE
@@ -1669,7 +1671,7 @@ CAMPELLO Yvon                          -900 - 0900422 30Ni
 CAMPILLO Victor                       -9999 - 0310700 38Tr
 CAMPION Marcel                         -500 - 8122002 92Cu
 CAMPREDON Ronan                       -2000 - 1300028 31Pi
-CAMPS Marie-Françoise                 -1253 L 9877402 34Mo
+CAMPS Marie-Françoise                 -1254 L 9877402 34Mo
 CAMUS Romain                           -500 - 9183004 21Di
 CANAUX Marie-Laure                     -900 - 9614001 69Ly
 CANCE Philippe                            0 - 0537002 44Na
@@ -1686,7 +1688,7 @@ CANY Thomas                           -9999 - 0025506 75OB
 CAO Alexandre                          -800 - 0750009 69IN
 CAO HongYu                              400 - 1100098 37To
 CAO Ngoc-Kiet                          -244 e -------   BE
-CAO Ngoc-Trang                           86 L 0700467 67SE
+CAO Ngoc-Trang                           90 L 0700467 67SE
 CAO Xuhua                              -100 - 0643019 13Ma
 CAPDEVILLE Clarisse                   -2000 - 0570303 13Ma
 CAPDEVILLE Morgane                    -2000 - 0470302 13Ma
@@ -1695,7 +1697,7 @@ CAPMAS Patrick                        -9999 - 0129302 95Ta
 CAPOUL Géraud                         -1400 - 0800237 92Le
 CARA Loïc                             -1400 - 0637202 35Re
 CARAIVAN Alexandru                      249 e -------   RO
-CARANICOLAS Jacques                    -878 L 8552001 31To
+CARANICOLAS Jacques                    -849 L 8552001 31To
 CARAYON Arthur                        -9999 - 9825016 75Pa
 CARBON David                           -800 - 1000250 31To
 CARBONE Gérard                         -400 - 0477001 13Ma
@@ -1978,10 +1980,10 @@ CHEN Alexandre                        -1700 - 0800133 75LF
 CHEN Catherine                        -9999 - 1300054 59Li
 CHEN Chi-Jui                            642 e -------   TW
 CHEN Jia_Qi                               0 - 0414104 92An
-CHEN Julia                            -2400 - 1200186 75LF
+CHEN Julia                            -2350 L 1200186 75LF
 CHEN Lei                                521 e -------   DE
 CHEN Longteng                           -34 L 1000466 67SE
-CHEN Nicolas                          -9999 - 0900211 75LF
+CHEN Nicolas                          -9999 L 0900211 75LF
 CHEN Qi                                 428 e -------   UK
 CHEN Shi_Yao                            100 - 0326802 91Or
 CHEN Yanguang                         -9999 - 0625000 75Pa
@@ -2002,7 +2004,7 @@ CHERON Léo                            -9999 - 9425560 75OB
 CHEROT Elouan                         -1300 - 1000095 35Re
 CHERVET Flavien                       -9999 - 1100344 69Ly
 CHESTESZ Jonathan                     -9999 - 9388723 67SE
-CHETIOUI Benjamin                       200 - 0900154 67SE
+CHETIOUI Benjamin                       240 L 0900154 67SE
 CHETRIT Jean-Claude                    -390 e 0043013   US
 CHEVAILLIER Grégory                    -300 - 0800060 59Li
 CHEVAL Jacky                           -700 - 89A0003 14Ca
@@ -2042,7 +2044,7 @@ CHIQUET Daniel                        -1000 - 8328002 92Cb
 CHIROL Christophe                     -9999 - 9188762 67SE
 CHIROL Clémentine                     -1500 - 0521005 92An
 CHIROL David                          -1500 - 0521006 92An
-CHIROL Géraud                           -40 L 9021002 92An
+CHIROL Géraud                           -37 L 9021002 92An
 CHIRON Aurélien                       -1500 - 0452009 31To
 CHIRON Corentin                       -1800 - 0700155 33Bo
 CHIRON Thomas                         -9999 - 0388707 67SE
@@ -2081,7 +2083,7 @@ CHRISTEN Jean-Loup                    -1400 - 0488711 67SE
 CHRISTIANI Tobias_Lybec                 152 e -------   XX
 CHRISTIN Sacha                        -1500 - 0800239 74Vm
 CHRISTMANN David                      -1500 - 9685501 68RJ
-CHRISTMANN Pierre-Yves                   71 L 0800364 91SM
+CHRISTMANN Pierre-Yves                   75 L 0800364 91SM
 CHRISTOFFERSEN Terje                    -91 e -------   NO
 CHRISTOPHE Gérald                      -800 - 0614001 75Ju
 CHRISTOULA Julien                      -800 - 0700068 33Bo
@@ -2133,7 +2135,7 @@ CLAUS Jérôme                          -9999 - 9188721 67SE
 CLAVEL Olivier                        -1500 - 9874705 84VJ
 CLAVERIE Benoît                       -1500 - 9352008 44Na
 CLAVERIE Olivier                       -537 L 1300132 33Bo
-CLAVIER Benjamin                      -1166 L 1000307 37To
+CLAVIER Benjamin                       -818 L 1000307 37To
 CLAVIER Christopher                    -462 L 1100018 18Bo
 CLEMENT Daniel                        -9999 - 9441004 14Ca
 CLEMENT Jérémy                        -1017 L 1300292 76Ha
@@ -2144,7 +2146,7 @@ CLERBOUT Nicolas                       -600 - 0593001 59Li
 CLERC Véronique                       -9999 - 9728601 75CF
 CLERC Vincent                           100 - 0800429 92An
 CLERFEUILLE Charles-edouard            -900 - 1000240 44NE
-CLERGUE Olivier                         133 L 9177001 13Ma
+CLERGUE Olivier                         108 L 9177001 13Ma
 CLETON Alexandre                      -2950 L 1400134 59Li
 CLEYET-MERLE Sébastien                -1800 - 0700332 38Gr
 CLIER Brice                           -9999 - 9374706 84VJ
@@ -2263,7 +2265,7 @@ COPPE Alexandre                       -1300 - 0270300 13Ma
 COPPE Bernard                          -152 L 9577000 13Ma
 COPPÉ Lilou-Fleur                     -2950 L 1400310 13Ma
 COPPÉ Michel                          -9999 - 9277002 13Ma
-COPPE Nathan                          -1206 L 0270301 13Ma
+COPPE Nathan                          -1252 L 0270301 13Ma
 COPPEY Philippe                        -500 - 7913200 13Ma
 COPPI Pierre_Alain                     -700 - 0581000 25Be
 COQUELET Laurent                        194 L 9516003 21Di
@@ -2272,7 +2274,7 @@ CORAY Maxime                          -1400 - 1100242 29Br
 CORBEL Larry                           -500 - 1100169 21Di
 CORBIERE Antonin                      -9999 L 1300129 76Ha
 CORBONNOIS Bruno                       -800 - 9525010 69Ly
-CORCESSIN Julien                       -884 L 0690501 91Or
+CORCESSIN Julien                       -865 L 0690501 91Or
 CORDELIER Philippe                    -1500 - 9351700 64Pa
 CORDIER Benjamin                       -900 - 0281000 25Be
 CORDIER Clément                        -200 - 0900326 69Ly
@@ -2297,7 +2299,7 @@ CORNELOUP Pierre                       -800 - 0081000 25Be
 CORNIC Guillaume                      -1400 - 0700087 14Ca
 CORNU Damien                          -9999 - 9888708 67SE
 CORNUAULT Nicolas                     -1200 - 0520801 75Ju
-CORNUEJOLS Dominique                     43 L 7904900 38Gr
+CORNUEJOLS Dominique                     49 L 7904900 38Gr
 CORNUEJOLS Isabelle                   -1600 - 0700011 78Mg
 CORNUEJOLS Laurette                   -9999 - 9441003 14Ca
 CORPET Agnès                          -1400 - 0221903 94Ca
@@ -2347,8 +2349,8 @@ COULLON Heloïse                       -1800 - 0700319 91Or
 COULMEAU François                     -1300 - 0452016 31To
 COULOM Rémi                            -720 L 0700237 59Li
 COULOMB Stéphane                      -9999 - 9613503 38IG
-COULOMBE Hélène                        -462 L 1000003 07Au
 COULOMBE Hélène                        -300 - 9025017 78Ra
+COULOMBE Hélène                        -462 L 1000003 07Au
 COULOMBE Pascal                        -600 - 9127001 78Ra
 COULON Lilian                         -9999 - 9348401 XXXX
 COULON Serge                          -1000 - 0321205 75Al
@@ -2381,9 +2383,9 @@ COURTINEL Adrien                      -9999 - 0288717 67SE
 COURTOIS Philippe                     -1400 - 9331102 49AJ
 COURTY Jean-Michel                    -1300 - 0222102 75Op
 COURTY Nicolas                         -500 - 0037202 35Re
-COUSIN Jean-Michel                    -1053 L 9620002 21Di
+COUSIN Jean-Michel                    -1050 L 9620002 21Di
 COUSIN Manon                          -1400 - 0541010 14Ca
-COUSIN Pierre                         -1352 L 1000389 21Di
+COUSIN Pierre                         -1203 L 1000389 21Di
 COUSIN Pierre-Edouard                 -1400 - 0625011 75Pa
 COUSSOT Yann                           -700 - 0291000 80Am
 COUSTILLAC Arnaud                     -9999 - 0270307 13MJ
@@ -2419,7 +2421,7 @@ CREPY Anatole                         -1496 L 9677010 69Ly
 CREPY Christine                       -1300 - 0077005 13Ma
 CREPY Flora                           -9999 - 9677011 13Ma
 CREPY Grégoire                        -1400 - 9677012 13Ma
-CREPY Pascal                           -585 L 9193005 13Ma
+CREPY Pascal                           -629 L 9193005 13Ma
 CREQUY Alban                          -1500 - 0652001 31To
 CRESPINO Geoffrey                      -380 L 0900216 54Na
 CRESSEY Alexandre                     -1100 - 0437200 78Ve
@@ -2518,7 +2520,7 @@ DAIGNEAU Gautier                      -1200 - 1300015 31To
 DALAUD Virgile                        -1478 L 1300150 44NE
 DALIGAULT Jean                         -800 - 0521905 94Ca
 DALLA_BARBA Anca                      -1200 - 9852021 31To
-DALLA_BARBA Daniel                     -530 L 9652001 31To
+DALLA_BARBA Daniel                     -556 L 9652001 31To
 DALLA-GIOVANNA Gianni                  -300 - 0092006   BE
 DALLA-MONTA Amaury                    -9999 - 1000421 42Se
 DALOZ Jean_Michel                     -9999 - 1100132 66Pe
@@ -2669,7 +2671,7 @@ DE_MENTEN Gaëtan                      -1400 - ------- XXXX
 DE_MIJOLLA Thibaud                    -9999 - 1100170 75Pa
 DE_MONNERON Philippe                  -1400 - 0626800 35Re
 DE_NEYMAN Marie                       -1600 - 0900465 13Ma
-DE_OLIVEIRA Steven                        2 L 1000397 91SM
+DE_OLIVEIRA Steven                       -1 L 1000397 91SM
 DE_PASS Giacomo                       -9999 - 9877810 06Pe
 DE_PIEDOUE Brigitte                   -1300 - 9125045 75SC
 DE_PIEDOUE Gwendoline                 -9999 - 9228002 75SC
@@ -2753,7 +2755,7 @@ DEKOJEL Pascal                         -800 - 9428901 10Tr
 DELABRE Julien                        -9999 - 0593004 59Li
 DELABRIERE Quentin                    -1900 - 0900076 37To
 DELABROUILLE Benoît                   -1100 - 9433001 29Br
-DELACROIX Julien                       -200 - 0580501 06Pe
+DELACROIX Julien                       -162 L 0580501 34Mo
 DELAFORSE Quentin                     -9999 - 9823506 91Ep
 DELAGE Laure                          -1800 - 0522300 75Bu
 DELAGE Nicolas                        -9999 - 1100007 33Bo
@@ -2850,7 +2852,7 @@ DENHEZ Florent                         -900 - 9695002 02Ai
 DENIS Cyrile                           -600 - 9426502 75AE
 DENIS Maximilien                      -1700 - 1000134 95Ta
 DENIS Samantha                        -2000 - 1000135 95Ta
-DENISE Quentin                         -400 - 0637206 69Ly
+DENISE Quentin                         -384 L 0637206 31To
 DENIZON Alain                         -9999 - 9752038 31To
 DENNEWALD Nicolas                     -9999 - 0900320 75Pa
 DENOUAL Alain                         -9999 - 0021900 94Ca
@@ -2942,7 +2944,7 @@ DETIENNE Arnaud                        -800 - 1200094 35Re
 DETIVAUD Pierre                        -379 L 0800071 42Se
 DETOUL Marie                          -9999 - 1300101 75Pa
 DETOURNAY Thomas                       -200 - 0525006 75Pa
-DEUSS Cyrille                          -182 L 9323002 76Ro
+DEUSS Cyrille                          -149 L 9323002 76Ro
 DEVAUX Martin                          -600 - 1000075 75Al
 DEVE Tristan                          -2800 - 1300276 84Av
 DEVEDEUX Marc                         -1300 - 9714008 69Ly
@@ -2959,7 +2961,7 @@ DEVYS Charles                         -1400 - 0642001 76Ha
 DEWALLE Pascale                       -1500 - 0593003 59Li
 DEWASNE Isabelle                      -9999 - 9248419 XXXX
 DEWIDEHEM Sébastien                    -200 - 0693009 59Li
-DEYMIER Loris                         -2212 L 1200149 84Va
+DEYMIER Loris                         -1964 L 1200149 84Va
 DEZECOT Valentin                      -1500 - 0800425 44Na
 DE_CREVOISIER Alban                   -1400 - 1300140 92Le
 DE_FOREIN Olivier                      -500 - ------- XXXX
@@ -2972,7 +2974,7 @@ DHERRET Flavie                        -1500 - 0074701 84Va
 DHERRET Isabelle                      -1500 - 0174700 84Va
 DHORNE Kevin                          -1100 - 0900319 75Al
 DHOYE Laurent                         -1000 - 1100390 13Mr
-DHUR Antoine                            123 L 9996005 17Ro
+DHUR Antoine                            143 L 9996005 17Ro
 DI_GIOSIA Patrick                     -1200 - 0900252 31To
 DI_NAPOLI Marc                        -9999 - 9932001 29Ba
 DIABATE Kélétigui                      -900 - 0900321 75LF
@@ -3061,7 +3063,7 @@ DONZET Frédéric                         440 L 7920001 67SE
 DOPOURIDIS Timeo                      -2097 L 1400278 38EB
 DORANGE Michel                         -700 - 0421213 75Al
 DORBANE Alexandre                     -1400 - 9828202 94MJ
-DORCA Floriane                        -1341 L 1200177 18Bo
+DORCA Floriane                         -816 L 1200177 18Bo
 DOREMIEUX Yves                        -1800 - 0421210 75Al
 DOREY Delphine                        -9999 - 9248433 XXXX
 DORGUEIL Romain                        -600 - 0700242 06Pe
@@ -3079,7 +3081,7 @@ DOT Valérie                           -9999 - 9224802 78Ma
 DOUARED Joël                           -500 - 8677000 75Pa
 DOUBECK Marion                        -9999 - 0525013 75Pa
 DOUBOVETZKY Jean                      -1000 - 0350202 81Al
-DOUBOVY Nicolas                        -355 L 0030000 17Ro
+DOUBOVY Nicolas                        -323 L 0030000 17Ro
 DOUCET Medhi                          -9999 - 1200057 42Se
 DOUCET Vincent                        -1400 - 0627707 78Ve
 DOUCET Xavier                         -1400 - 0900431 54Na
@@ -3089,7 +3091,7 @@ DOUIEK Mourad                         -2000 - 0474727 84VJ
 DOULIEZ Alain                         -9999 - 9752006 31To
 DOUMERC Jérôme                        -9999 L 1400025 31Pi
 DOURON Guillaume                          0 - 1000011 51Ch
-DOUSSOT Patrice                        -314 L 9183003 21Di
+DOUSSOT Patrice                        -335 L 9183003 21Di
 DOUTRE Gabriel                         -700 - 0700487 13Ma
 DOUX Boris                            -1549 L 1400052 35Re
 DOYOTTE Patrice                        -900 - 9011007 74An
@@ -3115,7 +3117,7 @@ DROUET Bruno                          -9999 L 1400063 31To
 DROUET Laurent                         -900 - 0800313 77Me
 DROUIN Vianey                         -9999 - 9425505 75OB
 DROUOT Olivier                          195 e -------   BE
-DROUOT Paul                             464 L 9228501 13Ma
+DROUOT Paul                             465 L 9228501 13Ma
 DRUAUX Fabrice                        -1446 L 0800233 76Ha
 DRUAUX-JARNO Antoine                  -1200 - 0800234 76Ha
 DRUAUX-JARNO Justine                  -1200 - 0900147 76Ha
@@ -3218,15 +3220,15 @@ DUFROY Guillaume                      -1800 - 0443000 76Ro
 DUGIN Artem                             414 e -------   RU
 DUGIN Timur                             383 e -------   RU
 DUGOWSON Stéphane                     -1100 - 0225503 75OB
-DUGUEPEROUX Guy                       -1616 L 1000457 45Or
-DUGUEPEROUX Joris                      -590 L 1000458 45Or
+DUGUEPEROUX Guy                       -1643 L 1000457 45Or
+DUGUEPEROUX Joris                      -664 L 1000458 45Or
 DUHAIL Manuel                          -811 L 0900416 67SE
 DUHAMEL Charles                        -500 - 0700403 21Di
 DUHAY Frederic                        -9999 L 1400314 75Pa
 DUHOMME Romain                        -1400 - 0527803 78Mg
 DUJARDIN Nicolas                      -9999 L 1400170 92Co
 DULAC Denis                           -1400 - 9652009 31To
-DULAC Olivier                          -453 L 0513000 38Gr
+DULAC Olivier                          -526 L 0513000 38Gr
 DULAUROY Jérôme                       -9999 - 9727100 93Mo
 DULONG Adeline                        -9999 - 9248420 XXXX
 DULONG Amélie                         -9999 - 9248421 XXXX
@@ -3253,11 +3255,12 @@ DUMONT Alexis                         -1000 - 0700420 01Oy
 DUMONT David                           -400 - 0325503 75OB
 DUMONT Frederic                       -1300 - 0524506 45Or
 DUMONT Gilles                          -500 - 9125026 75Pa
-DUMONT Guillaume                      -9999 - 1300123 33Bo
-DUMONT Louis                             67 L 1100316 92An
+DUMONT Guillaume                      -9999 L 1400321 28Cr
+DUMONT Guillaume(Bordeaux)            -9999 - 1300123 28Cr
+DUMONT Louis                             71 L 1100316 92An
 DUMONT Marie                          -1500 - 0700417 75Pa
 DUMONT Matthieu                       -1500 - 0700066 76Ro
-DUMONT Michel                          -100 - 9127702 45Or
+DUMONT Michel                           -64 L 9127702 28Cr
 DUMONT Nicolas                        -9999 - 9820503 95AJ
 DUMONT Yann                           -1200 - 0700399 01Oy
 DUMONTEIL Jérôme                       -500 - 9125048 75XX
@@ -3303,7 +3306,7 @@ DURAND Caroline                       -9999 - 1200173 76Ro
 DURAND Cédric                         -9999 - 9513005 38Gr
 DURAND Charlotte                      -9999 - 9561507 63CJ
 DURAND Florence                       -1600 - 0800452 92Bo
-DURAND Florian                         -958 L 1400174 38Gr
+DURAND Florian                         -963 L 1400174 38Gr
 DURAND Frédéric                        -810 L 9161002 63Cl
 DURAND Jean-Marc                       -700 - 9025019 75Pa
 DURAND Laouen                         -2555 L 1400076 34Mo
@@ -3362,7 +3365,7 @@ DUVINAGE Frédéric                     -1500 - 9984000 68Mu
 DWYER Henri                            -100 - 0750006 92An
 D_AUDIBERT Tristan                     -400 - 1200021 73Ch
 EAV Dominique                          -700 - 0321001 92An
-EBELING Bastian                       -9999 - 1400311 69Ly
+EBELING Bastian                       -9999 L 1400311 69Ly
 EBENDINGER Anne-Laure                 -9999 - 0352037 31To
 EBERHARD Elie                         -9999 - 9721901 94Ca
 EBERHARD Thomas                       -1500 - 9721902 94Ca
@@ -3396,7 +3399,7 @@ EIDELIMAN Jean-Sébastien              -1100 - 0800330 92Co
 EIDESHEIM Cédric                      -9999 - 1100119 57MM
 EIGENTHALER Joachim                   -9999 - 9285503 68RJ
 EIJKHOUT Michiel                        438 e -------   NL
-EJUPOVIC Zoran                         -403 L 9283001 21Di
+EJUPOVIC Zoran                         -469 L 9283001 21Di
 EKHOLM Erik                             266 e -------   SE
 EKOMIE Audrey                         -9999 - 9451603 97Ta
 EKOMIE Johann                         -9999 - 9551609 97Ta
@@ -3582,7 +3585,7 @@ FECAMP Richard                        -9999 - 9728604 75CF
 Fecke Andreas                           261 e -------   DE
 FELD Clara                            -9999 - 0388737 67SE
 FELD Jules                            -9999 - 0388726 67SE
-FELDMANN Denis                          152 L 9177404 34Mo
+FELDMANN Denis                          117 L 9177404 34Mo
 FELDMANN Karine                       -1400 - 0477402 34Mo
 FELGUEIRAS Anthony                    -1500 - 0700505 94EP
 FELGUEIRAS Cédric                     -9999 - 1200122 31To
@@ -3689,7 +3692,7 @@ FLATRES Olivier                        -400 - 1100241 29Br
 FLEURETTE Olivier                     -9999 - 0388709 67SE
 FLEURY Jeremy                         -1600 - 0900296 51Re
 FLEURY Lucien                          -600 - 0213001 38Gr
-FLOCH Andy                             -398 L 1000272 35Re
+FLOCH Andy                             -341 L 1000272 35Re
 FLOCH Patrice                          -900 - 0551701 64Pa
 FLORES Pierre                          -200 - 1000148 92An
 FLORESCU Ion                            567 e -------   RO
@@ -3814,7 +3817,7 @@ FRIARD Chantal                        -1500 - 0800030 75Op
 FRIBERGH Alexander                     -700 - 0514111 69CR
 FRICKER Bastien                       -9999 - 9288714 67SE
 FRICOUT Gabriel                       -1200 - 0025503 75OB
-FRIGGERI Pascal                          46 L 9873004 13Ma
+FRIGGERI Pascal                         106 L 9873004 13Ma
 FRIREN Aude                            -300 - 9213201 31To
 FRISCOURT Nicolas                      -600 - 0690700 59Li
 FRISCOURT Romain                        100 - 0643028 59Li
@@ -3879,7 +3882,7 @@ GAGNAIRE-MULSANT Paul                  -300 - 0700377 92Le
 GAGNANT Fabrice                       -1500 - 9914015 69TJ
 GAHERY Françoise                       -300 - 8860300 29Br
 GAILLARD Jean-jacques                 -9999 - 1300070 77Ml
-GAILLARD Jean-Luc                      -881 L 8665300 76Ro
+GAILLARD Jean-Luc                      -885 L 8665300 76Ro
 GAILLARD Matthieu                     -9999 - 0614003 69Ly
 GAILLARD Pierre-Olivier               -1400 - 0125501 75OB
 GAILLARD Yann                         -9999 - 9442001 76Ha
@@ -3911,7 +3914,7 @@ GALLIE Bruno                          -1300 - 9861002 63Cl
 GALLIE Martin                         -1300 - 9561002 63Cl
 GALLIEN Damien                        -2000 - 0421218 75Al
 GALLIN Louis                          -2000 - 0622301 75Bu
-GALLIOT Thomas                         -885 L 1200203 17Ro
+GALLIOT Thomas                         -926 L 1200203 17Ro
 GALLIOU Alice                         -9999 - 9920502 95AJ
 GALLY Maxime                          -1300 - 0552004 31To
 GALMICHE Thomas                        -700 - 0636603 44MN
@@ -3942,8 +3945,8 @@ GARBAA Habib                          -9999 - 9425539 75OB
 GARBAL Adrien                          -275 L 1300221 97Re
 GARCELON Olivier                      -1400 - 0521203 75Al
 GARCIA Andrew                         -2950 L 1400181 84VJ
-GARCIA Anthony                        -1600 - 0800181 11Ca
 GARCIA Anthony                        -9999 L 1400048 69Ly
+GARCIA Anthony                        -1600 - 0800181 11Ca
 GARCIA Céline                         -9999 - 0352027 31To
 GARCIA Didier                             0 - 8823100 69Ly
 GARCIA Fabrice                        -1440 L 0900362 50SL
@@ -4024,13 +4027,12 @@ GAULTIER Martine                      -9999 - 0020003 00L2
 GAUQUELIN_DE_PALLIÈRES Balthazar      -9999 L 1400158 69Ly
 GAUTEREAU Arthur                      -1600 - 1000299 44NE
 GAUTEREAU Pascal                       -500 - 0482004 21Di
-GAUTHEREAU Pierre                      -800 - 0637003 44MN
+GAUTHEREAU Pierre                      -767 L 0637003 44MN
 GAUTHEROT Paul                         -900 - 0800004 13Ma
 GAUTHIER Bernard                       -500 - 8993000 13Ai
 GAUTHIER Charlie                      -9999 - 1000285 75LF
 GAUTHIER Chloé                        -1600 - 9516004 21Di
 GAUTHIER Corinne                      -9999 - 9516005 21Di
-GAUTHIER Cyrille                       -600 - 8742500 49An
 GAUTHIER Henri                          -30 L 9183002 21Di
 GAUTHIER Isabelle                     -1300 - 9877807 06Pe
 GAUTHIER Jean-Paul                     -800 - 0216001 21Di
@@ -4044,6 +4046,7 @@ GAUTHO-LAPEYRE Laurent                -1500 - 0526806 91Or
 GAUTIE-LAHARY Tristan                 -1300 - 9873001 84Av
 GAUTIER Cédric                         -935 L 9880508 33Bo
 GAUTIER Clément                        -900 - 1100204 68Mu
+GAUTIER Cyrille                        -556 L 8742500 34Mo
 GAUTIER Grégoire                       -280 L 0700008 48Is
 GAUTIER Priscilla                     -9999 - 9148411 XXXX
 GAUTIER Rémi                          -1300 - 9821904 94Ca
@@ -4148,7 +4151,7 @@ GIFFARD Guillaume                      -504 L 0800456 06Pe
 GIGANT David                          -1000 - 9978502 30Ni
 GIGAREL Christophe                     -800 - 9241005 92An
 GIGAREL Geoffrey                       -600 - 0900046 92An
-GIGAREL Laurent                        -123 L 9221003 92An
+GIGAREL Laurent                        -136 L 9221003 92An
 GIGOT Benjamin                          200 - ------- XXXX
 GIGUET Dominique                      -1300 - 0514109 69CR
 GIL François                          -9999 - 9725075 75Pa
@@ -4349,7 +4352,7 @@ GRANGE Dominique                      -9999 - 9131003 49An
 GRANGÉ Jean-Romain                    -1731 L 1400153 64Pa
 GRANGE Maxime                         -1100 - 0900029 92An
 GRANGE Thomas                         -1000 - 9580501 90Be
-GRANGER Alban                           116 L 1100085 35Re
+GRANGER Alban                            96 L 1100085 35Re
 GRANGER Fabien                        -1100 - 0093000 59Li
 GRANGEREAU Teddy                       -900 - 0700001 86Po
 GRANIER Damien                        -1200 - 0179400 06Ni
@@ -4368,7 +4371,7 @@ GRASSET Adrien                         -845 L 1300011 51Re
 GRASTIEN Alban                        -1300 - 0537201 35Re
 GRAVA Benjamin                         -600 - 0900271 92An
 GRAVE Xavier                          -9999 - 9841501 50Ch
-GRAVEL Martin                          -722 L 1300114 75OB
+GRAVEL Martin                          -730 L 1300114 75OB
 GRAVIER Jérémy                        -1000 - 0850003 78Me
 GRAY Xavier                           -1200 - 0800440 44MN
 GRAZIANI Antoine                       -700 - 9725017 75Pa
@@ -4393,7 +4396,7 @@ GRIFFON Guillaume                      -535 L 1100348 51Re
 GRIMA Laurent                         -9999 - 9888711 67SE
 GRIMA Ophélie                         -9999 - 9523533 91Ep
 GRIMEAU Ismaël                        -1400 - 0625043 75Pa
-Grimm Kirsten                          -113 e -------   DE
+Grimm Kirsten                          -101 e -------   DE
 GRIMOND Philippe                       -608 L 0425000 31To
 GRINBAUD Fanny                        -9999 - 9825019 75Pa
 GRINBAUD Raphaël                      -9999 - 9825020 75Pa
@@ -4480,11 +4483,11 @@ GUERINEL Matthieu                     -2000 - 0627703 78Ve
 GUERINOT Christophe                   -1400 - 0613401 38Co
 GUERLET Thibaut                       -1600 - ------- XXXX
 GUERMANN Jean-Louis                    -500 - 9385002 54Na
-GUERRE-GENTON Philippe                    3 L 0013006 13Ma
+GUERRE-GENTON Philippe                  -14 L 0013006 13Ma
 GUERRIN Isabelle                      -1800 - 0520813 75Ju
 GUERRY Bastien                         -700 - 0221000 75XX
 GUESDE Geoffrey                       -9999 - 1400040 33Bo
-GUESSAB Houari                         -338 L 0800248 42Se
+GUESSAB Houari                         -323 L 0800248 42Se
 GUETTE Cédric                         -1500 - 0627111 93Mo
 GUETTE Frédérique                     -9999 - 0252006 31To
 GUETTE Luana                          -1500 - 0627107 93Mo
@@ -4522,8 +4525,8 @@ GUILLAMY Baptiste                     -9999 - 9561508 63CJ
 GUILLARD Cyril                        -9999 - 9213204 XXXX
 GUILLARD Mathieu                      -1500 - 0634007 56Lo
 GUILLAUD Raphaël                      -9999 - 97250A0 75Pa
-GUILLAUME Antoine                      -600 - 0800347 38Gr
 GUILLAUME Antoine                      -400 - 9613501 21Di
+GUILLAUME Antoine                      -600 - 0800347 38Gr
 GUILLAUME Arnaud                       -500 - 9452003 31To
 GUILLAUME Jean-Baptiste                -500 - 0900133 75OB
 GUILLAUME-SCHMITT Julien               -956 L 1400075 34Mo
@@ -4606,7 +4609,7 @@ HAASER Elvire                         -1300 - 0088712 67SE
 HABAR Claude                          -9999 - 0513003 38Gr
 HABBOUCHE Bernard                     -1413 L 9151003 17Ro
 HABBOUZ Dounia                        -2000 - 0474702 84VJ
-HABERBOSCH Christian                    160 e -------   DE
+HABERBOSCH Christian                    169 e -------   DE
 HABERKORN Ludovic                     -9999 - 9285502 68RJ
 HABFAST Martin                        -1244 L 0900116 38GJ
 HABOUZ Mohamed                        -3000 - 1100319 84VJ
@@ -4619,7 +4622,7 @@ HACHEMI Sarah                         -9999 - 9888712 67SE
 HADDAD Matthieu                       -1400 - 9728210 94MJ
 HADDAR Meykeyl                        -9999 - 0120103 91EJ
 HADJA Shakira                         -2000 - 0622303 75Bu
-HADJADJ Mickael                       -1314 L 1100115 37To
+HADJADJ Mickael                       -1356 L 1100115 37To
 HADJARA Riwan                         -1300 - 0514304 69LJ
 HADJIH-LEUVREY Hugo                   -1800 - 0900008 13Ma
 HAEZEBROUCK Sébastien                 -1300 - 9813002 38Gr
@@ -4754,7 +4757,7 @@ HELLEU Guillaume                      -1300 - 0900093 35Re
 HELLIO Martin                         -9999 - 1100189 75Ju
 HELLMANN Lucas                        -1500 - 0800140 26Va
 HELLMANN Ophélie                      -1400 - 0800139 26Va
-HELLOUIN Benjamin                        66 L 0900024 13Ma
+HELLOUIN Benjamin                        43 L 0900024 13Ma
 HELMSTETTER Bernard                     427 L 9313301 92An
 HEMET Marcelle                        -9999 - 0092002 08Ch
 HENACHE Rémi                           -100 - 0700247 45Or
@@ -4797,14 +4800,14 @@ HERMENT Vincent                       -1500 - 0634005 56Lo
 HERMIER Bernard_(76Ha)                -1100 - 8004700 76Ha
 HERMIER Bernard_(97Gu)                -1200 - 1000261 97Gu
 HERNANDES Guillaume                   -1500 - 0900448 31Pi
-HERNANDEZ Théo                        -1044 L 1300219 69Ly
+HERNANDEZ Théo                        -1010 L 1300219 69Ly
 HERNOT Gael                           -1500 - 0800212 86Po
 HEROLD Jean-baptiste                   -700 - 1300148 84Av
 HERON Marc                             -800 - 9978504 56Va
 HERPIN Lionel                         -9999 - 9951701 64Pa
 HERRY Sébastien                       -9999 - 9133006 29Br
-HÉRUBEL Candice                       -9999 - 1300342 64Pa
-HÉRUBEL Nathan                        -9999 - 1300343 64Pa
+HÉRUBEL Candice                       -9999 L 1300342 64Pa
+HÉRUBEL Nathan                        -9999 L 1300343 64Pa
 HERUBEL Nicolas                        -416 L 9652014 64Pa
 HERVÉ Joran                           -1100 - 0900152 56Va
 HERVE Loïc                            -1100 - 9524602 92Le
@@ -4843,7 +4846,7 @@ HIRSCH Daniel                          -500 - 8222001 75Pa
 HIRSCHMANN Georges                     -807 L 9122011 92Le
 HISCOTT Hadassah                      -2100 - 1000049 69Ly
 HITIER Lucien                         -9999 L 1400307 31To
-HITIER Richard                         -899 L 9652010 31To
+HITIER Richard                         -928 L 9652010 31To
 HIVERT Laurent                         -200 - 9025028 75Pa
 HLIMI Benjamin                        -1100 - 0800361 75Al
 HO Thanh_Ha                            -100 - 1100245 92An
@@ -4854,7 +4857,7 @@ HOANG-MONG Philippe                    -500 - 9224602 69Ly
 HOARAU Sébastien                      -1100 - 9957003 97Re
 HOCDE Thierry                         -1400 - 9231105 49AJ
 HOCHNER Patrick                        -100 - 0525016 75Pa
-HOERSCHGENS Thomas                     -374 L 0673006 84Av
+HOERSCHGENS Thomas                     -366 L 0673006 84Av
 HOFFMAN Elisabeth                     -1500 - 0270002 00FF
 HOFFMAN Max                            -700 - 0700351   US
 HOFFMANN Benoit                       -1200 - 0900459 33Bo
@@ -4911,7 +4914,7 @@ HOUPLAIN Titia                         -600 - 9125033 93Mo
 HOURS David                           -1400 - 9025066 75Op
 HOURS Thomas                          -1500 - 9325008 75Pa
 HOURY Alexis                          -1500 - 0221900 94Ca
-HOUSER Caroline                       -1052 L 0524600 69Ly
+HOUSER Caroline                       -1086 L 0524600 69Ly
 HOUSSEN Vadihouddine                   -800 - 0800537 97Re
 HOUSSEN Zeba                          -1400 - 0800536 97Re
 HOUSSIN Maxime                         -400 - 0900149 14Ca
@@ -4948,7 +4951,7 @@ HUCHET François                        -100 - 9852016 31To
 HUCHON Christian                      -1500 - 0637013   XX
 HUCHON Marc                            -903 L 0037205 35Re
 HUCLIEZ Jacques                       -1000 - 9521002 92An
-HUEBER Jean-Philippe                   -343 L 0574710 84Va
+HUEBER Jean-Philippe                   -334 L 0574710 84Va
 HUEBER Jérémie                         -695 L 1100205 90Be
 HUEBER Quentin                        -2100 - 1100300 84Va
 HUERNE Timothée                        -100 - 0630300 35Re
@@ -4987,7 +4990,7 @@ HUTZLER Gilles                         -900 - 9056300 33Bo
 HUYET Yannick                         -1300 - 0800541 00SF
 HUYNH Hien-Tin                        -9999 - 97250A1 75Pa
 HWANG Hyun-ho                           425 e -------   KR
-HWANG In-seong                          711 e -------   CH
+HWANG In-seong                          711 L 1400315 38Gr
 HYPPOLITE Paul-Adrien                  -300 - 0627704 75Op
 I Son_Tchor                           -1300 - 0480501 90Be
 IAHNS Anna                            -2000 - 0510205 74SJ
@@ -5013,9 +5016,9 @@ IKEGANI Tetsuo                         -200 - 9914002 69Ly
 ILHE Mathieu                          -1500 - 0652017 31To
 ILIE_COUSIN Pierre                    -1400 - 0700355 92An
 IM Tae-Gyu                             -700 - ------- XXXX
-IMAMURA-CORNUEJOLS Toru                 366 L 9791002 38Gr
+IMAMURA-CORNUEJOLS Toru                 382 L 9791002 38Gr
 IMANISHI Hirotaka                      -647 L 1300076 75Op
-IMBAULT Eric                          -2223 L 1400017 18Bo
+IMBAULT Eric                          -2226 L 1400017 18Bo
 IMBERT Samuel                         -1300 - 1100074 34Mo
 IMBS Julien                           -9999 - 9188723 67SE
 IMPERIALE Michel                      -9999 L 1400268 75Op
@@ -5162,13 +5165,13 @@ JESSEL Olivier                        -1300 - 9288743 67SE
 JESTIN Françoise                      -1000 - 0700191 75Pa
 JEURISSEN Jeroen                        117 e -------   NL
 JEUSSET Léo                           -1600 - 0637212 35Re
-JEVAUDAN Tom                           -486 L 1200143 84Va
+JEVAUDAN Tom                           -452 L 1200143 84Va
 JEZEQUEL Jérôme                        -400 - 0138000 86Po
 JIA Nuo                                 199 e -------   UK
 JIA Qing                                100 - 9725056 75Pa
 JIAN Ning_Fu                           -200 - 0052017 31To
 JIANG Ping                                0 - 0125004 75Pa
-JIMENEZ Wilka                          -400 - 0800217 31To
+JIMENEZ Wilka                          -345 L 0800217 31To
 JIN Marina                            -1600 - 0690607 59Va
 JIORDANI Nicolas                      -9999 - 9970140 84AJ
 JIPP Thomas                             294 e -------   DE
@@ -5185,7 +5188,7 @@ JOLLIVET Pascal                       -9999 - 9725027 75Pa
 JOLLY David                            -900 - 0025004 75Pa
 JOLY Bertrand                          -900 - 0286000 00L7
 JOLY Gilles                            -400 - 9283507 54Na
-JOLY Romain                             -34 L 0325505 38Gr
+JOLY Romain                             -29 L 0325505 38Gr
 JOLYET Antoine                        -1000 - 0183500 57Me
 JONCHERAY Willy                       -9999 - 1100262 85Ol
 JONDET Alain                          -9999 - 0322112 75Op
@@ -5224,7 +5227,7 @@ JOUNIAUX Dino                         -1800 - 1000292 31To
 JOUNIAUX Théo                         -1972 L 1200042 94Ca
 JOURDAN Marc                           -462 L 9621011 75Al
 JOURDY Roman                          -1700 - 1200072 75Op
-JOURNET-BROCHET Aurélien                 67 L 0700058 60UT
+JOURNET-BROCHET Aurélien                 70 L 0700058 60UT
 JOUSSEAUME Agnès                      -1106 L 9814010 38Gr
 JOUVE Alexandre                       -1300 - 0673002 84Av
 JOUVE Aurélien                        -9999 - 9214504 XXXX
@@ -5248,7 +5251,7 @@ JULIAN Damien                         -1500 - 0552006 31To
 JULIEN Alexis                         -2000 - 0614313 69LJ
 JULIEN Antoine                         -900 - 0514003 69Ly
 JULIEN Cédric                          -600 - 0632200 56Va
-JULIEN Marie                           -349 L 0800398 60UT
+JULIEN Marie                           -306 L 0800398 60UT
 JULIEN Sébastien                      -9999 - 9213203 XXXX
 JULLIARD Flore                        -2500 - 1300033 38Gr
 JULLIEN Anne_Lise                     -2258 L 1100122 75Pa
@@ -5283,7 +5286,7 @@ KAMMERER-TAUZIAC Léopoldine           -2786 L 1200255 27Ev
 KAMPWART Ad                             254 e -------   NL
 KANEKO Alain                          -1400 - 9270001 84Va
 KANEKO Aya                            -9999 - 1000091 26Va
-KANEKO Boris                           -201 L 0274600 84Va
+KANEKO Boris                           -208 L 0274600 84Va
 KANEKO Hideyo                             0 - 0700250 64Pa
 KANEKO Miki                           -9999 - 1000090 26Va
 KANESAKA Yukio                         -417 L 1300074 75Op
@@ -5413,7 +5416,7 @@ KLIPFE Clément                        -9999 - 0325010 75Pa
 KLOOS Ernst                              55 e -------   NL
 KNAUF Barbara                           314 e -------   DE
 Knauf Torsten                           257 e -------   DE
-KNIPPEL Arnaud                          111 L 9324303 76Ro
+KNIPPEL Arnaud                          120 L 9324303 76Ro
 KNIPPEL Chantal                       -1800 - 0324604 92Le
 KNURRA Guillaume                       -522 L 0800165 59Li
 KNUTH Hannes                            -24 e -------   DE
@@ -5448,7 +5451,7 @@ KOPYT Marek                            -282 e -------   PL
 KOROLOFF Ludovic                      -1000 - 9725083 92Co
 KOSHIISHI Yoichi                       -300 - 9625037 75Pa
 KOSKAS Jonathan                       -1500 - 1200091 91SM
-KOSKIN Vladimir                        -600 - 0800511 67SE
+KOSKIN Vladimir                        -535 L 0800511 67SE
 KOSTER Bram                             342 e -------   NL
 KOSTER Jos                               86 e -------   NL
 KOSTKA Ivan                             345 e -------   CZ
@@ -5485,11 +5488,11 @@ KREMSER Julia                         -9999 - 9888717 67SE
 KRESS Benoit                          -9999 - 9585501 68RJ
 KRESS Jérémy                           -716 L 1400252 25Be
 KRIEF Tim                             -1600 - 0900385 92Bo
-KRIEGER Dominique                      -600 - 9171001 13Ai
 KRIEGER Dominique                      -600 - 1200124 84Av
+KRIEGER Dominique                      -600 - 9171001 13Ai
 KRIEGER Matthieu                      -9999 - 9188778 67SE
 KRIKORIAN John                        -1400 - 9628205 94MJ
-KRISSIAN Karl                           -80 L 9324302 34Mo
+KRISSIAN Karl                           -73 L 9324302 34Mo
 KRISSIAN Ohan                          -600 - 9725028 66Pe
 KRISTIAN Hélène                       -9999 - 0092001 08Ch
 KRISTIAN Serge                        -9999 - 0092003 08Ch
@@ -5536,7 +5539,7 @@ KYUNG Kwang-su                          518 e -------   KR
 L'HER Yvon                            -9999 - 9230000 00L3
 L'HÔTE Eric                           -1500 - 0460500 76Ro
 L'HOTELLIER Stéphane                  -1500 - 0534007 56Lo
-L.EMMES Ludovic                       -1605 L 1300067 86Po
+L.EMMES Ludovic                       -1644 L 1300067 86Po
 LA_RIZZA Laurent                      -1200 - 0252011 00L2
 LA_SPINA Sébastien                     -300 - 9314004 69Ly
 LAADJAL Adam                           -950 L 1400103 75OB
@@ -5567,7 +5570,7 @@ LABROSSE Yannick                      -1100 - 1100037 69Ly
 LABRUNE Guillaume                      -300 - 0700081 33Bo
 LAC Kyoko                             -1300 - 0127104 93Mo
 LACAILLE Eric                          -900 - 0350500 64Ba
-LACAM Mathieu                          -175 L 0222112 69Ly
+LACAM Mathieu                          -180 L 0222112 69Ly
 LACAN Emerick                           -45 L 0900256 57Me
 LACAN Fanny                            -900 - 0900255 57Me
 LACAS Jean-Christophe                 -1400 - 9461001 63Cl
@@ -5650,7 +5653,7 @@ LALEIKE Marius                        -9999 - 9341003 14Ca
 LALES Jérôme                          -9999 - 0228202 94MJ
 LALLEMAND Frédéric                    -9999 - 9425519 75OB
 LALO Hélène                           -9999 - 9143006 76Ro
-LALO Jean-Pierre                       -526 L 7906300 76Ro
+LALO Jean-Pierre                       -548 L 7906300 76Ro
 LALO Marie                            -9999 - 9143004 76Ro
 LALO Michèle                          -9999 - 9200113 00L4
 LALO Pierre                           -9999 - 9143005 76Ro
@@ -5714,7 +5717,7 @@ LANDSKRON Burkhard                      -88 e -------   DE
 LANG Guillaume                        -1600 - 0700135 14Ba
 LANG Julian                           -9999 - 9448418 XXXX
 LANG Patrick                          -1700 - 0700134 14Ba
-LANGERON Rémi                         -1272 L 1200023 69Ly
+LANGERON Rémi                         -1217 L 1200023 69Ly
 LANGEVIN Pascal                       -1300 - 9522503 75OB
 LANGLAIS Vincent                       -933 L 1300275 35Re
 LANGLOIS Livien                       -1600 - 0800280 75Op
@@ -5858,7 +5861,7 @@ LÊ Valentin                            -700 - 0900037 94EP
 LE_BAIL Serge                         -1500 - 9732001 29Ba
 LE_BAS Carine                         -1500 - 0800458 06Pe
 LE_BAYON Thomas                       -1500 - 1000013 56Lo
-LE_BERRE Bruno                         -125 L 9034000 27Ev
+LE_BERRE Bruno                         -112 L 9034000 27Ev
 LE_BERRE Pascal                       -9999 - 9443502 27Ev
 LE_BIHAN Lisa                         -1500 - 1100126 56Lo
 LE_BOUGEANT Katia                     -9999 - 9128502 95OJ
@@ -5882,7 +5885,7 @@ LE_DOZE Thomas                        -9999 - 9752031 31To
 LE_FAVRAIS Manuel                     -1100 - 0421230 75Al
 LE_FLOCH Bruno                        -1500 - 0521018 92An
 LE_FLOCH Patrick                      -1100 - 9937003 44Na
-LE_FLOCHMOEN Eric                     -1124 L 1000131 31Pi
+LE_FLOCHMOEN Eric                     -1144 L 1000131 31Pi
 LE_GAL Dimitri                        -1500 - 0630500 22Sb
 LE_GALIARD Guillaume                   -800 - 9543004 75Pa
 LE_GALIARD Jean-François               -968 L 9131001 75Pa
@@ -5904,7 +5907,7 @@ LE_HIR Matthieu                        -282 L 0633000 29Br
 LE_HOANGAN Charlie                     -700 - 8125000 35Re
 LE_HOUËDEC Marc                       -1300 - 0534004 56Lo
 LE_HOUX Jean-Marc                     -9999 - 9241003 14Ca
-LE_LIDEC Gaël                          -539 L 9623561 13Ma
+LE_LIDEC Gaël                          -547 L 9623561 13Ma
 LE_LIDEC Philémon                     -2950 L 1000204 13Ma
 LE_LOUARN Aurélie                     -9999 - 9248404 XXXX
 LE_MAISTRE Bérangère                  -1121 L 0700384 33Bo
@@ -5950,7 +5953,7 @@ LEBASTARD Marine                      -1800 - 0679300 06So
 LEBAUD Élina                          -1400 - 1000241 44NE
 LEBAUDOUR Patrick                     -1300 - 1000412 92An
 LEBELLE William                       -9999 - 1000144 94Ca
-LEBERT Bernard                         -300 L 8012300 37To
+LEBERT Bernard                         -336 L 8012300 37To
 LEBERT Dominique                      -1400 - 0377001 13Ma
 LEBERT Eric                            -500 - 0700056 76Ro
 LEBERT Raïssa                          -400 - 8839400 37To
@@ -6031,7 +6034,7 @@ LEE Joon_Tae                           -300 - 0352020 31To
 LEE Ki_Bong                             675 e -------   KR
 LEE Kyu_Hwa                             300 - 9277403 13Ai
 LEE Kyung_Woo                             0 - 9725044 75Pa
-LEE Semi                                233 e -------   KR
+LEE Semi                                233 L 1400316 38Gr
 LEE Song-Ryeol                          300 - 9625042 75Pa
 LEE Won_Jae                               0 - 9625040 00L2
 LEENDERS Edgar                          179 e -------   NL
@@ -6050,8 +6053,8 @@ LEFEUVE Mathieu                        -100 - 0482001 21Di
 LEFEUVRE Gwenaelle                    -1200 - 0030001 29Br
 LEFEUVRE Samuel                       -9999 - 9442003 76Ha
 LEFEUVRE Thierry                       -800 - 9133022 29Br
-LEFÈVRE Benoît                         -604 L 1000063 59Li
 LEFEVRE Benoît                        -1400 - 0521011 92An
+LEFÈVRE Benoît                         -604 L 1000063 59Li
 LEFEVRE Florian                       -9999 - 9348410 XXXX
 LEFEVRE François                      -9999 - 9970137 84AJ
 LEFEVRE Frédéric                       -500 - 9425012 75Op
@@ -6193,7 +6196,7 @@ LEROUX Martial                        -1400 - 1200298 54Na
 LEROUX Philippe                        -900 - 9941501 50Ch
 LEROUX Philippe_(98No)                -1100 - 0641001 98No
 LEROUX Sophie                         -9999 - 9242000 76Ha
-LEROY François                        -1037 L 9252006 31Pi
+LEROY François                        -1058 L 9252006 31Pi
 LEROY Frédéric                        -9999 - 0327803 78Mg
 LEROY Jonathan                        -9999 - 9752015 31To
 LEROY Julien                          -1900 - 0800105 31To
@@ -6244,7 +6247,7 @@ LEVY Philippe                         -1600 - 0527807 78Mg
 LEVY-SOUSSAN Simon                    -1800 - 1200316 91Or
 LEWDEN Marc                            -200 - 9825011 75Pa
 LEWIS_MOUNET-SULLY Olivia             -1600 - 0538003 86Po
-LEXTRAIT César                          204 L 0900397 13Ma
+LEXTRAIT César                          189 L 0900397 13Ma
 LEYCURAS Thibaut                       -273 L 1100006 63Ce
 LEYMARIE Chantal                      -9999 - 0029303 95Ta
 LEYTER Francis                        -1200 - 9327701 78Ve
@@ -6373,7 +6376,7 @@ LOPEZ Léa                             -9999 - 0070902 84IJ
 LOPEZ Nicolas                         -9999 L 1400060 75Al
 LOPEZ Patricia                        -9999 - 9921502 75BF
 LOPEZ Philippe                        -9999 - 0052016 31To
-LOPEZ Roman                           -1669 L 1400078 34Mo
+LOPEZ Roman                           -1466 L 1400078 34Mo
 LOPEZ Stéphane                         -500 - 9977001 13Ma
 LOPEZ-CASTILLO José-Luis              -2000 - 1100067 31To
 LOQUET Thierry                        -1200 - 9792002 08Ch
@@ -6390,7 +6393,7 @@ LOSTYS Jean-Jacques                   -1500 - 9551506 97Ta
 LOTFI Sabri                           -2950 L 1400083 38CA
 LOTFI Soufiane                        -1500 - 0452031 31To
 LOTH Romain                           -1600 - 0621204 75Al
-LOTHE Maxence                           154 L 1200238 17Ro
+LOTHE Maxence                           168 L 1200238 17Ro
 LOTTMANN Catherine                    -9999 - 9988704 67SE
 LOTTMANN Marion                       -9999 - 9188783 67SE
 LOTZ Jérémie                          -9999 - 9888720 67SE
@@ -6618,7 +6621,7 @@ MARCHAL Christian                     -9999 - 0900270 75Al
 MARCHAL Guy                            -500 - 7915200 44Na
 MARCHAND Adrien                       -1300 - 0700448 69Ly
 MARCHAND Antoine                       -700 - 9525017 75Pa
-MARCHAND Clément                       -457 L 1400235 69Ly
+MARCHAND Clément                       -478 L 1400235 69Ly
 MARCHAND David                         -835 L 1200159 91Or
 MARCHAND Eric                          -900 - 0690502 00SF
 MARCHAND Guillaume                     -700 - 0326806 91Or
@@ -6714,17 +6717,17 @@ MARTIN Jean_(Jacques)                  -500 - 9725051 75Pa
 MARTIN Jean-Pierre                    -9999 - 9725008 75Pa
 MARTIN Jeanne                         -9999 L 1400238 66Pe
 MARTIN Jérôme                         -1400 - 0325502 75OB
-MARTIN Laurent                        -9999 - 0800485 75Pa
 MARTIN Laurent                         -900 - 9743002 76Ro
+MARTIN Laurent                        -9999 - 0800485 75Pa
 MARTIN Line                           -1500 - 0900311 44NE
-MARTIN Luc                            -9999 - 9785526 68RJ
 MARTIN Luc                            -1500 - 0900219 95Ta
+MARTIN Luc                            -9999 - 9785526 68RJ
 MARTIN Marie                          -9999 - 0074704 84VJ
 MARTIN Mégane                         -1900 - 0574704 84VJ
 MARTIN Mélanie                        -9999 - 9348412 XXXX
 MARTIN Paul                           -1400 - 1200129 14Ca
 MARTIN Per-Erik                         -31 e -------   SE
-MARTIN Philippe                        -800 - 9277402 34Mo
+MARTIN Philippe                        -771 L 9277402 34Mo
 MARTIN Philippe                       -1500 - 0900312 44NE
 MARTIN Pierrick                       -1200 - 0900291 69IN
 MARTIN Rémi                           -1500 - 1000437 84Av
@@ -6789,7 +6792,7 @@ MASSON Adlane                         -2500 - 1250013 27An
 MASSON Catherine                      -9999 - 9725009 75Pa
 MASSON Christophe                     -1400 - 9133002 29Br
 MASSON David                          -9999 - 9133016 29Br
-MASSON Fabien                            91 L 0537203 35Re
+MASSON Fabien                            61 L 0537203 35Re
 MASSON Jean_Baptiste                  -1500 - 0541011 14Ca
 MASSON Lucie                            -81 L 0460501 22La
 MASSON Michaël                         -400 - 0431000 25Be
@@ -6854,7 +6857,7 @@ MAURER Adeline                         -900 - 9288727 67SE
 MAURIANGE Emilie                      -1500 - 0700392 31To
 MAURIANGE Flavien                     -1132 L 0660503 63Ce
 MAURICE Cyrille                        -400 - 0477403 34Mo
-MAURICE Mike                           -356 L 0538000 86Po
+MAURICE Mike                           -310 L 0538000 86Po
 MAURICE Nicolas                        -700 - 0900142 92An
 MAURIER Pierre                        -1200 - 1100235 75Al
 MAURIN Céline                          -600 - 9251006 08Ch
@@ -6875,8 +6878,8 @@ MAYER Emmanuel                         -600 - 9737209 35Re
 MAYER Nicolas                         -1100 - 0800451 76Ro
 MAYERL Marko                           -800 - 0386001 67St
 MAYNARD Paul                          -1900 - 0800431 94Ca
-MAYOR Lucas                            -754 L 1000036 84Va
-MAYOR Matthias                        -1759 L 1200145 84Va
+MAYOR Lucas                            -749 L 1000036 84Va
+MAYOR Matthias                        -1610 L 1200145 84Va
 MAZET Auguste                         -1200 - 0470305 13Ma
 MAZET Laurent                         -9999 - 9363105 XXXX
 MAZET Rose                            -1600 - 0570304 13Ma
@@ -6898,7 +6901,7 @@ MEDINA Pierre                         -1400 - 0352039 31To
 MEDJMADJ Mehdi                         -586 L 1000218 67SE
 MEEKS T                                -766 e -------   XX
 MEEMKEN Kai                             217 e -------   XX
-MEERWALDT Robert                       -801 L 0900177 34Mo
+MEERWALDT Robert                       -583 L 0900177 34Mo
 MEHAT Jean                             -100 - 9225019 93Sd
 MEI Tao                                   0 - 0381000 25Be
 MEIDECK Thomas                        -1400 - 0120008 42Se
@@ -6999,7 +7002,7 @@ MEUNIER Bénédicte                     -1300 - 9321002 92An
 MEUNIER Christophe                    -1900 - 0327811 78Mg
 MEUNIER Jacques                        -600 - 8509700 94Ca
 MEUNIER Julien                        -1600 - 0420808 75Ju
-MEUNIER Laurent                        -749 L 0552007 31To
+MEUNIER Laurent                        -732 L 0552007 31To
 MEUNIER Pierre-Etienne                -1000 - 0800192 69CR
 MEUNIER Sylvain                        -312 L 1000411 44Na
 MEURIN Achille                        -1400 - 0900200 59Li
@@ -7010,7 +7013,7 @@ MEYER Héléne                          -9999 - 0128203 94MJ
 MEYER Jean-Michel                      -500 - 9185501 68Mu
 MEYER Jérémie                         -1500 - 0488724 67SE
 MEYER Juergen                           108 e -------   DE
-MEYER Michel                           -724 L 9886001 90Be
+MEYER Michel                           -743 L 9886001 90Be
 MEYER Morgane                         -9999 - 9888725 67SE
 MEYER Robert                           -597 e -------   CH
 MEYER Valérie                         -9999 - 9388713 67SE
@@ -7055,11 +7058,11 @@ MICHON Sébastien                      -1600 - 0522100 75Op
 MIET Angélique                        -1100 - 0514005 69Ly
 MIEULET Elise                         -9999 - 9988703 67SE
 MIGADEL François                      -2500 - 1200048 91Or
-MIGNOT Alexandre                       -500 - 0337002 44MN
+MIGNOT Alexandre                       -422 L 0337002 44MN
 MIGNOT Aurèle                         -1400 - 0437005 44MN
 MIGNUCCI Bernard                       -400 - 0120001 75Pa
 MIGOT Etienne                         -1100 - 9162002 87Li
-MIJON Félix                            -476 L 0452032 31To
+MIJON Félix                            -485 L 0452032 31To
 MIJON Hugo                            -1500 - 0352032 31To
 MIJON Philippe                        -1100 - 0152007 31To
 MIKAMI Masaru                           470 e -------   ES
@@ -7081,7 +7084,7 @@ MILLET Claude                         -2500 - 1000464 75OB
 MILLET Marc                            -500 - 8112100 44Na
 MILLET Stéphane                       -9999 - 0900203 31To
 MILLIER Gérard                         -400 - 9625001 75Al
-MILLIER Jonathan                          0 - 9625025 75Al
+MILLIER Jonathan                         27 L 9625025 92Le
 MILLIES Oliver                          176 e -------   DE
 MILLIKIN Dylan                        -1300 - 0325500 75OB
 MILLION Jean                          -1000 - 9328904 21Di
@@ -7145,7 +7148,7 @@ MOCQUARD Yves                          -228 L 9937203 35Re
 MODHAFAR Khaled                       -9999 - 9213303 XXXX
 MOGENIER Laure                        -9999 - 0700052 38Gr
 MOGNO Stéphane                        -1500 - 0452017 31To
-MOHAMED Gani                           -360 L 1200274 76Ro
+MOHAMED Gani                           -393 L 1200274 76Ro
 MOIMEAUX Dominique                     -200 - 9522501 92Co
 MOINET Laurent                         -800 - 9044200 14Ca
 MOIROUX Alexis                        -9999 - 0700275 93Mo
@@ -7176,9 +7179,9 @@ MONDESIR Victoria                     -2300 - 1100376 97Gu
 MONERET_VAUTRIN Bernard               -1300 - 0085001 54Na
 MONGIS Marc                           -1700 - 0552017 31To
 MONGRELET Jean-Marc                   -1462 L 0800104 31Pi
-MONIER Antoine                        -2915 L 1400178 84VJ
+MONIER Antoine                        -2921 L 1400178 84VJ
 MONIER Eric                            -200 - 9914009 74An
-MONIER Flavie                         -2006 L 1400179 84VJ
+MONIER Flavie                         -2159 L 1400179 84VJ
 MONIER Julien                         -1103 L 0900273 62Ar
 MONIN Benoit                           -600 - 0693029 94EP
 MONIN François                         -700 - 0693030 75Op
@@ -7250,7 +7253,7 @@ MOREL Thibault                        -1777 L 1400072 38GJ
 MORELLI_MARROUFIN Gregory             -9999 - 1200310 92An
 MORENO Felipe                         -1100 - 0322122 75Op
 MORENO Loan                           -9999 - 1000480 31To
-MORERE Jean-Paul                       -701 L 8839200 37To
+MORERE Jean-Paul                       -574 L 8839200 37To
 MORERE Lucie                          -9999 - 9937505 37To
 MORERE Mélanie                        -9999 - 9937506 37To
 MORETTI Emilie                        -1400 - 0577100 13Mr
@@ -7280,8 +7283,8 @@ MORMANT x                             -9999 - 9224809 78Ma
 MORMANT y                             -9999 - 9224810 78Ma
 MORREL Xavier                         -1100 - 9752054 31To
 MORRISON Roberto                        115 e -------   CH
-MORTIER Alain                          -800 - 0700464 60Co
 MORTIER Alain                          -800 - 9525025 75Pa
+MORTIER Alain                          -800 - 0700464 60Co
 MORTIEZ Christopher                   -9999 L 1300264 76Ro
 MORVAN Oscar                          -2950 L 1400245 72Ma
 MORVILLEZ Jean-Baptiste               -1500 - 0325515 75OB
@@ -7394,7 +7397,7 @@ MUTABZIJA Zoran                         253 e -------   HR
 MUTHSPIEL Alice                       -1600 - 0700097   CZ
 MUTZ Tara                             -9999 L 1400239 75LF
 N'GUYEN Jean_Bernard                  -9999 - 9179005 30NJ
-N'GUYEN Johan                          -500 - 0634008 56Lo
+N'GUYEN Johan                          -500 - 0634008 44MN
 NABIAS Jimmy                          -1300 - 9628209 94MJ
 NABONNAND Philippe                     -300 - 9185001 54Na
 NACEUR Romain                         -1500 - 9923506 91Ep
@@ -7437,7 +7440,7 @@ NARUSE Julie                          -1600 - ------- XXXX
 NASCIMENTO_COSTA Inès                 -2500 - 1200155 84Va
 NASSE Frédéric                         -600 - 0452018 31To
 NASSIH Ben                            -1300 - 0625033 75Pa
-NAUDION Grégoire                       -613 L 1300327 45Or
+NAUDION Grégoire                       -286 L 1300327 45Or
 NAULEAU Stéphane                      -1400 - 9752021 31To
 NAVARETTE Camille                     -9999 - 0352025 31To
 NAVARRE Jonathan                      -1100 - 0900292 42Se
@@ -7485,7 +7488,7 @@ NGO Antoine                            -171 L 9025041 93Mo
 NGO Cao-Cuong                          -730 e 1400059   VN
 NGUYEN Alain                           -600 - 0277003 13Ma
 NGUYEN Anh_Tuan                       -1000 - 1300125 34Mo
-NGUYEN Anthony                         -459 L 0637503 37To
+NGUYEN Anthony                         -498 L 0637503 37To
 NGUYEN Aurélien                        -100 - 0800047 78SN
 NGUYEN Camille                         -400 - 0425019 35Re
 NGUYEN Christophe                     -9999 L 1400292 75Op
@@ -7523,8 +7526,8 @@ NICOLAS Aurélie                       -1500 - 9828206 94MJ
 NICOLAS Christopher                   -1800 - 1100353 75LF
 NICOLAS David                          -165 L 0220802 75Pa
 NICOLAS Michelle                      -1400 - 9728204 94MJ
-NICOLAS Philippe                      -1100 - 1200140 72Ma
 NICOLAS Philippe                      -1100 - 1200237 98No
+NICOLAS Philippe                      -1100 - 1200140 72Ma
 NICOLAS Sébastien                     -1500 - 9828205 94MJ
 NICOLAS Stéphan                       -9999 - 1100354 75Op
 NICOLAS Thimothée                     -9999 - 9442005 76Ha
@@ -7542,7 +7545,7 @@ NIETO Johan                           -1300 - 0800075 59Li
 NIETO Sandrine                        -9999 - 9474707 84VJ
 NIEUTIN Gaël                           -900 - 0630101 17Ro
 NIGAUD Christophe                      -400 - 9380501 75Pa
-NIGOT Pierre                            120 L 1000416 48Is
+NIGOT Pierre                            119 L 1000416 48Is
 NIJHUIS Caspar                          277 e -------   NL
 NIJHUIS Emil                            490 e -------   NL
 NIKULA Janne                            153 e -------   FI
@@ -7559,7 +7562,7 @@ NOE Eric                               -500 - 9623555 91Ep
 NOEL Frédéric                         -9999 - 9813001 38Gr
 NOËL Nicolas                          -1500 - 0328207 94MJ
 NOEL Remy                              -449 L 0900057 92Le
-NOGUCHI Motoki                          621 L 0280000 38Gr
+NOGUCHI Motoki                          622 L 0280000 38Gr
 NOGUEIRA Philippe                     -1200 - 9722501 92Co
 NOHR Thomas                             167 e -------   DE
 NOIR Ambroise                         -1600 - 0527100 93Mo
@@ -7571,8 +7574,8 @@ NOISETTE David                        -1400 - 0800315 77Me
 NOIZET Adrien                         -1300 - 0800469 38Gr
 NOLLEVALLE Benjamin                    -438 L 1200246 21Di
 NOLLEVALLE Simon                       -767 L 1100175 51Re
-NOPPEN Clovyc                         -1842 L 1100334 84Av
-NOPPEN Serge                           -615 L 9174502 84Av
+NOPPEN Clovyc                         -2041 L 1100334 84Av
+NOPPEN Serge                           -541 L 9174502 84Av
 NORA Olivier                          -9999 - 9393002 59Li
 NORTH Laurent                         -9999 - 0577001 13Ma
 NOSSYREV Mickaël                      -1800 - 0488728 67SE
@@ -7647,7 +7650,7 @@ OLIVIER Yohann                        -1800 - 1000152 59Li
 OLLIER Charly                         -9999 - 9561505 63CJ
 OLLIER Fanny                          -9999 - 9561506 63CJ
 OLLIER Sandrine                       -1700 - 0800238 74Vm
-OLLIEROU Yves                         -1194 L 1000117 92Bo
+OLLIEROU Yves                         -1174 L 1000117 92Bo
 OLLION Rémi                           -1500 - 0327702 78Ve
 OLSSON Ulf                              267 e -------   SE
 OMNES Christophe                      -1400 - 0227801 78Mg
@@ -7720,14 +7723,14 @@ PAGANOTTO Marc                        -9999 - 0800015 76Ro
 PAGE Aurel                             -700 - 0900350 75OB
 PAGE Michel                            -500 - 8713001 38Gr
 PAGE Stéphane                         -9999 - 9420001 00L2
-PAGÈS Jeremy                          -1031 L 1300071 91Or
+PAGÈS Jeremy                          -1076 L 1300071 91Or
 PAGES Maxime                           -300 - 0800046 73Ch
 PAGES Vincent                         -1300 - 9952002 31To
 PAGIS Antoine                           100 - 0800531 13Ma
 PAGNIOL Jean-Philippe                 -9999 - 0128204 94MJ
 PAHLE Morten                           -900 - 9952008 31To
 PAILHES Benjamin                      -1500 - 0650201 81Al
-PAILLARD Jean-François                  -30 L 9643003 76Ro
+PAILLARD Jean-François                  -35 L 9643003 76Ro
 PAILLE Nicolas                         -400 - 0700161 51Ch
 PAILLE Sébastien                      -9999 - 9211205 74Cl
 PAIMBOUC Rodrigue                     -9999 - 1000064 98No
@@ -7749,7 +7752,7 @@ PALMER Maxime                         -2000 - 0700456 38EL
 PALMERS Christian                         5 e -------   AT
 PALOMERA Mathieu                      -1200 - 0610704 38Tr
 PALTOU Maxime                         -1900 - 0652026 31To
-PALUDETTO Matthieu                     -982 L 1300325 31To
+PALUDETTO Matthieu                     -962 L 1300325 31To
 PAN Cheng                                 0 - 0052015 31Pi
 PAN Qing-Bin                           -300 - 9125036 75Pa
 PANASSIÉ Raphaël                       -700 - 0637004 44MN
@@ -7767,7 +7770,7 @@ PAPAILHOU Marc                        -1100 - 0257000 97Re
 PAPAZOGLOU Alain                       -511 L 9737213 35Re
 PAPAZOGLOU Benjamin                     494 L 9837203 35Re
 PAPAZOGLOU Christian                  -1400 - 0522114 35Re
-PAPAZOGLOU Jean-Yves                   -877 L 0700101 31To
+PAPAZOGLOU Jean-Yves                   -894 L 0700101 31To
 PAPAZOGLOU Stéphane                   -1500 - 0800115 31To
 PAPAZOGLOU Thomas                     -1600 - 0037201 35Re
 PAPIN Michael                             0 - 0700490 37To
@@ -7775,7 +7778,7 @@ PAPON Florent                         -9999 - 9561504 63CJ
 PAQUIER Charles                        -100 - 9313007 38Gr
 PAQUIER Yaël                           -500 - 0800252 94EP
 PARAZ Thierry                          -500 - 9613002 73Ch
-PARCOIT David                          -318 L 1200033 31To
+PARCOIT David                          -323 L 1200033 31To
 PARDIGON Anne-Sophie                  -9999 - 9970104 84AJ
 PARE Eric                                -5 e 8742600   BE
 PARENT Philippe                       -9999 - 1000318 81Al
@@ -7923,9 +7926,10 @@ PEREIRA Alfredo                        -100 - 9427501 13Ma
 PEREIRA Antonieta                     -1500 - 0025507 75OB
 PEREIRA-SCHEFFER Anaïs                -2800 - 1300039 78Mg
 PERELMAN Olga                         -9999 - 9721105 75IJ
-PERENNES Manuel                        -712 L 1100051 35Re
+PERENNES Manuel                        -566 L 1100051 35Re
+PÉRENNÈS Rubens                       -9999 L 1400318 35Re
 PERENYI Oliver                        -2110 L 1400204 38EB
-PERES Aurélie                         -1900 X 1400273 63Ce
+PERES Aurélie                         -1894 L 1400273 63Ce
 PÉRÈS Yves-Marie                       -901 L 1400198 69Ly
 PERESSON Marine                       -9999 - 0288711 67SE
 PERESSON Oswald                       -9999 - 1300313 31To
@@ -7963,7 +7967,7 @@ PERNY Pauline                         -9999 - 0288712 67SE
 PERON Céline                          -9999 - 9133010 29Br
 PERON Jefferson                       -9999 L 1400225 44NE
 PERON Ludovic                         -9999 - 9133011 29Br
-PERONNET Pierre                        -355 L 9374503 84Av
+PERONNET Pierre                        -400 L 9374503 84Av
 PERONNO Sébastien                     -1800 - 0700323 78SN
 PERONO Romane                         -1409 L 1300262 56Va
 PEROT Mathieu                         -1400 - 1000220 29Co
@@ -8212,7 +8216,7 @@ POIRIER Philippe                      -9999 L 1300265 83To
 POIROT Christophe                     -1400 - 0292000 08Ch
 POIROT Eric                            -700 - 9398403 68Mu
 POISSENOT Thomas                      -1300 - 0629602 94EP
-POISSON Stéphane                        -22 L 9125031 13Ai
+POISSON Stéphane                        -51 L 9125031 13Ai
 POITEVIN Harold                       -9999 - 9970122 84AJ
 POIX Christophe                        -400 - 9261003 63Cl
 POIZAT Henri                           -900 - 0037206 35Re
@@ -8265,7 +8269,7 @@ PORTAL Jean-Jacques                    -487 L 0652028 31To
 PORTAL Pierre                         -1400 - 9781002 25Be
 PORTAL Sylvain                        -1200 - 0673003 84Av
 PORTAT Yann                           -1300 - 9743001 76Ro
-PORTE Alain                           -1546 L 0800293 17Ro
+PORTE Alain                           -1246 L 0800293 17Ro
 PORTEFAIX Laurent                     -1103 L 0414002 69Ly
 PORTELANCE Franck                     -9999 - 8921001 92An
 PORTELLI Richard                       -500 - 0700311 69CR
@@ -8302,7 +8306,7 @@ POUTH Brian                            -400 - 1100045 75Pa
 POUTH Karl-Bryan                       -700 - 0800493 75Op
 POUX Julien                           -9999 - 9211211 74Cl
 POUZOL Edouard                        -9999 - 9874708 84VJ
-POUZOL Florent                        -1827 L 1200146 84Va
+POUZOL Florent                        -1651 L 1200146 84Va
 POUZOL Jean-Philippe                  -1600 - 1100125 38Gr
 POZNIAK Antoine                       -9999 L 1400090 17Ro
 PRADEL Philippe                       -1200 - 9426801 91Or
@@ -8323,7 +8327,7 @@ PREVOST Jonathan                      -1100 - 0638005 86Po
 PREVOST Madeleine                     -1300 - 9920002 00L2
 PREVOT Jean                           -9999 - 9188759 67SE
 PREZMAN Anthony                        -500 - 0325007 75Pa
-PRIASSO Valentin                      -1184 L 1300307 92An
+PRIASSO Valentin                      -1220 L 1300307 92An
 PRIESTER Damien                       -2000 - 1000157 33Bo
 PRIGENT Lorenzo                       -9999 - 1300022 35Re
 PRIGENT Yann                          -1300 - 9732004 29Ba
@@ -8375,7 +8379,7 @@ PUPIN Timothée                        -1400 - 0700267 76Ha
 PUPP Emmanuel                         -9999 - 0170401 83To
 PUTLITZ Hubert                         -500 - 0025006 75Ju
 PUTTKAMMER Hildegard                   -111 e -------   DE
-PUYAUBREAU Nicolas                     -140 L 0526800 91Or
+PUYAUBREAU Nicolas                     -145 L 0526800 91Or
 PUYHAUBERT Yohan                      -1000 - ------- XXXX
 PUYREGNER Bertrand                    -1500 - 0527705 78Ve
 PUYT Erik                               438 e -------   NL
@@ -8395,7 +8399,7 @@ QUEMPER Dominique                      -900 - 9525029 75Pa
 QUÉNEL Christophe                      -600 - 0900467 33Bo
 QUENIARD Antoine                      -9999 - 9348407 XXXX
 QUENOUILLERRE Mathieu                 -1600 - 0630401 56Va
-QUENTIN Arnaud                         -111 L 0421231 75Al
+QUENTIN Arnaud                          -86 L 0421231 75Al
 QUENTIN Damien                         -587 L 1200088 91Or
 QUENTIN Franck                        -1400 - 0800356 75Ju
 QUERCY Vincent                         -900 - 0525500 75OB
@@ -8532,16 +8536,16 @@ REISER Stephan                         -279 e -------   CH
 REISS Thierry                         -1200 - 1100288 75Ju
 REITZ Stanislas                       -1300 - 0522124 75Op
 RELAVE Régis                           -900 - 9413007 38Gr
-REMADNA Sofiane                         128 L 0800225 76Ro
+REMADNA Sofiane                         109 L 0800225 76Ro
 REMEZY Nathalie                        -900 - 9577402 34Mo
 REMY Luc                               -100 - 8406500 33Bo
-REMY Thibault                         -1500 - 0610705 38Gr
+REMY Thibault                         -1441 L 0610705 38Gr
 REN Wu                                -1100 - 1100039 75Al
 RENAC Laury                           -1400 - 1000353 31To
 RENAILLE Sébastien                    -1200 - 0570705 31To
 RENAUD Arthur                         -2000 - 0470307 13MJ
 RENAUD Frédéric                         112 L 8301700 31To
-RENAUD Guilhaume                       -400 - 0152023 31To
+RENAUD Guilhaume                       -328 L 0152023 31To
 RENAUD Jessica                        -1500 - 9200127 13Ma
 RENAUD Julien                           238 L 0900094 75EG
 RENAUD Maël                           -1300 - 9621900 92An
@@ -8556,7 +8560,7 @@ RENAULT Frédérique                    -9999 - 9125012 75Pa
 RENAULT Louis                         -1600 - 0700480 44MN
 RENAULT Vincent                       -1400 - 0570302 13Ma
 RENAULT-HÉRISSON Jason                -9999 L 1400297 91Se
-RENAUT Philippe                         191 L 9283004 92An
+RENAUT Philippe                         194 L 9283004 92An
 RENDU Quentin                          -200 - 1000005 69Ly
 RENKES Christine                      -1300 - 0083501 57Me
 RENNER Josef                            151 e -------   CH
@@ -8585,7 +8589,7 @@ REVERDY Sylvain                        -600 - 0471300 75Pa
 REVERSEAU Adrien                      -9999 - 9248423 XXXX
 REVEST Michel                         -1400 - 9777801 06Pe
 REVEYRON Baptiste                     -2100 - 1300034 69Ly
-REVOIL Bertrand                       -1300 - 0462000 87Li
+REVOIL Bertrand                       -1299 L 0462000 28Cr
 REVOIL Guillaume                      -1300 - 0850002 78Me
 REVUZ François                         -500 - 8108500 75Pa
 REY Django                            -9999 - 0210205 74SJ
@@ -8690,7 +8694,7 @@ RITTLING Philippe                     -1100 - 0277001 13Ma
 RITTNER Egbert                          435 e -------   DE
 RITZ Olivier                          -1300 - 9185503 68RJ
 RITZENTHALER Marien                    -307 L 1000098 67SE
-RIVA Paul                              -650 L 1400313 37To
+RIVA Paul                              -755 L 1400313 37To
 RIVALIN Daniel                         -100 - 8411002 74An
 RIVALIN Edith                          -600 - 8911005 74An
 RIVALIN Jérémy                        -1700 - 0211003 74An
@@ -8715,7 +8719,7 @@ ROBERT Jean-Baptiste                  -1300 - 0137200 35Re
 ROBERT Julien                         -1676 L 0900308 31To
 ROBERT Julien-Marc                    -9999 - 0157016 97Re
 ROBERT Justine                        -9999 - 0691001 80Am
-ROBERT Ludwig                          -256 L 1400119 31To
+ROBERT Ludwig                          -242 L 1400119 31To
 ROBERT Patrice                         -289 L 8301800 31To
 ROBERT Philippe                       -1600 - 0420806 75Ju
 ROBERT Pierre                          -300 - 1000016 59Li
@@ -8871,7 +8875,7 @@ ROUNEAU Marc                            100 - 9791503 62Be
 ROUQUES Jean-Philippe                  -400 - 9200104 44MN
 ROUQUETTE Grégory                      -320 L 9913004 06Ni
 ROUQUETTE Jean-Christophe              -800 - 1000472 44MN
-ROURE Olivier                          -663 L 0677403 34Mo
+ROURE Olivier                          -595 L 0677403 34Mo
 ROUSSAT Damien                         -700 - 0427700 78Ve
 ROUSSEAU Chloé                        -1300 - 0314303 69LJ
 ROUSSEAU Christian                    -1800 - 1000444 49An
@@ -8934,8 +8938,8 @@ ROY Jean-Claude                       -9999 - 9179501 XXXX
 ROY Jérôme                             -800 - 9921001 38Gr
 ROY Laurent                           -1500 - 0614113 69CR
 ROY Michael                           -1400 - 1100084 64Ba
-ROY Philippe                          -1000 - 9751006 33Bo
 ROY Philippe                          -1000 - 0800018 67SE
+ROY Philippe                          -1000 - 9751006 33Bo
 ROY Thomas                            -1500 - 1000486 33Bo
 ROY Xavier                             -794 L 1400271 51Re
 ROYER Damien                          -1500 - 9300101 00L2
@@ -8957,7 +8961,7 @@ RUFIN Thomas                          -1300 - 0700228 75Ju
 RUGGERI Clément                        -700 - 0800402 59Li
 RUHART Charlotte                      -9999 - 0388711 67SE
 RUHLAMNN Gauthier                     -9999 - 9888731 67SE
-RUIZ Clovis                            -412 L 1400127 17Ro
+RUIZ Clovis                            -440 L 1400127 17Ro
 RUKWAVU Serge                          -500 - 0700271 06Ni
 RUMEAU Paul                           -1600 - 0700383 33Bo
 RUMEAU Robert                         -1500 - 9827799 78Ve
@@ -8971,9 +8975,9 @@ RUSSO olvier                          -1500 - ------- XXXX
 RUSSO Pierpaolo                       -1300 - 0800282 67SE
 RUSSO Roberto                         -1500 - 0488730 67SE
 RUTGERS_VDLOEFF Arnoud                  368 e -------   NL
-RUTSCHLE Yves                         -1325 L 0652029 31To
+RUTSCHLE Yves                         -1343 L 0652029 31To
 RUYSSEN-BROCHET Quentin               -1300 - 0414004 13Ma
-Ruzicka Martin                          144 e -------   DE
+Ruzicka Martin                          116 e -------   DE
 RYCKELYNCK Christophe                 -1500 - 0325006 75Pa
 SAADOUDI Mehdi                         -200 - 1000270 90Be
 SABATHIER Nicolas                     -2000 - 0474718 84VJ
@@ -8990,6 +8994,7 @@ SADLER Jim                              119 e -------   UK
 SADOUX Florian                        -9999 - 9248412 XXXX
 SADOWSKI Sidney                        -200 - 0620809 75Ju
 SAFFRE Nicolas                        -1500 - 0522104 75Op
+SAG Alexandre                         -1649 L 1400317 69Ly
 SAGE Hervé                            -1300 - 9213307 XXXX
 SAGET Vincent                         -2000 - 0900181 06Pe
 SAGIT Julien                              0 - 0643006 92An
@@ -9051,7 +9056,7 @@ SAN_MIGUEL Paul                       -1300 - 0800507 31To
 SANATANI Eïryu                         -200 - 0124602 92Le
 SANCHEZ Albert                          152 e -------   ES
 SANCHEZ Antony                        -9999 - 9820508 95AJ
-SANCHEZ Flora                         -1956 L 1100183 84Va
+SANCHEZ Flora                         -1929 L 1100183 84Va
 SANCHEZ Lilian                        -3000 - 1100222 84VJ
 SANCHEZ Mathieu                        -700 - 0800389 92An
 SANCHEZ Paul-Clément                   -255 L 0612506 69Ly
@@ -9081,7 +9086,7 @@ SARDA Jacques                         -9999 - 9778502 30Ni
 SARDJVELADZE Lévan                    -1100 - 9822503 92CP
 SARDOU Julien                         -9999 - 0052006 31To
 SARFATI Laurent                       -1300 - 9625003 75Pa
-SARKISSIAN Jean-Paul                  -9999 L 1400257 69Ly
+SARKISSIAN Jean-Paul                  -2950 L 1400257 69Ly
 SARMASIK Ilknur                       -9999 - 9785524 68RJ
 SAROCCHI Pierre-Luc                   -1700 - 0427814 78Mg
 SARRASIN Paloma                       -1500 - 9928216 94MJ
@@ -9205,7 +9210,7 @@ SCHUTT Lucas                          -9999 - 0088722 67SE
 SCHUURINK Ivo                           140 e -------   XX
 SCHWARTZ Arnaud                       -9999 - 9188771 67SE
 SCHWARTZ Vincent                      -1300 - 0222109 75Op
-SCHYN François                        -1119 L 1100210 31To
+SCHYN François                        -1102 L 1100210 31To
 SCHÄFERS Julien                       -1100 - 0700205 13Ma
 SCIPION Céline                        -9999 - 9148415 XXXX
 SCOTTEZ Vivien                        -2000 - 1300124 75OB
@@ -9337,7 +9342,7 @@ SIFAOUI Lydie                         -2290 L 1400146 38Gr
 SIFFER Lionel                         -1100 - 9535603 56Mo
 SIFFREIN Kevin                         -700 - 9727512 08Ch
 SIFFRIN Tristan                       -1500 - 0422123 75Op
-SIGNOLES Julien                        -213 L 1100036 92An
+SIGNOLES Julien                        -234 L 1100036 92An
 SIGNORINI Laurent                      -600 - 9723511 91Ep
 SIGOGNEAU Pascal                      -1400 - 9535602 56Mo
 SIIVOLA Matti                           334 e -------   FI
@@ -9409,7 +9414,7 @@ SMUD Mladen                             136 e -------   HR
 SNATZKE Georg                           193 e -------   DE
 SNATZKE Raymond-Georg                   285 e -------   DE
 SNOWDON Peter                          -200 - 1100201 75Pa
-SOBOCINSKI Antoine                    -1584 L 1300293 17Ro
+SOBOCINSKI Antoine                    -1312 L 1300293 17Ro
 SOHIER Thierry                        -2000 - 0529303 95Ta
 SOKOLOWSKY Bernd                       -103 e -------   DE
 SOLAZ Bertrand                        -9999 - 0070904 84IJ
@@ -9421,7 +9426,7 @@ SOLER Samuel                          -1600 - 0900357 73Ch
 SOLIER Morgane                        -2500 - 1200152 84Va
 SOLIGNAC Julie                        -1450 L 1400065 75OB
 SOLIMAN Sylvain                        -400 - 9529001 92Bo
-SOLIVARET Morgane                     -2000 - 1300322 31To
+SOLIVARET Morgane                     -1916 L 1300322 31To
 SOLLIER Karine                        -2000 - 0610700 38Tr
 SOLOTAR Andrea                        -9999 - 0277403 34Mo
 SOLOVJEV Jurij                          345 e -------   RU
@@ -9479,7 +9484,7 @@ SPAENLEHAUER Pierre-Jean               -700 - 0588712 91Or
 SPANHOFF Frederik                       245 e -------   NL
 SPANO Domenico                        -1200 - 0414106 69CR
 SPENNATO David                         -841 L 1400125 13Ai
-SPENO Willy                            -200 - 9200114 44MN
+SPENO Willy                            -148 L 9200114 44MN
 SPIEGEL Lothar                          455 e -------   AT
 SPIELMANN Michel                       -900 - 9885004 54Na
 SPINNER Yves                           -300 - 0688705 67SE
@@ -9552,7 +9557,7 @@ STURM Johnny                          -1600 - ------- XXXX
 STUTZMANN Jean                         -500 - 9786002 67St
 STYEVKO Tcheun                        -1200 - 0624609 92Le
 SU Yang                                 540 e -------   FI
-SUAREZ Ivan                            -343 L 0613002 72Ma
+SUAREZ Ivan                            -441 L 0613002 72Ma
 SUAUD Isabelle                        -1400 - 9712006 07Au
 SUBIAS Aube                           -1800 - 0700492 00SF
 SUBIAS Lorraine                       -1800 - 0700493 00SF
@@ -9621,7 +9626,7 @@ TADDEI Johan                          -9999 - 0388736 67SE
 TAGAND Frédéric                        -400 - 9111004 74An
 TAGAND Marie-Cécile                   -1100 - 9692022 74An
 TAGHZOUTI Hadi                        -1100 - 0700437 45Or
-TAGNON Nicole                          -706 L 0120010 84Av
+TAGNON Nicole                          -770 L 0120010 84Av
 TAHABIK Sara                          -2950 L 1400264 91Or
 Tahirbayov Bahadur                      490 e -------   AZ
 TAHRI Lea                             -1300 - 1000067 75Al
@@ -9687,7 +9692,7 @@ TARDI Oscar                           -1800 - 0900210 93Mo
 TARDIF Claude                          -600 - 9425027 95Ta
 TARIEL Clément                        -1627 L 1000143 94Ca
 TARIEL Elisa                          -1769 L 1300052 94Ca
-TARIEL Pascal                          -809 L 8709100 94Ca
+TARIEL Pascal                          -823 L 8709100 94Ca
 TARJON Alexis                         -1500 - 0374702 84VJ
 TARLET Fabien                         -9999 - 9448410 XXXX
 TARTE Julien                          -9999 - 0700335 58Ne
@@ -9697,7 +9702,7 @@ TASTET Cédric                         -1600 - 0637213 35Re
 TAUPIN Janis                          -9999 - 9474712 84VJ
 TAUPIN Romain                         -9999 - 0228207 94MJ
 TAUTORAT Guido                          397 e -------   DE
-TAUZIAC Arnaud                         -497 L 0621205 27Ev
+TAUZIAC Arnaud                         -501 L 0621205 27Ev
 TAUZIAC Nathalie                      -1942 L 1200232 27Ev
 TAUZIAC Véronique                     -2000 - 1200258 27Ev
 TAUZIN Géraldine                      -1300 - 9914017 69Ly
@@ -9719,7 +9724,7 @@ TECHER Laurent                        -9999 - 0800154 92An
 TECHER Stephen                         -300 - 0525009 76SE
 TEHHANI Fouad                          -262 L 0473001 84Av
 TEIXEIRA Steve                        -1372 L 1100145 62Ar
-TEIXEIRA_DE_ALMIDA Luis_carlos         -950 L 1400263 91Or
+TEIXEIRA_DE_ALMIDA Luis_carlos         -962 L 1400263 91Or
 TEIXERA Luis                          -1500 - 0627109 93Mo
 TEL Michiel                             362 e -------   XX
 TELLIER Patrice                        -400 - 8548600 44Na
@@ -9763,7 +9768,7 @@ THENAULT Romain                       -1500 - 0800473 75Al
 THÉNOT Raphaël                        -1431 L 1300326 45Or
 THEODULE Julien                       -9999 - 97250A7 75Pa
 THEOLAS Benoît                        -1600 - 0574701 84VJ
-THEOLAS David                         -2033 L 1200150 84Va
+THEOLAS David                         -1848 L 1200150 84Va
 THEOLAS Estelle                       -1800 - 0900307 84Va
 THEPAUT Aurélie                       -1300 - 9233001 29Br
 THERON Camille                        -1500 - 0693022 69CR
@@ -9774,7 +9779,7 @@ THEZEE Jezabel                        -9999 - 9148417 XXXX
 THIALON Julien                        -2000 - 1200175 92An
 THIAUDIERE Yan                        -1000 - 0552023 31To
 THIBAUD x                             -9999 - 9925004 75Pa
-THIBAULT Charles                       -695 L 1300006 31To
+THIBAULT Charles                       -662 L 1300006 31To
 THIBAULT Sébastien                    -1400 - 1200260 44NE
 THIBAUT Max                             -12 L 8727300 84Va
 THIBAUT Stéphane                      -1600 - 0325512 75OB
@@ -9825,7 +9830,7 @@ THOREL Florian                        -1500 - 0641003 14Ca
 THOREL Michel                         -9999 - 9130001 00L3
 THORNTON Alan                           -31 e -------   UK
 THOVERT Alice                         -1600 - 0538001 86Po
-THOVERT Jean-François                  -479 L 9025075 86Po
+THOVERT Jean-François                  -480 L 9025075 86Po
 THUDOR Olivier                        -9999 - 9581003 25Be
 THUONG Jean-françois                  -1500 - 0437006 44Na
 THURA Alain-Marie                      -300 - 8930300 00FF
@@ -9918,7 +9923,7 @@ TRAMU Jacques                         -1300 - 0122201 75XX
 TRAN Ban-Van-Phat                     -1500 - 9428902 10Tr
 TRAN Benoît                            -600 - 1000129 91Or
 TRAN Duy-Minh                         -1000 - 0900011 75Pa
-TRAN Guy-Yoan                          -312 L 1400068 75OB
+TRAN Guy-Yoan                          -286 L 1400068 75OB
 TRAN Jean-Paul                         -300 - 9692010 08Ch
 TRAN Jeremy                           -1400 - 0700280 75Pa
 TRAN Laurent                          -1022 L 1400067 75OB
@@ -9942,7 +9947,7 @@ TRICHET Sarah                         -1500 - 0028213 94MJ
 TRICOTTET Matthieu                    -1500 - 0900425 75Op
 TRICOTTET Thomas                      -1500 - 0900424 75Op
 TRIGALOU Benjamin                     -2000 - 0422116 75Op
-TRIGER Florian                         -828 L 1300287 76Ro
+TRIGER Florian                         -529 L 1300287 76Ro
 TRILLO Myriam                         -9999 - 9200126 31To
 TRINH Christophe                      -1300 - 0621600 92Bo
 TRINITE Damien                         -894 L 1100064 92An
@@ -10010,7 +10015,7 @@ UBAUD Fabien                          -1400 - 0677009 13Ma
 UBEDA Maxime                          -2000 - 0474725 84VJ
 UCHIKUNE Koichi                         148 e -------   JP
 UEDA Shunzo                             400 - ------- XXXX
-UEMOTO Masahide                       -1577 L 1200193 75OB
+UEMOTO Masahide                       -1551 L 1200193 75OB
 UEMURA Aurélie                        -1500 - 9925005 75Pa
 UEMURA Yoshiyuki                        200 - 9725013 75Pa
 UHL Laurent                           -9999 - 9188705 67SE
@@ -10021,7 +10026,7 @@ URABE Yoshimichi                        269 e -------   JP
 URASOE Tom                              176 e -------   UK
 URBAIN Xavier                          -700 - 9716001 21Di
 URBAN Marcel                          -1500 - 0325000 75Pa
-URBAN Maxime                          -2164 L 1400180 84VJ
+URBAN Maxime                          -2052 L 1400180 84VJ
 URBAN Pierre                           -300 - 0325001 75Op
 URBANEK Lucas                          -400 - 0800268 75Op
 URBINI Régis                          -1400 - 9351004 33Bo
@@ -10055,7 +10060,7 @@ VALERIO Robin                         -1400 - 1300038 69Ly
 VALERIOLA Philippe                     -800 - 9324603 92Le
 VALERIUS Grégory                      -9999 - 9425524 75OB
 VALES Eric                            -1300 - 0011000 74An
-VALET Fabien                           -240 L 0800100 38Gr
+VALET Fabien                           -236 L 0800100 38Gr
 VALEZ Elodie                          -1500 - 0660513 63Ce
 VALLADE Melody                        -1500 - 0800160 35Re
 VALLE Dominique                       -1600 - ------- XXXX
@@ -10157,9 +10162,9 @@ VELLEN Alain                          -1100 - 9326802 91Or
 VELTEN Margot                         -9999 - 9888736 67SE
 VELTRI François                       -1100 - 0124605 34Mo
 VENANT Marie-Madeleine                -9999 - 9728105 75PB
-VENANT Patrick                         -794 L 9032000 37To
+VENANT Patrick                         -750 L 9032000 37To
 VENIN Franck                           -300 - 9752027 31To
-VENNINK David                           -47 L 1200014 92Bo
+VENNINK David                           -53 L 1200014 92Bo
 VENTADOUR Yohann                       -694 L 0627108 93Mo
 VENTURA Pierre                         -200 - 9721001 92An
 VENTURELLI Arnaud                     -1500 - 0488732 67SE
@@ -10194,7 +10199,7 @@ VERNET Christophe                     -1300 - 0121000 92An
 VERNOT Gabriel                        -1200 - 9827102 93Mo
 VERNOT Quentin                        -9999 - 0227102 93Mo
 VERON Pierre-Emmanuel                  -900 - 9927108 93Mo
-VERRIER Frédéric                      -1155 L 0700037 69Ly
+VERRIER Frédéric                      -1205 L 0700037 69Ly
 VERRIER Julie                         -1400 - 0314312 69LJ
 VERSAEVEL Romain                      -1300 - 0800087 69Ly
 VERSTRAETE Jean_Baptiste               -600 - 0900383 44Na
@@ -10242,7 +10247,7 @@ VIGNE Ivanhoé                          -900 - 1200144 84Va
 VIGNE Jérémy                          -2000 X 1400255 78Mg
 VIGNE Jonathan                        -9999 - 9974705 84VJ
 VIGNE Manon                           -2000 - 0474708 84VJ
-VIGNE Quentin                          -759 L 0474723 84Va
+VIGNE Quentin                          -699 L 0474723 84Va
 VIGNERON Laurent                      -1100 - 0527109 93Mo
 VIGNES Clément                            0 - 0900209 64Ba
 VIGNES Mathieu                        -9999 - 9425510 75OB
@@ -10257,7 +10262,7 @@ VILA Noé                              -1900 - 0900277 63Ce
 VILAIN Benoit                         -1400 - 0643013 76Ro
 VILAIN Xavier                         -1200 - 9428204 94MJ
 VILAS-BOAS Jean-Paul                  -1100 - 9814009 26Va
-VILASETRU Romain                       -980 L 0700432 26Va
+VILASETRU Romain                       -939 L 0700432 26Va
 VILAY Jacques                         -1500 - 9725094 75Pa
 VILBERT David                         -1300 - 9823519 91Ep
 VILCHEZ Nicolas                       -1200 - 0900250 31To
@@ -10289,7 +10294,7 @@ VINCENT Adrien                        -1400 - 0700232 95Ta
 VINCENT André                         -9999 - 0227802 78Mg
 VINCENT Arnaud                        -9999 - 9214501 XXXX
 VINCENT Elsa                          -9999 - 0700199 38Gr
-VINCENT Emmanuel                       -700 - 0800439 44MN
+VINCENT Emmanuel                       -612 L 0800439 44MN
 VINCENT Pascal                        -1100 - 9722503 92An
 VINCENT Quentin                       -1400 - 0700231 95Ta
 VINCENT Sébastien                     -1400 - 0642004 76Ha
@@ -10421,7 +10426,7 @@ WELDON Scott                           -900 - 9522502 75XX
 WELFERINGER Rémy                      -9999 - 9288731 67SE
 WELFERINGER Renaud                    -9999 - 9288709 67SE
 WELTER Marlon                           383 e -------   DE
-Welticke Jonas                          411 e -------   DE
+Welticke Jonas                          402 e -------   DE
 WELVAERT Alexis                        -100 - 9988711 67SE
 WELVAERT Astrid                        -600 - 9988727 67SE
 WELVAERT Khéolila                     -9999 - 0188717 67SE
@@ -10453,7 +10458,7 @@ WIERZBICKI Sébastien                   -700 - 0800346 57Me
 WIESEL Benoît                         -9999 - 9188747 67SE
 WIESEL Julien                         -9999 L 1400058 75Al
 WIESEL Nicolas                            0 - 9188755 67SE
-WIETHÖLTER Frederik                    -321 L 0634009 69Ly
+WIETHÖLTER Frederik                    -209 L 0634009 69Ly
 WIKLUND Peder                           309 e -------   SE
 WILBERT Antonin                       -9999 L 1400019 73Ch
 WILBERT Théophile                     -9999 L 1400020 73Ch
@@ -10506,6 +10511,7 @@ WOLTER Stéphane                        -600 - 0183000 57Me
 WONG Chi-Yu                              64 e -------   BE
 WONG Henry                                0 - 0314010 69Ly
 WONG Vanessa                            477 e -------   UK
+WONG Ying-Ying                        -9999 L 1400320 69Ly
 WOODNUTT David                           41 e -------   UK
 WORMS Amir                            -9999 - 0800220 93Mo
 WORMS Julien                          -1181 L 0627100 93Mo
@@ -10528,14 +10534,14 @@ WU William                            -1300 - 0700320 94Ca
 WU Zhang_Hao                            200 - 0025009 75Pa
 WURGES Léa                            -9999 - 0228209 94MJ
 WURTZ Etienne                         -9999 - 9288707 67SE
-WURZINGER Ralf                         -294 L 9826801 91Or
+WURZINGER Ralf                         -310 L 9826801 91Or
 WÜTHRICH Guillaume                    -1900 - 0700216 91Or
 XAVIER Gérard                         -1800 - 0700079 33Bo
 XIA Haibo                               200 - 0229302 75Pa
 XIANG e_song                            446 e -------   CN
 XIAO Chunyang                             0 - 1000345 92An
 XIAO Ye                                 100 - 9325021 75Pa
-XIE Wei-Dong                            419 L 9725048 84Av
+XIE Wei-Dong                            409 L 9725048 84Av
 XING Guan                             -1500 - 0352047 31To
 XIONG Shao                               57 e -------   HU
 XU Bi-Hua                             -2000 - 1000248   BE
@@ -10552,7 +10558,7 @@ YA May_Soua                            -600 - 1100053 44MN
 YABTCHINSKI Anthony                   -9999 L 1400305 75EH
 YAGHOUBI Ardalan                         64 L 0522117 67SE
 YAGI Yasuyuki                           200 - 9125061 75Pa
-YAMANAKA Tony                          -308 L 0413014 38Gr
+YAMANAKA Tony                          -307 L 0413014 38Gr
 YAMASAKI Yasuhiro                       300 - 0320002 37To
 YAMASHITA Ikuo                         -500 - 9425006 75Pa
 YAMGNANE Kwame                         -900 - 0321206 75Al
@@ -10603,7 +10609,7 @@ Z1000 156                              -600 - 1000156 13Ai
 Z1000 381                             -9999 - 1000381 92An
 ZAAG Alexandre                        -1500 - 1000132 94EP
 ZABLOCKI Robert                         203 e -------   PL
-ZAFINANDRO Rija                        -240 L 1100378 34Mo
+ZAFINANDRO Rija                        -249 L 1100378 34Mo
 ZAGAR Daniel                          -1300 - 0116001 21Di
 ZAHAVI Benjamin                       -1300 - 1000040 94Ca
 ZAHONYI Balint                          131 e -------   XX

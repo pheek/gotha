@@ -35,8 +35,8 @@ public class Gotha {
 
     static Locale locale = Locale.getDefault();
     static final long GOTHA_VERSION = 337L;
-    static final long GOTHA_MINOR_VERSION = 3L;
-    static final java.util.Date GOTHA_RELEASE_DATE = (new GregorianCalendar(2014, Calendar.JUNE, 23)).getTime();
+    static final long GOTHA_MINOR_VERSION = 4L;
+    static final java.util.Date GOTHA_RELEASE_DATE = (new GregorianCalendar(2014, Calendar.JUNE, 24)).getTime();
     // Data version for serialization
     static final long GOTHA_DATA_VERSION = 201L;
     
@@ -148,7 +148,6 @@ public class Gotha {
     */
     public static String eliminateForbiddenCharacters(String str){
         String newStr = str;
-//        newStr = newStr.replace("[/:*?<>|]", "");
         newStr = newStr.replace("\\", "");
         newStr = newStr.replace("/", "");
         newStr = newStr.replace(":", "");
