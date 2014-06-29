@@ -589,6 +589,7 @@
               <Properties>
                 <Property name="selected" type="boolean" value="true"/>
                 <Property name="text" type="java.lang.String" value="Export to OpenGotha Site"/>
+                <Property name="toolTipText" type="java.lang.String" value="Check this checkbox to enable real-time acess to OpenGotha files from any computer, tablet or smartphone."/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="allParametersCKBActionPerformed"/>

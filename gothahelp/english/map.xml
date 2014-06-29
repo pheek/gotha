@@ -22,7 +22,7 @@
 	<mapID target="Teams Pairing frame" url="Teams Pairing frame.html"/>
 	<mapID target="Publish menu" url="Publish menu.html"/>
 	<mapID target="Contents tab" url="Contents tab.html"/>
-	<mapID target="Settings tab" url="Settings tab.html"/>
+	<mapID target="Parameters tab" url="Parameters tab.html"/>
 	<mapID target="Publish tab" url="Publish tab.html"/>
 	<mapID target="Options menu" url="Options menu.html"/>
 	<mapID target="Tournament Options" url="Tournament Options.html"/>

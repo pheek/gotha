@@ -424,6 +424,7 @@ public class JFrPublish extends javax.swing.JFrame {
 
         ckbExportToOGSite.setSelected(true);
         ckbExportToOGSite.setText("Export to OpenGotha Site");
+        ckbExportToOGSite.setToolTipText("Check this checkbox to enable real-time acess to OpenGotha files from any computer, tablet or smartphone.");
         ckbExportToOGSite.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 allParametersCKBActionPerformed(evt);

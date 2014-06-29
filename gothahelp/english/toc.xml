@@ -25,7 +25,7 @@
     
     <tocitem text="Publish menu" target="Publish menu">    
             <tocitem text="Contents" target="Contents tab" />
-            <tocitem text="Settings" target="Settings tab" />
+            <tocitem text="Parameters" target="Parameters tab" />
             <tocitem text="Publish" target="Publish tab" />
     </tocitem>
 
