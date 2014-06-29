@@ -587,10 +587,10 @@ public class TournamentPrinting implements Printable {
                     usableY = (int) pf.getImageableY();
                     usableWidth = (int) pf.getImageableWidth();
                     usableHeight = (int) pf.getImageableHeight();
-                    System.out.println("usableX = " + usableX);
-                    System.out.println("usableY = " + usableY);
-                    System.out.println("usableWidth = " + usableWidth);
-                    System.out.println("usableHeight = " + usableHeight);
+//                    System.out.println("usableX = " + usableX);
+//                    System.out.println("usableY = " + usableY);
+//                    System.out.println("usableWidth = " + usableWidth);
+//                    System.out.println("usableHeight = " + usableHeight);
                     break;
                 case TournamentPublishing.TYPE_NOTPLAYINGLIST:
                     nbCarRef = NPL_NBCAR;
