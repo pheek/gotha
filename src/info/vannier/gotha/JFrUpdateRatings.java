@@ -99,7 +99,7 @@ public class JFrUpdateRatings extends javax.swing.JFrame {
     private void initPnlPlayers()throws RemoteException{
  
         TableColumnModel tcm = this.tblPlayers.getColumnModel();
-        JFrGotha.formatColumn(this.tblPlayers, NAME_COL, "Name", 110, JLabel.LEFT, JLabel.LEFT); 
+        JFrGotha.formatColumn(this.tblPlayers, NAME_COL, "Last name", 110, JLabel.LEFT, JLabel.LEFT); 
         JFrGotha.formatColumn(this.tblPlayers, FIRSTNAME_COL, "First name", 70, JLabel.LEFT, JLabel.LEFT); 
         JFrGotha.formatColumn(this.tblPlayers, COUNTRY_COL, "Co", 30, JLabel.LEFT, JLabel.LEFT); 
         JFrGotha.formatColumn(this.tblPlayers, CLUB_COL, "Club", 40, JLabel.LEFT, JLabel.LEFT); 
@@ -187,7 +187,7 @@ public class JFrUpdateRatings extends javax.swing.JFrame {
         getContentPane().add(btnQuit);
         btnQuit.setBounds(200, 470, 550, 30);
 
-        pnlPlayersList.setBorder(javax.swing.BorderFactory.createTitledBorder("List of players"));
+        pnlPlayersList.setBorder(javax.swing.BorderFactory.createTitledBorder("Players"));
         pnlPlayersList.setLayout(null);
 
         cbxRatingList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -217,7 +217,7 @@ public class JFrUpdateRatings extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Name", "First name", "Co", "Club", "Rk", "Rating", "Rating origin", "New Rating", "EGFPin", "RatingList"
+                "Last name", "First name", "Co", "Club", "Rk", "Rating", "Rating origin", "New Rating", "EGFPin", "RatingList"
             }
         ) {
             Class[] types = new Class [] {

@@ -266,11 +266,11 @@ public class JFrPublish extends javax.swing.JFrame {
         pnlContents.add(pnlGL);
         pnlGL.setBounds(380, 20, 300, 120);
 
-        pnlNPP.setBorder(javax.swing.BorderFactory.createTitledBorder("Not playing players list"));
+        pnlNPP.setBorder(javax.swing.BorderFactory.createTitledBorder("Non-playing players list"));
         pnlNPP.setLayout(null);
 
         ckbShowByePlayer.setSelected(true);
-        ckbShowByePlayer.setText("Show Bye player if any");
+        ckbShowByePlayer.setText("Show Bye players if any");
         ckbShowByePlayer.setEnabled(false);
         ckbShowByePlayer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -281,7 +281,7 @@ public class JFrPublish extends javax.swing.JFrame {
         ckbShowByePlayer.setBounds(10, 20, 230, 20);
 
         ckbShowNotPairedPlayers.setSelected(true);
-        ckbShowNotPairedPlayers.setText("Show not paired players if any");
+        ckbShowNotPairedPlayers.setText("Show unpaired players if any");
         ckbShowNotPairedPlayers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 allContentsCKBActionPerformed(evt);
@@ -502,7 +502,7 @@ public class JFrPublish extends javax.swing.JFrame {
 
         btnPrintTP.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btnPrintTP.setForeground(new java.awt.Color(0, 0, 255));
-        btnPrintTP.setText("Print Tournament parameters");
+        btnPrintTP.setText("Print Tournament settings");
         btnPrintTP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPrintTPActionPerformed(evt);
@@ -522,7 +522,7 @@ public class JFrPublish extends javax.swing.JFrame {
 
         btnPrintNPP.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         btnPrintNPP.setForeground(new java.awt.Color(0, 0, 255));
-        btnPrintNPP.setText("Print not playing players of Round 1");
+        btnPrintNPP.setText("Print non-playing players of Round 1");
         btnPrintNPP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPrintNPPActionPerformed(evt);
@@ -1130,7 +1130,7 @@ public class JFrPublish extends javax.swing.JFrame {
         String strRound = " round " + (processedRoundNumber + 1);
         this.btnPublishGL.setText("Publish games of" + strRound);
         this.btnPrintRS.setText("Print result sheets of" + strRound);
-        this.btnPrintNPP.setText("Print not playing players of" + strRound);
+        this.btnPrintNPP.setText("Print non-playing players of" + strRound);
         this.btnPublishSt.setText("Publish standings after" + strRound);
         this.btnPublishML.setText("Publish matches list of" + strRound);
         this.btnPublishTS.setText("Publish team standings after" + strRound);

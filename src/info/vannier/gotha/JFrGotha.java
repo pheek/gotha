@@ -154,7 +154,7 @@ public class JFrGotha extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         txfNumberOfRounds = new javax.swing.JTextField();
         lblRecommended = new javax.swing.JLabel();
-        pnlIdentification = new javax.swing.JPanel();
+        pnlTournamentDetails = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         txfShortName = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
@@ -341,53 +341,53 @@ public class JFrGotha extends javax.swing.JFrame {
         dlgNew.getContentPane().add(pnlSystem);
         pnlSystem.setBounds(410, 10, 300, 220);
 
-        pnlIdentification.setBorder(javax.swing.BorderFactory.createTitledBorder("Identification"));
-        pnlIdentification.setLayout(null);
+        pnlTournamentDetails.setBorder(javax.swing.BorderFactory.createTitledBorder("Tournament details"));
+        pnlTournamentDetails.setLayout(null);
 
         jLabel8.setText("Short name");
-        pnlIdentification.add(jLabel8);
+        pnlTournamentDetails.add(jLabel8);
         jLabel8.setBounds(10, 70, 80, 14);
 
         txfShortName.setText("tournamentshortname");
         txfShortName.setToolTipText("default file mame and RMI name.");
-        pnlIdentification.add(txfShortName);
+        pnlTournamentDetails.add(txfShortName);
         txfShortName.setBounds(100, 70, 180, 20);
 
         jLabel10.setText("Name");
-        pnlIdentification.add(jLabel10);
+        pnlTournamentDetails.add(jLabel10);
         jLabel10.setBounds(10, 30, 80, 14);
 
         txfName.setText("Tournament name");
         txfName.setToolTipText("tournament name as shown in headers and titles");
-        pnlIdentification.add(txfName);
+        pnlTournamentDetails.add(txfName);
         txfName.setBounds(100, 30, 180, 20);
 
         jLabel11.setText("Location");
-        pnlIdentification.add(jLabel11);
+        pnlTournamentDetails.add(jLabel11);
         jLabel11.setBounds(10, 110, 80, 14);
 
         txfLocation.setText("Location name");
-        pnlIdentification.add(txfLocation);
+        pnlTournamentDetails.add(txfLocation);
         txfLocation.setBounds(100, 110, 180, 20);
 
         jLabel12.setText("Begin date");
-        pnlIdentification.add(jLabel12);
+        pnlTournamentDetails.add(jLabel12);
         jLabel12.setBounds(10, 160, 80, 14);
 
         txfBeginDate.setText("yyyy-mm-dd");
-        pnlIdentification.add(txfBeginDate);
+        pnlTournamentDetails.add(txfBeginDate);
         txfBeginDate.setBounds(100, 160, 110, 20);
 
         jLabel19.setText("End date");
-        pnlIdentification.add(jLabel19);
+        pnlTournamentDetails.add(jLabel19);
         jLabel19.setBounds(10, 180, 80, 14);
 
         txfEndDate.setText("yyyy-mm-dd");
-        pnlIdentification.add(txfEndDate);
+        pnlTournamentDetails.add(txfEndDate);
         txfEndDate.setBounds(100, 180, 110, 20);
 
-        dlgNew.getContentPane().add(pnlIdentification);
-        pnlIdentification.setBounds(100, 10, 300, 220);
+        dlgNew.getContentPane().add(pnlTournamentDetails);
+        pnlTournamentDetails.setBounds(100, 10, 300, 220);
 
         btnDlgNewOK.setText("OK");
         btnDlgNewOK.addActionListener(new java.awt.event.ActionListener() {
@@ -3522,7 +3522,6 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     private javax.swing.JMenu mnuTools;
     private javax.swing.JMenu mnuTournament;
     private javax.swing.JPanel pnlControlPanel;
-    private javax.swing.JPanel pnlIdentification;
     private javax.swing.JPanel pnlIntControlPanel;
     private javax.swing.JPanel pnlIntStandings;
     private javax.swing.JPanel pnlIntTeamsPanel;
@@ -3536,6 +3535,7 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     private javax.swing.JPanel pnlTeamPS;
     private javax.swing.JPanel pnlTeamsPanel;
     private javax.swing.JPanel pnlTeamsStandings;
+    private javax.swing.JPanel pnlTournamentDetails;
     private javax.swing.JPanel pnlWelcome;
     private javax.swing.JRadioButton rdbCurrentPS;
     private javax.swing.JRadioButton rdbCurrentTeamPS;

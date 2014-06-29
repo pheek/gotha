@@ -233,7 +233,7 @@ public class JFrTeamsManager extends javax.swing.JFrame {
         final int COUNTRY_WIDTH = 25;
         final int CLUB_WIDTH = 40;
 
-        JFrGotha.formatColumn(tblTeamablePlayers, PL_NAME_COL, "Name", NAME_WIDTH, JLabel.LEFT, JLabel.LEFT); 
+        JFrGotha.formatColumn(tblTeamablePlayers, PL_NAME_COL, "Last name", NAME_WIDTH, JLabel.LEFT, JLabel.LEFT); 
         JFrGotha.formatColumn(tblTeamablePlayers, PL_COUNTRY_COL, "Co", COUNTRY_WIDTH, JLabel.LEFT, JLabel.LEFT); 
         JFrGotha.formatColumn(tblTeamablePlayers, PL_CLUB_COL, "Club", CLUB_WIDTH, JLabel.LEFT, JLabel.LEFT); 
         JFrGotha.formatColumn(tblTeamablePlayers, PL_RATING_COL, "Rating", RATING_WIDTH, JLabel.RIGHT, JLabel.RIGHT); 
@@ -588,7 +588,7 @@ public class JFrTeamsManager extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Name", "Co", "Club", "Rating"
+                "Last name", "Co", "Club", "Rating"
             }
         ) {
             Class[] types = new Class [] {

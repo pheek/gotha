@@ -128,7 +128,7 @@ public class JFrPlayersMMG extends javax.swing.JFrame{
                 {null, null, null, null, null}
             },
             new String [] {
-                "Name", "First name", "Rank", "Corr", "Rating"
+                "Last name", "First name", "Rank", "Corr", "Rating"
             }
         ));
         scpMMG0.setViewportView(tblMMG0);
@@ -169,7 +169,7 @@ public class JFrPlayersMMG extends javax.swing.JFrame{
                 {null, null, null, null, null}
             },
             new String [] {
-                "Name", "First name", "Rank", "Corr", "Rating"
+                "Last name", "First name", "Rank", "Corr", "Rating"
             }
         ));
         scpMMG1.setViewportView(tblMMG1);
@@ -201,7 +201,7 @@ public class JFrPlayersMMG extends javax.swing.JFrame{
                 {null, null, null, null, null}
             },
             new String [] {
-                "Name", "First name", "Rank", "Corr", "Rating"
+                "Last name", "First name", "Rank", "Corr", "Rating"
             }
         ));
         scpMMG2.setViewportView(tblMMG2);
@@ -233,7 +233,7 @@ public class JFrPlayersMMG extends javax.swing.JFrame{
                 {null, null, null, null, null}
             },
             new String [] {
-                "Name", "First name", "Rank", "Corr", "Rating"
+                "Last name", "First name", "Rank", "Corr", "Rating"
             }
         ));
         scpBarM1.setViewportView(tblBarM1);
@@ -562,7 +562,7 @@ public class JFrPlayersMMG extends javax.swing.JFrame{
     }
 
     private void initColumnHeaders(JTable table){
-        JFrGotha.formatColumn(table, NAME_COL, "Name", 100, JLabel.LEFT, JLabel.LEFT); 
+        JFrGotha.formatColumn(table, NAME_COL, "Last name", 100, JLabel.LEFT, JLabel.LEFT); 
         JFrGotha.formatColumn(table, FIRSTNAME_COL, "First name", 60, JLabel.LEFT, JLabel.LEFT); 
         JFrGotha.formatColumn(table, RANK_COL, "Rk", 40, JLabel.RIGHT, JLabel.RIGHT); 
         JFrGotha.formatColumn(table, CORR_COL, "Corr", 30, JLabel.RIGHT, JLabel.RIGHT); 

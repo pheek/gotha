@@ -158,7 +158,7 @@ public class JFrPlayersQuickCheck extends javax.swing.JFrame{
         pnlInternal.add(btnQuit);
         btnQuit.setBounds(150, 470, 590, 30);
 
-        pnlPlayersList.setBorder(javax.swing.BorderFactory.createTitledBorder("List of players"));
+        pnlPlayersList.setBorder(javax.swing.BorderFactory.createTitledBorder("Players"));
         pnlPlayersList.setLayout(null);
 
         jLabel8.setText("Registered players. Final (F)");
@@ -191,7 +191,7 @@ public class JFrPlayersQuickCheck extends javax.swing.JFrame{
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "R", "Name", "First name", "Co", "Club", "Rk", "Rating"
+                "R", "Last name", "First name", "Co", "Club", "Rk", "Rating"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -840,7 +840,7 @@ public class JFrPlayersQuickCheck extends javax.swing.JFrame{
         TableColumnModel tcm = this.tblRegisteredPlayers.getColumnModel();
                 
         JFrGotha.formatColumn(this.tblRegisteredPlayers, REG_COL, "R", 10, JLabel.LEFT, JLabel.LEFT); 
-        JFrGotha.formatColumn(this.tblRegisteredPlayers, NAME_COL, "Name",110, JLabel.LEFT, JLabel.LEFT); 
+        JFrGotha.formatColumn(this.tblRegisteredPlayers, NAME_COL, "Last name",110, JLabel.LEFT, JLabel.LEFT); 
         JFrGotha.formatColumn(this.tblRegisteredPlayers, FIRSTNAME_COL, "First_name", 80, JLabel.LEFT, JLabel.LEFT); 
         JFrGotha.formatColumn(this.tblRegisteredPlayers, COUNTRY_COL, "Co", 30, JLabel.LEFT, JLabel.LEFT); 
         JFrGotha.formatColumn(this.tblRegisteredPlayers, CLUB_COL, "Club", 40, JLabel.LEFT, JLabel.LEFT); 

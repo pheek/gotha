@@ -1,4 +1,4 @@
-#Echelle au 24/06/2014
+#Echelle au 28/06/2014
 AAIJ René                               249 e -------   NL
 AAKERBLOM Charlie                       339 e -------   SE
 ABADIA Mickaël                        -1400 - 9728205 94MJ
@@ -1539,6 +1539,7 @@ BRUZAUT Olivier                        -800 - 0800283 67SE
 BUARD Mathieu                         -1018 L 1200056 42Se
 BUCAILLE Olivier                      -1800 - 1200018 63Ce
 BUCHARD Aurore                        -1800 - 0690601 59Va
+BUCHOU Maxime                         -9999 L 1400322 38EB
 BUCHY Vincent                         -1100 - 0522103 75Pa
 BUDAHN Michael                          375 e -------   DE
 BUDIG Stefan                            335 e -------   DE
@@ -1926,7 +1927,7 @@ CHARRIER Coralline                    -1600 - 0800353 98Ti
 CHARRIER Jean_Paul                    -9999 - 0800351 98Ti
 CHARRIER Nicolas                      -1500 - 0800352 98Ti
 CHARRON Bruno                         -1500 - 0152016 31To
-CHARTIER Brice                        -9999 L 1400288 91SM
+CHARTIER Brice                        -9999 X 1400288 91SM
 CHARVE Céline                         -1400 - 0252010 31To
 CHARVERON Michel                      -9999 - 9613011 38Gr
 CHARVET Benoît                        -9999 - 9643010 76Ro
@@ -1960,6 +1961,7 @@ CHAUVEL Tristan                       -1400 - 1300055 34Mo
 CHAUVET Guillaume                     -1000 - 9177005 13Ma
 CHAUVET Xavier                         -900 - 9431102 49AJ
 CHAUVIN Alban                          -300 - 0462002 92Bo
+CHAUVIN Anne-Rose                     -9999 L 1400323 38EB
 CHAUVIN Christian                      -500 - 9777001 13Ma
 CHAUVIN Fabrice                        -900 - 9452004 31To
 CHAUVIN Robin                          -100 - 0800145 69Ly
@@ -2511,7 +2513,7 @@ DAFOUR Samuel                         -9999 L 1400301 75EH
 DAGALLIER Adrien                      -1100 - 0527802 78Mg
 DAGNEAUX Egon                         -1000 - 1100317 38GJ
 DAGON Martine                         -9999 - 9353005 81Ca
-DAGUENET Mathieu                        177 L 0621020 92Le
+DAGUENET Mathieu                        177 L 0621020 91Se
 DAGUTS Nicolas                         -800 - 9314009 49An
 DAHLET Olivier                        -9999 - 9188757 67SE
 DAHMANI François                      -1300 - 9986004 67St
@@ -2730,8 +2732,8 @@ DECROIX Anne-Marie                    -9999 - 9200110 92An
 DECROIX Pomme                         -9999 - 99A0001 00FF
 DECROIX Sophie                        -9999 - 9200125 00L2
 DECROIX Yves                              0 - 0070000 32Ea
-DEDIEU Nicolas                        -3000 - 1300318 38Gr
 DEDIEU Nicolas                         -900 - 0700263 34Mo
+DEDIEU Nicolas                        -3000 - 1300318 38Gr
 DEDOUCHE Christophe                   -1300 - 0700169 57Me
 DEFFAYET Jean-Noël                    -1400 - 0524602 92Le
 DEFLOU Fabien                          -400 - 0230000 00L3
@@ -6084,7 +6086,7 @@ LEGLISE Emmanuel                      -1400 - 0424604 92Le
 LÉGLISE Martin                        -1000 - 1000181 25Be
 LEGOBAQUES Arnaud                     -1800 - 0900304 84Va
 LEGOFF Yves                           -9999 - 9125053 75Pa
-LEGOUIX Baptiste                      -1900 - 1400296 73Ch
+LEGOUIX Baptiste                      -1897 L 1400296 73Ch
 LEGOUT Cecile                         -1600 - 0700223 75Al
 LEGRAND Dominique                     -1000 - 9227003 78Ra
 LEGRAND Erwan                          -900 - 9321004 92An
@@ -6921,7 +6923,7 @@ MÉLINE Pascal                         -1933 L 1000008 83Dr
 MELKI Micha                           -1800 - 0522121 75Op
 MELLIET Emmanuel                      -9999 - 0157005 97Re
 MELLITI Kabel                         -9999 - 0070312 13MJ
-MENARD Baptiste                       -9999 - 1400309 73Ch
+MENARD Baptiste                       -9999 L 1400309 73Ch
 MENARD Benoit                          -232 L 0900010 95Va
 MÉNARD Quentin                        -1600 - 0700075 58Ne
 MENAT Yann                            -1000 - 0422117 75EG
@@ -10648,6 +10650,7 @@ ZEMMOUR Michaël                       -1000 - 9977108 92An
 ZEMOR Gilles                            345 L 7900005 33Bo
 ZEMOR Solal                            -780 L 1100011 33Bo
 ZENER Patrick                         -9999 - 0410000 73Ch
+ZENG-LUSSEREAU Eliot                  -9999 L 1400324 38EB
 ZERAFA Jonathan                       -1600 - 0700069 14Ca
 ZERAFA Joseph                         -9999 - 1300182 75LF
 ZERKOUN Walid                         -2000 - 0700085 75Pa

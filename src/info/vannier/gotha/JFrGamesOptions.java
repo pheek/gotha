@@ -81,7 +81,7 @@ public class JFrGamesOptions extends javax.swing.JFrame {
         lblEGFClass = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Games Parameters");
+        setTitle("Games settings");
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -473,7 +473,7 @@ public class JFrGamesOptions extends javax.swing.JFrame {
         try {
             if (!tournament.isOpen()) dispose();
             this.lastComponentsUpdateTime = tournament.getCurrentTournamentTime();
-            setTitle("Games Parameters. " + tournament.getFullName());
+            setTitle("Games Settings. " + tournament.getFullName());
             updatePnlGam();
         } catch (RemoteException ex) {
             Logger.getLogger(JFrGamesOptions.class.getName()).log(Level.SEVERE, null, ex);

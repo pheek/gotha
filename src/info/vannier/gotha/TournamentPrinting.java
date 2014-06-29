@@ -103,7 +103,7 @@ public class TournamentPrinting implements Printable {
     
     static final int RS_LEFTMARGIN = 10;
     
-    // Not playing list
+    // Non-playing list
     static final int NPL_REASON_BEG = 0;
     static final int NPL_REASON_LEN = 20;
     static final int NPL_NF_BEG = NPL_REASON_BEG + NPL_REASON_LEN + 1;
@@ -1016,7 +1016,7 @@ public class TournamentPrinting implements Printable {
     private int printAPageOfResultSheets(Graphics g, PageFormat pf, int pi) throws RemoteException {
         Font font = new Font("Default", Font.BOLD, fontSize);
         g.setFont(font);
-        Font bigFont = new Font("Default", Font.BOLD, fontSize * 3 / 2);
+        Font bigFont = new Font("Default", Font.BOLD, fontSize * 4 / 3);
        
         int actRatioX1000 = usableWidth * 1000 /TournamentPrinting.RS_PAGE_VIRTUAL_WIDTH ;
         int x1 = TournamentPrinting.RS_COL1 * actRatioX1000 /1000;
@@ -1106,10 +1106,35 @@ public class TournamentPrinting implements Printable {
       
             Player wP = game.getWhitePlayer();;
             String strWP = wP.augmentedPlayerName(dpps);
+            
+            // Adjust font
+            FontMetrics fm = g.getFontMetrics(font);
+            int wdt = fm.stringWidth(strWP);
+            if (wdt > x2 - x1) {
+                String fontName = font.getName();
+                int fontSize = font.getSize();
+                fontSize = fontSize * (x2 - x1) / wdt;
+                int fontStyle = font.getStyle();
+                Font tempFont = new Font(fontName, fontStyle, fontSize);
+                g.setFont(tempFont);
+            }           
             TournamentPrinting.drawCenterAlignedString(g, strWP, x1, x2, yT);
+            g.setFont(font);
+            
             Player bP = game.getBlackPlayer();;
             String strBP = bP.augmentedPlayerName(dpps);
+            // Adjust font
+            wdt = fm.stringWidth(strBP);
+            if (wdt > x4 - x3) {
+                String fontName = font.getName();
+                int fontSize = font.getSize();
+                fontSize = fontSize * (x2 - x1) / wdt;
+                int fontStyle = font.getStyle();
+                Font tempFont = new Font(fontName, fontStyle, fontSize);
+                g.setFont(tempFont);
+            }           
             TournamentPrinting.drawCenterAlignedString(g, strBP, x3, x4, yT);
+            g.setFont(font);
 
             g.setFont(bigFont);
             TournamentPrinting.drawCenterAlignedString(g, "O  1 - 0", x2, x3, yT);
@@ -2063,7 +2088,7 @@ public class TournamentPrinting implements Printable {
 
         g.drawString("Reason", x, y);
         x = usableX + usableWidth * NPL_NF_BEG / NPL_NBCAR;
-        g.drawString("Name" + "    " + "First name", x, y);
+        g.drawString("Last name" + " " + "First name", x, y);
         x = usableX + usableWidth * (PL_RANK_BEG + PL_RANK_LEN) / PL_NBCAR;
 //        drawRightAlignedString(g, "Rk", x, y);
         drawRightAlignedString(g, "Gr", x, y);

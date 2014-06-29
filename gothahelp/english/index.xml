@@ -24,16 +24,16 @@
     
     <indexitem text="Publish menu" target="Publish menu" />
     <indexitem text="Contents" target="Contents tab" />
-    <indexitem text="Parameters" target="Parameters tab" />
+    <indexitem text="Settings" target="Settings tab" />
     <indexitem text="Publish" target="Publish tab" />
 
     <indexitem text="Options menu" target="Options menu" />
     <indexitem text="Tournament Options" target="Tournament Options" />
-    <indexitem text="General parameters" target="General parameters" />
-    <indexitem text="Handicap parameters" target="Handicap parameters" />
-    <indexitem text="Placement parameters" target="Placement parameters" />
-    <indexitem text="Pairing parameters" target="Pairing parameters" />
-    <indexitem text="Team Placement parameters" target="Team Placement parameters" />
+    <indexitem text="General settings" target="General settings" />
+    <indexitem text="Handicap settings" target="Handicap settings" />
+    <indexitem text="Placement settings" target="Placement settings" />
+    <indexitem text="Pairing settings" target="Pairing settings" />
+    <indexitem text="Team Placement settings" target="Team Placement settings" />
     
     <indexitem text="Games Options" target="Games Options" />
     <indexitem text="Preferences frame" target="Preferences frame" />

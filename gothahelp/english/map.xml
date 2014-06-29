@@ -22,15 +22,15 @@
 	<mapID target="Teams Pairing frame" url="Teams Pairing frame.html"/>
 	<mapID target="Publish menu" url="Publish menu.html"/>
 	<mapID target="Contents tab" url="Contents tab.html"/>
-	<mapID target="Parameters tab" url="Parameters tab.html"/>
+	<mapID target="Settings tab" url="Settings tab.html"/>
 	<mapID target="Publish tab" url="Publish tab.html"/>
 	<mapID target="Options menu" url="Options menu.html"/>
 	<mapID target="Tournament Options" url="Tournament Options.html"/>
-	<mapID target="General parameters" url="General parameters.html"/>
-	<mapID target="Handicap parameters" url="Handicap parameters.html"/>
-	<mapID target="Placement parameters" url="Placement parameters.html"/>
-	<mapID target="Pairing parameters" url="Pairing parameters.html"/>
-	<mapID target="Team Placement parameters" url="Team Placement parameters.html"/>
+	<mapID target="General settings" url="General settings.html"/>
+	<mapID target="Handicap settings" url="Handicap settings.html"/>
+	<mapID target="Placement settings" url="Placement settings.html"/>
+	<mapID target="Pairing settings" url="Pairing settings.html"/>
+	<mapID target="Team Placement settings" url="Team Placement settings.html"/>
 	<mapID target="Games Options" url="Games Options.html"/>
 	<mapID target="Preferences frame" url="Preferences frame.html"/>
 	<mapID target="Tools menu" url="Tools menu.html"/>

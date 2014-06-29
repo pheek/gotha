@@ -141,11 +141,11 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="pnlIdentification">
+        <Container class="javax.swing.JPanel" name="pnlTournamentDetails">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder title="Identification"/>
+                <TitledBorder title="Tournament details"/>
               </Border>
             </Property>
           </Properties>

@@ -318,7 +318,7 @@
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                    <TitledBorder title="Not playing players list"/>
+                    <TitledBorder title="Non-playing players list"/>
                   </Border>
                 </Property>
               </Properties>
@@ -335,7 +335,7 @@
                 <Component class="javax.swing.JCheckBox" name="ckbShowByePlayer">
                   <Properties>
                     <Property name="selected" type="boolean" value="true"/>
-                    <Property name="text" type="java.lang.String" value="Show Bye player if any"/>
+                    <Property name="text" type="java.lang.String" value="Show Bye players if any"/>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                   <Events>
@@ -350,7 +350,7 @@
                 <Component class="javax.swing.JCheckBox" name="ckbShowNotPairedPlayers">
                   <Properties>
                     <Property name="selected" type="boolean" value="true"/>
-                    <Property name="text" type="java.lang.String" value="Show not paired players if any"/>
+                    <Property name="text" type="java.lang.String" value="Show unpaired players if any"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="allContentsCKBActionPerformed"/>
@@ -726,7 +726,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="0" red="0" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Print Tournament parameters"/>
+                <Property name="text" type="java.lang.String" value="Print Tournament settings"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPrintTPActionPerformed"/>
@@ -758,7 +758,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="0" red="0" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Print not playing players of Round 1"/>
+                <Property name="text" type="java.lang.String" value="Print non-playing players of Round 1"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPrintNPPActionPerformed"/>

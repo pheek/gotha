@@ -100,7 +100,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         jLabel7 = new javax.swing.JLabel();
         btnAdjustCategoryLimits = new javax.swing.JButton();
         txfNumberOfCategories = new javax.swing.JTextField();
-        pnlIdentification = new javax.swing.JPanel();
+        pnlTournamentDetails = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txfShortName = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -280,7 +280,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel19.setText("Changing tournament system will reset system-specific parameters");
+        jLabel19.setText("Changing tournament system will reset system-specific settings");
         dlgChangeSystem.getContentPane().add(jLabel19);
         jLabel19.setBounds(10, 220, 470, 20);
 
@@ -313,7 +313,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         dlgChangeSystem.getContentPane().add(lblRecommended);
         lblRecommended.setBounds(220, 180, 250, 13);
 
-        ckbResetParameters.setText("Keep current system but reset parameters to their default values");
+        ckbResetParameters.setText("Keep current system but reset settings to their default values");
         ckbResetParameters.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ckbResetParametersActionPerformed(evt);
@@ -323,7 +323,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         ckbResetParameters.setBounds(80, 50, 400, 23);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Tournament parameters");
+        setTitle("Tournament settings");
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -370,12 +370,12 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         pnlGen.add(pnlCategories);
         pnlCategories.setBounds(560, 40, 200, 300);
 
-        pnlIdentification.setBorder(javax.swing.BorderFactory.createTitledBorder("Identification"));
-        pnlIdentification.setLayout(null);
+        pnlTournamentDetails.setBorder(javax.swing.BorderFactory.createTitledBorder("Tournament details"));
+        pnlTournamentDetails.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel1.setText("Short name");
-        pnlIdentification.add(jLabel1);
+        pnlTournamentDetails.add(jLabel1);
         jLabel1.setBounds(10, 40, 100, 13);
 
         txfShortName.setToolTipText("default file mame and RMI name. Do not change it if clients are connected ");
@@ -384,12 +384,12 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
                 txfShortNameFocusLost(evt);
             }
         });
-        pnlIdentification.add(txfShortName);
+        pnlTournamentDetails.add(txfShortName);
         txfShortName.setBounds(120, 40, 150, 20);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel2.setText("Full Name");
-        pnlIdentification.add(jLabel2);
+        pnlTournamentDetails.add(jLabel2);
         jLabel2.setBounds(10, 20, 100, 13);
 
         txfName.setText("Unnamed Tournament");
@@ -398,12 +398,12 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
                 txfNameFocusLost(evt);
             }
         });
-        pnlIdentification.add(txfName);
+        pnlTournamentDetails.add(txfName);
         txfName.setBounds(120, 20, 150, 20);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel3.setText("Location");
-        pnlIdentification.add(jLabel3);
+        pnlTournamentDetails.add(jLabel3);
         jLabel3.setBounds(10, 60, 100, 13);
 
         txfLocation.setText("Unknown location");
@@ -412,12 +412,12 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
                 txfLocationFocusLost(evt);
             }
         });
-        pnlIdentification.add(txfLocation);
+        pnlTournamentDetails.add(txfLocation);
         txfLocation.setBounds(120, 60, 150, 20);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel4.setText("Begin date");
-        pnlIdentification.add(jLabel4);
+        pnlTournamentDetails.add(jLabel4);
         jLabel4.setBounds(10, 120, 100, 13);
 
         txfBeginDate.setText("yyyy-mm-dd");
@@ -426,12 +426,12 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
                 txfBeginDateFocusLost(evt);
             }
         });
-        pnlIdentification.add(txfBeginDate);
+        pnlTournamentDetails.add(txfBeginDate);
         txfBeginDate.setBounds(120, 120, 110, 20);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel5.setText("Number of rounds");
-        pnlIdentification.add(jLabel5);
+        pnlTournamentDetails.add(jLabel5);
         jLabel5.setBounds(10, 170, 120, 13);
 
         txfNumberOfRounds.setText("0");
@@ -440,12 +440,12 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
                 txfNumberOfRoundsFocusLost(evt);
             }
         });
-        pnlIdentification.add(txfNumberOfRounds);
+        pnlTournamentDetails.add(txfNumberOfRounds);
         txfNumberOfRounds.setBounds(120, 170, 30, 20);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel8.setText("End date");
-        pnlIdentification.add(jLabel8);
+        pnlTournamentDetails.add(jLabel8);
         jLabel8.setBounds(10, 140, 100, 13);
 
         txfEndDate.setText("yyyy-mm-dd");
@@ -454,12 +454,12 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
                 txfEndDateFocusLost(evt);
             }
         });
-        pnlIdentification.add(txfEndDate);
+        pnlTournamentDetails.add(txfEndDate);
         txfEndDate.setBounds(120, 140, 110, 20);
 
         jLabel37.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel37.setText("Director");
-        pnlIdentification.add(jLabel37);
+        pnlTournamentDetails.add(jLabel37);
         jLabel37.setBounds(10, 90, 100, 13);
 
         txfDirector.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -467,11 +467,11 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
                 txfDirectorFocusLost(evt);
             }
         });
-        pnlIdentification.add(txfDirector);
+        pnlTournamentDetails.add(txfDirector);
         txfDirector.setBounds(120, 90, 150, 20);
 
-        pnlGen.add(pnlIdentification);
-        pnlIdentification.setBounds(10, 40, 280, 200);
+        pnlGen.add(pnlTournamentDetails);
+        pnlTournamentDetails.setBounds(10, 40, 280, 200);
 
         lblSystemName.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblSystemName.setText("System");
@@ -2495,19 +2495,19 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
     }//GEN-LAST:event_rdbHdBaseRankActionPerformed
 
     private void btnHelpPlacementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHelpPlacementActionPerformed
-        Gotha.displayGothaHelp("Placement parameters");
+        Gotha.displayGothaHelp("Placement settings");
 }//GEN-LAST:event_btnHelpPlacementActionPerformed
 
     private void btnHelpGeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHelpGeneralActionPerformed
-        Gotha.displayGothaHelp("General parameters");
+        Gotha.displayGothaHelp("General settings");
     }//GEN-LAST:event_btnHelpGeneralActionPerformed
 
     private void btnHelpHandicapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHelpHandicapActionPerformed
-        Gotha.displayGothaHelp("Handicap parameters");
+        Gotha.displayGothaHelp("Handicap settings");
     }//GEN-LAST:event_btnHelpHandicapActionPerformed
 
     private void btnHelpPairingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHelpPairingActionPerformed
-        Gotha.displayGothaHelp("Pairing parameters");
+        Gotha.displayGothaHelp("Pairing settings");
     }//GEN-LAST:event_btnHelpPairingActionPerformed
 
     private void ckbResetParametersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckbResetParametersActionPerformed
@@ -2534,7 +2534,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
     }//GEN-LAST:event_ckbResetParametersActionPerformed
 
     private void btnHelpTeamPlacementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHelpTeamPlacementActionPerformed
-        Gotha.displayGothaHelp("Team Placement parameters");
+        Gotha.displayGothaHelp("Team Placement settings");
     }//GEN-LAST:event_btnHelpTeamPlacementActionPerformed
 
     private void cbxCritFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cbxCritFocusLost
@@ -2819,27 +2819,27 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         GeneralParameterSet gps = tournament.getTournamentParameterSet().getGeneralParameterSet();
         int tournamentType = tournament.tournamentType();
         if (tournamentType == TournamentParameterSet.TYPE_UNDEFINED){
-            this.pnlIdentification.setVisible(true);
+            this.pnlTournamentDetails.setVisible(true);
             this.lblSystemName.setVisible(false);
             this.pnlCategories.setVisible(false); 
             this.pnlMcMahon.setVisible(false);
         }
         if (tournamentType == TournamentParameterSet.TYPE_MCMAHON){
-            this.pnlIdentification.setVisible(true);
+            this.pnlTournamentDetails.setVisible(true);
             this.lblSystemName.setVisible(true);
             this.lblSystemName.setText("McMahon system");
             this.pnlCategories.setVisible(false);                      
             this.pnlMcMahon.setVisible(true);
         }        
         if (tournamentType == TournamentParameterSet.TYPE_SWISS){
-            this.pnlIdentification.setVisible(true);
+            this.pnlTournamentDetails.setVisible(true);
             this.lblSystemName.setVisible(true);
             this.lblSystemName.setText("Swiss system");
             this.pnlCategories.setVisible(false);
             this.pnlMcMahon.setVisible(false);
         }
         if (tournamentType == TournamentParameterSet.TYPE_SWISSCAT){
-            this.pnlIdentification.setVisible(true);
+            this.pnlTournamentDetails.setVisible(true);
             this.lblSystemName.setVisible(true);
             this.lblSystemName.setText("SwissCat system");
             this.pnlCategories.setVisible(true);                      
@@ -3110,7 +3110,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         try {
             if (!tournament.isOpen()) dispose();
             this.lastComponentsUpdateTime = tournament.getCurrentTournamentTime();
-            setTitle("Tournament parameters. " + tournament.getFullName());           
+            setTitle("Tournament settings. " + tournament.getFullName());           
             updatePnlGen();
             updatePnlHan();
             updatePnlPla();
@@ -3227,7 +3227,6 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
     private javax.swing.JPanel pnlGlossary;
     private javax.swing.JPanel pnlHan;
     private javax.swing.JPanel pnlHandicap;
-    private javax.swing.JPanel pnlIdentification;
     private javax.swing.JPanel pnlLatter;
     private javax.swing.JPanel pnlMain;
     private javax.swing.JPanel pnlMcMahon;
@@ -3238,6 +3237,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
     private javax.swing.JPanel pnlSpecialResults;
     private javax.swing.JPanel pnlTPL;
     private javax.swing.JPanel pnlTeamGlossary;
+    private javax.swing.JPanel pnlTournamentDetails;
     private javax.swing.JRadioButton rdbAbsentMMS0;
     private javax.swing.JRadioButton rdbAbsentMMS1;
     private javax.swing.JRadioButton rdbAbsentMMS2;

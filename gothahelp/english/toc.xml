@@ -25,17 +25,17 @@
     
     <tocitem text="Publish menu" target="Publish menu">    
             <tocitem text="Contents" target="Contents tab" />
-            <tocitem text="Parameters" target="Parameters tab" />
+            <tocitem text="Settings" target="Settings tab" />
             <tocitem text="Publish" target="Publish tab" />
     </tocitem>
 
     <tocitem text="Options menu" target="Options menu">
         <tocitem text="Tournament Options" target="Tournament Options">
-            <tocitem text="General parameters" target="General parameters" />
-            <tocitem text="Handicap parameters" target="Handicap parameters" />
-            <tocitem text="Placement parameters" target="Placement parameters" />
-            <tocitem text="Pairing parameters" target="Pairing parameters" />
-            <tocitem text="Team Placement parameters" target="Team Placement parameters" />
+            <tocitem text="General settings" target="General settings" />
+            <tocitem text="Handicap settings" target="Handicap settings" />
+            <tocitem text="Placement settings" target="Placement settings" />
+            <tocitem text="Pairing settings" target="Pairing settings" />
+            <tocitem text="Team Placement settings" target="Team Placement settings" />
         </tocitem>
         <tocitem text="Games Options" target="Games Options" />
         <tocitem text="Preferences frame" target="Preferences frame" />

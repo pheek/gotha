@@ -160,7 +160,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
 
     private void initPnlRegisteredPlayers() throws RemoteException {
         JFrGotha.formatColumn(tblRegisteredPlayers, REG_COL, "R", 10, JLabel.LEFT, JLabel.LEFT);
-        JFrGotha.formatColumn(tblRegisteredPlayers, NAME_COL, "Name", 110, JLabel.LEFT, JLabel.LEFT);
+        JFrGotha.formatColumn(tblRegisteredPlayers, NAME_COL, "Last name", 110, JLabel.LEFT, JLabel.LEFT);
         JFrGotha.formatColumn(tblRegisteredPlayers, FIRSTNAME_COL, "First name", 80, JLabel.LEFT, JLabel.LEFT);
         JFrGotha.formatColumn(tblRegisteredPlayers, COUNTRY_COL, "Co",30,  JLabel.LEFT, JLabel.LEFT);
         JFrGotha.formatColumn(tblRegisteredPlayers, CLUB_COL, "Club", 40, JLabel.LEFT, JLabel.LEFT);
@@ -612,7 +612,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         pnlPlayer.add(lblRatingList);
         lblRatingList.setBounds(260, 10, 220, 14);
 
-        jLabel1.setText("Name");
+        jLabel1.setText("Last name");
         pnlPlayer.add(jLabel1);
         jLabel1.setBounds(10, 250, 60, 14);
 
@@ -826,7 +826,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         getContentPane().add(pnlPlayer);
         pnlPlayer.setBounds(10, 0, 494, 560);
 
-        pnlPlayersList.setBorder(javax.swing.BorderFactory.createTitledBorder("List of players"));
+        pnlPlayersList.setBorder(javax.swing.BorderFactory.createTitledBorder("Players"));
         pnlPlayersList.setLayout(null);
 
         jLabel8.setText("Registered players. Final (F)");
@@ -857,7 +857,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "R", "Name", "First name", "Co", "Club", "Rk", "Rating", "EGF Grade"
+                "R", "Last name", "First name", "Co", "Club", "Rk", "Rating", "EGF Grade"
             }
         ) {
             boolean[] canEdit = new boolean [] {

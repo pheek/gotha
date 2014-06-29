@@ -120,7 +120,7 @@
               <Font name="Tahoma" size="11" style="2"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Changing tournament system will reset system-specific parameters"/>
+            <Property name="text" type="java.lang.String" value="Changing tournament system will reset system-specific settings"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -183,7 +183,7 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="ckbResetParameters">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Keep current system but reset parameters to their default values"/>
+            <Property name="text" type="java.lang.String" value="Keep current system but reset settings to their default values"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ckbResetParametersActionPerformed"/>
@@ -205,7 +205,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
-    <Property name="title" type="java.lang.String" value="Tournament parameters"/>
+    <Property name="title" type="java.lang.String" value="Tournament settings"/>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
@@ -334,11 +334,11 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="pnlIdentification">
+            <Container class="javax.swing.JPanel" name="pnlTournamentDetails">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                    <TitledBorder title="Identification"/>
+                    <TitledBorder title="Tournament details"/>
                   </Border>
                 </Property>
               </Properties>
