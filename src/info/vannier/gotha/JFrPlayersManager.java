@@ -808,8 +808,10 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         lblPhoto.setBounds(170, 250, 80, 115);
 
         lblAgaExpirationDate.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
+        lblAgaExpirationDate.setForeground(new java.awt.Color(255, 0, 102));
+        lblAgaExpirationDate.setText("expiration date");
         pnlPlayer.add(lblAgaExpirationDate);
-        lblAgaExpirationDate.setBounds(390, 440, 90, 20);
+        lblAgaExpirationDate.setBounds(390, 455, 90, 12);
 
         jLabel13.setText("Grade");
         pnlPlayer.add(jLabel13);
@@ -1213,17 +1215,17 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         txfFirstName.setText(normalizeCase(txfFirstName.getText()));
         txfName.setText(normalizeCase(txfName.getText()));
 
-        Player p = null;
+        Player p;
 
         String strRegistration = "FIN";
         if (grpRegistration.getSelection() == rdbPreliminary.getModel()) {
             strRegistration = "PRE";
         }
 
-        int rating = Player.MIN_RATING;
+        int rating;
         int rank = Player.convertKDPToInt(txfRank.getText());
 
-        String strOrigin ="";
+        String strOrigin;
         try{
             strOrigin = txfRatingOrigin.getText().substring(0, 3);
             rating = new Integer(txfRating.getText()).intValue();
@@ -1232,7 +1234,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
             rating = Player.ratingFromRank(rank);
         }
         
-        int smmsCorrection = 0;
+        int smmsCorrection;
         try {
             String strCorr = txfSMMSCorrection.getText();
             if (strCorr.substring(0, 1).equals("+")) strCorr = strCorr.substring(1);
@@ -1361,7 +1363,14 @@ public class JFrPlayersManager extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosed
 
     private void btnChangeRatingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangeRatingActionPerformed
-        int oldRating = Integer.parseInt(this.txfRating.getText());
+        int oldRating;
+        try{
+            oldRating = Integer.parseInt(this.txfRating.getText());   
+        }
+        catch(NumberFormatException e){
+            oldRating = 0;
+        }
+        
         String strMessage = "Enter new rating (" + Player.MIN_RATING + " <= rating <= " + Player.MAX_RATING + ")";
         String strResponse = JOptionPane.showInputDialog(strMessage);
         int newRating = oldRating;

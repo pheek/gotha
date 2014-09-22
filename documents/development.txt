@@ -1,3 +1,9 @@
+OpenGothaV3.39
+**************
+21/09/2014
+Bug Fix Save issues. Fixed
+Bug Fix AGA expiration date was no longer visible. Fixed
+
 OpenGothaV3.38
 **************
 29/06/2014

@@ -52,4 +52,9 @@
 	<mapID target="Parameters tab1" url="Parameters tab.html"/>
 	<mapID target="Publish menu1" url="Publish menu.html"/>
 	<mapID target="Publish tab1" url="Publish tab.html"/>
+	<mapID target="General settings1" url="General settings.html"/>
+	<mapID target="Handicap settings1" url="Handicap settings.html"/>
+	<mapID target="Pairing settings1" url="Pairing settings.html"/>
+	<mapID target="Placement settings1" url="Placement settings.html"/>
+	<mapID target="Team Placement settings1" url="Team Placement settings.html"/>
 </map>

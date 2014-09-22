@@ -674,13 +674,13 @@ public class JFrGotha extends javax.swing.JFrame {
 
         tblStandings.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Num", "Pl", "Name", "Rank", "Score", "R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10", "R11", "R12", "R13", "R14", "R15", "R16", "R17", "R18", "R19", "R20", "crit1", "crit2", "crit3", "crit4", "crit5", "crit6"
+                "Num", "Pl", "Name", "Gr", "Co", "Cl", "NBW", "R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10", "R11", "R12", "R13", "R14", "R15", "R16", "R17", "R18", "R19", "R20", "crit1", "crit2", "crit3", "crit4", "crit5", "crit6"
             }
         ));
         tblStandings.setEnabled(false);
@@ -2665,10 +2665,14 @@ public class JFrGotha extends javax.swing.JFrame {
         String snFN;
         snFN = "" + snFile;
         
-        String rtFN;
+//        String rtFN;
+//        ArrayList<String> alRT = this.getRecentTournamentsList();
+//        rtFN = alRT.get(0);
+
+        String rtFN = "";
         ArrayList<String> alRT = this.getRecentTournamentsList();
-        rtFN = alRT.get(0);
-        
+        if (alRT != null && alRT.size() > 0) rtFN = alRT.get(0);
+
         if (!bHBSO) return snFN;
         if (rtFN.length() < 1) return snFN;
         return rtFN;
@@ -3070,9 +3074,9 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
             Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        String rtFN;
+        String rtFN = "";
         ArrayList<String> alRT = this.getRecentTournamentsList();
-        rtFN = alRT.get(0);
+        if (alRT != null && alRT.size() > 0) rtFN = alRT.get(0);
         
         String strSN ="";
         try {

@@ -34,9 +34,9 @@ import javax.swing.JProgressBar;
 public class Gotha {
 
     static Locale locale = Locale.getDefault();
-    static final long GOTHA_VERSION = 338L;
+    static final long GOTHA_VERSION = 339L;
     static final long GOTHA_MINOR_VERSION = 0L;
-    static final java.util.Date GOTHA_RELEASE_DATE = (new GregorianCalendar(2014, Calendar.JUNE, 29)).getTime();
+    static final java.util.Date GOTHA_RELEASE_DATE = (new GregorianCalendar(2014, Calendar.SEPTEMBER, 21)).getTime();
     // Data version for serialization
     static final long GOTHA_DATA_VERSION = 201L;
     
@@ -131,7 +131,7 @@ public class Gotha {
         str += "\nto 64 bits";
         str += "\nDirect Confrontation algorithm has been designed and written by";
         str += "\nMatthieu Walraet";
-        str += "\nOther contributors are Paul Baratou, Jonathan M Bresler, Claude Brisson,";
+        str += "\nOther contributors are Alan Abramson, Paul Baratou, Jonathan M Bresler, Claude Brisson,";
         str += "\nClaude Burvenich, Barkın Çelebican, Laurent Coquelet, Loïc Cuvillon,";
         str += "\nTilo Dickopp, André Engels, Krzysztof Grabowski, Bart Jacob, Marc Krauth,";
         str += "\nRoland Lezuo, Fabien Lips, Damien Martin-Guillerez, Richard Mullens, François Mizessyn,";
