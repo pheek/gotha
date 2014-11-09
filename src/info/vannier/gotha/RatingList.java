@@ -114,7 +114,7 @@ public class RatingList {
                 if (pos >= 0) {
                     strPublicationDate = strLine.substring(pos + 11, strLine.length());
                 }
-                if (strLine.length() < 58) continue;
+                if (strLine.length() < 60) continue;
                 
                 String strNF = strLine.substring(0, 38);
                 if (strNF.matches("[a-zA-Z].*")){
@@ -124,17 +124,18 @@ public class RatingList {
                     int rating = new Integer(strLine.substring(38, 43).trim()).intValue();
                     String strFfgLicenceStatus = strLine.substring(44, 45); 
                     String strFfgLicence = strLine.substring(46, 53);
-                    String strCC = strLine.substring(54, 58).trim();
-                    String strCountry;
-                    String strClub;
-                    if (strCC.length() <= 2){
-                        strCountry = strCC;
-                        strClub = "";
-                    }
-                    else{
-                        strCountry = "";
-                        strClub = strCC;
-                    }
+//                    String strCC = strLine.substring(54, 58).trim();
+                    String strClub = strLine.substring(54, 58).trim();
+                    String strCountry = strLine.substring(59, 61).trim();
+                    
+//                    if (strCC.length() <= 2){
+//                        strCountry = strCC;
+//                        strClub = "";
+//                    }
+//                    else{
+//                        strCountry = "";
+//                        strClub = strCC;
+//                    }
 
                      RatedPlayer rP = new RatedPlayer(
                             "", strFfgLicence, strFfgLicenceStatus, "", "", strName, strFirstName, strCountry, strClub, rating, "", "FFG");
@@ -258,7 +259,29 @@ public class RatingList {
         return rp;
         
     }
-            
+  
+    /**
+     * Search a RatedPlayer by AGAId
+     * @param strId
+     * @return 
+     */
+    
+    public int getRatedPlayerByAGAID(String strId){
+        int nbRP = alRatedPlayers.size();
+        for (int i = 0; i < nbRP; i++){
+            RatedPlayer rp = alRatedPlayers.get(i);
+            if (rp.getAgaId().contentEquals(strId)) return i;
+        }
+        return -1;     
+    }
+
+//    public RatedPlayer getRatedPlayerByAGAID(String strId){
+//        for (RatedPlayer rp : this.alRatedPlayers){
+//            if (rp.getAgaId().contentEquals(strId)) return rp;
+//        }
+//        return null;     
+//    }
+    
     public String getStrPublicationDate() {
         return strPublicationDate;
     }

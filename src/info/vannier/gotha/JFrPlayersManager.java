@@ -103,25 +103,24 @@ public class JFrPlayersManager extends javax.swing.JFrame {
             tabCkbParticipation[i].setText("" + (i + 1));
             tabCkbParticipation[i].setFont(new Font("Default", Font.PLAIN, 9));
             pnlParticipation.add(tabCkbParticipation[i]);
-//            tabCkbParticipation[i].setBounds((i % 5) * 42 + 4, (i / 5) * 25 + 20, 40, 15);
             tabCkbParticipation[i].setBounds((i % 5) * 42 + 4, (i / 5) * 20 + 20, 40, 15);
         }
                
         getRootPane().setDefaultButton(btnRegister);
 
-        initCountryList();
+        initCountriesList();
         initRatingListControls();
         resetPlayerControls();
         initPnlRegisteredPlayers();
     }
 
-    private void initCountryList(){
+    private void initCountriesList(){
         File f = new File(Gotha.runningDirectory, "documents/iso_3166-1_list_en.xml");
         if (f == null) {
             System.out.println("Country list file not found");
             return;
         }
-        ArrayList<Country> alCountries = CountryList.importCountriesFromXMLFile(f);
+        ArrayList<Country> alCountries = CountriesList.importCountriesFromXMLFile(f);
         this.cbxCountry.removeAllItems();
         this.cbxCountry.addItem("  ");
 
@@ -143,6 +142,8 @@ public class JFrPlayersManager extends javax.swing.JFrame {
             rlType = RatingList.TYPE_UNDEFINED;
         }
         this.ckbRatingList.setSelected(true);
+        this.btnSearchId.setVisible(false);
+        this.txfSearchId.setVisible(false);
         switch(rlType){
             case RatingList.TYPE_UNDEFINED :
                 this.ckbRatingList.setSelected(false); break;
@@ -151,7 +152,9 @@ public class JFrPlayersManager extends javax.swing.JFrame {
             case RatingList.TYPE_FFG :
                 this.rdbFFG.setSelected(true); break;
             case RatingList.TYPE_AGA :
-                this.rdbAGA.setSelected(true); break;
+                this.rdbAGA.setSelected(true); 
+                this.btnSearchId.setVisible(true);
+                this.txfSearchId.setVisible(true); break;
         }     
 
         this.resetRatingListControls();
@@ -217,6 +220,8 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         this.btnUpdateRatingList.setVisible(bRL);
         this.rdbFirstCharacters.setVisible(bRL);
         this.rdbLevenshtein.setVisible(bRL);
+        this.btnSearchId.setVisible(false);
+        this.txfSearchId.setVisible(false);
                 
         int rlType = RatingList.TYPE_UNDEFINED;
         if (bRL){
@@ -239,6 +244,9 @@ public class JFrPlayersManager extends javax.swing.JFrame {
                 break;
             case RatingList.TYPE_AGA :
                 this.btnUpdateRatingList.setText("Update AGA rating list from ...");
+                this.btnSearchId.setVisible(true);
+                this.txfSearchId.setVisible(true);
+
                 break;
             default :
                 this.btnUpdateRatingList.setText("Update rating list");
@@ -354,6 +362,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         mniSortByName = new javax.swing.JMenuItem();
         mniSortByGrade = new javax.swing.JMenuItem();
         mniSortByRank = new javax.swing.JMenuItem();
+        mniSortByRating = new javax.swing.JMenuItem();
         mniRemovePlayer = new javax.swing.JMenuItem();
         mniModifyPlayer = new javax.swing.JMenuItem();
         jSeparator5 = new javax.swing.JPopupMenu.Separator();
@@ -405,6 +414,8 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         rdbAGA = new javax.swing.JRadioButton();
         rdbEGF = new javax.swing.JRadioButton();
         btnUpdateRatingList = new javax.swing.JButton();
+        btnSearchId = new javax.swing.JButton();
+        txfSearchId = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         txfAgaId = new javax.swing.JTextField();
         lblPhoto = new javax.swing.JLabel();
@@ -419,7 +430,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         scpRegisteredPlayers = new javax.swing.JScrollPane();
         tblRegisteredPlayers = new javax.swing.JTable();
         btnPrint = new javax.swing.JButton();
-        btnQuit = new javax.swing.JButton();
+        btnClose = new javax.swing.JButton();
         btnHelp = new javax.swing.JButton();
 
         pupRegisteredPlayers.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
@@ -447,6 +458,14 @@ public class JFrPlayersManager extends javax.swing.JFrame {
             }
         });
         pupRegisteredPlayers.add(mniSortByRank);
+
+        mniSortByRating.setText("Sort by rating");
+        mniSortByRating.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniSortByRatingActionPerformed(evt);
+            }
+        });
+        pupRegisteredPlayers.add(mniSortByRating);
 
         mniRemovePlayer.setText("Remove player");
         mniRemovePlayer.addActionListener(new java.awt.event.ActionListener() {
@@ -799,6 +818,17 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         pnlPlayer.add(btnUpdateRatingList);
         btnUpdateRatingList.setBounds(20, 110, 220, 23);
 
+        btnSearchId.setText("Search by Id");
+        btnSearchId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchIdActionPerformed(evt);
+            }
+        });
+        pnlPlayer.add(btnSearchId);
+        btnSearchId.setBounds(260, 200, 120, 20);
+        pnlPlayer.add(txfSearchId);
+        txfSearchId.setBounds(390, 200, 90, 20);
+
         jLabel12.setText("AGA ID");
         pnlPlayer.add(jLabel12);
         jLabel12.setBounds(330, 435, 60, 14);
@@ -898,14 +928,14 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         getContentPane().add(pnlPlayersList);
         pnlPlayersList.setBounds(510, 0, 470, 520);
 
-        btnQuit.setText("Close");
-        btnQuit.addActionListener(new java.awt.event.ActionListener() {
+        btnClose.setText("Close");
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnQuitActionPerformed(evt);
+                btnCloseActionPerformed(evt);
             }
         });
-        getContentPane().add(btnQuit);
-        btnQuit.setBounds(640, 530, 330, 30);
+        getContentPane().add(btnClose);
+        btnClose.setBounds(640, 530, 330, 30);
 
         btnHelp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/info/vannier/gotha/gothalogo16.jpg"))); // NOI18N
         btnHelp.setText("help");
@@ -1055,9 +1085,9 @@ public class JFrPlayersManager extends javax.swing.JFrame {
         pupRegisteredPlayers.setVisible(true);        
     }//GEN-LAST:event_tblRegisteredPlayersMouseClicked
 
-    private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
         this.dispose();
-    }//GEN-LAST:event_btnQuitActionPerformed
+    }//GEN-LAST:event_btnCloseActionPerformed
 
     private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintActionPerformed
         TournamentPrinting.printPlayersList(tournament, playersSortType);
@@ -1163,7 +1193,8 @@ public class JFrPlayersManager extends javax.swing.JFrame {
                 break;
             case RatingList.TYPE_FFG:
                 lblRatingList.setText("Searching for FFG rating list");
-                ratingList = new RatingList(RatingList.TYPE_FFG, new File(Gotha.runningDirectory, "ratinglists/ech_ffg_new.txt"));
+//                ratingList = new RatingList(RatingList.TYPE_FFG, new File(Gotha.runningDirectory, "ratinglists/ech_ffg_new.txt"));
+                ratingList = new RatingList(RatingList.TYPE_FFG, new File(Gotha.runningDirectory, "ratinglists/ech_ffg_V3.txt"));
                 break;
             case RatingList.TYPE_AGA:
                 lblRatingList.setText("Searching for AGA rating list");
@@ -1441,8 +1472,10 @@ public class JFrPlayersManager extends javax.swing.JFrame {
                 strPrompt = "Download EGF Rating List from :";
                 break;
             case RatingList.TYPE_FFG:
-                strDefaultURL = "http://ffg.jeudego.org/echelle/echtxt/ech_ffg_new.txt";
-                fDefaultFile = new File(Gotha.runningDirectory, "ratinglists/ech_ffg_new.txt");
+//                strDefaultURL = "http://ffg.jeudego.org/echelle/echtxt/ech_ffg_new.txt";
+                strDefaultURL = "http://ffg.jeudego.org/echelle/echtxt/ech_ffg_V3.txt";
+//                fDefaultFile = new File(Gotha.runningDirectory, "ratinglists/ech_ffg_new.txt");
+                fDefaultFile = new File(Gotha.runningDirectory, "ratinglists/ech_ffg_V3.txt");
                 strPrompt = "Download FFG Rating List from :";
                 break;
             case RatingList.TYPE_AGA:
@@ -1484,6 +1517,26 @@ public class JFrPlayersManager extends javax.swing.JFrame {
             Logger.getLogger(JFrPlayersManager.class.getName()).log(Level.SEVERE, null, ex);
         }        
     }//GEN-LAST:event_mniSortByGradeActionPerformed
+
+    private void mniSortByRatingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniSortByRatingActionPerformed
+        playersSortType = PlayerComparator.RATING_ORDER;
+        pupRegisteredPlayers.setVisible(false);
+        try {
+            updatePnlRegisteredPlayers(tournament.playersList());
+        } catch (RemoteException ex) {
+            Logger.getLogger(JFrPlayersManager.class.getName()).log(Level.SEVERE, null, ex);
+        }        
+    }//GEN-LAST:event_mniSortByRatingActionPerformed
+
+    private void btnSearchIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchIdActionPerformed
+        String strId = this.txfSearchId.getText();
+        strId = strId.trim();
+        int iRP = this.ratingList.getRatedPlayerByAGAID(strId);
+        if (iRP < 0) return;
+        this.updatePlayerControlsFromRatingList(iRP);
+        
+        
+    }//GEN-LAST:event_btnSearchIdActionPerformed
     
     private void manageRankGradeAndRatingValues(){
         if (txfRank.getText().equals("") && !txfGrade.getText().equals("")){
@@ -1507,11 +1560,12 @@ public class JFrPlayersManager extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnChangeRating;
+    private javax.swing.JButton btnClose;
     private javax.swing.JButton btnHelp;
     private javax.swing.JButton btnPrint;
-    private javax.swing.JButton btnQuit;
     private javax.swing.JButton btnRegister;
     private javax.swing.JButton btnReset;
+    private javax.swing.JButton btnSearchId;
     private javax.swing.JButton btnUpdateRatingList;
     private javax.swing.JComboBox cbxCountry;
     private javax.swing.JComboBox cbxRatingList;
@@ -1546,6 +1600,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
     private javax.swing.JMenuItem mniSortByGrade;
     private javax.swing.JMenuItem mniSortByName;
     private javax.swing.JMenuItem mniSortByRank;
+    private javax.swing.JMenuItem mniSortByRating;
     private javax.swing.JProgressBar pgbRatingList;
     private javax.swing.JPanel pnlParticipation;
     private javax.swing.JPanel pnlPlayer;
@@ -1580,6 +1635,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
     private javax.swing.JTextField txfRating;
     private javax.swing.JTextField txfRatingOrigin;
     private javax.swing.JTextField txfSMMSCorrection;
+    private javax.swing.JTextField txfSearchId;
     private javax.swing.JTextPane txpWelcomeSheet;
     // End of variables declaration//GEN-END:variables
     // Custom variable declarations. Editable

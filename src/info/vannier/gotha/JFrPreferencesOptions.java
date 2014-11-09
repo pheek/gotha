@@ -51,7 +51,7 @@ public class JFrPreferencesOptions extends javax.swing.JFrame {
 
         grpHelpLanguage = new javax.swing.ButtonGroup();
         pnlPref = new javax.swing.JPanel();
-        btnQuit = new javax.swing.JButton();
+        btnClose = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
         pnlInternetAccess = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -67,14 +67,14 @@ public class JFrPreferencesOptions extends javax.swing.JFrame {
 
         pnlPref.setLayout(null);
 
-        btnQuit.setText("Close");
-        btnQuit.addActionListener(new java.awt.event.ActionListener() {
+        btnClose.setText("Close");
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnQuitActionPerformed(evt);
+                btnCloseActionPerformed(evt);
             }
         });
-        pnlPref.add(btnQuit);
-        btnQuit.setBounds(150, 280, 250, 30);
+        pnlPref.add(btnClose);
+        btnClose.setBounds(150, 280, 250, 30);
 
         btnClear.setText("Clear OpenGotha Preferences");
         btnClear.addActionListener(new java.awt.event.ActionListener() {
@@ -141,9 +141,9 @@ public class JFrPreferencesOptions extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
         dispose();
-}//GEN-LAST:event_btnQuitActionPerformed
+}//GEN-LAST:event_btnCloseActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         Preferences prefsRoot = Preferences.userRoot();
@@ -198,8 +198,8 @@ public class JFrPreferencesOptions extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnClose;
     private javax.swing.JButton btnHelp;
-    private javax.swing.JButton btnQuit;
     private javax.swing.JCheckBox ckbJournaling;
     private javax.swing.JCheckBox ckbPhotos;
     private javax.swing.JCheckBox ckbRatingLists;

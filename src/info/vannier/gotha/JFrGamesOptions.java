@@ -61,7 +61,7 @@ public class JFrGamesOptions extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txfSize = new javax.swing.JTextField();
         txfKomi = new javax.swing.JTextField();
-        btnQuit = new javax.swing.JButton();
+        btnClose = new javax.swing.JButton();
         btnHelp = new javax.swing.JButton();
         pnlTime = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -113,14 +113,14 @@ public class JFrGamesOptions extends javax.swing.JFrame {
         pnlGam.add(txfKomi);
         txfKomi.setBounds(170, 80, 50, 20);
 
-        btnQuit.setText("Close");
-        btnQuit.addActionListener(new java.awt.event.ActionListener() {
+        btnClose.setText("Close");
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnQuitActionPerformed(evt);
+                btnCloseActionPerformed(evt);
             }
         });
-        pnlGam.add(btnQuit);
-        btnQuit.setBounds(140, 460, 200, 30);
+        pnlGam.add(btnClose);
+        btnClose.setBounds(140, 460, 200, 30);
 
         btnHelp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/info/vannier/gotha/gothalogo16.jpg"))); // NOI18N
         btnHelp.setText("help");
@@ -305,9 +305,9 @@ public class JFrGamesOptions extends javax.swing.JFrame {
 
     }//GEN-LAST:event_txfBasicTimeFocusLost
 
-    private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
         dispose();
-    }//GEN-LAST:event_btnQuitActionPerformed
+    }//GEN-LAST:event_btnCloseActionPerformed
 
     private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHelpActionPerformed
         Gotha.displayGothaHelp("Games Options");
@@ -529,8 +529,8 @@ public class JFrGamesOptions extends javax.swing.JFrame {
         
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnClose;
     private javax.swing.JButton btnHelp;
-    private javax.swing.JButton btnQuit;
     private javax.swing.ButtonGroup grpComplTimeSystem;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

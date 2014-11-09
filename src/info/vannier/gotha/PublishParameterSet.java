@@ -7,7 +7,8 @@ package info.vannier.gotha;
 public class PublishParameterSet implements java.io.Serializable{   
     private boolean print = true;
     private boolean exportToLocalFile   = true;
-    private boolean exportToOGSite = false;
+    private boolean exportHFToOGSite = false;
+    private boolean exportTFToOGSite = true;
     private boolean exportToUDSite = false;
 
     public PublishParameterSet() {             
@@ -32,7 +33,8 @@ public class PublishParameterSet implements java.io.Serializable{
     public void commonInit(){
         this.print = true;
         this.exportToLocalFile = true;
-        this.exportToOGSite = false;
+        this.exportHFToOGSite = false;
+        this.exportTFToOGSite = false;
         this.exportToUDSite = false;
     }
 
@@ -65,17 +67,30 @@ public class PublishParameterSet implements java.io.Serializable{
     }
 
     /**
-     * @return the exportToOGSite
+     * @return the exportHFToOGSite
      */
-    public boolean isExportToOGSite() {
-        return exportToOGSite;
+    public boolean isExportHFToOGSite() {
+        return exportHFToOGSite;
     }
 
     /**
-     * @param exportToOGSite the exportToOGSite to set
+     * @param exportHFToOGSite the exportHFToOGSite to set
      */
-    public void setExportToOGSite(boolean exportToOGSite) {
-        this.exportToOGSite = exportToOGSite;
+    public void setExportHFToOGSite(boolean exportToOGSite) {
+        this.exportHFToOGSite = exportToOGSite;
+    }
+    /**
+     * @return the exportTFToOGSite
+     */
+    public boolean isExportTFToOGSite() {
+        return exportTFToOGSite;
+    }
+
+    /**
+     * @param exportTFToOGSite the exportHFToOGSite to set
+     */
+    public void setExportTFToOGSite(boolean exportTFToOGSite) {
+        this.exportTFToOGSite = exportTFToOGSite;
     }
 
     /**

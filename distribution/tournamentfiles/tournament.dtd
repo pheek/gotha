@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!ELEMENT Tournament (Players?, Games?, ByePlayers?, Teams?, TournamentParameterSet?, TeamTournamentParameterSet?)>
+<!ELEMENT Tournament (Players?, Games?, ByePlayers?, Teams?, TournamentParameterSet?, TeamTournamentParameterSet?, ClubsGroups?)>
 <!ATTLIST Tournament dataVersion CDATA "200">
 <!ELEMENT Players (Player*)>
 <!ELEMENT Games (Game*)>
@@ -118,7 +118,8 @@
 <!ELEMENT PublishParameterSet (#PCDATA)>
 <!ATTLIST PublishParameterSet print CDATA "true">
 <!ATTLIST PublishParameterSet exportToLocalFile CDATA "true">
-<!ATTLIST PublishParameterSet exportToOGSite CDATA "false">
+<!ATTLIST PublishParameterSet exportHFToOGSite CDATA "false">
+<!ATTLIST PublishParameterSet exportTFToOGSite CDATA "true">
 <!ATTLIST PublishParameterSet exportToUDSite CDATA "false">
 
 <!ELEMENT PairingParameterSet (#PCDATA)>
@@ -146,6 +147,7 @@
 <!ATTLIST PairingParameterSet paiSeMinimizeHandicap                     CDATA "0">
 <!ATTLIST PairingParameterSet paiSeAvoidSameGeo                         CDATA "100000000000">
 <!ATTLIST PairingParameterSet paiSePreferMMSDiffRatherThanSameCountry   CDATA "1">
+<!ATTLIST PairingParameterSet paiSePreferMMSDiffRatherThanSameClubsGroup CDATA "2">
 <!ATTLIST PairingParameterSet paiSePreferMMSDiffRatherThanSameClub      CDATA "3">
 
 <!ELEMENT TeamTournamentParameterSet (TeamGeneralParameterSet?, TeamPlacementParameterSet?)>
@@ -154,3 +156,9 @@
 <!ATTLIST TeamGeneralParameterSet teamSize CDATA "4">
 
 <!ELEMENT TeamPlacementParameterSet (PlacementCriteria)>
+
+<!ELEMENT ClubsGroups (ClubsGroup*)>
+<!ELEMENT ClubsGroup (Club*)>
+<!ATTLIST ClubsGroup name CDATA #REQUIRED>
+<!ELEMENT Club  (#PCDATA)>
+<!ATTLIST Club name CDATA #REQUIRED>

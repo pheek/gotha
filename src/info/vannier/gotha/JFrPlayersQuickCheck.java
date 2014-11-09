@@ -85,7 +85,7 @@ public class JFrPlayersQuickCheck extends javax.swing.JFrame{
         jSeparator5 = new javax.swing.JPopupMenu.Separator();
         mniCancel = new javax.swing.JMenuItem();
         pnlInternal = new javax.swing.JPanel();
-        btnQuit = new javax.swing.JButton();
+        btnClose = new javax.swing.JButton();
         pnlPlayersList = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -149,14 +149,14 @@ public class JFrPlayersQuickCheck extends javax.swing.JFrame{
 
         pnlInternal.setLayout(null);
 
-        btnQuit.setText("Close");
-        btnQuit.addActionListener(new java.awt.event.ActionListener() {
+        btnClose.setText("Close");
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnQuitActionPerformed(evt);
+                btnCloseActionPerformed(evt);
             }
         });
-        pnlInternal.add(btnQuit);
-        btnQuit.setBounds(150, 470, 590, 30);
+        pnlInternal.add(btnClose);
+        btnClose.setBounds(150, 470, 590, 30);
 
         pnlPlayersList.setBorder(javax.swing.BorderFactory.createTitledBorder("Players"));
         pnlPlayersList.setLayout(null);
@@ -707,9 +707,9 @@ public class JFrPlayersQuickCheck extends javax.swing.JFrame{
 
     
     
-    private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
         dispose();
-    }//GEN-LAST:event_btnQuitActionPerformed
+    }//GEN-LAST:event_btnCloseActionPerformed
 
     private void tblRegisteredPlayersKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblRegisteredPlayersKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_DELETE){
@@ -973,12 +973,12 @@ public class JFrPlayersQuickCheck extends javax.swing.JFrame{
        
   
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnClose;
     private javax.swing.JButton btnDecreaseRank;
     private javax.swing.JButton btnHelp;
     private javax.swing.JButton btnIncreaseRank;
     private javax.swing.JButton btnModifyRatings;
     private javax.swing.JButton btnPrint;
-    private javax.swing.JButton btnQuit;
     private javax.swing.JButton btnRemovePrePlayers;
     private javax.swing.JButton btnSetRanksFromRatings;
     private javax.swing.JButton btnSetRatingsFromRanks;

@@ -82,7 +82,7 @@ public class JFrPlayersMMG extends javax.swing.JFrame{
         tblMMG0 = new javax.swing.JTable();
         txfNbPlayersMMG0 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        btnQuit = new javax.swing.JButton();
+        btnClose = new javax.swing.JButton();
         pnlMMG1 = new javax.swing.JPanel();
         scpMMG1 = new javax.swing.JScrollPane();
         tblMMG1 = new javax.swing.JTable();
@@ -149,14 +149,14 @@ public class JFrPlayersMMG extends javax.swing.JFrame{
         pnlInternal.add(pnlMMG0);
         pnlMMG0.setBounds(10, 10, 290, 300);
 
-        btnQuit.setText("Close");
-        btnQuit.addActionListener(new java.awt.event.ActionListener() {
+        btnClose.setText("Close");
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnQuitActionPerformed(evt);
+                btnCloseActionPerformed(evt);
             }
         });
-        pnlInternal.add(btnQuit);
-        btnQuit.setBounds(480, 530, 500, 30);
+        pnlInternal.add(btnClose);
+        btnClose.setBounds(480, 530, 500, 30);
 
         pnlMMG1.setBorder(javax.swing.BorderFactory.createTitledBorder("Bar + 1 (Super Group)"));
         pnlMMG1.setLayout(null);
@@ -683,9 +683,9 @@ public class JFrPlayersMMG extends javax.swing.JFrame{
     }        
  
         
-    private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
         dispose();
-    }//GEN-LAST:event_btnQuitActionPerformed
+    }//GEN-LAST:event_btnCloseActionPerformed
 
     private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHelpActionPerformed
         Gotha.displayGothaHelp("McMahon groups frame");
@@ -699,9 +699,9 @@ public class JFrPlayersMMG extends javax.swing.JFrame{
     private javax.swing.JButton btn1_0;
     private javax.swing.JButton btn1_2;
     private javax.swing.JButton btn2_1;
+    private javax.swing.JButton btnClose;
     private javax.swing.JButton btnHelp;
     private javax.swing.JButton btnM1_0;
-    private javax.swing.JButton btnQuit;
     private javax.swing.JButton btnResetOnRk;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

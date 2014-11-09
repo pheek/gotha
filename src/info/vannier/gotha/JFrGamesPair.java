@@ -545,7 +545,7 @@ public class JFrGamesPair extends javax.swing.JFrame {
         ckbIntraCountry = new javax.swing.JCheckBox();
         ckbIntraClub = new javax.swing.JCheckBox();
         btnGenerateReport = new javax.swing.JButton();
-        btnDlgPairingReportQuit = new javax.swing.JButton();
+        btnDlgPairingReportClose = new javax.swing.JButton();
         ckbUnbalancedMMSDUDDPlayers = new javax.swing.JCheckBox();
         scpReport = new javax.swing.JScrollPane();
         txaReport = new javax.swing.JTextArea();
@@ -590,7 +590,7 @@ public class JFrGamesPair extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         btnByePlayer = new javax.swing.JButton();
         lblByePlayer = new javax.swing.JLabel();
-        btnQuit = new javax.swing.JButton();
+        btnClose = new javax.swing.JButton();
         spnRoundNumber = new javax.swing.JSpinner();
         btnHelp = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
@@ -690,14 +690,14 @@ public class JFrGamesPair extends javax.swing.JFrame {
         dlgPairingReport.getContentPane().add(btnGenerateReport);
         btnGenerateReport.setBounds(10, 290, 300, 23);
 
-        btnDlgPairingReportQuit.setText("Quit");
-        btnDlgPairingReportQuit.addActionListener(new java.awt.event.ActionListener() {
+        btnDlgPairingReportClose.setText("Close");
+        btnDlgPairingReportClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDlgPairingReportQuitActionPerformed(evt);
+                btnDlgPairingReportCloseActionPerformed(evt);
             }
         });
-        dlgPairingReport.getContentPane().add(btnDlgPairingReportQuit);
-        btnDlgPairingReportQuit.setBounds(10, 480, 770, 23);
+        dlgPairingReport.getContentPane().add(btnDlgPairingReportClose);
+        btnDlgPairingReportClose.setBounds(10, 480, 770, 23);
 
         ckbUnbalancedMMSDUDDPlayers.setSelected(true);
         ckbUnbalancedMMSDUDDPlayers.setText("Unbalanced MMS draw up/down players  ");
@@ -1024,14 +1024,14 @@ public class JFrGamesPair extends javax.swing.JFrame {
         pnlInternal.add(lblByePlayer);
         lblByePlayer.setBounds(280, 310, 110, 14);
 
-        btnQuit.setText("Close");
-        btnQuit.addActionListener(new java.awt.event.ActionListener() {
+        btnClose.setText("Close");
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnQuitActionPerformed(evt);
+                btnCloseActionPerformed(evt);
             }
         });
-        pnlInternal.add(btnQuit);
-        btnQuit.setBounds(410, 480, 360, 30);
+        pnlInternal.add(btnClose);
+        btnClose.setBounds(410, 480, 360, 30);
 
         spnRoundNumber.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -1391,9 +1391,9 @@ public class JFrGamesPair extends javax.swing.JFrame {
         this.tournamentChanged();
     }//GEN-LAST:event_btnPairActionPerformed
 
-    private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
         dispose();
-    }//GEN-LAST:event_btnQuitActionPerformed
+    }//GEN-LAST:event_btnCloseActionPerformed
 
     private void spnRoundNumberStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spnRoundNumberStateChanged
         int demandedRN = (Integer) (spnRoundNumber.getValue()) - 1;
@@ -1447,9 +1447,9 @@ public class JFrGamesPair extends javax.swing.JFrame {
         txaReport.setText(strReport);
     }//GEN-LAST:event_btnGenerateReportActionPerformed
 
-    private void btnDlgPairingReportQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDlgPairingReportQuitActionPerformed
+    private void btnDlgPairingReportCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDlgPairingReportCloseActionPerformed
         this.dlgPairingReport.dispose();
-    }//GEN-LAST:event_btnDlgPairingReportQuitActionPerformed
+    }//GEN-LAST:event_btnDlgPairingReportCloseActionPerformed
 
     private void mniCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniCancelActionPerformed
         this.pupGames.setVisible(false);
@@ -1678,12 +1678,12 @@ public class JFrGamesPair extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnByePlayer;
-    private javax.swing.JButton btnDlgPairingReportQuit;
+    private javax.swing.JButton btnClose;
+    private javax.swing.JButton btnDlgPairingReportClose;
     private javax.swing.JButton btnGenerateReport;
     private javax.swing.JButton btnHelp;
     private javax.swing.JButton btnPair;
     private javax.swing.JButton btnPrint;
-    private javax.swing.JButton btnQuit;
     private javax.swing.JButton btnReport;
     private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnUnpair;

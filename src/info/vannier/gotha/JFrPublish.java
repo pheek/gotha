@@ -107,12 +107,13 @@ public class JFrPublish extends javax.swing.JFrame {
         pnlPar = new javax.swing.JPanel();
         ckbPrint = new javax.swing.JCheckBox();
         ckbExportToLocalFile = new javax.swing.JCheckBox();
-        ckbExportToOGSite = new javax.swing.JCheckBox();
+        ckbExportHFToOGSite = new javax.swing.JCheckBox();
         ckbExportToUDSite = new javax.swing.JCheckBox();
         btnTestFTP = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         pnlQR = new javax.swing.JPanel();
         lblQR = new javax.swing.JLabel();
+        ckbExportTFToOGSite = new javax.swing.JCheckBox();
         pnlPub = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         spnRoundNumber = new javax.swing.JSpinner();
@@ -422,16 +423,16 @@ public class JFrPublish extends javax.swing.JFrame {
         pnlPar.add(ckbExportToLocalFile);
         ckbExportToLocalFile.setBounds(30, 100, 240, 23);
 
-        ckbExportToOGSite.setSelected(true);
-        ckbExportToOGSite.setText("Export to OpenGotha Site");
-        ckbExportToOGSite.setToolTipText("Check this checkbox to enable real-time acess to OpenGotha files from any computer, tablet or smartphone.");
-        ckbExportToOGSite.addActionListener(new java.awt.event.ActionListener() {
+        ckbExportHFToOGSite.setSelected(true);
+        ckbExportHFToOGSite.setText("Export html files to OpenGotha Site");
+        ckbExportHFToOGSite.setToolTipText("Check this checkbox to enable real-time acess to OpenGotha files from any computer, tablet or smartphone.");
+        ckbExportHFToOGSite.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 allParametersCKBActionPerformed(evt);
             }
         });
-        pnlPar.add(ckbExportToOGSite);
-        ckbExportToOGSite.setBounds(30, 140, 220, 23);
+        pnlPar.add(ckbExportHFToOGSite);
+        ckbExportHFToOGSite.setBounds(30, 180, 280, 23);
 
         ckbExportToUDSite.setText("Export to User Defined Site");
         ckbExportToUDSite.setEnabled(false);
@@ -441,7 +442,7 @@ public class JFrPublish extends javax.swing.JFrame {
             }
         });
         pnlPar.add(ckbExportToUDSite);
-        ckbExportToUDSite.setBounds(30, 310, 210, 23);
+        ckbExportToUDSite.setBounds(30, 350, 210, 23);
 
         btnTestFTP.setText("Test FTP");
         btnTestFTP.addActionListener(new java.awt.event.ActionListener() {
@@ -450,7 +451,7 @@ public class JFrPublish extends javax.swing.JFrame {
             }
         });
         pnlPar.add(btnTestFTP);
-        btnTestFTP.setBounds(270, 140, 90, 20);
+        btnTestFTP.setBounds(310, 180, 90, 20);
 
         jLabel11.setText("Publish buttons will launch the following actions :");
         pnlPar.add(jLabel11);
@@ -468,13 +469,24 @@ public class JFrPublish extends javax.swing.JFrame {
         );
 
         pnlPar.add(pnlQR);
-        pnlQR.setBounds(270, 180, 100, 100);
+        pnlQR.setBounds(310, 220, 100, 100);
 
         lblQR.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         lblQR.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblQR.setText("http://opengotha.info/tournaments/...");
         pnlPar.add(lblQR);
-        lblQR.setBounds(140, 280, 370, 20);
+        lblQR.setBounds(180, 320, 370, 20);
+
+        ckbExportTFToOGSite.setSelected(true);
+        ckbExportTFToOGSite.setText("Export tournament file to OpenGotha Site");
+        ckbExportTFToOGSite.setToolTipText("Check this checkbox to enable real-time acess to OpenGotha files from any computer, tablet or smartphone.");
+        ckbExportTFToOGSite.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                allParametersCKBActionPerformed(evt);
+            }
+        });
+        pnlPar.add(ckbExportTFToOGSite);
+        ckbExportTFToOGSite.setBounds(30, 140, 280, 23);
 
         tpnPublish.addTab("Parameters", pnlPar);
 
@@ -991,10 +1003,16 @@ public class JFrPublish extends javax.swing.JFrame {
             pubPS.setExportToLocalFile(newValue);
             somethingHasChanged = true;
         }
-        oldValue = pubPS.isExportToOGSite();
-        newValue = this.ckbExportToOGSite.isSelected();
+        oldValue = pubPS.isExportHFToOGSite();
+        newValue = this.ckbExportHFToOGSite.isSelected();
         if (newValue != oldValue) {
-            pubPS.setExportToOGSite(newValue);
+            pubPS.setExportHFToOGSite(newValue);
+            somethingHasChanged = true;
+        }
+        oldValue = pubPS.isExportTFToOGSite();
+        newValue = this.ckbExportTFToOGSite.isSelected();
+        if (newValue != oldValue) {
+            pubPS.setExportTFToOGSite(newValue);
             somethingHasChanged = true;
         }
         oldValue = pubPS.isExportToUDSite();
@@ -1182,11 +1200,12 @@ public class JFrPublish extends javax.swing.JFrame {
 
         this.ckbPrint.setSelected(pubPS.isPrint());
         this.ckbExportToLocalFile.setSelected(pubPS.isExportToLocalFile());
-        this.ckbExportToOGSite.setSelected(pubPS.isExportToOGSite());
+        this.ckbExportHFToOGSite.setSelected(pubPS.isExportHFToOGSite());
+        this.ckbExportTFToOGSite.setSelected(pubPS.isExportTFToOGSite());
         this.ckbExportToUDSite.setSelected(pubPS.isExportToUDSite());
         
         // Aceess to opengotha.info
-        boolean bExportOG = pubPS.isExportToOGSite();
+        boolean bExportOG = pubPS.isExportHFToOGSite();
         if (bExportOG) {
             String dirName = new SimpleDateFormat("yyyyMMdd").format(gps.getBeginDate()) + tournament.getShortName() + "/";
             String strURL = "http://opengotha.info/tournaments/" + dirName;
@@ -1230,8 +1249,9 @@ public class JFrPublish extends javax.swing.JFrame {
     private javax.swing.JCheckBox ckbDisplayIndGames;
     private javax.swing.JCheckBox ckbDisplayNumCol;
     private javax.swing.JCheckBox ckbDisplayPlCol;
+    private javax.swing.JCheckBox ckbExportHFToOGSite;
+    private javax.swing.JCheckBox ckbExportTFToOGSite;
     private javax.swing.JCheckBox ckbExportToLocalFile;
-    private javax.swing.JCheckBox ckbExportToOGSite;
     private javax.swing.JCheckBox ckbExportToUDSite;
     private javax.swing.JCheckBox ckbKeepIDs;
     private javax.swing.JCheckBox ckbPrint;

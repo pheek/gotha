@@ -76,7 +76,7 @@ public class JFrToolsMemory extends javax.swing.JFrame {
         txfMaxMem = new javax.swing.JTextField();
         txfUsedMem = new javax.swing.JTextField();
         btnRunGB = new javax.swing.JButton();
-        btnQuit = new javax.swing.JButton();
+        btnClose = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Memory Manager");
@@ -107,21 +107,21 @@ public class JFrToolsMemory extends javax.swing.JFrame {
         getContentPane().add(btnRunGB);
         btnRunGB.setBounds(70, 110, 240, 23);
 
-        btnQuit.setText("Close");
-        btnQuit.addActionListener(new java.awt.event.ActionListener() {
+        btnClose.setText("Close");
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnQuitActionPerformed(evt);
+                btnCloseActionPerformed(evt);
             }
         });
-        getContentPane().add(btnQuit);
-        btnQuit.setBounds(20, 160, 330, 23);
+        getContentPane().add(btnClose);
+        btnClose.setBounds(20, 160, 330, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
         dispose();
-    }//GEN-LAST:event_btnQuitActionPerformed
+    }//GEN-LAST:event_btnCloseActionPerformed
 
     private void btnRunGBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRunGBActionPerformed
         Runtime.getRuntime().gc();
@@ -140,7 +140,7 @@ public class JFrToolsMemory extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnQuit;
+    private javax.swing.JButton btnClose;
     private javax.swing.JButton btnRunGB;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

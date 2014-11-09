@@ -59,7 +59,7 @@ public class TournamentPublishing {
         File f;
         f = exportToLocalFile(tournament, tps, roundNumber, type, subtype);
         
-        if (pubPS.isExportToOGSite()) sendByFTPToOGSite(tournament, f);
+        if (pubPS.isExportHFToOGSite()) sendByFTPToOGSite(tournament, f);
         
     }
     

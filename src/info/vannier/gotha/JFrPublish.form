@@ -585,10 +585,10 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="ckbExportToOGSite">
+            <Component class="javax.swing.JCheckBox" name="ckbExportHFToOGSite">
               <Properties>
                 <Property name="selected" type="boolean" value="true"/>
-                <Property name="text" type="java.lang.String" value="Export to OpenGotha Site"/>
+                <Property name="text" type="java.lang.String" value="Export html files to OpenGotha Site"/>
                 <Property name="toolTipText" type="java.lang.String" value="Check this checkbox to enable real-time acess to OpenGotha files from any computer, tablet or smartphone."/>
               </Properties>
               <Events>
@@ -596,7 +596,7 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="30" y="140" width="220" height="-1"/>
+                  <AbsoluteConstraints x="30" y="180" width="280" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -610,7 +610,7 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="30" y="310" width="210" height="-1"/>
+                  <AbsoluteConstraints x="30" y="350" width="210" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -623,7 +623,7 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="270" y="140" width="90" height="20"/>
+                  <AbsoluteConstraints x="310" y="180" width="90" height="20"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -640,7 +640,7 @@
             <Container class="javax.swing.JPanel" name="pnlQR">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="270" y="180" width="100" height="100"/>
+                  <AbsoluteConstraints x="310" y="220" width="100" height="100"/>
                 </Constraint>
               </Constraints>
 
@@ -667,7 +667,22 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="140" y="280" width="370" height="20"/>
+                  <AbsoluteConstraints x="180" y="320" width="370" height="20"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="ckbExportTFToOGSite">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="Export tournament file to OpenGotha Site"/>
+                <Property name="toolTipText" type="java.lang.String" value="Check this checkbox to enable real-time acess to OpenGotha files from any computer, tablet or smartphone."/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="allParametersCKBActionPerformed"/>
+              </Events>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="30" y="140" width="280" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>

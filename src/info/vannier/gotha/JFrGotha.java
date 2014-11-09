@@ -165,6 +165,8 @@ public class JFrGotha extends javax.swing.JFrame {
         txfBeginDate = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         txfEndDate = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        txfDirector = new javax.swing.JTextField();
         btnDlgNewOK = new javax.swing.JButton();
         btnDlgNewCancel = new javax.swing.JButton();
         btnHelp = new javax.swing.JButton();
@@ -246,7 +248,6 @@ public class JFrGotha extends javax.swing.JFrame {
         mniNew = new javax.swing.JMenuItem();
         mniOpen = new javax.swing.JMenuItem();
         mnuOpenRecent = new javax.swing.JMenu();
-        mniSave = new javax.swing.JMenuItem();
         mniSaveAs = new javax.swing.JMenuItem();
         mniSaveACopy = new javax.swing.JMenuItem();
         mniClose = new javax.swing.JMenuItem();
@@ -346,12 +347,12 @@ public class JFrGotha extends javax.swing.JFrame {
 
         jLabel8.setText("Short name");
         pnlTournamentDetails.add(jLabel8);
-        jLabel8.setBounds(10, 70, 80, 14);
+        jLabel8.setBounds(10, 60, 80, 14);
 
         txfShortName.setText("tournamentshortname");
         txfShortName.setToolTipText("default file mame and RMI name.");
         pnlTournamentDetails.add(txfShortName);
-        txfShortName.setBounds(100, 70, 180, 20);
+        txfShortName.setBounds(100, 60, 180, 20);
 
         jLabel10.setText("Name");
         pnlTournamentDetails.add(jLabel10);
@@ -364,11 +365,11 @@ public class JFrGotha extends javax.swing.JFrame {
 
         jLabel11.setText("Location");
         pnlTournamentDetails.add(jLabel11);
-        jLabel11.setBounds(10, 110, 80, 14);
+        jLabel11.setBounds(10, 90, 80, 14);
 
         txfLocation.setText("Location name");
         pnlTournamentDetails.add(txfLocation);
-        txfLocation.setBounds(100, 110, 180, 20);
+        txfLocation.setBounds(100, 90, 180, 20);
 
         jLabel12.setText("Begin date");
         pnlTournamentDetails.add(jLabel12);
@@ -385,6 +386,14 @@ public class JFrGotha extends javax.swing.JFrame {
         txfEndDate.setText("yyyy-mm-dd");
         pnlTournamentDetails.add(txfEndDate);
         txfEndDate.setBounds(100, 180, 110, 20);
+
+        jLabel20.setText("Director");
+        pnlTournamentDetails.add(jLabel20);
+        jLabel20.setBounds(10, 120, 80, 14);
+
+        txfDirector.setText("Director name");
+        pnlTournamentDetails.add(txfDirector);
+        txfDirector.setBounds(100, 120, 180, 20);
 
         dlgNew.getContentPane().add(pnlTournamentDetails);
         pnlTournamentDetails.setBounds(100, 10, 300, 220);
@@ -977,16 +986,6 @@ public class JFrGotha extends javax.swing.JFrame {
         mnuOpenRecent.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         mnuTournament.add(mnuOpenRecent);
 
-        mniSave.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        mniSave.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        mniSave.setText("Save");
-        mniSave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mniSaveActionPerformed(evt);
-            }
-        });
-        mnuTournament.add(mniSave);
-
         mniSaveAs.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         mniSaveAs.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         mniSaveAs.setText("Save as ...");
@@ -1425,7 +1424,7 @@ public class JFrGotha extends javax.swing.JFrame {
         }
 
         tps.initBase(this.txfShortName.getText(), this.txfName.getText(),
-                this.txfLocation.getText(),
+                this.txfLocation.getText(), this.txfDirector.getText(),
                 beginDate, endDate,
                 nbRounds, 1); // numberOfCategories will be set by initForXX
 
@@ -2365,8 +2364,8 @@ public class JFrGotha extends javax.swing.JFrame {
         // Aceess to opengotha.info
         PublishParameterSet pubPS = tps.getPublishParameterSet();
         GeneralParameterSet gps = tps.getGeneralParameterSet();
-        boolean bExportOG = pubPS.isExportToOGSite();
-        if (bExportOG) {
+        boolean bExportHFOG = pubPS.isExportHFToOGSite();
+        if (bExportHFOG) {
             String dirName = new SimpleDateFormat("yyyyMMdd").format(gps.getBeginDate()) + tournament.getShortName() + "/";
             String strURL = "http://opengotha.info/tournaments/" + dirName;
             try {
@@ -2477,32 +2476,37 @@ public class JFrGotha extends javax.swing.JFrame {
      * @return false if operation has been cancelled
      */
     private boolean saveCurrentTournamentIfNecessary() {
-        if (Gotha.runningMode == Gotha.RUNNING_MODE_CLI) {
-            return true;
-        }
         try {
+            if (Gotha.runningMode == Gotha.RUNNING_MODE_CLI) {
+                return true;
+            }
             if (tournament == null) {
                 return true;
             }
-            if (!tournament.isChangeSinceLastSave()) {
-                return true;
-            }
-            int response = JOptionPane.showConfirmDialog(this, "Do you want to save current tournament ?",
-                    "Message", JOptionPane.YES_NO_CANCEL_OPTION);
-            if (response == JOptionPane.CANCEL_OPTION) {
-                return false;
-            }
-            if (response == JOptionPane.YES_OPTION) {
-                saveAs();
-                return true;
-            }
 
-        } catch (HeadlessException ex) {
-            Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
-            return false;
+            
+                if (!tournament.isChangeSinceLastSave()) {
+                    return true;
+                }
+
+                int response = JOptionPane.showConfirmDialog(this, "Do you want to save current tournament ?",
+                        "Message", JOptionPane.YES_NO_CANCEL_OPTION);
+                if (response == JOptionPane.CANCEL_OPTION) {
+                    return false;
+                }
+                if (response == JOptionPane.YES_OPTION) {
+                    File f =  this.chooseASaveFile(this.getDefaultSaveAsFileName());
+                    updateShortNameFromFile(f);
+                    this.saveTournament(f);
+                   
+                        tournament.setHasBeenSavedOnce(true);
+                        this.addRecentTournament("" + f);
+                        this.tournamentChanged();
+                    return true;
+                }
+               return true;
         } catch (RemoteException ex) {
             Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
-            return false;
         }
         return true;
     }
@@ -2520,6 +2524,7 @@ public class JFrGotha extends javax.swing.JFrame {
         // if current extension is not .xml, add .xml
         String suffix = null;
         String s = f.getName();
+        System.out.println("Tournament.saveTournament. " + "s = " + s);
         int i = s.lastIndexOf('.');
         if (i > 0 && i < s.length() - 1) {
             suffix = s.substring(i + 1).toLowerCase();
@@ -2533,6 +2538,8 @@ public class JFrGotha extends javax.swing.JFrame {
         }
 
         ExternalDocument.generateXMLFile(t, f);
+        // Eventually send the file to opengotha.info
+        TournamentPublishing.sendByFTPToOGSite(t, f);
         try {
             t.setChangeSinceLastSaveAsFalse();
             t.setHasBeenSavedOnce(true);
@@ -2571,45 +2578,25 @@ public class JFrGotha extends javax.swing.JFrame {
             return;
         }
         
-        String fileName = "" + saveAs();
+        File f =  this.chooseASaveFile(this.getDefaultSaveAsFileName());
+        
+        updateShortNameFromFile(f);
+        
+        // Make actual save
+        this.saveTournament(f);
+        
         try {
             tournament.setHasBeenSavedOnce(true);
         } catch (RemoteException ex) {
             Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
         }
-        this.addRecentTournament(fileName);
+        this.addRecentTournament("" + f);
         
-        // drop path and extension and save into tournament short name
-        int indLastSep = 0;
-        for (int i = 0; i < fileName.length(); i++){
-            if (fileName.charAt(i) == '/') indLastSep = i;
-            if (fileName.charAt(i) == '\\') indLastSep = i;
-        }
-        String snExt = fileName.substring(indLastSep + 1);
-        
-        int indLastPoint = snExt.length();
-        for (int i = 0; i < snExt.length(); i++){
-            if (snExt.charAt(i) == '.') indLastPoint = i;
-        }
-        String sn = snExt.substring(0, indLastPoint);
-        try {
-            tournament.setShortName(sn);
-        } catch (RemoteException ex) {
-            Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
         this.tournamentChanged();
-        
     }//GEN-LAST:event_mniSaveAsActionPerformed
     
     // Manages the JFileChooser Dialog and makes actual save
-    File saveAs(){
-        String fileName = getDefaultSaveAsFileName();
-        return saveAs(fileName);
-    }
-    
-    // Manages the JFileChooser Dialog and makes actual save
-    File saveAs(String fileName){
+    File chooseASaveFile(String fileName){
         File defFile = new File(fileName);
         
         File dir = defFile.getParentFile();
@@ -2634,15 +2621,35 @@ public class JFrGotha extends javax.swing.JFrame {
         if (f == null) {
             return null;
         }
-
-        File actualF = saveTournament(f);
+        return f;
+    }
+     
+    void updateShortNameFromFile(File f){
+        String fileName = "" + f;
+        int indLastSep = 0;
+        // drop path and extension 
+        for (int i = 0; i < fileName.length(); i++){
+            if (fileName.charAt(i) == '/') indLastSep = i;
+            if (fileName.charAt(i) == '\\') indLastSep = i;
+        }
+        String snExt = fileName.substring(indLastSep + 1);
         
-        return  actualF;
+        int indLastPoint = snExt.length();
+        for (int i = 0; i < snExt.length(); i++){
+            if (snExt.charAt(i) == '.') indLastPoint = i;
+        }
+        String sn = snExt.substring(0, indLastPoint);
+        try {
+            tournament.setShortName(sn);
+        } catch (RemoteException ex) {
+            Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
+        
     /** 
      * Used to know what is the default Tournament File Name for saving
-     * if hasBeenSavedOnce = false, the default is based on runningDirectory and shortName
+     * if hasBeenSavedOnce = false, the default is based on runningDirectory + "/tournamentfile/" sand shortName
      * else default is the °th recent tournament file
      * if no recent tournament file, default is based on runningDirectory and shortName
      * @return 
@@ -2664,10 +2671,6 @@ public class JFrGotha extends javax.swing.JFrame {
         File snFile = new File(Gotha.runningDirectory + "/tournamentfiles", shortName + ".xml"); 
         String snFN;
         snFN = "" + snFile;
-        
-//        String rtFN;
-//        ArrayList<String> alRT = this.getRecentTournamentsList();
-//        rtFN = alRT.get(0);
 
         String rtFN = "";
         ArrayList<String> alRT = this.getRecentTournamentsList();
@@ -3062,43 +3065,6 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
 
     }//GEN-LAST:event_mniDiscardRoundsActionPerformed
 
-    private void mniSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniSaveActionPerformed
-        if (tournament == null) {
-            JOptionPane.showMessageDialog(this, "No currently open tournament", "Message", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        boolean bHBSO = false;
-        try {
-            bHBSO = tournament.isHasBeenSavedOnce();
-        } catch (RemoteException ex) {
-            Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        String rtFN = "";
-        ArrayList<String> alRT = this.getRecentTournamentsList();
-        if (alRT != null && alRT.size() > 0) rtFN = alRT.get(0);
-        
-        String strSN ="";
-        try {
-        strSN = tournament.getShortName();
-        } catch (RemoteException ex) {
-            Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        boolean bCoherenceSNRT = false;
-        int lastSlash = rtFN.lastIndexOf("/");
-        int lastBackSlash = rtFN.lastIndexOf("\\");
-        int lastSep = Math.max(lastSlash, lastBackSlash);
-        String strRTFileName = rtFN.substring(lastSep + 1);
-        
-        if (strRTFileName.equals(strSN + ".xml")) bCoherenceSNRT = true;
-        
-        if (bHBSO && bCoherenceSNRT && rtFN.length() > 0)  this.saveTournament(new File(rtFN));
-        else{
-            File f = saveAs();
-            this.addRecentTournament("" + f);
-        }
-    }//GEN-LAST:event_mniSaveActionPerformed
-
     private void mniSaveACopyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniSaveACopyActionPerformed
         if (tournament == null) {
             JOptionPane.showMessageDialog(this, "No currently open tournament", "Message", JOptionPane.ERROR_MESSAGE);
@@ -3118,7 +3084,10 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
             strTC = "" + tcFile;
         }
             
-        File f = saveAs(strTC);
+//        File f = saveAs(strTC);
+        File f = this.chooseASaveFile(strTC);
+        this.updateShortNameFromFile(f);
+        saveTournament(f);
         gothaPrefs.put("tournamentCopy", "" + f);
      
     }//GEN-LAST:event_mniSaveACopyActionPerformed
@@ -3459,6 +3428,7 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -3508,7 +3478,6 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     private javax.swing.JMenuItem mniRMI;
     private javax.swing.JMenuItem mniRR;
     private javax.swing.JMenuItem mniResults;
-    private javax.swing.JMenuItem mniSave;
     private javax.swing.JMenuItem mniSaveACopy;
     private javax.swing.JMenuItem mniSaveAs;
     private javax.swing.JMenuItem mniTeamsManager;
@@ -3560,6 +3529,7 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     private javax.swing.JTable tblTeamsStandings;
     private javax.swing.JTabbedPane tpnGotha;
     private javax.swing.JTextField txfBeginDate;
+    private javax.swing.JTextField txfDirector;
     private javax.swing.JTextField txfEndDate;
     private javax.swing.JTextField txfLocation;
     private javax.swing.JTextField txfName;

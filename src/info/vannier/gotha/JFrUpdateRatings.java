@@ -146,7 +146,7 @@ public class JFrUpdateRatings extends javax.swing.JFrame {
     private void initComponents() {
 
         btnHelp = new javax.swing.JButton();
-        btnQuit = new javax.swing.JButton();
+        btnClose = new javax.swing.JButton();
         pnlPlayersList = new javax.swing.JPanel();
         cbxRatingList = new javax.swing.JComboBox();
         btnPrint = new javax.swing.JButton();
@@ -178,14 +178,14 @@ public class JFrUpdateRatings extends javax.swing.JFrame {
         getContentPane().add(btnHelp);
         btnHelp.setBounds(50, 470, 110, 30);
 
-        btnQuit.setText("Close");
-        btnQuit.addActionListener(new java.awt.event.ActionListener() {
+        btnClose.setText("Close");
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnQuitActionPerformed(evt);
+                btnCloseActionPerformed(evt);
             }
         });
-        getContentPane().add(btnQuit);
-        btnQuit.setBounds(200, 470, 550, 30);
+        getContentPane().add(btnClose);
+        btnClose.setBounds(200, 470, 550, 30);
 
         pnlPlayersList.setBorder(javax.swing.BorderFactory.createTitledBorder("Players"));
         pnlPlayersList.setLayout(null);
@@ -298,9 +298,9 @@ public class JFrUpdateRatings extends javax.swing.JFrame {
         Gotha.displayGothaHelp("Update ratings frame");
 }//GEN-LAST:event_btnHelpActionPerformed
 
-    private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
         dispose();
-}//GEN-LAST:event_btnQuitActionPerformed
+}//GEN-LAST:event_btnCloseActionPerformed
 
     private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintActionPerformed
         TournamentPrinting.printPlayersList(tournament, playersSortType);
@@ -500,9 +500,9 @@ public class JFrUpdateRatings extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnClose;
     private javax.swing.JButton btnHelp;
     private javax.swing.JButton btnPrint;
-    private javax.swing.JButton btnQuit;
     private javax.swing.JButton btnUpdateAllRatings;
     private javax.swing.JButton btnUpdateEGFRatingList;
     private javax.swing.JButton btnUpdateSelRatings;

@@ -71,7 +71,7 @@ public class JFrGamesRR extends javax.swing.JFrame{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnQuit = new javax.swing.JButton();
+        btnClose = new javax.swing.JButton();
         pnlGames = new javax.swing.JPanel();
         scpGames = new javax.swing.JScrollPane();
         tblGames = new javax.swing.JTable();
@@ -99,14 +99,14 @@ public class JFrGamesRR extends javax.swing.JFrame{
         setResizable(false);
         getContentPane().setLayout(null);
 
-        btnQuit.setText("Close");
-        btnQuit.addActionListener(new java.awt.event.ActionListener() {
+        btnClose.setText("Close");
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnQuitActionPerformed(evt);
+                btnCloseActionPerformed(evt);
             }
         });
-        getContentPane().add(btnQuit);
-        btnQuit.setBounds(370, 480, 420, 30);
+        getContentPane().add(btnClose);
+        btnClose.setBounds(370, 480, 420, 30);
 
         pnlGames.setLayout(null);
 
@@ -275,9 +275,9 @@ public class JFrGamesRR extends javax.swing.JFrame{
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
+private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
     dispose();
-}//GEN-LAST:event_btnQuitActionPerformed
+}//GEN-LAST:event_btnCloseActionPerformed
 
 private void tblGamesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblGamesMousePressed
     int r = tblGames.rowAtPoint(evt.getPoint());
@@ -794,8 +794,8 @@ private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnClose;
     private javax.swing.JButton btnHelp;
-    private javax.swing.JButton btnQuit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;

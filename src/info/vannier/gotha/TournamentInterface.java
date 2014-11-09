@@ -142,5 +142,12 @@ public interface TournamentInterface extends Remote{
     
     public String egfClass() throws RemoteException;
     public int egfAdjustedTime() throws RemoteException;
-
+    
+    public boolean addClubsGroup(ClubsGroup cg) throws RemoteException;
+    public void removeClubsGroup(ClubsGroup cg) throws RemoteException;
+    public ClubsGroup getClubsGroupByName(String name) throws RemoteException;
+    public ArrayList<ClubsGroup> clubsGroupsList() throws RemoteException;
+    public void addClubToClubsGroup(String groupName, String clubName) throws RemoteException;
+    public void removeClubFromClubsGroup(String groupName, String clubName) throws RemoteException;
+    public boolean playersAreInCommonGroup(Player p1, Player p2)throws RemoteException;
 }

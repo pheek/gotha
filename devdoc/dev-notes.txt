@@ -40,7 +40,7 @@ Distribution
 ************
 Files to be included :
 opengotha.jar
-+ /lib/jhall.jar
++ /lib/ 4 .jar
 + /gothahelp
 + /resources
 + /documents
@@ -112,7 +112,7 @@ customInitComponents() should begin by :
 
 Close button should be :
 =======================
-    private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {                                        
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {                                        
         dispose();
     }   
 
@@ -194,18 +194,7 @@ printTeamsStandings
 
 Save Tournament issues
 **********************
-JFrGotha : 
-    private void saveTournament(File f) : calls the following one 
-    private void saveTournament(TournamentInterface t, File f) : called only by the previous one
-        makes the job and sets booleans : 
-        t.setChangeSinceLastSaveAsFalse();
-        t.setHasBeenSavedOnce(true);
-
-saveTournament(File f) is called from :
-    saveAs()
-    mniSaveActionPerformed
-
-saveAs is called from :
-    saveCurrentTournamentIfNecessary
-    mniSaveActionPerformed
-    mniSaveAsActionPerformed
+Two menu items for tournament saving
+"Save as" saves the tournament into a file whose name is based on tournament short name. 
+If a different file name is chosen by the user, this file name is used to update short name
+"Save a copy" saves a copy according to users choice. Tournament short name is never modified by this menu item.

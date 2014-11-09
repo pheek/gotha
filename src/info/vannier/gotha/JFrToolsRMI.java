@@ -56,7 +56,7 @@ public class JFrToolsRMI extends javax.swing.JFrame {
         lblClients = new javax.swing.JLabel();
         lblClients1 = new javax.swing.JLabel();
         btnForgetNonActiveClients = new javax.swing.JButton();
-        btnQuit = new javax.swing.JButton();
+        btnClose = new javax.swing.JButton();
         ckbRTUpdate = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -106,14 +106,14 @@ public class JFrToolsRMI extends javax.swing.JFrame {
         getContentPane().add(btnForgetNonActiveClients);
         btnForgetNonActiveClients.setBounds(240, 230, 360, 23);
 
-        btnQuit.setText("Close");
-        btnQuit.addActionListener(new java.awt.event.ActionListener() {
+        btnClose.setText("Close");
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnQuitActionPerformed(evt);
+                btnCloseActionPerformed(evt);
             }
         });
-        getContentPane().add(btnQuit);
-        btnQuit.setBounds(20, 330, 580, 23);
+        getContentPane().add(btnClose);
+        btnClose.setBounds(20, 330, 580, 23);
 
         ckbRTUpdate.setSelected(true);
         ckbRTUpdate.setText("Real time update");
@@ -168,15 +168,15 @@ public class JFrToolsRMI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnForgetNonActiveClientsActionPerformed
 
-    private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
         dispose();
-    }//GEN-LAST:event_btnQuitActionPerformed
+    }//GEN-LAST:event_btnCloseActionPerformed
 
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnClose;
     private javax.swing.JButton btnForgetNonActiveClients;
-    private javax.swing.JButton btnQuit;
     private javax.swing.JButton btnUnbind;
     private javax.swing.JCheckBox ckbRTUpdate;
     private javax.swing.JLabel lblClients;

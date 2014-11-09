@@ -41,7 +41,7 @@ public class JFrBuildTestTournament extends javax.swing.JFrame{
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         btnBuild = new javax.swing.JButton();
-        btnQuit = new javax.swing.JButton();
+        btnClose = new javax.swing.JButton();
         btnGenerateGames = new javax.swing.JButton();
         btnMakeTeams = new javax.swing.JButton();
 
@@ -80,14 +80,14 @@ public class JFrBuildTestTournament extends javax.swing.JFrame{
         getContentPane().add(btnBuild);
         btnBuild.setBounds(420, 70, 140, 30);
 
-        btnQuit.setText("Close");
-        btnQuit.addActionListener(new java.awt.event.ActionListener() {
+        btnClose.setText("Close");
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnQuitActionPerformed(evt);
+                btnCloseActionPerformed(evt);
             }
         });
-        getContentPane().add(btnQuit);
-        btnQuit.setBounds(10, 220, 540, 30);
+        getContentPane().add(btnClose);
+        btnClose.setBounds(10, 220, 540, 30);
 
         btnGenerateGames.setText("Generate random games");
         btnGenerateGames.addActionListener(new java.awt.event.ActionListener() {
@@ -156,9 +156,9 @@ public class JFrBuildTestTournament extends javax.swing.JFrame{
 
     }//GEN-LAST:event_btnGenerateGamesActionPerformed
 
-    private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
         dispose();
-    }//GEN-LAST:event_btnQuitActionPerformed
+    }//GEN-LAST:event_btnCloseActionPerformed
 
     private void btnBuildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuildActionPerformed
         int system = TournamentParameterSet.TYPE_SWISS;
@@ -550,9 +550,9 @@ public class JFrBuildTestTournament extends javax.swing.JFrame{
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuild;
+    private javax.swing.JButton btnClose;
     private javax.swing.JButton btnGenerateGames;
     private javax.swing.JButton btnMakeTeams;
-    private javax.swing.JButton btnQuit;
     private javax.swing.JComboBox cbxPlayers;
     private javax.swing.JComboBox cbxSystem;
     private javax.swing.JLabel jLabel1;

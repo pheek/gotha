@@ -397,7 +397,7 @@ public class JFrTeamsManager extends javax.swing.JFrame {
         jSeparator5 = new javax.swing.JPopupMenu.Separator();
         mniCancel = new javax.swing.JMenuItem();
         btnHelp = new javax.swing.JButton();
-        btnQuit = new javax.swing.JButton();
+        btnClose = new javax.swing.JButton();
         pnlPlayers = new javax.swing.JPanel();
         scpTeamablePlayers = new javax.swing.JScrollPane();
         tblTeamablePlayers = new javax.swing.JTable();
@@ -565,14 +565,14 @@ public class JFrTeamsManager extends javax.swing.JFrame {
         getContentPane().add(btnHelp);
         btnHelp.setBounds(20, 480, 260, 30);
 
-        btnQuit.setText("Close");
-        btnQuit.addActionListener(new java.awt.event.ActionListener() {
+        btnClose.setText("Close");
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnQuitActionPerformed(evt);
+                btnCloseActionPerformed(evt);
             }
         });
-        getContentPane().add(btnQuit);
-        btnQuit.setBounds(300, 480, 470, 30);
+        getContentPane().add(btnClose);
+        btnClose.setBounds(300, 480, 470, 30);
 
         pnlPlayers.setBorder(javax.swing.BorderFactory.createTitledBorder("Players"));
         pnlPlayers.setLayout(null);
@@ -735,9 +735,9 @@ public class JFrTeamsManager extends javax.swing.JFrame {
         Gotha.displayGothaHelp("Publish menu");
 }//GEN-LAST:event_btnHelpActionPerformed
 
-    private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
         dispose();
-}//GEN-LAST:event_btnQuitActionPerformed
+}//GEN-LAST:event_btnCloseActionPerformed
 
     private void btnCreateNewTeamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateNewTeamActionPerformed
         int teamSize = 0;
@@ -1140,10 +1140,10 @@ public class JFrTeamsManager extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnClose;
     private javax.swing.JButton btnCreateNewTeam;
     private javax.swing.JButton btnHelp;
     private javax.swing.JButton btnPrint;
-    private javax.swing.JButton btnQuit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

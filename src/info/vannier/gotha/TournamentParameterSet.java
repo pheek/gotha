@@ -53,12 +53,12 @@ public class TournamentParameterSet implements java.io.Serializable{
     }
 
     public void initBase(){
-        initBase("Undefined", "Undefined", "", new java.util.Date (),  new java.util.Date (), 5, 1);
+        initBase("Undefined", "Undefined", "", "", new java.util.Date (),  new java.util.Date (), 5, 1);
     }
     
-    public void initBase(String shortName, String name, String location,
+    public void initBase(String shortName, String name, String location, String director,
             java.util.Date beginDate, java.util.Date endDate, int numberOfRounds,  int numberOfCategories) {
-        generalParameterSet.initBase(shortName, name, location,
+        generalParameterSet.initBase(shortName, name, location, director,
         beginDate, endDate, numberOfRounds,  numberOfCategories);
     }
 

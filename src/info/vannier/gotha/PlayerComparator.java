@@ -34,6 +34,7 @@ public class PlayerComparator implements Comparator<Player>, Serializable{
             case GRADE_ORDER :
                 int range1 = 0; // -30 to -1 for kyu, 0 to 8 for dan, 100 to 108  for pro
                 String str1 = p1.getStrGrade();
+                str1 = str1.trim();
                 String grp1 = str1.substring(str1.length() - 1, str1.length());
                 grp1 = grp1.toLowerCase();
                 int n1 = new Integer(str1.substring(0, str1.length() - 1)).intValue();
@@ -43,6 +44,7 @@ public class PlayerComparator implements Comparator<Player>, Serializable{
 
                 int range2 = 0; // -30 to -1 for kyu, 0 to 8 for dan, 100 to 108  for pro
                 String str2 = p2.getStrGrade();
+                str2 = str2.trim();
                 String grp2 = str2.substring(str2.length() - 1, str2.length());
                 grp2 = grp2.toLowerCase();
                 int n2 = new Integer(str2.substring(0, str2.length() - 1)).intValue();

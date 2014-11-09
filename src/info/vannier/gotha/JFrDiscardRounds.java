@@ -63,7 +63,7 @@ public class JFrDiscardRounds extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnQuit = new javax.swing.JButton();
+        btnClose = new javax.swing.JButton();
         btnHelp = new javax.swing.JButton();
         pnlRoundsToKeep = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -78,14 +78,14 @@ public class JFrDiscardRounds extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        btnQuit.setText("Close");
-        btnQuit.addActionListener(new java.awt.event.ActionListener() {
+        btnClose.setText("Close");
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnQuitActionPerformed(evt);
+                btnCloseActionPerformed(evt);
             }
         });
-        getContentPane().add(btnQuit);
-        btnQuit.setBounds(150, 280, 370, 30);
+        getContentPane().add(btnClose);
+        btnClose.setBounds(150, 280, 370, 30);
 
         btnHelp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/info/vannier/gotha/gothalogo16.jpg"))); // NOI18N
         btnHelp.setText("help");
@@ -139,9 +139,9 @@ public class JFrDiscardRounds extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
         dispose();
-    }//GEN-LAST:event_btnQuitActionPerformed
+    }//GEN-LAST:event_btnCloseActionPerformed
 
     private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHelpActionPerformed
 //        JOptionPane.showMessageDialog(this, " This help will be available shortly");
@@ -372,9 +372,9 @@ public class JFrDiscardRounds extends javax.swing.JFrame {
 }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnClose;
     private javax.swing.JButton btnDiscardRounds;
     private javax.swing.JButton btnHelp;
-    private javax.swing.JButton btnQuit;
     private javax.swing.JCheckBox ckbRemoveNotImpliedPlayers;
     private javax.swing.JCheckBox ckbShiftRounds;
     private javax.swing.JLabel jLabel1;

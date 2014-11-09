@@ -1,3 +1,13 @@
+OpenGothaV3.39.02
+*****************
+09/10/2014
+New     Save system simplified
+New     In "Players Manager" frame, a new tool : Search by AGA Id
+New     Groups of clubs. Neighbour clubs can be declared as such in order to avoid
+        pairing players from the same group.
+New     Upload of tournament files to opengotha.info
+New     FFG Rating list is parsed from http://ffg.jeudego.org/echelle/echtxt/ech_ffg_V3.txt
+
 OpenGothaV3.39
 **************
 21/09/2014

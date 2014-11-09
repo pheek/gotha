@@ -62,6 +62,7 @@ public class PairingParameterSet implements java.io.Serializable{
     private long paiSeMinimizeHandicap;                      // Should be paiSeDefSecCrit for SwCat, 0 for others
     private long paiSeAvoidSameGeo;                          // Should be paiSeDefSecCrit for SwCat and MM, 0 for Swiss
     private int  paiSePreferMMSDiffRatherThanSameCountry;    // Typically = 1
+    private int  paiSePreferMMSDiffRatherThanSameClubsGroup; // Typically = 2
     private int  paiSePreferMMSDiffRatherThanSameClub;       // Typically = 3
      
     public PairingParameterSet() {   
@@ -233,6 +234,14 @@ public class PairingParameterSet implements java.io.Serializable{
         this.paiSePreferMMSDiffRatherThanSameCountry = paiSePreferMMSDiffRatherThanSameCountry;
     }
 
+    public int getPaiSePreferMMSDiffRatherThanSameClubsGroup() {
+        return paiSePreferMMSDiffRatherThanSameClubsGroup;
+    }
+
+    public void setPaiSePreferMMSDiffRatherThanSameClubsGroup(int paiSePreferMMSDiffRatherThanSameClubsGroup) {
+        this.paiSePreferMMSDiffRatherThanSameClubsGroup = paiSePreferMMSDiffRatherThanSameClubsGroup;
+    }
+    
     public int getPaiSePreferMMSDiffRatherThanSameClub() {
         return paiSePreferMMSDiffRatherThanSameClub;
     }
@@ -286,6 +295,7 @@ public class PairingParameterSet implements java.io.Serializable{
         paiSeMinimizeHandicap                   =   0;           // Not relevant in McMahon
         paiSeAvoidSameGeo                       =   paiMaMinimizeScoreDifference;
         paiSePreferMMSDiffRatherThanSameCountry =   1;
+        paiSePreferMMSDiffRatherThanSameClubsGroup =2;
         paiSePreferMMSDiffRatherThanSameClub    =   3;
     }
     public void initForSwiss(){
@@ -317,6 +327,7 @@ public class PairingParameterSet implements java.io.Serializable{
         paiSeMinimizeHandicap                   =   0;     
         paiSeAvoidSameGeo                       =   0;
         paiSePreferMMSDiffRatherThanSameCountry =   0;              // Not Relevant
+        paiSePreferMMSDiffRatherThanSameClubsGroup =0;              // Not Relevant
         paiSePreferMMSDiffRatherThanSameClub    =   0;              // Not Relevant
     }
     public void initForSwissCat() {
@@ -348,6 +359,7 @@ public class PairingParameterSet implements java.io.Serializable{
         paiSeMinimizeHandicap                   =   paiSeDefSecCrit;     
         paiSeAvoidSameGeo                       =   paiSeDefSecCrit;
         paiSePreferMMSDiffRatherThanSameCountry =   1;
+        paiSePreferMMSDiffRatherThanSameClubsGroup =2;
         paiSePreferMMSDiffRatherThanSameClub    =   3;
     }    
 

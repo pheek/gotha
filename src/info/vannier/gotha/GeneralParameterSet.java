@@ -123,18 +123,18 @@ public class GeneralParameterSet implements java.io.Serializable{
         this.genRoundDownNBWMMS = gps.isGenRoundDownNBWMMS();
     }
 
-    public void initBase(String shortName, String name, String location,
+    public void initBase(String shortName, String name, String location, String director,
             java.util.Date beginDate, java.util.Date endDate, int numberOfRounds,  int numberOfCategories) {
         this.shortName = shortName;
         this.fullName = name;
         this.location = location;
+        this.director = director;
         this.beginDate = (Date)beginDate.clone();
         this.endDate = (Date)endDate.clone();
         this.numberOfRounds = numberOfRounds;
         this.numberOfCategories = numberOfCategories;
         
         this.basicTime = GeneralParameterSet.GEN_GP_BASICTIME_DEF;
-//        this.complementaryTimeSystem = GeneralParameterSet.GEN_GP_CTS_SUDDENDEATH;
         this.complementaryTimeSystem = GeneralParameterSet.GEN_GP_CTS_STDBYOYOMI;
         this.stdByoYomiTime = GeneralParameterSet.GEN_GP_CTS_STDBYOYOMITIME_DEF;
         this.nbMovesCanTime = GeneralParameterSet.GEN_GP_CTS_NBMOVESCANTIME_DEF;

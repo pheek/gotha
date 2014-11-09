@@ -275,7 +275,7 @@ public class JFrGamesResults extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        btnQuit = new javax.swing.JButton();
+        btnClose = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         txfSearchPlayer = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -352,14 +352,14 @@ public class JFrGamesResults extends javax.swing.JFrame {
         pnlInternal.add(pnlGames);
         pnlGames.setBounds(168, 10, 460, 470);
 
-        btnQuit.setText("Close");
-        btnQuit.addActionListener(new java.awt.event.ActionListener() {
+        btnClose.setText("Close");
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnQuitActionPerformed(evt);
+                btnCloseActionPerformed(evt);
             }
         });
-        pnlInternal.add(btnQuit);
-        btnQuit.setBounds(170, 490, 460, 30);
+        pnlInternal.add(btnClose);
+        btnClose.setBounds(170, 490, 460, 30);
 
         jLabel9.setText("Round");
         pnlInternal.add(jLabel9);
@@ -517,9 +517,9 @@ public class JFrGamesResults extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnPrintActionPerformed
 
-    private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
         dispose();
-    }//GEN-LAST:event_btnQuitActionPerformed
+    }//GEN-LAST:event_btnCloseActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         String strSearchPlayer = this.txfSearchPlayer.getText().toLowerCase();
@@ -577,9 +577,9 @@ public class JFrGamesResults extends javax.swing.JFrame {
         this.updateAllViews();
     }//GEN-LAST:event_ckbTeamOrderActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnClose;
     private javax.swing.JButton btnHelp;
     private javax.swing.JButton btnPrint;
-    private javax.swing.JButton btnQuit;
     private javax.swing.JButton btnSearch;
     private javax.swing.JCheckBox ckbTeamOrder;
     private javax.swing.JLabel jLabel1;

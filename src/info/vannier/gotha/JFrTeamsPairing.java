@@ -100,7 +100,7 @@ public class JFrTeamsPairing extends javax.swing.JFrame {
         txfNbMatches = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         btnPrint = new javax.swing.JButton();
-        btnQuit = new javax.swing.JButton();
+        btnClose = new javax.swing.JButton();
         spnRoundNumber = new javax.swing.JSpinner();
         btnHelp = new javax.swing.JButton();
 
@@ -281,14 +281,14 @@ public class JFrTeamsPairing extends javax.swing.JFrame {
         pnlInternal.add(pnlMatches);
         pnlMatches.setBounds(390, 40, 380, 390);
 
-        btnQuit.setText("Close");
-        btnQuit.addActionListener(new java.awt.event.ActionListener() {
+        btnClose.setText("Close");
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnQuitActionPerformed(evt);
+                btnCloseActionPerformed(evt);
             }
         });
-        pnlInternal.add(btnQuit);
-        btnQuit.setBounds(400, 460, 360, 30);
+        pnlInternal.add(btnClose);
+        btnClose.setBounds(400, 460, 360, 30);
 
         spnRoundNumber.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -524,10 +524,10 @@ public class JFrTeamsPairing extends javax.swing.JFrame {
 
 }//GEN-LAST:event_tblMatchesMouseClicked
 
-    private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
         // this.pupMatches.setVisible(false);
         dispose();
-}//GEN-LAST:event_btnQuitActionPerformed
+}//GEN-LAST:event_btnCloseActionPerformed
 
     private void spnRoundNumberStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spnRoundNumberStateChanged
         int demandedRN = (Integer) (spnRoundNumber.getValue()) - 1;
@@ -990,10 +990,10 @@ public class JFrTeamsPairing extends javax.swing.JFrame {
 
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnClose;
     private javax.swing.JButton btnHelp;
     private javax.swing.JButton btnPair;
     private javax.swing.JButton btnPrint;
-    private javax.swing.JButton btnQuit;
     private javax.swing.JButton btnUnpair;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;

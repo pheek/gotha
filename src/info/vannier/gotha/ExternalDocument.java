@@ -484,6 +484,41 @@ public class ExternalDocument {
                 }
             }
         }
+        
+        // Import Clubs groups
+        int nbImportedClubsGroups = 0;
+        int nbNotImportedClubsGroups = 0;
+        int nbReplacedClubsGroups = 0;
+
+        int nbClubsGroupsBeforeImport = 0;
+        try {
+            nbClubsGroupsBeforeImport = tournament.clubsGroupsList().size();
+        } catch (RemoteException ex) {
+            Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ArrayList<ClubsGroup> alClubsGroups = ExternalDocument.importClubsGroupsFromXMLFile(sourceFile);
+        if (alClubsGroups != null) {              
+            for(ClubsGroup cg : alClubsGroups){
+                try {
+                    if (tournament.addClubsGroup(cg)) nbImportedClubsGroups++;
+                } catch (RemoteException ex) {
+                    Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                nbNotImportedClubsGroups = alClubsGroups.size() - nbImportedClubsGroups;
+            }
+        }
+        int nbClubsGroupsAfterImport = 0;
+        try {
+            nbClubsGroupsAfterImport = tournament.clubsGroupsList().size();
+        } catch (RemoteException ex) {
+            Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
+        }
+             
+        nbReplacedClubsGroups = 0;
+      
+        
+        
+
 
         try {
             tournament.updateNumberOfRoundsIfNecesary();
@@ -516,6 +551,14 @@ public class ExternalDocument {
         }
         if (nbReplacedTeams > 0) {
             strReport += "\n" + nbReplacedTeams + " Teams have been replaced.";
+        }
+
+        strReport += "\n\n" + nbImportedClubsGroups + " Clubs Groups have been imported.";
+        if (nbNotImportedTeams > 0) {
+            strReport = "\n" + nbNotImportedClubsGroups + " Clubs Groups could not be imported.";
+        }
+        if (nbReplacedClubsGroups > 0) {
+            strReport += "\n" + nbReplacedClubsGroups + " Clubs Groups have been replaced.";
         }
 
         return strReport;
@@ -876,6 +919,7 @@ public class ExternalDocument {
         paiPS.setPaiSeMinimizeHandicap(new Long(extractNodeValue(nnmPaiPS, "paiSeMinimizeHandicap", "0")).longValue());
         paiPS.setPaiSeAvoidSameGeo(new Long(extractNodeValue(nnmPaiPS, "paiSeAvoidSameGeo", "100000000000")).longValue());
         paiPS.setPaiSePreferMMSDiffRatherThanSameCountry(new Integer(extractNodeValue(nnmPaiPS, "paiSePreferMMSDiffRatherThanSameCountry", "1")).intValue());
+        paiPS.setPaiSePreferMMSDiffRatherThanSameClubsGroup(new Integer(extractNodeValue(nnmPaiPS, "paiSePreferMMSDiffRatherThanSameClubsGroup", "2")).intValue());
         paiPS.setPaiSePreferMMSDiffRatherThanSameClub(new Integer(extractNodeValue(nnmPaiPS, "paiSePreferMMSDiffRatherThanSameClub", "3")).intValue());
 
         tps.setPairingParameterSet(paiPS);
@@ -939,8 +983,10 @@ public class ExternalDocument {
             pubPS.setPrint(Boolean.valueOf(strPrint).booleanValue());
             String strExportToLocalFile = extractNodeValue(nnmPubPS, "exportToLocalFile", "true");
             pubPS.setExportToLocalFile(Boolean.valueOf(strExportToLocalFile).booleanValue());
-            String strExportToOGSite = extractNodeValue(nnmPubPS, "exportToOGSite", "false");
-            pubPS.setExportToOGSite(Boolean.valueOf(strExportToOGSite).booleanValue());
+            String strExportHFToOGSite = extractNodeValue(nnmPubPS, "exportHFToOGSite", "false");
+            pubPS.setExportHFToOGSite(Boolean.valueOf(strExportHFToOGSite).booleanValue());
+            String strExportTFToOGSite = extractNodeValue(nnmPubPS, "exportTFToOGSite", "true");
+            pubPS.setExportTFToOGSite(Boolean.valueOf(strExportTFToOGSite).booleanValue());
             String strExportToUDSite = extractNodeValue(nnmPubPS, "exportToUDSite", "false");
             pubPS.setExportToUDSite(Boolean.valueOf(strExportToUDSite).booleanValue());               
         }
@@ -957,13 +1003,12 @@ public class ExternalDocument {
         }
 
         NodeList nlTeamList = doc.getElementsByTagName("Team");
-        // Is there a Teams node in file ?
+        
         if (nlTeamList == null || nlTeamList.getLength() == 0) {
             return null;
         }
 
         ArrayList<Team> alTeams = new ArrayList<Team>();
-        nlTeamList = doc.getElementsByTagName("Team");
         for (int i = 0; i < nlTeamList.getLength(); i++) {
             Node nTeam = nlTeamList.item(i);
             NamedNodeMap nnmTeam = nTeam.getAttributes();
@@ -1069,6 +1114,40 @@ public class ExternalDocument {
         ttps.setTeamPlacementParameterSet(tpps);
 
         return ttps;
+    }
+
+    private static ArrayList<ClubsGroup> importClubsGroupsFromXMLFile(File sourceFile) {
+        Document doc = getDocumentFromXMLFile(sourceFile);
+        if (doc == null) {
+            return null;
+        }
+         
+        NodeList nlClubsGroupList = doc.getElementsByTagName("ClubsGroup"); 
+        // Is there a ClubsGroups node in file ?        
+        if (nlClubsGroupList == null || nlClubsGroupList.getLength() == 0) {
+            return null;
+        }
+        
+        ArrayList<ClubsGroup> alClubsGroups = new ArrayList<ClubsGroup>();
+        for(int i = 0; i < nlClubsGroupList.getLength(); i++){
+            Node nClubsGroup = nlClubsGroupList.item(i);
+            NamedNodeMap nnmClubsGroup = nClubsGroup.getAttributes();
+            String strCGName = extractNodeValue(nnmClubsGroup, "name", "Unnamed Clubs Group");
+            ClubsGroup cg = new ClubsGroup(strCGName);
+            
+            NodeList nlElements = nClubsGroup.getChildNodes();
+            for(int iel = 0; iel < nlElements.getLength(); iel++){
+                Node nClub = nlElements.item(iel);
+                if (nClub.getNodeType() != Node.ELEMENT_NODE) continue;
+                if (!nClub.getNodeName().equals("Club")) continue;
+                NamedNodeMap nnmClub = nClub.getAttributes();
+                String strClubName = extractNodeValue(nnmClub, "name", "Unnamed club");
+                Club club = new Club(strClubName);
+                cg.put(club);
+            }
+            alClubsGroups.add(cg);
+        }
+        return alClubsGroups;
     }
 
     public static String extractNodeValue(NamedNodeMap nnm, String attributeName, String defaultValue) {
@@ -2986,6 +3065,20 @@ public class ExternalDocument {
         Element emTeamTournamentParameterSet = generateXMLTeamTournamentParameterSetElement(document, ttps);
         rootElement.appendChild(emTeamTournamentParameterSet);
 
+        
+        // Include Clubs groups
+        ArrayList<ClubsGroup> alClubsGroup = new ArrayList<ClubsGroup>();
+        try {
+            alClubsGroup = tournament.clubsGroupsList();
+        } catch (RemoteException ex) {
+            Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        if (!alClubsGroup.isEmpty()) {
+            Element emClubsGroups = generateXMLClubsGroupsElement(document, alClubsGroup);
+            rootElement.appendChild(emClubsGroups);
+        }
+       
         // Transform document into a DOM source
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = null;
@@ -2998,7 +3091,7 @@ public class ExternalDocument {
             return;
         }
         DOMSource source = new DOMSource(document);
-
+       
         // generate file
         Writer output = null;
         try {
@@ -3021,7 +3114,7 @@ public class ExternalDocument {
             output.close();
         } catch (IOException ex) {
             Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }    
     }
 
     /**
@@ -3180,6 +3273,36 @@ public class ExternalDocument {
         }
     }
 
+    /**
+     * Generates an xml clubsgroups Element 
+     * returns the Element
+     */
+    private static Element generateXMLClubsGroupsElement(Document document, ArrayList<ClubsGroup> alClubsGroups) {
+        Element emClubsGroups = document.createElement("ClubsGroups");      
+        for (ClubsGroup cg : alClubsGroups) {
+            String strCGName = cg.getName();
+            Element emClubsGroup = document.createElement("ClubsGroup");
+            emClubsGroup.setAttribute("name", strCGName);
+            for (Club club : cg.getHmClubs().values()){
+                String strClub = club.getName();
+                Element emClub = document.createElement("Club");
+                emClub.setAttribute("name", strClub);
+                emClubsGroup.appendChild(emClub);
+            }
+            emClubsGroups.appendChild(emClubsGroup);
+        }
+                    
+        if(emClubsGroups.hasChildNodes()){
+            return emClubsGroups;
+        }
+        else {
+            return null;
+        }
+
+    }
+    
+    
+    
     /**
      * Generates an xml ByePlayers Element and includes all  bye players
      * returns the Element or null if no bye players
@@ -3392,6 +3515,7 @@ public class ExternalDocument {
         emPairingParameterSet.setAttribute("paiSeMinimizeHandicap", "" + paiPS.getPaiSeMinimizeHandicap());
         emPairingParameterSet.setAttribute("paiSeAvoidSameGeo", "" + paiPS.getPaiSeAvoidSameGeo());
         emPairingParameterSet.setAttribute("paiSePreferMMSDiffRatherThanSameCountry", "" + paiPS.getPaiSePreferMMSDiffRatherThanSameCountry());
+        emPairingParameterSet.setAttribute("paiSePreferMMSDiffRatherThanSameClubsGroup", "" + paiPS.getPaiSePreferMMSDiffRatherThanSameClubsGroup());
         emPairingParameterSet.setAttribute("paiSePreferMMSDiffRatherThanSameClub", "" + paiPS.getPaiSePreferMMSDiffRatherThanSameClub());
 
         emTournamentParameterSet.appendChild(emPairingParameterSet);
@@ -3451,7 +3575,8 @@ public class ExternalDocument {
         
         emPublishParameterSet.setAttribute("print", Boolean.valueOf(pubPS.isPrint()).toString());
         emPublishParameterSet.setAttribute("exportToLocalFile", Boolean.valueOf(pubPS.isExportToLocalFile()).toString());
-        emPublishParameterSet.setAttribute("exportToOGSite", Boolean.valueOf(pubPS.isExportToOGSite()).toString());
+        emPublishParameterSet.setAttribute("exportHFToOGSite", Boolean.valueOf(pubPS.isExportHFToOGSite()).toString());
+        emPublishParameterSet.setAttribute("exportTFToOGSite", Boolean.valueOf(pubPS.isExportTFToOGSite()).toString());
         emPublishParameterSet.setAttribute("exportToUDSite", Boolean.valueOf(pubPS.isExportToUDSite()).toString());
         
         emTournamentParameterSet.appendChild(emPublishParameterSet);
