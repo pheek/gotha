@@ -368,11 +368,11 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         scpClubs.setViewportView(lstClubs);
 
         dlgEditClubsGroups.getContentPane().add(scpClubs);
-        scpClubs.setBounds(670, 60, 80, 340);
+        scpClubs.setBounds(640, 60, 110, 340);
 
         jLabel41.setText("Known clubs");
         dlgEditClubsGroups.getContentPane().add(jLabel41);
-        jLabel41.setBounds(670, 40, 80, 14);
+        jLabel41.setBounds(640, 40, 110, 14);
 
         lstClubsGroups.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -388,20 +388,20 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
         scpClubsGroups.setViewportView(lstClubsGroups);
 
         dlgEditClubsGroups.getContentPane().add(scpClubsGroups);
-        scpClubsGroups.setBounds(40, 60, 180, 260);
+        scpClubsGroups.setBounds(40, 60, 220, 260);
 
         jLabel25.setText("Clubs groups");
         dlgEditClubsGroups.getContentPane().add(jLabel25);
-        jLabel25.setBounds(40, 40, 180, 14);
+        jLabel25.setBounds(40, 40, 220, 14);
 
         scpClubsInSelectedGroup.setViewportView(lstClubsInSelectedGroup);
 
         dlgEditClubsGroups.getContentPane().add(scpClubsInSelectedGroup);
-        scpClubsInSelectedGroup.setBounds(260, 60, 180, 260);
+        scpClubsInSelectedGroup.setBounds(310, 60, 220, 260);
 
         jLabel42.setText("Clubs in selected group");
         dlgEditClubsGroups.getContentPane().add(jLabel42);
-        jLabel42.setBounds(260, 40, 180, 14);
+        jLabel42.setBounds(310, 40, 220, 14);
 
         btnAddGroup.setText("Add new group");
         btnAddGroup.addActionListener(new java.awt.event.ActionListener() {
@@ -410,7 +410,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
             }
         });
         dlgEditClubsGroups.getContentPane().add(btnAddGroup);
-        btnAddGroup.setBounds(40, 340, 180, 23);
+        btnAddGroup.setBounds(40, 340, 220, 23);
 
         btnRemoveGroup.setText("Remove selected group");
         btnRemoveGroup.addActionListener(new java.awt.event.ActionListener() {
@@ -419,7 +419,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
             }
         });
         dlgEditClubsGroups.getContentPane().add(btnRemoveGroup);
-        btnRemoveGroup.setBounds(40, 380, 180, 23);
+        btnRemoveGroup.setBounds(40, 380, 220, 23);
 
         btnAddClub.setText("Add club");
         btnAddClub.addActionListener(new java.awt.event.ActionListener() {
@@ -428,7 +428,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
             }
         });
         dlgEditClubsGroups.getContentPane().add(btnAddClub);
-        btnAddClub.setBounds(260, 340, 180, 23);
+        btnAddClub.setBounds(310, 340, 220, 23);
 
         btnRemoveClub.setText("Remove selected club");
         btnRemoveClub.addActionListener(new java.awt.event.ActionListener() {
@@ -437,7 +437,7 @@ public class JFrTournamentOptions extends javax.swing.JFrame{
             }
         });
         dlgEditClubsGroups.getContentPane().add(btnRemoveClub);
-        btnRemoveClub.setBounds(260, 380, 180, 23);
+        btnRemoveClub.setBounds(310, 380, 220, 23);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tournament settings");

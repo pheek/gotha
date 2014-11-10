@@ -1265,21 +1265,21 @@ public class Tournament extends UnicastRemoteObject implements TournamentInterfa
 
         // Secondary criteria 2,3 and 4 : Geographical Criteria
         int countryFactor = paiPS.getPaiSePreferMMSDiffRatherThanSameCountry();
-        double xCountry = (double) Math.abs(countryFactor + 0.1) / (double) secRange;
+        double xCountry = (double) Math.abs(countryFactor + 0.99) / (double) secRange;
         if (xCountry > 1.0) {
             xCountry = 1.0;
         }
         double malusCountry = (1.0 - k) * xCountry + k * xCountry * xCountry;
 
         int clubsGroupFactor = paiPS.getPaiSePreferMMSDiffRatherThanSameClubsGroup();
-        double xClubsGroup = (double) Math.abs(clubsGroupFactor + 0.1) / (double) secRange;
+        double xClubsGroup = (double) Math.abs(clubsGroupFactor + 0.99) / (double) secRange;
         if (xClubsGroup > 1.0) {
             xClubsGroup = 1.0;
         }
         double malusClubsGroup = (1.0 - k) * xClubsGroup + k * xClubsGroup * xClubsGroup;
 
         int clubFactor = paiPS.getPaiSePreferMMSDiffRatherThanSameClub();
-        double xClub = (double) Math.abs(clubFactor + 0.1) / (double) secRange;
+        double xClub = (double) Math.abs(clubFactor + 0.99) / (double) secRange;
         if (xClub > 1.0) {
             xClub = 1.0;
         }

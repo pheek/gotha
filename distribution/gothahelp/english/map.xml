@@ -30,6 +30,7 @@
 	<mapID target="Handicap settings" url="Handicap settings.html"/>
 	<mapID target="Placement settings" url="Placement settings.html"/>
 	<mapID target="Pairing settings" url="Pairing settings.html"/>
+	<mapID target="Edit clubs groups" url="Edit clubs groups.html"/>
 	<mapID target="Team Placement settings" url="Team Placement settings.html"/>
 	<mapID target="Games Options" url="Games Options.html"/>
 	<mapID target="Preferences frame" url="Preferences frame.html"/>
@@ -52,4 +53,10 @@
 	<mapID target="Parameters tab1" url="Parameters tab.html"/>
 	<mapID target="Publish menu1" url="Publish menu.html"/>
 	<mapID target="Publish tab1" url="Publish tab.html"/>
+	<mapID target="General settings1" url="General settings.html"/>
+	<mapID target="Handicap settings1" url="Handicap settings.html"/>
+	<mapID target="Pairing settings1" url="Pairing settings.html"/>
+	<mapID target="Placement settings1" url="Placement settings.html"/>
+	<mapID target="Team Placement settings1" url="Team Placement settings.html"/>
+	<mapID target="Edit clubs groups1" url="Edit clubs groups.html"/>
 </map>

@@ -34,9 +34,9 @@ import javax.swing.JProgressBar;
 public class Gotha {
 
     static Locale locale = Locale.getDefault();
-    static final long GOTHA_VERSION = 339L;
-    static final long GOTHA_MINOR_VERSION = 2L;
-    static final java.util.Date GOTHA_RELEASE_DATE = (new GregorianCalendar(2014, Calendar.NOVEMBER, 9)).getTime();
+    static final long GOTHA_VERSION = 340L;
+    static final long GOTHA_MINOR_VERSION = 0L;
+    static final java.util.Date GOTHA_RELEASE_DATE = (new GregorianCalendar(2014, Calendar.NOVEMBER, 10)).getTime();
     // Data version for serialization
     static final long GOTHA_DATA_VERSION = 201L;
     
@@ -328,7 +328,7 @@ public class Gotha {
     public static TournamentInterface getTournamentFromFile(File f) throws IOException, ClassNotFoundException {
         TournamentInterface t = new Tournament();
 
-        String strReport = ExternalDocument.importTournamentFromXMLFile(f, t, true, true, true, true); 
+        String strReport = ExternalDocument.importTournamentFromXMLFile(f, t, true, true, true, true, true); 
         try {
             t.getShortName();
         } catch (RemoteException ex) {

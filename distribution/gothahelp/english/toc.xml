@@ -34,7 +34,9 @@
             <tocitem text="General settings" target="General settings" />
             <tocitem text="Handicap settings" target="Handicap settings" />
             <tocitem text="Placement settings" target="Placement settings" />
-            <tocitem text="Pairing settings" target="Pairing settings" />
+            <tocitem text="Pairing settings" target="Pairing settings">
+                <tocitem text="Edit clubs groups" target="Edit clubs groups" />
+            </tocitem>
             <tocitem text="Team Placement settings" target="Team Placement settings" />
         </tocitem>
         <tocitem text="Games Options" target="Games Options" />

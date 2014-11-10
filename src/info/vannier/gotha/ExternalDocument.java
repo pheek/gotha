@@ -330,7 +330,8 @@ public class ExternalDocument {
         return doc;
     }
 
-    public static String importTournamentFromXMLFile(File sourceFile, TournamentInterface tournament, boolean bPlayers, boolean bGames, boolean bTPS, boolean bTeams) {
+    public static String importTournamentFromXMLFile(File sourceFile, TournamentInterface tournament, 
+            boolean bPlayers, boolean bGames, boolean bTPS, boolean bTeams, boolean bClubsGroups) {
         // What dataVersion ?
         long dataVersion = ExternalDocument.importDataVersionFromXMLFile(sourceFile);
 
@@ -489,36 +490,35 @@ public class ExternalDocument {
         int nbImportedClubsGroups = 0;
         int nbNotImportedClubsGroups = 0;
         int nbReplacedClubsGroups = 0;
-
-        int nbClubsGroupsBeforeImport = 0;
-        try {
-            nbClubsGroupsBeforeImport = tournament.clubsGroupsList().size();
-        } catch (RemoteException ex) {
-            Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        ArrayList<ClubsGroup> alClubsGroups = ExternalDocument.importClubsGroupsFromXMLFile(sourceFile);
-        if (alClubsGroups != null) {              
-            for(ClubsGroup cg : alClubsGroups){
-                try {
-                    if (tournament.addClubsGroup(cg)) nbImportedClubsGroups++;
-                } catch (RemoteException ex) {
-                    Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                nbNotImportedClubsGroups = alClubsGroups.size() - nbImportedClubsGroups;
+        if (bClubsGroups){
+            int nbClubsGroupsBeforeImport = 0;
+            try {
+                nbClubsGroupsBeforeImport = tournament.clubsGroupsList().size();
+            } catch (RemoteException ex) {
+                Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
             }
+            ArrayList<ClubsGroup> alClubsGroups = ExternalDocument.importClubsGroupsFromXMLFile(sourceFile);
+            if (alClubsGroups != null) {              
+                for(ClubsGroup cg : alClubsGroups){
+                    try {
+                        if (tournament.addClubsGroup(cg)) nbImportedClubsGroups++;
+                    } catch (RemoteException ex) {
+                        Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    nbNotImportedClubsGroups = alClubsGroups.size() - nbImportedClubsGroups;
+                }
+            }
+            int nbClubsGroupsAfterImport = 0;
+            try {
+                nbClubsGroupsAfterImport = tournament.clubsGroupsList().size();
+            } catch (RemoteException ex) {
+                Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            nbReplacedClubsGroups = nbClubsGroupsBeforeImport + nbImportedClubsGroups - nbClubsGroupsAfterImport;
         }
-        int nbClubsGroupsAfterImport = 0;
-        try {
-            nbClubsGroupsAfterImport = tournament.clubsGroupsList().size();
-        } catch (RemoteException ex) {
-            Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
-        }
-             
-        nbReplacedClubsGroups = 0;
       
         
-        
-
 
         try {
             tournament.updateNumberOfRoundsIfNecesary();
@@ -554,8 +554,8 @@ public class ExternalDocument {
         }
 
         strReport += "\n\n" + nbImportedClubsGroups + " Clubs Groups have been imported.";
-        if (nbNotImportedTeams > 0) {
-            strReport = "\n" + nbNotImportedClubsGroups + " Clubs Groups could not be imported.";
+        if (nbNotImportedClubsGroups > 0) {
+            strReport += "\n" + nbNotImportedClubsGroups + " Clubs Groups could not be imported.";
         }
         if (nbReplacedClubsGroups > 0) {
             strReport += "\n" + nbReplacedClubsGroups + " Clubs Groups have been replaced.";
@@ -988,7 +988,9 @@ public class ExternalDocument {
             String strExportTFToOGSite = extractNodeValue(nnmPubPS, "exportTFToOGSite", "true");
             pubPS.setExportTFToOGSite(Boolean.valueOf(strExportTFToOGSite).booleanValue());
             String strExportToUDSite = extractNodeValue(nnmPubPS, "exportToUDSite", "false");
-            pubPS.setExportToUDSite(Boolean.valueOf(strExportToUDSite).booleanValue());               
+            pubPS.setExportToUDSite(Boolean.valueOf(strExportToUDSite).booleanValue());  
+            String strHtmlAutoScroll = extractNodeValue(nnmPubPS, "htmlAutoScroll", "false");
+            pubPS.setHtmlAutoScroll(Boolean.valueOf(strHtmlAutoScroll).booleanValue());  
         }
         tps.setPublishParameterSet(pubPS);
 
@@ -2160,6 +2162,13 @@ public class ExternalDocument {
         }
         GeneralParameterSet gps = tps.getGeneralParameterSet();
         DPParameterSet dpps = tps.getDPParameterSet();
+        PublishParameterSet pubPS = tps.getPublishParameterSet();
+        
+        boolean bScroll = pubPS.isHtmlAutoScroll();
+        String strMarqueeTagBeg = "\n<marquee direction =\"up\" height=\"550\" behavior=\"alternate\" loop=\"100\" SCROLLDELAY=\"1\" SCROLLAMOUNT=\"2\">";
+        String strMarqueeTagEnd = "\n</marquee>";
+        
+        
         Writer output;
         try {
             output = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(f), DEFAULT_CHARSET));
@@ -2181,6 +2190,8 @@ public class ExternalDocument {
             output.write("<body>");
             output.write("<h1 align=\"center\">" + gps.getName() + "</h1>");
             output.write("<h1 align=\"center\">" + "Players list" + "</h1>");
+            if(bScroll) output.write(strMarqueeTagBeg);
+            
             output.write("<table align=\"center\" class=\"simple\">");
             output.write("\n<th class=\"right\"> </th>");
             output.write("\n<th class=\"left\">Pin/Lic/Id</th>");
@@ -2250,6 +2261,7 @@ public class ExternalDocument {
 
         try {
             output.write("\n</table>");
+            if(bScroll) output.write(strMarqueeTagEnd);
         } catch (IOException ex) {
             Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -2280,6 +2292,11 @@ public class ExternalDocument {
         }
         GeneralParameterSet gps = tps.getGeneralParameterSet();
         TeamPlacementParameterSet tpps = ttps.getTeamPlacementParameterSet();
+        PublishParameterSet pubPS = tps.getPublishParameterSet();
+        
+        boolean bScroll = pubPS.isHtmlAutoScroll();
+        String strMarqueeTagBeg = "\n<marquee direction =\"up\" height=\"550\" behavior=\"alternate\" loop=\"100\" SCROLLDELAY=\"1\" SCROLLAMOUNT=\"2\">";
+        String strMarqueeTagEnd = "\n</marquee>";
 
         Writer output;
         try {
@@ -2302,6 +2319,8 @@ public class ExternalDocument {
             output.write("<body>");
             output.write("<h1 align=\"center\">" + gps.getName() + "</h1>");
             output.write("<h1 align=\"center\">" + "Teams list" + "</h1>");
+            if(bScroll) output.write(strMarqueeTagBeg);
+            
             output.write("<table align=\"center\" class=\"simple\">");
             output.write("\n<th align=\"right\">Nr&nbsp;</th>");
             output.write("\n<th align=\"left\">&nbsp;Team name&nbsp;</th>");
@@ -2351,6 +2370,7 @@ public class ExternalDocument {
 
         try {
             output.write("\n</table>");
+            if(bScroll) output.write(strMarqueeTagEnd);
         } catch (IOException ex) {
             Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -2372,6 +2392,7 @@ public class ExternalDocument {
     }
     
     public static void generateGamesListHTMLFileContents(TournamentInterface tournament, int roundNumber, File f) {
+       
         TournamentParameterSet tps;
         try {
             tps = tournament.getTournamentParameterSet();
@@ -2382,6 +2403,11 @@ public class ExternalDocument {
         GeneralParameterSet gps = tps.getGeneralParameterSet();
         PlacementParameterSet pps = tps.getPlacementParameterSet();
         DPParameterSet dpps = tps.getDPParameterSet();
+        PublishParameterSet pubPS = tps.getPublishParameterSet();
+        
+        boolean bScroll = pubPS.isHtmlAutoScroll();
+        String strMarqueeTagBeg = "\n<marquee direction =\"up\" height=\"550\" behavior=\"alternate\" loop=\"100\" SCROLLDELAY=\"1\" SCROLLAMOUNT=\"2\">";
+        String strMarqueeTagEnd = "\n</marquee>";
         
         Writer output;
         try {
@@ -2402,8 +2428,10 @@ public class ExternalDocument {
             
             output.write("<body>");
             output.write("<h1 align=\"center\">" + gps.getName() + "</h1>");
-            output.write("<h1 align=\"center\">" + "Games list. Round " + (roundNumber + 1) + "</h1>");            
-            output.write("<table align=\"center\" class=\"simple\">");
+            output.write("<h1 align=\"center\">" + "Games list. Round " + (roundNumber + 1) + "</h1>");  
+            if(bScroll) output.write(strMarqueeTagBeg);
+            
+            output.write("\n<table align=\"center\" class=\"simple\">");
             output.write("\n<th class=\"right\">&nbsp;Tble&nbsp;</th>" + 
                     "<th class=\"left\">&nbsp;White&nbsp;</th>" + 
                     "<th class=\"left\">&nbsp;Black&nbsp; </th>" + 
@@ -2455,7 +2483,9 @@ public class ExternalDocument {
         }
         try {
             output.write("\n</table>");
-            output.write("<h4 align=center>" + Gotha.getGothaVersionnedName() + "<br>" + new SimpleDateFormat("dd-MM-yyyy HH:mm").format(new Date()) + "</h4>");
+            if(bScroll) output.write(strMarqueeTagEnd);
+            
+            output.write("\n<h4 align=center>" + Gotha.getGothaVersionnedName() + "<br>" + new SimpleDateFormat("dd-MM-yyyy HH:mm").format(new Date()) + "</h4>");
             output.write("\n</body></html>");
             output.close();
         } catch (IOException ex) {
@@ -2474,6 +2504,11 @@ public class ExternalDocument {
         }
         GeneralParameterSet gps = tps.getGeneralParameterSet();
         PlacementParameterSet pps = tps.getPlacementParameterSet();
+        PublishParameterSet pubPS = tps.getPublishParameterSet();
+        
+        boolean bScroll = pubPS.isHtmlAutoScroll();
+        String strMarqueeTagBeg = "\n<marquee direction =\"up\" height=\"550\" behavior=\"alternate\" loop=\"100\" SCROLLDELAY=\"1\" SCROLLAMOUNT=\"2\">";
+        String strMarqueeTagEnd = "\n</marquee>";
 
         // Prepare tabCrit from pps
         int[] tC = pps.getPlaCriteria();
@@ -2499,7 +2534,9 @@ public class ExternalDocument {
             output.write("<body>");
 
             output.write("<h1 align=\"center\">" + gps.getName() + "</h1>");
-            output.write("<table align=\"center\" class=\"simple\">");
+            if(bScroll) output.write(strMarqueeTagBeg);
+            
+            output.write("\n<table align=\"center\" class=\"simple\">");
             if (tps.getDPParameterSet().isDisplayNumCol())
                 output.write("\n<th class=\"left\">&nbsp;Num&nbsp;</th>");
             if (tps.getDPParameterSet().isDisplayPlCol())
@@ -2601,6 +2638,8 @@ public class ExternalDocument {
 
         try {
             output.write("\n</table>");
+            if(bScroll) output.write(strMarqueeTagEnd);
+
         } catch (IOException ex) {
             Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -2638,6 +2677,12 @@ public class ExternalDocument {
         DPParameterSet dpps = tps.getDPParameterSet();
         TeamGeneralParameterSet tgps = ttps.getTeamGeneralParameterSet();
         TeamPlacementParameterSet tpps = ttps.getTeamPlacementParameterSet();
+        PublishParameterSet pubPS = tps.getPublishParameterSet();
+        
+        boolean bScroll = pubPS.isHtmlAutoScroll();
+        String strMarqueeTagBeg = "\n<marquee direction =\"up\" height=\"550\" behavior=\"alternate\" loop=\"100\" SCROLLDELAY=\"1\" SCROLLAMOUNT=\"2\">";
+        String strMarqueeTagEnd = "\n</marquee>";
+
         
         Writer output;
         try {
@@ -2659,6 +2704,8 @@ public class ExternalDocument {
             output.write("<body>");
             output.write("<h1 align=\"center\">" + gps.getName() + "</h1>");
             output.write("<h1 align=\"center\">" + "Matches list. Round " + (roundNumber + 1) + "</h1>");            
+            if(bScroll) output.write(strMarqueeTagBeg);
+            
             output.write("<table align=\"center\" class=\"simple\">");
             output.write("\n<th class=\"right\">&nbsp;Tble&nbsp;</th>" + 
                     "<th class=\"left\">&nbsp;&nbsp;</th>" + 
@@ -2756,6 +2803,7 @@ public class ExternalDocument {
         }
         try {
             output.write("\n</table>");
+            if(bScroll) output.write(strMarqueeTagEnd);
             output.write("<h4 align=center>" + Gotha.getGothaVersionnedName() + "<br>" + new SimpleDateFormat("dd-MM-yyyy HH:mm").format(new Date()) + "</h4>");
             output.write("\n</body></html>");
             output.close();
@@ -2777,6 +2825,11 @@ public class ExternalDocument {
         }
         GeneralParameterSet gps = tps.getGeneralParameterSet();
         TeamPlacementParameterSet tpps = ttps.getTeamPlacementParameterSet();
+        PublishParameterSet pubPS = tps.getPublishParameterSet();
+        
+        boolean bScroll = pubPS.isHtmlAutoScroll();
+        String strMarqueeTagBeg = "\n<marquee direction =\"up\" height=\"550\" behavior=\"alternate\" loop=\"100\" SCROLLDELAY=\"1\" SCROLLAMOUNT=\"2\">";
+        String strMarqueeTagEnd = "\n</marquee>";
 
         // Prepare tabCrit from pps
         int[] tC = tpps.getPlaCriteria();
@@ -2803,6 +2856,8 @@ public class ExternalDocument {
             output.write("<body>");
             output.write("<h1 align=\"center\">" + gps.getName() + "</h1>");
             output.write("<h1 align=\"center\">" + "Teams standings" + "</h1>");
+            if(bScroll) output.write(strMarqueeTagBeg);
+            
             output.write("<table align=\"center\" class=\"simple\">");
             output.write("\n<th class=\"left\">&nbsp;Pl&nbsp;</th>"
                     + "<th class=\"middle\">&nbsp;Team name&nbsp;</th>");
@@ -2862,6 +2917,8 @@ public class ExternalDocument {
 
         try {
             output.write("\n</table>");
+            if(bScroll) output.write(strMarqueeTagEnd);
+
         } catch (IOException ex) {
             Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -2884,108 +2941,6 @@ public class ExternalDocument {
         }
     }
     
-    public static void oldgenerateTeamsListHTMLFile(TournamentInterface tournament, File f) throws RemoteException, IOException{
-        TeamTournamentParameterSet ttps;
-        TournamentParameterSet tps;
-        try{
-            ttps = tournament.getTeamTournamentParameterSet();
-            tps = tournament.getTournamentParameterSet();
-        } catch (RemoteException ex) {
-            Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
-            return;
-        }
-        GeneralParameterSet gps = tps.getGeneralParameterSet();
-        TeamPlacementParameterSet tpps = ttps.getTeamPlacementParameterSet();
-
-        Writer output;
-        try {
-            output = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(f), DEFAULT_CHARSET));
-
-        } catch (IOException ex) {
-            Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
-            return;
-        }
-
-        // Headers
-        try {
-            output.write("<html>");
-            output.write("<head>");
-            output.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=" + DEFAULT_CHARSET + "\">");
-            output.write("<title>" + gps.getName() + "</title>");
-            output.write("<link href=\"current.css\" rel=\"stylesheet\" type=\"text/css\">");
-            output.write("</head>");
-
-            output.write("<body>");
-            output.write("<h1 align=\"center\">" + gps.getName() + "</h1>");
-            output.write("<h1 align=\"center\">" + "Teams list" + "</h1>");
-            output.write("<table align=\"center\" class=\"simple\">");
-            output.write("\n<th class=\"right\">Nr&nbsp;</th>");
-            output.write("\n<th class=\"left\">Team name</th>");
-            output.write("\n<th class=\"right\">Bd&nbsp;</th>");
-            output.write("\n<th class=\"left\">Player</th>");
-            output.write("\n<th class=\"center\">Co</th>");
-            output.write("\n<th class=\"center\">Club</th>");
-            output.write("\n<th class=\"right\">Rating</th>");
-            output.write("\n<th class=\"center\">Rounds</th>");
-
-            output.write("\n</tr>");
-        } catch (IOException ex) {
-            Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        // Contents
-        TeamMemberStrings[] arTMS = null;
-        try {
-            arTMS = TeamMemberStrings.buildTeamMemberStrings(tournament);
-        } catch (RemoteException ex) {
-            Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        try {
-            for (int iTMS = 0; iTMS < arTMS.length; iTMS++) {
-                TeamMemberStrings tMS = arTMS[iTMS];
-                if (tMS == null) break;
-                output.write("\n<tr>");
-                String strPar = "pair";
-                if (iTMS % 2 == 0) {
-                    strPar = "impair";
-                }
-                output.write("<td class=" + strPar + " align=\"right\">" + tMS.strTeamNumber + "&nbsp;</td>");
-                output.write("<td class=" + strPar + " align=\"left\">" + tMS.strTeamName + "</td>");
-                output.write("<td class=" + strPar + " align=\"right\">" + tMS.strBoardNumber + "&nbsp;</td>");
-                output.write("<td class=" + strPar + " align=\"left\">" + tMS.strPlayerName + "</td>");
-                output.write("<td class=" + strPar + " align=\"center\">" + tMS.strCountry + "</td>");
-                output.write("<td class=" + strPar + " align=\"center\">" + tMS.strClub + "</td>");
-                output.write("<td class=" + strPar + " align=\"right\">" + tMS.strRating + "&nbsp;</td>");
-//                output.write("<td class=" + strPar + " align=\"center\">" + tMS.strMembership + "</td>");
-                output.write("<td class=\"" + strPar + " participation\"" +  " align=\"center\">" + tMS.strMembership + "</td>");
-                output.write("</tr>");
-            }
-        } catch (IOException ex) {
-            Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        try {
-            output.write("\n</table>");
-        } catch (IOException ex) {
-            Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-
-            output.write("<h4 align=center>" + Gotha.getGothaVersionnedName() + "<br>" + new SimpleDateFormat("dd-MM-yyyy HH:mm").format(new Date()) + "</h4>");
-        } catch (IOException ex) {
-            Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        try {
-            output.write("\n</body></html>");
-        } catch (IOException ex) {
-            Logger.getLogger(ExternalDocument.class.getName()).log(Level.SEVERE, null, ex);
-        }
-            output.close();
-
-    }
-
     public static void generateXMLFile(TournamentInterface tournament, File xmlFile) {
         DocumentBuilderFactory documentBuilderFactory =
                 DocumentBuilderFactory.newInstance();
@@ -3578,6 +3533,7 @@ public class ExternalDocument {
         emPublishParameterSet.setAttribute("exportHFToOGSite", Boolean.valueOf(pubPS.isExportHFToOGSite()).toString());
         emPublishParameterSet.setAttribute("exportTFToOGSite", Boolean.valueOf(pubPS.isExportTFToOGSite()).toString());
         emPublishParameterSet.setAttribute("exportToUDSite", Boolean.valueOf(pubPS.isExportToUDSite()).toString());
+        emPublishParameterSet.setAttribute("htmlAutoScroll", Boolean.valueOf(pubPS.isHtmlAutoScroll()).toString());
         
         emTournamentParameterSet.appendChild(emPublishParameterSet);
        

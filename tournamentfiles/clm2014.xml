@@ -42,7 +42,28 @@
 <Player agaExpirationDate="" agaId="" club="91Or" country="" egfPin="" ffgLicence="9826801" ffgLicenceStatus="L" firstName="Ralf" grade="4K" name="Wurzinger" participating="11111111111111111111" rank="4K" rating="1740" ratingOrigin="FFG" registeringStatus="FIN" smmsCorrection="0"/>
 <Player agaExpirationDate="" agaId="" club="31Pi" country="" egfPin="" ffgLicence="1000159" ffgLicenceStatus="L" firstName="Remi" grade="1K" name="le_Brouster" participating="11111111111111111111" rank="1K" rating="1961" ratingOrigin="FFG" registeringStatus="FIN" smmsCorrection="0"/>
 </Players>
-<Games/>
+<Games>
+<Game blackPlayer="DOUSSOTPATRICE" handicap="0" knownColor="true" result="RESULT_UNKNOWN" roundNumber="3" tableNumber="18" whitePlayer="PARCOITDAVID"/>
+<Game blackPlayer="ROBERTLUDWIG" handicap="0" knownColor="true" result="RESULT_UNKNOWN" roundNumber="3" tableNumber="17" whitePlayer="WURZINGERRALF"/>
+<Game blackPlayer="NGUYENHUU_PHUOC" handicap="8" knownColor="true" result="RESULT_UNKNOWN" roundNumber="3" tableNumber="20" whitePlayer="GUEVELBRENDAN"/>
+<Game blackPlayer="FEVRIERLOUIS" handicap="1" knownColor="true" result="RESULT_UNKNOWN" roundNumber="3" tableNumber="19" whitePlayer="CRUBELLIERETIENNE"/>
+<Game blackPlayer="LE_CALVÉTANGUY" handicap="0" knownColor="true" result="RESULT_UNKNOWN" roundNumber="3" tableNumber="3" whitePlayer="BILLOUETSIMON"/>
+<Game blackPlayer="MIZESSYNFRANÇOIS" handicap="0" knownColor="true" result="RESULT_UNKNOWN" roundNumber="3" tableNumber="4" whitePlayer="IMAMURA-CORNUEJOLSTORU"/>
+<Game blackPlayer="NADDEFJEAN_LOUP" handicap="0" knownColor="true" result="RESULT_UNKNOWN" roundNumber="3" tableNumber="1" whitePlayer="HWANGIN-SEONG"/>
+<Game blackPlayer="BLANCHARDBENJAMIN" handicap="0" knownColor="true" result="RESULT_UNKNOWN" roundNumber="3" tableNumber="2" whitePlayer="PAPAZOGLOUBENJAMIN"/>
+<Game blackPlayer="TURLOTQUENTIN" handicap="0" knownColor="true" result="RESULT_UNKNOWN" roundNumber="3" tableNumber="7" whitePlayer="CORNUEJOLSDOMINIQUE"/>
+<Game blackPlayer="TECCHIOPIERRE" handicap="0" knownColor="true" result="RESULT_UNKNOWN" roundNumber="3" tableNumber="8" whitePlayer="GRANGERALBAN"/>
+<Game blackPlayer="KARADABANDENIS" handicap="0" knownColor="true" result="RESULT_UNKNOWN" roundNumber="3" tableNumber="5" whitePlayer="COQUELETLAURENT"/>
+<Game blackPlayer="ARNAUDANCELIN" handicap="0" knownColor="true" result="RESULT_UNKNOWN" roundNumber="3" tableNumber="6" whitePlayer="LEESEMI"/>
+<Game blackPlayer="BUFFARDEMMANUEL" handicap="0" knownColor="true" result="RESULT_UNKNOWN" roundNumber="3" tableNumber="11" whitePlayer="VANNIERRÉMI"/>
+<Game blackPlayer="GUENNOUMORAN" handicap="0" knownColor="true" result="RESULT_UNKNOWN" roundNumber="3" tableNumber="12" whitePlayer="CANCEPHILIPPE"/>
+<Game blackPlayer="GAUTHIERHENRI" handicap="0" knownColor="true" result="RESULT_UNKNOWN" roundNumber="3" tableNumber="9" whitePlayer="LIHAOHAN"/>
+<Game blackPlayer="KUNNESTÉPHAN" handicap="0" knownColor="true" result="RESULT_UNKNOWN" roundNumber="3" tableNumber="10" whitePlayer="MASSONFABIEN"/>
+<Game blackPlayer="BILLOIRECLEMENT" handicap="0" knownColor="true" result="RESULT_UNKNOWN" roundNumber="3" tableNumber="15" whitePlayer="NESMEVINCENT"/>
+<Game blackPlayer="PUYAUBREAUNICOLAS" handicap="0" knownColor="true" result="RESULT_UNKNOWN" roundNumber="3" tableNumber="16" whitePlayer="HENRYYANNIS"/>
+<Game blackPlayer="AVENELAUGUSTIN" handicap="0" knownColor="true" result="RESULT_UNKNOWN" roundNumber="3" tableNumber="13" whitePlayer="LE_BROUSTERREMI"/>
+<Game blackPlayer="MOSCATELLIALDO" handicap="0" knownColor="true" result="RESULT_UNKNOWN" roundNumber="3" tableNumber="14" whitePlayer="WUBEILUN"/>
+</Games>
 <Teams>
 <Team teamName="Toulouse" teamNumber="8">
 <Board boardNumber="1" player="LIHAOHAN" roundNumber="1"/>
@@ -880,7 +901,7 @@
 </PlacementParameterSet>
 <PairingParameterSet paiBaAvoidDuplGame="500000000000000" paiBaBalanceWB="1000000" paiBaDeterministic="true" paiBaRandom="0" paiMaAdditionalPlacementCritSystem1="Rating" paiMaAdditionalPlacementCritSystem2="NULL" paiMaAvoidMixingCategories="0" paiMaCompensateDUDD="true" paiMaDUDDLowerMode="MID" paiMaDUDDUpperMode="MID" paiMaDUDDWeight="100000000" paiMaLastRoundForSeedSystem1="2" paiMaMaximizeSeeding="5000000" paiMaMinimizeScoreDifference="100000000000" paiMaSeedSystem1="SPLITANDRANDOM" paiSeAvoidSameGeo="100000000000" paiSeBarThresholdActive="true" paiSeDefSecCrit="100000000000" paiSeMinimizeHandicap="0" paiSeNbWinsThresholdActive="false" paiSePreferMMSDiffRatherThanSameClub="3" paiSePreferMMSDiffRatherThanSameClubsGroup="2" paiSePreferMMSDiffRatherThanSameCountry="1" paiSeRankThreshold="1D" paiStandardNX1Factor="0.5"/>
 <DPParameterSet displayClCol="true" displayCoCol="true" displayIndGamesInMatches="true" displayNumCol="true" displayPlCol="true" gameFormat="full" playerSortType="name" showByePlayer="true" showNotFinallyRegisteredPlayers="true" showNotPairedPlayers="true" showNotParticipatingPlayers="false" showPlayerClub="true" showPlayerCountry="false" showPlayerGrade="true"/>
-<PublishParameterSet exportHFToOGSite="false" exportTFToOGSite="true" exportToLocalFile="true" exportToUDSite="false" print="true"/>
+<PublishParameterSet exportHFToOGSite="false" exportTFToOGSite="true" exportToLocalFile="true" exportToUDSite="false" htmlAutoScroll="true" print="true"/>
 </TournamentParameterSet>
 <TeamTournamentParameterSet>
 <TeamGeneralParameterSet teamSize="4"/>

@@ -10,6 +10,7 @@ public class PublishParameterSet implements java.io.Serializable{
     private boolean exportHFToOGSite = false;
     private boolean exportTFToOGSite = true;
     private boolean exportToUDSite = false;
+    private boolean htmlAutoScroll = false;
 
     public PublishParameterSet() {             
     }
@@ -105,6 +106,20 @@ public class PublishParameterSet implements java.io.Serializable{
      */
     public void setExportToUDSite(boolean exportToUDSite) {
         this.exportToUDSite = exportToUDSite;
+    }
+
+    /**
+     * @return the htmlAutoScroll
+     */
+    public boolean isHtmlAutoScroll() {
+        return htmlAutoScroll;
+    }
+
+    /**
+     * @param htmlAutoScroll the htmlAutoScroll to set
+     */
+    public void setHtmlAutoScroll(boolean htmlAutoScroll) {
+        this.htmlAutoScroll = htmlAutoScroll;
     }
 
 }

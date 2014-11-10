@@ -8,7 +8,7 @@
         OpenGotha's pairing system is based on <a href="Pairing evaluation function.html">an evaluation function</a> and a maximum matching algorithm.
         <br>To pair a set of n players, OpenGotha first computes a cost for each pair of players, that is to say n*(n-1)/2 costs. The cost is computed by an evaluation function.
         A low cost means an undesirable pairing while a high cost means a desirable pairing.
-        Then these n*(n-1)/2 costs are input to the maximum matching algorithm which finds the set of n/2 couples that give the maximum sum of costs.
+        Then these n*(n-1)/2 costs are input to the maximum matching algorithm which finds the set of n/2 couples that gives the maximum sum of costs.
 
         <h2>The maximum matching algorithm</h2>
         OpenGotha's pairing system is based on an O(n^3) implementation of Edmonds' algorithm, as presented by Harold N. Gabow.

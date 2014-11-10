@@ -82,6 +82,8 @@ public class JFrGotha extends javax.swing.JFrame {
 
     /**
      * Creates new form jFrGotha
+     * @param tournament
+     * @throws java.rmi.RemoteException
      */
     public JFrGotha(TournamentInterface tournament) throws RemoteException {
         this.tournament = tournament;
@@ -179,6 +181,7 @@ public class JFrGotha extends javax.swing.JFrame {
         chkGames = new javax.swing.JCheckBox();
         chkTournamentParameters = new javax.swing.JCheckBox();
         chkTeams = new javax.swing.JCheckBox();
+        chkClubsGroups = new javax.swing.JCheckBox();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         grpTeamPS = new javax.swing.ButtonGroup();
@@ -459,20 +462,31 @@ public class JFrGotha extends javax.swing.JFrame {
         chkGames.setSelected(true);
         chkGames.setText("Games");
         pnlObjectsToImport.add(chkGames);
-        chkGames.setBounds(20, 60, 190, 21);
+        chkGames.setBounds(20, 50, 190, 21);
 
         chkTournamentParameters.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         chkTournamentParameters.setText("Tournament Parameters");
         pnlObjectsToImport.add(chkTournamentParameters);
-        chkTournamentParameters.setBounds(20, 100, 190, 21);
+        chkTournamentParameters.setBounds(20, 80, 190, 21);
 
         chkTeams.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         chkTeams.setText("Teams and team parameters");
         pnlObjectsToImport.add(chkTeams);
-        chkTeams.setBounds(20, 140, 190, 23);
+        chkTeams.setBounds(20, 110, 190, 23);
+
+        chkClubsGroups.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        chkClubsGroups.setSelected(true);
+        chkClubsGroups.setText("Clubs Groups");
+        chkClubsGroups.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkClubsGroupsActionPerformed(evt);
+            }
+        });
+        pnlObjectsToImport.add(chkClubsGroups);
+        chkClubsGroups.setBounds(20, 140, 190, 23);
 
         dlgImportXML.getContentPane().add(pnlObjectsToImport);
-        pnlObjectsToImport.setBounds(140, 40, 260, 170);
+        pnlObjectsToImport.setBounds(140, 40, 260, 180);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Importation will merge information from xml file with information in current tournament.");
@@ -2498,10 +2512,20 @@ public class JFrGotha extends javax.swing.JFrame {
                     File f =  this.chooseASaveFile(this.getDefaultSaveAsFileName());
                     updateShortNameFromFile(f);
                     this.saveTournament(f);
-                   
-                        tournament.setHasBeenSavedOnce(true);
-                        this.addRecentTournament("" + f);
-                        this.tournamentChanged();
+                    
+                    tournament.setHasBeenSavedOnce(true);
+                    this.addRecentTournament("" + f);
+                    this.tournamentChanged();
+                    
+                    // Eventually send the file to opengotha.info
+                    try {
+                        if(tournament.getTournamentParameterSet().getPublishParameterSet().isExportTFToOGSite()){    
+                            TournamentPublishing.sendByFTPToOGSite(tournament, f);
+                        }
+                    } catch (RemoteException ex) {
+                        Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+   
                     return true;
                 }
                return true;
@@ -2538,8 +2562,6 @@ public class JFrGotha extends javax.swing.JFrame {
         }
 
         ExternalDocument.generateXMLFile(t, f);
-        // Eventually send the file to opengotha.info
-        TournamentPublishing.sendByFTPToOGSite(t, f);
         try {
             t.setChangeSinceLastSaveAsFalse();
             t.setHasBeenSavedOnce(true);
@@ -2584,6 +2606,17 @@ public class JFrGotha extends javax.swing.JFrame {
         
         // Make actual save
         this.saveTournament(f);
+        
+        // Eventually send the file to opengotha.info
+        try {
+            if(tournament.getTournamentParameterSet().getPublishParameterSet().isExportTFToOGSite()){    
+                TournamentPublishing.sendByFTPToOGSite(tournament, f);
+            }
+        } catch (RemoteException ex) {
+            Logger.getLogger(JFrGotha.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+
         
         try {
             tournament.setHasBeenSavedOnce(true);
@@ -2734,7 +2767,7 @@ private void btnDlgImportXMLOKActionPerformed(java.awt.event.ActionEvent evt) {/
     }
 
     String strReport = ExternalDocument.importTournamentFromXMLFile(f, tournament,
-            this.chkPlayers.isSelected(), this.chkGames.isSelected(), this.chkTournamentParameters.isSelected(), this.chkTeams.isSelected());
+            this.chkPlayers.isSelected(), this.chkGames.isSelected(), this.chkTournamentParameters.isSelected(), this.chkTeams.isSelected(), this.chkClubsGroups.isSelected());
 
     this.tournamentChanged();
     JOptionPane.showMessageDialog(this, strReport, "Message", JOptionPane.INFORMATION_MESSAGE);
@@ -3105,6 +3138,10 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
         }
     }//GEN-LAST:event_mniPublishActionPerformed
 
+    private void chkClubsGroupsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkClubsGroupsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkClubsGroupsActionPerformed
+
 
     private File chooseAFile(File path, String extension) {
         JFileChooser fileChoice = new JFileChooser(path);
@@ -3407,6 +3444,7 @@ private void mniMemoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     private javax.swing.JComboBox cbxTeamCrit4;
     private javax.swing.JComboBox cbxTeamCrit5;
     private javax.swing.JComboBox cbxTeamCrit6;
+    private javax.swing.JCheckBox chkClubsGroups;
     private javax.swing.JCheckBox chkGames;
     private javax.swing.JCheckBox chkPlayers;
     private javax.swing.JCheckBox chkTeams;

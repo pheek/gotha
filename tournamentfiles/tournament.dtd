@@ -121,6 +121,7 @@
 <!ATTLIST PublishParameterSet exportHFToOGSite CDATA "false">
 <!ATTLIST PublishParameterSet exportTFToOGSite CDATA "true">
 <!ATTLIST PublishParameterSet exportToUDSite CDATA "false">
+<!ATTLIST PublishParameterSet htmlAutoScroll CDATA "false">
 
 <!ELEMENT PairingParameterSet (#PCDATA)>
 <!ATTLIST PairingParameterSet paiStandardNX1Factor                      CDATA "0.5">

@@ -1,4 +1,4 @@
-#Echelle au 9/11/2014 06:44:35
+#Echelle au 10/11/2014 06:44:13
 AAIJ René                               243 e ------- xxxx NL
 AAKERBLOM Charlie                       339 e ------- xxxx SE
 ABADIA Mickaël                        -1400 - 9728205 94MJ FR
@@ -2550,7 +2550,7 @@ DALPHRAGE Fallon                      -1500 - 0520809 75Ju FR
 DALPPAYRAT-GLUTRON Julien             -1300 - 9725082 75Pa FR
 Dal_Zovo Leonardo                      -270 e ------- xxxx IT
 Dam Judith_van                        -1299 e ------- xxxx NL
-DAMART Tanguy                         -1800 - 1100057 69CR FR
+DAMART Tanguy                         -1800 - 1100057 69Ly FR
 DAMAZ Dani                             -300 - 1000413 92An FR
 DAMBRINE Danièle                      -1429 L 1100092 62Ar FR
 DAMESTOY Valentin                     -2000 - 0474703 84VJ FR
@@ -3210,6 +3210,7 @@ DUCHOQUET Gaël                        -1156 L 1100338 67SE FR
 DUCLOS Aurélien                       -1900 - 1100086 26Va FR
 DUCLOSSON Emilie                      -2012 L 1400248 69Ly FR
 DUCLOSSON Juliette                    -1951 L 1400247 69Ly FR
+DUCLOSSON Pierre                      -9999 - 1500077 69Ly FR
 DUCOIN Hanna                          -2000 - 1100384 31To FR
 DUCOIN Nicolas                         -240 L 9237001 31To FR
 DUCORAIL Jean-Sébastien               -9999 - 0360500 63Ce FR
@@ -6282,6 +6283,7 @@ LEVEO Yannick                         -1500 - 0514303 69LJ FR
 LEVEQUE Robert                         -400 - 9111008 06Ni FR
 LEVIER Hubert                          -500 - 9193003 59Li FR
 LEVILAIN Frédéric                     -2000 - 1000201 35Re FR
+LEVINTA Mariana                       -9999 - 1500076 69Ly FR
 LEVIS Vincent                         -1500 - 0328205 94MJ FR
 LEVY Emmanuel                         -1100 - 0900409 92An FR
 LEVY Jean-Marc                        -1000 - 9328903 10Tr FR
@@ -6748,8 +6750,8 @@ MARTIN Antoine                         -500 - 9151701 64Pa FR
 MARTIN Claude                         -1300 - 9125055 75Pa FR
 MARTIN Daniel                         -1400 - 9162001 87Li FR
 MARTIN Elie                           -1601 L 1400054 86Po FR
-MARTIN Eric                            -700 - 9127003 78Ra FR
 MARTIN Eric                           -9999 - 1300286 94Ca FR
+MARTIN Eric                            -700 - 9127003 78Ra FR
 MARTIN Florent                         -715 L 9737001 33Bo FR
 MARTIN François                       -1600 - 0700142 95Ta FR
 MARTIN Gabriel                        -2000 - 1000325 11Ca FR
@@ -7525,7 +7527,7 @@ NERAUD Lucienne                       -9999 - 9200130 00L2 FR
 NERON Guillaume                       -1300 - 9928202 94MJ FR
 NERON Joseph                          -1900 - 0700166 69CR FR
 NESME Thiébaut                        -1900 - 0388701 67SE FR
-NESME Vincent                           -87 L 0414000 38Gr FR
+NESME Vincent                           -87 L 0414000 94No FR
 NEUMANN Norbert                         120 e ------- xxxx DE
 NEUTZLER Damien                       -9999 - 0274703 84VJ FR
 NEUVION Alexandra                     -2000 - 1100198 51Re FR
@@ -9681,6 +9683,7 @@ SYLVESTRE Jean-Paul                    -400 - 0121002 92An FR
 SZABICS Gabor                           279 e ------- xxxx HU
 SZABO Michael                           319 e ------- xxxx AT
 SZE Yu-Hey                             -473 e ------- xxxx XX
+SZIKORA Paul                          -9999 - 1500075 69Ly FR
 SZNAJDER Nicolas                       -450 L 1400107 49An FR
 SZONN Jean-Bernard                     -300 - 9525011 75Pa FR
 SZUMAN Jérémy                         -9999 - 9825026 75Pa FR

@@ -1242,7 +1242,7 @@ public class JFrPlayersManager extends javax.swing.JFrame {
     }//GEN-LAST:event_btnResetActionPerformed
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
-//        LogElements.incrementElement("players.manager.register", "");
+        manageRankGradeAndRatingValues(); // Before anything else, fill unfilled grade/rank/rating fields
         txfFirstName.setText(normalizeCase(txfFirstName.getText()));
         txfName.setText(normalizeCase(txfName.getText()));
 
