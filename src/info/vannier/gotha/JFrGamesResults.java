@@ -38,7 +38,9 @@ public class JFrGamesResults extends javax.swing.JFrame {
     private static final long REFRESH_DELAY = 2000;
     private long lastComponentsUpdateTime = 0;
     public int gamesSortType = GameComparator.TABLE_NUMBER_ORDER;
-    /**
+
+
+		/**
      * current Tournament
      */
     private TournamentInterface tournament;
@@ -60,11 +62,17 @@ public class JFrGamesResults extends javax.swing.JFrame {
         setupRefreshTimer();
     }
 
+    private volatile boolean running = true;
+    javax.swing.Timer timer = null;
     private void setupRefreshTimer() {
-        ActionListener taskPerformer = new ActionListener() {
-
+        ActionListener taskPerformer;
+        taskPerformer = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
+//                System.out.println("actionPerformed");
+                if (!running){
+                    timer.stop();
+                }
                 try {
                     if (tournament.getLastTournamentModificationTime() > lastComponentsUpdateTime) {
                         updateAllViews();
@@ -74,7 +82,8 @@ public class JFrGamesResults extends javax.swing.JFrame {
                 }
             }
         };
-        new javax.swing.Timer((int) REFRESH_DELAY, taskPerformer).start();
+        timer = new javax.swing.Timer((int) REFRESH_DELAY, taskPerformer);
+        timer.start();
     }
 
     /**
@@ -82,12 +91,6 @@ public class JFrGamesResults extends javax.swing.JFrame {
      * Unlike initComponents, customInitComponents is editable
      */
     private void customInitComponents() throws RemoteException {
-        int w = JFrGotha.MEDIUM_FRAME_WIDTH;
-        int h = JFrGotha.MEDIUM_FRAME_HEIGHT;
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((dim.width - w) / 2, (dim.height - h) / 2, w, h);
-        setIconImage(Gotha.getIconImage());
-
         initGamesComponents();
         this.updateAllViews();
         
@@ -518,8 +521,13 @@ public class JFrGamesResults extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPrintActionPerformed
 
     private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
-        dispose();
+        cleanClose();
     }//GEN-LAST:event_btnCloseActionPerformed
+
+    private void cleanClose(){
+        running = false;
+        dispose();
+    }
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         String strSearchPlayer = this.txfSearchPlayer.getText().toLowerCase();
@@ -607,7 +615,7 @@ public class JFrGamesResults extends javax.swing.JFrame {
 
     private void updateAllViews() {
         try {
-            if (!tournament.isOpen()) dispose();
+            if (!tournament.isOpen()) cleanClose();
             this.lastComponentsUpdateTime = tournament.getCurrentTournamentTime();
             setTitle("Games .. Results. " + tournament.getFullName());
         } catch (RemoteException ex) {
@@ -690,6 +698,14 @@ class ResultsTableCellRenderer extends JLabel implements TableCellRenderer {
     // This method is called each time a cell in a column
     // using this renderer needs to be rendered.
 
+    /**
+     * Colors
+     */
+		public static final Color WIN_COLOR   = new Color(  0, 128, 0);
+		public static final Color LOOSE_COLOR = new Color(100,   0, 0); // brown
+		public static final Color DRAW_COLOR  = Color.MAGENTA;
+
+		
     @Override
     public Component getTableCellRendererComponent(JTable table, Object value,
             boolean isSelected, boolean hasFocus, int rowIndex, int colIndex) {
@@ -720,29 +736,9 @@ class ResultsTableCellRenderer extends JLabel implements TableCellRenderer {
             // Game line
             setFont(gameFont);
             if (colIndex == JFrGamesResults.LEFT_PLAYER_COL) {
-                setFont(this.getFont().deriveFont(Font.PLAIN));
-
-                if (strWR.compareTo("1") == 0) {
-                    setForeground(Color.RED);
-                } else if (strWR.compareTo("0") == 0) {
-                    setForeground(Color.BLUE);
-                } else if (strWR.compareTo("½") == 0) {
-                    setForeground(Color.MAGENTA);
-                } else {
-                    setForeground(Color.BLACK);
-                    setFont(this.getFont().deriveFont(Font.PLAIN));
-                }
+								setColorForPlayer(strWR);
             } else if (colIndex == JFrGamesResults.RIGHT_PLAYER_COL) {
-                setFont(this.getFont().deriveFont(Font.PLAIN));
-                if (strBR.compareTo("1") == 0) {
-                    setForeground(Color.RED);
-                } else if (strBR.compareTo("0") == 0) {
-                    setForeground(Color.BLUE);
-                } else if (strBR.compareTo("½") == 0) {
-                    setForeground(Color.MAGENTA);
-                } else {
-                    setForeground(Color.BLACK);
-                }
+								setColorForPlayer(strBR);
             } else {
                 setFont(this.getFont().deriveFont(Font.PLAIN));
             }
@@ -755,4 +751,20 @@ class ResultsTableCellRenderer extends JLabel implements TableCellRenderer {
 
         return this;
     }
+
+		private void setColorForPlayer(String player) {
+		       setFont(this.getFont().deriveFont(Font.PLAIN));
+                if (0 == player.compareTo("1")) {
+                    setForeground(WIN_COLOR);
+                } else if (0 == player.compareTo("0")) {
+                    setForeground(LOOSE_COLOR);
+                } else if (0 == player.compareTo("½")) {
+                    setForeground(DRAW_COLOR);
+                } else {
+                    setForeground(Color.BLACK);
+                    setFont(this.getFont().deriveFont(Font.PLAIN));
+                }
+
+		}
+		
 }
